@@ -1,0 +1,32 @@
+﻿@inject Globals globals;
+
+@section control {
+
+    <bold-report-viewer id="reportviewer" report-service-url="@Globals.SERVICE_URL" report-path="northwind-products-suppliers-report.rdl" toolbar-rendering="onToolbarRendering" tool-bar-item-click="onToolBarItemClick" export-item-click="onExportItemClick" />
+
+}
+
+@section description {
+    <div id="description">
+        <p>
+            This demo showcases the details of products and suppliers of an organization and its sales ratio based on the market demand details using supported chart types
+            such as pyramid, bar, and column charts, and table report item in Bold Reports Report Viewer.
+        </p>
+        <ul>
+            <li>
+                The font color is categorized using the <a href="https://documentation.boldreports.com/on-premise/report-designer/compose-report/configure-report-items/conditional-formatting-tablix-data-region/"
+                                                           target="_blank">Conditional Formatting</a> feature in the <code>UnitInStock</code> column of table to differentiate the range of values.
+            </li>
+            <li>
+                The <code>TopN</code> filter is applied to the <a href="https://documentation.boldreports.com/on-premise/report-designer/compose-report/configure-report-items/add-filters-to-tablix-data-region/"
+                                                                  target="_blank">table</a> and <a href="https://documentation.boldreports.com/on-premise/report-designer/compose-report/configure-report-items/chart-report-item/add-filters-to-chart-data-region/"
+                                                                                                   target="_blank">chart</a> data regions to display the top five data from database. Similarly, the <code>BottomN</code> filter is applied to display the least demand products
+                from database.
+            </li>
+        </ul>
+        <p>
+            More information about chart data region can be found in this <a href="https://documentation.boldreports.com/on-premise/report-designer/compose-report/configure-report-items/chart-report-item/chart-reportitem/"
+                                                                             target="_blank">documentation</a> section.
+        </p>
+    </div>
+}

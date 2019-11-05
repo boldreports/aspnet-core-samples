@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSourceDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=SampleDB;</ConnectString>
+  <CredentialRetrieval>Store</CredentialRetrieval>
+  <Enabled>true</Enabled>
+  <Extension>SQL</Extension>
+  <ImpersonateUser>false</ImpersonateUser>
+  <OriginalConnectStringExpressionBased>false</OriginalConnectStringExpressionBased>
+  <UseOriginalConnectString>false</UseOriginalConnectString>
+  <UserName>demoreadonly@data-platform-demo</UserName>
+  <Password>N@c)=Y8s*1&amp;dh</Password>
+  <WindowsCredentials>false</WindowsCredentials>
+</DataSourceDefinition>

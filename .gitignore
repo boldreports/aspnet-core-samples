@@ -1,0 +1,15 @@
+.vs/
+.vscode
+.git
+yarn.lock
+node_modules/
+bin/
+obj/
+package-lock.json
+wwwroot/css/dependent
+wwwroot/bundles
+wwwroot/css/bold-reports
+wwwroot/scripts/dependent
+wwwroot/scripts/bold-reports
+*.user
+*.log

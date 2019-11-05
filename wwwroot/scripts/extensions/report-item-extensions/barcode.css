@@ -1,0 +1,47 @@
+﻿.customitem-barcode {
+    background-image: url('images/barcode.png');
+}
+
+.customitem-qrbarcode {
+    background-image: url('images/qrbarcode.png');
+}
+
+.customitem-barcode,
+.customitem-qrbarcode {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height: 25px;
+}
+
+.e-rptdesigner-itempanel-dragelements .customitem-barcode,
+.e-rptdesigner-itempanel-dragelements .customitem-qrbarcode {
+    margin-top: 0px !important;
+    height: 100%;
+}
+
+.e-rptdesigner-loaderDiv .e-rptdesigner-spinnerDiv {
+    box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    -webkit-box-sizing: content-box !important;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

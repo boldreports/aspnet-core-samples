@@ -1,0 +1,108 @@
+[
+  {
+    "outputFileName": "wwwroot/bundles/main/vendor.min.js",
+    "inputFiles": [
+      "wwwroot/scripts/dependent/prism.js",
+      "wwwroot/scripts/dependent/prism-csharp.min.js",
+      "wwwroot/scripts/dependent/jquery.min.js",
+      "wwwroot/scripts/dependent/jsrender.min.js",
+      "wwwroot/scripts/dependent/popper.min.js",
+      "wwwroot/scripts/dependent/bootstrap.min.js",
+      "wwwroot/scripts/bold-reports/common/bold.reports.common.min.js",
+      "wwwroot/scripts/bold-reports/common/bold.reports.widgets.min.js",
+      "wwwroot/scripts/bold-reports/bold.report-viewer.min.js",
+      "wwwroot/scripts/bold-reports/data-visualization/ej.bulletgraph.min.js",
+      "wwwroot/scripts/bold-reports/data-visualization/ej.chart.min.js",
+      "wwwroot/scripts/bold-reports/data-visualization/ej.circulargauge.min.js",
+      "wwwroot/scripts/bold-reports/data-visualization/ej.lineargauge.min.js",
+      "wwwroot/scripts/bold-reports/data-visualization/ej.map.min.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/bundles/main/app.min.js",
+    "inputFiles": [
+      "wwwroot/scripts/common/global.js",
+      "wwwroot/scripts/common/header.js",
+      "wwwroot/scripts/common/rdlcData.js",
+      "wwwroot/scripts/common/main-content.js",
+      "wwwroot/scripts/common/sidebar.js",
+      "wwwroot/scripts/common/index.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/bundles/main/app.min.css",
+    "inputFiles": [
+      "wwwroot/css/dependent/bootstrap.min.css",
+      "wwwroot/css/dependent/prism.css",
+      "wwwroot/css/common/common.css",
+      "wwwroot/css/common/writer.css",
+      "wwwroot/css/common/header.css",
+      "wwwroot/css/common/main-content.css",
+      "wwwroot/css/common/sidebar.css",
+      "wwwroot/css/common/index.css",
+      "wwwroot/css/bold-reports/bold.widgets.core.material.min.css",
+      "wwwroot/css/bold-reports/material/bold.theme.min.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/bundles/preview/vendor.min.js",
+    "inputFiles": [
+      "wwwroot/scripts/dependent/jquery.min.js",
+      "wwwroot/scripts/dependent/jsrender.min.js",
+      "wwwroot/scripts/dependent/codemirror.js",
+      "wwwroot/scripts/dependent/show-hint.js",
+      "wwwroot/scripts/dependent/sql-hint.js",
+      "wwwroot/scripts/dependent/sql.js",
+      "wwwroot/scripts/dependent/vb.js",
+      "wwwroot/scripts/bold-reports/common/bold.reports.common.min.js",
+      "wwwroot/scripts/bold-reports/common/bold.reports.widgets.min.js",
+      "wwwroot/scripts/bold-reports/bold.report-viewer.min.js",
+      "wwwroot/scripts/bold-reports/common/bold.report-designer-widgets.min.js",
+      "wwwroot/scripts/bold-reports/bold.report-designer.min.js",
+      "wwwroot/scripts/bold-reports/data-visualization/ej.bulletgraph.min.js",
+      "wwwroot/scripts/bold-reports/data-visualization/ej.chart.min.js",
+      "wwwroot/scripts/bold-reports/data-visualization/ej.circulargauge.min.js",
+      "wwwroot/scripts/bold-reports/data-visualization/ej.lineargauge.min.js",
+      "wwwroot/scripts/bold-reports/data-visualization/ej.map.min.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/bundles/preview/app.min.js",
+    "inputFiles": [
+      "wwwroot/scripts/common/global.js",
+      "wwwroot/scripts/common/preview.js",
+      "wwwroot/scripts/common/rdlcData.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/bundles/preview/app.min.css",
+    "inputFiles": [
+      "wwwroot/css/dependent/bootstrap.min.css",
+      "wwwroot/css/dependent/codemirror.css",
+      "wwwroot/css/dependent/show-hint.css",
+      "wwwroot/css/common/common.css",
+      "wwwroot/css/common/preview.css",
+      "wwwroot/css/common/writer.css",
+      "wwwroot/css/bold-reports/bold.widgets.core.material.min.css",
+      "wwwroot/css/bold-reports/material/bold.theme.min.css",
+      "wwwroot/css/bold-reports/bold.reportdesigner.core.material.min.css",
+      "wwwroot/css/bold-reports/material/bold.reportdesigner.theme.min.css"
+    ]
+  }
+]
