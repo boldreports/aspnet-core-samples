@@ -6,9 +6,9 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="Bold.Licensing" Version="1.1.14" />
-    <PackageReference Include="BoldReports.AspNet.Core" Version="1.1.17-alpha" />
-    <PackageReference Include="BoldReports.Net.Core" Version="1.1.106-alpha" />
+    <PackageReference Include="Bold.Licensing" Version="1.2.7" />
+    <PackageReference Include="BoldReports.AspNet.Core" Version="1.2.7" />
+    <PackageReference Include="BoldReports.Net.Core" Version="1.2.7" />
     <PackageReference Include="BuildBundlerMinifier" Version="2.9.406" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
