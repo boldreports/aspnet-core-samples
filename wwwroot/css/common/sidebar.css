@@ -1,0 +1,54 @@
+﻿.ej-sidebar-content .ej-sb-home {
+    height: 38px;
+    margin: 8px 10px 8px 28px;
+    cursor: pointer;
+}
+
+    .ej-sidebar-content .ej-sb-home::before {
+        content: '\e915';
+        font-size: 25px;
+        opacity: 0.54;
+        margin-right: 8px;
+    }
+
+    .ej-sidebar-content .ej-sb-home .ej-sb-home-text {
+        font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif";
+        display: inline-block;
+        vertical-align: text-bottom;
+        font-size: 13px;
+        opacity: 0.87;
+        font-weight: 600;
+    }
+
+.ej-sidebar-content .ej-sb-toc {
+    cursor: pointer;
+}
+
+    .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card {
+        width: 150px;
+        margin: 8px auto;
+        text-align: center;
+        border: 2px solid transparent;
+    }
+
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card:hover,
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card.toc-selected {
+            border-color: #1783ff;
+        }
+
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card[data-mode="ej-portrait"] img {
+            height: 120px;
+            width: 90px;
+            margin: 8px;
+        }
+
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card[data-mode="ej-landscape"] img {
+            height: 70px;
+            width: 120px;
+            margin: 8px;
+        }
+
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-sb-toc-title {
+            font-size: 12px;
+            font-weight: 600;
+        }

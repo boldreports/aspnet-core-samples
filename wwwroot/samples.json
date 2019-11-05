@@ -1,0 +1,184 @@
+{
+  "customNames": [
+    "app",
+    "barcode",
+    "northwind"
+  ],
+  "otherPlatforms": {
+    "Angular": "/demos/angular/#/report-viewer/",
+    "JavaScript": "/demos/JavaScript/#/report-viewer/",
+    "ASP.NET MVC": "/demos/aspnet-mvc/ReportViewer/",
+    "ASP.NET WebForms": "/demos/aspnet-web-forms/ReportViewer/"
+  },
+  "platform": "ASP.NET Core",
+  "samples": [
+    {
+      "routerPath": "ProductLineSales",
+      "sampleName": "Product Line Sales",
+      "imageDetails": {
+        "imageName": "product-line-sales.png",
+        "isLandscape": false
+      },
+      "metaData": {
+        "description": "This sample demonstrates the cascading parameters support by listing the sub category products, based on product category in ASP.NET Core platform."
+      }
+    },
+    {
+      "routerPath": "CompanySales",
+      "sampleName": "Company Sales",
+      "imageDetails": {
+        "imageName": "company-sales.png",
+        "isLandscape": true
+      },
+      "metaData": {
+        "description": "This sample demonstrates the overview of company sales by year with grouping feature in ASP.NET Core platform."
+      }
+    },
+    {
+      "routerPath": "MailMerge",
+      "sampleName": "Mail Merge",
+      "imageDetails": {
+        "imageName": "mail-merge.png",
+        "isLandscape": false
+      },
+      "metaData": {
+        "description": "This sample demonstrates the employee details such as employee image, name, address and phone number by using the ASP.NET Core List report item."
+      }
+    },
+    {
+      "routerPath": "SalesReport",
+      "sampleName": "Sales Report",
+      "imageDetails": {
+        "imageName": "sales-report.png",
+        "isLandscape": false
+      },
+      "metaData": {
+        "description": "This sample demonstrates the complete details of sales orders by using Adventure Works data in ASP.NET Core platform."
+      }
+    },
+    {
+      "routerPath": "TerritorySales",
+      "sampleName": "Territory Sales",
+      "imageDetails": {
+        "imageName": "territory-sales.png",
+        "isLandscape": true
+      },
+      "metaData": {
+        "description": "This sample demonstrates the ASP.NET Core Tablix with Row Grouping by sales region and drill down (expand/collapse) the group details.",
+        "tags": "Row Grouping"
+      }
+    },
+    {
+      "routerPath": "ConditionalRowFormatting",
+      "sampleName": "Conditional Row Formatting",
+      "imageDetails": {
+        "imageName": "conditional-row-formatting.png",
+        "isLandscape": false
+      },
+      "metaData": {
+        "description": "This sample demonstrates to view shared dataset and Tablix rows with conditional formatting in ASP.NET Core platform.",
+        "tags": "shared dataset"
+      }
+    },
+    {
+      "routerPath": "CustomerSupportAnalysis",
+      "sampleName": "Customer Support Analysis",
+      "imageDetails": {
+        "imageName": "customer-support-analysis.png",
+        "isLandscape": false
+      },
+      "metaData": {
+        "description": "This sample demonstrates the overview of all the customer support to keep track of service trend in ASP.NET Core platform."
+      }
+    },
+    {
+      "routerPath": "TicketsSalesAnalysis",
+      "sampleName": "Tickets Sales Analysis",
+      "imageDetails": {
+        "imageName": "tickets-sales-analysis.png",
+        "isLandscape": false
+      },
+      "metaData": {
+        "description": "This sample demonstrates the overview of theater tickets sold details by shows and date in ASP.NET Core platform."
+      }
+    },
+    {
+      "routerPath": "WebsiteVisitorAnalysis",
+      "sampleName": "Website Visitor Analysis",
+      "imageDetails": {
+        "imageName": "website-visitor-analysis.png",
+        "isLandscape": false
+      },
+      "metaData": {
+        "description": "This sample demonstrates the customer behavior and conversion trend for a fictitious e-commerce website in ASP.NET Core platform."
+      }
+    },
+    {
+      "routerPath": "PatientExperienceAnalysis",
+      "sampleName": "Patient Experience Analysis",
+      "imageDetails": {
+        "imageName": "patient-experience-analysis.png",
+        "isLandscape": true
+      },
+      "metaData": {
+        "description": "This sample demonstrates the patient satisfaction trends during hospital visits in ASP.NET Core platform."
+      }
+    },
+    {
+      "routerPath": "PersonalExpenseAnalysis",
+      "sampleName": "Personal Expense Analysis",
+      "imageDetails": {
+        "imageName": "personal-expense-analysis.png",
+        "isLandscape": false
+      },
+      "metaData": {
+        "description": "The sample demonstrates the spending/expense patterns of an individual against the budget in ASP.NET Core platform."
+      }
+    },
+    {
+      "routerPath": "NorthwindProductsSuppliersReport",
+      "sampleName": "Northwind Products and Suppliers Report",
+      "imageDetails": {
+        "imageName": "northwind-products-suppliers-report.png",
+        "isLandscape": false
+      },
+      "metaData": {
+        "description": "This sample demonstrates the sales performance of different products and suppliers in ASP.NET Core platform.",
+        "title": "Northwind Product Report"
+      }
+    },
+    {
+      "routerPath": "SalesOrderDetail",
+      "sampleName": "Sales Order Detail",
+      "imageDetails": {
+        "imageName": "sales-order-detail.png",
+        "isLandscape": true
+      },
+      "metaData": {
+        "description": "This sample demonstrates the sales order information based on sale order number in ASP.NET Core platform."
+      }
+    },
+    {
+      "routerPath": "Invoice",
+      "sampleName": "Invoice",
+      "imageDetails": {
+        "imageName": "invoice.png",
+        "isLandscape": true
+      },
+      "metaData": {
+        "description": "This report demonstrates sales invoice details and also illustrates the usage of report viewer parameters, expressions and calculated fields in Tablix report item."
+      }
+    },
+    {
+      "routerPath": "GroupingAggregate",
+      "sampleName": "Grouping Aggregate",
+      "imageDetails": {
+        "imageName": "grouping-aggregate.png",
+        "isLandscape": false
+      },
+      "metaData": {
+        "description": "This sample demonstrates the sorting and group total capabilities of ASP.NET Core Report Viewer using Tablix report item."
+      }
+    }
+  ]
+}

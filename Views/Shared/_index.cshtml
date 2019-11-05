@@ -1,0 +1,130 @@
+﻿@inject SampleData ds;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Reports samples" />
+    <title>Reports for ASP.NET Core | Syncfusion</title>
+    <link rel="shortcut icon" href="~/favicon.ico" />
+    <script>
+        function validateBrowser() {
+            var uaValidate = navigator.userAgent.match(/(MSIE |Trident.*rv[ :])([0-9]+)/);
+            if (uaValidate != null)
+                return uaValidate[2];
+            return null;
+        }
+        var ieVer = validateBrowser();
+        if (ieVer != null && ieVer < 11) {
+            if (!location.origin) {
+                location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+                location.href = location.origin + '/error.html';
+            }
+        }
+    </script>
+    <link href="~/css/common/index.css" rel="stylesheet" />
+    <link href="~/css/dependent/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/dependent/prism.css" rel="stylesheet" />
+    <link href="~/css/common/common.css" rel="stylesheet" />
+    <link href="~/css/ej/material/ej.reports.all.min.css" rel="stylesheet" />
+    <script src="~/scripts/dependent/prism.js"></script>
+    <script src="~/scripts/dependent/prism-csharp.min.js"></script>
+    <script src="~/scripts/dependent/jquery.min.js"></script>
+    <script src="~/scripts/dependent/jsrender.min.js"></script>
+    <script src="~/scripts/dependent/popper.min.js"></script>
+    <script src="~/scripts/dependent/bootstrap.min.js"></script>
+    <script src="~/scripts/ej/common/ej.reporting.common.min.js"></script>
+    <script src="~/scripts/ej/common/ej.reporting.widgets.min.js"></script>
+    <script src="~/scripts/ej/data-visualization/ej.bulletgraph.min.js"></script>
+    <script src="~/scripts/ej/data-visualization/ej.chart.min.js"></script>
+    <script src="~/scripts/ej/data-visualization/ej.circulargauge.min.js"></script>
+    <script src="~/scripts/ej/data-visualization/ej.lineargauge.min.js"></script>
+    <script src="~/scripts/ej/data-visualization/ej.map.min.js"></script>
+    <script src="~/scripts/ej/ej.report-viewer.min.js"></script>
+</head>
+<body>
+    <div class="splash">
+        <div class="message">ASP.NET Core Reports</div>
+        <div class="loader">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <div class="ej-body e-hidden">
+        <ej-header>
+            <partial name="_header" />
+        </ej-header>
+        <div class="mobile-overlay" onclick="onMobileOverlayClick()"></div>
+        <div class="ej-main-parent-content">
+            <ej-sidebar>
+                <partial name="_sidebar" />
+            </ej-sidebar>
+            <div class="ej-main-child-content">
+                <ej-main-content>
+                    <link href="~/css/common/main-content.css" rel="stylesheet" />
+
+                    <div class="ej-main-body-content">
+                        <div id="parentTabContainer">
+                            <ul class="nav ej-nav-header" id="parentTab" role="tablist">
+                                <li class="ej-nav-item">
+                                    <a href="#demo" data-toggle="tab" role="tab" aria-selected="true">
+                                        <Span class="ej-sb-icons ej-demo-icon"></Span><Span>DEMO</Span>
+                                    </a>
+                                </li>
+                                <li class="ej-nav-item source-tab">
+                                    <a href="#source" data-toggle="tab" role="tab" aria-selected="false">
+                                        <Span class="ej-sb-icons ej-source-icon"></Span><Span>SOURCE</Span>
+                                    </a>
+                                </li>
+                                <li class="ej-nav ej-nav-item ej-sb-icons">
+                                    <div class="new-tab">
+                                        <div class="ej-nav-new" title="Open in New Window" onclick="onTabBtnClick()" tabindex="0"></div>
+                                    </div>
+                                    <div class="ej-nav-prev" title="Previous Sample" onclick="onTabPrev()" tabindex="0"></div>
+                                    <div class="ej-nav-next" title="Next Sample" onclick="onTabNext()" tabindex="0"></div>
+                                </li>
+                            </ul>
+                            <div class="tab-content ej-tab-content" id="parentTabContent">
+                                <div class="tab-pane ej-tab-pane" id="demo" role="tabpanel">
+                                    <ej-sample>@RenderBody()</ej-sample>
+                                </div>
+                                <div class="tab-pane" id="source" role="tabpanel">
+                                    <div id="childTabContainer">
+                                        <div class="tab-content ej-tab-content" id="childTabContent">
+                                            <div class="tab-pane ej-tab-pane cshtml-content show active" id="cshtml" role="tabpanel"></div>
+                                            <div class="tab-pane ej-tab-pane csharp-content" id="csharp" role="tabpanel"></div>
+                                        </div>
+                                        <ul class="nav ej-nav-header" id="childtTab" role="tablist">
+                                            <li class="ej-nav-item">
+                                                <a class="active cshtml-header" href="#cshtml" data-toggle="tab" role="tab" aria-selected="true"></a>
+                                            </li>
+                                            <li class="ej-nav-item">
+                                                <a href="#csharp" class="csharp-header" data-toggle="tab" role="tab" aria-selected="false"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="~/scripts/common/main-content.js"></script>
+                </ej-main-content>
+            </div>
+        </div>
+    </div>
+    <script>
+        function getSampleData(){
+            return @Html.Raw(ds.getSampleData());
+        }
+        let reportViewerPath = 'ReportViewer/';
+        function getBasePath() {
+            return "@Url.Content("~/")";
+        }
+    </script>
+    <script src="~/scripts/common/index.js"></script>
+    <sf-script-manager></sf-script-manager>
+    <script src="~/scripts/common/global.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+The Bold Reports license that contains the terms and conditions can be found at
+
+https://www.boldreports.com/terms-of-use/on-premise
+
+Disclaimer
+
+We used the below open source packages for sample browser implementations such as navigations, code highlighting and responsive layout.
+
+Our samples browsers are showcasing our reporting controls and not meant to be copied. Customer can use the sample code and snippets, however, such use, to include third-party open source, is at the Customer's own risk without any warranty or indemnity from Syncfusion. The third-party open source components of the  samples are not part of Syncfusion's code. If Customer consumes any open-source the customer must ensure Customer obtains adequate licenses from the open-source licencor
+
+* bootstrap - v4.0.0
+* popper.js - v1.12.9

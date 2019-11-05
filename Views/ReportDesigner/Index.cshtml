@@ -1,0 +1,22 @@
+﻿@inject Globals globals;
+
+<sf-report-designer id="reportdesigner"  service-url="@Globals.DESIGNER_SERVICE_URL" toolbar-settings="ViewBag.toolbarSettings" create="controlCreate" toolbar-rendering="toolbarRendering" toolbar-click="toolbarClick" report-item-extensions="ViewBag.reportitems"/>
+<script>
+    function controlCreate() {
+        var designer = $('#reportdesigner').data('ejReportDesigner');
+        designer.openReport(location.search.split('=')[1]);
+    }
+    function toolbarRendering(args) {
+        if ($(args.target).hasClass('e-rptdesigner-toolbarcontainer')) {
+            var saveButton = ej.buildTag('li.e-rptdesigner-toolbarli e-designer-toolbar-align e-tooltxt', '', {}, {});
+            var saveIcon = ej.buildTag('span.e-rptdesigner-toolbar-icon e-toolbarfonticonbasic e-rptdesigner-toolbar-save e-li-item', '', {}, { title: 'Save' });
+            args.target.find('ul:first').append(saveButton.append(saveIcon));
+        }
+    }
+    function toolbarClick(args) {
+        if (args.click === 'Save') {
+            args.cancel = true;
+            $('#reportdesigner').data('ejReportDesigner').saveToDevice();
+        }
+    }
+</script>

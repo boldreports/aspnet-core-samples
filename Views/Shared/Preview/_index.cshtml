@@ -1,0 +1,86 @@
+﻿@inject SampleData ds;
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%;">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Reports samples">
+    <title>Reports for ASP.NET Core | Syncfusion</title>
+    <script>
+        function validateBrowser() {
+            var uaValidate = navigator.userAgent.match(/(MSIE |Trident.*rv[ :])([0-9]+)/);
+            if (uaValidate != null)
+                return uaValidate[2];
+            return null;
+        }
+        var ieVer = validateBrowser();
+        if (ieVer != null && ieVer < 11) {
+            if (!location.origin) {
+                location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+                location.href = location.origin + '/error.html';
+            }
+        }
+    </script>
+    <link rel="shortcut icon" href="~/favicon.ico" />
+    <link href="~/css/ej/material/ej.reports.all.min.css" rel="stylesheet" />
+    <link href="~/css/ej/material/ej.reportdesigner.min.css" rel="stylesheet" />
+    <link href="~/css/common/common.css" rel="stylesheet" />
+    <link href="~/scripts/extensions/report-item-extensions/barcode.css" rel="stylesheet">
+    <script src="~/scripts/extensions/report-item-extensions/barcode.js"></script>
+    <script src="~/scripts/extensions/report-item-extensions/qrbarcode.js"></script>
+    <script src="~/scripts/dependent/jquery.min.js"></script>
+    <script src="~/scripts/dependent/jsrender.min.js"></script>
+    <script src="~/scripts/ej/common/ej.reporting.common.min.js"></script>
+    <script src="~/scripts/ej/common/ej.reporting.widgets.min.js"></script>
+    <script src="~/scripts/ej/data-visualization/ej.bulletgraph.min.js"></script>
+    <script src="~/scripts/ej/data-visualization/ej.chart.min.js"></script>
+    <script src="~/scripts/ej/data-visualization/ej.circulargauge.min.js"></script>
+    <script src="~/scripts/ej/data-visualization/ej.lineargauge.min.js"></script>
+    <script src="~/scripts/ej/data-visualization/ej.map.min.js"></script>
+    <script src="~/scripts/ej/ej.report-viewer.min.js"></script>
+    <script src="~/scripts/ej/common/ej.report-designer-widgets.min.js"></script>
+    <script src="~/scripts/ej/ej.report-designer.min.js"></script>
+    <script src="~/scripts/dependent/codemirror.js"></script>
+    <script src="~/scripts/dependent/show-hint.js"></script>
+    <script src="~/scripts/dependent/sql.js"></script>
+    <script src="~/scripts/dependent/sql-hint.js"></script>
+    <script src="~/scripts/dependent/vb.js"></script>
+    <link href="~/css/dependent/codemirror.css" rel="stylesheet" />
+    <link href="~/css/dependent/show-hint.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="splash">
+        <div class="message">ASP.NET Core Reports</div>
+        <div class="loader">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <style>
+        body, .ej-body {
+            height: 100%;
+            margin: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+    </style>
+    <div class="ej-body e-hidden">
+        @RenderBody()
+    </div>
+
+    <script>
+        function getSampleData(){
+            return @Html.Raw(ds.getSampleData());
+        }
+
+        function getBasePath() {
+            return "@Url.Content("~/")";
+        }
+    </script>
+    <script src="~/scripts/common/global.js"></script>
+    <script src="~/scripts/common/preview.js"></script>
+    <sf-script-manager></sf-script-manager>
+</body>
+
+</html>

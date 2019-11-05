@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="CustomerDetail">
+    <Query>
+      <DataSourceReference>ReportSampleDatabase</DataSourceReference>
+      <CommandText>select [dbo].[Customers].CustomerID,[dbo].[Customers].CompanyName,[dbo].[Customers].Address,[dbo].[Customers].City,[dbo].[Customers].PostalCode,[dbo].[Customers].Country from [dbo].[Customers]</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="CustomerID">
+        <DataField>CustomerID</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="CompanyName">
+        <DataField>CompanyName</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Address">
+        <DataField>Address</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="City">
+        <DataField>City</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="PostalCode">
+        <DataField>PostalCode</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+      <Field Name="Country">
+        <DataField>Country</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

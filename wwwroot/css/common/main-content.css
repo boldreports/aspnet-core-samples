@@ -1,0 +1,130 @@
+﻿.ej-main-body-content {
+    background-color: #fafafa;
+    border: 1px solid #d7d7d7;
+}
+
+    .ej-main-body-content .ej-nav-header {
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        border-bottom: 1px solid #d7d7d7;
+    }
+
+        .ej-main-body-content .ej-nav-header .ej-nav-item {
+            height: 38px;
+            line-height: 38px;
+            display: flex;
+            align-items: center;
+        }
+
+            .ej-main-body-content .ej-nav-header .ej-nav-item.e-hidden {
+                display: none;
+            }
+
+            .ej-main-body-content .ej-nav-header .ej-nav-item a {
+                font-weight: 600;
+                padding: 0 12px;
+                display: flex;
+                align-items: center;
+                color: #000;
+                border-bottom: 2px solid transparent;
+            }
+
+                .ej-main-body-content .ej-nav-header .ej-nav-item a:hover {
+                    color: #0278d7;
+                    text-decoration: none;
+                }
+
+                .ej-main-body-content .ej-nav-header .ej-nav-item a.active {
+                    color: #0278d7;
+                    border-color: #0278d7;
+                }
+
+    .ej-main-body-content .ej-tab-content .tab-pane {
+        animation: slideleft 0.4s;
+        position: relative;
+    }
+
+@keyframes slideleft {
+    from {
+        left: -500px;
+        opacity: 0;
+    }
+
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.ej-main-body-content #parentTab .ej-demo-icon {
+    margin-bottom: -2px;
+}
+
+    .ej-main-body-content #parentTab .ej-demo-icon:before {
+        content: '\e92e';
+        margin-right: 5px;
+        font-size: 20px;
+    }
+
+.ej-main-body-content #parentTab .ej-source-icon {
+    margin-bottom: -2px;
+}
+
+    .ej-main-body-content #parentTab .ej-source-icon:before {
+        content: '\e92d';
+        margin-right: 5px;
+        font-size: 20px;
+    }
+
+.ej-main-body-content #parentTab .ej-nav {
+    position: absolute;
+    right: 0;
+    opacity: 0.87;
+}
+
+    .ej-main-body-content #parentTab .ej-nav .new-tab {
+        display: flex;
+    }
+
+@media only screen and (max-width: 550px) {
+    .ej-main-body-content #parentTab .ej-nav .new-tab {
+        display: none;
+    }
+}
+
+.ej-main-body-content #parentTab .ej-nav div {
+    font-size: 25px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+    .ej-main-body-content #parentTab .ej-nav div.ej-nav-new {
+        border-left: 1px solid #c4c4c4;
+    }
+
+        .ej-main-body-content #parentTab .ej-nav div.ej-nav-new:before {
+            content: '\e91d';
+        }
+
+    .ej-main-body-content #parentTab .ej-nav div.ej-nav-prev {
+        border-left: 1px solid #c4c4c4;
+    }
+
+        .ej-main-body-content #parentTab .ej-nav div.ej-nav-prev:before {
+            content: '\e91f';
+        }
+
+    .ej-main-body-content #parentTab .ej-nav div.ej-nav-next:before {
+        content: '\e91b';
+    }
+
+.ej-main-body-content #childTabContainer .tab-pane {
+    white-space: pre;
+    padding: 10px;
+    font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif", "-apple-system", "BlinkMacSystemFont";
+    overflow-x: auto;
+    min-height: 320px;
+    font-size: 13px;
+    font-weight: 400;
+}
