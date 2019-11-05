@@ -1,4 +1,30 @@
 ﻿@inject Globals globals;
 
-<sf-report-viewer id="reportviewer" report-service-url="@Globals.SERVICE_URL" report-path="grouping-aggregate" toolbar-rendering="onToolbarRendering" tool-bar-item-click="onToolBarItemClick" />
+@section control {
 
+    <bold-report-viewer id="reportviewer" report-service-url="@Globals.SERVICE_URL" report-path="grouping-aggregate.rdl" toolbar-rendering="onToolbarRendering" tool-bar-item-click="onToolBarItemClick" export-item-click="onExportItemClick" />
+
+}
+
+@section description {
+    <div id="description">
+        <p>
+            The Grouping Aggregate RDL report is designed with the <b>Grouping</b> and <b>Total</b> concept to organize and summarize the data using Tablix data region.
+        </p>
+        <p>
+            It breaks the information down into quarterly intervals, so that you can analyze the information according to the order year.
+        </p>
+        <ul>
+            <li><b>Row grouping</b> is used to group the data based on quarterly sale.</li>
+            <li>Using the <code>Total</code> feature, the total sales amount for each quarter and year is calculated in Tablix data region.</li>
+            <li>
+                The sales value for each quarter is formatted in the <code>Currency </code> <a href="https://documentation.boldreports.com/on-premise/report-designer/compose-report/format-data/"
+                                                                                               target="_blank">format</a> to improve the readability of report.
+            </li>
+        </ul>
+        <p>
+            More information about the Tablix data region can be found in this <a href="https://documentation.boldreports.com/on-premise/report-designer/compose-report/configure-report-items/tablix-reportitem/"
+                                                                                  target="_blank">documentation</a> section.
+        </p>
+    </div>
+}

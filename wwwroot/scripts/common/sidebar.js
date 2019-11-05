@@ -1,10 +1,12 @@
 ﻿function onTocClick(args) {
     args.e.preventDefault();
-    let samples = getSampleData().samples[args.index];
-    location.href = location.origin + getBasePath() + reportViewerPath + samples.routerPath;
+    let curSampleData = reportSamples[args.index];
+    let reportPath = curSampleData.routerPath ? (curSampleData.basePath + '/' + curSampleData.routerPath) : curSampleData.basePath;
+    location.href = location.origin + getBasePath() + reportPath;
 }
 
 function onHomeBtnClick() {
-    let samples = getSampleData().samples[0];
-    location.href = location.origin + getBasePath() + reportViewerPath + samples.routerPath;
+    let curSampleData = reportSamples[0];
+    let reportPath = curSampleData.routerPath ? (curSampleData.basePath + '/' + curSampleData.routerPath) : curSampleData.basePath;
+    location.href = location.origin + getBasePath() + reportPath;
 }

@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Reports samples">
-    <title>Reports for ASP.NET Core | Syncfusion</title>
+    <meta name="description" content="@ViewBag.Description" />
+    <title>@ViewBag.Title</title>
     <script>
         function validateBrowser() {
             var uaValidate = navigator.userAgent.match(/(MSIE |Trident.*rv[ :])([0-9]+)/);
@@ -22,33 +22,10 @@
         }
     </script>
     <link rel="shortcut icon" href="~/favicon.ico" />
-    <link href="~/css/ej/material/ej.reports.all.min.css" rel="stylesheet" />
-    <link href="~/css/ej/material/ej.reportdesigner.min.css" rel="stylesheet" />
-    <link href="~/css/common/common.css" rel="stylesheet" />
-    <link href="~/scripts/extensions/report-item-extensions/barcode.css" rel="stylesheet">
-    <script src="~/scripts/extensions/report-item-extensions/barcode.js"></script>
-    <script src="~/scripts/extensions/report-item-extensions/qrbarcode.js"></script>
-    <script src="~/scripts/dependent/jquery.min.js"></script>
-    <script src="~/scripts/dependent/jsrender.min.js"></script>
-    <script src="~/scripts/ej/common/ej.reporting.common.min.js"></script>
-    <script src="~/scripts/ej/common/ej.reporting.widgets.min.js"></script>
-    <script src="~/scripts/ej/data-visualization/ej.bulletgraph.min.js"></script>
-    <script src="~/scripts/ej/data-visualization/ej.chart.min.js"></script>
-    <script src="~/scripts/ej/data-visualization/ej.circulargauge.min.js"></script>
-    <script src="~/scripts/ej/data-visualization/ej.lineargauge.min.js"></script>
-    <script src="~/scripts/ej/data-visualization/ej.map.min.js"></script>
-    <script src="~/scripts/ej/ej.report-viewer.min.js"></script>
-    <script src="~/scripts/ej/common/ej.report-designer-widgets.min.js"></script>
-    <script src="~/scripts/ej/ej.report-designer.min.js"></script>
-    <script src="~/scripts/dependent/codemirror.js"></script>
-    <script src="~/scripts/dependent/show-hint.js"></script>
-    <script src="~/scripts/dependent/sql.js"></script>
-    <script src="~/scripts/dependent/sql-hint.js"></script>
-    <script src="~/scripts/dependent/vb.js"></script>
-    <link href="~/css/dependent/codemirror.css" rel="stylesheet" />
-    <link href="~/css/dependent/show-hint.css" rel="stylesheet" />
+    <link href="~/bundles/preview/app.min.css" rel="stylesheet" />
 </head>
 <body>
+    @RenderBody()
     <div class="splash">
         <div class="message">ASP.NET Core Reports</div>
         <div class="loader">
@@ -57,6 +34,7 @@
             <div class="bounce3"></div>
         </div>
     </div>
+    <script src="~/bundles/preview/vendor.min.js"></script>
     <style>
         body, .ej-body {
             height: 100%;
@@ -64,23 +42,54 @@
             width: 100%;
             overflow: hidden;
         }
+        #description {
+            display: none;
+        }
+
     </style>
     <div class="ej-body e-hidden">
-        @RenderBody()
+        <div class="ej-preview-header">
+            <div class="ej-preview-left-side">
+                <a href="/demos/aspnet-core/" target="_blank">
+                    <div class="ej-preview-platform-name">Bold Reports for ASP.NET Core</div>
+                </a>
+            </div>
+            <div class="ej-preview-right-side">
+                <a href="https://documentation.boldreports.com" title="Documentation" target="_blank">
+                    <span class="ej-preview-header-icons preview-icon-documentation"></span>
+                </a>
+                <a href="https://www.boldreports.com" target="_blank" title="Product Details">
+                    <span class="ej-preview-header-icons preview-icon-product"></span>
+                </a>
+                <a href="https://www.boldreports.com/pricing/on-premise/" target="_blank" title="Download Now">
+                    <span class="ej-preview-header-icons preview-icon-download"></span>
+                </a>
+                <div class="ej-preview-divider"></div>
+                <a class="ej-preview-button" href="https://on-premise-demo.boldreports.com" title="Report Server"
+                   target="_blank">Explore Report Server</a>
+            </div>
+        </div>
+        <div class="ej-preview-content">
+            @RenderSection("control", true)
+        </div>
+        @RenderSection("description", false)
     </div>
 
     <script>
-        function getSampleData(){
+        let reportSampleData;
+        let reportSamples;
+        let reportBasePath;
+        let reportRouterPath;
+
+        function getReportSampleData() {
             return @Html.Raw(ds.getSampleData());
         }
-
         function getBasePath() {
             return "@Url.Content("~/")";
         }
     </script>
-    <script src="~/scripts/common/global.js"></script>
-    <script src="~/scripts/common/preview.js"></script>
-    <sf-script-manager></sf-script-manager>
+    <script src="~/bundles/preview/app.min.js"></script>
+    <bold-script-manager></bold-script-manager>
 </body>
 
 </html>

@@ -18,7 +18,7 @@ namespace ReportsCoreSamples.Controllers
         {
             dynamic sampleData = _samples.getSampleData();
             string defaultPath = sampleData.samples[0].routerPath.Value;
-            return RedirectToAction("Index", defaultPath);
+            return RedirectToActionPermanent("Index", defaultPath);
         }
     }
 }

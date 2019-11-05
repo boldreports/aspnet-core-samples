@@ -18,7 +18,6 @@ namespace ReportsCoreSamples.Models
         }
         public dynamic getSampleData()
         {
-            JsonSerializer serializer = new JsonSerializer();
             string json = System.IO.File.ReadAllText(_hostingEnvironment.WebRootPath + "/samples.json" );
             dynamic sampleJson = JsonConvert.DeserializeObject(json);
             return sampleJson;

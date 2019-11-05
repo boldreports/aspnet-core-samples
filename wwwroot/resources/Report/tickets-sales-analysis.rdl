@@ -197,7 +197,7 @@
                       </ChartMarker>
                       <CustomProperties>
                         <CustomProperty>
-                          <Name />
+                          <Name>BarLabelStyle</Name>
                           <Value>Outside</Value>
                         </CustomProperty>
                       </CustomProperties>

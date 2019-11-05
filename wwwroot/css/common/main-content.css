@@ -1,7 +1,24 @@
 ﻿.ej-main-body-content {
     background-color: #fafafa;
-    border: 1px solid #d7d7d7;
 }
+
+    .ej-main-body-content #parentTabContainer {
+        border: 1px solid #D7D7D7;
+    }
+
+
+    .ej-main-body-content .ej-title {
+        font-size: 18px;
+        padding: 20px 0 20px 18px;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .ej-main-body-content .ej-meta-description {
+        font-size: 14px;
+        padding: 0px 0 15px 18px;
+        margin: 0;
+    }
 
     .ej-main-body-content .ej-nav-header {
         height: 40px;
@@ -45,6 +62,12 @@
         position: relative;
     }
 
+        .ej-main-body-content .ej-tab-content .tab-pane#ej-description {
+            font-size: 14px;
+            margin: 20px 0 15px 15px;
+        }
+
+
 @keyframes slideleft {
     from {
         left: -500px;
@@ -76,6 +99,15 @@
         margin-right: 5px;
         font-size: 20px;
     }
+.ej-main-body-content #parentTab .ej-description-icon {
+    margin-bottom: -2px;
+}
+
+    .ej-main-body-content #parentTab .ej-description-icon:before {
+        content: '\e902';
+        margin-right: 5px;
+        font-size: 20px;
+    }
 
 .ej-main-body-content #parentTab .ej-nav {
     position: absolute;
@@ -93,38 +125,41 @@
     }
 }
 
-.ej-main-body-content #parentTab .ej-nav div {
+.ej-main-body-content #parentTab .ej-nav .ej-nav-sub-item {
     font-size: 25px;
-    padding: 0 10px;
     cursor: pointer;
 }
 
-    .ej-main-body-content #parentTab .ej-nav div.ej-nav-new {
+    .ej-main-body-content #parentTab .ej-nav .ej-nav-sub-item .ej-nav-new {
         border-left: 1px solid #c4c4c4;
+        padding: 0 10px;
     }
 
-        .ej-main-body-content #parentTab .ej-nav div.ej-nav-new:before {
+        .ej-main-body-content #parentTab .ej-nav .ej-nav-sub-item .ej-nav-new:before {
             content: '\e91d';
         }
 
-    .ej-main-body-content #parentTab .ej-nav div.ej-nav-prev {
+    .ej-main-body-content #parentTab .ej-nav .ej-nav-sub-item.ej-nav-prev {
         border-left: 1px solid #c4c4c4;
+        padding: 0 10px;
     }
 
-        .ej-main-body-content #parentTab .ej-nav div.ej-nav-prev:before {
+        .ej-main-body-content #parentTab .ej-nav .ej-nav-sub-item.ej-nav-prev:before {
             content: '\e91f';
         }
 
-    .ej-main-body-content #parentTab .ej-nav div.ej-nav-next:before {
+    .ej-main-body-content #parentTab .ej-nav .ej-nav-sub-item.ej-nav-next:before {
         content: '\e91b';
+        padding-right: 10px;
     }
 
 .ej-main-body-content #childTabContainer .tab-pane {
     white-space: pre;
     padding: 10px;
     font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif", "-apple-system", "BlinkMacSystemFont";
-    overflow-x: auto;
+    overflow: auto;
     min-height: 320px;
+    max-height: 500px;
     font-size: 13px;
     font-weight: 400;
 }

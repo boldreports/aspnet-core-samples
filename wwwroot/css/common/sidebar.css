@@ -36,17 +36,24 @@
             border-color: #1783ff;
         }
 
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card[data-mode="ej-portrait"] img {
-            height: 120px;
-            width: 90px;
-            margin: 8px;
-        }
-
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card[data-mode="ej-landscape"] img {
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-landscape-img {
+            display: inline-flex;
             height: 70px;
             width: 120px;
             margin: 8px;
+            background-image: url('./../../assets/sidebar/landscape.png');
+            background-size: 100% 800%;
         }
+
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-portrait-img {
+            display: inline-flex;
+            height: 120px;
+            width: 90px;
+            margin: 8px;
+            background-image: url('./../../assets/sidebar/portrait.png');
+            background-size: 100% 1100%;
+        }
+
 
         .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-sb-toc-title {
             font-size: 12px;

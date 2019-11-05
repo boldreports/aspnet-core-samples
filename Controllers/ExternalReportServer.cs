@@ -7,7 +7,7 @@ using System.Net;
 using System.Xml.Serialization;
 using System.Xml;
 using System.Net.Http;
-using Syncfusion.Reporting.ServerProcessor;
+using BoldReports.ServerProcessor;
 using System.Web;
 using System.Text.RegularExpressions;
 
@@ -18,6 +18,12 @@ namespace ReportsCoreSamples.Controllers
         // IHostingEnvironment used with sample to get the application data from wwwroot.
         private Microsoft.AspNetCore.Hosting.IHostingEnvironment _hostingEnvironment;
         string basePath;
+        public string reportType
+        {
+            get;
+            set;
+        }
+
         public ExternalServer(Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnvironment)
         {
             _hostingEnvironment = hostingEnvironment;
@@ -74,10 +80,12 @@ namespace ReportsCoreSamples.Controllers
             }
             else if (type == ItemTypeEnum.Report)
             {
-                foreach (var file in Directory.GetFiles(targetFolder, "*.rdl"))
+                string reportTypeExt = this.reportType == "RDLC" ? ".rdlc" : ".rdl";
+
+                foreach (var file in Directory.GetFiles(targetFolder, "*" + reportTypeExt))
                 {
                     CatalogItem catalogItem = new CatalogItem();
-                    catalogItem.Name = Path.GetFileNameWithoutExtension(file);
+                    catalogItem.Name = Path.GetFileName(file);
                     catalogItem.Type = ItemTypeEnum.Report;
                     catalogItem.Id = Regex.Replace(catalogItem.Name, @"[^0-9a-zA-Z]+", "_");
                     _items.Add(catalogItem);
@@ -94,14 +102,13 @@ namespace ReportsCoreSamples.Controllers
 
         public override System.IO.Stream GetReport()
         {
-            string reportPath = this.ReportPath.TrimStart('/').TrimEnd('/').Trim();
-            string reportName = reportPath.Substring(reportPath.IndexOf('/') + 1).Trim();
-            string targetFolder = this.basePath + @"\Resources\Report\";
-            string reportPat = targetFolder + reportName + ".rdl";
+            string reportBasePath = @"\Resources\Report\";
+            string targetFolder = this.basePath + reportBasePath;
+            string reportPath = targetFolder + this.ReportPath;
 
-            if (File.Exists(reportPat))
+            if (File.Exists(reportPath))
             {
-                return this.ReadFiles(reportPat);
+                return this.ReadFiles(reportPath);
             }
 
             return null;
@@ -126,7 +133,7 @@ namespace ReportsCoreSamples.Controllers
             string catagoryName = reportPath.Substring(0, reportPath.IndexOf('/') > 0 ? reportPath.IndexOf('/') : 0).Trim();
             string targetFolder = this.basePath + @"\Resources\Report\";
 
-            string reportPat = targetFolder + catagoryName + @"\" + reportName + ".rdl";
+            string reportPat = targetFolder + catagoryName + @"\" + reportName;
             File.WriteAllBytes(reportPat, reportdata.ToArray());
 
             return true;

@@ -10,6 +10,7 @@ namespace ReportsCoreSamples.Controllers
     {
         public IActionResult Index()
         {
+            this.updateMetaData();
             return View();
         }
         

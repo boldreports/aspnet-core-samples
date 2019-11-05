@@ -1,10 +1,6 @@
-﻿.e-reportviewer .e-reportviewer-toolbarcontainer ul.e-ul:nth-child(4) {
+﻿.e-reportviewer .e-reportviewer-toolbarcontainer .e-reportviewer-toolbarul.e-show {
     border-style: none;
     float: right;
-}
-
-.e-reportdesigner .e-reportviewer-toolbarcontainer ul.e-ul:nth-child(4) {
-    float: left;
 }
 
 .e-reportviewer .e-reportviewer-toolbarcontainer.e-toolbar {

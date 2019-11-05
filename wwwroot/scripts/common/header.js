@@ -17,26 +17,31 @@
 }
 
 function platformSwitcher(platform) {
-    let path = location.pathname.replace(getBasePath() + reportViewerPath, "");
-    let routerPath = getRouterPath(getSampleData().platform, platform, path);
-    window.open(location.origin + getSampleData().otherPlatforms[platform] + routerPath, '_self');
+    let platformBasePath, platformSamplePath;
+    let sampleName = reportRouterPath ? reportRouterPath : reportBasePath;
+    if (reportRouterPath) {
+        platformBasePath = getRouterPath(getReportSampleData().platform, platform, reportBasePath);
+    }
+    platformSamplePath = getRouterPath(getReportSampleData().platform, platform, sampleName);
+    let reportPath = reportRouterPath ? (platformBasePath + '/' + platformSamplePath) : platformSamplePath;
+    window.open(location.origin + getReportSampleData().otherPlatforms[platform] + reportPath, '_self');
 }
 
-function getRouterPath(curPlatform, targetplatform, path) {
+function getRouterPath(curPlatform, targetplatform, sampleName) {
     curPlatform = curPlatform.toLowerCase();
     targetplatform = targetplatform.toLowerCase();
     let samePath = (curPlatform.indexOf('asp') === -1 && targetplatform.indexOf('asp') === -1) ||
         (curPlatform.indexOf('asp') >= 0 && targetplatform.indexOf('asp') >= 0);
     if (samePath) {
-        return path;
+        return sampleName;
     } else {
         if (curPlatform.indexOf('asp') !== -1) {
-            return path.split(/(?=[A-Z])/).map(function (name) {
+            return sampleName.split(/(?=[A-Z])/).map(function (name) {
                 return name.toLowerCase()
             }).join("-");
 
         } else {
-            return path.split(/-/).map(function (name) {
+            return sampleName.split(/-/).map(function (name) {
                 return name.charAt(0).toUpperCase() + name.slice(1);
             }).join("");
 

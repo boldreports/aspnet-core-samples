@@ -5,179 +5,216 @@
     "northwind"
   ],
   "otherPlatforms": {
-    "Angular": "/demos/angular/#/report-viewer/",
-    "JavaScript": "/demos/JavaScript/#/report-viewer/",
-    "ASP.NET MVC": "/demos/aspnet-mvc/ReportViewer/",
-    "ASP.NET WebForms": "/demos/aspnet-web-forms/ReportViewer/"
+    "Angular": "/demos/angular/#/",
+    "JavaScript": "/demos/javascript/#/",
+    "ASP.NET MVC": "/demos/aspnet-mvc/",
+    "ASP.NET WebForms": "/demos/aspnet-web-forms/"
   },
   "platform": "ASP.NET Core",
   "samples": [
     {
       "routerPath": "ProductLineSales",
       "sampleName": "Product Line Sales",
+      "basePath": "ReportViewer",
       "imageDetails": {
-        "imageName": "product-line-sales.png",
-        "isLandscape": false
+        "isLandscape": false,
+        "index": 7
       },
       "metaData": {
-        "description": "This sample demonstrates the cascading parameters support by listing the sub category products, based on product category in ASP.NET Core platform."
+        "description": "The Product Line Sales report displays sales details organized by category and subcategory of products using cascading parameters in bold report viewer."
       }
     },
     {
       "routerPath": "CompanySales",
       "sampleName": "Company Sales",
+      "basePath": "ReportViewer",
       "imageDetails": {
-        "imageName": "company-sales.png",
-        "isLandscape": true
+        "isLandscape": true,
+        "index": 1
       },
       "metaData": {
-        "description": "This sample demonstrates the overview of company sales by year with grouping feature in ASP.NET Core platform."
+        "description": "Company Sales report shows product sales against year in matrix format using SSRS Tablix report item in  bold report viewer."
       }
     },
     {
       "routerPath": "MailMerge",
       "sampleName": "Mail Merge",
+      "basePath": "ReportViewer",
       "imageDetails": {
-        "imageName": "mail-merge.png",
-        "isLandscape": false
+        "isLandscape": false,
+        "index": 3
       },
       "metaData": {
-        "description": "This sample demonstrates the employee details such as employee image, name, address and phone number by using the ASP.NET Core List report item."
+        "description": "Mail merge shows to envelope the employee details using SRSS List report item in bold report viewer."
       }
     },
     {
       "routerPath": "SalesReport",
       "sampleName": "Sales Report",
+      "basePath": "ReportViewer",
       "imageDetails": {
-        "imageName": "sales-report.png",
-        "isLandscape": false
+        "isLandscape": false,
+        "index": 8
       },
       "metaData": {
-        "description": "This sample demonstrates the complete details of sales orders by using Adventure Works data in ASP.NET Core platform."
+        "description": "This demo shows the sales order details using RDL basic table with currency formatting in price textbox fields in bold report viewer."
       }
     },
     {
       "routerPath": "TerritorySales",
       "sampleName": "Territory Sales",
+      "basePath": "ReportViewer",
       "imageDetails": {
-        "imageName": "territory-sales.png",
-        "isLandscape": true
+        "isLandscape": true,
+        "index": 5
       },
       "metaData": {
-        "description": "This sample demonstrates the ASP.NET Core Tablix with Row Grouping by sales region and drill down (expand/collapse) the group details.",
-        "tags": "Row Grouping"
+        "description": "This demo shows the sales territory and its total sales using drilldown with  SSRS matrix report in bold report viewer."
       }
     },
     {
       "routerPath": "ConditionalRowFormatting",
       "sampleName": "Conditional Row Formatting",
+      "basePath": "ReportViewer",
       "imageDetails": {
-        "imageName": "conditional-row-formatting.png",
-        "isLandscape": false
+        "isLandscape": false,
+        "index": 0
       },
       "metaData": {
-        "description": "This sample demonstrates to view shared dataset and Tablix rows with conditional formatting in ASP.NET Core platform.",
-        "tags": "shared dataset"
+        "description": "This demo shows the customer details in SSRS table report item and details are highlighted based on conditional row formatting in bold report viewer. "
       }
     },
     {
       "routerPath": "CustomerSupportAnalysis",
       "sampleName": "Customer Support Analysis",
+      "basePath": "ReportViewer",
       "imageDetails": {
-        "imageName": "customer-support-analysis.png",
-        "isLandscape": false
+        "isLandscape": false,
+        "index": 1
       },
       "metaData": {
-        "description": "This sample demonstrates the overview of all the customer support to keep track of service trend in ASP.NET Core platform."
+        "description": "This demo shows customer support analysis with SSRS drill through to explore details in another report based on user click action in bold report viewer."
       }
     },
     {
       "routerPath": "TicketsSalesAnalysis",
       "sampleName": "Tickets Sales Analysis",
+      "basePath": "ReportViewer",
       "imageDetails": {
-        "imageName": "tickets-sales-analysis.png",
-        "isLandscape": false
+        "isLandscape": false,
+        "index": 9
       },
       "metaData": {
-        "description": "This sample demonstrates the overview of theater tickets sold details by shows and date in ASP.NET Core platform."
+        "description": "This RDL template shows the ticket sales analysis details of movie tickets using SSRS data region report items like chart and table in bold report viewer."
       }
     },
     {
       "routerPath": "WebsiteVisitorAnalysis",
       "sampleName": "Website Visitor Analysis",
+      "basePath": "ReportViewer",
       "imageDetails": {
-        "imageName": "website-visitor-analysis.png",
-        "isLandscape": false
+        "isLandscape": false,
+        "index": 10
       },
       "metaData": {
-        "description": "This sample demonstrates the customer behavior and conversion trend for a fictitious e-commerce website in ASP.NET Core platform."
+        "description": "This RDL report template shows website visitor analysis details using SSRS column chart, pie chart, line chart and table data item in bold report viewer."
       }
     },
     {
       "routerPath": "PatientExperienceAnalysis",
       "sampleName": "Patient Experience Analysis",
+      "basePath": "ReportViewer",
       "imageDetails": {
-        "imageName": "patient-experience-analysis.png",
-        "isLandscape": true
+        "isLandscape": true,
+        "index": 3
       },
       "metaData": {
-        "description": "This sample demonstrates the patient satisfaction trends during hospital visits in ASP.NET Core platform."
+        "description": "This demo shows the patient analysis report of a health care using SSRS doughnut chart, line chart and basic table data regions in bold report viewer."
       }
     },
     {
       "routerPath": "PersonalExpenseAnalysis",
       "sampleName": "Personal Expense Analysis",
+      "basePath": "ReportViewer",
       "imageDetails": {
-        "imageName": "personal-expense-analysis.png",
-        "isLandscape": false
+        "isLandscape": false,
+        "index": 5
       },
       "metaData": {
-        "description": "The sample demonstrates the spending/expense patterns of an individual against the budget in ASP.NET Core platform."
+        "description": "This report shows personal expense analysis details using SSRS image, text box, line, rectangle, chart and table report items in bold report viewer."
       }
     },
     {
       "routerPath": "NorthwindProductsSuppliersReport",
       "sampleName": "Northwind Products and Suppliers Report",
+      "basePath": "ReportViewer",
       "imageDetails": {
-        "imageName": "northwind-products-suppliers-report.png",
-        "isLandscape": false
+        "isLandscape": false,
+        "index": 4
       },
       "metaData": {
-        "description": "This sample demonstrates the sales performance of different products and suppliers in ASP.NET Core platform.",
-        "title": "Northwind Product Report"
+        "description": "This demo shows the product and suppliers details using SSRS pyramid, bar, column charts and table widget in bold report viewer.",
+        "title": "Northwind Products Report"
       }
     },
     {
       "routerPath": "SalesOrderDetail",
       "sampleName": "Sales Order Detail",
+      "basePath": "ReportViewer",
       "imageDetails": {
-        "imageName": "sales-order-detail.png",
-        "isLandscape": true
+        "isLandscape": true,
+        "index": 4
       },
       "metaData": {
-        "description": "This sample demonstrates the sales order information based on sale order number in ASP.NET Core platform."
+        "description": "This report template shows the sales order details based on order number using the RDL report parameters, rectangle, line and table in bold report viewer."
       }
     },
     {
       "routerPath": "Invoice",
       "sampleName": "Invoice",
+      "basePath": "ReportViewer",
       "imageDetails": {
-        "imageName": "invoice.png",
-        "isLandscape": true
+        "isLandscape": true,
+        "index": 2
       },
       "metaData": {
-        "description": "This report demonstrates sales invoice details and also illustrates the usage of report viewer parameters, expressions and calculated fields in Tablix report item."
+        "description": "This demo shows the sales invoice details and the usage of report viewer parameters, expressions, and calculated fields in SSRS Tablix report item."
+      }
+    },
+    {
+      "routerPath": "ProductCatalog",
+      "sampleName": "Product Catalog",
+      "basePath": "ReportViewer",
+      "imageDetails": {
+        "isLandscape": true,
+        "index": 6
+      },
+      "metaData": {
+        "description": "This demos allows you to view the product catalog RDLC that exist on the local file system with JSON array and custom business object data collection."
       }
     },
     {
       "routerPath": "GroupingAggregate",
       "sampleName": "Grouping Aggregate",
+      "basePath": "ReportViewer",
       "imageDetails": {
-        "imageName": "grouping-aggregate.png",
-        "isLandscape": false
+        "isLandscape": false,
+        "index": 2
       },
       "metaData": {
-        "description": "This sample demonstrates the sorting and group total capabilities of ASP.NET Core Report Viewer using Tablix report item."
+        "description": "This demo shows product sales total based on  quarterly wise RDL tablix grouping in bold report viewer."
+      }
+    },
+    {
+      "routerPath": "",
+      "sampleName": "Report Writer",
+      "basePath": "ReportWriter",
+      "imageDetails": {
+        "isLandscape": true,
+        "index": 7
+      },
+      "metaData": {
+        "description": "This demos allows you to export the RDL or RDLC report with popular file formats like PDF, HTML, Microsoft Word, and Microsoft Excel without previewing the report in viewer."
       }
     }
   ]

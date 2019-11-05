@@ -1,15 +1,17 @@
 ﻿(function onInit() {
     document.querySelector('.mobile-overlay').classList.add('e-hidden');
-    let routerPath = location.pathname.replace(getBasePath() + reportViewerPath, "");
-    let samples = getSampleData().samples;
-    let sampleData = samples.filter(function (sample) {
-        return sample.routerPath === routerPath
+    let urlPaths = location.pathname.replace(getBasePath(), '').split('/');
+    reportBasePath = urlPaths[0];
+    reportRouterPath = urlPaths[1] ? urlPaths[1] : '';
+    reportSamples = getReportSampleData().samples;
+    reportSampleData = reportSamples.filter(function (sample) {
+        return (sample.routerPath === reportRouterPath && sample.basePath === reportBasePath)
     })[0];
     document.querySelector(".splash").classList.add('e-hidden');
     document.querySelector('.ej-body.e-hidden').classList.remove('e-hidden');
-    tocSelection(sampleData, samples);
-    loadTabContent(sampleData);
-    updateMetaData(sampleData);
+    tocSelection();
+    updateSampleDetails();
+    loadTabContent();
     setReportsHeight();
     updateTab();
 })();
@@ -20,8 +22,8 @@ window.addEventListener('resize', function () {
     updateOverlay();
 });
 
-function tocSelection(sampleData, samples) {
-    let ele = document.querySelectorAll('.ej-sb-toc-card')[samples.indexOf(sampleData)];
+function tocSelection() {
+    let ele = document.querySelectorAll('.ej-sb-toc-card')[reportSamples.indexOf(reportSampleData)];
     let previousSelected = document.querySelector('.toc-selected');
     if (previousSelected) {
         previousSelected.classList.remove('toc-selected')
@@ -30,21 +32,26 @@ function tocSelection(sampleData, samples) {
     ele.focus();
 }
 
-function loadTabContent(sampleData) {
+function loadTabContent() {
     $('#parentTab li:first-child a').tab('show');
     $('#childtTab li:first-child a').tab('show');
+    let controllerName = reportRouterPath ? reportRouterPath : reportBasePath;
+    let controllerPath = reportRouterPath ? reportBasePath + '/' + controllerName : controllerName;
     let childaTab = document.getElementById("childTabContainer");
-    let cshtml = getResponse(getBasePath() + 'Views/' + sampleData.routerPath + '/Index.cshtml');
-    let csharp = getResponse(getBasePath() + 'Controllers/ReportViewer/' + sampleData.routerPath + 'Controller.cs');
+    let cshtml = getResponse(getBasePath() + 'Views/' + controllerName + '/Index.cshtml');
+    cshtml = cshtml.replace(/@section (description) {[^}]*}/, '');;
+    let csharp = getResponse(getBasePath() + 'Controllers/' + controllerPath + 'Controller.cs');
     childaTab.getElementsByClassName('cshtml-header')[0].textContent = 'Index.cshtml';
-    childaTab.getElementsByClassName('csharp-header')[0].textContent = sampleData.routerPath + '.cs';
-    childaTab.getElementsByClassName('cshtml-content')[0].innerHTML = Prism.highlight(cshtml, Prism.languages.html);
-    childaTab.getElementsByClassName('csharp-content')[0].innerHTML = Prism.highlight(csharp, Prism.languages.csharp);;
+    childaTab.getElementsByClassName('csharp-header')[0].textContent = controllerName + '.cs';
+    childaTab.getElementsByClassName('cshtml-content')[0].innerHTML = Prism.highlight(cshtml, Prism.languages.csharp);
+    childaTab.getElementsByClassName('csharp-content')[0].innerHTML = Prism.highlight(csharp, Prism.languages.csharp);
 }
 
-function updateMetaData(sampleData) {
-    document.title = sampleData.sampleName + ' | Reports for ASP.NET Core | Syncfusion';
-    document.querySelector('meta[name="description"]').setAttribute('content', sampleData.metaData.description);
+function updateSampleDetails() {
+    let titleElement = document.querySelector('.ej-main-body-content .ej-title');
+    let metaDescriptionElement = document.querySelector('.ej-main-body-content .ej-meta-description');
+    titleElement.innerText = reportSampleData.sampleName;
+    metaDescriptionElement.innerText = reportSampleData.metaData.description;
 }
 
 function setReportsHeight() {
@@ -69,12 +76,15 @@ function updateOverlay() {
 
 function updateTab() {
     let sourceTab = document.querySelector('.ej-nav-item.source-tab');
+    let descTab = document.querySelector('.ej-nav-item.desc-tab');
     if (window.matchMedia('(max-width:850px)').matches) {
         $('#parentTab li:first-child a').tab('show');
         sourceTab.classList.add('e-hidden');
+        descTab.classList.add('e-hidden');
     } else {
         if (sourceTab.classList.contains('e-hidden')) {
             sourceTab.classList.remove('e-hidden');
+            descTab.classList.remove('e-hidden');
         }
     }
 }

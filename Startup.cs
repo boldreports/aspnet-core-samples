@@ -11,7 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
 using ReportsCoreSamples.Models;
-
+using Microsoft.AspNetCore.ResponseCompression;
+using System.Text;
+using Bold.Licensing;
 namespace ReportsCoreSamples
 {
     public class Startup
@@ -19,6 +21,8 @@ namespace ReportsCoreSamples
 
         public Startup(IConfiguration configuration, IHostingEnvironment _hostingEnvironment)
         {
+            string License = File.ReadAllText(System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "BoldLicense.txt"), Encoding.UTF8);
+            BoldLicenseProvider.RegisterLicense(License);            
             Configuration = configuration;
             env = _hostingEnvironment;
         }
@@ -32,6 +36,8 @@ namespace ReportsCoreSamples
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddHttpContextAccessor();
+            services.Configure<GzipCompressionProviderOptions>(options => options.Level = System.IO.Compression.CompressionLevel.Optimal);
+            services.AddResponseCompression();
             services.Add(new ServiceDescriptor(typeof(SampleData), new SampleData(env)));
             services.Add(new ServiceDescriptor(typeof(Globals), typeof(Globals), ServiceLifetime.Transient));
             services.AddCors(o => o.AddPolicy("AllowAllOrigins", builder =>
@@ -50,6 +56,7 @@ namespace ReportsCoreSamples
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseResponseCompression();
             app.UseFileServer();
 
             app.UseStaticFiles(new StaticFileOptions
@@ -69,20 +76,16 @@ namespace ReportsCoreSamples
             Path.Combine(Directory.GetCurrentDirectory(), "Views")),
                 RequestPath = "/Views"
             });
-       
 
-
-        app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                      name: "ReportViewer",
-                      template: "ReportViewer/{controller}/{action=Index}/{id?}");
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Main}/{action=Index}/{id?}");
-                
-
-            });
+            app.UseMvc(routes =>
+                {
+                    routes.MapRoute(
+                          name: "ReportViewer",
+                          template: "ReportViewer/{controller}/{action=Index}/{id?}");
+                    routes.MapRoute(
+                        name: "default",
+                        template: "{controller=Main}/{action=Index}/{id?}");
+                });
         }
     }
 }
