@@ -33,7 +33,7 @@ Package | Purpose
 
 ## Online Demos
 
-Take a look at the Bold Reporting JavaScript live demo [here](https://demos.boldreports.com/home/aspnet-core.html).
+Take a look at the Bold Reporting ASP.NET Core live demo [here](https://demos.boldreports.com/home/aspnet-core.html).
 
 ## Documentation
 
