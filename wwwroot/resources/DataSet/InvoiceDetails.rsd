@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="InvoiceDetails">
+    <Query>
+      <DataSourceReference>Northwind</DataSourceReference>
+      <CommandText>SELECT DISTINCT OrderID
+FROM            [Order Details]</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="OrderID">
+        <DataField>OrderID</DataField>
+        <rd:UserDefined>true</rd:UserDefined>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

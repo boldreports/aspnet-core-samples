@@ -1,0 +1,2904 @@
+<?xml version="1.0"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Style>
+          <BackgroundColor>#f9f9f9</BackgroundColor>
+          <Color />
+          <Border>
+            <Width>0.62250pt</Width>
+            <Style>None</Style>
+          </Border>
+        </Style>
+        <ReportItems>
+          <Rectangle Name="Rectangle1">
+            <Left>292.5pt</Left>
+            <Top>7.5pt</Top>
+            <Height>249pt</Height>
+            <Width>376.5pt</Width>
+            <Style>
+              <BackgroundColor>#ffffff</BackgroundColor>
+              <Color />
+              <Border>
+                <Width>0.24750pt</Width>
+                <Color>LightGrey</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <Textbox Name="TextBox2">
+                <Left>3.75pt</Left>
+                <Top>7.50024pt</Top>
+                <Height>20.25pt</Height>
+                <Width>194.25pt</Width>
+                <Style>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>LightGrey</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Average Stay Duration by Department</Value>
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>10.5pt</FontSize>
+                          <Color>#604B7A</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <Chart Name="Chart2">
+                <Left>0pt</Left>
+                <Top>33.75pt</Top>
+                <Height>213.75pt</Height>
+                <Width>375pt</Width>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontSize>8.5pt</FontSize>
+                  <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                  <TextAlign>Center</TextAlign>
+                  <Color>#333333</Color>
+                  <ShadowColor>Transparent</ShadowColor>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <DataSetName>PatientDetails</DataSetName>
+                <ChartSeriesHierarchy>
+                  <ChartMembers>
+                    <ChartMember>
+                      <Label>Consulting_Time(mins)</Label>
+                    </ChartMember>
+                  </ChartMembers>
+                </ChartSeriesHierarchy>
+                <ChartCategoryHierarchy>
+                  <ChartMembers>
+                    <ChartMember>
+                      <Group Name="Chart2_CategoryGroup">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!Department.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!Department.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <Label>=Fields!Department.Value</Label>
+                    </ChartMember>
+                  </ChartMembers>
+                </ChartCategoryHierarchy>
+                <ChartData>
+                  <ChartSeriesCollection>
+                    <ChartSeries Name="Consulting_Time(mins)">
+                      <ChartDataPoints>
+                        <ChartDataPoint>
+                          <ChartDataPointValues>
+                            <Y>=Avg(Fields!Consulting_Time_mins.Value)</Y>
+                          </ChartDataPointValues>
+                          <ChartDataLabel>
+                            <Style>
+                              <FontFamily>Segoe UI</FontFamily>
+                              <FontSize>8.25pt</FontSize>
+                              <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                              <Color />
+                              <ShadowColor>Transparent</ShadowColor>
+                              <Border>
+                                <Color>Transparent</Color>
+                                <Style>None</Style>
+                              </Border>
+                            </Style>
+                            <Label>=Round(Avg(Fields!Consulting_Time_mins.Value),2)</Label>
+                            <Visible>True</Visible>
+                            <Rotation>0</Rotation>
+                          </ChartDataLabel>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color />
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                          <ChartMarker>
+                            <Type>Circle</Type>
+                            <Size>4pt</Size>
+                            <Style>
+                              <FontFamily>Segoe UI</FontFamily>
+                              <FontSize>8.5pt</FontSize>
+                              <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                              <Color />
+                              <ShadowColor>Transparent</ShadowColor>
+                              <Border>
+                                <Width>0.62250pt</Width>
+                                <Color>#ffffff</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                            </Style>
+                          </ChartMarker>
+                        </ChartDataPoint>
+                      </ChartDataPoints>
+                      <Type>Line</Type>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8.5pt</FontSize>
+                        <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                        <Color>#333333</Color>
+                        <ShadowColor>Transparent</ShadowColor>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                      <ChartMarker>
+                        <Type>None</Type>
+                        <Size>6pt</Size>
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8.5pt</FontSize>
+                          <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                          <Color />
+                          <ShadowColor>Transparent</ShadowColor>
+                          <Border>
+                            <Color>Transparent</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                      </ChartMarker>
+                      <CustomProperties>
+                        <CustomProperty>
+                          <Name>LabelStyle</Name>
+                          <Value>Auto</Value>
+                        </CustomProperty>
+                      </CustomProperties>
+                      <ValueAxisName>Primary</ValueAxisName>
+                      <CategoryAxisName>Primary</CategoryAxisName>
+                    </ChartSeries>
+                  </ChartSeriesCollection>
+                </ChartData>
+                <ChartAreas>
+                  <ChartArea Name="Default">
+                    <ChartCategoryAxes>
+                      <ChartAxis Name="Primary">
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8.5pt</FontSize>
+                          <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                          <Color />
+                          <ShadowColor>Transparent</ShadowColor>
+                          <Border>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption />
+                          <Position>Center</Position>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <TextAlign>Center</TextAlign>
+                            <Color />
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisTitle>
+                        <ChartMajorGridLines>
+                          <Enabled>False</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorGridLines>
+                        <ChartMinorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Dotted</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorGridLines>
+                        <ChartMajorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>1</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorTickMarks>
+                        <ChartMinorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>0.5</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorTickMarks>
+                        <Location>Default</Location>
+                        <InterlacedColor>Transparent</InterlacedColor>
+                        <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+                        <ChartAxisScaleBreak>
+                          <Enabled>False</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
+                          <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Gray</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                      <ChartAxis Name="Secondary">
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8.5pt</FontSize>
+                          <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                          <Color>#333333</Color>
+                          <ShadowColor>Transparent</ShadowColor>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption>Axis Title</Caption>
+                          <Position>Center</Position>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <TextAlign>Center</TextAlign>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisTitle>
+                        <ChartMajorGridLines>
+                          <Enabled>False</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorGridLines>
+                        <ChartMinorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Dotted</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorGridLines>
+                        <ChartMajorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>1</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorTickMarks>
+                        <ChartMinorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>0.5</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorTickMarks>
+                        <Location>Opposite</Location>
+                        <InterlacedColor>Transparent</InterlacedColor>
+                        <ChartAxisScaleBreak>
+                          <Enabled>False</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
+                          <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                    </ChartCategoryAxes>
+                    <ChartValueAxes>
+                      <ChartAxis Name="Primary">
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8.5pt</FontSize>
+                          <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                          <Color />
+                          <ShadowColor>Transparent</ShadowColor>
+                          <Border>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption>Avg. Consulting Time(mins)</Caption>
+                          <Position>Center</Position>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <TextAlign>Center</TextAlign>
+                            <Color />
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisTitle>
+                        <ChartMajorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorGridLines>
+                        <ChartMinorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Dotted</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorGridLines>
+                        <ChartMajorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>1</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorTickMarks>
+                        <ChartMinorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>0.5</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorTickMarks>
+                        <Location>Default</Location>
+                        <InterlacedColor>Transparent</InterlacedColor>
+                        <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+                        <ChartAxisScaleBreak>
+                          <Enabled>False</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
+                          <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                      <ChartAxis Name="Secondary">
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8.5pt</FontSize>
+                          <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                          <Color>#333333</Color>
+                          <ShadowColor>Transparent</ShadowColor>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption>Axis Title</Caption>
+                          <Position>Center</Position>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <TextAlign>Center</TextAlign>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisTitle>
+                        <ChartMajorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorGridLines>
+                        <ChartMinorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Dotted</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorGridLines>
+                        <ChartMajorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>1</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorTickMarks>
+                        <ChartMinorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>0.5</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorTickMarks>
+                        <Location>Opposite</Location>
+                        <InterlacedColor>Transparent</InterlacedColor>
+                        <ChartAxisScaleBreak>
+                          <Enabled>False</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
+                          <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                    </ChartValueAxes>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8.5pt</FontSize>
+                      <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                      <Color>#333333</Color>
+                      <ShadowColor>Transparent</ShadowColor>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                  </ChartArea>
+                </ChartAreas>
+                <ChartLegends>
+                  <ChartLegend Name="Default">
+                    <Hidden>true</Hidden>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8.25pt</FontSize>
+                      <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                      <Color />
+                      <ShadowColor>Transparent</ShadowColor>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                    <Position>BottomCenter</Position>
+                    <ChartLegendTitle>
+                      <Caption />
+                      <TitleSeparator>None</TitleSeparator>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8.5pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                        <TextAlign>Center</TextAlign>
+                        <Color>#333333</Color>
+                        <ShadowColor>Transparent</ShadowColor>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartLegendTitle>
+                    <AutoFitTextDisabled>true</AutoFitTextDisabled>
+                    <HeaderSeparator>None</HeaderSeparator>
+                    <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                    <ColumnSeparator>None</ColumnSeparator>
+                    <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+                    <ColumnSpacing>0</ColumnSpacing>
+                    <InterlacedRows>false</InterlacedRows>
+                    <InterlacedRowsColor>Transparent</InterlacedRowsColor>
+                    <EquallySpacedItems>false</EquallySpacedItems>
+                    <Reversed>Auto</Reversed>
+                    <TextWrapThreshold>0</TextWrapThreshold>
+                  </ChartLegend>
+                </ChartLegends>
+                <ChartTitles>
+                  <ChartTitle Name="Default">
+                    <Caption>Chart Title</Caption>
+                    <Hidden>true</Hidden>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                      <TextAlign>General</TextAlign>
+                      <VerticalAlign>Top</VerticalAlign>
+                      <Color>#333333</Color>
+                      <ShadowColor>Transparent</ShadowColor>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                    <Position>TopCenter</Position>
+                    <DockOffset>0</DockOffset>
+                    <TextOrientation>Auto</TextOrientation>
+                  </ChartTitle>
+                </ChartTitles>
+                <Palette>SeaGreen</Palette>
+                <ChartBorderSkin>
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                    <FontSize>8.5pt</FontSize>
+                    <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                    <Color>White</Color>
+                    <ShadowColor>Transparent</ShadowColor>
+                    <Border>
+                      <Color>LightGrey</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                  </Style>
+                </ChartBorderSkin>
+                <ChartNoDataMessage Name="NoDataMessage">
+                  <Caption>No Data Available</Caption>
+                  <Hidden>false</Hidden>
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                    <FontSize>8.5pt</FontSize>
+                    <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                    <Color>#333333</Color>
+                    <ShadowColor>Transparent</ShadowColor>
+                    <Border>
+                      <Color>LightGrey</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                  </Style>
+                  <Position>RightTop</Position>
+                  <DockOffset>0</DockOffset>
+                  <TextOrientation>Auto</TextOrientation>
+                </ChartNoDataMessage>
+              </Chart>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+          <Rectangle Name="Rectangle2">
+            <Left>292.5pt</Left>
+            <Top>262.5pt</Top>
+            <Height>247.5pt</Height>
+            <Width>376.5pt</Width>
+            <Style>
+              <BackgroundColor>#ffffff</BackgroundColor>
+              <Color />
+              <Border>
+                <Width>0.24750pt</Width>
+                <Color>LightGrey</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <Textbox Name="TextBox3">
+                <Left>3.75pt</Left>
+                <Top>7.50024pt</Top>
+                <Height>18.75023pt</Height>
+                <Width>183pt</Width>
+                <Style>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>LightGrey</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Average Waiting Time by Department</Value>
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>10.5pt</FontSize>
+                          <Color>#604B7A</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <Chart Name="Chart3">
+                <Left>0pt</Left>
+                <Top>33.75pt</Top>
+                <Height>212.25pt</Height>
+                <Width>375pt</Width>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontSize>8.5pt</FontSize>
+                  <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                  <TextAlign>Center</TextAlign>
+                  <Color>#333333</Color>
+                  <ShadowColor>Transparent</ShadowColor>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <DataSetName>PatientDetails</DataSetName>
+                <ChartSeriesHierarchy>
+                  <ChartMembers>
+                    <ChartMember>
+                      <Label>Waiting_Time(mins)</Label>
+                    </ChartMember>
+                  </ChartMembers>
+                </ChartSeriesHierarchy>
+                <ChartCategoryHierarchy>
+                  <ChartMembers>
+                    <ChartMember>
+                      <Group Name="Chart3_CategoryGroup">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!Department.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!Department.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <Label>=Fields!Department.Value</Label>
+                    </ChartMember>
+                  </ChartMembers>
+                </ChartCategoryHierarchy>
+                <ChartData>
+                  <ChartSeriesCollection>
+                    <ChartSeries Name="Waiting_Time(mins)">
+                      <ChartDataPoints>
+                        <ChartDataPoint>
+                          <ChartDataPointValues>
+                            <Y>=Avg(Fields!Waiting_Time_mins.Value)</Y>
+                          </ChartDataPointValues>
+                          <ChartDataLabel>
+                            <Style>
+                              <FontFamily>Segoe UI</FontFamily>
+                              <FontSize>8.25pt</FontSize>
+                              <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                              <Color />
+                              <ShadowColor>Transparent</ShadowColor>
+                              <Border>
+                                <Color>Transparent</Color>
+                                <Style>None</Style>
+                              </Border>
+                            </Style>
+                            <Label>=Round(Avg(Fields!Waiting_Time_mins.Value),2)</Label>
+                            <Visible>true</Visible>
+                            <Rotation>0</Rotation>
+                          </ChartDataLabel>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color />
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                          <ChartMarker>
+                            <Type>Circle</Type>
+                            <Size>4pt</Size>
+                            <Style>
+                              <FontFamily>Segoe UI</FontFamily>
+                              <FontSize>8.5pt</FontSize>
+                              <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                              <Color />
+                              <ShadowColor>Transparent</ShadowColor>
+                              <Border>
+                                <Width>0.62250pt</Width>
+                                <Color>#ffffff</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                            </Style>
+                          </ChartMarker>
+                        </ChartDataPoint>
+                      </ChartDataPoints>
+                      <Type>Line</Type>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8.5pt</FontSize>
+                        <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                        <Color>#333333</Color>
+                        <ShadowColor>Transparent</ShadowColor>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                      <ChartMarker>
+                        <Type>None</Type>
+                        <Size>6pt</Size>
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8.5pt</FontSize>
+                          <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                          <Color />
+                          <ShadowColor>Transparent</ShadowColor>
+                          <Border>
+                            <Color>Transparent</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                      </ChartMarker>
+                      <CustomProperties>
+                        <CustomProperty>
+                          <Name>LabelStyle</Name>
+                          <Value>Auto</Value>
+                        </CustomProperty>
+                      </CustomProperties>
+                      <ValueAxisName>Primary</ValueAxisName>
+                      <CategoryAxisName>Primary</CategoryAxisName>
+                    </ChartSeries>
+                  </ChartSeriesCollection>
+                </ChartData>
+                <ChartAreas>
+                  <ChartArea Name="Default">
+                    <ChartCategoryAxes>
+                      <ChartAxis Name="Primary">
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8.5pt</FontSize>
+                          <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                          <Color />
+                          <ShadowColor>Transparent</ShadowColor>
+                          <Border>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption />
+                          <Position>Center</Position>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <TextAlign>Center</TextAlign>
+                            <Color />
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisTitle>
+                        <ChartMajorGridLines>
+                          <Enabled>False</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorGridLines>
+                        <ChartMinorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Dotted</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorGridLines>
+                        <ChartMajorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>1</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorTickMarks>
+                        <ChartMinorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>0.5</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorTickMarks>
+                        <Location>Default</Location>
+                        <InterlacedColor>Transparent</InterlacedColor>
+                        <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+                        <ChartAxisScaleBreak>
+                          <Enabled>False</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
+                          <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Gray</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                      <ChartAxis Name="Secondary">
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8.5pt</FontSize>
+                          <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                          <Color>#333333</Color>
+                          <ShadowColor>Transparent</ShadowColor>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption>Axis Title</Caption>
+                          <Position>Center</Position>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <TextAlign>Center</TextAlign>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisTitle>
+                        <ChartMajorGridLines>
+                          <Enabled>False</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorGridLines>
+                        <ChartMinorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Dotted</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorGridLines>
+                        <ChartMajorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>1</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorTickMarks>
+                        <ChartMinorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>0.5</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorTickMarks>
+                        <Location>Opposite</Location>
+                        <InterlacedColor>Transparent</InterlacedColor>
+                        <ChartAxisScaleBreak>
+                          <Enabled>False</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
+                          <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                    </ChartCategoryAxes>
+                    <ChartValueAxes>
+                      <ChartAxis Name="Primary">
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8.5pt</FontSize>
+                          <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                          <Color />
+                          <ShadowColor>Transparent</ShadowColor>
+                          <Border>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption>Avg. Waiting Time(mins)</Caption>
+                          <Position>Center</Position>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.0025pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <TextAlign>Center</TextAlign>
+                            <Color />
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisTitle>
+                        <ChartMajorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorGridLines>
+                        <ChartMinorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Dotted</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorGridLines>
+                        <ChartMajorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>1</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorTickMarks>
+                        <ChartMinorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>0.5</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorTickMarks>
+                        <Location>Default</Location>
+                        <InterlacedColor>Transparent</InterlacedColor>
+                        <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+                        <ChartAxisScaleBreak>
+                          <Enabled>False</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
+                          <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                      <ChartAxis Name="Secondary">
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8.5pt</FontSize>
+                          <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                          <Color>#333333</Color>
+                          <ShadowColor>Transparent</ShadowColor>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption>Axis Title</Caption>
+                          <Position>Center</Position>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <TextAlign>Center</TextAlign>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisTitle>
+                        <ChartMajorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorGridLines>
+                        <ChartMinorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Dotted</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorGridLines>
+                        <ChartMajorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>1</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorTickMarks>
+                        <ChartMinorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>0.5</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorTickMarks>
+                        <Location>Opposite</Location>
+                        <InterlacedColor>Transparent</InterlacedColor>
+                        <ChartAxisScaleBreak>
+                          <Enabled>False</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
+                          <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                    </ChartValueAxes>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8.5pt</FontSize>
+                      <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                      <Color>#333333</Color>
+                      <ShadowColor>Transparent</ShadowColor>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                  </ChartArea>
+                </ChartAreas>
+                <ChartLegends>
+                  <ChartLegend Name="Default">
+                    <Hidden>true</Hidden>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8.25pt</FontSize>
+                      <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                      <Color />
+                      <ShadowColor>Transparent</ShadowColor>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                    <Position>BottomCenter</Position>
+                    <ChartLegendTitle>
+                      <Caption />
+                      <TitleSeparator>None</TitleSeparator>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8.5pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                        <TextAlign>Center</TextAlign>
+                        <Color>#333333</Color>
+                        <ShadowColor>Transparent</ShadowColor>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartLegendTitle>
+                    <AutoFitTextDisabled>true</AutoFitTextDisabled>
+                    <HeaderSeparator>None</HeaderSeparator>
+                    <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                    <ColumnSeparator>None</ColumnSeparator>
+                    <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+                    <ColumnSpacing>0</ColumnSpacing>
+                    <InterlacedRows>false</InterlacedRows>
+                    <InterlacedRowsColor>Transparent</InterlacedRowsColor>
+                    <EquallySpacedItems>false</EquallySpacedItems>
+                    <Reversed>Auto</Reversed>
+                    <TextWrapThreshold>0</TextWrapThreshold>
+                  </ChartLegend>
+                </ChartLegends>
+                <ChartTitles>
+                  <ChartTitle Name="Default">
+                    <Caption>Average waiting time by Department</Caption>
+                    <Hidden>true</Hidden>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                      <TextAlign>General</TextAlign>
+                      <VerticalAlign>Top</VerticalAlign>
+                      <Color>#333333</Color>
+                      <ShadowColor>Transparent</ShadowColor>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                    <Position>TopCenter</Position>
+                    <DockOffset>0</DockOffset>
+                    <TextOrientation>Auto</TextOrientation>
+                  </ChartTitle>
+                </ChartTitles>
+                <Palette>Excel</Palette>
+                <ChartBorderSkin>
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                    <FontSize>8.5pt</FontSize>
+                    <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                    <Color>White</Color>
+                    <ShadowColor>Transparent</ShadowColor>
+                    <Border>
+                      <Color>LightGrey</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                  </Style>
+                </ChartBorderSkin>
+                <ChartNoDataMessage Name="NoDataMessage">
+                  <Caption>No Data Available</Caption>
+                  <Hidden>false</Hidden>
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                    <FontSize>8.5pt</FontSize>
+                    <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                    <Color>#333333</Color>
+                    <ShadowColor>Transparent</ShadowColor>
+                    <Border>
+                      <Color>LightGrey</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                  </Style>
+                  <Position>RightTop</Position>
+                  <DockOffset>0</DockOffset>
+                  <TextOrientation>Auto</TextOrientation>
+                </ChartNoDataMessage>
+              </Chart>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+          <Rectangle Name="Rectangle3">
+            <Left>7.5pt</Left>
+            <Top>7.5pt</Top>
+            <Height>247.5pt</Height>
+            <Width>277.5pt</Width>
+            <Style>
+              <BackgroundColor>#ffffff</BackgroundColor>
+              <Color />
+              <Border>
+                <Width>0.24750pt</Width>
+                <Color>LightGrey</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <Textbox Name="TextBox4">
+                <Left>3.75pt</Left>
+                <Top>7.50024pt</Top>
+                <Height>18.75023pt</Height>
+                <Width>175.5pt</Width>
+                <Style>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>LightGrey</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Patient Satisfaction by Department</Value>
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>10.5pt</FontSize>
+                          <Color>#604B7A</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <Chart Name="Chart1">
+                <Left>0pt</Left>
+                <Top>33.75pt</Top>
+                <Height>213.75pt</Height>
+                <Width>277.5pt</Width>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontSize>8.5pt</FontSize>
+                  <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                  <TextAlign>Center</TextAlign>
+                  <Color>#333333</Color>
+                  <ShadowColor>Transparent</ShadowColor>
+                  <Border>
+                    <Color>#ffffff</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <DataSetName>PatientDetails</DataSetName>
+                <ChartSeriesHierarchy>
+                  <ChartMembers>
+                    <ChartMember>
+                      <Label>Count of Customer FeedBack</Label>
+                    </ChartMember>
+                  </ChartMembers>
+                </ChartSeriesHierarchy>
+                <ChartCategoryHierarchy>
+                  <ChartMembers>
+                    <ChartMember>
+                      <Group Name="Chart1_CategoryGroup">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!Customer_FeedBack.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!Customer_FeedBack.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <Label>=Fields!Customer_FeedBack.Value</Label>
+                    </ChartMember>
+                  </ChartMembers>
+                </ChartCategoryHierarchy>
+                <ChartData>
+                  <ChartSeriesCollection>
+                    <ChartSeries Name="Customer_FeedBack">
+                      <ChartDataPoints>
+                        <ChartDataPoint>
+                          <ChartDataPointValues>
+                            <Y>=Count(Fields!Customer_FeedBack.Value)</Y>
+                          </ChartDataPointValues>
+                          <ChartDataLabel>
+                            <Style>
+                              <FontFamily>Segoe UI</FontFamily>
+                              <FontSize>8.25pt</FontSize>
+                              <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                              <Color />
+                              <ShadowColor>Transparent</ShadowColor>
+                              <Border>
+                                <Color>Transparent</Color>
+                                <Style>None</Style>
+                              </Border>
+                            </Style>
+                            <Label>#PERCENT</Label>
+                            <Visible>true</Visible>
+                            <Rotation>0</Rotation>
+                          </ChartDataLabel>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color />
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                          <ChartMarker>
+                            <Type>None</Type>
+                            <Size>6pt</Size>
+                            <Style>
+                              <FontFamily>Segoe UI</FontFamily>
+                              <FontSize>8.5pt</FontSize>
+                              <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                              <Color />
+                              <ShadowColor>Transparent</ShadowColor>
+                              <Border>
+                                <Color>Transparent</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                            </Style>
+                          </ChartMarker>
+                        </ChartDataPoint>
+                      </ChartDataPoints>
+                      <Type>Shape</Type>
+                      <Subtype>Doughnut</Subtype>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8.5pt</FontSize>
+                        <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                        <Color>#333333</Color>
+                        <ShadowColor>Transparent</ShadowColor>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                      <ChartMarker>
+                        <Type>None</Type>
+                        <Size>6pt</Size>
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8.5pt</FontSize>
+                          <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                          <Color />
+                          <ShadowColor>Transparent</ShadowColor>
+                          <Border>
+                            <Color>Transparent</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                      </ChartMarker>
+                      <CustomProperties>
+                        <CustomProperty>
+                          <Name>PieLabelStyle</Name>
+                          <Value>Outside</Value>
+                        </CustomProperty>
+                      </CustomProperties>
+                      <ValueAxisName>Primary</ValueAxisName>
+                      <CategoryAxisName>Primary</CategoryAxisName>
+                    </ChartSeries>
+                  </ChartSeriesCollection>
+                </ChartData>
+                <ChartAreas>
+                  <ChartArea Name="Default">
+                    <ChartCategoryAxes>
+                      <ChartAxis Name="Primary">
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8.5pt</FontSize>
+                          <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                          <Color>#333333</Color>
+                          <ShadowColor>Transparent</ShadowColor>
+                          <Border>
+                            <Color>#333333</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption />
+                          <Position>Center</Position>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <TextAlign>Center</TextAlign>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisTitle>
+                        <ChartMajorGridLines>
+                          <Enabled>False</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorGridLines>
+                        <ChartMinorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Dotted</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorGridLines>
+                        <ChartMajorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>1</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorTickMarks>
+                        <ChartMinorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>0.5</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorTickMarks>
+                        <Location>Default</Location>
+                        <InterlacedColor>Transparent</InterlacedColor>
+                        <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+                        <ChartAxisScaleBreak>
+                          <Enabled>False</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
+                          <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Gray</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                      <ChartAxis Name="Secondary">
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8.5pt</FontSize>
+                          <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                          <Color>#333333</Color>
+                          <ShadowColor>Transparent</ShadowColor>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption>Axis Title</Caption>
+                          <Position>Center</Position>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <TextAlign>Center</TextAlign>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisTitle>
+                        <ChartMajorGridLines>
+                          <Enabled>False</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorGridLines>
+                        <ChartMinorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Dotted</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorGridLines>
+                        <ChartMajorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>1</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorTickMarks>
+                        <ChartMinorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>0.5</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorTickMarks>
+                        <Location>Opposite</Location>
+                        <InterlacedColor>Transparent</InterlacedColor>
+                        <ChartAxisScaleBreak>
+                          <Enabled>False</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
+                          <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                    </ChartCategoryAxes>
+                    <ChartValueAxes>
+                      <ChartAxis Name="Primary">
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8.5pt</FontSize>
+                          <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                          <Color>#333333</Color>
+                          <ShadowColor>Transparent</ShadowColor>
+                          <Border>
+                            <Color>#333333</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption />
+                          <Position>Center</Position>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <TextAlign>Center</TextAlign>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisTitle>
+                        <ChartMajorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorGridLines>
+                        <ChartMinorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Dotted</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorGridLines>
+                        <ChartMajorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>1</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorTickMarks>
+                        <ChartMinorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>0.5</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorTickMarks>
+                        <Location>Default</Location>
+                        <InterlacedColor>Transparent</InterlacedColor>
+                        <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+                        <ChartAxisScaleBreak>
+                          <Enabled>False</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
+                          <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                      <ChartAxis Name="Secondary">
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8.5pt</FontSize>
+                          <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                          <Color>#333333</Color>
+                          <ShadowColor>Transparent</ShadowColor>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption>Axis Title</Caption>
+                          <Position>Center</Position>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <TextAlign>Center</TextAlign>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisTitle>
+                        <ChartMajorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorGridLines>
+                        <ChartMinorGridLines>
+                          <Enabled>Auto</Enabled>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>Gainsboro</Color>
+                              <Style>Dotted</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorGridLines>
+                        <ChartMajorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>1</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorTickMarks>
+                        <ChartMinorTickMarks>
+                          <Enabled>Auto</Enabled>
+                          <Type>Outside</Type>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>#333333</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <Length>0.5</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorTickMarks>
+                        <Location>Opposite</Location>
+                        <InterlacedColor>Transparent</InterlacedColor>
+                        <ChartAxisScaleBreak>
+                          <Enabled>False</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
+                          <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8.5pt</FontSize>
+                            <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                            <Color>#333333</Color>
+                            <ShadowColor>Transparent</ShadowColor>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                    </ChartValueAxes>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8.5pt</FontSize>
+                      <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                      <Color>#333333</Color>
+                      <ShadowColor>Transparent</ShadowColor>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                  </ChartArea>
+                </ChartAreas>
+                <ChartLegends>
+                  <ChartLegend Name="Default">
+                    <Hidden>false</Hidden>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontSize>8.25pt</FontSize>
+                      <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                      <Color />
+                      <ShadowColor>Transparent</ShadowColor>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                    <Position>BottomCenter</Position>
+                    <ChartLegendTitle>
+                      <Caption />
+                      <TitleSeparator>None</TitleSeparator>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8.5pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                        <TextAlign>Center</TextAlign>
+                        <Color>#333333</Color>
+                        <ShadowColor>Transparent</ShadowColor>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartLegendTitle>
+                    <AutoFitTextDisabled>true</AutoFitTextDisabled>
+                    <HeaderSeparator>None</HeaderSeparator>
+                    <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                    <ColumnSeparator>None</ColumnSeparator>
+                    <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+                    <ColumnSpacing>0</ColumnSpacing>
+                    <InterlacedRows>false</InterlacedRows>
+                    <InterlacedRowsColor>Transparent</InterlacedRowsColor>
+                    <EquallySpacedItems>false</EquallySpacedItems>
+                    <Reversed>Auto</Reversed>
+                    <TextWrapThreshold>0</TextWrapThreshold>
+                  </ChartLegend>
+                </ChartLegends>
+                <ChartTitles>
+                  <ChartTitle Name="Default">
+                    <Caption>Chart Title</Caption>
+                    <Hidden>true</Hidden>
+                    <Style>
+                      <FontFamily>Segoe UI</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                      <TextAlign>General</TextAlign>
+                      <VerticalAlign>Top</VerticalAlign>
+                      <Color>#333333</Color>
+                      <ShadowColor>Transparent</ShadowColor>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                    <Position>TopCenter</Position>
+                    <DockOffset>0</DockOffset>
+                    <TextOrientation>Auto</TextOrientation>
+                  </ChartTitle>
+                </ChartTitles>
+                <Palette>SeaGreen</Palette>
+                <ChartBorderSkin>
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                    <FontSize>8.5pt</FontSize>
+                    <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                    <Color>White</Color>
+                    <ShadowColor>Transparent</ShadowColor>
+                    <Border>
+                      <Color>LightGrey</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                  </Style>
+                </ChartBorderSkin>
+                <ChartNoDataMessage Name="NoDataMessage">
+                  <Caption>No Data Available</Caption>
+                  <Hidden>false</Hidden>
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                    <FontSize>8.5pt</FontSize>
+                    <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
+                    <Color>#333333</Color>
+                    <ShadowColor>Transparent</ShadowColor>
+                    <Border>
+                      <Color>LightGrey</Color>
+                      <Style>Solid</Style>
+                    </Border>
+                  </Style>
+                  <Position>RightTop</Position>
+                  <DockOffset>0</DockOffset>
+                  <TextOrientation>Auto</TextOrientation>
+                </ChartNoDataMessage>
+              </Chart>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+          <Rectangle Name="Rectangle4">
+            <Left>7.5pt</Left>
+            <Top>262.5pt</Top>
+            <Height>247.5pt</Height>
+            <Width>278.25pt</Width>
+            <Style>
+              <BackgroundColor>#ffffff</BackgroundColor>
+              <Color />
+              <Border>
+                <Width>0.24750pt</Width>
+                <Color>LightGrey</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <Textbox Name="TextBox5">
+                <Left>3.75pt</Left>
+                <Top>7.50024pt</Top>
+                <Height>18pt</Height>
+                <Width>147.75pt</Width>
+                <Style>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>LightGrey</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Patients Count by Department</Value>
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>10.5pt</FontSize>
+                          <Color>#604B7A</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <Tablix Name="Tablix1">
+                <Left>0.75000pt</Left>
+                <Top>33.75pt</Top>
+                <Height>60pt</Height>
+                <Width>276.75pt</Width>
+                <Style>
+                  <Color />
+                  <Border>
+                    <Color>#333333</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <DataSetName>PatientDetails</DataSetName>
+                <TablixBody>
+                  <TablixColumns>
+                    <TablixColumn>
+                      <Width>138.75pt</Width>
+                    </TablixColumn>
+                  </TablixColumns>
+                  <TablixRows>
+                    <TablixRow>
+                      <Height>30pt</Height>
+                      <TablixCells>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox_header_00">
+                              <Left>0in</Left>
+                              <Top>0in</Top>
+                              <Height>30pt</Height>
+                              <Width>138.75pt</Width>
+                              <Style>
+                                <BackgroundColor>#77a7fb</BackgroundColor>
+                                <TextAlign>Left</TextAlign>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <Color />
+                                <PaddingLeft>4pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </BottomBorder>
+                                <LeftBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </LeftBorder>
+                                <RightBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </RightBorder>
+                              </Style>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Patients Count</Value>
+                                      <Style>
+                                        <FontFamily>Segoe UI</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                        <TextAlign>Left</TextAlign>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <Color>white</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <Color />
+                                  </Style>
+                                  <SpaceBefore />
+                                  <SpaceAfter />
+                                </Paragraph>
+                              </Paragraphs>
+                            </Textbox>
+                            <ColSpan>1</ColSpan>
+                            <RowSpan>1</RowSpan>
+                          </CellContents>
+                        </TablixCell>
+                      </TablixCells>
+                    </TablixRow>
+                    <TablixRow>
+                      <Height>30pt</Height>
+                      <TablixCells>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox_data_10">
+                              <Left>0in</Left>
+                              <Top>0in</Top>
+                              <Height>30pt</Height>
+                              <Width>138.75pt</Width>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <Color />
+                                <PaddingLeft>4pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </BottomBorder>
+                                <LeftBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </LeftBorder>
+                                <RightBorder>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </RightBorder>
+                              </Style>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Count(Fields!Name.Value)</Value>
+                                      <Style>
+                                        <FontFamily>Segoe UI</FontFamily>
+                                        <TextAlign>Left</TextAlign>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <Color />
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <Color />
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                            </Textbox>
+                            <ColSpan>1</ColSpan>
+                            <RowSpan>1</RowSpan>
+                          </CellContents>
+                        </TablixCell>
+                      </TablixCells>
+                    </TablixRow>
+                  </TablixRows>
+                </TablixBody>
+                <TablixColumnHierarchy>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixColumnHierarchy>
+                <TablixRowHierarchy>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>138pt</Size>
+                        <CellContents>
+                          <Textbox Name="Textboxheader_row00">
+                            <Left>0in</Left>
+                            <Top>0in</Top>
+                            <Height>30pt</Height>
+                            <Width>138pt</Width>
+                            <Style>
+                              <BackgroundColor>#77a7fb</BackgroundColor>
+                              <TextAlign>Left</TextAlign>
+                              <VerticalAlign>Middle</VerticalAlign>
+                              <Color />
+                              <PaddingLeft>4pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                              <Border>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <TopBorder>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </TopBorder>
+                              <BottomBorder>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </BottomBorder>
+                              <LeftBorder>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </LeftBorder>
+                              <RightBorder>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </RightBorder>
+                            </Style>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>Department</Value>
+                                    <Style>
+                                      <FontFamily>Segoe UI</FontFamily>
+                                      <FontWeight>Bold</FontWeight>
+                                      <TextAlign>Left</TextAlign>
+                                      <VerticalAlign>Middle</VerticalAlign>
+                                      <Color>white</Color>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <Color />
+                                </Style>
+                                <SpaceBefore />
+                                <SpaceAfter />
+                              </Paragraph>
+                            </Paragraphs>
+                          </Textbox>
+                          <ColSpan>1</ColSpan>
+                          <RowSpan>1</RowSpan>
+                        </CellContents>
+                      </TablixHeader>
+                    </TablixMember>
+                    <TablixMember>
+                      <Group Name="Department">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!Department.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!Department.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixHeader>
+                        <Size>138pt</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox10">
+                            <Left>0in</Left>
+                            <Top>0in</Top>
+                            <Height>30pt</Height>
+                            <Width>138pt</Width>
+                            <Style>
+                              <BackgroundColor>white</BackgroundColor>
+                              <TextAlign>Left</TextAlign>
+                              <VerticalAlign>Middle</VerticalAlign>
+                              <Color />
+                              <PaddingLeft>4pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                              <Border>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <TopBorder>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </TopBorder>
+                              <BottomBorder>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </BottomBorder>
+                              <LeftBorder>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </LeftBorder>
+                              <RightBorder>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                                <Width>1pt</Width>
+                              </RightBorder>
+                            </Style>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!Department.Value</Value>
+                                    <Style>
+                                      <FontFamily>Segoe UI</FontFamily>
+                                      <TextAlign>Left</TextAlign>
+                                      <VerticalAlign>Middle</VerticalAlign>
+                                      <Color>black</Color>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <Color />
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                          </Textbox>
+                          <ColSpan>1</ColSpan>
+                          <RowSpan>1</RowSpan>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember />
+                      </TablixMembers>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixRowHierarchy>
+              </Tablix>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+        </ReportItems>
+        <Height>523.1641pt</Height>
+      </Body>
+      <Width>676.875pt</Width>
+      <Page>
+        <PageHeight>637.5pt</PageHeight>
+        <PageWidth>750.0002pt</PageWidth>
+        <PageHeader>
+          <Style>
+            <BackgroundColor>#ffffff</BackgroundColor>
+            <Color />
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+          <Height>37.5pt</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Rectangle Name="Rectangle5">
+              <Left>0pt</Left>
+              <Top>0pt</Top>
+              <Height>37.5pt</Height>
+              <Width>676.5pt</Width>
+              <Style>
+                <BackgroundColor>#555b63</BackgroundColor>
+                <Color />
+                <Border>
+                  <Color>Gray</Color>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+              <ReportItems>
+                <Textbox Name="TextBox7">
+                  <Left>7.5pt</Left>
+                  <Top>7.5pt</Top>
+                  <Height>22.5pt</Height>
+                  <Width>314.25pt</Width>
+                  <Style>
+                    <BackgroundColor>#555b63</BackgroundColor>
+                    <Color />
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <Border>
+                      <Color>gray</Color>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>Patient Experience Analysis (Random data)</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>13.5pt</FontSize>
+                            <Color>#FFFFFF</Color>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style>
+                        <Color />
+                      </Style>
+                      <SpaceBefore />
+                      <SpaceAfter />
+                    </Paragraph>
+                  </Paragraphs>
+                </Textbox>
+              </ReportItems>
+              <KeepTogether>true</KeepTogether>
+            </Rectangle>
+          </ReportItems>
+        </PageHeader>
+        <LeftMargin>36.00005pt</LeftMargin>
+        <RightMargin>36.00005pt</RightMargin>
+        <TopMargin>36.00005pt</TopMargin>
+        <BottomMargin>36.00005pt</BottomMargin>
+        <Style>
+          <Color />
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="ReportSampleDatabase">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=SampleDB;user id=demoreadonly@data-platform-demo;password=N@c)=Y8s*1&amp;dh</ConnectString>
+        <Prompt />
+        <rd:IsDesignState>true</rd:IsDesignState>
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="PatientDetails">
+      <Fields>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Age">
+          <DataField>Age</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Gender">
+          <DataField>Gender</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MailId">
+          <DataField>MailId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Department">
+          <DataField>Department</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Waiting_Time_mins">
+          <DataField>Waiting Time(mins)</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Consulting_Time_mins">
+          <DataField>Consulting Time(mins)</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Others_Spending_Time_mins">
+          <DataField>Others Spending Time(mins)</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Tolal_Stay_mins">
+          <DataField>Tolal Stay(mins)</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Date">
+          <DataField>Date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Customer_FeedBack">
+          <DataField>Customer FeedBack</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Paied_Amount($)">
+          <DataField>Paied Amount($)</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>ReportSampleDatabase</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>SELECT [dbo].[PatientAnalysis20151029175044676].[Name],
+[dbo].[PatientAnalysis20151029175044676].[Age],
+[dbo].[PatientAnalysis20151029175044676].[Gender],
+[dbo].[PatientAnalysis20151029175044676].[MailId],
+[dbo].[PatientAnalysis20151029175044676].[Department],
+[dbo].[PatientAnalysis20151029175044676].[Waiting Time(mins)],
+[dbo].[PatientAnalysis20151029175044676].[Consulting Time(mins)],
+[dbo].[PatientAnalysis20151029175044676].[Others Spending Time(mins)],
+[dbo].[PatientAnalysis20151029175044676].[Tolal Stay(mins)],
+[dbo].[PatientAnalysis20151029175044676].[Date],
+[dbo].[PatientAnalysis20151029175044676].[Customer FeedBack],
+[dbo].[PatientAnalysis20151029175044676].[Paied Amount($)] FROM [dbo].[PatientAnalysis20151029175044676]</CommandText>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:PageUnit>Px</rd:PageUnit>
+</Report>
