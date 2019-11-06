@@ -3,5 +3,6 @@
 .git
 bin/
 obj/
+wwwroot/bundles
 *.user
 *.log
