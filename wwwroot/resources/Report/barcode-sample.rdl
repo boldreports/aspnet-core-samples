@@ -1,0 +1,1320 @@
+<?xml version="1.0"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Style>
+          <FontSize>10.00001pt</FontSize>
+          <Color />
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+        <ReportItems>
+          <Rectangle Name="Rectangle11">
+            <Left>15.00001pt</Left>
+            <Top>135.0001pt</Top>
+            <Height>112.5001pt</Height>
+            <Width>202.5002pt</Width>
+            <Style>
+              <FontSize>10.00001pt</FontSize>
+              <Color />
+              <Border>
+                <Width>0.37500pt</Width>
+                <Color>#cccbcb</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <CustomReportItem Name="CustomItem10">
+                <Left>1.5pt</Left>
+                <Top>37.50003pt</Top>
+                <Height>60.00005pt</Height>
+                <Width>199.5002pt</Width>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>BarcodeValue</Name>
+                    <Value>01234567</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>BarcodeType</Name>
+                    <Value>Code128A</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>DisplayBarcodeText</Name>
+                    <Value>true</Value>
+                  </CustomProperty>
+                </CustomProperties>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <Type>barcode</Type>
+              </CustomReportItem>
+              <Textbox Name="TextBox22">
+                <Left>1.5pt</Left>
+                <Top>0pt</Top>
+                <Height>16.50001pt</Height>
+                <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>gray</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Code128A</Value>
+                        <Style>
+                          <FontSize>12.00001pt</FontSize>
+                          <Color>#179BD7</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <FontSize>10.00001pt</FontSize>
+                      <TextAlign>Center</TextAlign>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <Line Name="Line15">
+                <Left>15.00001pt</Left>
+                <Top>20.25002pt</Top>
+                <Height>0pt</Height>
+                <Width>172.5001pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Width>1.125pt</Width>
+                    <Color>#179bd7</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                </Style>
+              </Line>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+          <Rectangle Name="Rectangle13">
+            <Left>232.5002pt</Left>
+            <Top>135.0001pt</Top>
+            <Height>112.5001pt</Height>
+            <Width>202.5002pt</Width>
+            <Style>
+              <FontSize>10.00001pt</FontSize>
+              <Color />
+              <Border>
+                <Width>0.37500pt</Width>
+                <Color>#cccbcb</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <CustomReportItem Name="CustomItem11">
+                <Left>1.5pt</Left>
+                <Top>37.50003pt</Top>
+                <Height>60.00005pt</Height>
+                <Width>199.5002pt</Width>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>BarcodeValue</Name>
+                    <Value>01234567</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>BarcodeType</Name>
+                    <Value>Code128B</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>DisplayBarcodeText</Name>
+                    <Value>true</Value>
+                  </CustomProperty>
+                </CustomProperties>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <Type>barcode</Type>
+              </CustomReportItem>
+              <Textbox Name="TextBox19">
+                <Left>1.5pt</Left>
+                <Top>0pt</Top>
+                <Height>16.50001pt</Height>
+                <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>gray</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Code128B</Value>
+                        <Style>
+                          <FontSize>12.00001pt</FontSize>
+                          <Color>#179BD7</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <FontSize>10.00001pt</FontSize>
+                      <TextAlign>Center</TextAlign>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <Line Name="Line12">
+                <Left>15.00001pt</Left>
+                <Top>20.25002pt</Top>
+                <Height>0pt</Height>
+                <Width>172.5001pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Width>1.125pt</Width>
+                    <Color>#179bd7</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                </Style>
+              </Line>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+          <Rectangle Name="Rectangle16">
+            <Left>450.0004pt</Left>
+            <Top>135.0001pt</Top>
+            <Height>112.5001pt</Height>
+            <Width>202.5002pt</Width>
+            <Style>
+              <FontSize>10.00001pt</FontSize>
+              <Color />
+              <Border>
+                <Width>0.37500pt</Width>
+                <Color>#cccbcb</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <Textbox Name="TextBox16">
+                <Left>1.5pt</Left>
+                <Top>0pt</Top>
+                <Height>16.50001pt</Height>
+                <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>gray</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Code128C</Value>
+                        <Style>
+                          <FontSize>12.00001pt</FontSize>
+                          <Color>#179BD7</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <FontSize>10.00001pt</FontSize>
+                      <TextAlign>Center</TextAlign>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <CustomReportItem Name="CustomItem12">
+                <Left>1.5pt</Left>
+                <Top>37.50003pt</Top>
+                <Height>60.00005pt</Height>
+                <Width>199.5002pt</Width>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>BarcodeValue</Name>
+                    <Value>0123456789</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>BarcodeType</Name>
+                    <Value>Code128C</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>DisplayBarcodeText</Name>
+                    <Value>true</Value>
+                  </CustomProperty>
+                </CustomProperties>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <Type>barcode</Type>
+              </CustomReportItem>
+              <Line Name="Line11">
+                <Left>15.00001pt</Left>
+                <Top>20.25002pt</Top>
+                <Height>0pt</Height>
+                <Width>172.5001pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Width>1.125pt</Width>
+                    <Color>#179bd7</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                </Style>
+              </Line>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+          <Rectangle Name="Rectangle19">
+            <Left>232.5002pt</Left>
+            <Top>390.0003pt</Top>
+            <Height>112.5001pt</Height>
+            <Width>202.5002pt</Width>
+            <Style>
+              <FontSize>10.00001pt</FontSize>
+              <Color />
+              <Border>
+                <Width>0.37500pt</Width>
+                <Color>#cccbcb</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <CustomReportItem Name="CustomItem15">
+                <Left>1.5pt</Left>
+                <Top>37.50003pt</Top>
+                <Height>60.00005pt</Height>
+                <Width>199.5002pt</Width>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>BarcodeValue</Name>
+                    <Value>001234567895</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>BarcodeType</Name>
+                    <Value>UpcBarcode</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>DisplayBarcodeText</Name>
+                    <Value>true</Value>
+                  </CustomProperty>
+                </CustomProperties>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <Type>barcode</Type>
+              </CustomReportItem>
+              <Textbox Name="TextBox27">
+                <Left>1.5pt</Left>
+                <Top>0pt</Top>
+                <Height>16.50001pt</Height>
+                <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>gray</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>UPCA</Value>
+                        <Style>
+                          <FontSize>12.00001pt</FontSize>
+                          <Color>#179BD7</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <FontSize>10.00001pt</FontSize>
+                      <TextAlign>Center</TextAlign>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <Line Name="Line2">
+                <Left>15.00001pt</Left>
+                <Top>20.25002pt</Top>
+                <Height>0pt</Height>
+                <Width>172.5001pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Width>1.125pt</Width>
+                    <Color>#179bd7</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                </Style>
+              </Line>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+          <Rectangle Name="Rectangle1">
+            <Left>232.5002pt</Left>
+            <Top>7.50001pt</Top>
+            <Height>112.5001pt</Height>
+            <Width>202.5002pt</Width>
+            <Style>
+              <FontSize>10.00001pt</FontSize>
+              <Color />
+              <Border>
+                <Width>0.37500pt</Width>
+                <Color>#cccbcb</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <CustomReportItem Name="CustomItem5">
+                <Left>60.00007pt</Left>
+                <Top>26.25002pt</Top>
+                <Height>82.50007pt</Height>
+                <Width>82.50007pt</Width>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>BarcodeValue</Name>
+                    <Value>012345673</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>BarcodeType</Name>
+                    <Value>qrbarcode</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>DisplayBarcodeText</Name>
+                    <Value>true</Value>
+                  </CustomProperty>
+                </CustomProperties>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <Type>qrbarcode</Type>
+              </CustomReportItem>
+              <Textbox Name="TextBox34">
+                <Left>1.5pt</Left>
+                <Top>0pt</Top>
+                <Height>16.50001pt</Height>
+                <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>gray</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>QR Code</Value>
+                        <Style>
+                          <FontSize>12.00001pt</FontSize>
+                          <Color>#179BD7</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <FontSize>10.00001pt</FontSize>
+                      <TextAlign>Center</TextAlign>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <Line Name="Line13">
+                <Left>15.00001pt</Left>
+                <Top>20.25002pt</Top>
+                <Height>0pt</Height>
+                <Width>172.5001pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Width>1.125pt</Width>
+                    <Color>#179bd7</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                </Style>
+              </Line>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+          <Rectangle Name="Rectangle21">
+            <Left>450.0004pt</Left>
+            <Top>390.0003pt</Top>
+            <Height>112.5001pt</Height>
+            <Width>202.5002pt</Width>
+            <Style>
+              <FontSize>10.00001pt</FontSize>
+              <Color />
+              <Border>
+                <Width>0.37500pt</Width>
+                <Color>#cccbcb</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <CustomReportItem Name="CustomItem13">
+                <Left>1.5pt</Left>
+                <Top>37.50003pt</Top>
+                <Height>60.00005pt</Height>
+                <Width>199.5002pt</Width>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>BarcodeValue</Name>
+                    <Value>1234567823560</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>BarcodeType</Name>
+                    <Value>EAN-13</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>DisplayBarcodeText</Name>
+                    <Value>true</Value>
+                  </CustomProperty>
+                </CustomProperties>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <Type>barcode</Type>
+              </CustomReportItem>
+              <Textbox Name="TextBox33">
+                <Left>1.5pt</Left>
+                <Top>0pt</Top>
+                <Height>16.50001pt</Height>
+                <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>gray</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>EAN-13</Value>
+                        <Style>
+                          <FontSize>12.00001pt</FontSize>
+                          <Color>#179BD7</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <FontSize>10.00001pt</FontSize>
+                      <TextAlign>Center</TextAlign>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <Line Name="Line9">
+                <Left>15.00001pt</Left>
+                <Top>20.25002pt</Top>
+                <Height>0pt</Height>
+                <Width>172.5001pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Width>1.125pt</Width>
+                    <Color>#179bd7</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                </Style>
+              </Line>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+          <Rectangle Name="Rectangle23">
+            <Left>450.0004pt</Left>
+            <Top>262.5002pt</Top>
+            <Height>112.5001pt</Height>
+            <Width>202.5002pt</Width>
+            <Style>
+              <FontSize>10.00001pt</FontSize>
+              <Color />
+              <Border>
+                <Width>0.37500pt</Width>
+                <Color>#cccbcb</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <CustomReportItem Name="CustomItem16">
+                <Left>1.5pt</Left>
+                <Top>37.50003pt</Top>
+                <Height>60.00005pt</Height>
+                <Width>199.5002pt</Width>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>BarcodeValue</Name>
+                    <Value>A123456B</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>BarcodeType</Name>
+                    <Value>Codabar</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>DisplayBarcodeText</Name>
+                    <Value>true</Value>
+                  </CustomProperty>
+                </CustomProperties>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <Type>barcode</Type>
+              </CustomReportItem>
+              <Textbox Name="TextBox31">
+                <Left>1.5pt</Left>
+                <Top>0pt</Top>
+                <Height>16.50001pt</Height>
+                <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>gray</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Codabar</Value>
+                        <Style>
+                          <FontSize>12.00001pt</FontSize>
+                          <Color>#179BD7</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <FontSize>10.00001pt</FontSize>
+                      <TextAlign>Center</TextAlign>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <Line Name="Line8">
+                <Left>15.00001pt</Left>
+                <Top>20.25002pt</Top>
+                <Height>0pt</Height>
+                <Width>172.5001pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Width>1.125pt</Width>
+                    <Color>#179bd7</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                </Style>
+              </Line>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+          <Rectangle Name="Rectangle24">
+            <Left>15.00001pt</Left>
+            <Top>390.0003pt</Top>
+            <Height>112.5001pt</Height>
+            <Width>202.5002pt</Width>
+            <Style>
+              <FontSize>10.00001pt</FontSize>
+              <Color />
+              <Border>
+                <Width>0.37500pt</Width>
+                <Color>#cccbcb</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <CustomReportItem Name="CustomItem17">
+                <Left>1.5pt</Left>
+                <Top>37.50003pt</Top>
+                <Height>60.00005pt</Height>
+                <Width>199.5002pt</Width>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>BarcodeValue</Name>
+                    <Value>0123456789</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>BarcodeType</Name>
+                    <Value>Interleaved 2 of 5</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>DisplayBarcodeText</Name>
+                    <Value>true</Value>
+                  </CustomProperty>
+                </CustomProperties>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <Type>barcode</Type>
+              </CustomReportItem>
+              <Textbox Name="TextBox28">
+                <Left>1.5pt</Left>
+                <Top>0pt</Top>
+                <Height>16.50001pt</Height>
+                <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>gray</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Interleaved 2 of 5</Value>
+                        <Style>
+                          <FontSize>12.00001pt</FontSize>
+                          <Color>#179BD7</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <FontSize>10.00001pt</FontSize>
+                      <TextAlign>Center</TextAlign>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <Line Name="Line5">
+                <Left>15.00001pt</Left>
+                <Top>20.25002pt</Top>
+                <Height>0pt</Height>
+                <Width>172.5001pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Width>1.125pt</Width>
+                    <Color>#179bd7</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                </Style>
+              </Line>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+          <Rectangle Name="Rectangle28">
+            <Left>15.00001pt</Left>
+            <Top>7.50001pt</Top>
+            <Height>112.5001pt</Height>
+            <Width>202.5002pt</Width>
+            <Style>
+              <FontSize>10.00001pt</FontSize>
+              <Color />
+              <Border>
+                <Width>0.37500pt</Width>
+                <Color>#cccbcb</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <Textbox Name="TextBox18">
+                <Left>1.5pt</Left>
+                <Top>0pt</Top>
+                <Height>16.50001pt</Height>
+                <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>gray</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>QR Code</Value>
+                        <Style>
+                          <FontSize>12.00001pt</FontSize>
+                          <Color>#179BD7</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <FontSize>10.00001pt</FontSize>
+                      <TextAlign>Center</TextAlign>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <CustomReportItem Name="CustomItem21">
+                <Left>60.00005pt</Left>
+                <Top>30.00002pt</Top>
+                <Height>75.00006pt</Height>
+                <Width>75.00006pt</Width>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>BarcodeValue</Name>
+                    <Value>https://reportserver.syncfusion.com</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>BarcodeType</Name>
+                    <Value>qrbarcode</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>DisplayBarcodeText</Name>
+                    <Value>false</Value>
+                  </CustomProperty>
+                </CustomProperties>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <Type>qrbarcode</Type>
+              </CustomReportItem>
+              <Line Name="Line10">
+                <Left>15.00001pt</Left>
+                <Top>20.25002pt</Top>
+                <Height>0pt</Height>
+                <Width>172.5001pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Width>1.125pt</Width>
+                    <Color>#179bd7</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                </Style>
+              </Line>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+          <Rectangle Name="Rectangle18">
+            <Left>232.5002pt</Left>
+            <Top>262.5002pt</Top>
+            <Height>112.5001pt</Height>
+            <Width>202.5002pt</Width>
+            <Style>
+              <FontSize>10.00001pt</FontSize>
+              <Color />
+              <Border>
+                <Width>0.37500pt</Width>
+                <Color>#cccbcb</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <Textbox Name="TextBox3">
+                <Left>1.5pt</Left>
+                <Top>0pt</Top>
+                <Height>16.50001pt</Height>
+                <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>gray</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Code39 Extended</Value>
+                        <Style>
+                          <FontSize>12.00001pt</FontSize>
+                          <Color>#179BD7</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <FontSize>10.00001pt</FontSize>
+                      <TextAlign>Center</TextAlign>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <CustomReportItem Name="CustomItem7">
+                <Left>1.5pt</Left>
+                <Top>37.50003pt</Top>
+                <Height>60.00005pt</Height>
+                <Width>199.5002pt</Width>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>BarcodeValue</Name>
+                    <Value>0123456</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>BarcodeType</Name>
+                    <Value>Code39Extended</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>DisplayBarcodeText</Name>
+                    <Value>true</Value>
+                  </CustomProperty>
+                </CustomProperties>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <Type>barcode</Type>
+              </CustomReportItem>
+              <Line Name="Line7">
+                <Left>15.00001pt</Left>
+                <Top>20.25002pt</Top>
+                <Height>0pt</Height>
+                <Width>172.5001pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Width>1.125pt</Width>
+                    <Color>#179bd7</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                </Style>
+              </Line>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+          <Rectangle Name="Rectangle4">
+            <Left>450.0004pt</Left>
+            <Top>7.50001pt</Top>
+            <Height>112.5001pt</Height>
+            <Width>202.5002pt</Width>
+            <Style>
+              <FontSize>10.00001pt</FontSize>
+              <Color />
+              <Border>
+                <Width>0.37500pt</Width>
+                <Color>#cccbcb</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <Textbox Name="TextBox20">
+                <Left>1.5pt</Left>
+                <Top>0pt</Top>
+                <Height>16.50001pt</Height>
+                <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>gray</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Code93</Value>
+                        <Style>
+                          <FontSize>12.00001pt</FontSize>
+                          <Color>#179BD7</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <FontSize>10.00001pt</FontSize>
+                      <TextAlign>Center</TextAlign>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <CustomReportItem Name="CustomItem8">
+                <Left>1.5pt</Left>
+                <Top>37.50003pt</Top>
+                <Height>60.00005pt</Height>
+                <Width>199.5002pt</Width>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>BarcodeValue</Name>
+                    <Value>123456789</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>BarcodeType</Name>
+                    <Value>Code93</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>DisplayBarcodeText</Name>
+                    <Value>true</Value>
+                  </CustomProperty>
+                </CustomProperties>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <Type>barcode</Type>
+              </CustomReportItem>
+              <Line Name="Line14">
+                <Left>15.00001pt</Left>
+                <Top>20.25002pt</Top>
+                <Height>0pt</Height>
+                <Width>172.5001pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Width>1.125pt</Width>
+                    <Color>#179bd7</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                </Style>
+              </Line>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+          <Rectangle Name="Rectangle5">
+            <Left>15.00001pt</Left>
+            <Top>262.5002pt</Top>
+            <Height>112.5001pt</Height>
+            <Width>202.5002pt</Width>
+            <Style>
+              <FontSize>10.00001pt</FontSize>
+              <Color />
+              <Border>
+                <Width>0.37500pt</Width>
+                <Color>#cccbcb</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+            <ReportItems>
+              <CustomReportItem Name="CustomItem6">
+                <Left>1.5pt</Left>
+                <Top>37.50003pt</Top>
+                <Height>60.00005pt</Height>
+                <Width>199.5002pt</Width>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>BarcodeValue</Name>
+                    <Value>01234567</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>BarcodeType</Name>
+                    <Value>Code39</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>DisplayBarcodeText</Name>
+                    <Value>true</Value>
+                  </CustomProperty>
+                </CustomProperties>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <Type>barcode</Type>
+              </CustomReportItem>
+              <Textbox Name="TextBox15">
+                <Left>1.5pt</Left>
+                <Top>0pt</Top>
+                <Height>16.50001pt</Height>
+                <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>gray</Color>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Code39</Value>
+                        <Style>
+                          <FontSize>12.00001pt</FontSize>
+                          <Color>#179BD7</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <FontSize>10.00001pt</FontSize>
+                      <TextAlign>Center</TextAlign>
+                      <Color />
+                    </Style>
+                    <SpaceBefore />
+                    <SpaceAfter />
+                  </Paragraph>
+                </Paragraphs>
+              </Textbox>
+              <Line Name="Line6">
+                <Left>15.00001pt</Left>
+                <Top>20.25002pt</Top>
+                <Height>0pt</Height>
+                <Width>172.5001pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Color />
+                  <Border>
+                    <Width>1.125pt</Width>
+                    <Color>#179bd7</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                </Style>
+              </Line>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+          </Rectangle>
+        </ReportItems>
+        <Height>518.2504pt</Height>
+      </Body>
+      <Width>669pt</Width>
+      <Page>
+        <PageHeight>792pt</PageHeight>
+        <PageWidth>745.5pt</PageWidth>
+        <PageHeader>
+          <Style>
+            <FontSize>10.00001pt</FontSize>
+            <Color />
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+          <Height>37.5pt</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Rectangle Name="Rectangle2">
+              <Left>0pt</Left>
+              <Top>0pt</Top>
+              <Height>37.50003pt</Height>
+              <Width>669.0005pt</Width>
+              <Style>
+                <BackgroundColor>#555b63</BackgroundColor>
+                <FontSize>10.00001pt</FontSize>
+                <Color />
+                <Border>
+                  <Color>Gray</Color>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+              <ReportItems>
+                <Textbox Name="TextBox4">
+                  <Left>15pt</Left>
+                  <Top>4.875pt</Top>
+                  <Height>23.25pt</Height>
+                  <Width>120.75pt</Width>
+                  <Style>
+                    <BackgroundColor>#555b63</BackgroundColor>
+                    <Color />
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <Border>
+                      <Color>gray</Color>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>Barcode Types</Value>
+                          <Style>
+                            <FontSize>15pt</FontSize>
+                            <Color>#FFFFFF</Color>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style>
+                        <Color />
+                      </Style>
+                      <SpaceBefore />
+                      <SpaceAfter />
+                    </Paragraph>
+                  </Paragraphs>
+                </Textbox>
+              </ReportItems>
+              <KeepTogether>true</KeepTogether>
+            </Rectangle>
+          </ReportItems>
+        </PageHeader>
+        <LeftMargin>37.5pt</LeftMargin>
+        <RightMargin>37.5pt</RightMargin>
+        <TopMargin>37.5pt</TopMargin>
+        <BottomMargin>37.5pt</BottomMargin>
+        <Style>
+          <FontSize>10.00001pt</FontSize>
+          <Color />
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <AutoRefresh>0</AutoRefresh>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:PageUnit>Px</rd:PageUnit>
+</Report>

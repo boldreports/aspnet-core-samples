@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>ReportSampleDatabase</DataSourceReference>
+      <CommandText>SELECT [dbo].[PatientAnalysis20151029175044676].[Name],
+[dbo].[PatientAnalysis20151029175044676].[Age],
+[dbo].[PatientAnalysis20151029175044676].[Gender],
+[dbo].[PatientAnalysis20151029175044676].[MailId],
+[dbo].[PatientAnalysis20151029175044676].[Department],
+[dbo].[PatientAnalysis20151029175044676].[Waiting Time(mins)],
+[dbo].[PatientAnalysis20151029175044676].[Consulting Time(mins)],
+[dbo].[PatientAnalysis20151029175044676].[Others Spending Time(mins)],
+[dbo].[PatientAnalysis20151029175044676].[Tolal Stay(mins)],
+[dbo].[PatientAnalysis20151029175044676].[Date],
+[dbo].[PatientAnalysis20151029175044676].[Customer FeedBack],
+[dbo].[PatientAnalysis20151029175044676].[Paied Amount($)] FROM [dbo].[PatientAnalysis20151029175044676]</CommandText>
+      <CommandType>Text</CommandType>
+    </Query>
+    <Fields>
+      <Field Name="Name">
+        <DataField>Name</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Age">
+        <DataField>Age</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Gender">
+        <DataField>Gender</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="MailId">
+        <DataField>MailId</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Department">
+        <DataField>Department</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Waiting_Time_mins_">
+        <DataField>Waiting Time(mins)</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Consulting_Time_mins_">
+        <DataField>Consulting Time(mins)</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Others_Spending_Time_mins_">
+        <DataField>Others Spending Time(mins)</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Tolal_Stay_mins_">
+        <DataField>Tolal Stay(mins)</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Date">
+        <DataField>Date</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Customer_FeedBack">
+        <DataField>Customer FeedBack</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Paied_Amount___">
+        <DataField>Paied Amount($)</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+    </Fields>
+    <QueryParameters />
+  </DataSet>
+</SharedDataSet>
