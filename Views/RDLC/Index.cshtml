@@ -11,7 +11,10 @@
             let reportName = getReportName();
             designerInst.setModel({
                 reportType: 'RDLC',
-                previewReport: previewReport
+                previewReport: previewReport,
+                previewOptions: {
+                    exportItemClick: "onExportItemClick"
+                }
             });
             if (reportName) {
                 designerInst.openReport(reportName);
