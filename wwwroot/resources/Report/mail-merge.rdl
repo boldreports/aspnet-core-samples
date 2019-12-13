@@ -653,7 +653,7 @@
                                     <Image Name="Image2">
                                       <Left>0.50000in</Left>
                                       <Top>0.08333in</Top>
-                                      <Value>="https://reports.syncfusion.com/demos/Images/" +Fields!FirstName.Value+ " " +Fields!LastName.Value +".png"</Value>
+                                      <Value>="https://demos.boldreports.com/Images/" +Fields!FirstName.Value+ " " +Fields!LastName.Value +".png"</Value>
                                       <Height>1.34375in</Height>
                                       <Width>1.375in</Width>
                                       <ZIndex>1</ZIndex>

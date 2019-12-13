@@ -158,8 +158,7 @@
     padding: 10px;
     font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif", "-apple-system", "BlinkMacSystemFont";
     overflow: auto;
-    min-height: 320px;
-    max-height: 500px;
+    height: 320px;
     font-size: 13px;
     font-weight: 400;
 }

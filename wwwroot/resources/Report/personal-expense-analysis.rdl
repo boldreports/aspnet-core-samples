@@ -48,27 +48,27 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>﻿</Value>
+                        <Value></Value>
                         <Style>
                           <FontSize>0.28000in</FontSize>
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value>﻿</Value>
-                        <Style>
-                          <FontSize>0.28000in</FontSize>
-                          <Color>black</Color>
-                        </Style>
-                      </TextRun>
-                      <TextRun>
-                        <Value>﻿</Value>
+                        <Value></Value>
                         <Style>
                           <FontSize>0.28000in</FontSize>
                           <Color>black</Color>
                         </Style>
                       </TextRun>
                       <TextRun>
-                        <Value>﻿</Value>
+                        <Value></Value>
+                        <Style>
+                          <FontSize>0.28000in</FontSize>
+                          <Color>black</Color>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value></Value>
                         <Style>
                           <FontSize>0.28000in</FontSize>
                           <Color>black</Color>
@@ -103,7 +103,7 @@
                 <Left>1.21823in</Left>
                 <Top>0.52083in</Top>
                 <Height>0.28125in</Height>
-                <Width>1.22906in</Width>
+                <Width>1.58317in</Width>
                 <Style>
                   <FontSize>0.13889in</FontSize>
                   <PaddingLeft>0.02778in</PaddingLeft>
@@ -149,7 +149,7 @@
                 <Left>1.21823in</Left>
                 <Top>0.79167in</Top>
                 <Height>0.22917in</Height>
-                <Width>1.69771in</Width>
+                <Width>1.81217in</Width>
                 <Style>
                   <FontSize>0.13889in</FontSize>
                   <PaddingLeft>0.02778in</PaddingLeft>
@@ -191,21 +191,19 @@
                   </Paragraph>
                 </Paragraphs>
               </Textbox>
-              <Image Name="Image2">
-                <Left>0.07000in</Left>
-                <Top>0.06000in</Top>
-                <Value>https://reports.syncfusion.com/demos/Images/RobertKing.png</Value>
-                <Height>1.09375in</Height>
-                <Width>1.08301in</Width>
+              <Image Name="Image1">
+                <Left>0.08000in</Left>
+                <Top>0.08382in</Top>
+                <Value>Profile_Image</Value>
+                <Height>1.04167in</Height>
+                <Width>1.04167in</Width>
                 <Visibility />
                 <Style>
-                  <FontSize>0.13889in</FontSize>
                   <Border>
-                    <Color>#f16667</Color>
                     <Style>None</Style>
                   </Border>
                 </Style>
-                <Source>External</Source>
+                <Source>Embedded</Source>
                 <Sizing>FitProportional</Sizing>
               </Image>
             </ReportItems>

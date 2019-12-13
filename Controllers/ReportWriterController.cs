@@ -49,6 +49,27 @@ namespace ReportsCoreSamples.Controllers
 
                 FileStream inputStream = new FileStream(basePath + @"\Resources\Report\" + reportName + ".rdl", FileMode.Open, FileAccess.Read);
                 reportWriter.LoadReport(inputStream);
+
+                reportWriter.ExportResources.Scripts = new List<string>
+                {
+                    basePath+ @"\Scripts\bold-reports\common\bold.reports.common.min.js",
+                    basePath+ @"\Scripts\bold-reports\common\bold.reports.widgets.min.js",
+                    //Chart component script
+                    basePath+ @"\Scripts\bold-reports\data-visualization\ej.chart.min.js",
+                    //Gauge component scripts
+                    basePath+ @"\Scripts\bold-reports\data-visualization\ej.lineargauge.min.js",
+                    basePath+ @"\Scripts\bold-reports\data-visualization\ej.circulargauge.min.js",
+                    //Map component script
+                    basePath+ @"\Scripts\bold-reports\data-visualization\ej.map.min.js",
+                    //Report Viewer Script
+                    basePath+ @"\Scripts\bold-reports\bold.report-viewer.min.js"
+                };
+                
+                reportWriter.ExportResources.DependentScripts = new List<string>
+                {
+                    basePath+ @"\dependent\jquery.min.js"
+                };
+
                 if (type == "pdf")
                 {
                     fileName += ".pdf";
