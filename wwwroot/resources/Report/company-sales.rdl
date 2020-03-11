@@ -90,7 +90,6 @@ GROUP BY    DATEPART(yy, SOH.OrderDate), PC.Name, PS.Name, 'Q' + DATENAME(qq, SO
                   <TablixCornerCell>
                     <CellContents>
                       <Textbox Name="Textbox5">
-                        <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
@@ -124,7 +123,6 @@ GROUP BY    DATEPART(yy, SOH.OrderDate), PC.Name, PS.Name, 'Q' + DATENAME(qq, SO
                   <TablixCornerCell>
                     <CellContents>
                       <Textbox Name="Textbox6">
-                        <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>
@@ -154,7 +152,6 @@ GROUP BY    DATEPART(yy, SOH.OrderDate), PC.Name, PS.Name, 'Q' + DATENAME(qq, SO
                   <TablixCornerCell>
                     <CellContents>
                       <Textbox Name="Textbox7">
-                        <CanGrow>true</CanGrow>
                         <KeepTogether>true</KeepTogether>
                         <Paragraphs>
                           <Paragraph>

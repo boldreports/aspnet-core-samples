@@ -837,7 +837,6 @@ Group by [dbo].[Categories].[CategoryName]</CommandText>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox1_Tablix2_ProductName">
-                              <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -897,7 +896,6 @@ Group by [dbo].[Categories].[CategoryName]</CommandText>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox3_Tablix2_CompanyName">
-                              <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -957,7 +955,6 @@ Group by [dbo].[Categories].[CategoryName]</CommandText>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox5_Tablix2_Sales_Amount">
-                              <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -1017,7 +1014,6 @@ Group by [dbo].[Categories].[CategoryName]</CommandText>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox7_Tablix2_UnitsOnOrder">
-                              <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -1077,7 +1073,6 @@ Group by [dbo].[Categories].[CategoryName]</CommandText>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox9_Tablix2_Quantity">
-                              <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -1137,7 +1132,6 @@ Group by [dbo].[Categories].[CategoryName]</CommandText>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox11_Tablix2_UnitsInStock">
-                              <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -1202,7 +1196,6 @@ Group by [dbo].[Categories].[CategoryName]</CommandText>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox2_Tablix2">
-                              <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -1259,7 +1252,6 @@ Group by [dbo].[Categories].[CategoryName]</CommandText>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox4_Tablix2">
-                              <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -1316,7 +1308,6 @@ Group by [dbo].[Categories].[CategoryName]</CommandText>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox6_Tablix2">
-                              <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -1374,7 +1365,6 @@ Group by [dbo].[Categories].[CategoryName]</CommandText>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox8_Tablix2">
-                              <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -1431,7 +1421,6 @@ Group by [dbo].[Categories].[CategoryName]</CommandText>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox10_Tablix2">
-                              <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
@@ -1488,7 +1477,6 @@ Group by [dbo].[Categories].[CategoryName]</CommandText>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox12_Tablix2">
-                              <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>

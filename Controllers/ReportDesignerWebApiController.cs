@@ -30,25 +30,6 @@ namespace ReportsCoreSamples.Controllers
             ReportDesignerHelper.ReportingServer = this.Server = externalServer;
         }
 
-        public string GetFilePath(string fileName)
-        {
-            string targetFolder = this._hostingEnvironment.WebRootPath + "\\";
-            targetFolder += "Cache";
-
-            if (!System.IO.Directory.Exists(targetFolder))
-            {
-                System.IO.Directory.CreateDirectory(targetFolder);
-            }
-
-            if (!System.IO.Directory.Exists(targetFolder + "\\" + ReportDesignerHelper.EJReportDesignerToken))
-            {
-                System.IO.Directory.CreateDirectory(targetFolder + "\\" + ReportDesignerHelper.EJReportDesignerToken);
-            }
-
-            var folderPath = targetFolder + "\\" + ReportDesignerHelper.EJReportDesignerToken + "\\";
-            return folderPath + fileName;
-        }
-
         [ActionName("GetImage")]
         [AcceptVerbs("GET")]
         public object GetImage(string key, string image)
@@ -104,10 +85,15 @@ namespace ReportsCoreSamples.Controllers
             return ReportHelper.ProcessReport(jsonResult, this, this._cache);
         }
 
-        public bool UploadFile(IFormFile httpPostedFile)
+        [HttpPost]
+        public void UploadReportAction()
+        {
+            ReportDesignerHelper.ProcessDesigner(null, this, this.Request.Form.Files[0], this._cache);
+        }
+
+        private string GetFilePath(string itemName, string key)
         {
             string targetFolder = this._hostingEnvironment.WebRootPath + "\\";
-            string fileName = !string.IsNullOrEmpty(ReportDesignerHelper.SaveFileName) ? ReportDesignerHelper.SaveFileName : System.IO.Path.GetFileName(httpPostedFile.FileName);
             targetFolder += "Cache";
 
             if (!System.IO.Directory.Exists(targetFolder))
@@ -115,40 +101,68 @@ namespace ReportsCoreSamples.Controllers
                 System.IO.Directory.CreateDirectory(targetFolder);
             }
 
-            if (!System.IO.Directory.Exists(targetFolder + "\\" + ReportDesignerHelper.EJReportDesignerToken))
+            if (!System.IO.Directory.Exists(targetFolder + "\\" + key))
             {
-                System.IO.Directory.CreateDirectory(targetFolder + "\\" + ReportDesignerHelper.EJReportDesignerToken);
+                System.IO.Directory.CreateDirectory(targetFolder + "\\" + key);
             }
 
-            using (System.IO.MemoryStream stream = new System.IO.MemoryStream())
+            return targetFolder + "\\" + key + "\\" + itemName;
+        }
+
+        public bool SetData(string key, string itemId, ItemInfo itemData, out string errMsg)
+        {
+            errMsg = string.Empty;
+            try
             {
-                httpPostedFile.OpenReadStream().CopyTo(stream);
-                byte[] bytes = stream.ToArray();
-                if (System.IO.File.Exists(targetFolder + "\\" + ReportDesignerHelper.EJReportDesignerToken + "\\" + fileName))
+                if (itemData.Data != null)
                 {
-                    System.IO.File.Delete(targetFolder + "\\" + ReportDesignerHelper.EJReportDesignerToken + "\\" + fileName);
+                    System.IO.File.WriteAllBytes(this.GetFilePath(itemId, key), itemData.Data);
                 }
-                System.IO.File.WriteAllBytes(targetFolder + "\\" + ReportDesignerHelper.EJReportDesignerToken + "\\" + fileName, bytes);
-                stream.Close();
-                stream.Dispose();
+                else if (itemData.PostedFile != null)
+                {
+                    var fileName = itemId;
+                    if (string.IsNullOrEmpty(itemId))
+                    {
+                        fileName = System.IO.Path.GetFileName(itemData.PostedFile.FileName);
+                    }
+
+                    using (System.IO.MemoryStream stream = new System.IO.MemoryStream())
+                    {
+                        itemData.PostedFile.OpenReadStream().CopyTo(stream);
+                        byte[] bytes = stream.ToArray();
+                        var writePath = this.GetFilePath(fileName, key);
+
+                        if (System.IO.File.Exists(writePath))
+                        {
+                            System.IO.File.Delete(writePath);
+                        }
+
+                        System.IO.File.WriteAllBytes(writePath, bytes);
+                        stream.Close();
+                        stream.Dispose();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                errMsg = ex.Message;
+                return false;
             }
             return true;
         }
 
-        [HttpPost]
-        public void UploadReportAction()
+        public ResourceInfo GetData(string key, string itemId)
         {
-            ReportDesignerHelper.ProcessDesigner(null, this, this.Request.Form.Files[0], this._cache);
-        }
-
-        public FileModel GetFile(string filename, bool isOverride)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<FileModel> GetFiles(FileType fileType)
-        {
-            throw new NotImplementedException();
+            var resource = new ResourceInfo();
+            try
+            {
+                resource.Data = System.IO.File.ReadAllBytes(this.GetFilePath(itemId, key));
+            }
+            catch (Exception ex)
+            {
+                resource.ErrorMessage = ex.Message;
+            }
+            return resource;
         }
     }
 
