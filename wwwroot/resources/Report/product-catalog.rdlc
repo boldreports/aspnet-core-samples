@@ -395,7 +395,6 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                           <Style>Solid</Style>
                         </Border>
                       </Style>
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -442,7 +441,6 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                           <Style>Solid</Style>
                         </Border>
                       </Style>
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -489,7 +487,6 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                           <Style>Solid</Style>
                         </Border>
                       </Style>
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -536,7 +533,6 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                           <Style>Solid</Style>
                         </Border>
                       </Style>
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -583,7 +579,6 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                           <Style>Solid</Style>
                         </Border>
                       </Style>
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -635,7 +630,6 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                           <Style>Solid</Style>
                         </Border>
                       </Style>
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -678,7 +672,6 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                           <Style>Solid</Style>
                         </Border>
                       </Style>
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -721,7 +714,6 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                           <Style>Solid</Style>
                         </Border>
                       </Style>
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -764,7 +756,6 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                           <Style>Solid</Style>
                         </Border>
                       </Style>
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -807,7 +798,6 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                           <Style>Solid</Style>
                         </Border>
                       </Style>
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>

@@ -2464,7 +2464,6 @@
                               <Width>1pt</Width>
                             </RightBorder>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -2531,7 +2530,6 @@
                               <Width>1pt</Width>
                             </RightBorder>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -2598,7 +2596,6 @@
                               <Width>1pt</Width>
                             </RightBorder>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -2665,7 +2662,6 @@
                               <Width>1pt</Width>
                             </RightBorder>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -2732,7 +2728,6 @@
                               <Width>1pt</Width>
                             </RightBorder>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -2799,7 +2794,6 @@
                               <Width>1pt</Width>
                             </RightBorder>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -2871,7 +2865,6 @@
                               <Width>1pt</Width>
                             </RightBorder>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -2939,7 +2932,6 @@
                               <Width>1pt</Width>
                             </RightBorder>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -3007,7 +2999,6 @@
                               <Width>1pt</Width>
                             </RightBorder>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -3074,7 +3065,6 @@
                               <Width>1pt</Width>
                             </RightBorder>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -3141,7 +3131,6 @@
                               <Width>1pt</Width>
                             </RightBorder>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -3208,7 +3197,6 @@
                               <Width>1pt</Width>
                             </RightBorder>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>

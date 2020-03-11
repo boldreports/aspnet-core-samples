@@ -67,7 +67,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -112,7 +111,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -157,7 +155,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -202,7 +199,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -247,7 +243,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -292,7 +287,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -341,7 +335,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -384,7 +377,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -427,7 +419,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -471,7 +462,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -515,7 +505,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -558,7 +547,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -666,7 +654,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -711,7 +698,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -756,7 +742,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -801,7 +786,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -846,7 +830,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -891,7 +874,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -941,7 +923,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -986,7 +967,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -1028,7 +1008,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -1073,7 +1052,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -1117,7 +1095,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -1161,7 +1138,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -1211,7 +1187,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -1260,7 +1235,6 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>

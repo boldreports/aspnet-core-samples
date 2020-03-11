@@ -79,6 +79,22 @@
     }
   },
   {
+    "outputFileName": "wwwroot/bundles/ej2.min.js",
+    "inputFiles": [
+      "wwwroot/scripts/bold-reports/common/ej2-base.min.js",
+      "wwwroot/scripts/bold-reports/common/ej2-data.min.js",
+      "wwwroot/scripts/bold-reports/common/ej2-pdf-export.min.js",
+      "wwwroot/scripts/bold-reports/common/ej2-svg-base.min.js",
+      "wwwroot/scripts/bold-reports/data-visualization/ej2-circulargauge.min.js",
+      "wwwroot/scripts/bold-reports/data-visualization/ej2-lineargauge.min.js",
+      "wwwroot/scripts/bold-reports/data-visualization/ej2-maps.min.js"
+    ],
+    "minify": {
+      "enabled": false,
+      "renameLocals": true
+    }
+  },
+  {
     "outputFileName": "wwwroot/bundles/preview/app.min.js",
     "inputFiles": [
       "wwwroot/scripts/common/global.js",
