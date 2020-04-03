@@ -1,4 +1,6 @@
 ﻿(function onInit() {
+    let url = location.origin.indexOf('demos.boldreports.com') !== -1 ? '/' : '/demos/';
+    document.getElementById('home_page').setAttribute('href', url + 'aspnet-core/');
     let isReportDesigner = location.pathname.indexOf('/ReportDesigner') !== -1;
     let urlPaths = location.pathname.replace(getBasePath(), '').split('/');
     reportBasePath = urlPaths[0];

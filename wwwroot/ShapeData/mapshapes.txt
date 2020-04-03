@@ -1,0 +1,8 @@
+[{ Name: 'World', FileName: 'worldcountries' },
+    { Name: 'Africa', FileName: 'africa' },
+    { Name: 'Antarctica', FileName: 'antarctica' },
+    { Name: 'Asia', FileName: 'asia' },
+    { Name: 'Australia/Oceania', FileName: 'oceania' },
+    { Name: 'Europe', FileName: 'europe' },
+    { Name: 'North America', FileName: 'northamerica' },
+    { Name: 'South America', FileName: 'southamerica' }]

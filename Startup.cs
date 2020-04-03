@@ -14,6 +14,10 @@ using ReportsCoreSamples.Models;
 using Microsoft.AspNetCore.ResponseCompression;
 using System.Text;
 using Bold.Licensing;
+using BoldReports.Web;
+using Newtonsoft.Json;
+using System.Reflection;
+
 namespace ReportsCoreSamples
 {
     public class Startup
@@ -22,7 +26,12 @@ namespace ReportsCoreSamples
         public Startup(IConfiguration configuration, IHostingEnvironment _hostingEnvironment)
         {
             string License = File.ReadAllText(System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "BoldLicense.txt"), Encoding.UTF8);
-            BoldLicenseProvider.RegisterLicense(License);            
+            BoldLicenseProvider.RegisterLicense(License);
+            ReportConfig.DefaultSettings = new ReportSettings()
+            {
+                MapSetting = this.GetMapSettings(_hostingEnvironment)
+            };
+
             Configuration = configuration;
             env = _hostingEnvironment;
         }
@@ -47,6 +56,22 @@ namespace ReportsCoreSamples
                         .AllowAnyHeader();
             }));
         }
+
+        private BoldReports.Web.MapSetting GetMapSettings(IHostingEnvironment _hostingEnvironment)
+        {
+            try
+            {
+                string basePath = _hostingEnvironment.WebRootPath;
+                return new MapSetting()
+                {
+                    ShapePath = basePath + "\\ShapeData\\",
+                    MapShapes = JsonConvert.DeserializeObject<List<MapShape>>(System.IO.File.ReadAllText(basePath + "\\ShapeData\\mapshapes.txt"))
+                };
+            }
+            catch (Exception ex) { }
+            return null;
+        }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)

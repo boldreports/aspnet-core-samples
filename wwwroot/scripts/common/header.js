@@ -24,7 +24,8 @@ function platformSwitcher(platform) {
     }
     platformSamplePath = getRouterPath(getReportSampleData().platform, platform, sampleName);
     let reportPath = reportRouterPath ? (platformBasePath + '/' + platformSamplePath) : platformSamplePath;
-    window.open(location.origin + getReportSampleData().otherPlatforms[platform] + reportPath, '_self');
+    let url = location.origin.indexOf('demos.boldreports.com') !== -1 ? '/' : '/demos/';
+    window.open(location.origin + url + getReportSampleData().otherPlatforms[platform] + reportPath, '_self');
 }
 
 function getRouterPath(curPlatform, targetplatform, sampleName) {
