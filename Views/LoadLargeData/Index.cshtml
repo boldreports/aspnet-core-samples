@@ -1,0 +1,41 @@
+﻿@inject Globals globals;
+
+@section control {
+
+    <bold-report-viewer id="reportviewer" report-service-url="@Globals.SERVICE_URL" report-path="load-large-data.rdlc" report-loaded="onReportLoaded" processing-mode="Local" toolbar-rendering="onToolbarSettings" tool-bar-item-click="onToolBarItemClick" export-item-click="onExportItemClick" />
+
+    <script>
+        function onReportLoaded(args) {
+        }
+        function onToolbarSettings() {
+            this.model.toolbarSettings.items = ~ej.ReportViewer.ToolbarItems.Export & ~ej.ReportViewer.ToolbarItems.Print,
+            this.model.toolbarSettings.customGroups = [{
+                items: [{
+                    type: 'Default',
+                    cssClass: "e-icon e-edit e-reportviewer-icon ej-webicon CustomGroup",
+                    id: "edit-report",
+                    // Need to add the proper header and content once, the tool tip issue resolved.
+                    tooltip: {
+                        header: 'Edit Report',
+                        content: 'Edit this report in designer'
+                    }
+                }],
+                // Need to remove the css (e-reportviewer-toolbarcontainer ul.e-ul:nth-child(4)) once the group index issue resolved
+                groupIndex: 3,
+                cssClass: "e-show"
+            }]
+        }
+    </script>
+
+}
+
+@section description {
+    <div id="description">
+        <p>
+            This demos allows you to view the sales order details <b>RDLC</b> with <code>large data</code> using the table report item.
+        </p>
+        <p>
+            More information about RDLC report can be found in this <a href="https://documentation.boldreports.com/aspnet-core/report-viewer/rdlc-report/" target="_blank">documentation</a> section.
+        </p>
+    </div>
+}

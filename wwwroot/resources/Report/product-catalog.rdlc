@@ -34,6 +34,10 @@
           <DataField>ProdName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="ProductImage">
+          <DataField>ProductImage</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="ProductNumber">
           <DataField>ProductNumber</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -75,63 +79,633 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
     </DataSet>
   </DataSets>
   <Body>
-    <Style>
-      <FontFamily>Arial</FontFamily>
-    </Style>
+    <Style />
     <ReportItems>
-      <Tablix Name="ProductTable">
-        <Left>0in</Left>
-        <Top>0.11865in</Top>
-        <Height>1.22917in</Height>
-        <Width>7.09372in</Width>
-        <ZIndex>1</ZIndex>
+      <Tablix Name="Tablix1">
+        <Left>5.25pt</Left>
+        <Top>103.6758pt</Top>
+        <Height>59.25pt</Height>
+        <Width>560.25pt</Width>
         <Style>
-          <FontFamily>Arial</FontFamily>
+          <Border>
+            <Color>#d3d3d3</Color>
+            <Style>None</Style>
+          </Border>
         </Style>
+        <DataSetName>ProductCatalog</DataSetName>
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>94.5pt</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>77.25pt</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>112.5pt</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>77.25pt</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>79.5pt</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>117.2727pt</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>18pt</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox1">
+                      <Left>0in</Left>
+                      <Top>0in</Top>
+                      <Height>18pt</Height>
+                      <Width>94.5pt</Width>
+                      <Style>
+                        <BackgroundColor>#6783c1</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Product No</Value>
+                              <Style>
+                                <FontSize>10.008pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>#ffffff</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                    </Textbox>
+                    <ColSpan>1</ColSpan>
+                    <RowSpan>1</RowSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox10">
+                      <Left>0in</Left>
+                      <Top>0in</Top>
+                      <Height>18pt</Height>
+                      <Width>77.25pt</Width>
+                      <Style>
+                        <BackgroundColor>#6783c1</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Product Image</Value>
+                              <Style>
+                                <FontSize>10.008pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>#ffffff</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                    </Textbox>
+                    <ColSpan>1</ColSpan>
+                    <RowSpan>1</RowSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox11">
+                      <Left>0in</Left>
+                      <Top>0in</Top>
+                      <Height>18pt</Height>
+                      <Width>112.5pt</Width>
+                      <Style>
+                        <BackgroundColor>#6783c1</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Product Name</Value>
+                              <Style>
+                                <FontSize>10.008pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>#ffffff</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                    </Textbox>
+                    <ColSpan>1</ColSpan>
+                    <RowSpan>1</RowSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox16">
+                      <Left>0in</Left>
+                      <Top>0in</Top>
+                      <Height>18pt</Height>
+                      <Width>77.25pt</Width>
+                      <Style>
+                        <BackgroundColor>#6783c1</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Size</Value>
+                              <Style>
+                                <FontSize>10.008pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>#ffffff</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                    </Textbox>
+                    <ColSpan>1</ColSpan>
+                    <RowSpan>1</RowSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox18">
+                      <Left>0in</Left>
+                      <Top>0in</Top>
+                      <Height>18pt</Height>
+                      <Width>79.5pt</Width>
+                      <Style>
+                        <BackgroundColor>#6783c1</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Weight</Value>
+                              <Style>
+                                <FontSize>10.008pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>#ffffff</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                    </Textbox>
+                    <ColSpan>1</ColSpan>
+                    <RowSpan>1</RowSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox12">
+                      <Left>0in</Left>
+                      <Top>0in</Top>
+                      <Height>18pt</Height>
+                      <Width>118.5pt</Width>
+                      <Style>
+                        <BackgroundColor>#6783c1</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Cost</Value>
+                              <Style>
+                                <FontSize>10.008pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>#ffffff</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                    </Textbox>
+                    <ColSpan>1</ColSpan>
+                    <RowSpan>1</RowSpan>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>41.25pt</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox2">
+                      <Left>0in</Left>
+                      <Top>0in</Top>
+                      <Height>41.25pt</Height>
+                      <Width>94.5pt</Width>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#E2E2E2","Transparent")</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <Border>
+                          <Color>#d3d3d3</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!ProductNumber.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                    </Textbox>
+                    <ColSpan>1</ColSpan>
+                    <RowSpan>1</RowSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="Rectangle5">
+                      <Left>0in</Left>
+                      <Top>0in</Top>
+                      <Height>41.25pt</Height>
+                      <Width>77.25pt</Width>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#E2E2E2","Transparent")</BackgroundColor>
+                        <Border>
+                          <Color>#d3d3d3</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                      <ReportItems>
+                        <Rectangle Name="Rectangle6">
+                          <Left>22.47656pt</Left>
+                          <Top>5.22656pt</Top>
+                          <Height>31.48828pt</Height>
+                          <Width>31.47656pt</Width>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                          <KeepTogether>true</KeepTogether>
+                        </Rectangle>
+                        <Image Name="Image3">
+                          <Left>26.98828pt</Left>
+                          <Top>8.98828pt</Top>
+                          <Value>=Fields!ProductImage.Value</Value>
+                          <Height>24pt</Height>
+                          <Width>24pt</Width>
+                          <ZIndex>1</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                          <Source>Database</Source>
+                          <MIMEType>image/png</MIMEType>
+                          <Sizing>FitProportional</Sizing>
+                        </Image>
+                      </ReportItems>
+                      <KeepTogether>true</KeepTogether>
+                    </Rectangle>
+                    <ColSpan>1</ColSpan>
+                    <RowSpan>1</RowSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox14">
+                      <Left>0in</Left>
+                      <Top>0in</Top>
+                      <Height>41.25pt</Height>
+                      <Width>112.5pt</Width>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#E2E2E2","Transparent")</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!ProdName.Value</Value>
+                              <Style>
+                                <FontSize>10.0001pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                    </Textbox>
+                    <ColSpan>1</ColSpan>
+                    <RowSpan>1</RowSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox17">
+                      <Left>0in</Left>
+                      <Top>0in</Top>
+                      <Height>41.25pt</Height>
+                      <Width>77.25pt</Width>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#E2E2E2","Transparent")</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Size.Value</Value>
+                              <Style>
+                                <FontSize>10.0001pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                    </Textbox>
+                    <ColSpan>1</ColSpan>
+                    <RowSpan>1</RowSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox19">
+                      <Left>0in</Left>
+                      <Top>0in</Top>
+                      <Height>41.25pt</Height>
+                      <Width>79.5pt</Width>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#E2E2E2","Transparent")</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Weight.Value</Value>
+                              <Style>
+                                <FontSize>10.0001pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                    </Textbox>
+                    <ColSpan>1</ColSpan>
+                    <RowSpan>1</RowSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox15">
+                      <Left>0in</Left>
+                      <Top>0in</Top>
+                      <Height>41.25pt</Height>
+                      <Width>118.5pt</Width>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#E2E2E2","Transparent")</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>="$"&amp; Format(Fields!StandardCost.Value,"F2")</Value>
+                              <Style>
+                                <FontSize>10.0001pt</FontSize>
+                                <Format>0.00;(0.00)</Format>
+                                <FormatType xmlns="http://tempuri.org/">
+                                  <Format>Number</Format>
+                                  <Representation>None</Representation>
+                                  <NegativeValue>(12345)</NegativeValue>
+                                  <Culture />
+                                </FormatType>
+                                <Color>black</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                          <SpaceBefore />
+                          <SpaceAfter />
+                        </Paragraph>
+                      </Paragraphs>
+                    </Textbox>
+                    <ColSpan>1</ColSpan>
+                    <RowSpan>1</RowSpan>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+      </Tablix>
+      <Tablix Name="ProductTable">
+        <Left>0pt</Left>
+        <Top>8.5428pt</Top>
+        <Height>88.5pt</Height>
+        <Width>560.2501pt</Width>
+        <ZIndex>1</ZIndex>
+        <Style />
         <NoRowsMessage>="No products available for language " &amp; User!Language</NoRowsMessage>
         <DataSetName>ProductCatalog</DataSetName>
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.07292in</Width>
+              <Width>82.5pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.85417in</Width>
+              <Width>140.25pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.26042in</Width>
+              <Width>24pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.57292in</Width>
+              <Width>46.5pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.76042in</Width>
+              <Width>60pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.72917in</Width>
+              <Width>59.25pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.88542in</Width>
+              <Width>71.25pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.91667in</Width>
+              <Width>74.31818pt</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.43750in</Height>
+              <Height>31.5pt</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="SubCategory">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>0.43750in</Height>
-                      <Width>7.05208in</Width>
+                      <Height>31.5pt</Height>
+                      <Width>559.5pt</Width>
                       <ZIndex>26</ZIndex>
                       <Style>
-                        <FontFamily>Arial</FontFamily>
-                        <PaddingLeft>0.08800in</PaddingLeft>
+                        <PaddingLeft>6.336pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
@@ -143,19 +717,14 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                             <TextRun>
                               <Value>=Fields!ProdSubCat.Value</Value>
                               <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <FontSize>0.27778in</FontSize>
+                                <FontSize>20.00016pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <FontStyle>Italic</FontStyle>
-                                <Color>darkslateblue</Color>
+                                <Color>DarkSlateBlue</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <FontFamily>Arial</FontFamily>
-                          </Style>
-                          <SpaceBefore />
-                          <SpaceAfter />
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
@@ -173,19 +742,18 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.43750in</Height>
+              <Height>31.5pt</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Model">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>0.43750in</Height>
-                      <Width>7.05208in</Width>
+                      <Height>31.5pt</Height>
+                      <Width>559.5pt</Width>
                       <ZIndex>25</ZIndex>
                       <Style>
-                        <FontFamily>Arial</FontFamily>
-                        <PaddingLeft>0.07800in</PaddingLeft>
+                        <PaddingLeft>5.616pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
@@ -205,18 +773,12 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                             <TextRun>
                               <Value>=Fields!ProdModel.Value</Value>
                               <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <FontSize>0.25000in</FontSize>
+                                <FontSize>18pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>black</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <FontFamily>Arial</FontFamily>
-                          </Style>
-                          <SpaceBefore />
-                          <SpaceAfter />
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
@@ -234,19 +796,18 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.35417in</Height>
+              <Height>25.5pt</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="ModelDesc">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>0.35417in</Height>
-                      <Width>7.05208in</Width>
+                      <Height>25.5pt</Height>
+                      <Width>559.5pt</Width>
                       <ZIndex>24</ZIndex>
                       <Style>
-                        <FontFamily>Arial</FontFamily>
-                        <PaddingLeft>0.07800in</PaddingLeft>
+                        <PaddingLeft>5.616pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>4pt</PaddingBottom>
@@ -259,16 +820,11 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                               <Value>=Fields!Description.Value</Value>
                               <Style>
                                 <FontFamily>Verdana</FontFamily>
-                                <FontSize>0.13889in</FontSize>
-                                <Color>black</Color>
+                                <FontSize>10.00008pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <FontFamily>Arial</FontFamily>
-                          </Style>
-                          <SpaceBefore />
-                          <SpaceAfter />
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
@@ -341,547 +897,42 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
           </TablixMembers>
         </TablixRowHierarchy>
       </Tablix>
-      <Tablix Name="Tablix1">
-        <Left>0.07292in</Left>
-        <Top>1.44in</Top>
-        <Height>0.50000in</Height>
-        <Width>6.93751in</Width>
-        <Style>
-          <FontFamily>Arial</FontFamily>
-          <Border>
-            <Color>#d3d3d3</Color>
-            <Style>None</Style>
-          </Border>
-        </Style>
-        <DataSetName>ProductCatalog</DataSetName>
-        <TablixBody>
-          <TablixColumns>
-            <TablixColumn>
-              <Width>1.57292in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.57292in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.09375in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.10417in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.59375in</Width>
-            </TablixColumn>
-          </TablixColumns>
-          <TablixRows>
-            <TablixRow>
-              <Height>0.25000in</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="TextBox10">
-                      <Left>0in</Left>
-                      <Top>0in</Top>
-                      <Height>0.25000in</Height>
-                      <Width>1.57292in</Width>
-                      <Style>
-                        <BackgroundColor>#6783c1</BackgroundColor>
-                        <FontFamily>Arial</FontFamily>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                      </Style>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Product No</Value>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <FontSize>0.13900in</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                                <Color>#FFFFFF</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <FontFamily>Arial</FontFamily>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                          <SpaceBefore />
-                          <SpaceAfter />
-                        </Paragraph>
-                      </Paragraphs>
-                    </Textbox>
-                    <ColSpan>1</ColSpan>
-                    <RowSpan>1</RowSpan>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="TextBox11">
-                      <Left>0in</Left>
-                      <Top>0in</Top>
-                      <Height>0.25000in</Height>
-                      <Width>1.57292in</Width>
-                      <Style>
-                        <BackgroundColor>#6783c1</BackgroundColor>
-                        <FontFamily>Arial</FontFamily>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                      </Style>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Product Name</Value>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <FontSize>0.13900in</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                                <Color>#FFFFFF</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <FontFamily>Arial</FontFamily>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                          <SpaceBefore />
-                          <SpaceAfter />
-                        </Paragraph>
-                      </Paragraphs>
-                    </Textbox>
-                    <ColSpan>1</ColSpan>
-                    <RowSpan>1</RowSpan>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="TextBox16">
-                      <Left>0in</Left>
-                      <Top>0in</Top>
-                      <Height>0.25000in</Height>
-                      <Width>1.09375in</Width>
-                      <Style>
-                        <BackgroundColor>#6783c1</BackgroundColor>
-                        <FontFamily>Arial</FontFamily>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                      </Style>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Size</Value>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <FontSize>0.13900in</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                                <Color>#FFFFFF</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <FontFamily>Arial</FontFamily>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                          <SpaceBefore />
-                          <SpaceAfter />
-                        </Paragraph>
-                      </Paragraphs>
-                    </Textbox>
-                    <ColSpan>1</ColSpan>
-                    <RowSpan>1</RowSpan>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="TextBox18">
-                      <Left>0in</Left>
-                      <Top>0in</Top>
-                      <Height>0.25000in</Height>
-                      <Width>1.10417in</Width>
-                      <Style>
-                        <BackgroundColor>#6783c1</BackgroundColor>
-                        <FontFamily>Arial</FontFamily>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                      </Style>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Weight</Value>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <FontSize>0.13900in</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                                <Color>#FFFFFF</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <FontFamily>Arial</FontFamily>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                          <SpaceBefore />
-                          <SpaceAfter />
-                        </Paragraph>
-                      </Paragraphs>
-                    </Textbox>
-                    <ColSpan>1</ColSpan>
-                    <RowSpan>1</RowSpan>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="TextBox12">
-                      <Left>0in</Left>
-                      <Top>0in</Top>
-                      <Height>0.25000in</Height>
-                      <Width>1.59375in</Width>
-                      <Style>
-                        <BackgroundColor>#6783c1</BackgroundColor>
-                        <FontFamily>Arial</FontFamily>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                      </Style>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Cost</Value>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <FontSize>0.13900in</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                                <Color>#FFFFFF</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <FontFamily>Arial</FontFamily>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                          <SpaceBefore />
-                          <SpaceAfter />
-                        </Paragraph>
-                      </Paragraphs>
-                    </Textbox>
-                    <ColSpan>1</ColSpan>
-                    <RowSpan>1</RowSpan>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-            <TablixRow>
-              <Height>0.25000in</Height>
-              <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="TextBox13">
-                      <Left>0in</Left>
-                      <Top>0in</Top>
-                      <Height>0.25000in</Height>
-                      <Width>1.57292in</Width>
-                      <Style>
-                        <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#E2E2E2","Transparent")</BackgroundColor>
-                        <FontFamily>Arial</FontFamily>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                      </Style>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!ProductNumber.Value</Value>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <FontSize>0.13889in</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <FontFamily>Arial</FontFamily>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                    </Textbox>
-                    <ColSpan>1</ColSpan>
-                    <RowSpan>1</RowSpan>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="TextBox14">
-                      <Left>0in</Left>
-                      <Top>0in</Top>
-                      <Height>0.25000in</Height>
-                      <Width>1.57292in</Width>
-                      <Style>
-                        <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#E2E2E2","Transparent")</BackgroundColor>
-                        <FontFamily>Arial</FontFamily>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                      </Style>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!ProdName.Value</Value>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <FontSize>0.13889in</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <FontFamily>Arial</FontFamily>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                    </Textbox>
-                    <ColSpan>1</ColSpan>
-                    <RowSpan>1</RowSpan>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="TextBox17">
-                      <Left>0in</Left>
-                      <Top>0in</Top>
-                      <Height>0.25000in</Height>
-                      <Width>1.09375in</Width>
-                      <Style>
-                        <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#E2E2E2","Transparent")</BackgroundColor>
-                        <FontFamily>Arial</FontFamily>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                      </Style>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Size.Value</Value>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <FontSize>0.13889in</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <FontFamily>Arial</FontFamily>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                    </Textbox>
-                    <ColSpan>1</ColSpan>
-                    <RowSpan>1</RowSpan>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="TextBox19">
-                      <Left>0in</Left>
-                      <Top>0in</Top>
-                      <Height>0.25000in</Height>
-                      <Width>1.10417in</Width>
-                      <Style>
-                        <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#E2E2E2","Transparent")</BackgroundColor>
-                        <FontFamily>Arial</FontFamily>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                      </Style>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Weight.Value</Value>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <FontSize>0.13889in</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <FontFamily>Arial</FontFamily>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                    </Textbox>
-                    <ColSpan>1</ColSpan>
-                    <RowSpan>1</RowSpan>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="TextBox15">
-                      <Left>0in</Left>
-                      <Top>0in</Top>
-                      <Height>0.25000in</Height>
-                      <Width>1.59375in</Width>
-                      <Style>
-                        <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#E2E2E2","Transparent")</BackgroundColor>
-                        <FontFamily>Arial</FontFamily>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                      </Style>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>="$"&amp;Fields!StandardCost.Value</Value>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <FontSize>0.13889in</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <FontFamily>Arial</FontFamily>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                    </Textbox>
-                    <ColSpan>1</ColSpan>
-                    <RowSpan>1</RowSpan>
-                  </CellContents>
-                </TablixCell>
-              </TablixCells>
-            </TablixRow>
-          </TablixRows>
-        </TablixBody>
-        <TablixColumnHierarchy>
-          <TablixMembers>
-            <TablixMember />
-            <TablixMember />
-            <TablixMember />
-            <TablixMember />
-            <TablixMember />
-          </TablixMembers>
-        </TablixColumnHierarchy>
-        <TablixRowHierarchy>
-          <TablixMembers>
-            <TablixMember>
-              <KeepWithGroup>After</KeepWithGroup>
-            </TablixMember>
-            <TablixMember>
-              <Group Name="Details" />
-            </TablixMember>
-          </TablixMembers>
-        </TablixRowHierarchy>
-      </Tablix>
     </ReportItems>
-    <Height>1.96875in</Height>
+    <Height>169.4955pt</Height>
   </Body>
-  <Width>7.09375in</Width>
+  <Width>571.5pt</Width>
   <Page>
+    <PageHeight>1016.25pt</PageHeight>
+    <PageWidth>572.25pt</PageWidth>
     <PageHeader>
       <Style>
-        <FontFamily>Arial</FontFamily>
         <Border>
           <Style>None</Style>
         </Border>
       </Style>
-      <Height>0.54167in</Height>
+      <Height>39.00024pt</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
         <Rectangle Name="Rectangle1">
-          <Left>0in</Left>
-          <Top>0in</Top>
-          <Height>0.54167in</Height>
-          <Width>7.09375in</Width>
+          <Left>0pt</Left>
+          <Top>0pt</Top>
+          <Height>39pt</Height>
+          <Width>571.5pt</Width>
           <Style>
             <BackgroundColor>#555b63</BackgroundColor>
-            <FontFamily>Arial</FontFamily>
             <Border>
               <Style>None</Style>
             </Border>
           </Style>
           <ReportItems>
             <Textbox Name="TextBox9">
-              <Left>0.07992in</Left>
-              <Top>0.10986in</Top>
-              <Height>0.32992in</Height>
-              <Width>3.27067in</Width>
+              <Left>5.75424pt</Left>
+              <Top>7.90992pt</Top>
+              <Height>23.75424pt</Height>
+              <Width>235.4882pt</Width>
               <Style>
                 <BackgroundColor>#555b63</BackgroundColor>
-                <FontFamily>Arial</FontFamily>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -898,27 +949,21 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                     <TextRun>
                       <Value>Product Catalog﻿ - </Value>
                       <Style>
-                        <FontFamily>Arial</FontFamily>
-                        <FontSize>0.16700in</FontSize>
+                        <FontSize>12.024pt</FontSize>
                         <FontWeight>Bold</FontWeight>
-                        <Color>#FFFFFF</Color>
+                        <Color>#ffffff</Color>
                       </Style>
                     </TextRun>
                     <TextRun>
                       <Value>=Fields!ProdCat.Value</Value>
                       <Style>
-                        <FontFamily>Arial</FontFamily>
-                        <FontSize>0.16700in</FontSize>
+                        <FontSize>12.024pt</FontSize>
                         <FontWeight>Bold</FontWeight>
-                        <Color>#FFFFFF</Color>
+                        <Color>#ffffff</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style>
-                    <FontFamily>Arial</FontFamily>
-                  </Style>
-                  <SpaceBefore />
-                  <SpaceAfter />
+                  <Style />
                 </Paragraph>
               </Paragraphs>
             </Textbox>
@@ -928,23 +973,17 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
       </ReportItems>
     </PageHeader>
     <PageFooter>
-      <Style>
-        <FontFamily>Arial</FontFamily>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
-      <Height>0.08333in</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
+      <Height>8.24572pt</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <Style />
     </PageFooter>
-    <LeftMargin>0.68000in</LeftMargin>
-    <RightMargin>0.68000in</RightMargin>
-    <TopMargin>0.50000in</TopMargin>
-    <BottomMargin>0.50000in</BottomMargin>
-    <Style>
-      <FontFamily>Arial</FontFamily>
-    </Style>
+    <LeftMargin>0pt</LeftMargin>
+    <RightMargin>0pt</RightMargin>
+    <TopMargin>0pt</TopMargin>
+    <BottomMargin>0pt</BottomMargin>
+    <ColumnSpacing>36pt</ColumnSpacing>
+    <Style />
   </Page>
   <EmbeddedImages>
     <EmbeddedImage Name="cover4">
@@ -974,4 +1013,5 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
   </EmbeddedImages>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:PageUnit>Px</rd:PageUnit>
 </Report>

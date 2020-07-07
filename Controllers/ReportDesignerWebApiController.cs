@@ -8,6 +8,11 @@ using BoldReports.Web;
 using BoldReports.Web.ReportDesigner;
 using BoldReports.Web.ReportViewer;
 using Newtonsoft.Json;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using System.Data;
+using Microsoft.Extensions.Caching.Memory;
+using System.Net;
 
 namespace ReportsCoreSamples.Controllers
 {
@@ -15,18 +20,32 @@ namespace ReportsCoreSamples.Controllers
     public class ReportDesignerWebApiController : Controller, IReportDesignerController
     {
         private Microsoft.Extensions.Caching.Memory.IMemoryCache _cache;
-        private Microsoft.AspNetCore.Hosting.IHostingEnvironment _hostingEnvironment;
+#if NETCOREAPP2_1
+        private IHostingEnvironment _hostingEnvironment;
+#else
+        private IWebHostEnvironment _hostingEnvironment;
+#endif
         internal ExternalServer Server
         {
             get;
             set;
         }
-
-        public ReportDesignerWebApiController(Microsoft.Extensions.Caching.Memory.IMemoryCache memoryCache, Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnvironment)
+        internal string ServerURL
+        {
+            get;
+            set;
+        }
+#if NETCOREAPP2_1
+        public ReportDesignerWebApiController(Microsoft.Extensions.Caching.Memory.IMemoryCache memoryCache, IHostingEnvironment hostingEnvironment)
+#else
+        public ReportDesignerWebApiController(Microsoft.Extensions.Caching.Memory.IMemoryCache memoryCache, IWebHostEnvironment hostingEnvironment)
+#endif
         {
             _cache = memoryCache;
             _hostingEnvironment = hostingEnvironment;
             ExternalServer externalServer = new ExternalServer(_hostingEnvironment);
+            this.ServerURL = "Sample";
+            externalServer.ReportServerUrl = this.ServerURL;
             ReportDesignerHelper.ReportingServer = this.Server = externalServer;
         }
 
@@ -37,6 +56,45 @@ namespace ReportsCoreSamples.Controllers
             return ReportDesignerHelper.GetImage(key, image, this);
         }
 
+        [HttpPost]
+        public bool DisposeObjects()
+        {
+            try
+            {
+                string targetFolder = this._hostingEnvironment.WebRootPath + "\\";
+                targetFolder += "Cache";
+
+                if (Directory.Exists(targetFolder))
+                {
+                    string[] dirs = Directory.GetDirectories(targetFolder);
+
+                    for (var index = 0; index < dirs.Length; index++)
+                    {
+                        string[] files = Directory.GetFiles(dirs[index]);
+
+                        var fileCount = 0;
+                        for (var fileIndex = 0; fileIndex < files.Length; fileIndex++)
+                        {
+                            FileInfo fi = new FileInfo(files[fileIndex]);
+                            if (fi.LastAccessTimeUtc < DateTime.UtcNow.AddDays(-2))
+                            {
+                                fileCount++;
+                            }
+                        }
+
+                        if (files.Length == 0 || (files.Length == fileCount))
+                        {
+                            Directory.Delete(dirs[index], true);
+                        }
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex) { }
+            return false;
+        }
+
+
         [ActionName("GetResource")]
         [AcceptVerbs("GET")]
         public object GetResource(ReportResource resource)
@@ -46,6 +104,16 @@ namespace ReportsCoreSamples.Controllers
 
         public void OnInitReportOptions(ReportViewerOptions reportOption)
         {
+            string reportName = reportOption.ReportModel.ReportPath;
+            reportOption.ReportModel.ReportingServer = this.Server;
+            reportOption.ReportModel.ReportServerUrl = this.ServerURL;
+            reportOption.ReportModel.ReportServerCredential = new NetworkCredential("Sample", "Passwprd");
+            if (reportName == "load-large-data.rdlc")
+            {
+                Models.SqlQuery.getJson(this._cache);
+                reportOption.ReportModel.ProcessingMode = ProcessingMode.Remote;
+                reportOption.ReportModel.DataSources.Add(new ReportDataSource("SalesOrderDetail", _cache.Get("SalesOrderDetail") as DataTable));
+            }
 
         }
 

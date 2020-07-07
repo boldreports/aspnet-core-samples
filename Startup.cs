@@ -4,8 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
@@ -18,12 +16,23 @@ using BoldReports.Web;
 using Newtonsoft.Json;
 using System.Reflection;
 
+#if NETCOREAPP2_1
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+#else
+using Microsoft.Extensions.Hosting;
+#endif
+
 namespace ReportsCoreSamples
 {
     public class Startup
     {
 
+#if NETCOREAPP2_1
         public Startup(IConfiguration configuration, IHostingEnvironment _hostingEnvironment)
+#else
+        public Startup(IConfiguration configuration, IWebHostEnvironment _hostingEnvironment)
+#endif
         {
             string License = File.ReadAllText(System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "BoldLicense.txt"), Encoding.UTF8);
             BoldLicenseProvider.RegisterLicense(License);
@@ -36,15 +45,23 @@ namespace ReportsCoreSamples
             env = _hostingEnvironment;
         }
 
+#if NETCOREAPP2_1
         public IHostingEnvironment env { get; }
+#else
+        public IWebHostEnvironment env { get; }
+#endif
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+#if NETCOREAPP2_1
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+#else
+            services.AddControllersWithViews();
+#endif
             services.AddHttpContextAccessor();
+            services.AddMemoryCache();
             services.Configure<GzipCompressionProviderOptions>(options => options.Level = System.IO.Compression.CompressionLevel.Optimal);
             services.AddResponseCompression();
             services.Add(new ServiceDescriptor(typeof(SampleData), new SampleData(env)));
@@ -57,7 +74,11 @@ namespace ReportsCoreSamples
             }));
         }
 
+#if NETCOREAPP2_1
         private BoldReports.Web.MapSetting GetMapSettings(IHostingEnvironment _hostingEnvironment)
+#else
+        private BoldReports.Web.MapSetting GetMapSettings(IWebHostEnvironment _hostingEnvironment)
+#endif
         {
             try
             {
@@ -68,7 +89,7 @@ namespace ReportsCoreSamples
                     MapShapes = JsonConvert.DeserializeObject<List<MapShape>>(System.IO.File.ReadAllText(basePath + "\\ShapeData\\mapshapes.txt"))
                 };
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { Console.WriteLine(ex); }
             return null;
         }
 
@@ -102,6 +123,7 @@ namespace ReportsCoreSamples
                 RequestPath = "/Views"
             });
 
+#if NETCOREAPP2_1
             app.UseMvc(routes =>
                 {
                     routes.MapRoute(
@@ -111,6 +133,20 @@ namespace ReportsCoreSamples
                         name: "default",
                         template: "{controller=Main}/{action=Index}/{id?}");
                 });
+#else
+            app.UseRouting();
+            app.UseCors("AllowAllOrigins");
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                          name: "ReportViewer",
+                          pattern: "ReportViewer/{controller}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Main}/{action=Index}/{id?}");
+            });
+#endif
         }
     }
 }

@@ -71,7 +71,7 @@ namespace ReportsCoreSamples.Controllers
         public void updateDesignerMetaData(dynamic sampleData)
         {
             string title = String.IsNullOrEmpty((string)sampleData.metaData.title) ? sampleData.sampleName : sampleData.metaData.title;
-            string metaContent = "The HTML5 web report designer allows the end-users to arrange/customize the reports appearance in browsers." +
+            string metaContent = "The ASP.NET Core bold report designer allows the end-users to arrange/customize the reports appearance in browsers." +
                         "It helps to edit the " + title + " for customer\"s application needs.";
             title = title + " | ASP.NET Core Report Designer | Bold Reports";
             ViewBag.Title = title;

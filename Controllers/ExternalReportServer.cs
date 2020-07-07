@@ -10,21 +10,29 @@ using System.Net.Http;
 using BoldReports.ServerProcessor;
 using System.Web;
 using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Hosting;
 
 namespace ReportsCoreSamples.Controllers
 {
     public sealed class ExternalServer : ReportingServer
     {
         // IHostingEnvironment used with sample to get the application data from wwwroot.
-        private Microsoft.AspNetCore.Hosting.IHostingEnvironment _hostingEnvironment;
+#if NETCOREAPP2_1
+        private IHostingEnvironment _hostingEnvironment;
+#else
+        private IWebHostEnvironment _hostingEnvironment;
+#endif
         string basePath;
         public string reportType
         {
             get;
             set;
         }
-
-        public ExternalServer(Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnvironment)
+#if NETCOREAPP2_1
+        public ExternalServer(IHostingEnvironment hostingEnvironment)
+#else
+        public ExternalServer(IWebHostEnvironment hostingEnvironment)
+#endif
         {
             _hostingEnvironment = hostingEnvironment;
             basePath = _hostingEnvironment.WebRootPath;
