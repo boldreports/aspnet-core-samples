@@ -6,7 +6,6 @@
 }
 
 function onHomeBtnClick() {
-    let curSampleData = reportSamples[0];
-    let reportPath = curSampleData.routerPath ? (curSampleData.basePath + '/' + curSampleData.routerPath) : curSampleData.basePath;
-    location.href = location.origin + getBasePath() + reportPath;
+    let homePageUrl = location.origin.indexOf('demos.boldreports.com') !== -1 ? '/home/' : '/';
+    location.href = location.origin + homePageUrl + 'aspnet-core.html';
 }

@@ -4,7 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using BoldReports.Web;
 using BoldReports.Web.ReportViewer;
+using Microsoft.AspNetCore.Hosting;
+using BoldReports.Models.ReportViewer;
+using System.Data;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace ReportsCoreSamples.Controllers
 {
@@ -16,11 +21,20 @@ namespace ReportsCoreSamples.Controllers
         private Microsoft.Extensions.Caching.Memory.IMemoryCache _cache;
 
         // IHostingEnvironment used with sample to get the application data from wwwroot.
-        private Microsoft.AspNetCore.Hosting.IHostingEnvironment _hostingEnvironment;
+#if NETCOREAPP2_1
+        private IHostingEnvironment _hostingEnvironment;
+#else
+        private IWebHostEnvironment _hostingEnvironment;
+#endif
 
         // Post action to process the report from server based json parameters and send the result back to the client.
+#if NETCOREAPP2_1
         public ReportViewerWebApiController(Microsoft.Extensions.Caching.Memory.IMemoryCache memoryCache,
-            Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnvironment)
+            IHostingEnvironment hostingEnvironment)
+#else
+        public ReportViewerWebApiController(Microsoft.Extensions.Caching.Memory.IMemoryCache memoryCache,
+            IWebHostEnvironment hostingEnvironment)
+#endif
         {
             _cache = memoryCache;
             _hostingEnvironment = hostingEnvironment;
@@ -36,9 +50,16 @@ namespace ReportsCoreSamples.Controllers
         // Method will be called to initialize the report information to load the report with ReportHelper for processing.
         public void OnInitReportOptions(ReportViewerOptions reportOption)
         {
+            string reportName = reportOption.ReportModel.ReportPath;
             string basePath = _hostingEnvironment.WebRootPath;
             FileStream reportStream = new FileStream(basePath + @"\resources\Report\" + reportOption.ReportModel.ReportPath, FileMode.Open, FileAccess.Read);
             reportOption.ReportModel.Stream = reportStream;
+            if (reportName == "load-large-data.rdlc")
+            {
+                Models.SqlQuery.getJson(this._cache);
+                reportOption.ReportModel.DataSources.Add(new BoldReports.Web.ReportDataSource("SalesOrderDetail", this._cache.Get("SalesOrderDetail") as DataTable));
+            }
+
         }
 
         // Method will be called when reported is loaded with internally to start to layout process with ReportHelper.

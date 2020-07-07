@@ -1,4 +1,11 @@
-﻿/* container*/
+﻿/* form*/
+.r-w-form {
+    display: inherit;
+    overflow: inherit;
+    height: inherit;
+}
+
+/* container*/
 .r-w-container {
     height: 100%;
     display: inline-flex;
@@ -58,7 +65,7 @@
                 height: 240px;
                 margin: 15px 0;
                 background-image: url('./../../assets/sidebar/portrait.png');
-                background-size: 100% 1100%;
+                background-size: 100% 1200%;
             }
 
             .r-w-container .r-w-sample-container .r-w-sample .r-w-sample-title {
