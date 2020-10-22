@@ -20,6 +20,7 @@
         "isLandscape": false,
         "index": 7
       },
+      "status": "",
       "metaData": {
         "description": "The Product Line Sales report displays sales details organized by category and subcategory of products using cascading parameters in ASP.NET Core bold report viewer."
       }
@@ -32,6 +33,7 @@
         "isLandscape": true,
         "index": 1
       },
+      "status": "",
       "metaData": {
         "description": "Company Sales report shows product sales against year in matrix format using SSRS Tablix report item in ASP.NET Core bold report viewer."
       }
@@ -227,6 +229,18 @@
       },
       "metaData": {
         "description": "This demo shows the sales order details using RDLC basic table with currency formatting in price textbox fields in ASP.NET Core bold report viewer."
+      }
+    },
+    {
+      "routerPath": "ConsolidatedBalanceSheet",
+      "sampleName": "Consolidated Balance Sheet",
+      "basePath": "ReportViewer",
+      "imageDetails": {
+        "isLandscape": false,
+        "index": 12
+      },
+      "metaData": {
+        "description": "This demos allows shows the consolidated balance sheet RDLC report represents the assets and liabilities of a company in ASP.NET Core bold report viewer."
       }
     },
     {

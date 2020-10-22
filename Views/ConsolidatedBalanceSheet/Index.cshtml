@@ -1,0 +1,39 @@
+﻿@inject Globals globals;
+
+@section control {
+
+    <bold-report-viewer id="reportviewer" report-service-url="@Globals.SERVICE_URL" report-path="consolidated-balance-sheet.rdlc" report-loaded="onReportLoaded" processing-mode="Local" toolbar-rendering="onToolbarRendering" tool-bar-item-click="onToolBarItemClick" export-item-click="onExportItemClick" />
+
+    <script>
+        function onReportLoaded(args) {
+            let reportNameWithoutExt = args.model.reportPath.split(".")[0];
+            let reportObj = $('#reportviewer').data("boldReportViewer");
+            reportObj.model.dataSources = rdlcData[reportNameWithoutExt];
+        }
+    </script>
+
+}
+
+@section description {
+    <div id="description">
+        <p>
+            Consolidated balance sheet RDLC report represents the assets and liabilities of a company and all subsidiaries
+            for the last four quarters in a single sheet using <a
+                href="https://help.boldreports.com/on-premise/report-designer/report-items/tablix/"
+                target="_blank">Tablix</a> report item.
+        </p>
+        <ul>
+            <li>The <a href="https://help.boldreports.com/on-premise/report-designer/report-items/tablix/grouping-panel/"
+                    target="_blank">Row grouping</a> feature is used to group the Assets type.</li>
+            <li>Text box report items with currency value are formatted using <a
+                    href="https://help.boldreports.com/on-premise/report-designer/compose-report/properties-panel/#set-expression"
+                    target="_blank">expression</a>.</li>
+            <li>The data used in this table is a local JSON data.</li>
+        </ul>
+        <p>
+            More information about RDLC report can be found in this <a
+                href="https://help.boldreports.com/javascript/report-viewer/rdlc-report/" target="_blank">documentation</a>
+            section.
+        </p>
+    </div>
+}

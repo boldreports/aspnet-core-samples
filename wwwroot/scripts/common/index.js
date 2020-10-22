@@ -14,6 +14,7 @@
     loadTabContent();
     setReportsHeight();
     updateTab();
+    $('a[data-toggle="tab"][href="#demo"]').on('shown.bs.tab', resizeReportViewer);
 })();
 
 window.addEventListener('resize', function () {
@@ -95,4 +96,9 @@ function getResponse(url) {
         url: url,
         async: false
     }).responseText;
+}
+
+function resizeReportViewer() {
+    let reportViewerElement = document.querySelector('.e-reportviewer.e-js');
+    if (reportViewerElement) $(reportViewerElement).trigger('resize');
 }

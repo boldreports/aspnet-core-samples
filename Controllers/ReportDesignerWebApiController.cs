@@ -13,11 +13,13 @@ using Microsoft.AspNetCore.Hosting;
 using System.Data;
 using Microsoft.Extensions.Caching.Memory;
 using System.Net;
+using Samples.Core.Logger;
+using System.Reflection;
 
 namespace ReportsCoreSamples.Controllers
 {
     [Microsoft.AspNetCore.Cors.EnableCors("AllowAllOrigins")]
-    public class ReportDesignerWebApiController : Controller, IReportDesignerController
+    public class ReportDesignerWebApiController : Controller, IReportDesignerController, IReportLogger
     {
         private Microsoft.Extensions.Caching.Memory.IMemoryCache _cache;
 #if NETCOREAPP2_1
@@ -90,7 +92,10 @@ namespace ReportsCoreSamples.Controllers
                 }
                 return true;
             }
-            catch (Exception ex) { }
+            catch (Exception ex)
+            {
+                LogExtension.LogError(ex.Message, ex, MethodBase.GetCurrentMethod());
+            }
             return false;
         }
 
@@ -125,13 +130,7 @@ namespace ReportsCoreSamples.Controllers
         [HttpPost]
         public object PostDesignerAction([FromBody] Dictionary<string, object> jsonResult)
         {
-            string reportType = "";
-            if (jsonResult.ContainsKey("customData"))
-            {
-                string customData = jsonResult["customData"].ToString();
-                reportType = (string)(JsonConvert.DeserializeObject(customData) as dynamic).reportType;
-            }
-            this.Server.reportType = String.IsNullOrEmpty(reportType) ? "RDL" : reportType;
+            this.UpdateReportType(jsonResult);
             return ReportDesignerHelper.ProcessDesigner(jsonResult, this, null, this._cache);
         }
 
@@ -150,6 +149,7 @@ namespace ReportsCoreSamples.Controllers
         [HttpPost]
         public object PostReportAction([FromBody] Dictionary<string, object> jsonResult)
         {
+            this.UpdateReportType(jsonResult);
             return ReportHelper.ProcessReport(jsonResult, this, this._cache);
         }
 
@@ -213,6 +213,7 @@ namespace ReportsCoreSamples.Controllers
             }
             catch (Exception ex)
             {
+                LogExtension.LogError(ex.Message, ex, MethodBase.GetCurrentMethod());
                 errMsg = ex.Message;
                 return false;
             }
@@ -228,10 +229,33 @@ namespace ReportsCoreSamples.Controllers
             }
             catch (Exception ex)
             {
+                LogExtension.LogError(ex.Message, ex, MethodBase.GetCurrentMethod());
                 resource.ErrorMessage = ex.Message;
             }
             return resource;
         }
+
+        public void LogError(string message, Exception exception, MethodBase methodType, ErrorType errorType)
+        {
+            LogExtension.LogError(message, exception, methodType, errorType == ErrorType.Error ? "Error" : "Info");
+        }
+
+        public void LogError(string errorCode, string message, Exception exception, string errorDetail, string methodName, string className)
+        {
+            LogExtension.LogError(message, exception, System.Reflection.MethodBase.GetCurrentMethod(), errorCode + "-" + errorDetail);
+        }
+
+        public void UpdateReportType(Dictionary<string, object> jsonResult)
+        {
+            string reportType = "";
+            if (jsonResult.ContainsKey("customData"))
+            {
+                string customData = jsonResult["customData"].ToString();
+                reportType = (string)(JsonConvert.DeserializeObject(customData) as dynamic).reportType;
+            }
+            this.Server.reportType = String.IsNullOrEmpty(reportType) ? "RDL" : reportType;
+        }
+
     }
 
 }

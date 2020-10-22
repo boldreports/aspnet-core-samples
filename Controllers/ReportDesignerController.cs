@@ -73,8 +73,8 @@ namespace ReportsCoreSamples.Controllers
             string title = String.IsNullOrEmpty((string)sampleData.metaData.title) ? sampleData.sampleName : sampleData.metaData.title;
             string metaContent = "The ASP.NET Core bold report designer allows the end-users to arrange/customize the reports appearance in browsers." +
                         "It helps to edit the " + title + " for customer\"s application needs.";
-            title = title + " | ASP.NET Core Report Designer | Bold Reports";
-            ViewBag.Title = title;
+            title += " | ASP.NET Core Report Designer";
+            ViewBag.Title = title.Length < 45 ? title += " | Bold Reports" : title;
             ViewBag.Description = metaContent;
         }
     }

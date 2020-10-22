@@ -15,6 +15,7 @@ using Bold.Licensing;
 using BoldReports.Web;
 using Newtonsoft.Json;
 using System.Reflection;
+using Samples.Core.Logger;
 
 #if NETCOREAPP2_1
 using Microsoft.AspNetCore.Mvc;
@@ -34,15 +35,31 @@ namespace ReportsCoreSamples
         public Startup(IConfiguration configuration, IWebHostEnvironment _hostingEnvironment)
 #endif
         {
+            log4net.GlobalContext.Properties["LogPath"] = _hostingEnvironment.ContentRootPath;
+            LogExtension.RegisterLog4NetConfig();
+
             string License = File.ReadAllText(System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "BoldLicense.txt"), Encoding.UTF8);
             BoldLicenseProvider.RegisterLicense(License);
             ReportConfig.DefaultSettings = new ReportSettings()
             {
                 MapSetting = this.GetMapSettings(_hostingEnvironment)
-            };
+            }.RegisterExtensions(this.GetDataExtension(configuration.GetSection("appSettings").GetSection("ExtAssemblies").Value));
 
             Configuration = configuration;
             env = _hostingEnvironment;
+        }
+        private List<string> GetDataExtension(string ExtAssemblies)
+        {
+            var extensions = !string.IsNullOrEmpty(ExtAssemblies) ? ExtAssemblies : string.Empty;
+            try
+            {
+                return new List<string>(extensions.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries));
+            }
+            catch (Exception ex)
+            {
+                LogExtension.LogError("Failed to Load Data Extension", ex, MethodBase.GetCurrentMethod());
+            }
+            return null;
         }
 
 #if NETCOREAPP2_1

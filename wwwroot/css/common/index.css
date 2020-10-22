@@ -73,6 +73,10 @@ body {
     font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif";
 }
 
+:focus {
+    outline: none;
+}
+
 @font-face {
     font-family: 'ejicons';
     src: url('./../../assets/sb-icons/fonts/icons.ttf?gcjn6a') format('truetype'), url('./../../assets/sb-icons/fonts/icons.woff?gcjn6a') format('woff'), url('./../../assets/sb-icons/fonts/icons.svg?gcjn6a#sbicons') format('svg');

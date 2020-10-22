@@ -4,9 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="@ViewBag.Description" />
+    <meta name="description" property="og:description" content="@ViewBag.Description" />
+    <meta property="og:image" content="https://www.boldreports.com/wp-content/uploads/2019/09/boldreports-ogp.png" alt="Reports sample for ASP.NET Core" />
+    <meta property="og:image:secure_url" content="https://www.boldreports.com/wp-content/uploads/2019/09/boldreports-ogp.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:title" content="@ViewBag.Title" />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>@ViewBag.Title</title>
-    <link rel="shortcut icon" href="~/favicon.ico" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
     <script>
         function validateBrowser() {
             var uaValidate = navigator.userAgent.match(/(MSIE |Trident.*rv[ :])([0-9]+)/);
@@ -22,9 +29,27 @@
             }
         }
     </script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-K73VBT8');</script>
+    <!-- End Google Tag Manager -->
     <link href="~/bundles/main/app.min.css" rel="stylesheet" />
 </head>
 <body>
+    <div hidden id="reports-analytics" data-queue="Bold Reports - Demos - ASP.NET Core"></div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K73VBT8"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
     @RenderBody()
     <div class="splash">
         <div class="message">ASP.NET Core Reports</div>
@@ -84,15 +109,15 @@
                                 <div class="tab-pane" id="source" role="tabpanel">
                                     <div id="childTabContainer">
                                         <div class="tab-content ej-tab-content" id="childTabContent">
-                                            <div class="tab-pane ej-tab-pane cshtml-content show active" id="cshtml" role="tabpanel"></div>
-                                            <div class="tab-pane ej-tab-pane csharp-content" id="csharp" role="tabpanel"></div>
+                                            <div class="tab-pane ej-tab-pane csharp-content  show active" id="csharp" role="tabpanel"></div>
+                                            <div class="tab-pane ej-tab-pane cshtml-content" id="cshtml" role="tabpanel"></div>
                                         </div>
                                         <ul class="nav ej-nav-header" id="childtTab" role="tablist">
                                             <li class="ej-nav-item">
-                                                <a class="active cshtml-header" href="#cshtml" data-toggle="tab" role="tab" aria-selected="true"></a>
+                                                <a href="#csharp" class="active csharp-header" data-toggle="tab" role="tab" aria-selected="true"></a>
                                             </li>
                                             <li class="ej-nav-item">
-                                                <a href="#csharp" class="csharp-header" data-toggle="tab" role="tab" aria-selected="false"></a>
+                                                <a class="cshtml-header" href="#cshtml" data-toggle="tab" role="tab" aria-selected="false"></a>
                                             </li>
                                         </ul>
                                     </div>

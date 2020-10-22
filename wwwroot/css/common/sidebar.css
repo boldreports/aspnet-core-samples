@@ -1,4 +1,4 @@
-﻿.ej-sidebar-content .ej-sb-home {
+﻿﻿.ej-sidebar-content .ej-sb-home {
     height: 38px;
     margin: 8px 10px 8px 28px;
     cursor: pointer;
@@ -51,11 +51,39 @@
             width: 90px;
             margin: 8px;
             background-image: url('./../../assets/sidebar/portrait.png');
-            background-size: 100% 1200%;
+            background-size: 100% 1300%;
         }
 
 
         .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-sb-toc-title {
             font-size: 12px;
             font-weight: 600;
+        }
+
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-status-label {
+            border-radius: 2px;
+            color: #fff;
+            font-size: 8px;
+            align-items: center;
+            padding: 4px 6px;
+            text-transform: capitalize;
+            font-weight: 600;
+            position: relative;
+            right: -48px;
+        }
+
+        .ej-status-label.ej-updated {
+            background-color: #fbaa33;
+        }
+
+        .ej-status-label.ej-new {
+            background-color: #29bc4f;
+        }
+
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-portrait {
+            top: -163px;
+        }
+
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-landscape {
+            top: -113px;
         }
