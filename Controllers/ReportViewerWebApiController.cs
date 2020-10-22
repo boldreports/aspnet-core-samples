@@ -10,11 +10,15 @@ using Microsoft.AspNetCore.Hosting;
 using BoldReports.Models.ReportViewer;
 using System.Data;
 using Microsoft.Extensions.Caching.Memory;
+using System.Reflection;
+using log4net.Util;
+using log4net;
+using Samples.Core.Logger;
 
 namespace ReportsCoreSamples.Controllers
 {
     [Microsoft.AspNetCore.Cors.EnableCors("AllowAllOrigins")]
-    public class ReportViewerWebApiController : Controller, IReportController
+    public class ReportViewerWebApiController : Controller, IReportController, IReportLogger
     {
         // Report viewer requires a memory cache to store the information of consecutive client request and
         // have the rendered report viewer information in server.
@@ -50,6 +54,7 @@ namespace ReportsCoreSamples.Controllers
         // Method will be called to initialize the report information to load the report with ReportHelper for processing.
         public void OnInitReportOptions(ReportViewerOptions reportOption)
         {
+            reportOption.ReportModel.EmbedImageData = true;
             string reportName = reportOption.ReportModel.ReportPath;
             string basePath = _hostingEnvironment.WebRootPath;
             FileStream reportStream = new FileStream(basePath + @"\resources\Report\" + reportOption.ReportModel.ReportPath, FileMode.Open, FileAccess.Read);
@@ -80,6 +85,15 @@ namespace ReportsCoreSamples.Controllers
         public object PostFormReportAction()
         {
             return ReportHelper.ProcessReport(null, this, _cache);
+        }
+        public void LogError(string message, Exception exception, MethodBase methodType, ErrorType errorType)
+        {
+            LogExtension.LogError(message, exception, methodType, errorType == ErrorType.Error ? "Error" : "Info");
+        }
+
+        public void LogError(string errorCode, string message, Exception exception, string errorDetail, string methodName, string className)
+        {
+            LogExtension.LogError(message, exception, System.Reflection.MethodBase.GetCurrentMethod(), errorCode + "-" + errorDetail);
         }
     }
 }

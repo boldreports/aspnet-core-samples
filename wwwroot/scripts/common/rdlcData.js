@@ -46,7 +46,33 @@
             { "Region": "North America", "Country": "Greenland", "Year": 2015, "Revenue": "519280" },
             { "Region": "North America", "Country": "Mexico", "Year": 2015, "Revenue": "780234" },
             { "Region": "North America", "Country": "USA", "Year": 2015, "Revenue": "0" }
-            ],
+        ],
         name: "SalesByYear"
+    }],
+    "consolidated-balance-sheet": [{
+        value: [
+            { "Assests": "Current Assets", "Asset_Type": "Cash", "Qtr1": "932,694", "Qtr3": "1,328,181", "Qtr2": "1,116,535", "Qtr4": "505,228" },
+            { "Assests": "Current Assets", "Asset_Type": "Account Receivable", "Qtr1": "567,113", "Qtr2": "353,221", "Qtr3": "462,197", "Qtr4": "867,008" },
+            { "Assests": "Current Assets", "Asset_Type": "Inventories", "Qtr1": "313,714", "Qtr2": "699,555", "Qtr3": "423,018", "Qtr4": "893,008" },
+            { "Assests": "Current Assets", "Asset_Type": "Other Current Assets", "Qtr1": "5,000", "Qtr2": "4,000", "Qtr3": "5,000", "Qtr4": "5,000" },
+            { "Assests": "Net Fixed Assets", "Asset_Type": "Land", "Qtr1": "222,909", "Qtr2": "223,453", "Qtr3": "223,541", "Qtr4": "223,755" },
+            { "Assests": "Net Fixed Assets", "Asset_Type": "Buildings", "Qtr1": "813,799", "Qtr2": "813,835", "Qtr3": "813,769", "Qtr4": "813,797" },
+            { "Assests": "Net Fixed Assets", "Asset_Type": "Equipments etc", "Qtr1": "321,491", "Qtr2": "341,549", "Qtr3": "451,591", "Qtr4": "601,600" },
+            { "Assests": "Net Fixed Assets", "Asset_Type": "Less Accumulateed Depreciation", "Qtr1": "0", "Qtr2": "0", "Qtr3": "0", "Qtr4": "0" },
+            { "Assests": "Other Assets", "Asset_Type": "Other Assets", "Qtr1": "123,377", "Qtr2": "143,545", "Qtr3": "145,392", "Qtr4": "183,468" }
+        ],
+        name: "Assets"
+    },
+    {
+        value: [
+            { "Assests": "Liabilities", "Asset_Type": "Account Payable", "Qtr1": "410,641", "Qtr2": "674,973", "Qtr3": "764,421", "Qtr4": "921,448" },
+            { "Assests": "Liabilities", "Asset_Type": "Accrued Liabilities", "Qtr1": "28,434", "Qtr2": "29,347", "Qtr3": "30,423", "Qtr4": "41,275" },
+            { "Assests": "Liabilities", "Asset_Type": "Accrued Income Taxes", "Qtr1": "12,364", "Qtr2": "15,389", "Qtr3": "17,415", "Qtr4": "20,460" },
+            { "Assests": "Long Liabilities", "Asset_Type": "Long Term Debts", "Qtr1": "712,826", "Qtr2": "697,462", "Qtr3": "618,529", "Qtr4": "608,697" },
+            { "Assests": "Equity", "Asset_Type": "Preferred Stock", "Qtr1": "230,640", "Qtr2": "205,450", "Qtr3": "262,980", "Qtr4": "242,578" },
+            { "Assests": "Equity", "Asset_Type": "Common Stock", "Qtr1": "1,905,192", "Qtr2": "2,073,072", "Qtr3": "2,158,948", "Qtr4": "2,258,901" },
+            { "Assests": "Equity", "Asset_Type": "Retained Earnings", "Qtr1": "0", "Qtr2": "0", "Qtr3": "0", "Qtr4": "0" }
+        ],
+        name: "Liabilities"
     }]
 };
