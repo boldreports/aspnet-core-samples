@@ -19,7 +19,7 @@
     <PackageReference Include="BoldReports.Data.WebData" Version="2.4.10" />
     <PackageReference Include="BoldReports.Data.PostgreSQL" Version="2.4.10" />
     <PackageReference Include="BuildBundlerMinifier" Version="2.9.406" />
-    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="log4net" Version="2.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.ResponseCompression" Version="2.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
