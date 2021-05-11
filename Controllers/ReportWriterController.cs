@@ -73,8 +73,6 @@ namespace ReportsCoreSamples.Controllers
                     "../../scripts/bold-reports/common/bold.reports.widgets.min.js",
                     //Chart component script
                     "../../scripts/bold-reports/data-visualization/ej.chart.min.js",
-                    //Map component script
-                    "../../scripts/bold-reports/data-visualization/ej.map.min.js",
                     //Report Viewer Script
                     "../../scripts/bold-reports/bold.report-viewer.min.js"
                 };
@@ -91,7 +89,7 @@ namespace ReportsCoreSamples.Controllers
                 }
                 else if (type == "word")
                 {
-                    fileName += ".doc";
+                    fileName += ".docx";
                     format = WriterFormat.Word;
                 }
                 else if (type == "csv")
@@ -101,7 +99,7 @@ namespace ReportsCoreSamples.Controllers
                 }
                 else
                 {
-                    fileName += ".xls";
+                    fileName += ".xlsx";
                     format = WriterFormat.Excel;
                 }
                 MemoryStream memoryStream = new MemoryStream();

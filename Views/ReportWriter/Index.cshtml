@@ -1,4 +1,6 @@
-﻿@section control {
+﻿@inject Globals globals;
+
+@section control {
     <form action="~/ReportWriter/generate" class="r-w-form" id="reportform" method="post">
         <div class="r-w-container">
             <div class="r-w-sample-container">
@@ -36,6 +38,12 @@
                 </div>
                 <input type="text" style="display:none" name="reportName" />
                 <input class="r-w-genearte e-button e-js e-ntouch e-btn-normal e-btn e-select e-widget" type="submit" value="Generate" />
+                @if (!Globals.isPhatomJSExist)
+                {
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        Data Visualization report items will not be exported properly since <a href="https://phantomjs.org/" target="_blank">PhanthomJS</a> was not found in this application.
+                    </div>
+                }
             </div>
         </div>
     </form>

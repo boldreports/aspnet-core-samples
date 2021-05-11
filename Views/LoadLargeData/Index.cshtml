@@ -8,7 +8,7 @@
         function onReportLoaded(args) {
         }
         function onToolbarSettings() {
-            this.model.toolbarSettings.items = ~ej.ReportViewer.ToolbarItems.Export & ~ej.ReportViewer.ToolbarItems.Print,
+            this.model.toolbarSettings.items = ~ej.ReportViewer.ToolbarItems.Export & ~ej.ReportViewer.ToolbarItems.Print & ~ej.ReportViewer.ToolbarItems.ExportSetup,
             this.model.toolbarSettings.customGroups = [{
                 items: [{
                     type: 'Default',

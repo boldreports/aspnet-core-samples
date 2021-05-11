@@ -29,6 +29,7 @@
         margin: 8px auto;
         text-align: center;
         border: 2px solid transparent;
+        position: relative;
     }
 
         .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card:hover,
@@ -42,7 +43,7 @@
             width: 120px;
             margin: 8px;
             background-image: url('./../../assets/sidebar/landscape.png');
-            background-size: 100% 800%;
+            background-size: 100% 900%;
         }
 
         .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-portrait-img {
@@ -61,29 +62,48 @@
         }
 
         .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-status-label {
-            border-radius: 2px;
-            color: #fff;
-            font-size: 8px;
-            align-items: center;
-            padding: 4px 6px;
-            text-transform: capitalize;
-            font-weight: 600;
-            position: relative;
-            right: -48px;
+            display: inline-block;
+            height: 20px;
+            font-size: 12px;
+            color: #FFFFFF;
+            position: absolute;
+            right: 0;
+            top: 0;
+            line-height: 1.8;
         }
 
-        .ej-status-label.ej-updated {
-            background-color: #fbaa33;
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-status-label::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            border-color: transparent;
+            border-style: solid;
+            border-top-width: 10px;
+            border-right-width: 5px;
+            border-bottom-width: 10px;
+            border-left-width: 5px;
         }
 
-        .ej-status-label.ej-new {
-            background-color: #29bc4f;
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-status-label.ej-updated {
+            background-color: #ff663e;
+            width: 55px;
+            padding-right: 4px;
         }
 
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-portrait {
-            top: -163px;
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-status-label.ej-new {
+            background-color: #0f8521;
+            width: 42px;
+            padding-right: 6px;
         }
 
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-landscape {
-            top: -113px;
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-status-label.ej-new::before {
+            right: 42px;
+            border-right-color: #0f8521;
+            border-top-color: #0f8521;
+        }
+
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-status-label.ej-updated::before {
+            right: 55px;
+            border-right-color: #ff663e;
+            border-top-color: #ff663e;
         }
