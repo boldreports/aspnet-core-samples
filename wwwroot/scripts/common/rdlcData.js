@@ -74,5 +74,35 @@
             { "Assests": "Equity", "Asset_Type": "Retained Earnings", "Qtr1": "0", "Qtr2": "0", "Qtr3": "0", "Qtr4": "0" }
         ],
         name: "Liabilities"
+    }],
+    "paystub": [{
+        value: [
+            {
+                "Company_Number": 32,
+                "Company_Name": "Mountain Bikes",
+                "Last_Name": "Anne",  
+                "First_Name": "Dodsworth",
+                "Employment_Date": "2020-04-19",
+                "Period_Start_Date": "2020-01-30",
+                "Period_End_Date": "2020-07-02",
+                "Monthly_Rate": "50000",
+                "Daily_Rate": "1989",
+                "Housing_Allowance": "2100",
+                "Car_Loan": "1100",
+                "Phil_Health": "600",
+                "SSS": "496",
+                "Pag_Ibig_Loan": "317",
+                "BIR": "4986",
+                "Negative_A": "400",
+                "Employee_Number": 400,
+                "Payable_Date": "2020-07-15",
+                "Position": "VP Quality Control",
+                "Regular_Worked_Hours": 80,
+                "Regular_OT_Hours": 37,
+                "Regular_Rest_Day_Worked_Hours": 16,
+                "Regular_Rest_Day_OT_Hours": 8
+            }
+        ],
+        name: "Paystub"
     }]
 };
