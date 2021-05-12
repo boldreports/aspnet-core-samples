@@ -1685,7 +1685,7 @@ Group by [dbo].[Categories].[CategoryName]</CommandText>
                       </ChartEmptyPoints>
                       <CustomProperties>
                         <CustomProperty>
-                          <Name>BarLabelStyle</Name>
+                          <Name />
                           <Value>Outside</Value>
                         </CustomProperty>
                       </CustomProperties>

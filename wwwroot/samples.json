@@ -244,12 +244,25 @@
       }
     },
     {
+      "routerPath": "Paystub",
+      "sampleName": "Paystub",
+      "basePath": "ReportViewer",
+      "imageDetails": {
+        "isLandscape": true,
+        "index": 7
+      },
+      "status": "New",
+      "metaData": {
+        "description": "This demos shows the Paystub report represents the payslip of a company in ASP.NET Core bold report viewer."
+      }
+    },
+    {
       "routerPath": "",
       "sampleName": "Report Writer",
       "basePath": "ReportWriter",
       "imageDetails": {
         "isLandscape": true,
-        "index": 7
+        "index": 8
       },
       "metaData": {
         "description": "This demos allows you to export the RDL or RDLC report with popular file formats like PDF, HTML, Microsoft Word, and Microsoft Excel without previewing the report in viewer using ASP.NET Core bold report writer."

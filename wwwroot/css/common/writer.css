@@ -57,7 +57,7 @@
                 height: 160px;
                 margin: 15px 0;
                 background-image: url('./../../assets/sidebar/landscape.png');
-                background-size: 100% 800%;
+                background-size: 100% 900%;
             }
 
             .r-w-container .r-w-sample-container .r-w-sample.r-w-sample-portrait .r-w-sample-image {
@@ -113,6 +113,12 @@
         height: 30px;
         line-height: 30px;
         margin: 20px 0 0 124px;
+    }
+
+    .r-w-container .alert {
+        margin-top: 20px;
+        font-size: 14px;
+        padding: 10px;
     }
 
 @media only screen and (max-width: 1080px) {

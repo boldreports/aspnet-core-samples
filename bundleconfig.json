@@ -12,10 +12,7 @@
       "wwwroot/scripts/bold-reports/common/bold.reports.widgets.min.js",
       "wwwroot/scripts/bold-reports/bold.report-viewer.min.js",
       "wwwroot/scripts/bold-reports/data-visualization/ej.bulletgraph.min.js",
-      "wwwroot/scripts/bold-reports/data-visualization/ej.chart.min.js",
-      "wwwroot/scripts/bold-reports/data-visualization/ej.circulargauge.min.js",
-      "wwwroot/scripts/bold-reports/data-visualization/ej.lineargauge.min.js",
-      "wwwroot/scripts/bold-reports/data-visualization/ej.map.min.js"
+      "wwwroot/scripts/bold-reports/data-visualization/ej.chart.min.js"
     ],
     "minify": {
       "enabled": true,
@@ -68,10 +65,7 @@
       "wwwroot/scripts/bold-reports/common/bold.report-designer-widgets.min.js",
       "wwwroot/scripts/bold-reports/bold.report-designer.min.js",
       "wwwroot/scripts/bold-reports/data-visualization/ej.bulletgraph.min.js",
-      "wwwroot/scripts/bold-reports/data-visualization/ej.chart.min.js",
-      "wwwroot/scripts/bold-reports/data-visualization/ej.circulargauge.min.js",
-      "wwwroot/scripts/bold-reports/data-visualization/ej.lineargauge.min.js",
-      "wwwroot/scripts/bold-reports/data-visualization/ej.map.min.js"
+      "wwwroot/scripts/bold-reports/data-visualization/ej.chart.min.js"
     ],
     "minify": {
       "enabled": true,
