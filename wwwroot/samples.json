@@ -7,6 +7,7 @@
   "otherPlatforms": {
     "Angular": "angular/#/",
     "JavaScript": "javascript/#/",
+    "React": "react/#/",
     "ASP.NET MVC": "aspnet-mvc/",
     "ASP.NET WebForms": "aspnet-web-forms/"
   },
@@ -251,9 +252,21 @@
         "isLandscape": true,
         "index": 7
       },
-      "status": "New",
       "metaData": {
         "description": "This demos shows the Paystub report represents the payslip of a company in ASP.NET Core bold report viewer."
+      }
+    },
+    {
+      "routerPath": "DynamicChartSeries",
+      "sampleName": "Dynamic Chart Series",
+      "basePath": "ReportViewer",
+      "imageDetails": {
+        "isLandscape": true,
+        "index": 8
+      },
+      "status": "New",
+      "metaData": {
+        "description": "This demos allows you to choose the chart series dynamically in ASP.NET Core bold report viewer."
       }
     },
     {
@@ -262,7 +275,7 @@
       "basePath": "ReportWriter",
       "imageDetails": {
         "isLandscape": true,
-        "index": 8
+        "index": 9
       },
       "metaData": {
         "description": "This demos allows you to export the RDL or RDLC report with popular file formats like PDF, HTML, Microsoft Word, and Microsoft Excel without previewing the report in viewer using ASP.NET Core bold report writer."

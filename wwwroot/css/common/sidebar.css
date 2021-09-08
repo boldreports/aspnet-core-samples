@@ -1,4 +1,4 @@
-﻿﻿.ej-sidebar-content .ej-sb-home {
+﻿.ej-sidebar-content .ej-sb-home {
     height: 38px;
     margin: 8px 10px 8px 28px;
     cursor: pointer;
@@ -34,7 +34,7 @@
 
         .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card:hover,
         .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card.toc-selected {
-            border-color: #1783ff;
+            border-color: #ff5f23;
         }
 
         .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-landscape-img {
@@ -43,7 +43,7 @@
             width: 120px;
             margin: 8px;
             background-image: url('./../../assets/sidebar/landscape.png');
-            background-size: 100% 900%;
+            background-size: 100% 1000%;
         }
 
         .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-portrait-img {
@@ -55,10 +55,10 @@
             background-size: 100% 1300%;
         }
 
-
         .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-sb-toc-title {
             font-size: 12px;
             font-weight: 600;
+            color: #2b3a5c;
         }
 
         .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-status-label {
@@ -106,4 +106,8 @@
             right: 55px;
             border-right-color: #ff663e;
             border-top-color: #ff663e;
+        }
+
+        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card.toc-selected .ej-sb-toc-title {
+            color: #ff5f23;
         }

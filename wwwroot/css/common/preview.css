@@ -150,13 +150,13 @@ body {
                 text-decoration: none;
                 padding: 5.5px 13px;
                 cursor: pointer;
-                background-color: #3C78EF;
+                background-color: #ff5f23;
                 color: #ffffff;
                 border-radius: 2px;
             }
 
                 .ej-preview-header .ej-preview-right-side a.ej-preview-button:hover {
-                    background: #006CE6;
+                    background: #ff4801;
                 }
 
         .ej-preview-header .ej-preview-right-side .preview-icon-product:before {

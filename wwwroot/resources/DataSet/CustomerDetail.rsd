@@ -8,27 +8,27 @@
     <Fields>
       <Field Name="CustomerID">
         <DataField>CustomerID</DataField>
-        <rd:UserDefined>true</rd:UserDefined>
+        <rd:TypeName>System.String</rd:TypeName>
       </Field>
       <Field Name="CompanyName">
         <DataField>CompanyName</DataField>
-        <rd:UserDefined>true</rd:UserDefined>
+        <rd:TypeName>System.String</rd:TypeName>
       </Field>
       <Field Name="Address">
         <DataField>Address</DataField>
-        <rd:UserDefined>true</rd:UserDefined>
+        <rd:TypeName>System.String</rd:TypeName>
       </Field>
       <Field Name="City">
         <DataField>City</DataField>
-        <rd:UserDefined>true</rd:UserDefined>
+        <rd:TypeName>System.String</rd:TypeName>
       </Field>
       <Field Name="PostalCode">
         <DataField>PostalCode</DataField>
-        <rd:UserDefined>true</rd:UserDefined>
+        <rd:TypeName>System.String</rd:TypeName>
       </Field>
       <Field Name="Country">
         <DataField>Country</DataField>
-        <rd:UserDefined>true</rd:UserDefined>
+        <rd:TypeName>System.String</rd:TypeName>
       </Field>
     </Fields>
   </DataSet>

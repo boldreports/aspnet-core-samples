@@ -1,177 +1,48 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
-  <Description>Adventure Works top five sales people and stores. This report illustrates a dataset with queries containing the TOP clause. It also illustrates the use of tables, charts, parameters, calculated fields, and drillthrough links.</Description>
-  <AutoRefresh>0</AutoRefresh>
-  <DataSources>
-    <DataSource Name="AdventureWorks">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=AdventureWorks;user id=demoreadonly@data-platform-demo;password=N@c)=Y8s*1&amp;dh</ConnectString>
-      </ConnectionProperties>
-      <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>f925f528-19f0-4eaf-8153-0e2c1b58a961</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
-  <DataSets>
-    <DataSet Name="TopEmployees">
-      <Query>
-        <DataSourceName>AdventureWorks</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="@ProductCategory">
-            <Value>=Parameters!ProductCategory.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@ProductSubcategory">
-            <Value>=Parameters!ProductSubcategory.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@StartDate">
-            <Value>=Parameters!StartDate.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@EndDate">
-            <Value>=Parameters!EndDate.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>SELECT TOP 5 C.LastName, C.FirstName, E.EmployeeID, SUM(SOH.SubTotal) AS SaleAmount
-FROM        Sales.SalesPerson SP INNER JOIN
-            HumanResources.Employee E ON SP.SalesPersonID = E.EmployeeID INNER JOIN
-            Person.Contact C ON E.ContactID = C.ContactID INNER JOIN
-            Sales.SalesOrderHeader SOH ON SP.SalesPersonID = SOH.SalesPersonID INNER JOIN
-            Sales.SalesOrderDetail SOD ON SOH.SalesOrderID = SOD.SalesOrderID INNER JOIN
-            Production.Product P ON SOD.ProductID = P.ProductID INNER JOIN
-            Production.ProductSubcategory PS ON P.ProductSubcategoryID = PS.ProductSubcategoryID INNER JOIN
-            Production.ProductCategory PC ON PS.ProductCategoryID = PC.ProductCategoryID
-WHERE       (PC.ProductCategoryID = @ProductCategory) AND (PS.ProductSubcategoryID IN (@ProductSubcategory)) AND 
-            (SOH.OrderDate &gt; @StartDate) AND (SOH.OrderDate &lt; @EndDate)
-GROUP BY    C.LastName, C.FirstName, E.EmployeeID, PC.ProductCategoryID, PS.ProductSubcategoryID
-ORDER BY    SUM(SOH.SubTotal) DESC</CommandText>
-        <Timeout>30</Timeout>
-      </Query>
-      <Fields>
-        <Field Name="LastName">
-          <DataField>LastName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FirstName">
-          <DataField>FirstName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="EmployeeID">
-          <DataField>EmployeeID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="SaleAmount">
-          <DataField>SaleAmount</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="FullName">
-          <Value>=Fields!LastName.Value &amp; ", " &amp; Fields!FirstName.Value</Value>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="ProductCategories">
-      <Query>
-        <DataSourceName>AdventureWorks</DataSourceName>
-        <CommandText>SELECT DISTINCT ProductCategoryID, Name
-FROM        Production.ProductCategory
-ORDER BY    Name</CommandText>
-        <Timeout>30</Timeout>
-      </Query>
-      <Fields>
-        <Field Name="ProductCategoryID">
-          <DataField>ProductCategoryID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Name">
-          <DataField>Name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="TopCustomers">
-      <Query>
-        <DataSourceName>AdventureWorks</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="@ProductSubcategory">
-            <Value>=Parameters!ProductSubcategory.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@StartDate">
-            <Value>=Parameters!StartDate.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@EndDate">
-            <Value>=Parameters!EndDate.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="@ProductCategory">
-            <Value>=Parameters!ProductCategory.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>SELECT TOP 5 S.Name AS StoreName, SUM(SOH.SubTotal) AS SaleAmount, PS.ProductSubcategoryID, 
-            PS.ProductCategoryID
-FROM        Production.Product P INNER JOIN
-            Production.ProductSubcategory PS ON P.ProductSubcategoryID = PS.ProductSubcategoryID INNER JOIN
-            Sales.SalesOrderDetail SOD ON P.ProductID = SOD.ProductID INNER JOIN
-            Sales.Customer CU INNER JOIN
-            Sales.SalesOrderHeader SOH ON CU.CustomerID = SOH.CustomerID INNER JOIN
-            Sales.Store S ON CU.CustomerID = S.CustomerID ON SOD.SalesOrderID = SOH.SalesOrderID
-WHERE       (SOH.OrderDate &gt; @StartDate) AND 
-            (SOH.OrderDate &lt; @EndDate) AND (PS.ProductCategoryID = @ProductCategory) AND (PS.ProductSubcategoryID IN (@ProductSubcategory)) 
-GROUP BY    S.Name, PS.ProductSubcategoryID, PS.ProductCategoryID
-ORDER BY    SUM(SOH.SubTotal) DESC</CommandText>
-        <Timeout>30</Timeout>
-      </Query>
-      <Fields>
-        <Field Name="StoreName">
-          <DataField>StoreName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="SaleAmount">
-          <DataField>SaleAmount</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="ProductSubcategoryID">
-          <DataField>ProductSubcategoryID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ProductCategoryID">
-          <DataField>ProductCategoryID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="ProductSubcategories">
-      <Query>
-        <DataSourceName>AdventureWorks</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="@ProductCategory">
-            <Value>=Parameters!ProductCategory.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>SELECT      ProductSubcategoryID, ProductCategoryID, Name
-FROM        Production.ProductSubcategory
-WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
-        <Timeout>30</Timeout>
-      </Query>
-      <Fields>
-        <Field Name="ProductSubcategoryID">
-          <DataField>ProductSubcategoryID</DataField>
-          <rd:TypeName>System.Int16</rd:TypeName>
-        </Field>
-        <Field Name="ProductCategoryID">
-          <DataField>ProductCategoryID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Name">
-          <DataField>Name</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
+<?xml version="1.0"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
   <ReportSections>
     <ReportSection>
       <Body>
+        <Style />
         <ReportItems>
           <Rectangle Name="TopEmployees">
+            <Left>7.5pt</Left>
+            <Top>68.16024pt</Top>
+            <Height>194.4pt</Height>
+            <Width>562.5pt</Width>
+            <DataElementOutput>ContentsOnly</DataElementOutput>
+            <Style>
+              <Border>
+                <Color>#b0b0b0</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
             <ReportItems>
               <Chart Name="TopEmployeesChart">
+                <Left>268.5002pt</Left>
+                <Top>22.12501pt</Top>
+                <Height>169.275pt</Height>
+                <Width>292.5pt</Width>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>__Upgraded2005__</Name>
+                    <Value>__Upgraded2005__</Value>
+                  </CustomProperty>
+                </CustomProperties>
+                <Style>
+                  <BackgroundColor>White</BackgroundColor>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <DataSetName>TopEmployees</DataSetName>
+                <ChartSeriesHierarchy>
+                  <ChartMembers>
+                    <ChartMember>
+                      <Label>Sale Amount</Label>
+                    </ChartMember>
+                  </ChartMembers>
+                </ChartSeriesHierarchy>
                 <ChartCategoryHierarchy>
                   <ChartMembers>
                     <ChartMember>
@@ -190,13 +61,6 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                     </ChartMember>
                   </ChartMembers>
                 </ChartCategoryHierarchy>
-                <ChartSeriesHierarchy>
-                  <ChartMembers>
-                    <ChartMember>
-                      <Label>Sale Amount</Label>
-                    </ChartMember>
-                  </ChartMembers>
-                </ChartSeriesHierarchy>
                 <ChartData>
                   <ChartSeriesCollection>
                     <ChartSeries Name="Series1">
@@ -209,10 +73,12 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                             <Style>
                               <Format>'$'#,0.00'K';('$'#,0.00'K')</Format>
                             </Style>
+                            <UseValueAsLabel>false</UseValueAsLabel>
                             <Label>=Round(Sum(Fields!SaleAmount.Value)/1000,2)</Label>
+                            <Visible>false</Visible>
                           </ChartDataLabel>
                           <Style>
-                            <Color>#229ce0</Color>
+                            <Color>#ff4800</Color>
                           </Style>
                           <ChartMarker>
                             <Size>6pt</Size>
@@ -221,7 +87,6 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                         </ChartDataPoint>
                       </ChartDataPoints>
                       <Type>Bar</Type>
-                      <Style />
                       <ChartEmptyPoints>
                         <Style />
                         <ChartMarker>
@@ -229,8 +94,11 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                         </ChartMarker>
                         <ChartDataLabel>
                           <Style />
+                          <UseValueAsLabel>false</UseValueAsLabel>
+                          <Visible>false</Visible>
                         </ChartDataLabel>
                       </ChartEmptyPoints>
+                      <Style />
                       <CustomProperties>
                         <CustomProperty>
                           <Name>PointWidth</Name>
@@ -240,8 +108,14 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                       <ValueAxisName>Primary</ValueAxisName>
                       <CategoryAxisName>Primary</CategoryAxisName>
                       <ChartSmartLabel>
+                        <Disabled>false</Disabled>
+                        <AllowOutSidePlotArea>Partial</AllowOutSidePlotArea>
                         <CalloutLineAnchor>None</CalloutLineAnchor>
                         <CalloutLineColor>Black</CalloutLineColor>
+                        <CalloutLineStyle>Solid</CalloutLineStyle>
+                        <CalloutStyle>Underline</CalloutStyle>
+                        <ShowOverlapped>false</ShowOverlapped>
+                        <MarkerOverlapping>false</MarkerOverlapping>
                         <MinMovingDistance>0pt</MinMovingDistance>
                       </ChartSmartLabel>
                     </ChartSeries>
@@ -252,14 +126,14 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                     <ChartCategoryAxes>
                       <ChartAxis Name="Primary">
                         <Style>
-                          <Border>
-                            <Color>#b0b0b1</Color>
-                            <Style>Solid</Style>
-                            <Width>0.75pt</Width>
-                          </Border>
                           <FontSize>8pt</FontSize>
                           <FontWeight>Light</FontWeight>
                           <Color>#333333</Color>
+                          <Border>
+                            <Width>0.75000pt</Width>
+                            <Color>#b0b0b1</Color>
+                            <Style>Solid</Style>
+                          </Border>
                         </Style>
                         <ChartAxisTitle>
                           <Caption />
@@ -272,118 +146,51 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                           <Enabled>False</Enabled>
                           <Style>
                             <Border>
+                              <Width>0.75000pt</Width>
                               <Style>Solid</Style>
-                              <Width>0.75pt</Width>
                             </Border>
                           </Style>
+                          <IntervalType>Default</IntervalType>
                           <IntervalOffset>1</IntervalOffset>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorGridLines>
                         <ChartMinorGridLines>
                           <Enabled>False</Enabled>
                           <Style>
                             <Border>
+                              <Width>0.75000pt</Width>
                               <Style>Solid</Style>
-                              <Width>0.75pt</Width>
                             </Border>
                           </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorGridLines>
                         <ChartMajorTickMarks>
                           <Enabled>False</Enabled>
                           <Type>None</Type>
                           <Length>0</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorTickMarks>
                         <ChartMinorTickMarks>
                           <Enabled>False</Enabled>
                           <Type>None</Type>
                           <Length>0</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorTickMarks>
-                        <Minimum>NaN</Minimum>
-                        <Maximum>NaN</Maximum>
+                        <Location>Default</Location>
+                        <Minimum>null</Minimum>
+                        <Maximum>null</Maximum>
                         <PreventFontShrink>true</PreventFontShrink>
                         <PreventFontGrow>true</PreventFontGrow>
                         <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                         <MaxFontSize>8pt</MaxFontSize>
                         <ChartAxisScaleBreak>
+                          <Enabled>false</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
                           <Spacing>0</Spacing>
-                          <Style />
-                        </ChartAxisScaleBreak>
-                      </ChartAxis>
-                      <ChartAxis Name="Secondary">
-                        <Style>
-                          <FontSize>8pt</FontSize>
-                        </Style>
-                        <ChartAxisTitle>
-                          <Caption />
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                          </Style>
-                        </ChartAxisTitle>
-                        <CrossAt>null</CrossAt>
-                        <Location>Opposite</Location>
-                        <Minimum>NaN</Minimum>
-                        <Maximum>NaN</Maximum>
-                        <ChartAxisScaleBreak>
-                          <Spacing>0</Spacing>
-                          <Style />
-                        </ChartAxisScaleBreak>
-                      </ChartAxis>
-                    </ChartCategoryAxes>
-                    <ChartValueAxes>
-                      <ChartAxis Name="Primary">
-                        <Style>
-                          <Border>
-                            <Color>#b0b0b1</Color>
-                            <Style>Solid</Style>
-                            <Width>0.75pt</Width>
-                          </Border>
-                          <FontSize>8pt</FontSize>
-                          <FontWeight>Light</FontWeight>
-                          <Format>'$'0;('$'0)</Format>
-                          <Color>#333333</Color>
-                        </Style>
-                        <ChartAxisTitle>
-                          <Caption />
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <FontWeight>Light</FontWeight>
-                            <Color>#333333</Color>
-                          </Style>
-                        </ChartAxisTitle>
-                        <Margin>True</Margin>
-                        <ChartMajorGridLines>
-                          <Enabled>False</Enabled>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                              <Width>0.75pt</Width>
-                            </Border>
-                          </Style>
-                        </ChartMajorGridLines>
-                        <ChartMinorGridLines>
-                          <Enabled>False</Enabled>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                              <Width>0.75pt</Width>
-                            </Border>
-                          </Style>
-                        </ChartMinorGridLines>
-                        <ChartMajorTickMarks>
-                          <Enabled>False</Enabled>
-                          <Type>None</Type>
-                          <Length>0</Length>
-                        </ChartMajorTickMarks>
-                        <ChartMinorTickMarks>
-                          <Enabled>False</Enabled>
-                          <Type>None</Type>
-                          <Length>0</Length>
-                        </ChartMinorTickMarks>
-                        <Scalar>true</Scalar>
-                        <PreventLabelOffset>true</PreventLabelOffset>
-                        <PreventWordWrap>true</PreventWordWrap>
-                        <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
-                        <ChartAxisScaleBreak>
-                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
                           <Style />
                         </ChartAxisScaleBreak>
                       </ChartAxis>
@@ -402,23 +209,125 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                         <Minimum>null</Minimum>
                         <Maximum>null</Maximum>
                         <ChartAxisScaleBreak>
+                          <Enabled>false</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
                           <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style />
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                    </ChartCategoryAxes>
+                    <ChartValueAxes>
+                      <ChartAxis Name="Primary">
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                          <FontWeight>Light</FontWeight>
+                          <Format>'$'0;('$'0)</Format>
+                          <Color>#333333</Color>
+                          <Border>
+                            <Width>0.75000pt</Width>
+                            <Color>#b0b0b1</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption />
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <FontWeight>Light</FontWeight>
+                            <Color>#333333</Color>
+                          </Style>
+                        </ChartAxisTitle>
+                        <Margin>True</Margin>
+                        <ChartMajorGridLines>
+                          <Enabled>False</Enabled>
+                          <Style>
+                            <Border>
+                              <Width>0.75000pt</Width>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorGridLines>
+                        <ChartMinorGridLines>
+                          <Enabled>False</Enabled>
+                          <Style>
+                            <Border>
+                              <Width>0.75000pt</Width>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorGridLines>
+                        <ChartMajorTickMarks>
+                          <Enabled>False</Enabled>
+                          <Type>None</Type>
+                          <Length>0</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorTickMarks>
+                        <ChartMinorTickMarks>
+                          <Enabled>False</Enabled>
+                          <Type>None</Type>
+                          <Length>0</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorTickMarks>
+                        <Location>Default</Location>
+                        <Scalar>true</Scalar>
+                        <PreventLabelOffset>true</PreventLabelOffset>
+                        <PreventWordWrap>true</PreventWordWrap>
+                        <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+                        <ChartAxisScaleBreak>
+                          <Enabled>false</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style />
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                      <ChartAxis Name="Secondary">
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption />
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </ChartAxisTitle>
+                        <CrossAt>null</CrossAt>
+                        <Location>Opposite</Location>
+                        <Minimum>null</Minimum>
+                        <Maximum>null</Maximum>
+                        <ChartAxisScaleBreak>
+                          <Enabled>false</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
                           <Style />
                         </ChartAxisScaleBreak>
                       </ChartAxis>
                     </ChartValueAxes>
                     <ChartThreeDProperties>
+                      <Enabled>false</Enabled>
                       <ProjectionMode>Perspective</ProjectionMode>
+                      <Perspective>0</Perspective>
+                      <Rotation>30</Rotation>
+                      <Inclination>30</Inclination>
+                      <DepthRatio>100</DepthRatio>
                       <Shading>Simple</Shading>
+                      <GapDepth>100</GapDepth>
                       <WallThickness>15</WallThickness>
                       <Clustered>true</Clustered>
                     </ChartThreeDProperties>
                     <Style>
                       <Border>
+                        <Width>0.75000pt</Width>
                         <Style>None</Style>
-                        <Width>0.75pt</Width>
                       </Border>
-                      <BackgroundColor>#00ffffff</BackgroundColor>
                     </Style>
                   </ChartArea>
                 </ChartAreas>
@@ -427,15 +336,16 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                     <Hidden>true</Hidden>
                     <Style>
                       <Border>
+                        <Width>0.75000pt</Width>
                         <Color>#333333</Color>
                         <Style>Solid</Style>
-                        <Width>0.75pt</Width>
                       </Border>
                     </Style>
                     <Position>RightCenter</Position>
                     <Layout>Column</Layout>
                     <ChartLegendTitle>
                       <Caption />
+                      <TitleSeparator>None</TitleSeparator>
                       <Style>
                         <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -443,19 +353,28 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                       </Style>
                     </ChartLegendTitle>
                     <AutoFitTextDisabled>true</AutoFitTextDisabled>
+                    <HeaderSeparator>None</HeaderSeparator>
+                    <ColumnSeparator>None</ColumnSeparator>
                     <ColumnSpacing>0</ColumnSpacing>
+                    <InterlacedRows>false</InterlacedRows>
+                    <EquallySpacedItems>false</EquallySpacedItems>
+                    <Reversed>Auto</Reversed>
                     <TextWrapThreshold>0</TextWrapThreshold>
                   </ChartLegend>
                 </ChartLegends>
                 <ChartTitles>
                   <ChartTitle Name="Title1">
                     <Caption>Sales (in thousands)</Caption>
+                    <Hidden>false</Hidden>
                     <Style>
                       <FontSize>8pt</FontSize>
                       <TextAlign>General</TextAlign>
                       <VerticalAlign>Top</VerticalAlign>
                       <Color>#333333</Color>
                     </Style>
+                    <Position>TopCenter</Position>
+                    <DockOffset>0</DockOffset>
+                    <TextOrientation>Auto</TextOrientation>
                   </ChartTitle>
                 </ChartTitles>
                 <Palette>Custom</Palette>
@@ -470,55 +389,29 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                 </ChartBorderSkin>
                 <ChartNoDataMessage Name="NoDataMessage">
                   <Caption>No Data Available</Caption>
+                  <Hidden>false</Hidden>
                   <Style>
                     <TextAlign>General</TextAlign>
                     <VerticalAlign>Top</VerticalAlign>
                   </Style>
                   <Position>RightTop</Position>
+                  <DockOffset>0</DockOffset>
+                  <TextOrientation>Auto</TextOrientation>
                 </ChartNoDataMessage>
-                <DataSetName>TopEmployees</DataSetName>
-                <Top>22.12501pt</Top>
-                <Left>268.5002pt</Left>
-                <Height>169.275pt</Height>
-                <Width>292.5pt</Width>
-                <CustomProperties>
-                  <CustomProperty>
-                    <Name>__Upgraded2005__</Name>
-                    <Value>__Upgraded2005__</Value>
-                  </CustomProperty>
-                </CustomProperties>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <BackgroundColor>White</BackgroundColor>
-                </Style>
               </Chart>
               <Textbox Name="Textbox15">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value> Top Employees</Value>
-                        <Style>
-                          <FontFamily>Segoe UI Semibold</FontFamily>
-                          <FontSize>11.0002pt</FontSize>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style>
-                      <TextAlign>Left</TextAlign>
-                    </Style>
-                  </Paragraph>
-                </Paragraphs>
-                <Top>0pt</Top>
                 <Left>0pt</Left>
+                <Top>0pt</Top>
                 <Height>23.04pt</Height>
                 <Width>562.5pt</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
+                  <BackgroundColor>#e3e6ea</BackgroundColor>
+                  <VerticalAlign>Middle</VerticalAlign>
+                  <PaddingLeft>4pt</PaddingLeft>
+                  <PaddingRight>4pt</PaddingRight>
+                  <PaddingTop>4pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
                   <Border>
                     <Color>#b0b0b0</Color>
                     <Style>Solid</Style>
@@ -528,33 +421,97 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                     <Style>Solid</Style>
                     <Width>0.99975pt</Width>
                   </TopBorder>
-                  <BackgroundColor>#faf39a</BackgroundColor>
-                  <VerticalAlign>Middle</VerticalAlign>
-                  <PaddingLeft>4pt</PaddingLeft>
-                  <PaddingRight>4pt</PaddingRight>
-                  <PaddingTop>4pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
                 </Style>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value> Top Employees</Value>
+                        <Style>
+                          <FontFamily>Segoe UI Semibold</FontFamily>
+                          <FontSize>0.15278in</FontSize>
+                          <Color>black</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Left</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
               </Textbox>
               <Rectangle Name="Rectangle1">
+                <Left>0.36072pt</Left>
+                <Top>22.12488pt</Top>
+                <Height>172.2751pt</Height>
+                <Width>266.1602pt</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Color>#b0b0b0</Color>
+                    <Style>None</Style>
+                  </Border>
+                  <RightBorder>
+                    <Style>Solid</Style>
+                  </RightBorder>
+                </Style>
                 <ReportItems>
                   <Tablix Name="TopEmployeesTable">
+                    <Left>1.53pt</Left>
+                    <Top>0.90000pt</Top>
+                    <Height>19.7727pt</Height>
+                    <Width>261.1363pt</Width>
+                    <Style>
+                      <Color>Red</Color>
+                      <PaddingLeft>10pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <Border>
+                        <Color>#b0b0b0</Color>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                    <NoRowsMessage>*No Data Available</NoRowsMessage>
+                    <DataSetName>TopEmployees</DataSetName>
                     <TablixBody>
                       <TablixColumns>
                         <TablixColumn>
-                          <Width>140.4545pt</Width>
+                          <Width>1.95065in</Width>
                         </TablixColumn>
                         <TablixColumn>
-                          <Width>120.6818pt</Width>
+                          <Width>1.67617in</Width>
                         </TablixColumn>
                       </TablixColumns>
                       <TablixRows>
                         <TablixRow>
-                          <Height>19.7727pt</Height>
+                          <Height>0.27461in</Height>
                           <TablixCells>
                             <TablixCell>
                               <CellContents>
                                 <Textbox Name="FullName">
+                                  <Left>0in</Left>
+                                  <Top>0in</Top>
+                                  <Height>0.27461in</Height>
+                                  <Width>1.95065in</Width>
+                                  <ZIndex>1</ZIndex>
+                                  <Style>
+                                    <BackgroundColor>White</BackgroundColor>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>4pt</PaddingLeft>
+                                    <PaddingRight>4pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                    <Border>
+                                      <Color>#b0b0b0</Color>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <BottomBorder>
+                                      <Style>Solid</Style>
+                                    </BottomBorder>
+                                  </Style>
                                   <KeepTogether>true</KeepTogether>
                                   <Paragraphs>
                                     <Paragraph>
@@ -577,8 +534,24 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <ZIndex>1</ZIndex>
+                                </Textbox>
+                                <ColSpan>1</ColSpan>
+                                <RowSpan>1</RowSpan>
+                              </CellContents>
+                            </TablixCell>
+                            <TablixCell>
+                              <CellContents>
+                                <Textbox Name="SaleAmountEmp">
+                                  <Left>0in</Left>
+                                  <Top>0in</Top>
+                                  <Height>0.27461in</Height>
+                                  <Width>1.67618in</Width>
                                   <Style>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>4pt</PaddingLeft>
+                                    <PaddingRight>4pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
                                     <Border>
                                       <Color>#b0b0b0</Color>
                                       <Style>None</Style>
@@ -586,19 +559,7 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                                     <BottomBorder>
                                       <Style>Solid</Style>
                                     </BottomBorder>
-                                    <BackgroundColor>White</BackgroundColor>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>4pt</PaddingLeft>
-                                    <PaddingRight>4pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
                                   </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="SaleAmountEmp">
                                   <KeepTogether>true</KeepTogether>
                                   <Paragraphs>
                                     <Paragraph>
@@ -617,21 +578,9 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Style>
-                                    <Border>
-                                      <Color>#b0b0b0</Color>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <BottomBorder>
-                                      <Style>Solid</Style>
-                                    </BottomBorder>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>4pt</PaddingLeft>
-                                    <PaddingRight>4pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
                                 </Textbox>
+                                <ColSpan>1</ColSpan>
+                                <RowSpan>1</RowSpan>
                               </CellContents>
                             </TablixCell>
                           </TablixCells>
@@ -660,55 +609,25 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                         </TablixMember>
                       </TablixMembers>
                     </TablixRowHierarchy>
-                    <NoRowsMessage>*No Data Available</NoRowsMessage>
-                    <DataSetName>TopEmployees</DataSetName>
-                    <Top>0.9pt</Top>
-                    <Left>1.53pt</Left>
-                    <Height>19.7727pt</Height>
-                    <Width>261.1363pt</Width>
-                    <Style>
-                      <Border>
-                        <Color>#b0b0b0</Color>
-                        <Style>None</Style>
-                      </Border>
-                      <Color>Red</Color>
-                      <PaddingLeft>10pt</PaddingLeft>
-                      <PaddingRight>2pt</PaddingRight>
-                      <PaddingTop>2pt</PaddingTop>
-                      <PaddingBottom>2pt</PaddingBottom>
-                    </Style>
                   </Tablix>
                 </ReportItems>
                 <KeepTogether>true</KeepTogether>
-                <Top>22.12488pt</Top>
-                <Left>0.36072pt</Left>
-                <Height>172.2751pt</Height>
-                <Width>266.1602pt</Width>
-                <ZIndex>2</ZIndex>
-                <Style>
-                  <Border>
-                    <Color>#b0b0b0</Color>
-                    <Style>None</Style>
-                  </Border>
-                  <RightBorder>
-                    <Style>Solid</Style>
-                  </RightBorder>
-                </Style>
               </Rectangle>
             </ReportItems>
-            <DataElementOutput>ContentsOnly</DataElementOutput>
-            <Top>68.16024pt</Top>
-            <Left>7.5pt</Left>
-            <Height>194.4pt</Height>
-            <Width>562.5pt</Width>
-            <Style>
-              <Border>
-                <Color>#b0b0b0</Color>
-                <Style>Solid</Style>
-              </Border>
-            </Style>
           </Rectangle>
           <Textbox Name="DateRange">
+            <Left>5.99976pt</Left>
+            <Top>5.99976pt</Top>
+            <Height>18pt</Height>
+            <Width>560.7504pt</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <BackgroundColor>White</BackgroundColor>
+              <PaddingLeft>4pt</PaddingLeft>
+              <PaddingRight>4pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
@@ -727,11 +646,13 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>5.99976pt</Top>
+          </Textbox>
+          <Textbox Name="CategorySelection">
             <Left>5.99976pt</Left>
+            <Top>23.99976pt</Top>
             <Height>18pt</Height>
             <Width>560.7504pt</Width>
-            <ZIndex>1</ZIndex>
+            <ZIndex>2</ZIndex>
             <Style>
               <BackgroundColor>White</BackgroundColor>
               <PaddingLeft>4pt</PaddingLeft>
@@ -739,8 +660,6 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
               <PaddingTop>2pt</PaddingTop>
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
-          </Textbox>
-          <Textbox Name="CategorySelection">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
@@ -759,22 +678,46 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>23.99976pt</Top>
-            <Left>5.99976pt</Left>
-            <Height>18pt</Height>
-            <Width>560.7504pt</Width>
-            <ZIndex>2</ZIndex>
-            <Style>
-              <BackgroundColor>White</BackgroundColor>
-              <PaddingLeft>4pt</PaddingLeft>
-              <PaddingRight>4pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
           </Textbox>
           <Rectangle Name="TopStores">
+            <Left>7.5pt</Left>
+            <Top>277.6601pt</Top>
+            <Height>252pt</Height>
+            <Width>562.5pt</Width>
+            <ZIndex>3</ZIndex>
+            <DataElementOutput>ContentsOnly</DataElementOutput>
+            <Style>
+              <Border>
+                <Color>#b0b0b0</Color>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
             <ReportItems>
               <Chart Name="TopStoresChart">
+                <Left>268.5pt</Left>
+                <Top>20.37499pt</Top>
+                <Height>227.85pt</Height>
+                <Width>292.5pt</Width>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>__Upgraded2005__</Name>
+                    <Value>__Upgraded2005__</Value>
+                  </CustomProperty>
+                </CustomProperties>
+                <Style>
+                  <BackgroundColor>White</BackgroundColor>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+                <DataSetName>TopCustomers</DataSetName>
+                <ChartSeriesHierarchy>
+                  <ChartMembers>
+                    <ChartMember>
+                      <Label>Sale Amount</Label>
+                    </ChartMember>
+                  </ChartMembers>
+                </ChartSeriesHierarchy>
                 <ChartCategoryHierarchy>
                   <ChartMembers>
                     <ChartMember>
@@ -788,13 +731,6 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                     </ChartMember>
                   </ChartMembers>
                 </ChartCategoryHierarchy>
-                <ChartSeriesHierarchy>
-                  <ChartMembers>
-                    <ChartMember>
-                      <Label>Sale Amount</Label>
-                    </ChartMember>
-                  </ChartMembers>
-                </ChartSeriesHierarchy>
                 <ChartData>
                   <ChartSeriesCollection>
                     <ChartSeries Name="Series1">
@@ -810,6 +746,7 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                               <Format>'$'#,0;('$'#,0)</Format>
                               <Color>#ffffff</Color>
                             </Style>
+                            <UseValueAsLabel>false</UseValueAsLabel>
                             <Label>=Round(Sum(Fields!SaleAmount.Value)/1000)</Label>
                             <Visible>true</Visible>
                           </ChartDataLabel>
@@ -824,7 +761,6 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                         </ChartDataPoint>
                       </ChartDataPoints>
                       <Type>Shape</Type>
-                      <Style />
                       <ChartEmptyPoints>
                         <Style />
                         <ChartMarker>
@@ -832,13 +768,22 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                         </ChartMarker>
                         <ChartDataLabel>
                           <Style />
+                          <UseValueAsLabel>false</UseValueAsLabel>
+                          <Visible>false</Visible>
                         </ChartDataLabel>
                       </ChartEmptyPoints>
+                      <Style />
                       <ValueAxisName>Primary</ValueAxisName>
                       <CategoryAxisName>Primary</CategoryAxisName>
                       <ChartSmartLabel>
+                        <Disabled>false</Disabled>
+                        <AllowOutSidePlotArea>Partial</AllowOutSidePlotArea>
                         <CalloutLineAnchor>None</CalloutLineAnchor>
                         <CalloutLineColor>Black</CalloutLineColor>
+                        <CalloutLineStyle>Solid</CalloutLineStyle>
+                        <CalloutStyle>Underline</CalloutStyle>
+                        <ShowOverlapped>false</ShowOverlapped>
+                        <MarkerOverlapping>false</MarkerOverlapping>
                         <MinMovingDistance>0pt</MinMovingDistance>
                       </ChartSmartLabel>
                     </ChartSeries>
@@ -849,11 +794,11 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                     <ChartCategoryAxes>
                       <ChartAxis Name="Primary">
                         <Style>
-                          <Border>
-                            <Style>None</Style>
-                            <Width>0.75pt</Width>
-                          </Border>
                           <FontSize>8pt</FontSize>
+                          <Border>
+                            <Width>0.75000pt</Width>
+                            <Style>None</Style>
+                          </Border>
                         </Style>
                         <ChartAxisTitle>
                           <Caption />
@@ -867,106 +812,47 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                           <Enabled>False</Enabled>
                           <Style>
                             <Border>
+                              <Width>0.75000pt</Width>
                               <Style>Solid</Style>
-                              <Width>0.75pt</Width>
                             </Border>
                           </Style>
+                          <IntervalType>Default</IntervalType>
                           <IntervalOffset>1</IntervalOffset>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorGridLines>
                         <ChartMinorGridLines>
                           <Enabled>False</Enabled>
                           <Style>
                             <Border>
+                              <Width>0.75000pt</Width>
                               <Style>Solid</Style>
-                              <Width>0.75pt</Width>
                             </Border>
                           </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorGridLines>
                         <ChartMajorTickMarks>
                           <Type>None</Type>
                           <Length>0</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorTickMarks>
                         <ChartMinorTickMarks>
                           <Type>None</Type>
                           <Length>0</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorTickMarks>
-                        <Minimum>NaN</Minimum>
-                        <Maximum>NaN</Maximum>
+                        <Location>Default</Location>
+                        <Minimum>null</Minimum>
+                        <Maximum>null</Maximum>
                         <PreventFontShrink>true</PreventFontShrink>
                         <PreventFontGrow>true</PreventFontGrow>
                         <ChartAxisScaleBreak>
+                          <Enabled>false</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
                           <Spacing>0</Spacing>
-                          <Style />
-                        </ChartAxisScaleBreak>
-                      </ChartAxis>
-                      <ChartAxis Name="Secondary">
-                        <Style>
-                          <FontSize>8pt</FontSize>
-                        </Style>
-                        <ChartAxisTitle>
-                          <Caption />
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                          </Style>
-                        </ChartAxisTitle>
-                        <CrossAt>null</CrossAt>
-                        <Location>Opposite</Location>
-                        <Minimum>NaN</Minimum>
-                        <Maximum>NaN</Maximum>
-                        <ChartAxisScaleBreak>
-                          <Spacing>0</Spacing>
-                          <Style />
-                        </ChartAxisScaleBreak>
-                      </ChartAxis>
-                    </ChartCategoryAxes>
-                    <ChartValueAxes>
-                      <ChartAxis Name="Primary">
-                        <Style>
-                          <Border>
-                            <Style>None</Style>
-                            <Width>0.75pt</Width>
-                          </Border>
-                          <FontSize>8pt</FontSize>
-                          <Format>$#,###</Format>
-                        </Style>
-                        <ChartAxisTitle>
-                          <Caption>Sales (thousands)</Caption>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                          </Style>
-                        </ChartAxisTitle>
-                        <Margin>True</Margin>
-                        <ChartMajorGridLines>
-                          <Enabled>True</Enabled>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                              <Width>0.75pt</Width>
-                            </Border>
-                          </Style>
-                        </ChartMajorGridLines>
-                        <ChartMinorGridLines>
-                          <Enabled>False</Enabled>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                              <Width>0.75pt</Width>
-                            </Border>
-                          </Style>
-                        </ChartMinorGridLines>
-                        <ChartMajorTickMarks>
-                          <Type>None</Type>
-                          <Length>0</Length>
-                        </ChartMajorTickMarks>
-                        <ChartMinorTickMarks>
-                          <Type>None</Type>
-                          <Length>0</Length>
-                        </ChartMinorTickMarks>
-                        <Scalar>true</Scalar>
-                        <PreventFontShrink>true</PreventFontShrink>
-                        <PreventFontGrow>true</PreventFontGrow>
-                        <ChartAxisScaleBreak>
-                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
                           <Style />
                         </ChartAxisScaleBreak>
                       </ChartAxis>
@@ -985,21 +871,116 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                         <Minimum>null</Minimum>
                         <Maximum>null</Maximum>
                         <ChartAxisScaleBreak>
+                          <Enabled>false</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
                           <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style />
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                    </ChartCategoryAxes>
+                    <ChartValueAxes>
+                      <ChartAxis Name="Primary">
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                          <Format>$#,###</Format>
+                          <Border>
+                            <Width>0.75000pt</Width>
+                            <Style>None</Style>
+                          </Border>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption>Sales (thousands)</Caption>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </ChartAxisTitle>
+                        <Margin>True</Margin>
+                        <ChartMajorGridLines>
+                          <Enabled>True</Enabled>
+                          <Style>
+                            <Border>
+                              <Width>0.75000pt</Width>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorGridLines>
+                        <ChartMinorGridLines>
+                          <Enabled>False</Enabled>
+                          <Style>
+                            <Border>
+                              <Width>0.75000pt</Width>
+                              <Style>Solid</Style>
+                            </Border>
+                          </Style>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorGridLines>
+                        <ChartMajorTickMarks>
+                          <Type>None</Type>
+                          <Length>0</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMajorTickMarks>
+                        <ChartMinorTickMarks>
+                          <Type>None</Type>
+                          <Length>0</Length>
+                          <IntervalType>Default</IntervalType>
+                          <IntervalOffsetType>Default</IntervalOffsetType>
+                        </ChartMinorTickMarks>
+                        <Location>Default</Location>
+                        <Scalar>true</Scalar>
+                        <PreventFontShrink>true</PreventFontShrink>
+                        <PreventFontGrow>true</PreventFontGrow>
+                        <ChartAxisScaleBreak>
+                          <Enabled>false</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
+                          <Style />
+                        </ChartAxisScaleBreak>
+                      </ChartAxis>
+                      <ChartAxis Name="Secondary">
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                        <ChartAxisTitle>
+                          <Caption />
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </ChartAxisTitle>
+                        <CrossAt>null</CrossAt>
+                        <Location>Opposite</Location>
+                        <Minimum>null</Minimum>
+                        <Maximum>null</Maximum>
+                        <ChartAxisScaleBreak>
+                          <Enabled>false</Enabled>
+                          <BreakLineType>Ragged</BreakLineType>
+                          <Spacing>0</Spacing>
+                          <IncludeZero>Auto</IncludeZero>
                           <Style />
                         </ChartAxisScaleBreak>
                       </ChartAxis>
                     </ChartValueAxes>
                     <ChartThreeDProperties>
+                      <Enabled>false</Enabled>
                       <ProjectionMode>Perspective</ProjectionMode>
+                      <Perspective>0</Perspective>
+                      <Rotation>30</Rotation>
+                      <Inclination>30</Inclination>
+                      <DepthRatio>100</DepthRatio>
                       <Shading>Simple</Shading>
+                      <GapDepth>100</GapDepth>
                       <WallThickness>15</WallThickness>
                       <Clustered>true</Clustered>
                     </ChartThreeDProperties>
                     <Style>
                       <Border>
+                        <Width>0.75000pt</Width>
                         <Style>None</Style>
-                        <Width>0.75pt</Width>
                       </Border>
                     </Style>
                   </ChartArea>
@@ -1008,17 +989,18 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                   <ChartLegend Name="Default">
                     <Hidden>true</Hidden>
                     <Style>
-                      <Border>
-                        <Style>None</Style>
-                        <Width>0.75pt</Width>
-                      </Border>
                       <FontSize>8pt</FontSize>
                       <Color>#333333</Color>
+                      <Border>
+                        <Width>0.75000pt</Width>
+                        <Style>None</Style>
+                      </Border>
                     </Style>
                     <Position>BottomRight</Position>
                     <DockOutsideChartArea>true</DockOutsideChartArea>
                     <ChartLegendTitle>
                       <Caption />
+                      <TitleSeparator>None</TitleSeparator>
                       <Style>
                         <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1026,29 +1008,45 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                       </Style>
                     </ChartLegendTitle>
                     <AutoFitTextDisabled>true</AutoFitTextDisabled>
+                    <HeaderSeparator>None</HeaderSeparator>
+                    <ColumnSeparator>None</ColumnSeparator>
                     <ColumnSpacing>0</ColumnSpacing>
+                    <InterlacedRows>false</InterlacedRows>
+                    <EquallySpacedItems>false</EquallySpacedItems>
+                    <Reversed>Auto</Reversed>
                     <TextWrapThreshold>0</TextWrapThreshold>
                   </ChartLegend>
                 </ChartLegends>
                 <ChartTitles>
                   <ChartTitle Name="Title1">
                     <Caption>Sales (in thousands)</Caption>
+                    <Hidden>false</Hidden>
                     <Style>
                       <FontSize>8pt</FontSize>
                       <TextAlign>General</TextAlign>
                       <VerticalAlign>Top</VerticalAlign>
                       <Color>#333333</Color>
                     </Style>
+                    <Position>TopCenter</Position>
+                    <DockOffset>0</DockOffset>
+                    <TextOrientation>Auto</TextOrientation>
                   </ChartTitle>
                 </ChartTitles>
-                <Palette>BrightPastel</Palette>
+                <Palette>Custom</Palette>
                 <ChartCustomPaletteColors>
-                  <ChartCustomPaletteColor>#0cbdf4</ChartCustomPaletteColor>
-                  <ChartCustomPaletteColor>#a2ce36</ChartCustomPaletteColor>
-                  <ChartCustomPaletteColor>#f94165</ChartCustomPaletteColor>
-                  <ChartCustomPaletteColor>#7777f7</ChartCustomPaletteColor>
-                  <ChartCustomPaletteColor>#efbb14</ChartCustomPaletteColor>
-                  <ChartCustomPaletteColor>DarkViolet</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#072448</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#54d2d2</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#ffcb00</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#f8aa4b</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#ff4800</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#008080</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#0000ff</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#9c399c</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#01ff00</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#ff00ff</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#008080</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#ffff00</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#808080</ChartCustomPaletteColor>
                 </ChartCustomPaletteColors>
                 <ChartBorderSkin>
                   <Style>
@@ -1058,31 +1056,34 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                 </ChartBorderSkin>
                 <ChartNoDataMessage Name="NoDataMessage">
                   <Caption>No Data Available</Caption>
+                  <Hidden>false</Hidden>
                   <Style>
                     <TextAlign>General</TextAlign>
                     <VerticalAlign>Top</VerticalAlign>
                   </Style>
                   <Position>RightTop</Position>
+                  <DockOffset>0</DockOffset>
+                  <TextOrientation>Auto</TextOrientation>
                 </ChartNoDataMessage>
-                <DataSetName>TopCustomers</DataSetName>
-                <Top>20.37499pt</Top>
-                <Left>268.5pt</Left>
-                <Height>227.85pt</Height>
-                <Width>292.5pt</Width>
-                <CustomProperties>
-                  <CustomProperty>
-                    <Name>__Upgraded2005__</Name>
-                    <Value>__Upgraded2005__</Value>
-                  </CustomProperty>
-                </CustomProperties>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <BackgroundColor>White</BackgroundColor>
-                </Style>
               </Chart>
               <Textbox Name="Textbox16">
+                <Left>0pt</Left>
+                <Top>0pt</Top>
+                <Height>21.83978pt</Height>
+                <Width>562.5pt</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <BackgroundColor>#e3e6ea</BackgroundColor>
+                  <VerticalAlign>Middle</VerticalAlign>
+                  <PaddingLeft>4pt</PaddingLeft>
+                  <PaddingRight>4pt</PaddingRight>
+                  <PaddingTop>4pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                  <Border>
+                    <Color>#b0b0b0</Color>
+                    <Style>Solid</Style>
+                  </Border>
+                </Style>
                 <CanGrow>true</CanGrow>
                 <KeepTogether>true</KeepTogether>
                 <Paragraphs>
@@ -1092,7 +1093,8 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                         <Value> Top Stores</Value>
                         <Style>
                           <FontFamily>Segoe UI Semibold</FontFamily>
-                          <FontSize>11pt</FontSize>
+                          <FontSize>0.15278in</FontSize>
+                          <Color>black</Color>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -1101,43 +1103,73 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                     </Style>
                   </Paragraph>
                 </Paragraphs>
-                <Top>0pt</Top>
-                <Left>0pt</Left>
-                <Height>21.83978pt</Height>
-                <Width>562.5pt</Width>
-                <ZIndex>1</ZIndex>
+              </Textbox>
+              <Rectangle Name="Rectangle2">
+                <Left>0.36072pt</Left>
+                <Top>22.5pt</Top>
+                <Height>229.5pt</Height>
+                <Width>266.1602pt</Width>
+                <ZIndex>2</ZIndex>
                 <Style>
                   <Border>
                     <Color>#b0b0b0</Color>
-                    <Style>Solid</Style>
+                    <Style>None</Style>
                   </Border>
-                  <BackgroundColor>#faf39a</BackgroundColor>
-                  <VerticalAlign>Middle</VerticalAlign>
-                  <PaddingLeft>4pt</PaddingLeft>
-                  <PaddingRight>4pt</PaddingRight>
-                  <PaddingTop>4pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
+                  <RightBorder>
+                    <Style>Solid</Style>
+                  </RightBorder>
                 </Style>
-              </Textbox>
-              <Rectangle Name="Rectangle2">
                 <ReportItems>
                   <Tablix Name="TopStoresTable">
+                    <Left>1.52344pt</Left>
+                    <Top>0.89843pt</Top>
+                    <Height>17.7273pt</Height>
+                    <Width>261.8182pt</Width>
+                    <Style>
+                      <Color>Red</Color>
+                      <PaddingLeft>10pt</PaddingLeft>
+                      <Border>
+                        <Color>#b0b0b0</Color>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                    <NoRowsMessage>*No Data Available</NoRowsMessage>
+                    <DataSetName>TopCustomers</DataSetName>
                     <TablixBody>
                       <TablixColumns>
                         <TablixColumn>
-                          <Width>141.1364pt</Width>
+                          <Width>1.96016in</Width>
                         </TablixColumn>
                         <TablixColumn>
-                          <Width>120.6818pt</Width>
+                          <Width>1.67617in</Width>
                         </TablixColumn>
                       </TablixColumns>
                       <TablixRows>
                         <TablixRow>
-                          <Height>17.7273pt</Height>
+                          <Height>0.24609in</Height>
                           <TablixCells>
                             <TablixCell>
                               <CellContents>
                                 <Textbox Name="StoreName">
+                                  <Left>0in</Left>
+                                  <Top>0in</Top>
+                                  <Height>0.24609in</Height>
+                                  <Width>1.96016in</Width>
+                                  <ZIndex>1</ZIndex>
+                                  <Style>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>4pt</PaddingLeft>
+                                    <PaddingRight>4pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
+                                    <Border>
+                                      <Color>#b0b0b0</Color>
+                                      <Style>None</Style>
+                                    </Border>
+                                    <BottomBorder>
+                                      <Style>Solid</Style>
+                                    </BottomBorder>
+                                  </Style>
                                   <KeepTogether>true</KeepTogether>
                                   <Paragraphs>
                                     <Paragraph>
@@ -1160,8 +1192,24 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <ZIndex>1</ZIndex>
+                                </Textbox>
+                                <ColSpan>1</ColSpan>
+                                <RowSpan>1</RowSpan>
+                              </CellContents>
+                            </TablixCell>
+                            <TablixCell>
+                              <CellContents>
+                                <Textbox Name="SaleAmountStore">
+                                  <Left>0in</Left>
+                                  <Top>0in</Top>
+                                  <Height>0.24609in</Height>
+                                  <Width>1.67618in</Width>
                                   <Style>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                    <PaddingLeft>4pt</PaddingLeft>
+                                    <PaddingRight>4pt</PaddingRight>
+                                    <PaddingTop>2pt</PaddingTop>
+                                    <PaddingBottom>2pt</PaddingBottom>
                                     <Border>
                                       <Color>#b0b0b0</Color>
                                       <Style>None</Style>
@@ -1169,18 +1217,7 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                                     <BottomBorder>
                                       <Style>Solid</Style>
                                     </BottomBorder>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>4pt</PaddingLeft>
-                                    <PaddingRight>4pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
                                   </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="SaleAmountStore">
                                   <KeepTogether>true</KeepTogether>
                                   <Paragraphs>
                                     <Paragraph>
@@ -1199,21 +1236,9 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                                       </Style>
                                     </Paragraph>
                                   </Paragraphs>
-                                  <Style>
-                                    <Border>
-                                      <Color>#b0b0b0</Color>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <BottomBorder>
-                                      <Style>Solid</Style>
-                                    </BottomBorder>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>4pt</PaddingLeft>
-                                    <PaddingRight>4pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
                                 </Textbox>
+                                <ColSpan>1</ColSpan>
+                                <RowSpan>1</RowSpan>
                               </CellContents>
                             </TablixCell>
                           </TablixCells>
@@ -1247,55 +1272,15 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                         </TablixMember>
                       </TablixMembers>
                     </TablixRowHierarchy>
-                    <NoRowsMessage>*No Data Available</NoRowsMessage>
-                    <DataSetName>TopCustomers</DataSetName>
-                    <Top>0.89843pt</Top>
-                    <Left>1.52344pt</Left>
-                    <Height>17.7273pt</Height>
-                    <Width>261.8182pt</Width>
-                    <Style>
-                      <Border>
-                        <Color>#b0b0b0</Color>
-                        <Style>None</Style>
-                      </Border>
-                      <Color>Red</Color>
-                      <PaddingLeft>10pt</PaddingLeft>
-                    </Style>
                   </Tablix>
                 </ReportItems>
                 <KeepTogether>true</KeepTogether>
-                <Top>22.5pt</Top>
-                <Left>0.36072pt</Left>
-                <Height>229.5pt</Height>
-                <Width>266.1602pt</Width>
-                <ZIndex>2</ZIndex>
-                <Style>
-                  <Border>
-                    <Color>#b0b0b0</Color>
-                    <Style>None</Style>
-                  </Border>
-                  <RightBorder>
-                    <Style>Solid</Style>
-                  </RightBorder>
-                </Style>
               </Rectangle>
             </ReportItems>
-            <DataElementOutput>ContentsOnly</DataElementOutput>
-            <Top>277.6601pt</Top>
-            <Left>7.5pt</Left>
-            <Height>252pt</Height>
-            <Width>562.5pt</Width>
-            <ZIndex>3</ZIndex>
-            <Style>
-              <Border>
-                <Color>#b0b0b0</Color>
-                <Style>Solid</Style>
-              </Border>
-            </Style>
           </Rectangle>
           <Line Name="Line3">
-            <Top>51.15625pt</Top>
             <Left>5.9922pt</Left>
+            <Top>51.15625pt</Top>
             <Height>0pt</Height>
             <Width>563.7502pt</Width>
             <ZIndex>4</ZIndex>
@@ -1308,18 +1293,46 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
           </Line>
         </ReportItems>
         <Height>536.6995pt</Height>
-        <Style />
       </Body>
       <Width>577.5pt</Width>
       <Page>
+        <PageHeight>660pt</PageHeight>
+        <PageWidth>613.5pt</PageWidth>
         <PageHeader>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
           <Height>44.24976pt</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Rectangle Name="Rectangle4">
+              <Left>0pt</Left>
+              <Top>0pt</Top>
+              <Height>37.44504pt</Height>
+              <Width>577.5pt</Width>
+              <Style>
+                <BackgroundColor>#555b63</BackgroundColor>
+                <Border>
+                  <Color>Gray</Color>
+                  <Style>None</Style>
+                </Border>
+              </Style>
               <ReportItems>
                 <Textbox Name="Title">
+                  <Left>5.99184pt</Left>
+                  <Top>8.24184pt</Top>
+                  <Height>23.74992pt</Height>
+                  <Width>111.7505pt</Width>
+                  <Style>
+                    <BackgroundColor>#555b63</BackgroundColor>
+                    <VerticalAlign>Middle</VerticalAlign>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
@@ -1338,45 +1351,29 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>8.24184pt</Top>
-                  <Left>5.99184pt</Left>
-                  <Height>23.74992pt</Height>
-                  <Width>111.7505pt</Width>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <BackgroundColor>#555b63</BackgroundColor>
-                    <VerticalAlign>Middle</VerticalAlign>
-                  </Style>
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>0pt</Top>
-              <Left>0pt</Left>
-              <Height>37.44504pt</Height>
-              <Width>577.5pt</Width>
-              <Style>
-                <Border>
-                  <Color>Gray</Color>
-                  <Style>None</Style>
-                </Border>
-                <BackgroundColor>#555b63</BackgroundColor>
-              </Style>
             </Rectangle>
           </ReportItems>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
         </PageHeader>
         <PageFooter>
+          <Style />
           <Height>39.75pt</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Textbox Name="FooterDate">
+              <Left>319.995pt</Left>
+              <Top>9pt</Top>
+              <Height>18pt</Height>
+              <Width>248.5078pt</Width>
+              <Style>
+                <BackgroundColor>White</BackgroundColor>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -1394,18 +1391,16 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>9pt</Top>
-              <Left>319.995pt</Left>
-              <Height>18pt</Height>
-              <Width>248.5078pt</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <BackgroundColor>White</BackgroundColor>
-              </Style>
             </Textbox>
             <Textbox Name="FooterCompany">
+              <Left>7.5pt</Left>
+              <Top>9pt</Top>
+              <Height>18pt</Height>
+              <Width>162pt</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <PaddingLeft>2pt</PaddingLeft>
+              </Style>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
@@ -1420,18 +1415,10 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>9pt</Top>
-              <Left>7.5pt</Left>
-              <Height>18pt</Height>
-              <Width>162pt</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <PaddingLeft>2pt</PaddingLeft>
-              </Style>
             </Textbox>
             <Line Name="line1">
-              <Top>4.5pt</Top>
               <Left>5.99976pt</Left>
+              <Top>4.5pt</Top>
               <Height>0pt</Height>
               <Width>563.7506pt</Width>
               <ZIndex>2</ZIndex>
@@ -1443,10 +1430,7 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
               </Style>
             </Line>
           </ReportItems>
-          <Style />
         </PageFooter>
-        <PageHeight>660pt</PageHeight>
-        <PageWidth>613.5pt</PageWidth>
         <LeftMargin>18pt</LeftMargin>
         <RightMargin>18pt</RightMargin>
         <TopMargin>18pt</TopMargin>
@@ -1455,6 +1439,174 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
       </Page>
     </ReportSection>
   </ReportSections>
+  <Description>Adventure Works top five sales people and stores. This report illustrates a dataset with queries containing the TOP clause. It also illustrates the use of tables, charts, parameters, calculated fields, and drillthrough links.</Description>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="AdventureWorks">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=AdventureWorks;user id=demoreadonly@data-platform-demo;password=N@c)=Y8s*1&amp;dh</ConnectString>
+      </ConnectionProperties>
+      <rd:ImpersonateUser>false</rd:ImpersonateUser>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="TopEmployees">
+      <Fields>
+        <Field Name="LastName">
+          <DataField>LastName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FirstName">
+          <DataField>FirstName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeID">
+          <DataField>EmployeeID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="SaleAmount">
+          <DataField>SaleAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="FullName">
+          <Value>=Fields!LastName.Value &amp; ", " &amp; Fields!FirstName.Value</Value>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>SELECT TOP 5 C.LastName, C.FirstName, E.EmployeeID, SUM(SOH.SubTotal) AS SaleAmount
+FROM        Sales.SalesPerson SP INNER JOIN
+            HumanResources.Employee E ON SP.SalesPersonID = E.EmployeeID INNER JOIN
+            Person.Contact C ON E.ContactID = C.ContactID INNER JOIN
+            Sales.SalesOrderHeader SOH ON SP.SalesPersonID = SOH.SalesPersonID INNER JOIN
+            Sales.SalesOrderDetail SOD ON SOH.SalesOrderID = SOD.SalesOrderID INNER JOIN
+            Production.Product P ON SOD.ProductID = P.ProductID INNER JOIN
+            Production.ProductSubcategory PS ON P.ProductSubcategoryID = PS.ProductSubcategoryID INNER JOIN
+            Production.ProductCategory PC ON PS.ProductCategoryID = PC.ProductCategoryID
+WHERE       (PC.ProductCategoryID = @ProductCategory) AND (PS.ProductSubcategoryID IN (@ProductSubcategory)) AND 
+            (SOH.OrderDate &gt; @StartDate) AND (SOH.OrderDate &lt; @EndDate)
+GROUP BY    C.LastName, C.FirstName, E.EmployeeID, PC.ProductCategoryID, PS.ProductSubcategoryID
+ORDER BY    SUM(SOH.SubTotal) DESC</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ProductCategory">
+            <Value>=Parameters!ProductCategory.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ProductSubcategory">
+            <Value>=Parameters!ProductSubcategory.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <Timeout>30</Timeout>
+      </Query>
+    </DataSet>
+    <DataSet Name="ProductCategories">
+      <Fields>
+        <Field Name="ProductCategoryID">
+          <DataField>ProductCategoryID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>SELECT DISTINCT ProductCategoryID, Name
+FROM        Production.ProductCategory
+ORDER BY    Name</CommandText>
+        <Timeout>30</Timeout>
+      </Query>
+    </DataSet>
+    <DataSet Name="TopCustomers">
+      <Fields>
+        <Field Name="StoreName">
+          <DataField>StoreName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SaleAmount">
+          <DataField>SaleAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ProductSubcategoryID">
+          <DataField>ProductSubcategoryID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ProductCategoryID">
+          <DataField>ProductCategoryID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>SELECT TOP 5 S.Name AS StoreName, SUM(SOH.SubTotal) AS SaleAmount, PS.ProductSubcategoryID, 
+            PS.ProductCategoryID
+FROM        Production.Product P INNER JOIN
+            Production.ProductSubcategory PS ON P.ProductSubcategoryID = PS.ProductSubcategoryID INNER JOIN
+            Sales.SalesOrderDetail SOD ON P.ProductID = SOD.ProductID INNER JOIN
+            Sales.Customer CU INNER JOIN
+            Sales.SalesOrderHeader SOH ON CU.CustomerID = SOH.CustomerID INNER JOIN
+            Sales.Store S ON CU.CustomerID = S.CustomerID ON SOD.SalesOrderID = SOH.SalesOrderID
+WHERE       (SOH.OrderDate &gt; @StartDate) AND 
+            (SOH.OrderDate &lt; @EndDate) AND (PS.ProductCategoryID = @ProductCategory) AND (PS.ProductSubcategoryID IN (@ProductSubcategory)) 
+GROUP BY    S.Name, PS.ProductSubcategoryID, PS.ProductCategoryID
+ORDER BY    SUM(SOH.SubTotal) DESC</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ProductSubcategory">
+            <Value>=Parameters!ProductSubcategory.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ProductCategory">
+            <Value>=Parameters!ProductCategory.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <Timeout>30</Timeout>
+      </Query>
+    </DataSet>
+    <DataSet Name="ProductSubcategories">
+      <Fields>
+        <Field Name="ProductSubcategoryID">
+          <DataField>ProductSubcategoryID</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="ProductCategoryID">
+          <DataField>ProductCategoryID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>AdventureWorks</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>SELECT      ProductSubcategoryID, ProductCategoryID, Name
+FROM        Production.ProductSubcategory
+WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@ProductCategory">
+            <Value>=Parameters!ProductCategory.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <Timeout>30</Timeout>
+      </Query>
+    </DataSet>
+  </DataSets>
   <ReportParameters>
     <ReportParameter Name="ProductCategory">
       <DataType>Integer</DataType>
@@ -1513,5 +1665,4 @@ WHERE       (ProductCategoryID = @ProductCategory)</CommandText>
   <Language>en-US</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>f9f42362-68c7-4c80-993f-eb6422371d1f</rd:ReportID>
 </Report>

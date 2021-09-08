@@ -5,23 +5,33 @@
         <div class="r-w-container">
             <div class="r-w-sample-container">
                 <div class="r-w-samples">
-                    <div class="r-w-sample r-w-sample-landscape r-w-sample-active" onclick="onSampleClick({event: event, name:'company-sales'})">
-                        <img class="r-w-sample-image" style="background-position-y: -160px" />
-                        <div class="r-w-sample-title">Company Sales</div>
+                    <div class="r-w-samples-portrait">
+                        <div class="r-w-sample r-w-sample-portrait" onclick="onSampleClick({event: event, name:'website-visitor-analysis'})">
+                            <img class="r-w-sample-image" style="background-position-y: -2400px" />
+                            <div class="r-w-sample-title">Website Visitor Analysis</div>
+                        </div>
+                        <div class="r-w-sample r-w-sample-portrait" onclick="onSampleClick({event: event, name:'northwind-products-suppliers-report'})">
+                            <img class="r-w-sample-image" style="background-position-y: -960px" />
+                            <div class="r-w-sample-title">Northwind Products and Suppliers Report</div>
+                        </div>
+                        <div class="r-w-sample r-w-sample-portrait" onclick="onSampleClick({event: event, name:'sales-report'})">
+                            <img class="r-w-sample-image" style="background-position-y: 960px" />
+                            <div class="r-w-sample-title">Sales Report</div>
+                        </div>
                     </div>
-                    <div class="r-w-sample r-w-sample-landscape" onclick="onSampleClick({event: event, name:'sales-order-detail'})">
-                        <img class="r-w-sample-image" style="background-position-y: -640px" />
-                        <div class="r-w-sample-title">Sales Order Detail</div>
+                    <div class="r-w-samples-landscape">
+                        <div class="r-w-sample r-w-sample-landscape r-w-sample-active" onclick="onSampleClick({event: event, name:'company-sales'})">
+                            <img class="r-w-sample-image" style="background-position-y: -160px" />
+                            <div class="r-w-sample-title">Company Sales</div>
+                        </div>
+                        <div class="r-w-sample r-w-sample-landscape" onclick="onSampleClick({event: event, name:'sales-order-detail'})">
+                            <img class="r-w-sample-image" style="background-position-y: -640px" />
+                            <div class="r-w-sample-title">Sales Order Detail</div>
+                        </div>
+                        <div class="r-w-sample r-w-sample-landscape" style="visibility: hidden">
+                        </div>
+                        </div>
                     </div>
-                    <div class="r-w-sample r-w-sample-portrait" onclick="onSampleClick({event: event, name:'website-visitor-analysis'})">
-                        <img class="r-w-sample-image" style="background-position-y: -2400px" />
-                        <div class="r-w-sample-title">Website Visitor Analysis</div>
-                    </div>
-                    <div class="r-w-sample r-w-sample-portrait" onclick="onSampleClick({event: event, name:'northwind-products-suppliers-report'})">
-                        <img class="r-w-sample-image" style="background-position-y: -960px" />
-                        <div class="r-w-sample-title">Northwind Products and Suppliers Report</div>
-                    </div>
-                </div>
             </div>
             <div class="r-w-property-container">
                 <div class="r-w-property-title">Properties</div>
@@ -73,7 +83,7 @@
 @section description {
     <div id="description">
         <p>
-            This demo allows you to <code>export</code> the Company Sales , Sales Order Detail,  Website Visitor Analysis and Northwind Products and Suppliers Reports with popular file formats like PDF, HTML, Microsoft Word, and Microsoft Excel without previewing the report using our Report Viewer.
+            This demo allows you to <code>export</code> the Website Visitor Analysis, Northwind Products and Suppliers, Sales Report, Company Sales and Sales Order Detail Reports with popular file formats like PDF, HTML, Microsoft Word, and Microsoft Excel without previewing the report using our Report Viewer.
         </p>
         <p>
             It uses <a href="https://phantomjs.org/" target="_blank">PhantomJS</a> for exporting the reports in various file formats.

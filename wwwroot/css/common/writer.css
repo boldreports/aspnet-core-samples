@@ -21,10 +21,19 @@
     }
 
         .r-w-container .r-w-sample-container .r-w-samples {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .r-w-container .r-w-sample-container .r-w-samples-portrait {
             display: flex;
             flex-wrap: wrap;
-            max-width: 750px;
-            margin: auto;
+            justify-content: center;
+        }
+
+        .r-w-container .r-w-sample-container .r-w-samples-landscape {
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
         }
 
@@ -35,11 +44,12 @@
         }
 
             .r-w-container .r-w-sample-container .r-w-sample.r-w-sample-active {
-                border-color: #1783ff;
+                border-color: #ff5f23;
+                color: #ff5f23;
             }
 
             .r-w-container .r-w-sample-container .r-w-sample:hover {
-                border-color: #1783ff;
+                border-color: #ff5f23;
             }
 
             .r-w-container .r-w-sample-container .r-w-sample.r-w-sample-landscape {
@@ -57,11 +67,11 @@
                 height: 160px;
                 margin: 15px 0;
                 background-image: url('./../../assets/sidebar/landscape.png');
-                background-size: 100% 900%;
+                background-size: 100% 1000%;
             }
 
             .r-w-container .r-w-sample-container .r-w-sample.r-w-sample-portrait .r-w-sample-image {
-                width: 200px;
+                width: 260px;
                 height: 240px;
                 margin: 15px 0;
                 background-image: url('./../../assets/sidebar/portrait.png');

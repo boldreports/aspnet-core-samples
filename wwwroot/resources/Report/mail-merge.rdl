@@ -4,7 +4,6 @@
     <ReportSection>
       <Body>
         <Style>
-          <FontFamily>Arial</FontFamily>
           <Border>
             <Style>None</Style>
           </Border>
@@ -16,7 +15,6 @@
             <Height>2.81667in</Height>
             <Width>10.61459in</Width>
             <Style>
-              <FontFamily>Arial</FontFamily>
               <Border>
                 <Color>#e8e8e8</Color>
                 <Style>None</Style>
@@ -29,7 +27,6 @@
                 <Height>2.79167in</Height>
                 <Width>10.59766in</Width>
                 <Style>
-                  <FontFamily>Arial</FontFamily>
                   <Border>
                     <Style>None</Style>
                   </Border>
@@ -37,22 +34,21 @@
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>10.59375in</Width>
+                      <Width>10.59369in</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
                     <TablixRow>
-                      <Height>2.79167in</Height>
+                      <Height>2.79165in</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
                             <Rectangle Name="Rectangle1">
                               <Left>0in</Left>
                               <Top>0in</Top>
-                              <Height>2.79167in</Height>
-                              <Width>10.59375in</Width>
+                              <Height>2.79165in</Height>
+                              <Width>10.59365in</Width>
                               <Style>
-                                <FontFamily>Arial</FontFamily>
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
@@ -64,7 +60,6 @@
                                   <Height>2.479in</Height>
                                   <Width>7.979in</Width>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <Border>
                                       <Color>#3c4570</Color>
                                       <Style>None</Style>
@@ -77,7 +72,6 @@
                                       <Height>0.78125in</Height>
                                       <Width>7.75in</Width>
                                       <Style>
-                                        <FontFamily>Arial</FontFamily>
                                         <PaddingLeft>2pt</PaddingLeft>
                                         <PaddingRight>2pt</PaddingRight>
                                         <PaddingTop>2pt</PaddingTop>
@@ -94,7 +88,6 @@
                                             <TextRun>
                                               <Value>=Fields!FirstName.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <Color>#333333</Color>
@@ -103,7 +96,6 @@
                                             <TextRun>
                                               <Value />
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <Color>#333333</Color>
@@ -112,7 +104,6 @@
                                             <TextRun>
                                               <Value> was born on </Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Normal</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -123,7 +114,6 @@
                                             <TextRun>
                                               <Value>=Fields!BirthDate.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -134,7 +124,6 @@
                                             <TextRun>
                                               <Value>. Now lives at </Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Normal</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -145,7 +134,6 @@
                                             <TextRun>
                                               <Value>=Fields!Address.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -156,7 +144,6 @@
                                             <TextRun>
                                               <Value>, </Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -167,7 +154,6 @@
                                             <TextRun>
                                               <Value>=Fields!City.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -178,7 +164,6 @@
                                             <TextRun>
                                               <Value>, </Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -189,7 +174,6 @@
                                             <TextRun>
                                               <Value>=Fields!Country.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -200,7 +184,6 @@
                                             <TextRun>
                                               <Value>. </Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Normal</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -211,7 +194,6 @@
                                             <TextRun>
                                               <Value>=Fields!TitleOfCourtesy.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -222,7 +204,6 @@
                                             <TextRun>
                                               <Value />
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Normal</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -233,7 +214,6 @@
                                             <TextRun>
                                               <Value>=Fields!FirstName.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -244,7 +224,6 @@
                                             <TextRun>
                                               <Value> holds a position of </Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Normal</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -255,7 +234,6 @@
                                             <TextRun>
                                               <Value>=Fields!Title.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -266,7 +244,6 @@
                                             <TextRun>
                                               <Value> in our </Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Normal</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -277,7 +254,6 @@
                                             <TextRun>
                                               <Value>=Fields!Region.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -288,7 +264,6 @@
                                             <TextRun>
                                               <Value> department, (</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Normal</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -299,7 +274,6 @@
                                             <TextRun>
                                               <Value>=Fields!City.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -310,7 +284,6 @@
                                             <TextRun>
                                               <Value />
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Normal</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -321,7 +294,6 @@
                                             <TextRun>
                                               <Value>=Fields!Country.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -332,7 +304,6 @@
                                             <TextRun>
                                               <Value>) and reports to </Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Normal</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -343,7 +314,6 @@
                                             <TextRun>
                                               <Value>=Fields!ReportingFirstName.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -354,7 +324,6 @@
                                             <TextRun>
                                               <Value />
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Normal</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -365,7 +334,6 @@
                                             <TextRun>
                                               <Value>=Fields!ReportingLastName.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -376,7 +344,6 @@
                                             <TextRun>
                                               <Value>. Joined our company on </Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Normal</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -387,7 +354,6 @@
                                             <TextRun>
                                               <Value>=Fields!HireDate.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -398,7 +364,6 @@
                                             <TextRun>
                                               <Value>.</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Normal</FontWeight>
                                                 <FontStyle>Normal</FontStyle>
@@ -407,11 +372,7 @@
                                               </Style>
                                             </TextRun>
                                           </TextRuns>
-                                          <Style>
-                                            <FontFamily>Arial</FontFamily>
-                                          </Style>
-                                          <SpaceBefore />
-                                          <SpaceAfter />
+                                          <Style />
                                         </Paragraph>
                                       </Paragraphs>
                                     </Textbox>
@@ -422,7 +383,6 @@
                                       <Width>7.75in</Width>
                                       <ZIndex>1</ZIndex>
                                       <Style>
-                                        <FontFamily>Arial</FontFamily>
                                         <PaddingLeft>2pt</PaddingLeft>
                                         <PaddingRight>2pt</PaddingRight>
                                         <PaddingTop>0.02778in</PaddingTop>
@@ -448,7 +408,6 @@
                                             <TextRun>
                                               <Value />
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
                                                 <Color>#333333</Color>
@@ -457,7 +416,6 @@
                                             <TextRun>
                                               <Value>=Fields!Notes.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Normal</FontWeight>
                                                 <FontStyle>Italic</FontStyle>
@@ -465,11 +423,7 @@
                                               </Style>
                                             </TextRun>
                                           </TextRuns>
-                                          <Style>
-                                            <FontFamily>Arial</FontFamily>
-                                          </Style>
-                                          <SpaceBefore />
-                                          <SpaceAfter />
+                                          <Style />
                                         </Paragraph>
                                       </Paragraphs>
                                     </Textbox>
@@ -480,7 +434,6 @@
                                       <Width>2.91667in</Width>
                                       <ZIndex>2</ZIndex>
                                       <Style>
-                                        <FontFamily>Arial</FontFamily>
                                         <PaddingLeft>2pt</PaddingLeft>
                                         <PaddingRight>2pt</PaddingRight>
                                         <PaddingTop>2pt</PaddingTop>
@@ -497,26 +450,20 @@
                                             <TextRun>
                                               <Value>Contact Phone: </Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
-                                                <Color>#333333</Color>
+                                                <Color>black</Color>
                                               </Style>
                                             </TextRun>
                                             <TextRun>
                                               <Value>=Fields!HomePhone.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
                                                 <FontWeight>Normal</FontWeight>
-                                                <Color>#5C669A</Color>
+                                                <Color>#072448</Color>
                                               </Style>
                                             </TextRun>
                                           </TextRuns>
-                                          <Style>
-                                            <FontFamily>Arial</FontFamily>
-                                          </Style>
-                                          <SpaceBefore />
-                                          <SpaceAfter />
+                                          <Style />
                                         </Paragraph>
                                       </Paragraphs>
                                     </Textbox>
@@ -530,7 +477,6 @@
                                   <Width>2.41528in</Width>
                                   <ZIndex>1</ZIndex>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <Border>
                                       <Color>#3c4570</Color>
                                       <Style>None</Style>
@@ -543,7 +489,6 @@
                                       <Height>0.38021in</Height>
                                       <Width>2.34723in</Width>
                                       <Style>
-                                        <FontFamily>Arial</FontFamily>
                                         <PaddingLeft>2pt</PaddingLeft>
                                         <PaddingRight>2pt</PaddingRight>
                                         <PaddingTop>2pt</PaddingTop>
@@ -560,66 +505,58 @@
                                             <TextRun>
                                               <Value>=Fields!FirstName.Value + " "</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.19444in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
-                                                <Color>#5C669A</Color>
+                                                <Color>#072448</Color>
                                               </Style>
                                             </TextRun>
                                             <TextRun>
                                               <Value />
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
-                                                <Color>black</Color>
+                                                <Color>#072448</Color>
                                               </Style>
                                             </TextRun>
                                             <TextRun>
                                               <Value />
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
-                                                <Color>black</Color>
+                                                <Color>#072448</Color>
                                               </Style>
                                             </TextRun>
                                             <TextRun>
                                               <Value />
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
-                                                <Color>black</Color>
+                                                <Color>#072448</Color>
                                               </Style>
                                             </TextRun>
                                             <TextRun>
                                               <Value />
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
-                                                <Color>black</Color>
+                                                <Color>#072448</Color>
                                               </Style>
                                             </TextRun>
                                             <TextRun>
                                               <Value />
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
-                                                <Color>black</Color>
+                                                <Color>#072448</Color>
                                               </Style>
                                             </TextRun>
                                             <TextRun>
                                               <Value />
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
-                                                <Color>black</Color>
+                                                <Color>#072448</Color>
                                               </Style>
                                             </TextRun>
                                             <TextRun>
                                               <Value />
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.13889in</FontSize>
-                                                <Color>black</Color>
+                                                <Color>#072448</Color>
                                               </Style>
                                             </TextRun>
                                             <TextRun>
@@ -628,25 +565,21 @@
                                                 <FontFamily>Segoe UI Semibold</FontFamily>
                                                 <FontSize>0.19444in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
-                                                <Color>#5C669A</Color>
+                                                <Color>#072448</Color>
                                               </Style>
                                             </TextRun>
                                             <TextRun>
                                               <Value>=Fields!LastName.Value</Value>
                                               <Style>
-                                                <FontFamily>Arial</FontFamily>
                                                 <FontSize>0.19444in</FontSize>
                                                 <FontWeight>Bold</FontWeight>
-                                                <Color>#5C669A</Color>
+                                                <Color>#072448</Color>
                                               </Style>
                                             </TextRun>
                                           </TextRuns>
                                           <Style>
-                                            <FontFamily>Arial</FontFamily>
                                             <TextAlign>Center</TextAlign>
                                           </Style>
-                                          <SpaceBefore />
-                                          <SpaceAfter />
                                         </Paragraph>
                                       </Paragraphs>
                                     </Textbox>
@@ -658,7 +591,6 @@
                                       <Width>1.375in</Width>
                                       <ZIndex>1</ZIndex>
                                       <Style>
-                                        <FontFamily>Arial</FontFamily>
                                         <Border>
                                           <Style>None</Style>
                                         </Border>
@@ -677,7 +609,6 @@
                                   <Width>10.31313in</Width>
                                   <ZIndex>1</ZIndex>
                                   <Style>
-                                    <FontFamily>Arial</FontFamily>
                                     <Border>
                                       <Width>0.00900in</Width>
                                       <Color>LightGrey</Color>
@@ -725,7 +656,6 @@
         <PageWidth>13.07in</PageWidth>
         <PageHeader>
           <Style>
-            <FontFamily>Arial</FontFamily>
             <Border>
               <Style>None</Style>
             </Border>
@@ -741,7 +671,6 @@
               <Width>11.06in</Width>
               <Style>
                 <BackgroundColor>#555b63</BackgroundColor>
-                <FontFamily>Arial</FontFamily>
                 <Border>
                   <Color>Gray</Color>
                   <Style>None</Style>
@@ -755,7 +684,6 @@
                   <Width>1.85973in</Width>
                   <Style>
                     <BackgroundColor>#555b63</BackgroundColor>
-                    <FontFamily>Arial</FontFamily>
                     <PaddingLeft>2pt</PaddingLeft>
                     <PaddingRight>2pt</PaddingRight>
                     <PaddingTop>0.02778in</PaddingTop>
@@ -772,7 +700,6 @@
                         <TextRun>
                           <Value>Mail Merge</Value>
                           <Style>
-                            <FontFamily>Arial</FontFamily>
                             <FontSize>0.25000in</FontSize>
                             <FontWeight>ExtraBold</FontWeight>
                             <TextDecoration>None</TextDecoration>
@@ -780,11 +707,7 @@
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style>
-                        <FontFamily>Arial</FontFamily>
-                      </Style>
-                      <SpaceBefore />
-                      <SpaceAfter />
+                      <Style />
                     </Paragraph>
                   </Paragraphs>
                 </Textbox>
@@ -797,9 +720,7 @@
         <RightMargin>1in</RightMargin>
         <TopMargin>1in</TopMargin>
         <BottomMargin>1in</BottomMargin>
-        <Style>
-          <FontFamily>Arial</FontFamily>
-        </Style>
+        <Style />
       </Page>
     </ReportSection>
   </ReportSections>
@@ -811,6 +732,7 @@
         <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=Northwind;user id=demoreadonly@data-platform-demo;password=N@c)=Y8s*1&amp;dh</ConnectString>
         <rd:IsDesignState>true</rd:IsDesignState>
       </ConnectionProperties>
+      <rd:ImpersonateUser>false</rd:ImpersonateUser>
     </DataSource>
   </DataSources>
   <DataSets>
