@@ -1,12 +1,9 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
   <ReportSections>
     <ReportSection>
       <Body>
-        <Style>
-          <BackgroundColor>#f5f6f7</BackgroundColor>
-          <Color />
-        </Style>
+        <Height>50.25pt</Height>
         <ReportItems>
           <Tablix Name="Tablix2">
             <Left>7.5pt</Left>
@@ -14,14 +11,10 @@
             <Height>40.32pt</Height>
             <Width>558.75pt</Width>
             <Style>
-              <Color />
               <Border>
                 <Color>#d5dceb</Color>
                 <Style>Solid</Style>
               </Border>
-              <TopBorder>
-                <Color>#d5dceb</Color>
-              </TopBorder>
               <BottomBorder>
                 <Color>#d5dceb</Color>
               </BottomBorder>
@@ -31,6 +24,9 @@
               <RightBorder>
                 <Color>#d5dceb</Color>
               </RightBorder>
+              <TopBorder>
+                <Color>#d5dceb</Color>
+              </TopBorder>
             </Style>
             <DataSetName>CustomerDetail</DataSetName>
             <TablixBody>
@@ -63,9 +59,8 @@
                           <Height>20.25pt</Height>
                           <Width>89.25pt</Width>
                           <Style>
-                            <BackgroundColor>#f6c315</BackgroundColor>
+                            <BackgroundColor>#072448</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -74,9 +69,6 @@
                               <Color>#b0b0b0</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
                               <Width>1pt</Width>
                             </BottomBorder>
@@ -86,6 +78,9 @@
                             <RightBorder>
                               <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -97,21 +92,18 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>black</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -122,9 +114,8 @@
                           <Height>20.25pt</Height>
                           <Width>198.75pt</Width>
                           <Style>
-                            <BackgroundColor>#f6c315</BackgroundColor>
+                            <BackgroundColor>#072448</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -133,9 +124,6 @@
                               <Color>#b0b0b0</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
                               <Width>1pt</Width>
                             </BottomBorder>
@@ -145,6 +133,9 @@
                             <RightBorder>
                               <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -156,21 +147,18 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>black</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -181,9 +169,8 @@
                           <Height>20.25pt</Height>
                           <Width>94.5pt</Width>
                           <Style>
-                            <BackgroundColor>#f6c315</BackgroundColor>
+                            <BackgroundColor>#072448</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -192,9 +179,6 @@
                               <Color>#b0b0b0</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
                               <Width>1pt</Width>
                             </BottomBorder>
@@ -204,6 +188,9 @@
                             <RightBorder>
                               <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -215,21 +202,18 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>black</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -240,9 +224,8 @@
                           <Height>20.25pt</Height>
                           <Width>88.5pt</Width>
                           <Style>
-                            <BackgroundColor>#f6c315</BackgroundColor>
+                            <BackgroundColor>#072448</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -251,9 +234,6 @@
                               <Color>#b0b0b0</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
                               <Width>1pt</Width>
                             </BottomBorder>
@@ -263,6 +243,9 @@
                             <RightBorder>
                               <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -274,21 +257,18 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>black</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -299,9 +279,8 @@
                           <Height>20.25pt</Height>
                           <Width>87.75pt</Width>
                           <Style>
-                            <BackgroundColor>#f6c315</BackgroundColor>
+                            <BackgroundColor>#072448</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -310,9 +289,6 @@
                               <Color>#b0b0b0</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
                               <Width>1pt</Width>
                             </BottomBorder>
@@ -322,6 +298,9 @@
                             <RightBorder>
                               <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -333,21 +312,18 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>black</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -363,9 +339,8 @@
                           <Height>20.25pt</Height>
                           <Width>89.25pt</Width>
                           <Style>
-                            <BackgroundColor>=IIf(Fields!Country.Value=Parameters!FormattingRow.Value,"#fee18a","White")</BackgroundColor>
+                            <BackgroundColor>=IIf(Fields!Country.Value=Parameters!FormattingRow.Value,"#ff6150","White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -374,9 +349,6 @@
                               <Color>#b0b0b0</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
                               <Width>1pt</Width>
                             </BottomBorder>
@@ -386,6 +358,9 @@
                             <RightBorder>
                               <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -396,19 +371,18 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
-                                    <Color />
+                                    <Color>=IIf(Fields!Country.Value=Parameters!FormattingRow.Value,"White","Black")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -419,9 +393,8 @@
                           <Height>20.25pt</Height>
                           <Width>198.75pt</Width>
                           <Style>
-                            <BackgroundColor>=IIf(Fields!Country.Value=Parameters!FormattingRow.Value,"#fee18a","White")</BackgroundColor>
+                            <BackgroundColor>=IIf(Fields!Country.Value=Parameters!FormattingRow.Value,"#ff6150","White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -430,9 +403,6 @@
                               <Color>#b0b0b0</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
                               <Width>1pt</Width>
                             </BottomBorder>
@@ -442,6 +412,9 @@
                             <RightBorder>
                               <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -452,19 +425,18 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
-                                    <Color />
+                                    <Color>=IIf(Fields!Country.Value=Parameters!FormattingRow.Value,"White","Black")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -475,9 +447,8 @@
                           <Height>20.25pt</Height>
                           <Width>94.5pt</Width>
                           <Style>
-                            <BackgroundColor>=IIf(Fields!Country.Value=Parameters!FormattingRow.Value,"#fee18a","White")</BackgroundColor>
+                            <BackgroundColor>=IIf(Fields!Country.Value=Parameters!FormattingRow.Value,"#ff6150","White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -486,9 +457,6 @@
                               <Color>#b0b0b0</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
                               <Width>1pt</Width>
                             </BottomBorder>
@@ -498,6 +466,9 @@
                             <RightBorder>
                               <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -508,19 +479,18 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
-                                    <Color />
+                                    <Color>=IIf(Fields!Country.Value=Parameters!FormattingRow.Value,"White","Black")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -531,9 +501,8 @@
                           <Height>20.25pt</Height>
                           <Width>88.5pt</Width>
                           <Style>
-                            <BackgroundColor>=IIf(Fields!Country.Value=Parameters!FormattingRow.Value,"#fee18a","White")</BackgroundColor>
+                            <BackgroundColor>=IIf(Fields!Country.Value=Parameters!FormattingRow.Value,"#ff6150","White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -542,9 +511,6 @@
                               <Color>#b0b0b0</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
                               <Width>1pt</Width>
                             </BottomBorder>
@@ -554,6 +520,9 @@
                             <RightBorder>
                               <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -564,19 +533,18 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
-                                    <Color />
+                                    <Color>=IIf(Fields!Country.Value=Parameters!FormattingRow.Value,"White","Black")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -587,9 +555,8 @@
                           <Height>20.25pt</Height>
                           <Width>87.75pt</Width>
                           <Style>
-                            <BackgroundColor>=IIf(Fields!Country.Value=Parameters!FormattingRow.Value,"#fee18a","White")</BackgroundColor>
+                            <BackgroundColor>=IIf(Fields!Country.Value=Parameters!FormattingRow.Value,"#ff6150","White")</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -598,9 +565,6 @@
                               <Color>#b0b0b0</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
                               <Width>1pt</Width>
                             </BottomBorder>
@@ -610,6 +574,9 @@
                             <RightBorder>
                               <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -620,19 +587,18 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
-                                    <Color />
+                                    <Color>=IIf(Fields!Country.Value=Parameters!FormattingRow.Value,"White","Black")</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -661,19 +627,15 @@
             </TablixRowHierarchy>
           </Tablix>
         </ReportItems>
-        <Height>50.25pt</Height>
+        <Style>
+          <BackgroundColor>#f5f6f7</BackgroundColor>
+        </Style>
       </Body>
       <Width>573.75pt</Width>
       <Page>
         <PageHeight>792pt</PageHeight>
         <PageWidth>612pt</PageWidth>
         <PageHeader>
-          <Style>
-            <Color />
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
           <Height>37.5pt</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
@@ -685,7 +647,6 @@
               <Width>573.75pt</Width>
               <Style>
                 <BackgroundColor>#555b63</BackgroundColor>
-                <Color />
                 <Border>
                   <Color>Gray</Color>
                   <Style>None</Style>
@@ -701,7 +662,6 @@
                   <Style>
                     <BackgroundColor>#555b63</BackgroundColor>
                     <VerticalAlign>Middle</VerticalAlign>
-                    <Color />
                   </Style>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
@@ -719,10 +679,7 @@
                       </TextRuns>
                       <Style>
                         <TextAlign>Left</TextAlign>
-                        <Color />
                       </Style>
-                      <SpaceBefore />
-                      <SpaceAfter />
                     </Paragraph>
                   </Paragraphs>
                 </Textbox>
@@ -730,42 +687,46 @@
               <KeepTogether>true</KeepTogether>
             </Rectangle>
           </ReportItems>
-        </PageHeader>
-        <PageFooter>
           <Style>
-            <BackgroundColor>#f5f6f7</BackgroundColor>
-            <Color />
             <Border>
               <Style>None</Style>
             </Border>
           </Style>
+        </PageHeader>
+        <PageFooter>
           <Height>7.2pt</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <BackgroundColor>#f5f6f7</BackgroundColor>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
         </PageFooter>
         <LeftMargin>18pt</LeftMargin>
         <RightMargin>18pt</RightMargin>
         <TopMargin>18pt</TopMargin>
         <BottomMargin>18pt</BottomMargin>
-        <Style>
-          <Color />
-        </Style>
+        <Style />
       </Page>
     </ReportSection>
   </ReportSections>
-  <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="Northwind">
+      <rd:SecurityType>None</rd:SecurityType>
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=Northwind;user id=demoreadonly@data-platform-demo;password=N@c)=Y8s*1&amp;dh</ConnectString>
-        <Prompt />
-        <rd:IsDesignState>true</rd:IsDesignState>
       </ConnectionProperties>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="CustomerDetail">
+      <Query>
+        <DataSourceName>Northwind</DataSourceName>
+        <CommandText>select CustomerID,CompanyName,Address,City,PostalCode,Country from Customers</CommandText>
+      </Query>
       <Fields>
         <Field Name="CustomerID">
           <DataField>CustomerID</DataField>
@@ -792,22 +753,17 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
-      <Query>
-        <DataSourceName>Northwind</DataSourceName>
-        <CommandType>Text</CommandType>
-        <CommandText>select CustomerID,CompanyName,Address,City,PostalCode,Country from Customers</CommandText>
-      </Query>
     </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="FormattingRow">
       <DataType>String</DataType>
+      <Prompt>Highlight Country</Prompt>
       <DefaultValue>
         <Values>
           <Value>UK</Value>
         </Values>
       </DefaultValue>
-      <Prompt>Highlight Country</Prompt>
       <ValidValues>
         <DataSetReference>
           <DataSetName>CustomerDetail</DataSetName>

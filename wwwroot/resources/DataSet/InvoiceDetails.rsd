@@ -9,7 +9,7 @@ FROM            [Order Details]</CommandText>
     <Fields>
       <Field Name="OrderID">
         <DataField>OrderID</DataField>
-        <rd:UserDefined>true</rd:UserDefined>
+        <rd:TypeName>System.Int32</rd:TypeName>
       </Field>
     </Fields>
   </DataSet>

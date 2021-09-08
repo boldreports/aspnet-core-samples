@@ -5,7 +5,6 @@
       <Body>
         <Style>
           <BackgroundColor>White</BackgroundColor>
-          <Color />
         </Style>
         <ReportItems>
           <Tablix Name="Tablix2">
@@ -14,7 +13,6 @@
             <Height>54.37512pt</Height>
             <Width>541.5pt</Width>
             <Style>
-              <Color />
               <Border>
                 <Style>None</Style>
               </Border>
@@ -23,42 +21,41 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>32.25pt</Width>
+                  <Width>32.24629pt</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>82.5pt</Width>
+                  <Width>82.49487pt</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>144pt</Width>
+                  <Width>144.0084pt</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>93pt</Width>
+                  <Width>92.99045pt</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>63pt</Width>
+                  <Width>62.99321pt</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>58.5pt</Width>
+                  <Width>58.4951pt</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>68.25pt</Width>
+                  <Width>68.27059pt</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>18.75pt</Height>
+                  <Height>18.74212pt</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox115">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18.75pt</Height>
-                          <Width>32.25pt</Width>
+                          <Height>18.74212pt</Height>
+                          <Width>32.24633pt</Width>
                           <Style>
-                            <BackgroundColor>#479d9c</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -76,18 +73,15 @@
                                   <Value>S.No</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>10.00008pt</FontSize>
+                                    <FontSize>10.0001pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>white</Color>
+                                    <Color>#000000</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -100,12 +94,11 @@
                         <Textbox Name="Textbox131">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18.75pt</Height>
-                          <Width>82.5pt</Width>
+                          <Height>18.74212pt</Height>
+                          <Width>82.49475pt</Width>
                           <Style>
-                            <BackgroundColor>#479d9c</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -123,18 +116,15 @@
                                   <Value>Product No</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>10.00008pt</FontSize>
+                                    <FontSize>10.0001pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>white</Color>
+                                    <Color>#000000</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -147,12 +137,11 @@
                         <Textbox Name="Textbox133">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18.75pt</Height>
-                          <Width>144pt</Width>
+                          <Height>18.74212pt</Height>
+                          <Width>144.0083pt</Width>
                           <Style>
-                            <BackgroundColor>#479d9c</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -170,18 +159,15 @@
                                   <Value>Product</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>10.00008pt</FontSize>
+                                    <FontSize>10.0001pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>white</Color>
+                                    <Color>#000000</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -194,12 +180,11 @@
                         <Textbox Name="Textbox134">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18.75pt</Height>
-                          <Width>93pt</Width>
+                          <Height>18.74212pt</Height>
+                          <Width>92.99025pt</Width>
                           <Style>
-                            <BackgroundColor>#479d9c</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -217,18 +202,15 @@
                                   <Value>Tracking No.</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>10.00008pt</FontSize>
+                                    <FontSize>10.0001pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>white</Color>
+                                    <Color>#000000</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -241,12 +223,11 @@
                         <Textbox Name="Textbox135">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18.75pt</Height>
-                          <Width>63pt</Width>
+                          <Height>18.74212pt</Height>
+                          <Width>62.99318pt</Width>
                           <Style>
-                            <BackgroundColor>#479d9c</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -264,18 +245,15 @@
                                   <Value>Qty</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>10.00008pt</FontSize>
+                                    <FontSize>10.0001pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>white</Color>
+                                    <Color>#000000</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -288,12 +266,11 @@
                         <Textbox Name="Textbox136">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18.75pt</Height>
-                          <Width>58.5pt</Width>
+                          <Height>18.74212pt</Height>
+                          <Width>58.49512pt</Width>
                           <Style>
-                            <BackgroundColor>#479d9c</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -312,13 +289,12 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>#000000</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -332,12 +308,11 @@
                         <Textbox Name="Textbox142">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18.75pt</Height>
-                          <Width>68.25pt</Width>
+                          <Height>18.74212pt</Height>
+                          <Width>68.27062pt</Width>
                           <Style>
-                            <BackgroundColor>#479d9c</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -355,18 +330,15 @@
                                   <Value>Total</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>10.00008pt</FontSize>
+                                    <FontSize>10.0001pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>white</Color>
+                                    <Color>#000000</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -377,18 +349,17 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>18pt</Height>
+                  <Height>17.99243pt</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox116">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>32.25pt</Width>
+                          <Height>17.99243pt</Height>
+                          <Width>32.24633pt</Width>
                           <Style>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -406,13 +377,10 @@
                                   <Value>=RowNumber("SalesOrderDetail")</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <Color />
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <Color />
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -425,11 +393,10 @@
                         <Textbox Name="OrderQty">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>82.5pt</Width>
+                          <Height>17.99243pt</Height>
+                          <Width>82.49475pt</Width>
                           <Style>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -447,13 +414,10 @@
                                   <Value>=Fields!ProductNumber.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <Color />
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <Color />
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -466,11 +430,10 @@
                         <Textbox Name="ShipAddress">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>144pt</Width>
+                          <Height>17.99243pt</Height>
+                          <Width>144.0083pt</Width>
                           <Style>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -488,13 +451,10 @@
                                   <Value>=Fields!Name.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <Color />
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <Color />
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -507,11 +467,10 @@
                         <Textbox Name="Freight">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>93pt</Width>
+                          <Height>17.99243pt</Height>
+                          <Width>92.99025pt</Width>
                           <Style>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -530,13 +489,11 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <Format>C</Format>
-                                    <Color />
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -550,11 +507,10 @@
                         <Textbox Name="ShippedDate">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>63pt</Width>
+                          <Height>17.99243pt</Height>
+                          <Width>62.99318pt</Width>
                           <Style>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -579,10 +535,7 @@
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -595,11 +548,10 @@
                         <Textbox Name="ShipCity">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>58.5pt</Width>
+                          <Height>17.99243pt</Height>
+                          <Width>58.49512pt</Width>
                           <Style>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -618,13 +570,10 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <Format>'$'#,0.00;('$'#,0.00)</Format>
-                                    <Color />
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <Color />
-                              </Style>
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -637,11 +586,10 @@
                         <Textbox Name="LineTotal">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>68.25pt</Width>
+                          <Height>17.99243pt</Height>
+                          <Width>68.27062pt</Width>
                           <Style>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -660,13 +608,11 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <Format>'$'#,0.00;('$'#,0.00)</Format>
-                                    <Color />
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Right</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -678,19 +624,18 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>18pt</Height>
+                  <Height>18.01215pt</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox124">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>473.25pt</Width>
+                          <Height>18.01215pt</Height>
+                          <Width>473.2282pt</Width>
                           <Style>
                             <BackgroundColor>#f2f0f0</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -716,10 +661,7 @@
                               </TextRuns>
                               <Style>
                                 <TextAlign>Right</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -737,12 +679,11 @@
                         <Textbox Name="LineTotal1">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>68.25pt</Width>
+                          <Height>18.01215pt</Height>
+                          <Width>68.27062pt</Width>
                           <Style>
                             <BackgroundColor>#f2f0f0</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -762,13 +703,11 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>'$'#,0.00;('$'#,0.00)</Format>
-                                    <Color />
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Right</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -814,7 +753,6 @@
             <Width>542.7727pt</Width>
             <ZIndex>1</ZIndex>
             <Style>
-              <Color />
               <Border>
                 <Color>#b0b0b0</Color>
                 <Style>Solid</Style>
@@ -828,7 +766,6 @@
             <Width>541.5pt</Width>
             <ZIndex>2</ZIndex>
             <Style>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -850,11 +787,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
-                <SpaceBefore />
-                <SpaceAfter />
+                <Style />
               </Paragraph>
             </Paragraphs>
           </Textbox>
@@ -865,7 +798,6 @@
             <Width>186.9674pt</Width>
             <ZIndex>3</ZIndex>
             <Style>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -906,10 +838,7 @@
                 </TextRuns>
                 <Style>
                   <TextAlign>Center</TextAlign>
-                  <Color />
                 </Style>
-                <SpaceBefore />
-                <SpaceAfter />
               </Paragraph>
             </Paragraphs>
           </Textbox>
@@ -921,7 +850,6 @@
             <ZIndex>4</ZIndex>
             <Style>
               <VerticalAlign>Top</VerticalAlign>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -940,9 +868,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
+                <Style />
               </Paragraph>
             </Paragraphs>
           </Textbox>
@@ -954,7 +880,6 @@
             <ZIndex>5</ZIndex>
             <Style>
               <VerticalAlign>Top</VerticalAlign>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -973,9 +898,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
+                <Style />
               </Paragraph>
             </Paragraphs>
           </Textbox>
@@ -987,7 +910,6 @@
             <ZIndex>6</ZIndex>
             <Style>
               <VerticalAlign>Top</VerticalAlign>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -1006,9 +928,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
+                <Style />
               </Paragraph>
             </Paragraphs>
           </Textbox>
@@ -1019,7 +939,6 @@
             <Width>93.68568pt</Width>
             <ZIndex>7</ZIndex>
             <Style>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -1036,13 +955,11 @@
                       <FontFamily>Segoe UI</FontFamily>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
-                      <Color />
                     </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
                   <TextAlign>Left</TextAlign>
-                  <Color />
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -1054,7 +971,6 @@
             <Width>103.5pt</Width>
             <ZIndex>8</ZIndex>
             <Style>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -1071,13 +987,11 @@
                       <FontFamily>Segoe UI</FontFamily>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
-                      <Color />
                     </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
                   <TextAlign>Left</TextAlign>
-                  <Color />
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -1089,7 +1003,6 @@
             <Width>93.68568pt</Width>
             <ZIndex>9</ZIndex>
             <Style>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -1106,13 +1019,11 @@
                       <FontFamily>Segoe UI</FontFamily>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
-                      <Color />
                     </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
                   <TextAlign>Left</TextAlign>
-                  <Color />
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -1125,7 +1036,6 @@
             <ZIndex>10</ZIndex>
             <Style>
               <VerticalAlign>Top</VerticalAlign>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -1144,9 +1054,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
+                <Style />
               </Paragraph>
             </Paragraphs>
           </Textbox>
@@ -1158,7 +1066,6 @@
             <ZIndex>11</ZIndex>
             <Style>
               <VerticalAlign>Top</VerticalAlign>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -1177,9 +1084,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
+                <Style />
               </Paragraph>
             </Paragraphs>
           </Textbox>
@@ -1190,7 +1095,6 @@
             <Width>104.04pt</Width>
             <ZIndex>12</ZIndex>
             <Style>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -1207,13 +1111,11 @@
                       <FontFamily>Segoe UI</FontFamily>
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
-                      <Color />
                     </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
                   <TextAlign>Left</TextAlign>
-                  <Color />
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -1225,7 +1127,6 @@
             <Width>112.0298pt</Width>
             <ZIndex>13</ZIndex>
             <Style>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -1243,13 +1144,11 @@
                       <FontSize>9pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <Format>d</Format>
-                      <Color />
                     </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
                   <TextAlign>Left</TextAlign>
-                  <Color />
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -1262,7 +1161,6 @@
             <ZIndex>14</ZIndex>
             <Style>
               <VerticalAlign>Top</VerticalAlign>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -1281,9 +1179,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
+                <Style />
               </Paragraph>
             </Paragraphs>
           </Textbox>
@@ -1294,7 +1190,6 @@
             <Width>129.2148pt</Width>
             <ZIndex>15</ZIndex>
             <Style>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -1310,13 +1205,11 @@
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Normal</FontWeight>
-                      <Color />
                     </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
                   <TextAlign>Left</TextAlign>
-                  <Color />
                 </Style>
               </Paragraph>
               <Paragraph>
@@ -1325,13 +1218,11 @@
                     <Value>="Ph: " &amp; First(Fields!CustPhone.Value, "SalesOrder")</Value>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
-                      <Color />
                     </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
                   <TextAlign>Left</TextAlign>
-                  <Color />
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -1343,7 +1234,6 @@
             <Width>192.7246pt</Width>
             <ZIndex>16</ZIndex>
             <Style>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -1362,9 +1252,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
+                <Style />
               </Paragraph>
             </Paragraphs>
           </Textbox>
@@ -1375,7 +1263,6 @@
             <Width>192.7246pt</Width>
             <ZIndex>17</ZIndex>
             <Style>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -1391,13 +1278,10 @@
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
-                      <Color />
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
+                <Style />
               </Paragraph>
               <Paragraph>
                 <TextRuns>
@@ -1405,13 +1289,10 @@
                     <Value>=First(Fields!Store.Value, "SalesOrder")</Value>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
-                      <Color />
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
+                <Style />
               </Paragraph>
               <Paragraph>
                 <TextRuns>
@@ -1419,13 +1300,10 @@
                     <Value>=First(Fields!ShipAddress1.Value, "SalesOrder")</Value>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
-                      <Color />
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
+                <Style />
               </Paragraph>
               <Paragraph>
                 <TextRuns>
@@ -1433,13 +1311,10 @@
                     <Value>=First(Fields!ShipCity.Value, "SalesOrder") &amp; ", " &amp; First(Fields!ShipStateProvince.Value, "SalesOrder")</Value>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
-                      <Color />
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
+                <Style />
               </Paragraph>
               <Paragraph>
                 <TextRuns>
@@ -1447,13 +1322,10 @@
                     <Value>=First(Fields!ShipPostalCode.Value, "SalesOrder")</Value>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
-                      <Color />
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
+                <Style />
               </Paragraph>
               <Paragraph>
                 <TextRuns>
@@ -1461,13 +1333,10 @@
                     <Value>=First(Fields!ShipCountryRegion.Value, "SalesOrder")</Value>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
-                      <Color />
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
+                <Style />
               </Paragraph>
             </Paragraphs>
           </Textbox>
@@ -1478,7 +1347,6 @@
             <Width>186.8191pt</Width>
             <ZIndex>18</ZIndex>
             <Style>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -1497,9 +1365,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
+                <Style />
               </Paragraph>
             </Paragraphs>
           </Textbox>
@@ -1510,7 +1376,6 @@
             <Width>186.0689pt</Width>
             <ZIndex>19</ZIndex>
             <Style>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <Border>
                 <Style>None</Style>
@@ -1531,11 +1396,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
-                <SpaceBefore />
-                <SpaceAfter />
+                <Style />
               </Paragraph>
               <Paragraph>
                 <TextRuns>
@@ -1548,11 +1409,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
-                <SpaceBefore />
-                <SpaceAfter />
+                <Style />
               </Paragraph>
               <Paragraph>
                 <TextRuns>
@@ -1565,11 +1422,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
-                <SpaceBefore />
-                <SpaceAfter />
+                <Style />
               </Paragraph>
               <Paragraph>
                 <TextRuns>
@@ -1582,11 +1435,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
-                <SpaceBefore />
-                <SpaceAfter />
+                <Style />
               </Paragraph>
               <Paragraph>
                 <TextRuns>
@@ -1599,11 +1448,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
-                <SpaceBefore />
-                <SpaceAfter />
+                <Style />
               </Paragraph>
               <Paragraph>
                 <TextRuns>
@@ -1616,11 +1461,7 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
-                <SpaceBefore />
-                <SpaceAfter />
+                <Style />
               </Paragraph>
             </Paragraphs>
           </Textbox>
@@ -1630,7 +1471,6 @@
             <Height>101.25pt</Height>
             <Width>0pt</Width>
             <Style>
-              <Color />
               <Border>
                 <Width>1.008pt</Width>
                 <Color>#cccbcb</Color>
@@ -1644,7 +1484,6 @@
             <Height>102.0002pt</Height>
             <Width>0pt</Width>
             <Style>
-              <Color />
               <Border>
                 <Width>1.008pt</Width>
                 <Color>#cccbcb</Color>
@@ -1661,7 +1500,6 @@
         <PageWidth>595.44pt</PageWidth>
         <PageHeader>
           <Style>
-            <Color />
             <Border>
               <Style>None</Style>
             </Border>
@@ -1677,7 +1515,6 @@
               <Width>559.5pt</Width>
               <Style>
                 <BackgroundColor>#555b63</BackgroundColor>
-                <Color />
                 <Border>
                   <Color>Gray</Color>
                   <Style>None</Style>
@@ -1692,7 +1529,6 @@
                   <ZIndex>1</ZIndex>
                   <Style>
                     <BackgroundColor>#555b63</BackgroundColor>
-                    <Color />
                     <PaddingLeft>5.76pt</PaddingLeft>
                     <PaddingTop>1.44pt</PaddingTop>
                   </Style>
@@ -1705,7 +1541,6 @@
                           <Style>
                             <FontSize>12.384pt</FontSize>
                             <FontWeight>Bold</FontWeight>
-                            <Color />
                           </Style>
                         </TextRun>
                         <TextRun>
@@ -1729,10 +1564,8 @@
                       </TextRuns>
                       <Style>
                         <TextAlign>Left</TextAlign>
-                        <Color />
                       </Style>
                       <SpaceBefore>3.6pt</SpaceBefore>
-                      <SpaceAfter />
                     </Paragraph>
                   </Paragraphs>
                 </Textbox>
@@ -1744,7 +1577,6 @@
         <PageFooter>
           <Style>
             <BackgroundColor>White</BackgroundColor>
-            <Color />
             <Border>
               <Style>None</Style>
             </Border>
@@ -1757,9 +1589,7 @@
         <RightMargin>18pt</RightMargin>
         <TopMargin>18pt</TopMargin>
         <BottomMargin>18pt</BottomMargin>
-        <Style>
-          <Color />
-        </Style>
+        <Style />
       </Page>
     </ReportSection>
   </ReportSections>
@@ -1770,9 +1600,9 @@
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=AdventureWorks;user id=demoreadonly@data-platform-demo;password=N@c)=Y8s*1&amp;dh</ConnectString>
-        <Prompt />
         <rd:IsDesignState>true</rd:IsDesignState>
       </ConnectionProperties>
+      <rd:ImpersonateUser>false</rd:ImpersonateUser>
     </DataSource>
   </DataSources>
   <DataSets>

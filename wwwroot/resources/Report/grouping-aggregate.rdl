@@ -5,7 +5,6 @@
       <Body>
         <Style>
           <BackgroundColor>#f5f6f7</BackgroundColor>
-          <Color />
         </Style>
         <ReportItems>
           <Tablix Name="Tablix2">
@@ -14,7 +13,6 @@
             <Height>90.75024pt</Height>
             <Width>561pt</Width>
             <Style>
-              <Color />
               <Border>
                 <Style>None</Style>
               </Border>
@@ -23,33 +21,32 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>137.25pt</Width>
+                  <Width>137.2106pt</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>157.5pt</Width>
+                  <Width>157.4797pt</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>130.5pt</Width>
+                  <Width>130.4832pt</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>135pt</Width>
+                  <Width>135.055pt</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>20.25pt</Height>
+                  <Height>20.2257pt</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox14">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>20.25pt</Height>
-                          <Width>137.25pt</Width>
+                          <Height>20.2257pt</Height>
+                          <Width>137.211pt</Width>
                           <Style>
-                            <BackgroundColor>#5fbe76</BackgroundColor>
+                            <BackgroundColor>#072448</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -70,16 +67,13 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>white</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -92,12 +86,11 @@
                         <Textbox Name="Textbox16">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>20.25pt</Height>
-                          <Width>157.5pt</Width>
+                          <Height>20.2257pt</Height>
+                          <Width>157.4798pt</Width>
                           <Style>
-                            <BackgroundColor>#5fbe76</BackgroundColor>
+                            <BackgroundColor>#072448</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -118,16 +111,13 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>white</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -140,12 +130,11 @@
                         <Textbox Name="Textbox32">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>20.25pt</Height>
-                          <Width>130.5pt</Width>
+                          <Height>20.2257pt</Height>
+                          <Width>130.4835pt</Width>
                           <Style>
-                            <BackgroundColor>#5fbe76</BackgroundColor>
+                            <BackgroundColor>#072448</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -166,16 +155,13 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>white</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -188,12 +174,11 @@
                         <Textbox Name="Textbox18">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>20.25pt</Height>
-                          <Width>135pt</Width>
+                          <Height>20.2257pt</Height>
+                          <Width>135.0547pt</Width>
                           <Style>
-                            <BackgroundColor>#5fbe76</BackgroundColor>
+                            <BackgroundColor>#072448</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -212,18 +197,15 @@
                                   <Value>Sales</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>11.00025pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>white</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -234,19 +216,18 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>18.75pt</Height>
+                  <Height>18.73553pt</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="ProdCat">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18.75pt</Height>
-                          <Width>137.25pt</Width>
+                          <Height>18.73553pt</Height>
+                          <Width>137.211pt</Width>
                           <Style>
                             <BackgroundColor>White</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -270,11 +251,7 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <Color />
-                              </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -287,12 +264,11 @@
                         <Textbox Name="SubCat">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18.75pt</Height>
-                          <Width>157.5pt</Width>
+                          <Height>18.73553pt</Height>
+                          <Width>157.4798pt</Width>
                           <Style>
                             <BackgroundColor>White</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -316,11 +292,7 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <Color />
-                              </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -333,12 +305,11 @@
                         <Textbox Name="OrderQtr">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18.75pt</Height>
-                          <Width>130.5pt</Width>
+                          <Height>18.73553pt</Height>
+                          <Width>130.4835pt</Width>
                           <Style>
                             <BackgroundColor>White</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -364,10 +335,7 @@
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -380,12 +348,11 @@
                         <Textbox Name="Sales">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18.75pt</Height>
-                          <Width>135pt</Width>
+                          <Height>18.73553pt</Height>
+                          <Width>135.0547pt</Width>
                           <Style>
                             <BackgroundColor>White</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -412,10 +379,7 @@
                               </TextRuns>
                               <Style>
                                 <TextAlign>Right</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -426,19 +390,18 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>18pt</Height>
+                  <Height>17.9832pt</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox6">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>425.25pt</Width>
+                          <Height>17.9832pt</Height>
+                          <Width>425.1735pt</Width>
                           <Style>
-                            <BackgroundColor>#e8e8e8</BackgroundColor>
+                            <BackgroundColor>#ff6150</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -459,15 +422,11 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#202821</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <Color />
-                              </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -482,12 +441,11 @@
                         <Textbox Name="Sales3">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>135pt</Width>
+                          <Height>17.9832pt</Height>
+                          <Width>135.0547pt</Width>
                           <Style>
-                            <BackgroundColor>#e8e8e8</BackgroundColor>
+                            <BackgroundColor>#ff6150</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -509,16 +467,13 @@
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>'$'#,0;('$'#,0)</Format>
-                                    <Color>#202821</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Right</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -529,19 +484,18 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>18pt</Height>
+                  <Height>17.9832pt</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox25">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>425.25pt</Width>
+                          <Height>17.9832pt</Height>
+                          <Width>425.1735pt</Width>
                           <Style>
-                            <BackgroundColor>#e8e8e8</BackgroundColor>
+                            <BackgroundColor>#ff6150</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -562,15 +516,11 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#202821</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <Color />
-                              </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -585,12 +535,11 @@
                         <Textbox Name="Sales2">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>135pt</Width>
+                          <Height>17.9832pt</Height>
+                          <Width>135.0547pt</Width>
                           <Style>
-                            <BackgroundColor>#e8e8e8</BackgroundColor>
+                            <BackgroundColor>#ff6150</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -612,16 +561,13 @@
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>'$'#,0;('$'#,0)</Format>
-                                    <Color>#202821</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Right</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -632,19 +578,18 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>18pt</Height>
+                  <Height>18.05557pt</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox29">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>425.25pt</Width>
+                          <Height>18.05557pt</Height>
+                          <Width>425.1735pt</Width>
                           <Style>
-                            <BackgroundColor>#e8e8e8</BackgroundColor>
+                            <BackgroundColor>#ff6150</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -665,15 +610,11 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#202821</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style>
-                                <Color />
-                              </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
+                              <Style />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -688,12 +629,11 @@
                         <Textbox Name="Sales1">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>135pt</Width>
+                          <Height>18.05557pt</Height>
+                          <Width>135.0547pt</Width>
                           <Style>
-                            <BackgroundColor>#e8e8e8</BackgroundColor>
+                            <BackgroundColor>#ff6150</BackgroundColor>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -715,16 +655,13 @@
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>'$'#,0;('$'#,0)</Format>
-                                    <Color>#202821</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Right</TextAlign>
-                                <Color />
                               </Style>
-                              <SpaceBefore />
-                              <SpaceAfter />
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -798,7 +735,6 @@
         <PageWidth>612pt</PageWidth>
         <PageHeader>
           <Style>
-            <Color />
             <Border>
               <Style>None</Style>
             </Border>
@@ -814,7 +750,6 @@
               <Width>576pt</Width>
               <Style>
                 <BackgroundColor>#555b63</BackgroundColor>
-                <Color />
                 <Border>
                   <Color>Gray</Color>
                   <Style>None</Style>
@@ -829,7 +764,6 @@
                   <Style>
                     <BackgroundColor>#555b63</BackgroundColor>
                     <VerticalAlign>Middle</VerticalAlign>
-                    <Color />
                     <PaddingLeft>2pt</PaddingLeft>
                     <PaddingRight>2pt</PaddingRight>
                     <PaddingTop>2pt</PaddingTop>
@@ -855,10 +789,7 @@
                       </TextRuns>
                       <Style>
                         <TextAlign>Left</TextAlign>
-                        <Color />
                       </Style>
-                      <SpaceBefore />
-                      <SpaceAfter />
                     </Paragraph>
                   </Paragraphs>
                 </Textbox>
@@ -870,7 +801,6 @@
         <PageFooter>
           <Style>
             <BackgroundColor>#f5f6f7</BackgroundColor>
-            <Color />
             <Border>
               <Style>None</Style>
             </Border>
@@ -883,9 +813,7 @@
         <RightMargin>18pt</RightMargin>
         <TopMargin>18pt</TopMargin>
         <BottomMargin>18pt</BottomMargin>
-        <Style>
-          <Color />
-        </Style>
+        <Style />
       </Page>
     </ReportSection>
   </ReportSections>
@@ -896,9 +824,9 @@
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=AdventureWorks;user id=demoreadonly@data-platform-demo;password=N@c)=Y8s*1&amp;dh</ConnectString>
-        <Prompt />
         <rd:IsDesignState>true</rd:IsDesignState>
       </ConnectionProperties>
+      <rd:ImpersonateUser>false</rd:ImpersonateUser>
     </DataSource>
   </DataSources>
   <DataSets>

@@ -93,13 +93,14 @@
 
             .ej-sb-header .ej-sb-left-side .ej-sb-hamburger-icon::before {
                 content: "\e914";
-                color: #3c78ef;
+                color: #333;
             }
 
         .ej-sb-header .ej-sb-left-side .ej-sb-platform-name {
             font-size: 15px;
             opacity: 0.87;
             font-weight: 600;
+            color: #2b3a5c;
         }
 
         .ej-sb-header .ej-sb-left-side .dropdown button.btn-secondary,
@@ -107,7 +108,7 @@
         .ej-sb-header .ej-sb-left-side .dropdown button.btn-secondary:active,
         .ej-sb-header .ej-sb-left-side .dropdown button.btn-secondary:active:focus {
             background: transparent;
-            color: #000000;
+            color: #2b3a5c;
             opacity: .87;
             border: none;
             box-shadow: none;
@@ -122,14 +123,14 @@
 
             .ej-sb-header .ej-sb-left-side .dropdown .dropdown-menu a.active {
                 background: transparent;
-                color: #3C78EF;
+                color: #ff5f23;
                 cursor: default;
                 pointer-events: none;
             }
 
             .ej-sb-header .ej-sb-left-side .dropdown .dropdown-menu a:active {
                 background: transparent;
-                color: #000000;
+                color: #2b3a5c;
             }
 
     .ej-sb-header .ej-sb-right-side {
@@ -171,13 +172,13 @@
                 text-decoration: none;
                 padding: 4px 13px;
                 cursor: pointer;
-                background-color: #3C78EF;
+                background-color: #ff5f23;
                 color: #ffffff;
                 border-radius: 2px;
             }
 
                 .ej-sb-header .ej-sb-right-side a.ej-sb-button:hover {
-                    background: #006CE6;
+                    background: #ff4801;
                 }
 
         .ej-sb-header .ej-sb-right-side .sb-icon-product:before {

@@ -68,6 +68,7 @@ ej-sidebar {
 }
 
 body {
+    color: #2b3a5c;
     margin: 0;
     background-color: #F2F2F2;
     font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif";
@@ -96,4 +97,8 @@ body {
 
 .e-reportviewer-icon.ej-webicon {
     font-family: 'ej-webfont';
+}
+
+#description a {
+    color: #ff5f23 ;
 }

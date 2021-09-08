@@ -1,16 +1,9 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
   <ReportSections>
     <ReportSection>
       <Body>
-        <Style>
-          <BackgroundColor>#ffffff</BackgroundColor>
-          <Color />
-          <Border>
-            <Width>0.62250pt</Width>
-            <Style>None</Style>
-          </Border>
-        </Style>
+        <Height>755.8906pt</Height>
         <ReportItems>
           <Rectangle Name="Rectangle1">
             <Left>7.5pt</Left>
@@ -19,7 +12,6 @@
             <Width>320.25pt</Width>
             <Style>
               <BackgroundColor>#ffffff</BackgroundColor>
-              <Color />
               <Border>
                 <Width>0.37500pt</Width>
                 <Color>LightGrey</Color>
@@ -33,7 +25,6 @@
                 <Height>19.5pt</Height>
                 <Width>231.75pt</Width>
                 <Style>
-                  <Color />
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -57,11 +48,7 @@
                         </Style>
                       </TextRun>
                     </TextRuns>
-                    <Style>
-                      <Color />
-                    </Style>
-                    <SpaceBefore />
-                    <SpaceAfter />
+                    <Style />
                   </Paragraph>
                 </Paragraphs>
               </Textbox>
@@ -93,6 +80,7 @@
                 <ChartCategoryHierarchy>
                   <ChartMembers>
                     <ChartMember>
+                      <Label>=Fields!ShowName.Value</Label>
                       <Group Name="Chart1_CategoryGroup">
                         <GroupExpressions>
                           <GroupExpression>=Fields!ShowName.Value</GroupExpression>
@@ -113,7 +101,6 @@
                           <Direction>Descending</Direction>
                         </SortExpression>
                       </SortExpressions>
-                      <Label>=Fields!ShowName.Value</Label>
                     </ChartMember>
                   </ChartMembers>
                 </ChartCategoryHierarchy>
@@ -139,13 +126,12 @@
                             </Style>
                             <Label>=IIf((Sum(Fields!TotalTicketsSold.Value)) &gt; 1000,  (Format((Sum(Fields!TotalTicketsSold.Value)/1000), "#,##0.##") + "K"), Sum(Fields!TotalTicketsSold.Value))</Label>
                             <Visible>true</Visible>
-                            <Rotation>0</Rotation>
                           </ChartDataLabel>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
                             <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
-                            <Color />
+                            <Color>#ff4800</Color>
                             <ShadowColor>Transparent</ShadowColor>
                             <Border>
                               <Style>None</Style>
@@ -158,7 +144,6 @@
                               <FontFamily>Segoe UI</FontFamily>
                               <FontSize>8.5pt</FontSize>
                               <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
-                              <Color />
                               <ShadowColor>Transparent</ShadowColor>
                               <Border>
                                 <Color>Transparent</Color>
@@ -187,7 +172,6 @@
                           <FontFamily>Segoe UI</FontFamily>
                           <FontSize>8.5pt</FontSize>
                           <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
-                          <Color />
                           <ShadowColor>Transparent</ShadowColor>
                           <Border>
                             <Color>Transparent</Color>
@@ -223,7 +207,6 @@
                         </Style>
                         <ChartAxisTitle>
                           <Caption />
-                          <Position>Center</Position>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -250,11 +233,8 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorGridLines>
                         <ChartMinorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -266,8 +246,6 @@
                               <Style>Dotted</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorGridLines>
                         <ChartMajorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -284,8 +262,6 @@
                             </Border>
                           </Style>
                           <Length>1</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorTickMarks>
                         <ChartMinorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -302,19 +278,14 @@
                             </Border>
                           </Style>
                           <Length>0.5</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorTickMarks>
-                        <Location>Default</Location>
                         <InterlacedColor>Transparent</InterlacedColor>
                         <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                         <ChartAxisScaleBreak>
-                          <Enabled>False</Enabled>
+                          <Enabled>false</Enabled>
                           <BreakLineType>Ragged</BreakLineType>
                           <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
                           <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
-                          <Spacing>0</Spacing>
-                          <IncludeZero>Auto</IncludeZero>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -342,7 +313,6 @@
                         </Style>
                         <ChartAxisTitle>
                           <Caption>Axis Title</Caption>
-                          <Position>Center</Position>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -369,11 +339,8 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorGridLines>
                         <ChartMinorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -385,8 +352,6 @@
                               <Style>Dotted</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorGridLines>
                         <ChartMajorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -403,8 +368,6 @@
                             </Border>
                           </Style>
                           <Length>1</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorTickMarks>
                         <ChartMinorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -421,18 +384,14 @@
                             </Border>
                           </Style>
                           <Length>0.5</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorTickMarks>
                         <Location>Opposite</Location>
                         <InterlacedColor>Transparent</InterlacedColor>
                         <ChartAxisScaleBreak>
-                          <Enabled>False</Enabled>
+                          <Enabled>false</Enabled>
                           <BreakLineType>Ragged</BreakLineType>
                           <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
                           <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
-                          <Spacing>0</Spacing>
-                          <IncludeZero>Auto</IncludeZero>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -462,7 +421,6 @@
                         </Style>
                         <ChartAxisTitle>
                           <Caption>Tickets Sold</Caption>
-                          <Position>Center</Position>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -477,7 +435,6 @@
                           </Style>
                         </ChartAxisTitle>
                         <ChartMajorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -489,11 +446,8 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorGridLines>
                         <ChartMinorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -505,8 +459,6 @@
                               <Style>Dotted</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorGridLines>
                         <ChartMajorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -523,8 +475,6 @@
                             </Border>
                           </Style>
                           <Length>1</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorTickMarks>
                         <ChartMinorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -541,19 +491,14 @@
                             </Border>
                           </Style>
                           <Length>0.5</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorTickMarks>
-                        <Location>Default</Location>
                         <InterlacedColor>Transparent</InterlacedColor>
                         <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                         <ChartAxisScaleBreak>
-                          <Enabled>False</Enabled>
+                          <Enabled>false</Enabled>
                           <BreakLineType>Ragged</BreakLineType>
                           <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
                           <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
-                          <Spacing>0</Spacing>
-                          <IncludeZero>Auto</IncludeZero>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -581,7 +526,6 @@
                         </Style>
                         <ChartAxisTitle>
                           <Caption>Axis Title</Caption>
-                          <Position>Center</Position>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -596,7 +540,6 @@
                           </Style>
                         </ChartAxisTitle>
                         <ChartMajorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -608,11 +551,8 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorGridLines>
                         <ChartMinorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -624,8 +564,6 @@
                               <Style>Dotted</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorGridLines>
                         <ChartMajorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -642,8 +580,6 @@
                             </Border>
                           </Style>
                           <Length>1</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorTickMarks>
                         <ChartMinorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -660,18 +596,14 @@
                             </Border>
                           </Style>
                           <Length>0.5</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorTickMarks>
                         <Location>Opposite</Location>
                         <InterlacedColor>Transparent</InterlacedColor>
                         <ChartAxisScaleBreak>
-                          <Enabled>False</Enabled>
+                          <Enabled>false</Enabled>
                           <BreakLineType>Ragged</BreakLineType>
                           <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
                           <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
-                          <Spacing>0</Spacing>
-                          <IncludeZero>Auto</IncludeZero>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -703,6 +635,7 @@
                 <ChartLegends>
                   <ChartLegend Name="Default">
                     <Hidden>true</Hidden>
+                    <Position>BottomCenter</Position>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
                       <FontSize>9pt</FontSize>
@@ -714,10 +647,8 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
-                    <Position>BottomCenter</Position>
                     <ChartLegendTitle>
                       <Caption />
-                      <TitleSeparator>None</TitleSeparator>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>8.5pt</FontSize>
@@ -733,16 +664,9 @@
                       </Style>
                     </ChartLegendTitle>
                     <AutoFitTextDisabled>true</AutoFitTextDisabled>
-                    <HeaderSeparator>None</HeaderSeparator>
                     <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-                    <ColumnSeparator>None</ColumnSeparator>
                     <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-                    <ColumnSpacing>0</ColumnSpacing>
-                    <InterlacedRows>false</InterlacedRows>
                     <InterlacedRowsColor>Transparent</InterlacedRowsColor>
-                    <EquallySpacedItems>false</EquallySpacedItems>
-                    <Reversed>Auto</Reversed>
-                    <TextWrapThreshold>0</TextWrapThreshold>
                   </ChartLegend>
                 </ChartLegends>
                 <ChartTitles>
@@ -762,9 +686,6 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
-                    <Position>TopCenter</Position>
-                    <DockOffset>0</DockOffset>
-                    <TextOrientation>Auto</TextOrientation>
                   </ChartTitle>
                 </ChartTitles>
                 <Palette>BrightPastel</Palette>
@@ -783,7 +704,6 @@
                 </ChartBorderSkin>
                 <ChartNoDataMessage Name="NoDataMessage">
                   <Caption>No Data Available</Caption>
-                  <Hidden>false</Hidden>
                   <Style>
                     <FontFamily>Segoe UI</FontFamily>
                     <FontSize>8.5pt</FontSize>
@@ -796,8 +716,6 @@
                     </Border>
                   </Style>
                   <Position>RightTop</Position>
-                  <DockOffset>0</DockOffset>
-                  <TextOrientation>Auto</TextOrientation>
                 </ChartNoDataMessage>
               </Chart>
             </ReportItems>
@@ -810,7 +728,6 @@
             <Width>320.25pt</Width>
             <Style>
               <BackgroundColor>#ffffff</BackgroundColor>
-              <Color />
               <Border>
                 <Width>0.37500pt</Width>
                 <Color>LightGrey</Color>
@@ -824,7 +741,6 @@
                 <Height>19.5pt</Height>
                 <Width>245.25pt</Width>
                 <Style>
-                  <Color />
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -848,11 +764,7 @@
                         </Style>
                       </TextRun>
                     </TextRuns>
-                    <Style>
-                      <Color />
-                    </Style>
-                    <SpaceBefore />
-                    <SpaceAfter />
+                    <Style />
                   </Paragraph>
                 </Paragraphs>
               </Textbox>
@@ -884,6 +796,7 @@
                 <ChartCategoryHierarchy>
                   <ChartMembers>
                     <ChartMember>
+                      <Label>=Fields!BoxName.Value</Label>
                       <Group Name="Chart2_CategoryGroup">
                         <GroupExpressions>
                           <GroupExpression>=Fields!BoxName.Value</GroupExpression>
@@ -904,7 +817,6 @@
                           <Direction>Descending</Direction>
                         </SortExpression>
                       </SortExpressions>
-                      <Label>=Fields!BoxName.Value</Label>
                     </ChartMember>
                   </ChartMembers>
                 </ChartCategoryHierarchy>
@@ -930,13 +842,11 @@
                             </Style>
                             <Label>#PERCENT</Label>
                             <Visible>true</Visible>
-                            <Rotation>0</Rotation>
                           </ChartDataLabel>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
                             <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
-                            <Color />
                             <ShadowColor>Transparent</ShadowColor>
                             <Border>
                               <Style>None</Style>
@@ -949,7 +859,6 @@
                               <FontFamily>Segoe UI</FontFamily>
                               <FontSize>8.5pt</FontSize>
                               <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
-                              <Color />
                               <ShadowColor>Transparent</ShadowColor>
                               <Border>
                                 <Color>Transparent</Color>
@@ -979,7 +888,6 @@
                           <FontFamily>Segoe UI</FontFamily>
                           <FontSize>8.5pt</FontSize>
                           <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
-                          <Color />
                           <ShadowColor>Transparent</ShadowColor>
                           <Border>
                             <Color>Transparent</Color>
@@ -1015,7 +923,6 @@
                         </Style>
                         <ChartAxisTitle>
                           <Caption />
-                          <Position>Center</Position>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1042,11 +949,8 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorGridLines>
                         <ChartMinorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1058,8 +962,6 @@
                               <Style>Dotted</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorGridLines>
                         <ChartMajorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -1076,8 +978,6 @@
                             </Border>
                           </Style>
                           <Length>1</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorTickMarks>
                         <ChartMinorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -1094,19 +994,14 @@
                             </Border>
                           </Style>
                           <Length>0.5</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorTickMarks>
-                        <Location>Default</Location>
                         <InterlacedColor>Transparent</InterlacedColor>
                         <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                         <ChartAxisScaleBreak>
-                          <Enabled>False</Enabled>
+                          <Enabled>false</Enabled>
                           <BreakLineType>Ragged</BreakLineType>
                           <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
                           <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
-                          <Spacing>0</Spacing>
-                          <IncludeZero>Auto</IncludeZero>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1134,7 +1029,6 @@
                         </Style>
                         <ChartAxisTitle>
                           <Caption>Axis Title</Caption>
-                          <Position>Center</Position>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1161,11 +1055,8 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorGridLines>
                         <ChartMinorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1177,8 +1068,6 @@
                               <Style>Dotted</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorGridLines>
                         <ChartMajorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -1195,8 +1084,6 @@
                             </Border>
                           </Style>
                           <Length>1</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorTickMarks>
                         <ChartMinorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -1213,18 +1100,14 @@
                             </Border>
                           </Style>
                           <Length>0.5</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorTickMarks>
                         <Location>Opposite</Location>
                         <InterlacedColor>Transparent</InterlacedColor>
                         <ChartAxisScaleBreak>
-                          <Enabled>False</Enabled>
+                          <Enabled>false</Enabled>
                           <BreakLineType>Ragged</BreakLineType>
                           <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
                           <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
-                          <Spacing>0</Spacing>
-                          <IncludeZero>Auto</IncludeZero>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1254,7 +1137,6 @@
                         </Style>
                         <ChartAxisTitle>
                           <Caption />
-                          <Position>Center</Position>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1269,7 +1151,6 @@
                           </Style>
                         </ChartAxisTitle>
                         <ChartMajorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1281,11 +1162,8 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorGridLines>
                         <ChartMinorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1297,8 +1175,6 @@
                               <Style>Dotted</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorGridLines>
                         <ChartMajorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -1315,8 +1191,6 @@
                             </Border>
                           </Style>
                           <Length>1</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorTickMarks>
                         <ChartMinorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -1333,19 +1207,14 @@
                             </Border>
                           </Style>
                           <Length>0.5</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorTickMarks>
-                        <Location>Default</Location>
                         <InterlacedColor>Transparent</InterlacedColor>
                         <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                         <ChartAxisScaleBreak>
-                          <Enabled>False</Enabled>
+                          <Enabled>false</Enabled>
                           <BreakLineType>Ragged</BreakLineType>
                           <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
                           <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
-                          <Spacing>0</Spacing>
-                          <IncludeZero>Auto</IncludeZero>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1373,7 +1242,6 @@
                         </Style>
                         <ChartAxisTitle>
                           <Caption>Axis Title</Caption>
-                          <Position>Center</Position>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1388,7 +1256,6 @@
                           </Style>
                         </ChartAxisTitle>
                         <ChartMajorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1400,11 +1267,8 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorGridLines>
                         <ChartMinorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1416,8 +1280,6 @@
                               <Style>Dotted</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorGridLines>
                         <ChartMajorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -1434,8 +1296,6 @@
                             </Border>
                           </Style>
                           <Length>1</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorTickMarks>
                         <ChartMinorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -1452,18 +1312,14 @@
                             </Border>
                           </Style>
                           <Length>0.5</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorTickMarks>
                         <Location>Opposite</Location>
                         <InterlacedColor>Transparent</InterlacedColor>
                         <ChartAxisScaleBreak>
-                          <Enabled>False</Enabled>
+                          <Enabled>false</Enabled>
                           <BreakLineType>Ragged</BreakLineType>
                           <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
                           <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
-                          <Spacing>0</Spacing>
-                          <IncludeZero>Auto</IncludeZero>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1493,22 +1349,19 @@
                 </ChartAreas>
                 <ChartLegends>
                   <ChartLegend Name="Default">
-                    <Hidden>false</Hidden>
+                    <Position>RightCenter</Position>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
                       <FontSize>8.25pt</FontSize>
                       <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
-                      <Color />
                       <ShadowColor>Transparent</ShadowColor>
                       <Border>
                         <Color>LightGrey</Color>
                         <Style>None</Style>
                       </Border>
                     </Style>
-                    <Position>RightCenter</Position>
                     <ChartLegendTitle>
                       <Caption />
-                      <TitleSeparator>None</TitleSeparator>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>8.5pt</FontSize>
@@ -1524,16 +1377,9 @@
                       </Style>
                     </ChartLegendTitle>
                     <AutoFitTextDisabled>true</AutoFitTextDisabled>
-                    <HeaderSeparator>None</HeaderSeparator>
                     <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-                    <ColumnSeparator>None</ColumnSeparator>
                     <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-                    <ColumnSpacing>0</ColumnSpacing>
-                    <InterlacedRows>false</InterlacedRows>
                     <InterlacedRowsColor>Transparent</InterlacedRowsColor>
-                    <EquallySpacedItems>false</EquallySpacedItems>
-                    <Reversed>Auto</Reversed>
-                    <TextWrapThreshold>0</TextWrapThreshold>
                   </ChartLegend>
                 </ChartLegends>
                 <ChartTitles>
@@ -1553,12 +1399,16 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
-                    <Position>TopCenter</Position>
-                    <DockOffset>0</DockOffset>
-                    <TextOrientation>Auto</TextOrientation>
                   </ChartTitle>
                 </ChartTitles>
-                <Palette>Berry</Palette>
+                <Palette>Custom</Palette>
+                <ChartCustomPaletteColors>
+                  <ChartCustomPaletteColor>#072448</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#54d2d2</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#ffcb00</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#f8aa4b</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#ff6150</ChartCustomPaletteColor>
+                </ChartCustomPaletteColors>
                 <ChartBorderSkin>
                   <Style>
                     <FontFamily>Segoe UI</FontFamily>
@@ -1574,7 +1424,6 @@
                 </ChartBorderSkin>
                 <ChartNoDataMessage Name="NoDataMessage">
                   <Caption>No Data Available</Caption>
-                  <Hidden>false</Hidden>
                   <Style>
                     <FontFamily>Segoe UI</FontFamily>
                     <FontSize>8.5pt</FontSize>
@@ -1587,8 +1436,6 @@
                     </Border>
                   </Style>
                   <Position>RightTop</Position>
-                  <DockOffset>0</DockOffset>
-                  <TextOrientation>Auto</TextOrientation>
                 </ChartNoDataMessage>
               </Chart>
             </ReportItems>
@@ -1601,7 +1448,6 @@
             <Width>654.75pt</Width>
             <Style>
               <BackgroundColor>#ffffff</BackgroundColor>
-              <Color />
               <Border>
                 <Width>0.37500pt</Width>
                 <Color>LightGrey</Color>
@@ -1615,7 +1461,6 @@
                 <Height>19.49976pt</Height>
                 <Width>276.75pt</Width>
                 <Style>
-                  <Color />
                   <PaddingLeft>2pt</PaddingLeft>
                   <PaddingRight>2pt</PaddingRight>
                   <PaddingTop>2pt</PaddingTop>
@@ -1639,11 +1484,7 @@
                         </Style>
                       </TextRun>
                     </TextRuns>
-                    <Style>
-                      <Color />
-                    </Style>
-                    <SpaceBefore />
-                    <SpaceAfter />
+                    <Style />
                   </Paragraph>
                 </Paragraphs>
               </Textbox>
@@ -1668,6 +1509,7 @@
                 <ChartSeriesHierarchy>
                   <ChartMembers>
                     <ChartMember>
+                      <Label>=Fields!ShowName.Value</Label>
                       <Group Name="Chart3_SeriesGroup">
                         <GroupExpressions>
                           <GroupExpression>=Fields!ShowName.Value</GroupExpression>
@@ -1676,15 +1518,16 @@
                       <SortExpressions>
                         <SortExpression>
                           <Value>=Fields!ShowDate.Value</Value>
+                          <Direction>Ascending</Direction>
                         </SortExpression>
                       </SortExpressions>
-                      <Label>=Fields!ShowName.Value</Label>
                     </ChartMember>
                   </ChartMembers>
                 </ChartSeriesHierarchy>
                 <ChartCategoryHierarchy>
                   <ChartMembers>
                     <ChartMember>
+                      <Label>=Format(CDate(Fields!ShowDate.Value),"dd/MM/yyyy")</Label>
                       <Group Name="Chart3_CategoryGroup">
                         <GroupExpressions>
                           <GroupExpression>=Format(CDate(Fields!ShowDate.Value),"dd/MM/yyyy")</GroupExpression>
@@ -1693,9 +1536,9 @@
                       <SortExpressions>
                         <SortExpression>
                           <Value>=Fields!ShowDate.Value</Value>
+                          <Direction>Ascending</Direction>
                         </SortExpression>
                       </SortExpressions>
-                      <Label>=Format(CDate(Fields!ShowDate.Value),"dd/MM/yyyy")</Label>
                     </ChartMember>
                   </ChartMembers>
                 </ChartCategoryHierarchy>
@@ -1719,13 +1562,12 @@
                                 <Style>None</Style>
                               </Border>
                             </Style>
-                            <Rotation>0</Rotation>
+                            <Visible>false</Visible>
                           </ChartDataLabel>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
                             <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
-                            <Color />
                             <ShadowColor>Transparent</ShadowColor>
                             <Border>
                               <Style>None</Style>
@@ -1738,7 +1580,6 @@
                               <FontFamily>Segoe UI</FontFamily>
                               <FontSize>8.5pt</FontSize>
                               <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
-                              <Color />
                               <ShadowColor>Transparent</ShadowColor>
                               <Border>
                                 <Color>Transparent</Color>
@@ -1767,7 +1608,6 @@
                           <FontFamily>Segoe UI</FontFamily>
                           <FontSize>8.5pt</FontSize>
                           <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
-                          <Color />
                           <ShadowColor>Transparent</ShadowColor>
                           <Border>
                             <Color>Transparent</Color>
@@ -1797,7 +1637,6 @@
                         </Style>
                         <ChartAxisTitle>
                           <Caption />
-                          <Position>Center</Position>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1811,7 +1650,6 @@
                             </Border>
                           </Style>
                         </ChartAxisTitle>
-                        <rd:LabelOverFlowMode>Hide</rd:LabelOverFlowMode>
                         <ChartMajorGridLines>
                           <Enabled>False</Enabled>
                           <Style>
@@ -1825,11 +1663,8 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorGridLines>
                         <ChartMinorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1841,8 +1676,6 @@
                               <Style>Dotted</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorGridLines>
                         <ChartMajorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -1859,8 +1692,6 @@
                             </Border>
                           </Style>
                           <Length>3</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorTickMarks>
                         <ChartMinorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -1877,20 +1708,15 @@
                             </Border>
                           </Style>
                           <Length>0.5</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorTickMarks>
-                        <Location>Default</Location>
                         <InterlacedColor>Transparent</InterlacedColor>
                         <Angle>-45</Angle>
                         <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                         <ChartAxisScaleBreak>
-                          <Enabled>False</Enabled>
+                          <Enabled>false</Enabled>
                           <BreakLineType>Ragged</BreakLineType>
                           <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
                           <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
-                          <Spacing>0</Spacing>
-                          <IncludeZero>Auto</IncludeZero>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1918,7 +1744,6 @@
                         </Style>
                         <ChartAxisTitle>
                           <Caption>Axis Title</Caption>
-                          <Position>Center</Position>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1945,11 +1770,8 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorGridLines>
                         <ChartMinorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -1961,8 +1783,6 @@
                               <Style>Dotted</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorGridLines>
                         <ChartMajorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -1979,8 +1799,6 @@
                             </Border>
                           </Style>
                           <Length>1</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorTickMarks>
                         <ChartMinorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -1997,18 +1815,14 @@
                             </Border>
                           </Style>
                           <Length>0.5</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorTickMarks>
                         <Location>Opposite</Location>
                         <InterlacedColor>Transparent</InterlacedColor>
                         <ChartAxisScaleBreak>
-                          <Enabled>False</Enabled>
+                          <Enabled>false</Enabled>
                           <BreakLineType>Ragged</BreakLineType>
                           <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
                           <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
-                          <Spacing>0</Spacing>
-                          <IncludeZero>Auto</IncludeZero>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -2038,7 +1852,6 @@
                         </Style>
                         <ChartAxisTitle>
                           <Caption>Sum of Tickets Sold</Caption>
-                          <Position>Center</Position>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -2053,7 +1866,6 @@
                           </Style>
                         </ChartAxisTitle>
                         <ChartMajorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -2065,11 +1877,8 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorGridLines>
                         <ChartMinorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -2081,8 +1890,6 @@
                               <Style>Dotted</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorGridLines>
                         <ChartMajorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -2099,8 +1906,6 @@
                             </Border>
                           </Style>
                           <Length>1</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorTickMarks>
                         <ChartMinorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -2117,19 +1922,14 @@
                             </Border>
                           </Style>
                           <Length>0.5</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorTickMarks>
-                        <Location>Default</Location>
                         <InterlacedColor>Transparent</InterlacedColor>
                         <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                         <ChartAxisScaleBreak>
-                          <Enabled>False</Enabled>
+                          <Enabled>false</Enabled>
                           <BreakLineType>Ragged</BreakLineType>
                           <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
                           <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
-                          <Spacing>0</Spacing>
-                          <IncludeZero>Auto</IncludeZero>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -2157,7 +1957,6 @@
                         </Style>
                         <ChartAxisTitle>
                           <Caption>Axis Title</Caption>
-                          <Position>Center</Position>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -2172,7 +1971,6 @@
                           </Style>
                         </ChartAxisTitle>
                         <ChartMajorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -2184,11 +1982,8 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorGridLines>
                         <ChartMinorGridLines>
-                          <Enabled>Auto</Enabled>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -2200,8 +1995,6 @@
                               <Style>Dotted</Style>
                             </Border>
                           </Style>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorGridLines>
                         <ChartMajorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -2218,8 +2011,6 @@
                             </Border>
                           </Style>
                           <Length>1</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMajorTickMarks>
                         <ChartMinorTickMarks>
                           <Enabled>Auto</Enabled>
@@ -2236,18 +2027,14 @@
                             </Border>
                           </Style>
                           <Length>0.5</Length>
-                          <IntervalType>Default</IntervalType>
-                          <IntervalOffsetType>Default</IntervalOffsetType>
                         </ChartMinorTickMarks>
                         <Location>Opposite</Location>
                         <InterlacedColor>Transparent</InterlacedColor>
                         <ChartAxisScaleBreak>
-                          <Enabled>False</Enabled>
+                          <Enabled>false</Enabled>
                           <BreakLineType>Ragged</BreakLineType>
                           <CollapsibleSpaceThreshold>25</CollapsibleSpaceThreshold>
                           <MaxNumberOfBreaks>2</MaxNumberOfBreaks>
-                          <Spacing>0</Spacing>
-                          <IncludeZero>Auto</IncludeZero>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8.5pt</FontSize>
@@ -2278,7 +2065,7 @@
                 </ChartAreas>
                 <ChartLegends>
                   <ChartLegend Name="Default">
-                    <Hidden>false</Hidden>
+                    <Position>BottomCenter</Position>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
                       <FontSize>9pt</FontSize>
@@ -2290,10 +2077,8 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
-                    <Position>BottomCenter</Position>
                     <ChartLegendTitle>
                       <Caption />
-                      <TitleSeparator>None</TitleSeparator>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>8.5pt</FontSize>
@@ -2309,16 +2094,9 @@
                       </Style>
                     </ChartLegendTitle>
                     <AutoFitTextDisabled>true</AutoFitTextDisabled>
-                    <HeaderSeparator>None</HeaderSeparator>
                     <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-                    <ColumnSeparator>None</ColumnSeparator>
                     <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-                    <ColumnSpacing>0</ColumnSpacing>
-                    <InterlacedRows>false</InterlacedRows>
                     <InterlacedRowsColor>Transparent</InterlacedRowsColor>
-                    <EquallySpacedItems>false</EquallySpacedItems>
-                    <Reversed>Auto</Reversed>
-                    <TextWrapThreshold>0</TextWrapThreshold>
                   </ChartLegend>
                 </ChartLegends>
                 <ChartTitles>
@@ -2338,12 +2116,32 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
-                    <Position>TopCenter</Position>
-                    <DockOffset>0</DockOffset>
-                    <TextOrientation>Auto</TextOrientation>
                   </ChartTitle>
                 </ChartTitles>
-                <Palette>BrightPastel</Palette>
+                <Palette>Custom</Palette>
+                <ChartCustomPaletteColors>
+                  <ChartCustomPaletteColor>#072448</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#54d2d2</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#ffcb00</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#f8aa4b</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#ff6150</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#008080</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#0000ff</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#9c399c</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#01ff00</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#ff00ff</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#008080</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#ffff00</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#808080</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#01ffff</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#000080</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#800000</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#ff0000</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#808000</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#c0c0c0</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#ff6347</ChartCustomPaletteColor>
+                  <ChartCustomPaletteColor>#ffe4b5</ChartCustomPaletteColor>
+                </ChartCustomPaletteColors>
                 <ChartBorderSkin>
                   <Style>
                     <FontFamily>Segoe UI</FontFamily>
@@ -2359,7 +2157,6 @@
                 </ChartBorderSkin>
                 <ChartNoDataMessage Name="NoDataMessage">
                   <Caption>No Data Available</Caption>
-                  <Hidden>false</Hidden>
                   <Style>
                     <FontFamily>Segoe UI</FontFamily>
                     <FontSize>8.5pt</FontSize>
@@ -2372,8 +2169,6 @@
                     </Border>
                   </Style>
                   <Position>RightTop</Position>
-                  <DockOffset>0</DockOffset>
-                  <TextOrientation>Auto</TextOrientation>
                 </ChartNoDataMessage>
               </Chart>
             </ReportItems>
@@ -2386,7 +2181,6 @@
             <Width>654.75pt</Width>
             <Style>
               <BackgroundColor>White</BackgroundColor>
-              <Color />
               <Border>
                 <Color>LightGrey</Color>
                 <Style>None</Style>
@@ -2396,6 +2190,7 @@
             <SortExpressions>
               <SortExpression>
                 <Value>=Fields!ShowDate.Value</Value>
+                <Direction>Ascending</Direction>
               </SortExpression>
             </SortExpressions>
             <TablixBody>
@@ -2431,10 +2226,9 @@
                           <Height>22.5pt</Height>
                           <Width>105.75pt</Width>
                           <Style>
-                            <BackgroundColor>#77a7fb</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
                             <TextAlign>Left</TextAlign>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2443,26 +2237,26 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
                             <LeftBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </LeftBorder>
                             <RightBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -2472,21 +2266,21 @@
                                   <Value>Show Date</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
                                     <TextAlign>Left</TextAlign>
                                     <VerticalAlign>Middle</VerticalAlign>
-                                    <Color>White</Color>
+                                    <Color>#000000</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -2497,10 +2291,9 @@
                           <Height>22.5pt</Height>
                           <Width>105.75pt</Width>
                           <Style>
-                            <BackgroundColor>#77a7fb</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
                             <TextAlign>Left</TextAlign>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2509,26 +2302,26 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
                             <LeftBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </LeftBorder>
                             <RightBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -2538,21 +2331,21 @@
                                   <Value>Show Start Date</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
                                     <TextAlign>Left</TextAlign>
                                     <VerticalAlign>Middle</VerticalAlign>
-                                    <Color>White</Color>
+                                    <Color>#000000</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -2563,10 +2356,9 @@
                           <Height>22.5pt</Height>
                           <Width>90pt</Width>
                           <Style>
-                            <BackgroundColor>#77a7fb</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
                             <TextAlign>Left</TextAlign>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2575,26 +2367,26 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
                             <LeftBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </LeftBorder>
                             <RightBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -2604,21 +2396,21 @@
                                   <Value>Box Name</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
                                     <TextAlign>Left</TextAlign>
                                     <VerticalAlign>Middle</VerticalAlign>
-                                    <Color>White</Color>
+                                    <Color>#000000</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -2629,10 +2421,9 @@
                           <Height>22.5pt</Height>
                           <Width>139.5pt</Width>
                           <Style>
-                            <BackgroundColor>#77a7fb</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
                             <TextAlign>Left</TextAlign>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2641,26 +2432,26 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
                             <LeftBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </LeftBorder>
                             <RightBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -2670,21 +2461,21 @@
                                   <Value>Show Name</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
                                     <TextAlign>Left</TextAlign>
                                     <VerticalAlign>Middle</VerticalAlign>
-                                    <Color>White</Color>
+                                    <Color>#000000</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -2695,10 +2486,9 @@
                           <Height>22.5pt</Height>
                           <Width>106.5pt</Width>
                           <Style>
-                            <BackgroundColor>#77a7fb</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
                             <TextAlign>Left</TextAlign>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2707,26 +2497,26 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
                             <LeftBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </LeftBorder>
                             <RightBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -2736,21 +2526,21 @@
                                   <Value>Tickets Sold</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
                                     <TextAlign>Left</TextAlign>
                                     <VerticalAlign>Middle</VerticalAlign>
-                                    <Color>White</Color>
+                                    <Color>#000000</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -2761,10 +2551,9 @@
                           <Height>22.5pt</Height>
                           <Width>107.25pt</Width>
                           <Style>
-                            <BackgroundColor>#77a7fb</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
                             <TextAlign>Left</TextAlign>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2773,26 +2562,26 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
                             <LeftBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </LeftBorder>
                             <RightBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -2802,21 +2591,21 @@
                                   <Value>Unit Price</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
                                     <TextAlign>Left</TextAlign>
                                     <VerticalAlign>Middle</VerticalAlign>
-                                    <Color>White</Color>
+                                    <Color>#000000</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -2832,10 +2621,9 @@
                           <Height>22.5pt</Height>
                           <Width>105.75pt</Width>
                           <Style>
-                            <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#ebf2fe","Transparent")</BackgroundColor>
+                            <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#F4F5F7","Transparent")</BackgroundColor>
                             <TextAlign>Left</TextAlign>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2844,26 +2632,26 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
                             <LeftBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </LeftBorder>
                             <RightBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -2876,19 +2664,18 @@
                                     <Format>MMMM d, yyyy</Format>
                                     <TextAlign>Left</TextAlign>
                                     <VerticalAlign>Middle</VerticalAlign>
-                                    <Color />
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -2899,10 +2686,9 @@
                           <Height>22.5pt</Height>
                           <Width>105.75pt</Width>
                           <Style>
-                            <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#ebf2fe","Transparent")</BackgroundColor>
+                            <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#F4F5F7","Transparent")</BackgroundColor>
                             <TextAlign>Left</TextAlign>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2911,26 +2697,26 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
                             <LeftBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </LeftBorder>
                             <RightBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -2943,19 +2729,18 @@
                                     <Format>MMMM d, yyyy</Format>
                                     <TextAlign>Left</TextAlign>
                                     <VerticalAlign>Middle</VerticalAlign>
-                                    <Color />
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -2966,10 +2751,9 @@
                           <Height>22.5pt</Height>
                           <Width>90pt</Width>
                           <Style>
-                            <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#ebf2fe","Transparent")</BackgroundColor>
+                            <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#F4F5F7","Transparent")</BackgroundColor>
                             <TextAlign>Left</TextAlign>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -2978,26 +2762,26 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
                             <LeftBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </LeftBorder>
                             <RightBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -3009,19 +2793,18 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <TextAlign>Left</TextAlign>
                                     <VerticalAlign>Middle</VerticalAlign>
-                                    <Color />
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -3032,10 +2815,9 @@
                           <Height>22.5pt</Height>
                           <Width>139.5pt</Width>
                           <Style>
-                            <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#ebf2fe","Transparent")</BackgroundColor>
+                            <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#F4F5F7","Transparent")</BackgroundColor>
                             <TextAlign>Left</TextAlign>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3044,26 +2826,26 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
                             <LeftBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </LeftBorder>
                             <RightBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -3075,19 +2857,18 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <TextAlign>Left</TextAlign>
                                     <VerticalAlign>Middle</VerticalAlign>
-                                    <Color />
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -3098,10 +2879,9 @@
                           <Height>22.5pt</Height>
                           <Width>106.5pt</Width>
                           <Style>
-                            <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#ebf2fe","Transparent")</BackgroundColor>
+                            <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#F4F5F7","Transparent")</BackgroundColor>
                             <TextAlign>Left</TextAlign>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3110,26 +2890,26 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
                             <LeftBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </LeftBorder>
                             <RightBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -3141,19 +2921,18 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <TextAlign>Left</TextAlign>
                                     <VerticalAlign>Middle</VerticalAlign>
-                                    <Color />
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Right</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -3164,10 +2943,9 @@
                           <Height>22.5pt</Height>
                           <Width>107.25pt</Width>
                           <Style>
-                            <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#ebf2fe","Transparent")</BackgroundColor>
+                            <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#F4F5F7","Transparent")</BackgroundColor>
                             <TextAlign>Left</TextAlign>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -3176,26 +2954,26 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
                             <BottomBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </BottomBorder>
                             <LeftBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </LeftBorder>
                             <RightBorder>
+                              <Width>1pt</Width>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                              <Width>1pt</Width>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>1pt</Width>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -3207,19 +2985,18 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <TextAlign>Left</TextAlign>
                                     <VerticalAlign>Middle</VerticalAlign>
-                                    <Color />
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Right</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -3252,7 +3029,6 @@
             <Height>21.74976pt</Height>
             <Width>379.4998pt</Width>
             <Style>
-              <Color />
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -3283,29 +3059,24 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style>
-                  <Color />
-                </Style>
-                <SpaceBefore />
-                <SpaceAfter />
+                <Style />
               </Paragraph>
             </Paragraphs>
           </Textbox>
         </ReportItems>
-        <Height>755.8906pt</Height>
+        <Style>
+          <BackgroundColor>#ffffff</BackgroundColor>
+          <Border>
+            <Width>0.62250pt</Width>
+            <Style>None</Style>
+          </Border>
+        </Style>
       </Body>
       <Width>669.75pt</Width>
       <Page>
         <PageHeight>881.2498pt</PageHeight>
         <PageWidth>742.5pt</PageWidth>
         <PageHeader>
-          <Style>
-            <BackgroundColor>#ffffff</BackgroundColor>
-            <Color />
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
           <Height>43.5pt</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
@@ -3317,7 +3088,6 @@
               <Width>669.75pt</Width>
               <Style>
                 <BackgroundColor>#555b63</BackgroundColor>
-                <Color />
                 <Border>
                   <Color>Gray</Color>
                   <Style>None</Style>
@@ -3331,7 +3101,6 @@
                   <Width>264pt</Width>
                   <Style>
                     <BackgroundColor>#555b63</BackgroundColor>
-                    <Color />
                     <PaddingLeft>2pt</PaddingLeft>
                     <PaddingRight>2pt</PaddingRight>
                     <PaddingTop>2pt</PaddingTop>
@@ -3355,11 +3124,7 @@
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style>
-                        <Color />
-                      </Style>
-                      <SpaceBefore />
-                      <SpaceAfter />
+                      <Style />
                     </Paragraph>
                   </Paragraphs>
                 </Textbox>
@@ -3367,25 +3132,29 @@
               <KeepTogether>true</KeepTogether>
             </Rectangle>
           </ReportItems>
-        </PageHeader>
-        <PageFooter>
           <Style>
             <BackgroundColor>#ffffff</BackgroundColor>
-            <Color />
             <Border>
               <Style>None</Style>
             </Border>
           </Style>
+        </PageHeader>
+        <PageFooter>
           <Height>7.5pt</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <BackgroundColor>#ffffff</BackgroundColor>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
         </PageFooter>
         <LeftMargin>36.00005pt</LeftMargin>
         <RightMargin>36.00005pt</RightMargin>
         <TopMargin>36.00005pt</TopMargin>
         <BottomMargin>36.00005pt</BottomMargin>
         <Style>
-          <Color />
           <Border>
             <Style>None</Style>
           </Border>
@@ -3393,48 +3162,19 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="ReportSampleDatabase">
+      <rd:SecurityType>None</rd:SecurityType>
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=SampleDB;user id=demoreadonly@data-platform-demo;password=N@c)=Y8s*1&amp;dh</ConnectString>
-        <Prompt />
-        <rd:IsDesignState>true</rd:IsDesignState>
       </ConnectionProperties>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="ShowDetails">
-      <Fields>
-        <Field Name="ShowDate">
-          <DataField>ShowDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="ShowStartDate">
-          <DataField>ShowStartDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="ShowName">
-          <DataField>ShowName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="BoxName">
-          <DataField>BoxName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TicketsSold">
-          <DataField>TicketsSold</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="UnitPrice">
-          <DataField>UnitPrice</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-      </Fields>
       <Query>
         <DataSourceName>ReportSampleDatabase</DataSourceName>
-        <CommandType>Text</CommandType>
         <CommandText>SELECT [dbo].[Theater].[ShowDate],
 [dbo].[Theater].[ShowStartDate],
 [dbo].[Theater].[ShowName],
@@ -3442,8 +3182,6 @@
 [dbo].[Theater].[TicketsSold],
 [dbo].[Theater].[UnitPrice] FROM [dbo].[Theater]</CommandText>
       </Query>
-    </DataSet>
-    <DataSet Name="TopShowDetails">
       <Fields>
         <Field Name="ShowDate">
           <DataField>ShowDate</DataField>
@@ -3470,9 +3208,10 @@
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
+    </DataSet>
+    <DataSet Name="TopShowDetails">
       <Query>
         <DataSourceName>ReportSampleDatabase</DataSourceName>
-        <CommandType>Text</CommandType>
         <CommandText>SELECT [dbo].[Theater].[ShowDate],
 [dbo].[Theater].[ShowStartDate],
 [dbo].[Theater].[ShowName],
@@ -3480,8 +3219,40 @@
 Sum([dbo].[Theater].[TicketsSold]) as TicketsSold,
 Sum([dbo].[Theater].[UnitPrice]) as UnitPrice FROM [dbo].[Theater] Group by [dbo].[Theater].[ShowName],[dbo].[Theater].[BoxName],[dbo].[Theater].[ShowDate],[dbo].[Theater].[ShowStartDate]</CommandText>
       </Query>
+      <Fields>
+        <Field Name="ShowDate">
+          <DataField>ShowDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ShowStartDate">
+          <DataField>ShowStartDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ShowName">
+          <DataField>ShowName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BoxName">
+          <DataField>BoxName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TicketsSold">
+          <DataField>TicketsSold</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="UnitPrice">
+          <DataField>UnitPrice</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
     </DataSet>
     <DataSet Name="TopShows">
+      <Query>
+        <DataSourceName>ReportSampleDatabase</DataSourceName>
+        <CommandText>SELECT 
+[dbo].[Theater].[ShowName],
+Sum([dbo].[Theater].[TicketsSold]) as TotalTicketsSold FROM [dbo].[Theater] Group by [dbo].[Theater].[ShowName]</CommandText>
+      </Query>
       <Fields>
         <Field Name="ShowName">
           <DataField>ShowName</DataField>
@@ -3492,13 +3263,6 @@ Sum([dbo].[Theater].[UnitPrice]) as UnitPrice FROM [dbo].[Theater] Group by [dbo
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
-      <Query>
-        <DataSourceName>ReportSampleDatabase</DataSourceName>
-        <CommandType>Text</CommandType>
-        <CommandText>SELECT 
-[dbo].[Theater].[ShowName],
-Sum([dbo].[Theater].[TicketsSold]) as TotalTicketsSold FROM [dbo].[Theater] Group by [dbo].[Theater].[ShowName]</CommandText>
-      </Query>
     </DataSet>
   </DataSets>
   <EmbeddedImages>

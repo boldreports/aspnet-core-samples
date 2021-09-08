@@ -53,7 +53,10 @@ namespace ReportsCoreSamples
             var extensions = !string.IsNullOrEmpty(ExtAssemblies) ? ExtAssemblies : string.Empty;
             try
             {
-                return new List<string>(extensions.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries));
+                var ExtNames =  new List<string>(extensions.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries));
+                List<string> ExtCollections = new List<string>();
+                ExtNames.ForEach(Extension => ExtCollections.Add(System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, Extension + ".dll")));
+                return ExtCollections;
             }
             catch (Exception ex)
             {

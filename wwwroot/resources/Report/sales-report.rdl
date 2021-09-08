@@ -5,7 +5,7 @@
       <Body>
         <Style>
           <BackgroundColor>White</BackgroundColor>
-          <Color />
+          <FontFamily>Arial</FontFamily>
         </Style>
         <ReportItems>
           <Tablix Name="Tablix2">
@@ -14,7 +14,7 @@
             <Height>54pt</Height>
             <Width>540pt</Width>
             <Style>
-              <Color />
+              <FontFamily>Arial</FontFamily>
               <Border>
                 <Style>None</Style>
               </Border>
@@ -53,9 +53,9 @@
                           <Height>18pt</Height>
                           <Width>79.5pt</Width>
                           <Style>
-                            <BackgroundColor>#479d9c</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -74,13 +74,13 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -97,9 +97,9 @@
                           <Height>18pt</Height>
                           <Width>146.25pt</Width>
                           <Style>
-                            <BackgroundColor>#479d9c</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -118,13 +118,13 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -141,9 +141,9 @@
                           <Height>18pt</Height>
                           <Width>105.75pt</Width>
                           <Style>
-                            <BackgroundColor>#479d9c</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -162,13 +162,13 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -185,9 +185,9 @@
                           <Height>18pt</Height>
                           <Width>36pt</Width>
                           <Style>
-                            <BackgroundColor>#479d9c</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -206,13 +206,13 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -229,9 +229,9 @@
                           <Height>18pt</Height>
                           <Width>67.5pt</Width>
                           <Style>
-                            <BackgroundColor>#479d9c</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -250,13 +250,13 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -273,9 +273,9 @@
                           <Height>18pt</Height>
                           <Width>104.25pt</Width>
                           <Style>
-                            <BackgroundColor>#479d9c</BackgroundColor>
+                            <BackgroundColor>#e3e6ea</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -294,13 +294,13 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>White</Color>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -322,8 +322,8 @@
                           <Height>18pt</Height>
                           <Width>79.5pt</Width>
                           <Style>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -341,12 +341,11 @@
                                   <Value>=Fields!ProductNumber.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <Color />
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <Color />
+                                <FontFamily>Arial</FontFamily>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -363,8 +362,8 @@
                           <Height>18pt</Height>
                           <Width>146.25pt</Width>
                           <Style>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -383,13 +382,12 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <Format>C</Format>
-                                    <Color />
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Left</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -406,8 +404,8 @@
                           <Height>18pt</Height>
                           <Width>105.75pt</Width>
                           <Style>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -426,13 +424,12 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <Format>d</Format>
-                                    <Color />
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -449,8 +446,8 @@
                           <Height>18pt</Height>
                           <Width>36pt</Width>
                           <Style>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -468,13 +465,12 @@
                                   <Value>=Fields!OrderQty.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <Color />
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Center</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -491,8 +487,8 @@
                           <Height>18pt</Height>
                           <Width>67.5pt</Width>
                           <Style>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -511,12 +507,11 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <Format>'$'#,0.00;('$'#,0.00)</Format>
-                                    <Color />
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <Color />
+                                <FontFamily>Arial</FontFamily>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -533,8 +528,8 @@
                           <Height>18pt</Height>
                           <Width>104.25pt</Width>
                           <Style>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -553,13 +548,12 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <Format>'$'#,0.00;('$'#,0.00)</Format>
-                                    <Color />
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Right</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -582,8 +576,8 @@
                           <Width>435pt</Width>
                           <Style>
                             <BackgroundColor>#f2f0f0</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -602,13 +596,12 @@
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color />
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Right</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -630,8 +623,8 @@
                           <Width>104.25pt</Width>
                           <Style>
                             <BackgroundColor>#f2f0f0</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <Color />
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -651,13 +644,12 @@
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>'$'#,0.00;('$'#,0.00)</Format>
-                                    <Color />
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Right</TextAlign>
-                                <Color />
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -704,7 +696,7 @@
         <PageWidth>595.44pt</PageWidth>
         <PageHeader>
           <Style>
-            <Color />
+            <FontFamily>Arial</FontFamily>
             <Border>
               <Style>None</Style>
             </Border>
@@ -720,7 +712,7 @@
               <Width>559.44pt</Width>
               <Style>
                 <BackgroundColor>#555b63</BackgroundColor>
-                <Color />
+                <FontFamily>Arial</FontFamily>
                 <Border>
                   <Color>Gray</Color>
                   <Style>None</Style>
@@ -735,8 +727,8 @@
                   <ZIndex>2</ZIndex>
                   <Style>
                     <BackgroundColor>#555b63</BackgroundColor>
+                    <FontFamily>Arial</FontFamily>
                     <VerticalAlign>Middle</VerticalAlign>
-                    <Color />
                     <PaddingRight>2pt</PaddingRight>
                   </Style>
                   <KeepTogether>true</KeepTogether>
@@ -754,11 +746,9 @@
                         </TextRun>
                       </TextRuns>
                       <Style>
+                        <FontFamily>Arial</FontFamily>
                         <TextAlign>Left</TextAlign>
-                        <Color />
                       </Style>
-                      <SpaceBefore />
-                      <SpaceAfter />
                     </Paragraph>
                   </Paragraphs>
                 </Textbox>
@@ -770,7 +760,7 @@
         <PageFooter>
           <Style>
             <BackgroundColor>White</BackgroundColor>
-            <Color />
+            <FontFamily>Arial</FontFamily>
             <Border>
               <Style>None</Style>
             </Border>
@@ -784,7 +774,7 @@
         <TopMargin>18pt</TopMargin>
         <BottomMargin>18pt</BottomMargin>
         <Style>
-          <Color />
+          <FontFamily>Arial</FontFamily>
         </Style>
       </Page>
     </ReportSection>
@@ -799,6 +789,7 @@
 
 </ConnectString>
       </ConnectionProperties>
+      <rd:ImpersonateUser>false</rd:ImpersonateUser>
     </DataSource>
   </DataSources>
   <DataSets>
