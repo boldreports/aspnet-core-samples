@@ -97,6 +97,20 @@ namespace ReportsCoreSamples.Controllers
                     fileName += ".csv";
                     format = WriterFormat.CSV;
                 }
+                 else if (type == "html")
+                {
+                    fileName += ".html";
+                    format = WriterFormat.HTML;
+                }
+                 else if (type == "ppt")
+                {
+                    fileName += ".ppt";
+                    format = WriterFormat.PPT;
+                }
+                else if(type == "xml"){
+                    fileName +=".xml";
+                    format = WriterFormat.XML;
+                }
                 else
                 {
                     fileName += ".xlsx";

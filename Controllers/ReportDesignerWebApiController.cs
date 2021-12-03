@@ -19,7 +19,7 @@ using System.Reflection;
 namespace ReportsCoreSamples.Controllers
 {
     [Microsoft.AspNetCore.Cors.EnableCors("AllowAllOrigins")]
-    public class ReportDesignerWebApiController : Controller, IReportDesignerController, IReportLogger
+    public class ReportDesignerWebApiController : Controller, IReportDesignerController, IReportLogger, IReportHelperSettings
     {
         private Microsoft.Extensions.Caching.Memory.IMemoryCache _cache;
 #if NETCOREAPP2_1
@@ -27,6 +27,7 @@ namespace ReportsCoreSamples.Controllers
 #else
         private IWebHostEnvironment _hostingEnvironment;
 #endif
+        internal ReportHelperSettings _helperSettings = null;
         internal ExternalServer Server
         {
             get;
@@ -37,6 +38,12 @@ namespace ReportsCoreSamples.Controllers
             get;
             set;
         }
+         internal ReportHelperSettings HelperSettings
+        {
+            get { return this._helperSettings; }
+            set { this._helperSettings = value; }
+        }
+
 #if NETCOREAPP2_1
         public ReportDesignerWebApiController(Microsoft.Extensions.Caching.Memory.IMemoryCache memoryCache, IHostingEnvironment hostingEnvironment)
 #else
@@ -46,10 +53,16 @@ namespace ReportsCoreSamples.Controllers
             _cache = memoryCache;
             _hostingEnvironment = hostingEnvironment;
             ExternalServer externalServer = new ExternalServer(_hostingEnvironment);
+            this.Server = externalServer;
             this.ServerURL = "Sample";
             externalServer.ReportServerUrl = this.ServerURL;
-            ReportDesignerHelper.ReportingServer = this.Server = externalServer;
         }
+         public void InitializeSettings(ReportHelperSettings helperSettings)
+        {
+            helperSettings.ReportingServer = Server;
+            HelperSettings = helperSettings;
+        }
+
 
         [ActionName("GetImage")]
         [AcceptVerbs("GET")]

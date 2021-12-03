@@ -48,7 +48,7 @@
         "index": 3
       },
       "metaData": {
-        "description": "Mail merge shows to envelope the employee details using SRSS List report item in ASP.NET Core bold report viewer."
+        "description": "Mail merge shows to envelope the employee details using SSRS List report item in ASP.NET Core bold report viewer."
       }
     },
     {
@@ -264,7 +264,6 @@
         "isLandscape": true,
         "index": 8
       },
-      "status": "New",
       "metaData": {
         "description": "This demos allows you to choose the chart series dynamically in ASP.NET Core bold report viewer."
       }
