@@ -15,12 +15,13 @@
   </ItemGroup>
       
   <ItemGroup>
-    <PackageReference Include="Bold.Licensing" Version="3.3.23" />
-    <PackageReference Include="BoldReports.AspNet.Core" Version="3.3.23" />
-    <PackageReference Include="BoldReports.Net.Core" Version="3.3.23" />
-    <PackageReference Include="BoldReports.Data.WebData" Version="3.3.23" />
-	  <PackageReference Include="BoldReports.Data.Csv" Version="3.3.23" />
-	  <PackageReference Include="BoldReports.Data.Excel" Version="3.3.23" />
+    <PackageReference Include="Bold.Licensing" Version="4.1.78" />
+    <PackageReference Include="BoldReports.AspNet.Core" Version="4.1.78" />
+	<PackageReference Include="BoldReports.CRI.Barcode" Version="4.1.78" />
+    <PackageReference Include="BoldReports.Net.Core" Version="4.1.78" />
+    <PackageReference Include="BoldReports.Data.WebData" Version="4.1.78" />
+	  <PackageReference Include="BoldReports.Data.Csv" Version="4.1.78" />
+	  <PackageReference Include="BoldReports.Data.Excel" Version="4.1.78" />
     <PackageReference Include="BuildBundlerMinifier" Version="2.9.406" />
     <PackageReference Include="log4net" Version="2.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.ResponseCompression" Version="2.1.1" />

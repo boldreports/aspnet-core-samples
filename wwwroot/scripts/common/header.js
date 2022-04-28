@@ -31,8 +31,8 @@ function platformSwitcher(platform) {
 function getRouterPath(curPlatform, targetplatform, sampleName) {
     curPlatform = curPlatform.toLowerCase();
     targetplatform = targetplatform.toLowerCase();
-    let samePath = (curPlatform.indexOf('asp') === -1 && targetplatform.indexOf('asp') === -1) ||
-        (curPlatform.indexOf('asp') >= 0 && targetplatform.indexOf('asp') >= 0);
+    let samePath = (curPlatform.indexOf('asp') === -1 && (targetplatform.indexOf('asp') === -1 || targetplatform.indexOf('blazor') === -1)) ||
+        (curPlatform.indexOf('asp') >= 0 && (targetplatform.indexOf('asp') >= 0 || targetplatform.indexOf('blazor') >= 0 ));
     if (samePath) {
         return sampleName;
     } else {

@@ -174,20 +174,13 @@ namespace ReportsCoreSamples.Controllers
 
         private string GetFilePath(string itemName, string key)
         {
-            string targetFolder = this._hostingEnvironment.WebRootPath + "\\";
-            targetFolder += "Cache";
-
-            if (!System.IO.Directory.Exists(targetFolder))
+            string dirPath = Path.Combine(this._hostingEnvironment.WebRootPath,"Cache",key);
+            if (!System.IO.Directory.Exists(dirPath))
             {
-                System.IO.Directory.CreateDirectory(targetFolder);
+                System.IO.Directory.CreateDirectory(dirPath);
             }
 
-            if (!System.IO.Directory.Exists(targetFolder + "\\" + key))
-            {
-                System.IO.Directory.CreateDirectory(targetFolder + "\\" + key);
-            }
-
-            return targetFolder + "\\" + key + "\\" + itemName;
+            return Path.Combine(dirPath, itemName);
         }
 
         public bool SetData(string key, string itemId, ItemInfo itemData, out string errMsg)
@@ -238,7 +231,17 @@ namespace ReportsCoreSamples.Controllers
             var resource = new ResourceInfo();
             try
             {
-                resource.Data = System.IO.File.ReadAllBytes(this.GetFilePath(itemId, key));
+                var filePath = this.GetFilePath(itemId, key);
+                if (itemId.Equals(Path.GetFileName(filePath), StringComparison.InvariantCultureIgnoreCase) && System.IO.File.Exists(filePath))
+                {
+                    resource.Data = System.IO.File.ReadAllBytes(filePath);
+                    LogExtension.LogInfo(string.Format("Method Name: {0}; Class Name: {1}; Message: {2};", "GetData", "CacheHelper", string.Format("File data retrieved from the path: {0}", filePath)), null);
+                }
+                else
+                {
+                    resource.ErrorMessage = "File not found from the specified path";
+                    LogExtension.LogInfo(string.Format("Method Name: {0}; Class Name: {1}; Message: {2};", "GetData", "CacheHelper", string.Format("File not found from the specified path: {0}", filePath)), null);
+                }
             }
             catch (Exception ex)
             {
