@@ -8,6 +8,7 @@
     "Angular": "angular/#/",
     "JavaScript": "javascript/#/",
     "React": "react/#/",
+    "Blazor":  "blazor/",
     "ASP.NET MVC": "aspnet-mvc/",
     "ASP.NET WebForms": "aspnet-web-forms/"
   },
@@ -85,6 +86,19 @@
       },
       "metaData": {
         "description": "This demo shows the customer details in SSRS table report item and details are highlighted based on conditional row formatting in ASP.NET Core bold report viewer. "
+      }
+    },
+    {
+      "routerPath": "Barcode",
+      "sampleName": "Barcode",
+      "basePath": "ReportViewer",
+      "imageDetails": {
+        "isLandscape": true,
+        "index": 0
+      },
+      "status": "New",
+      "metaData": {
+        "description": "The barcode demo shows the available 1D, 2D and QR barcode types rendered in ASP.NET Core bold report viewer through RDL Custom Report Item."
       }
     },
     {
@@ -221,6 +235,19 @@
       }
     },
     {
+      "routerPath": "ProductDetails",
+      "sampleName": "Product Details",
+      "basePath": "ReportViewer",
+      "imageDetails": {
+        "isLandscape": false,
+        "index": 6
+      },
+      "status": "New",
+      "metaData": {
+        "description": "This demo shows the product details using the SSRS table report item with barcodes rendered in ASP.NET Core bold report viewer through RDL Custom Report Item."
+      }
+    },
+    {
       "routerPath": "LoadLargeData",
       "sampleName": "Load Large Data",
       "basePath": "ReportViewer",
@@ -269,12 +296,64 @@
       }
     },
     {
+      "routerPath": "DataBar",
+      "sampleName": "Data Bar",
+      "basePath": "ReportViewer",
+      "imageDetails": {
+        "isLandscape": true,
+        "index": 9
+      },
+      "status": "New",
+      "metaData": {
+        "description": "This demo represents company sales against year in table format with data bar report item in ASP.NET Core Bold Report Viewer."
+      }
+    },
+    {
+      "routerPath": "SparkLine",
+      "sampleName": "Spark Line",
+      "basePath": "ReportViewer",
+      "imageDetails": {
+        "isLandscape": true,
+        "index": 10
+      },
+      "status": "New",
+      "metaData": {
+        "description": "This demo shows the company sales data with sparkline report item to represents the sales trend in ASP.NET Core Bold Report Viewer."
+      }
+    },
+    {
+      "routerPath": "DynamicColumns",
+      "sampleName": "Dynamic Columns",
+      "basePath": "ReportViewer",
+      "imageDetails": {
+        "isLandscape": false,
+        "index": 13
+      },
+      "status": "New",
+      "metaData": {
+        "description": "This demo allows you to choose the column of the table dynamically in ASP.NET Core Bold Report Viewer."
+      }
+    },   
+    {
+      "routerPath": "ExternalParameterReport",
+      "sampleName": "External Parameter Report",
+      "basePath": "ReportViewer",
+      "imageDetails": {
+        "isLandscape": false,
+        "index": 7
+      },
+      "status": "New",
+      "metaData": {
+        "description": "The Product Line Sales report displays sales details organized by category and subcategory of products using external cascading parameters in ASP.NET Core Bold Report Viewer."
+      }
+    }, 
+    {
       "routerPath": "",
       "sampleName": "Report Writer",
       "basePath": "ReportWriter",
       "imageDetails": {
         "isLandscape": true,
-        "index": 9
+        "index": 11
       },
       "metaData": {
         "description": "This demos allows you to export the RDL or RDLC report with popular file formats like PDF, HTML, Microsoft Word, and Microsoft Excel without previewing the report in viewer using ASP.NET Core bold report writer."

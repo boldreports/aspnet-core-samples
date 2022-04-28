@@ -2,7 +2,14 @@
 
 @section control {
 
-<bold-report-designer id="reportdesigner" ajax-before-load="onAjaxBeforeLoad" service-url="@Globals.DESIGNER_SERVICE_URL" toolbar-settings="ViewBag.toolbarSettings" create="controlCreate" toolbar-rendering="toolbarRendering" toolbar-click="toolbarClick" />
+    @{
+        List<BoldReports.Models.ReportDesigner.ReportItemExtensionsModule> extensions = new List<BoldReports.Models.ReportDesigner.ReportItemExtensionsModule>(){
+            new BoldReports.Models.ReportDesigner.ReportItemExtensionsModule{Name="barcode",ClassName="EJBarcode",ImageClass="customitem-barcode",DisplayName="1D Barcode",Category="Barcodes"},
+            new BoldReports.Models.ReportDesigner.ReportItemExtensionsModule{Name="matrixbarcode",ClassName="EJQRBarcode",ImageClass="customitem-qrbarcode",DisplayName="2D Barcode",Category="Barcodes"}
+        };
+    }
+
+    <bold-report-designer id="reportdesigner" ajax-before-load="onAjaxBeforeLoad" service-url="@Globals.DESIGNER_SERVICE_URL" toolbar-settings="ViewBag.toolbarSettings" create="controlCreate" report-item-extensions="extensions" toolbar-rendering="toolbarRendering" toolbar-click="toolbarClick" />
     <script>
         let designerInst;
         function controlCreate() {
@@ -14,7 +21,7 @@
                 }
             });
             if (reportName) {
-                designerInst.openReport(reportName);
+                designerInst.openReport(reportName.indexOf("external-parameter-report") !== -1 ? "product-line-sales.rdl" : reportName);
             }
         }
 
