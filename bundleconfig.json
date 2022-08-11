@@ -64,6 +64,8 @@
       "wwwroot/scripts/bold-reports/bold.report-viewer.min.js",
       "wwwroot/scripts/bold-reports/common/bold.report-designer-widgets.min.js",
       "wwwroot/scripts/bold-reports/bold.report-designer.min.js",
+      "wwwroot/scripts/extensions/barcode.reportitem.js",
+      "wwwroot/scripts/extensions/qrbarcode.reportitem.js",
       "wwwroot/scripts/bold-reports/data-visualization/ej.bulletgraph.min.js",
       "wwwroot/scripts/bold-reports/data-visualization/ej.chart.min.js"
     ],
@@ -112,7 +114,8 @@
       "wwwroot/css/bold-reports/bold.widgets.core.material.min.css",
       "wwwroot/css/bold-reports/material/bold.theme.min.css",
       "wwwroot/css/bold-reports/bold.reportdesigner.core.material.min.css",
-      "wwwroot/css/bold-reports/material/bold.reportdesigner.theme.min.css"
+      "wwwroot/css/bold-reports/material/bold.reportdesigner.theme.min.css",
+      "wwwroot/extensions/barcode.reportitem.css"
     ]
   }
 ]

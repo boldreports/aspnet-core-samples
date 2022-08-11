@@ -34,6 +34,9 @@
     <!-- End Google Tag Manager -->
     <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
     <link href="~/bundles/preview/app.min.css" rel="stylesheet" />
+    <script src="~/scripts/bold-reports/common/ej2-base.min.js"></script>
+    <script src="~/scripts/ej2-buttons.min.js"></script>
+    <link href="~/css/ej2-buttons.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div hidden id="reports-analytics" data-queue="Bold Reports - Demos - ASP.NET Core"></div>
@@ -67,6 +70,24 @@
         #description {
             display: none;
         }
+
+        #reportviewer_param_block_table .switchstyle {
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        #reportviewer_param_block_table .e-reportviewer-viewerblockcellcontent {
+            padding-right: 10px;
+        }
+
+        #reportviewer_param_block_table .e-chkbox-wrap {
+            padding-top: 5px;
+            padding-left: 5px;
+        }
+
+        #reportviewer_param_block_table .e-reportviewer-label {
+            padding-top: 5px;
+        }
     </style>
     <div class="ej-body e-hidden">
         <div class="ej-preview-header">
@@ -76,18 +97,10 @@
                 </a>
             </div>
             <div class="ej-preview-right-side">
-                <a href="https://help.boldreports.com" title="Documentation" target="_blank">
-                    <span class="ej-preview-header-icons preview-icon-documentation"></span>
-                </a>
-                <a href="https://www.boldreports.com" target="_blank" title="Product Details">
-                    <span class="ej-preview-header-icons preview-icon-product"></span>
-                </a>
-                <a href="https://www.boldreports.com/pricing/on-premise/" target="_blank" title="Download Now">
-                    <span class="ej-preview-header-icons preview-icon-download"></span>
-                </a>
-                <div class="ej-preview-divider"></div>
-                <a class="ej-preview-button" href="https://on-premise-demo.boldreports.com" title="Report Server"
-                   target="_blank">Explore Report Server</a>
+                <a class="ej-preview-button bold-schedule-demo" href="https://www.boldreports.com/schedule-free-demo"
+                    title="Report Server" target="_blank">Schedule Free Demo</a>
+                <a class="ej-preview-button try-it-free" href="https://www.boldreports.com/pricing"
+                    title="Report Server" target="_blank">Try it Free</a>
             </div>
         </div>
         <div class="ej-preview-content">

@@ -1077,7 +1077,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Shippment Method</Value>
+                    <Value>Shipment Method</Value>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
                       <Color>#666666</Color>

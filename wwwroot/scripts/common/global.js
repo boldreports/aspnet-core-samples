@@ -24,7 +24,7 @@ function onExportItemClick() {
     
 function onToolBarItemClick(args) {
     if (args.value === 'edit-report') {
-        let reportPath = args.model.reportPath;
+        let reportPath = this.element[0].baseURI.lastIndexOf('ExternalParameterReport') !== -1 ? 'external-parameter-report' : this.element[0].baseURI.lastIndexOf('ParameterCustomization') !== -1 ? 'parameter-customization' : args.model.reportPath;
         let ReportDesignerPath = reportPath.indexOf('.rdlc') !== -1 ? 'ReportDesigner/RDLC' : 'ReportDesigner';
         window.open(location.origin + getBasePath() + ReportDesignerPath + '?report-name=' + reportPath, location.pathname.indexOf('Preview') === -1 ? '_blank' : '_self')
     }
