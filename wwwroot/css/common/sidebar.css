@@ -43,7 +43,7 @@
             width: 120px;
             margin: 8px;
             background-image: url('./../../assets/sidebar/landscape.png');
-            background-size: 100% 1000%;
+            background-size: 100% 1200%;
         }
 
         .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-portrait-img {
@@ -52,7 +52,7 @@
             width: 90px;
             margin: 8px;
             background-image: url('./../../assets/sidebar/portrait.png');
-            background-size: 100% 1300%;
+            background-size: 100% 1400%;
         }
 
         .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-sb-toc-title {

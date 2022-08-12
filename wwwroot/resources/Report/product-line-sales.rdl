@@ -479,23 +479,23 @@
                     <TablixBody>
                       <TablixColumns>
                         <TablixColumn>
-                          <Width>1.95065in</Width>
+                          <Width>1.95041in</Width>
                         </TablixColumn>
                         <TablixColumn>
-                          <Width>1.67617in</Width>
+                          <Width>1.67616in</Width>
                         </TablixColumn>
                       </TablixColumns>
                       <TablixRows>
                         <TablixRow>
-                          <Height>0.27461in</Height>
+                          <Height>0.27452in</Height>
                           <TablixCells>
                             <TablixCell>
                               <CellContents>
                                 <Textbox Name="FullName">
                                   <Left>0in</Left>
                                   <Top>0in</Top>
-                                  <Height>0.27461in</Height>
-                                  <Width>1.95065in</Width>
+                                  <Height>0.27452in</Height>
+                                  <Width>1.95042in</Width>
                                   <ZIndex>1</ZIndex>
                                   <Style>
                                     <BackgroundColor>White</BackgroundColor>
@@ -544,8 +544,8 @@
                                 <Textbox Name="SaleAmountEmp">
                                   <Left>0in</Left>
                                   <Top>0in</Top>
-                                  <Height>0.27461in</Height>
-                                  <Width>1.67618in</Width>
+                                  <Height>0.27452in</Height>
+                                  <Width>1.67616in</Width>
                                   <Style>
                                     <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>4pt</PaddingLeft>
@@ -618,8 +618,8 @@
           <Textbox Name="DateRange">
             <Left>5.99976pt</Left>
             <Top>5.99976pt</Top>
-            <Height>18pt</Height>
-            <Width>560.7504pt</Width>
+            <Height>0.32281in</Height>
+            <Width>7.89225in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <BackgroundColor>White</BackgroundColor>
@@ -648,10 +648,10 @@
             </Paragraphs>
           </Textbox>
           <Textbox Name="CategorySelection">
-            <Left>5.99976pt</Left>
-            <Top>23.99976pt</Top>
-            <Height>18pt</Height>
-            <Width>560.7504pt</Width>
+            <Left>0.08320in</Left>
+            <Top>0.41654in</Top>
+            <Height>0.34370in</Height>
+            <Width>7.89225in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <BackgroundColor>White</BackgroundColor>
@@ -1138,23 +1138,23 @@
                     <TablixBody>
                       <TablixColumns>
                         <TablixColumn>
-                          <Width>1.96016in</Width>
+                          <Width>1.96004in</Width>
                         </TablixColumn>
                         <TablixColumn>
-                          <Width>1.67617in</Width>
+                          <Width>1.67616in</Width>
                         </TablixColumn>
                       </TablixColumns>
                       <TablixRows>
                         <TablixRow>
-                          <Height>0.24609in</Height>
+                          <Height>0.24590in</Height>
                           <TablixCells>
                             <TablixCell>
                               <CellContents>
                                 <Textbox Name="StoreName">
                                   <Left>0in</Left>
                                   <Top>0in</Top>
-                                  <Height>0.24609in</Height>
-                                  <Width>1.96016in</Width>
+                                  <Height>0.24590in</Height>
+                                  <Width>1.96004in</Width>
                                   <ZIndex>1</ZIndex>
                                   <Style>
                                     <VerticalAlign>Middle</VerticalAlign>
@@ -1202,8 +1202,8 @@
                                 <Textbox Name="SaleAmountStore">
                                   <Left>0in</Left>
                                   <Top>0in</Top>
-                                  <Height>0.24609in</Height>
-                                  <Width>1.67618in</Width>
+                                  <Height>0.24590in</Height>
+                                  <Width>1.67616in</Width>
                                   <Style>
                                     <VerticalAlign>Middle</VerticalAlign>
                                     <PaddingLeft>4pt</PaddingLeft>
@@ -1279,8 +1279,8 @@
             </ReportItems>
           </Rectangle>
           <Line Name="Line3">
-            <Left>5.9922pt</Left>
-            <Top>51.15625pt</Top>
+            <Left>0.08320in</Left>
+            <Top>0.79375in</Top>
             <Height>0pt</Height>
             <Width>563.7502pt</Width>
             <ZIndex>4</ZIndex>

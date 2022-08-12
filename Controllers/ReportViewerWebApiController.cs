@@ -95,5 +95,13 @@ namespace ReportsCoreSamples.Controllers
         {
             LogExtension.LogError(message, exception, System.Reflection.MethodBase.GetCurrentMethod(), errorCode + "-" + errorDetail);
         }
+
+        [HttpGet]
+        public object GetExternalParameterData()
+        {
+            var productCategory = Models.SqlQuery.getProductCategory(this._cache);
+            var productSubCategory = Models.SqlQuery.getProductSubCategory(this._cache);
+            return Json(new { ProductCategoryDetail = productCategory, ProductSubCategoryDetail = productSubCategory });
+        }
     }
 }

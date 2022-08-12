@@ -152,6 +152,8 @@ namespace ReportsCoreSamples
                     routes.MapRoute(
                         name: "default",
                         template: "{controller=Main}/{action=Index}/{id?}");
+                    routes.MapRoute("NotFound", "{*url}",
+                        new { controller = "main", action = "index" });
                 });
 #else
             app.UseRouting();

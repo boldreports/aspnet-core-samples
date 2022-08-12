@@ -92,84 +92,100 @@ body {
     justify-content: space-between;
 }
 
-    .ej-preview-header .ej-preview-left-side {
-        height: inherit;
-        display: flex;
-        align-items: center;
-    }
+.ej-preview-header .ej-preview-left-side {
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
 
-        .ej-preview-header .ej-preview-left-side a {
-            color: #212529;
-            cursor: pointer;
-            text-decoration: none;
-        }
+.ej-preview-header .ej-preview-left-side a {
+    color: #212529;
+    cursor: pointer;
+    text-decoration: none;
+}
 
-        .ej-preview-header .ej-preview-left-side .ej-preview-platform-name {
-            margin: 0 21px 0 25px;
-            font-size: 15px;
-            opacity: 0.87;
-            font-weight: 600;
-        }
+.ej-preview-header .ej-preview-left-side .ej-preview-platform-name {
+    margin: 0 21px 0 25px;
+    font-size: 15px;
+    opacity: 0.87;
+    font-weight: 600;
+}
 
-    .ej-preview-header .ej-preview-right-side {
-        height: inherit;
-        display: flex;
-        align-items: center;
-    }
+.ej-preview-header .ej-preview-right-side {
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
 
-        .ej-preview-header .ej-preview-right-side .ej-preview-header-icons {
-            font-family: 'ej-preview-header-icons';
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-transform: none;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+.ej-preview-header .ej-preview-right-side .ej-preview-header-icons {
+    font-family: 'ej-preview-header-icons';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
-        .ej-preview-header .ej-preview-right-side .ej-preview-divider {
-            border-left: 1px solid rgb(196, 196, 196);
-            height: 32px;
-        }
+.ej-preview-header .ej-preview-right-side .ej-preview-divider {
+    border-left: 1px solid rgb(196, 196, 196);
+    height: 32px;
+}
 
-        .ej-preview-header .ej-preview-right-side a {
-            font-size: 20px;
-            cursor: pointer;
-            text-decoration: none;
-            margin: 0 20px 0px 10px;
-            color: #333;
-            opacity: 0.87;
-        }
+.ej-preview-header .ej-preview-right-side a {
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0 10px 0px 10px;
+    color: #333;
+    opacity: 0.87;
+}
 
-            .ej-preview-header .ej-preview-right-side a.ej-preview-button {
-                height: 32px;
-                font-size: 14px;
-                font-weight: 500;
-                opacity: 1;
-                margin-left: 20px;
-                text-decoration: none;
-                padding: 5.5px 13px;
-                cursor: pointer;
-                background-color: #ff5f23;
-                color: #ffffff;
-                border-radius: 2px;
-            }
+/* header try-it-free and schedule-free-demo*/
+.ej-preview-header .ej-preview-right-side a.ej-preview-button {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    width: 200px;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 1;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.5rem 1rem;
+}
 
-                .ej-preview-header .ej-preview-right-side a.ej-preview-button:hover {
-                    background: #ff4801;
-                }
+.ej-preview-header .ej-preview-right-side a.ej-preview-button.bold-schedule-demo {
+    border-color: #ff4800;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #ffffff;
+    color: #ff4800 !important;
+}
 
-        .ej-preview-header .ej-preview-right-side .preview-icon-product:before {
-            content: '\e707';
-        }
+.ej-preview-header .ej-preview-right-side a.ej-preview-button.bold-schedule-demo:hover {
+    background: #ff4801;
+    color: white !important;
+}
 
-        .ej-preview-header .ej-preview-right-side .preview-icon-download::before {
-            content: '\e701';
-        }
+.ej-preview-header .ej-preview-right-side a.ej-preview-button.try-it-free {
+    background: #ff4801;
+    color: white;
+}
 
-        .ej-preview-header .ej-preview-right-side .preview-icon-documentation::before {
-            content: '\e704';
-        }
+.ej-preview-header .ej-preview-right-side .preview-icon-product:before {
+    content: '\e707';
+}
+
+.ej-preview-header .ej-preview-right-side .preview-icon-download::before {
+    content: '\e701';
+}
+
+.ej-preview-header .ej-preview-right-side .preview-icon-documentation::before {
+    content: '\e704';
+}
 
 @media only screen and (max-width: 850px) {
     .ej-preview-header .ej-preview-right-side {
