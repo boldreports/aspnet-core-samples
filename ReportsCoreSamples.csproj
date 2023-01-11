@@ -5,6 +5,8 @@
     <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
     <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	<AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
+	<AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
   </PropertyGroup>
   
   <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.1' ">
@@ -13,12 +15,14 @@
   </ItemGroup>
       
   <ItemGroup>
-    <PackageReference Include="Bold.Licensing" Version="3.2.22" />
-    <PackageReference Include="BoldReports.AspNet.Core" Version="3.2.22" />
-    <PackageReference Include="BoldReports.Net.Core" Version="3.2.22" />
-    <PackageReference Include="BoldReports.Data.WebData" Version="3.2.22" />
-	  <PackageReference Include="BoldReports.Data.Csv" Version="3.2.22" />
-	  <PackageReference Include="BoldReports.Data.Excel" Version="3.2.22" />
+
+    <PackageReference Include="Bold.Licensing" Version="3.3.23" />
+    <PackageReference Include="BoldReports.AspNet.Core" Version="3.3.23" />
+    <PackageReference Include="BoldReports.Net.Core" Version="3.3.23" />
+    <PackageReference Include="BoldReports.Data.WebData" Version="3.3.23" />
+	  <PackageReference Include="BoldReports.Data.Csv" Version="3.3.23" />
+	  <PackageReference Include="BoldReports.Data.Excel" Version="3.3.23" />
+
     <PackageReference Include="BuildBundlerMinifier" Version="2.9.406" />
     <PackageReference Include="log4net" Version="2.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.ResponseCompression" Version="2.1.1" />
