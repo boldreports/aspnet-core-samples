@@ -1,4 +1,4 @@
-name: CI
+name: GitLeaks Detect
 on: [push, pull_request]
 
 jobs:
