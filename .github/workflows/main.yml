@@ -17,5 +17,5 @@ steps:
     run: ./gitleaks.ps1
     shell: pwsh
 - name: Generate the report
-    run: C:\gitleaks\gitleaks.exe detect -s D:\a\TestPublicProject\TestPublicProject -f json -r D:/leaksreport.json
+    run: C:\gitleaks\gitleaks.exe detect  --report-path C:/gitleaks-report.json
     shell: pwsh
