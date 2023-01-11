@@ -11,11 +11,4 @@ jobs:
 scan:
 
 runs-on: windows-latest
-
-steps:
-- name: Install the gitleaks
-    run: ./gitleaks.ps1
-    shell: pwsh
-- name: Generate the report
-    run: C:\gitleaks\gitleaks.exe detect  --report-path C:/gitleaks-report.json
-    shell: pwsh
+echo : "Sridhar"
