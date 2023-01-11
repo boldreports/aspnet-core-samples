@@ -1,0 +1,5 @@
+[[rules]]
+    id = "generic-api-1"
+    description = "Generic API Key"
+    regex = '''KeyToken=b77a5c561934e089'''
+    tags = ["key"]
