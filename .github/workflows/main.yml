@@ -1,1 +1,21 @@
-sample
+name: Gitleaks detect
+
+on:
+
+push:
+
+public:
+
+jobs:
+
+scan:
+
+runs-on: windows-latest
+
+steps:
+- name: Install the gitleaks
+    run: ./gitleaks.ps1
+    shell: pwsh
+- name: Generate the report
+    run: C:\gitleaks\gitleaks.exe detect -s D:\a\TestPublicProject\TestPublicProject -f json -r D:/leaksreport.json
+    shell: pwsh
