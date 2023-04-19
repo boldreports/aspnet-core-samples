@@ -12,6 +12,7 @@ namespace ReportsCoreSamples.Controllers
         public IActionResult Index()
         {
             ViewBag.action = "Preview";
+            ViewBag.isDesigner = true;
             ViewBag.toolbarSettings = new BoldReports.Models.ReportDesigner.ToolbarSettings();
             ViewBag.toolbarSettings.Items = BoldReports.ReportDesignerEnums.ToolbarItems.All
                                                & ~BoldReports.ReportDesignerEnums.ToolbarItems.Save;
@@ -21,6 +22,7 @@ namespace ReportsCoreSamples.Controllers
         public IActionResult RDLC()
         {
             ViewBag.action = "Preview";
+            ViewBag.isDesigner = true;
             ViewBag.toolbarSettings = new BoldReports.Models.ReportDesigner.ToolbarSettings();
             ViewBag.toolbarSettings.Items = BoldReports.ReportDesignerEnums.ToolbarItems.All
                                                & ~BoldReports.ReportDesignerEnums.ToolbarItems.Save;

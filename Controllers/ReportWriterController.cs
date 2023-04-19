@@ -12,17 +12,9 @@ namespace ReportsCoreSamples.Controllers
 {
     public class ReportWriterController : PreviewController
     {
-#if NETCOREAPP2_1
-        private IHostingEnvironment _hostingEnvironment;
-#else
      private IWebHostEnvironment _hostingEnvironment;
-#endif
 
-#if NETCOREAPP2_1
-        public ReportWriterController(IHostingEnvironment hostingEnvironment)
-#else
         public ReportWriterController(IWebHostEnvironment hostingEnvironment)
-#endif
         {
             _hostingEnvironment = hostingEnvironment;
         }

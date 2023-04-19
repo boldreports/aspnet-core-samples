@@ -1,0 +1,26 @@
+@inject Globals globals;
+
+@section control {
+
+    <bold-report-viewer id="reportviewer" report-service-url="@Globals.SERVICE_URL" report-path="dynamic-columns.rdl" toolbar-rendering="onToolbarRendering" tool-bar-item-click="onToolBarItemClick" export-item-click="onExportItemClick" />
+
+}
+
+@section description {
+    <div id="description">
+        <p>
+            Dynamic column tabular report demonstrates to change the number of columns at runtime using JavaScript Bold Report Viewer.
+        </p>
+        <ul>
+            <li>
+               Dynamic column is a feature that allows one to store different sets of columns for each row in a table.
+            <li>
+                In this table few columns are static and few can be varied, based on the column names selected in the parameter. This feature is achieved by changing the column visility based on the parameter selected.
+            </li>
+        </ul>
+        <p>
+            More information about the Tablix data region can be found in this <a href="https://help.boldreports.com/enterprise-reporting/designer-guide/report-designer/report-items/tablix/"
+                                                                                  target="_blank">documentation</a> section.
+        </p>
+    </div>
+}

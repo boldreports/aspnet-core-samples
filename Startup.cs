@@ -17,23 +17,14 @@ using Newtonsoft.Json;
 using System.Reflection;
 using Samples.Core.Logger;
 
-#if NETCOREAPP2_1
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
-#else
 using Microsoft.Extensions.Hosting;
-#endif
 
 namespace ReportsCoreSamples
 {
     public class Startup
     {
 
-#if NETCOREAPP2_1
-        public Startup(IConfiguration configuration, IHostingEnvironment _hostingEnvironment)
-#else
         public Startup(IConfiguration configuration, IWebHostEnvironment _hostingEnvironment)
-#endif
         {
             log4net.GlobalContext.Properties["LogPath"] = _hostingEnvironment.ContentRootPath;
             LogExtension.RegisterLog4NetConfig();
@@ -65,21 +56,13 @@ namespace ReportsCoreSamples
             return null;
         }
 
-#if NETCOREAPP2_1
-        public IHostingEnvironment env { get; }
-#else
         public IWebHostEnvironment env { get; }
-#endif
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-#if NETCOREAPP2_1
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-#else
             services.AddControllersWithViews();
-#endif
             services.AddHttpContextAccessor();
             services.AddMemoryCache();
             services.Configure<GzipCompressionProviderOptions>(options => options.Level = System.IO.Compression.CompressionLevel.Optimal);
@@ -94,11 +77,7 @@ namespace ReportsCoreSamples
             }));
         }
 
-#if NETCOREAPP2_1
-        private BoldReports.Web.MapSetting GetMapSettings(IHostingEnvironment _hostingEnvironment)
-#else
         private BoldReports.Web.MapSetting GetMapSettings(IWebHostEnvironment _hostingEnvironment)
-#endif
         {
             try
             {
@@ -143,17 +122,6 @@ namespace ReportsCoreSamples
                 RequestPath = "/Views"
             });
 
-#if NETCOREAPP2_1
-            app.UseMvc(routes =>
-                {
-                    routes.MapRoute(
-                          name: "ReportViewer",
-                          template: "ReportViewer/{controller}/{action=Index}/{id?}");
-                    routes.MapRoute(
-                        name: "default",
-                        template: "{controller=Main}/{action=Index}/{id?}");
-                });
-#else
             app.UseRouting();
             app.UseCors("AllowAllOrigins");
             app.UseAuthorization();
@@ -166,7 +134,6 @@ namespace ReportsCoreSamples
                     name: "default",
                     pattern: "{controller=Main}/{action=Index}/{id?}");
             });
-#endif
         }
     }
 }

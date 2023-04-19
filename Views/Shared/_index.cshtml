@@ -13,6 +13,9 @@
     <meta name="twitter:card" content="summary_large_image" />
     <title>@ViewBag.Title</title>
 
+    <script src="~/scripts/bold-reports/common/ej2-base.min.js"></script>
+    <script src="~/scripts/ej2-buttons.min.js"></script>
+    <link href="~/css/ej2-buttons.min.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
     <script>
         function validateBrowser() {
@@ -75,57 +78,109 @@
             <div class="ej-main-child-content">
                 <ej-main-content>
                     <div class="ej-main-body-content">
-                        <h1 class="ej-title"></h1>
-                        <p class="ej-meta-description"></p>
-                        <div id="parentTabContainer">
-                            <ul class="nav ej-nav-header" id="parentTab" role="tablist">
-                                <li class="ej-nav-item">
-                                    <a href="#demo" data-toggle="tab" role="tab" aria-selected="true">
-                                        <Span class="ej-sb-icons ej-demo-icon"></Span><Span>DEMO</Span>
-                                    </a>
-                                </li>
-                                <li class="ej-nav-item source-tab">
-                                    <a href="#source" data-toggle="tab" role="tab" aria-selected="false">
-                                        <Span class="ej-sb-icons ej-source-icon"></Span><Span>SOURCE</Span>
-                                    </a>
-                                </li>
-                                <li class="ej-nav-item desc-tab">
-                                    <a href="#ej-description" data-toggle="tab" role="tab" aria-selected="false">
-                                        <Span class="ej-sb-icons ej-description-icon"></Span><Span>Description</Span>
-                                    </a>
-                                </li>
-                                <li class="ej-nav ej-nav-item ej-sb-icons">
-                                    <div class="new-tab ej-nav-sub-item">
-                                        <div class="ej-nav-new" title="Open in New Window" onclick="onTabBtnClick()" tabindex="0"></div>
-                                    </div>
-                                    <div class="ej-nav-prev ej-nav-sub-item" title="Previous Sample" onclick="onTabPrev()" tabindex="0"></div>
-                                    <div class="ej-nav-next ej-nav-sub-item" title="Next Sample" onclick="onTabNext()" tabindex="0"></div>
-                                </li>
-                            </ul>
-                            <div class="tab-content ej-tab-content" id="parentTabContent">
-                                <div class="tab-pane ej-tab-pane" id="demo" role="tabpanel">
-                                    <ej-sample>@RenderSection("control", true)</ej-sample>
-                                </div>
-                                <div class="tab-pane" id="source" role="tabpanel">
-                                    <div id="childTabContainer">
-                                        <div class="tab-content ej-tab-content" id="childTabContent">
-                                            <div class="tab-pane ej-tab-pane csharp-content  show active" id="csharp" role="tabpanel"></div>
-                                            <div class="tab-pane ej-tab-pane cshtml-content" id="cshtml" role="tabpanel"></div>
+                        <div>
+                            <h1 class="ej-title"></h1>
+                            <p class="ej-meta-description"></p>
+                            <div id="parentTabContainer">
+                                <ul class="nav ej-nav-header" id="parentTab" role="tablist">
+                                    <li class="ej-nav-item">
+                                        <a href="#demo" data-toggle="tab" role="tab" aria-selected="true">
+                                            <Span class="ej-sb-icons ej-demo-icon"></Span><Span>DEMO</Span>
+                                        </a>
+                                    </li>
+                                    <li class="ej-nav-item source-tab">
+                                        <a href="#source" data-toggle="tab" role="tab" aria-selected="false">
+                                            <Span class="ej-sb-icons ej-source-icon"></Span><Span>SOURCE</Span>
+                                        </a>
+                                    </li>
+                                    @*<li class="ej-nav-item desc-tab">
+                        <a href="#ej-description" data-toggle="tab" role="tab" aria-selected="false">
+                            <Span class="ej-sb-icons ej-description-icon"></Span><Span>Description</Span>
+                        </a>
+                    </li>*@
+                                    <li class="ej-nav ej-nav-item ej-sb-icons">
+                                        <div class="new-tab ej-nav-sub-item">
+                                            <div class="ej-nav-new" title="Open in New Window" onclick="onTabBtnClick()" tabindex="0"></div>
                                         </div>
-                                        <ul class="nav ej-nav-header" id="childtTab" role="tablist">
-                                            <li class="ej-nav-item">
-                                                <a href="#csharp" class="active csharp-header" data-toggle="tab" role="tab" aria-selected="true"></a>
-                                            </li>
-                                            <li class="ej-nav-item">
-                                                <a class="cshtml-header" href="#cshtml" data-toggle="tab" role="tab" aria-selected="false"></a>
-                                            </li>
-                                        </ul>
+                                        <div class="ej-nav-prev ej-nav-sub-item" title="Previous Sample" onclick="onTabPrev()" tabindex="0"></div>
+                                        <div class="ej-nav-next ej-nav-sub-item" title="Next Sample" onclick="onTabNext()" tabindex="0"></div>
+                                    </li>
+                                </ul>
+                                <div class="tab-content ej-tab-content" id="parentTabContent">
+                                    <div class="tab-pane ej-tab-pane" id="demo" role="tabpanel">
+                                        <ej-sample>@RenderSection("control", true)</ej-sample>
                                     </div>
-                                </div>
-                                <div class="tab-pane ej-tab-pane" id="ej-description" role="tabpanel">
-                                    @RenderSection("description", true)
+                                    <div class="tab-pane" id="source" role="tabpanel">
+                                        <div id="childTabContainer">
+                                            <div class="tab-content ej-tab-content" id="childTabContent">
+                                                <div class="tab-pane ej-tab-pane csharp-content  show active" id="csharp" role="tabpanel"></div>
+                                                <div class="tab-pane ej-tab-pane cshtml-content" id="cshtml" role="tabpanel"></div>
+                                            </div>
+                                            <ul class="nav ej-nav-header" id="childtTab" role="tablist">
+                                                <li class="ej-nav-item">
+                                                    <a href="#csharp" class="active csharp-header" data-toggle="tab" role="tab" aria-selected="true"></a>
+                                                </li>
+                                                <li class="ej-nav-item">
+                                                    <a class="cshtml-header" href="#cshtml" data-toggle="tab" role="tab" aria-selected="false"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    @*<div class="tab-pane ej-tab-pane" id="ej-description" role="tabpanel">
+                        @RenderSection("description", true)
+                    </div>*@
                                 </div>
                             </div>
+                        </div>
+                        <div>
+                            <div class="tab-pane ej-tab-pane" id="ej-description" role="tabpanel">
+                                @RenderSection("description", true)
+                            </div>
+                        </div>
+                        <!--Banner section-->
+                        <div id="footer-banner">
+                            <div id="ad-banner-head" class="ad-header"></div>
+                            <div class="content-area" style="display: flex; flex-wrap: wrap;">
+                                <div class="ad-cnt-pt">
+                                    <!-- <div class="ad-cnt-icon click-icon sb-icons sb-icon-icon-selection"></div> -->
+                                    <span class="tick-mark"></span>
+                                    <div class="cnt-text cnt-text-1"></div>
+                                </div>
+                                <div class="ad-cnt-pt">
+                                    <!-- <div class="ad-cnt-icon click-icon sb-icons sb-icon-icon-selection"></div> -->
+                                    <span class="tick-mark"></span>
+                                    <div class="cnt-text cnt-text-2"></div>
+                                </div>
+                                <div class="ad-cnt-pt">
+                                    <!-- <div class="ad-cnt-icon click-icon sb-icons sb-icon-icon-selection"></div> -->
+                                    <span class="tick-mark"></span>
+                                    <div class="cnt-text cnt-text-3"></div>
+                                </div>
+                            </div>
+                            <a class="free-trial-url" target="_blank">
+                                <div class="free-trial">TRY IT FOR FREE</div>
+                            </a>
+                        </div>
+                        <!--Footer section-->
+                        <div class="ej-lp-footer">
+                            <div class="ej-lp-footer-links">
+                                <a href="https://help.boldreports.com/embedded-reporting/aspnet-core-reporting/" target="_blank">
+                                    Documentation
+                                </a>
+                                 <a href="https://www.boldreports.com/blog" target="_blank">
+                                    Blog
+                                </a>
+                                <a href="https://www.boldreports.com/faq" target="_blank">
+                                    FAQ
+                                </a>
+                                <a href="https://support.boldreports.com/" target="_blank">
+                                    Support
+                                </a>
+                                <a href="https://www.boldreports.com/feedback" target="_blank">
+                                    Feedback
+                                </a>
+                            </div>
+                            <div class="ej-lp-footer-copyright">Copyright © 2001-2023 Syncfusion Inc.</div>
                         </div>
                     </div>
                 </ej-main-content>

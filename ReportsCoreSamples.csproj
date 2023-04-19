@@ -1,41 +1,45 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.1;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net6.0</TargetFrameworks>
     <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
     <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-	<AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
-	<AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+    <AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
   </PropertyGroup>
-  
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.1' ">
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+    <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="6.0.0" />
+    <PackageReference Include="System.Net.Http.Json" Version="6.0.0" />
   </ItemGroup>
-      
   <ItemGroup>
-    <PackageReference Include="Bold.Licensing" Version="3.3.23" />
-    <PackageReference Include="BoldReports.AspNet.Core" Version="3.3.23" />
-    <PackageReference Include="BoldReports.Net.Core" Version="3.3.23" />
-    <PackageReference Include="BoldReports.Data.WebData" Version="3.3.23" />
-	  <PackageReference Include="BoldReports.Data.Csv" Version="3.3.23" />
-	  <PackageReference Include="BoldReports.Data.Excel" Version="3.3.23" />
+    <PackageReference Include="Bold.Licensing" Version="5.1.20" />
+    <PackageReference Include="BoldReports.AspNet.Core" Version="5.1.20" />
+    <PackageReference Include="BoldReports.CRI.Barcode" Version="5.1.20" />
+    <PackageReference Include="BoldReports.Net.Core" Version="5.1.20" />
+    <PackageReference Include="BoldReports.Data.WebData" Version="5.1.20" />
+    <PackageReference Include="BoldReports.Data.Csv" Version="5.1.20" />
+    <PackageReference Include="BoldReports.Data.Excel" Version="5.1.20" />
+    <PackageReference Include="BoldReports.Data.ElasticSearch" Version="5.1.20" />
+    <PackageReference Include="BoldReports.Data.SSAS" Version="5.1.20" />
     <PackageReference Include="BuildBundlerMinifier" Version="2.9.406" />
     <PackageReference Include="log4net" Version="2.0.10" />
-    <PackageReference Include="Microsoft.AspNetCore.ResponseCompression" Version="2.1.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.ResponseCompression" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="6.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="BoldReports.Data.MySQL" Version="5.1.20" />
+    <PackageReference Include="BoldReports.Data.Oracle" Version="5.1.20" />
+    <PackageReference Include="BoldReports.Data.PostgreSQL" Version="5.1.20" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Controllers\**" CopyToOutputDirectory="Always" />
     <None Include="Views\**" CopyToOutputDirectory="Always" />
-
   </ItemGroup>
   <ItemGroup>
     <None Update="BoldLicense.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
-
 </Project>

@@ -1,0 +1,22 @@
+﻿@inject Globals globals;
+
+@section control {
+
+    <bold-report-viewer id="reportviewer" report-service-url="@Globals.SERVICE_URL" report-path="data-bar.rdl" toolbar-rendering="onToolbarRendering" tool-bar-item-click="onToolBarItemClick" export-item-click="onExportItemClick" />
+    <script>
+
+    </script>
+}
+
+@section description {
+    <div id="description">
+    <p>
+        Data bars convey lot of information in a little space, and are mostly used in tables and matrices. In this report, sales data are interpreted to visualize the sales figures in a tabular format.
+    </p>
+    <p>
+        More information about the Databar report item can be found in this <a
+            href="https://help.boldreports.com/embedded-reporting/aspnet-core-reporting/report-designer/designer-guide/report-items/data-bar/"
+            target="_blank">documentation</a> section.
+    </p>
+</div>
+}
