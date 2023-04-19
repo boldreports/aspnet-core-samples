@@ -14,7 +14,8 @@
     right: 0;
     top: 0;
     transition: left 400ms ease;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .mobile-overlay {
@@ -101,4 +102,22 @@ body {
 
 #description a {
     color: #ff5f23 ;
+}
+
+#reportviewer_param_block_table .switchstyle {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#reportviewer_param_block_table .e-reportviewer-viewerblockcellcontent {
+    padding-right: 10px;
+}
+
+#reportviewer_param_block_table .e-chkbox-wrap {
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+#reportviewer_param_block_table .e-reportviewer-label {
+    padding-top: 5px;
 }

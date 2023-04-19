@@ -13,11 +13,7 @@ namespace ReportsCoreSamples.Models
         public static string SERVICE_URL;
         public static string DESIGNER_SERVICE_URL;
         public static bool isPhatomJSExist;
-#if NETCOREAPP2_1
-        public Globals(IHttpContextAccessor _context, IHostingEnvironment hostingEnvironment)
-#else
         public Globals(IHttpContextAccessor _context, IWebHostEnvironment hostingEnvironment)
-#endif
         {
             SERVICE_URL = _context.HttpContext.Request.PathBase + "/ReportViewerWebApi";
             DESIGNER_SERVICE_URL = _context.HttpContext.Request.PathBase + "/ReportDesignerWebApi";
