@@ -58,7 +58,7 @@
             { "Assests": "Net Fixed Assets", "Asset_Type": "Land", "Qtr1": "222,909", "Qtr2": "223,453", "Qtr3": "223,541", "Qtr4": "223,755" },
             { "Assests": "Net Fixed Assets", "Asset_Type": "Buildings", "Qtr1": "813,799", "Qtr2": "813,835", "Qtr3": "813,769", "Qtr4": "813,797" },
             { "Assests": "Net Fixed Assets", "Asset_Type": "Equipments etc", "Qtr1": "321,491", "Qtr2": "341,549", "Qtr3": "451,591", "Qtr4": "601,600" },
-            { "Assests": "Net Fixed Assets", "Asset_Type": "Less Accumulateed Depreciation", "Qtr1": "0", "Qtr2": "0", "Qtr3": "0", "Qtr4": "0" },
+            { "Assests": "Net Fixed Assets", "Asset_Type": "Less Accumulated Depreciation", "Qtr1": "0", "Qtr2": "0", "Qtr3": "0", "Qtr4": "0" },
             { "Assests": "Other Assets", "Asset_Type": "Other Assets", "Qtr1": "123,377", "Qtr2": "143,545", "Qtr3": "145,392", "Qtr4": "183,468" }
         ],
         name: "Assets"
@@ -104,5 +104,31 @@
             }
         ],
         name: "Paystub"
+    }],
+    'spark-line': [{
+        value: [
+            { Region: "India", Vehicles: "Bikes", Year: 1998, SalesAmount: "464953" },
+            { Region: "India", Vehicles: "Car", Year: 1998, SalesAmount: "811404" },
+            { Region: "India", Vehicles: "Bicycle", Year: 1998, SalesAmount: "0" },
+            { Region: "India", Vehicles: "Taxi", Year: 1998, SalesAmount: "2807256" },
+            { Region: "India", Vehicles: "Bikes", Year: 1999, SalesAmount: "0" },
+            { Region: "India", Vehicles: "Car", Year: 1999, SalesAmount: "136656" },
+            { Region: "India", Vehicles: "Bicycle", Year: 1999, SalesAmount: "790859" },
+            { Region: "India", Vehicles: "Taxi", Year: 1999, SalesAmount: "0" },
+            { Region: "India", Vehicles: "Bikes", Year: 2000, SalesAmount: "0" },
+            { Region: "India", Vehicles: "Car", Year: 2000, SalesAmount: "0" },
+            { Region: "India", Vehicles: "Bicycle", Year: 2000, SalesAmount: "1064007" },
+            { Region: "India", Vehicles: "Taxi", Year: 2000, SalesAmount: "86122" },
+            { Region: "India", Vehicles: "Bikes", Year: 2001, SalesAmount: "347672" },
+            { Region: "India", Vehicles: "Car", Year: 2001, SalesAmount: "490213" },
+            { Region: "India", Vehicles: "Bicycle", Year: 2001, SalesAmount: "0" },
+            { Region: "India", Vehicles: "Taxi", Year: 2001, SalesAmount: "1783092" },
+            { Region: "India", Vehicles: "Bikes", Year: 2015, SalesAmount: "630923" },
+            { Region: "India", Vehicles: "Car", Year: 2015, SalesAmount: "519280" },
+            { Region: "India", Vehicles: "Bicycle", Year: 2015, SalesAmount: "780234" },
+            { Region: "India", Vehicles: "Taxi", Year: 2015, SalesAmount: "0" }
+
+        ],
+        name: 'SparkLine'
     }]
 };

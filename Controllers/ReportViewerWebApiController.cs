@@ -25,20 +25,11 @@ namespace ReportsCoreSamples.Controllers
         private Microsoft.Extensions.Caching.Memory.IMemoryCache _cache;
 
         // IHostingEnvironment used with sample to get the application data from wwwroot.
-#if NETCOREAPP2_1
-        private IHostingEnvironment _hostingEnvironment;
-#else
         private IWebHostEnvironment _hostingEnvironment;
-#endif
 
         // Post action to process the report from server based json parameters and send the result back to the client.
-#if NETCOREAPP2_1
-        public ReportViewerWebApiController(Microsoft.Extensions.Caching.Memory.IMemoryCache memoryCache,
-            IHostingEnvironment hostingEnvironment)
-#else
         public ReportViewerWebApiController(Microsoft.Extensions.Caching.Memory.IMemoryCache memoryCache,
             IWebHostEnvironment hostingEnvironment)
-#endif
         {
             _cache = memoryCache;
             _hostingEnvironment = hostingEnvironment;
@@ -94,6 +85,14 @@ namespace ReportsCoreSamples.Controllers
         public void LogError(string errorCode, string message, Exception exception, string errorDetail, string methodName, string className)
         {
             LogExtension.LogError(message, exception, System.Reflection.MethodBase.GetCurrentMethod(), errorCode + "-" + errorDetail);
+        }
+
+        [HttpGet]
+        public object GetExternalParameterData()
+        {
+            var productCategory = Models.SqlQuery.getProductCategory(this._cache);
+            var productSubCategory = Models.SqlQuery.getProductSubCategory(this._cache);
+            return Json(new { ProductCategoryDetail = productCategory, ProductSubCategoryDetail = productSubCategory });
         }
     }
 }
