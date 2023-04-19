@@ -9,17 +9,8 @@ namespace ReportsCoreSamples.Models
 {
     public class SampleData
     {
-#if NETCOREAPP2_1
-        private IHostingEnvironment _hostingEnvironment;
-#else
         private IWebHostEnvironment _hostingEnvironment;
-#endif
-
-#if NETCOREAPP2_1
-        public SampleData(IHostingEnvironment environment)
-#else
      public SampleData(IWebHostEnvironment environment)
-#endif
         {
             _hostingEnvironment = environment;
         }

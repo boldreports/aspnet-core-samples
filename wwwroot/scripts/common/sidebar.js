@@ -10,5 +10,5 @@
 
 function onHomeBtnClick() {
     let homePageUrl = location.origin.indexOf('demos.boldreports.com') !== -1 ? '/home/' : '/';
-    location.href = location.origin + homePageUrl + 'aspnet-core.html';
+    location.href = location.origin + homePageUrl;
 }

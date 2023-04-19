@@ -25,7 +25,25 @@
     }
     document.querySelector(".splash").classList.add('e-hidden');
     document.querySelector('.ej-body.e-hidden').classList.remove('e-hidden');
+    if (reportRouterPath == "ExternalParameterReport") {
+        setReportsHeight();
+    }
 })();
+
+window.addEventListener('resize', function () {
+    setReportsHeight();
+});
+
+function setReportsHeight() {
+    let style = document.getElementById('reports-style');
+    if (!style) {
+        style = document.createElement('style');
+        style.id = 'reports-style';
+        document.body.appendChild(style);
+    }
+    style.textContent = 'ej-sample { display:block; overflow: hidden; height:' + (window.innerHeight -
+        (document.getElementsByClassName('ej-preview-content')[0].getBoundingClientRect().top - document.body.getBoundingClientRect().top)) + 'px}';
+}
 
 function getReportName() {
     const reportNameRegex = /[\\?&]report-name=([^&#]*)/.exec(location.search);
