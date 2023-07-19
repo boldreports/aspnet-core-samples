@@ -7,6 +7,7 @@ using ReportsCoreSamples.Models;
 
 namespace ReportsCoreSamples.Controllers
 {
+    
     public class ReportDesignerController : Controller
     {
         public IActionResult Index()

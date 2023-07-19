@@ -10,6 +10,7 @@ using System.IO;
 
 namespace ReportsCoreSamples.Controllers
 {
+    
     public class ReportWriterController : PreviewController
     {
      private IWebHostEnvironment _hostingEnvironment;

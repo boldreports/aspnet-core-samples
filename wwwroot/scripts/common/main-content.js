@@ -3,7 +3,7 @@
     const curRouterIndex = curRouterData.curIndex;
     const curSampleData = curRouterData.isFirst ? reportSamples[reportSamples.length - 1] : reportSamples[curRouterIndex - 1];
     let reportPath = curSampleData.routerPath ? (curSampleData.basePath + '/' + curSampleData.routerPath) : curSampleData.basePath;
-    location.href = location.origin + getBasePath() + reportPath;
+    location.href = location.origin + getBasePath() + reportPath + location.search;
 }
 
 function onTabNext() {
@@ -11,12 +11,12 @@ function onTabNext() {
     const curRouterIndex = curRouterData.curIndex;
     const curSampleData = curRouterData.isLast ? reportSamples[0] : reportSamples[curRouterIndex + 1];
     let reportPath = curSampleData.routerPath ? (curSampleData.basePath + '/' + curSampleData.routerPath) : curSampleData.basePath;
-    location.href = location.origin + getBasePath() + reportPath;
+    location.href = location.origin + getBasePath() + reportPath + location.search;
 }
 
 function onTabBtnClick() {
     let reportPath = reportRouterPath ? (reportBasePath + '/' + reportRouterPath) : reportBasePath;
-    window.open(location.origin + getBasePath() + reportPath + '/Preview', '_blank');
+    window.open(location.origin + getBasePath() + reportPath + '/Preview' + location.search, '_blank');
 }
 
 function getCurRouterData() {

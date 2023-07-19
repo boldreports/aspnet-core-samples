@@ -1,0 +1,225 @@
+/*-----------------------Map------------------*/
+/*-----------------------PdfViewer------------------*/
+/*-----------------------End PdfViewer------------------*/
+/*-----------------------OLAP Definition-----------------*/
+/*-----------------------OLAP Definition End-----------------*/
+/*----------------------Reportviewer Definition start------------------*/
+/*----------------------Reportviewer Definition End------------------*/
+/*----------------------Reportdesigner Definition Start------------------*/
+/*----------------------Reportdesigner Definition End------------------*/
+/*-----------------------SymbolPalette Definition-----------------*/
+/*-----------------------Diagram Definition-----------------*/
+/*-----------------------Datepicker Definition-----------------*/
+/*-----------------------Bootstrap support-----------------*/
+/*----------------------Ribbon Definition-----------------------*/
+/*----------------------Ribbon End-----------------------*/
+/*----------------------File Explorer Start-----------------------*/
+/*----------------------File Explorer End-----------------------*/
+/*----------------------Kanban Definition-----------------------*/
+/*----------------------Kanban End-----------------------*/
+/*----------------------Spreadsheet Definition-----------------------*/
+/*----------------------Spreadsheet End-----------------------*/
+/*----------------------Office 365 theme-----------------------*/
+/*----------------------rangeScrollbar Start------------------*/
+/*----------------------rangeScrollbar End--------------------*/
+/*----------------------High-Contrast-01 & High-Contrast-02 theme-----------------------*/
+/*--------------- common ----------------- */
+/*---------------high-contrast ------*/
+/*---------------- Office-365 ----------------*/
+/*------------------ material theme ---------------------*/
+/*------------------ DatePicker ---------------------*/
+/*-----------------------HeatMap Definition-----------------*/
+/* Common style */
+
+.e-content-area {
+  background-color: white;
+  color: #111111;
+  border-color: #e0e0e0;
+  font-family: 'Roboto', Segoe UI, Helvetica Neue, Ubuntu, Arial;
+}
+.e-chkbox-wrap {
+  display: inline-flex;
+}
+.e-chkbox-wrap.e-tb-cell .e-text,
+.e-chkbox-wrap.e-tb-cell div {
+  display: table-cell;
+  padding: 0px 5px 2px 5px;
+}
+.e-chkbox-wrap.e-check-small.e-tb-cell .e-text {
+  padding: 0px 5px 2px 5px;
+}
+.e-chkbox-wrap.e-focus div > span {
+  
+}
+.e-chkbox-wrap.e-focus div > span {
+  box-shadow: 0 0 2px #d4d4d4;
+}
+.e-chkbox-wrap div > span {
+  
+}
+.e-chkbox-wrap div > span {
+  border-color: rgba(0, 0, 0, 0.54);
+  background-color: white;
+}
+.e-chkbox-wrap.e-disable {
+  opacity: 0.26;
+}
+.e-chkbox-wrap div > span.e-chk-act,
+.e-chkbox-wrap div > span:hover {
+  
+}
+.e-chkbox-wrap div > span:hover {
+  
+}
+.e-chkbox-wrap div > span:hover {
+  border-color: rgba(0, 0, 0, 0.54);
+}
+.e-chkbox-wrap div > span.e-chk-act {
+  
+}
+.e-chkbox-wrap div > span.e-chk-act {
+  border-color: #ff4081;
+}
+.e-chkbox-wrap.e-widget.e-disable div > span.e-chk-act,
+.e-chkbox-wrap.e-widget.e-disable div > span.e-chk-indeter,
+.e-chkbox-wrap.e-disable div > span {
+  border-color: rgba(0, 0, 0, 0.26);
+}
+.e-chkbox-wrap .e-chk-image.e-stop,
+.e-chkbox-wrap .e-chk-image.e-checkmark {
+  background-color: #3f51b5;
+  
+}
+.e-chkbox-wrap .e-chk-image.e-stop,
+.e-chkbox-wrap .e-chk-image.e-checkmark {
+  /*material*/
+  color: white;
+  background-color: #ff4081;
+}
+.e-chkbox-wrap.e-disable .e-chk-image.e-stop,
+.e-chkbox-wrap.e-disable .e-chk-image.e-checkmark {
+  
+}
+.e-chkbox-wrap .e-chk-image.e-stop {
+  color: rgba(0, 0, 0, 0.54);
+  background-color: white;
+}
+.e-chkbox-wrap .e-chk-image.e-stop:before {
+  content: "\e833";
+}
+.e-chkbox-wrap.e-disable .e-chk-image.e-checkmark {
+  background-color: rgba(0, 0, 0, 0.26);
+}
+.e-chkbox-wrap .e-text {
+  font-family: 'Roboto', Segoe UI, Helvetica Neue, Ubuntu, Arial;
+  font-size: 12px;
+  color: #212121;
+}
+.e-chkbox-wrap .e-text {
+  font-size: 13px;
+}
+.e-check-small.e-chkbox-wrap .e-text {
+  vertical-align: middle;
+  margin-top: -7px;
+}
+.e-check-medium.e-chkbox-wrap .e-text {
+  vertical-align: middle;
+  margin-top: -15px;
+}
+.e-material-animate.e-chkbox-wrap .e-chk-act::before {
+  border-radius: 50%;
+  position: absolute;
+  box-sizing: border-box;
+  top: 43%;
+  right: 6px;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  width: 3px;
+  height: 3px;
+  content: '';
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  animation: smallShadow 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: rgba(0, 0, 0, 0.7);
+}
+.e-material-animate.e-chkbox-wrap .e-chk-inact::after {
+  border-radius: 50%;
+  position: absolute;
+  box-sizing: border-box;
+  top: 43%;
+  right: 6px;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 64, 129, 0.7);
+  content: '';
+  border: 1px solid rgba(255, 64, 129, 0.7);
+  animation: smallShadow 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.e-material-animate.e-chkbox-wrap .e-chkbox-medium .e-chk-act::before {
+  right: 8.7px;
+  top: 45%;
+  animation: mediumShadow 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.e-material-animate.e-chkbox-wrap .e-chkbox-medium .e-chk-inact::after {
+  right: 8.7px;
+  top: 45%;
+  animation: mediumShadow 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+@keyframes mediumShadow {
+  100% {
+    opacity: 0;
+    transform: scale(18, 18);
+  }
+}
+@keyframes smallShadow {
+  100% {
+    opacity: 0;
+    transform: scale(15, 15);
+  }
+}
+.e-chkbox-wrap div > span.e-chk-act:hover {
+  
+}
+.e-chkbox-wrap.e-disable div > span.e-chk-act {
+  
+}
+.e-chkbox-wrap.e-disable .e-chk-image.e-checkmark {
+  
+}
+.e-chkbox-wrap.e-disable div > span:hover {
+  
+}
+.e-chkbox-wrap.e-disable div > span {
+  
+}
+.e-chkbox-wrap.e-disable div > span.e-chk-act:hover {
+  
+}
+.e-chkbox-wrap div > span.e-chk-indeter {
+  
+}
+.e-chkbox-wrap div > span.e-chk-indeter:hover {
+  
+}
+.e-radiobtn-wrap.e-disable > span {
+  
+}
+.e-chkbox-wrap.e-disable div > span.e-chk-indeter {
+  
+}
+.e-chkbox-wrap.e-disable div > span {
+  
+}
+.e-chkbox-wrap.e-disable {
+  
+}
+.e-chkbox-wrap.e-disable .e-chk-image.e-stop,
+.e-chkbox-wrap.e-disable .e-chk-image.e-checkmark {
+  
+}
+.e-chkbox-wrap .e-chk-act,
+.e-chkbox-wrap .e-chk-inact,
+.e-chkbox-wrap .e-chk-indeter {
+  box-sizing: content-box;
+}

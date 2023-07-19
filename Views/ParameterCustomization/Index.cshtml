@@ -3,15 +3,51 @@
 @section control {
 <bold-report-viewer id="reportviewer" report-service-url="@Globals.SERVICE_URL" report-path="product-line-sales.rdl"
     toolbar-rendering="onToolbarRendering" tool-bar-item-click="onToolBarItemClick"
-    export-item-click="onExportItemClick" before-parameter-add="beforeParameterAdd" report-loaded="onReportLoaded">
+    export-item-click="onExportItemClick" before-parameter-add="beforeParameterAdd" report-loaded="onReportLoaded"
+    rendering-complete = "onComplete">
 </bold-report-viewer>
 <script>
+    var isV2 = location.search.trim() == '?v2';
+    function onComplete(args){
+        if (isV2){
+            var endDateInst = document.querySelector('[name="EndDate"]').ej2_instances[0];
+            endDateInst.open = function(e){
+                const observer = new MutationObserver(function (mutations, observer) {
+                    var endDateInst = document.querySelector('[name="EndDate"]').ej2_instances[0];
+                    var footerContainer = document.querySelector('#' + endDateInst.element.id + '_datepopup .e-footer-container');
+                    var btn = ej.buildTag("div.e-dt-button e-btn e-dt-button e-btn e-select e-flate-flat mr-1", "NULL", "", { id: "null-btn-v2" });
+                        btn[0].addEventListener("click", function (e) {
+                        endDateInst.value = null;
+                        endDateInst.placeholder = 'Null';
+                    })
+                    if (document.contains(footerContainer)) {
+                        if(document.querySelectorAll("#null-btn-v2").length == 0){
+                            footerContainer.prepend(btn[0]);
+                        }
+                        observer.disconnect();
+                    }
+                });
+                const config = { childList: true, subtree: true };
+                observer.observe(document.body, config);
+            }
+            var switchBaseTag = ej.buildTag("input", null, null, { 'id': endDateInst.element.id + '5_chk', 'type': 'checkbox', 'name': 'chkDateTime', 'value': this._id, 'style': 'margin-top:8px' });
+            if (document.querySelectorAll("#" + endDateInst.element.id + '5_chk').length == 0){
+                $("#" + endDateInst.element.id + "_div").append(switchBaseTag);
+                var switchObj = new ejs.buttons.Switch({ checked: false, cssClass: "switchstyle" });
+                switchObj.appendTo($('#' + endDateInst.element.id + '5_chk')[0]);
+                switchObj.addEventListener('change', function (args) {
+                    endDateInst.enabled = !switchObj.checked;
+                })
+            }
+        }
+    }
+
     function beforeParameterAdd(args) {
         args.parameterSettings.dateTimePickerType = "DateTime";
         args.parameterSettings.dateTimeFormat = "MM/dd/yyyy hh:mm tt";
         args.parameterSettings.timeDisplayFormat = "HH:mm";
         args.parameterSettings.timeInterval = 60;
-        if (args.parameterModel.Name === "EndDate") {
+        if (!isV2 && args.parameterModel.Name === "EndDate") {
             var $targetTag = $('#' + args.containerId);
             var $dateTime = ej.buildTag("input", "", "", { 'id': args.parameterModel.ControlId, 'type': 'text', 'style': 'width: 100%' });
             $targetTag.append($dateTime);

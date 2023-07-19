@@ -1,0 +1,165 @@
+/*-----------------------Map------------------*/
+/*-----------------------PdfViewer------------------*/
+/*-----------------------End PdfViewer------------------*/
+/*-----------------------OLAP Definition-----------------*/
+/*-----------------------OLAP Definition End-----------------*/
+/*----------------------Reportviewer Definition start------------------*/
+/*----------------------Reportviewer Definition End------------------*/
+/*----------------------Reportdesigner Definition Start------------------*/
+/*----------------------Reportdesigner Definition End------------------*/
+/*-----------------------SymbolPalette Definition-----------------*/
+/*-----------------------Diagram Definition-----------------*/
+/*-----------------------Datepicker Definition-----------------*/
+/*-----------------------Bootstrap support-----------------*/
+/*----------------------Ribbon Definition-----------------------*/
+/*----------------------Ribbon End-----------------------*/
+/*----------------------File Explorer Start-----------------------*/
+/*----------------------File Explorer End-----------------------*/
+/*----------------------Kanban Definition-----------------------*/
+/*----------------------Kanban End-----------------------*/
+/*----------------------Spreadsheet Definition-----------------------*/
+/*----------------------Spreadsheet End-----------------------*/
+/*----------------------Office 365 theme-----------------------*/
+/*----------------------rangeScrollbar Start------------------*/
+/*----------------------rangeScrollbar End--------------------*/
+/*----------------------High-Contrast-01 & High-Contrast-02 theme-----------------------*/
+/*--------------- common ----------------- */
+/*---------------high-contrast ------*/
+/*---------------- Office-365 ----------------*/
+/*------------------ material theme ---------------------*/
+/*------------------ DatePicker ---------------------*/
+/*-----------------------HeatMap Definition-----------------*/
+/* Common style */
+
+.e-content-area {
+  background-color: white;
+  color: #111111;
+  border-color: #e0e0e0;
+  font-family: 'Roboto', Segoe UI, Helvetica Neue, Ubuntu, Arial;
+}
+/*------------------------------------- slider -------------------------------------------*/
+
+.e-slider.e-widget {
+  
+}
+.e-slider.e-widget {
+  background-color: #bdbdbd;
+  background-color: rgba(0, 0, 0, 0.26);
+}
+.e-tooltipbox {
+  
+}
+.e-tooltipbox {
+  background-color: #616161;
+  border-color: #616161;
+  color: white;
+}
+.e-slider .e-handle.e-select {
+  
+}
+.e-slider .e-handle.e-select {
+  background-color: #ff4081;
+  border-color: #ff4081;
+}
+.e-slider .e-handle.e-hover {
+  
+}
+.e-slider .e-handle.e-hover {
+  background-color: #ff4081;
+  border-color: #ff4081;
+}
+.e-slider .e-handle.e-focus {
+  
+}
+.e-slider .e-handle.e-focus {
+  background-color: #ff4081;
+  border-color: #ff4081;
+}
+.e-slider .e-range {
+  
+}
+.e-slider .e-range {
+  background: #ff4081;
+}
+.e-slider-wrap:hover .e-slider.e-widget {
+  
+}
+.e-slider-wrap:hover .e-slider .e-range {
+  
+}
+.e-slider-wrap:active .e-slider.e-widget {
+  
+}
+.e-slider-wrap:active .e-slider .e-range {
+  
+}
+.e-slider-wrap:hover .e-slider .e-handle {
+  
+}
+.e-slider-wrap:active .e-slider .e-handle {
+  
+}
+.e-slider-wrap.e-disable .e-slider.e-widget {
+  
+}
+.e-slider-wrap.e-horizontal.e-scale-wrap .e-slider.e-js,
+.e-slider-wrap.e-default-wrap.e-horizontal.e-scale-wrap .e-slider.e-js,
+.e-slider-wrap.e-vertical.e-scale-wrap .e-slider.e-js,
+.e-slider-wrap.e-default-wrap.e-vertical.e-scale-wrap .e-slider.e-js {
+  
+}
+.e-slider-wrap.e-disable .e-slider .e-range {
+  
+}
+.e-slider-wrap.e-disable .e-slider .e-range {
+  background-color: rgba(0, 0, 0, 0.26);
+  border-color: rgba(0, 0, 0, 0.26);
+}
+.e-slider-wrap.e-disable,
+.e-slider.e-disable {
+  opacity: 1;
+}
+.e-slider-wrap.e-disable .e-handle.e-select {
+  
+}
+.e-slider-wrap.e-disable .e-handle.e-select {
+  border-color: white;
+  background-color: #bdbdbd;
+}
+.e-scale .e-tick {
+  background-image: url(images/slider-tick.png);
+}
+.e-slider-wrap .e-scale .e-tick .e-tick-value {
+  
+}
+.e-slider-wrap .e-scale .e-tick .e-tick-value {
+  color: rgba(0, 0, 0, 0.87);
+}
+.e-slider .e-handle.e-select.e-handle-start {
+  background-color: white;
+  border-color: rgba(0, 0, 0, 0.26);
+}
+.e-slider .e-handle.e-select.e-handle-start.e-focus {
+  border-color: rgba(0, 0, 0, 0.38);
+}
+.e-slider-wrap.e-disable .e-handle.e-select.e-handle-start:after {
+  border-color: white;
+}
+.e-slider .e-handle.e-select.e-focus:not(.e-no-tab):after {
+  border-color: #ff4081;
+  background-color: #ff4081;
+}
+.e-slider .e-handle.e-select.e-focus.e-handle-start:not(.e-no-tab):after {
+  border-color: rgba(0, 0, 0, 0.24);
+  background-color: rgba(0, 0, 0, 0.24);
+}
+.e-slider .e-handle.e-select.e-focus.e-handle-start:not(.e-no-tab) {
+  border-color: rgba(0, 0, 0, 0.24);
+  background-color: white;
+}
+.e-slider-wrap.e-disable .e-slider .e-handle:after {
+  background-color: white;
+}
+.e-slider-wrap .e-sliderbtn:not(.e-animate).e-select:not(:active):after {
+  background-color: black;
+}

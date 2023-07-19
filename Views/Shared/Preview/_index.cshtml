@@ -33,10 +33,19 @@
         })(window, document, 'script', 'dataLayer', 'GTM-K73VBT8');</script>
     <!-- End Google Tag Manager -->
     <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
-    <link href="~/bundles/preview/app.min.css" rel="stylesheet" />
-    <script src="~/scripts/bold-reports/common/ej2-base.min.js"></script>
-    <script src="~/scripts/ej2-buttons.min.js"></script>
-    <link href="~/css/ej2-buttons.min.css" rel="stylesheet" type="text/css" />
+    @if (@Context.Request.Query["v2"].Count > 0 && (@Context.Request.Path.Value.Contains("ReportViewer") || @Context.Request.Path.Value.Contains("ReportWriter")) )
+    {
+        <link href="~/bundles/preview/app_v2.min.css" rel="stylesheet" />
+    }
+    else
+    {
+        <link href="~/bundles/preview/app.min.css" rel="stylesheet" />
+        <link href="~/css/ej2-buttons.min.css" rel="stylesheet" type="text/css" />
+        <script src="~/scripts/bold-reports/common/ej2-base.min.js"></script>
+        <script src="~/scripts/ej2-buttons.min.js"></script>
+    }
+
+    
 </head>
 <body>
     <div hidden id="reports-analytics" data-queue="Bold Reports - Demos - ASP.NET Core"></div>
@@ -57,8 +66,14 @@
     </div>
 
     <script src="~/bundles/ej2.min.js"></script>
-
-    <script src="~/bundles/preview/vendor.min.js"></script>
+    @if (@Context.Request.Query["v2"].Count > 0 && (@Context.Request.Path.Value.Contains("ReportViewer") || @Context.Request.Path.Value.Contains("ReportWriter")))
+    {
+        <script src="~/bundles/main/vendor_v2.min.js" asp-append-version="true"></script>
+    }
+    else
+    {
+        <script src="~/bundles/preview/vendor.min.js" asp-append-version="true"></script>
+    }
     <style>
         body, .ej-body {
             height: 100%;

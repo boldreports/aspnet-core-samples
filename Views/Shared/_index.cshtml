@@ -43,7 +43,15 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-K73VBT8');</script>
     <!-- End Google Tag Manager -->
-    <link href="~/bundles/main/app.min.css" rel="stylesheet" />
+    @if (@Context.Request.Query["v2"].Count > 0)
+    {
+        <link href="~/bundles/main/app_v2.min.css" rel="stylesheet" />
+    }
+    else
+    {
+        <link href="~/bundles/main/app.min.css" rel="stylesheet" />
+    }
+
 </head>
 <body>
     <div hidden id="reports-analytics" data-queue="Bold Reports - Demos - ASP.NET Core"></div>
@@ -64,9 +72,15 @@
     </div>
 
     <script src="~/bundles/ej2.min.js"></script>
-
-    <script src="~/bundles/main/vendor.min.js"></script>
-    <div class="ej-body e-hidden">
+    @if (@Context.Request.Query["v2"].Count > 0)
+    {
+        <script src="~/bundles/main/vendor_v2.min.js" id="vendor" asp-append-version="true"></script>
+    }
+    else
+    {
+        <script src="~/bundles/main/vendor.min.js" id="vendor" asp-append-version="true"></script>
+    }
+   <div class="ej-body e-hidden">
         <ej-header>
             <partial name="_header" />
         </ej-header>
@@ -169,9 +183,6 @@
                                 </a>
                                  <a href="https://www.boldreports.com/blog" target="_blank">
                                     Blog
-                                </a>
-                                <a href="https://www.boldreports.com/faq" target="_blank">
-                                    FAQ
                                 </a>
                                 <a href="https://support.boldreports.com/" target="_blank">
                                     Support

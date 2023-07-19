@@ -18,6 +18,8 @@ using System.Reflection;
 using Samples.Core.Logger;
 
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.CookiePolicy;
 
 namespace ReportsCoreSamples
 {
@@ -62,6 +64,11 @@ namespace ReportsCoreSamples
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+                options.HttpOnly = HttpOnlyPolicy.Always;
+            });
             services.AddControllersWithViews();
             services.AddHttpContextAccessor();
             services.AddMemoryCache();
@@ -75,6 +82,12 @@ namespace ReportsCoreSamples
                         .AllowAnyMethod()
                         .AllowAnyHeader();
             }));
+            services.AddAntiforgery(options =>
+            {
+                options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+                options.Cookie.SameSite = SameSiteMode.None;
+                options.Cookie.HttpOnly = true;
+            });
         }
 
         private BoldReports.Web.MapSetting GetMapSettings(IWebHostEnvironment _hostingEnvironment)
@@ -100,10 +113,10 @@ namespace ReportsCoreSamples
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseMiddleware<CSRFHandler>();
             app.UseResponseCompression();
             app.UseFileServer();
-
+            app.UseCookiePolicy();
             app.UseStaticFiles(new StaticFileOptions
             {
                 ServeUnknownFileTypes = true,
@@ -133,7 +146,8 @@ namespace ReportsCoreSamples
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Main}/{action=Index}/{id?}");
-            });
+            });            
+
         }
     }
 }

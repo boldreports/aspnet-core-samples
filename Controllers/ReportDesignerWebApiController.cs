@@ -19,6 +19,7 @@ using System.Reflection;
 namespace ReportsCoreSamples.Controllers
 {
     [Microsoft.AspNetCore.Cors.EnableCors("AllowAllOrigins")]
+    
     public class ReportDesignerWebApiController : Controller, IReportDesignerController, IReportLogger, IReportHelperSettings
     {
         private Microsoft.Extensions.Caching.Memory.IMemoryCache _cache;

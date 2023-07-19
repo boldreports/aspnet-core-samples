@@ -15,6 +15,8 @@
     loadTabContent();
     setReportsHeight();
     updateTab();
+    disableBarInfo();
+    showTransitionBarInfo();
     $('a[data-toggle="tab"][href="#demo"]').on('shown.bs.tab', resizeReportViewer);
 })();
 
@@ -68,13 +70,14 @@ function updateSampleDetails() {
 
 function setReportsHeight() {
     let style = document.getElementById('reports-style');
+    let isExtParm = location.href.trim().lastIndexOf('ExternalParameterReport') != -1
     if (!style) {
         style = document.createElement('style');
         style.id = 'reports-style';
         document.body.appendChild(style);
     }
     style.textContent = `ej-sample{
-        display: flex;
+        display: ${isExtParm ? "block" : "flex"};
         overflow: hidden;
         min-height: 600px
       }

@@ -59,7 +59,8 @@
     }
     #update {
         width: 100px;
-        font-size: 13px
+        font-size: 13px;
+        line-height: 0;
     }
     #checkall_wrap {
         height: 35px;

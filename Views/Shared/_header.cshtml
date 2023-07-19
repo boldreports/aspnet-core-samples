@@ -1,5 +1,10 @@
 ﻿@inject SampleData ds;
-
+<nav class="ej-info-bar navbar navbar-expand-sm bg-light justify-content-center ej-info-invisible">
+    <p class="ej-info-bar-ctx"><span class="ej-info-bar-new">NEW</span><span class="px-1">Introducing our new version of Reporting tools now accessible.</span><a class="ej-info-bar-highlight" onclick="switchv2()">Try It Now</a> </p>
+    <button type="button" class="ej-info-close close" aria-label="Close" onclick="hideBarInfo(); resetMainTop()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</nav>
 <div class="ej-sb-header">
     <div class="ej-sb-left-side">
         <div class="ej-sb-hamburger-icon ej-sb-icons" onclick="onHamBurgerClick()"></div>

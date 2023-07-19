@@ -50,7 +50,13 @@
                     </div>
                 </div>
                 <input type="text" style="display:none" name="reportName" />
-                <input class="r-w-genearte e-button e-js e-ntouch e-btn-normal e-btn e-select e-widget" type="submit" value="Generate" />
+                @if (@Context.Request.Query["v2"].Count > 0)
+                {
+                    <input type="submit" class="r-w-genearte e-control e-btn e-lib e-primary" id="update" value="Generate" />
+                }
+                else{
+                    <input class="r-w-genearte e-button e-js e-ntouch e-btn-normal e-btn e-select e-widget" type="submit" value="Generate" />
+                }
                 @if (!Globals.isPhatomJSExist)
                 {
                     <div class="alert alert-warning alert-dismissible" role="alert">
@@ -61,6 +67,7 @@
         </div>
     </form>
     <script>
+        var isV2 = location.search.trim() == '?v2';
         let reportNameInputele = document.querySelector('[name=reportName]');
         reportNameInputele.value = 'company-sales';
 
@@ -74,11 +81,20 @@
         }
 
         $(function () {
-            $('#dropdown').ejDropDownList({
-                minPopupHeight: 190,
-                watermarkText: "  File Types",
-                selectedIndex: 0
-            });
+            if(isV2){
+                var dropdown = new ejs.dropdowns.DropDownList({
+                    placeholder: "File Types",
+                    index: 0,
+                });
+                dropdown.appendTo('#dropdown');
+            }
+            else{
+                $('#dropdown').ejDropDownList({
+                    minPopupHeight: 190,
+                    watermarkText: "  File Types",
+                    selectedIndex: 0
+                });
+            }
         });
     </script>
 

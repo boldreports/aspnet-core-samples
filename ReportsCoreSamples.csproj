@@ -14,24 +14,24 @@
     <PackageReference Include="System.Net.Http.Json" Version="6.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Bold.Licensing" Version="5.1.20" />
-    <PackageReference Include="BoldReports.AspNet.Core" Version="5.1.20" />
-    <PackageReference Include="BoldReports.CRI.Barcode" Version="5.1.20" />
-    <PackageReference Include="BoldReports.Net.Core" Version="5.1.20" />
-    <PackageReference Include="BoldReports.Data.WebData" Version="5.1.20" />
-    <PackageReference Include="BoldReports.Data.Csv" Version="5.1.20" />
-    <PackageReference Include="BoldReports.Data.Excel" Version="5.1.20" />
-    <PackageReference Include="BoldReports.Data.ElasticSearch" Version="5.1.20" />
-    <PackageReference Include="BoldReports.Data.SSAS" Version="5.1.20" />
+    <PackageReference Include="Bold.Licensing" Version="5.2.26" />
+    <PackageReference Include="BoldReports.AspNet.Core" Version="5.2.26" />
+    <PackageReference Include="BoldReports.CRI.Barcode" Version="5.2.26" />
+    <PackageReference Include="BoldReports.Net.Core" Version="5.2.26" />
+    <PackageReference Include="BoldReports.Data.WebData" Version="5.2.26" />
+    <PackageReference Include="BoldReports.Data.Csv" Version="5.2.26" />
+    <PackageReference Include="BoldReports.Data.Excel" Version="5.2.26" />
+    <PackageReference Include="BoldReports.Data.ElasticSearch" Version="5.2.26" />
+    <PackageReference Include="BoldReports.Data.SSAS" Version="5.2.26" />
     <PackageReference Include="BuildBundlerMinifier" Version="2.9.406" />
     <PackageReference Include="log4net" Version="2.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.ResponseCompression" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="6.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="BoldReports.Data.MySQL" Version="5.1.20" />
-    <PackageReference Include="BoldReports.Data.Oracle" Version="5.1.20" />
-    <PackageReference Include="BoldReports.Data.PostgreSQL" Version="5.1.20" />
+    <PackageReference Include="BoldReports.Data.MySQL" Version="5.2.26" />
+    <PackageReference Include="BoldReports.Data.Oracle" Version="5.2.26" />
+    <PackageReference Include="BoldReports.Data.PostgreSQL" Version="5.2.26" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Controllers\**" CopyToOutputDirectory="Always" />

@@ -5,7 +5,10 @@
     args.e.preventDefault();
     let curSampleData = reportSamples[args.index];
     let reportPath = curSampleData.routerPath ? (curSampleData.basePath + '/' + curSampleData.routerPath) : curSampleData.basePath;
-    location.href = location.origin + getBasePath() + reportPath;
+    let routePath = location.origin + getBasePath() + reportPath + location.search;
+    if (location.href != routePath){
+        location.href = routePath;
+    }
 }
 
 function onHomeBtnClick() {

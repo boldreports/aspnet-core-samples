@@ -1,7 +1,7 @@
 ﻿.ej-main-parent-content {
     position: absolute;
     left: 0;
-    top: 48px;
+    top: 79px;
     bottom: 0;
     right: 0;
     transition: left 400ms ease;
@@ -73,6 +73,9 @@ body {
     margin: 0;
     background-color: #F2F2F2;
     font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif";
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 :focus {

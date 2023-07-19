@@ -1,0 +1,190 @@
+/*-----------------------Map------------------*/
+/*-----------------------PdfViewer------------------*/
+/*-----------------------End PdfViewer------------------*/
+/*-----------------------OLAP Definition-----------------*/
+/*-----------------------OLAP Definition End-----------------*/
+/*----------------------Reportviewer Definition start------------------*/
+/*----------------------Reportviewer Definition End------------------*/
+/*----------------------Reportdesigner Definition Start------------------*/
+/*----------------------Reportdesigner Definition End------------------*/
+/*-----------------------SymbolPalette Definition-----------------*/
+/*-----------------------Diagram Definition-----------------*/
+/*-----------------------Datepicker Definition-----------------*/
+/*-----------------------Bootstrap support-----------------*/
+/*----------------------Ribbon Definition-----------------------*/
+/*----------------------Ribbon End-----------------------*/
+/*----------------------File Explorer Start-----------------------*/
+/*----------------------File Explorer End-----------------------*/
+/*----------------------Kanban Definition-----------------------*/
+/*----------------------Kanban End-----------------------*/
+/*----------------------Spreadsheet Definition-----------------------*/
+/*----------------------Spreadsheet End-----------------------*/
+/*----------------------Office 365 theme-----------------------*/
+/*----------------------rangeScrollbar Start------------------*/
+/*----------------------rangeScrollbar End--------------------*/
+/*----------------------High-Contrast-01 & High-Contrast-02 theme-----------------------*/
+/*--------------- common ----------------- */
+/*---------------high-contrast ------*/
+/*---------------- Office-365 ----------------*/
+/*------------------ material theme ---------------------*/
+/*------------------ DatePicker ---------------------*/
+/*-----------------------HeatMap Definition-----------------*/
+/* Common style */
+
+.e-content-area {
+  background-color: white;
+  color: #111111;
+  border-color: #e0e0e0;
+  font-family: 'Roboto', Segoe UI, Helvetica Neue, Ubuntu, Arial;
+}
+/*Theme Color*/
+
+.e-treeview,
+.e-dragedNode {
+  font-family: 'Roboto', Segoe UI, Helvetica Neue, Ubuntu, Arial;
+}
+.e-treeview .e-text {
+  
+  background-color: transparent;
+}
+.e-treeview .e-text {
+  color: black;
+  color: rgba(0, 0, 0, 0.87);
+}
+.e-dragedNode {
+  
+}
+.e-dragedNode {
+  background: #eeeeee;
+  color: black;
+  color: rgba(0, 0, 0, 0.54);
+}
+.e-dragedNode .e-text {
+  
+  float: left;
+}
+.e-dragedNode .e-text {
+  color: black;
+  color: rgba(0, 0, 0, 0.54);
+}
+.e-treeview .e-active,
+.e-fullrow-wrap .e-li-active > .e-fullrow {
+  
+  border: 1px solid transparent;
+  border-image: initial;
+}
+.e-treeview .e-active,
+.e-fullrow-wrap .e-li-active > .e-fullrow {
+  background: whitesmoke;
+}
+.e-treeview .e-node-hover,
+.e-treeview .e-node-focus,
+.e-fullrow-wrap .e-li-hover > .e-fullrow,
+.e-fullrow-wrap .e-li-focus > .e-fullrow {
+  
+  border-image: initial;
+  cursor: pointer;
+}
+.e-treeview .e-node-hover,
+.e-treeview .e-node-focus,
+.e-fullrow-wrap .e-li-hover > .e-fullrow,
+.e-fullrow-wrap .e-li-focus > .e-fullrow {
+  background: #eeeeee;
+  border: 1px solid transparent;
+}
+.e-treeview-wrap.e-dragging .e-node-hover,
+.e-fullrow-wrap.e-dragging .e-li-hover > .e-fullrow {
+  background: transparent;
+  border-color: #eeeeee;
+}
+.e-treeview-wrap.e-dragging .e-active.e-node-hover,
+.e-fullrow-wrap.e-dragging .e-li-active.e-li-hover > .e-fullrow {
+  background: whitesmoke;
+  border-color: whitesmoke;
+}
+.e-treeview-wrap .e-sibling {
+  
+}
+.e-treeview-wrap .e-sibling {
+  background: #ff4081;
+}
+.e-treeview-wrap.e-rtl .e-sibling {
+  
+}
+.e-treeview-wrap .e-sibling::before {
+  
+}
+.e-treeview-wrap .e-sibling::before {
+  background: black;
+  background: rgba(0, 0, 0, 0.12);
+}
+.e-treeview .e-node-disable {
+  filter: alpha(opacity=40);
+  opacity: 0.4;
+}
+.e-treeview .e-icon.e-load,
+.e-treeview.e-rtl .e-icon.e-load {
+  background-image: url(images/ajax-loader.gif);
+  background-repeat: no-repeat;
+  
+}
+.e-treeview .e-icon.e-load,
+.e-treeview.e-rtl .e-icon.e-load {
+  background-position: center;
+}
+.e-treeview.e-rtl .e-icon.e-load {
+  
+}
+.e-treeview .e-item .e-icon {
+  
+}
+.e-treeview .e-item .e-icon {
+  color: black;
+  color: rgba(0, 0, 0, 0.54);
+}
+.e-treeview .e-fe-popup .e-content {
+  background-color: white;
+  border-color: #e0e0e0;
+}
+.e-treeview .e-fe-popup .e-downtail:after {
+  border-top-color: white;
+}
+.e-treeview .e-fe-popup .e-downtail:before,
+.e-treeview .e-fe-popup .e-downtail {
+  border-top-color: #e0e0e0;
+}
+.e-treeview .e-fe-popup .e-spanclicked {
+  border-color: #424242;
+}
+.e-drop-count {
+  
+  border-color: white;
+}
+.e-drop-count {
+  background-color: #ff4081;
+  color: white;
+}
+.e-fullrow-wrap .e-li-active .e-active,
+.e-fullrow-wrap .e-li-hover .e-node-hover,
+.e-fullrow-wrap .e-li-focus .e-node-focus {
+  background: transparent;
+}
+.e-fullrow-wrap .e-item.e-li-active > .e-text-wrap > .e-icon {
+  
+}
+.e-fullrow-wrap .e-item.e-li-hover > .e-text-wrap > .e-icon,
+.e-fullrow-wrap .e-item.e-li-active.e-li-focus > .e-text-wrap > .e-icon {
+  
+}
+.e-treeview .e-plus:after,
+.e-treeview .e-minus:after,
+.e-treeview .e-icon.e-load:after,
+.e-treeview-wrap:not(.e-fullrow-wrap) .e-text:after,
+.e-fullrow-wrap .e-fullrow:after {
+  background: black;
+  background: rgba(0, 0, 0, 0.12);
+}
+.e-treeview .e-text.e-editable .e-tree-input {
+  border-color: black;
+  border-color: rgba(0, 0, 0, 0.54);
+}
