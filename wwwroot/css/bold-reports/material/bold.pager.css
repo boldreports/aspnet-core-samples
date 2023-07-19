@@ -1,0 +1,433 @@
+/*-----------------------Map------------------*/
+/*-----------------------PdfViewer------------------*/
+/*-----------------------End PdfViewer------------------*/
+/*-----------------------OLAP Definition-----------------*/
+/*-----------------------OLAP Definition End-----------------*/
+/*----------------------Reportviewer Definition start------------------*/
+/*----------------------Reportviewer Definition End------------------*/
+/*----------------------Reportdesigner Definition Start------------------*/
+/*----------------------Reportdesigner Definition End------------------*/
+/*-----------------------SymbolPalette Definition-----------------*/
+/*-----------------------Diagram Definition-----------------*/
+/*-----------------------Datepicker Definition-----------------*/
+/*-----------------------Bootstrap support-----------------*/
+/*----------------------Ribbon Definition-----------------------*/
+/*----------------------Ribbon End-----------------------*/
+/*----------------------File Explorer Start-----------------------*/
+/*----------------------File Explorer End-----------------------*/
+/*----------------------Kanban Definition-----------------------*/
+/*----------------------Kanban End-----------------------*/
+/*----------------------Spreadsheet Definition-----------------------*/
+/*----------------------Spreadsheet End-----------------------*/
+/*----------------------Office 365 theme-----------------------*/
+/*----------------------rangeScrollbar Start------------------*/
+/*----------------------rangeScrollbar End--------------------*/
+/*----------------------High-Contrast-01 & High-Contrast-02 theme-----------------------*/
+/*--------------- common ----------------- */
+/*---------------high-contrast ------*/
+/*---------------- Office-365 ----------------*/
+/*------------------ material theme ---------------------*/
+/*------------------ DatePicker ---------------------*/
+/*-----------------------HeatMap Definition-----------------*/
+/* Common style */
+
+.e-content-area {
+  background-color: white;
+  color: #111111;
+  border-color: #e0e0e0;
+  font-family: 'Roboto', Segoe UI, Helvetica Neue, Ubuntu, Arial;
+}
+.e-grid.e-rtl .e-nextpage,
+.e-grid.e-rtl .e-nextpagedisabled {
+  border-left-color: #e0e0e0;
+}
+.e-pager,
+.e-grid .e-pagerstatusbar,
+.e-pager .e-drpdwn li,
+.e-pager .e-drpdwn,
+.e-pager div.e-drpdwndiv {
+  background-color: whitesmoke;
+  border-color: #e0e0e0;
+  color: #212121;
+  
+}
+.e-pager {
+  
+}
+.e-pager {
+  /*material*/
+  font-family: 'Roboto', Segoe UI, Helvetica Neue, Ubuntu, Arial;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: white;
+  border-color: #e0e0e0;
+  border-width: 1px 1px 1px;
+}
+.e-pager .e-icon {
+  
+}
+.e-pager .e-icon {
+  position: relative;
+}
+.e-pager .e-default:hover {
+  
+}
+.e-pager .e-spacing {
+  color: #212121;
+  
+}
+.e-pager .e-spacing {
+  /*material*/
+  padding: 6px 1px 6px 1px;
+}
+.e-pager .e-spacing.e-NP {
+  
+}
+.e-pager .e-spacing.e-NP {
+  color: #424242;
+}
+.e-pager .e-numericitem.e-hover,
+.e-pager .e-currentitem.e-hover {
+  
+}
+.e-pager .e-numericitem.e-hover,
+.e-pager .e-currentitem.e-hover {
+  background-color: #eeeeee;
+  color: rgba(0, 0, 0, 0.87);
+}
+.e-pager.e-disable .e-numericitem.e-hover {
+  background: whitesmoke;
+  border-right-color: #e0e0e0;
+  
+}
+.e-pager.e-disable .e-numericitem.e-hover {
+  background: white;
+  color: rgba(0, 0, 0, 0.87);
+}
+.e-pager .e-numericitem {
+  font-family: 'Roboto', Segoe UI, Helvetica Neue, Ubuntu, Arial;
+  
+}
+.e-pager .e-numericitem {
+  /*material*/
+  background: white;
+  color: rgba(0, 0, 0, 0.87);
+  border-right-color: white;
+  width: 30px;
+  height: 20px;
+  line-height: 20px;
+  border-right: 0;
+  margin: 0 8px 0 8px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.e-pager .e-prevpagedisabled,
+.e-pager .e-prevpage,
+.e-pager .e-nextpage,
+.e-pager .e-nextpagedisabled,
+.e-pager .e-lastpagedisabled,
+.e-pager .e-lastpage,
+.e-pager .e-firstpage,
+.e-pager .e-firstpagedisabled {
+  
+}
+.e-pager .e-prevpagedisabled,
+.e-pager .e-nextpagedisabled,
+.e-pager .e-lastpagedisabled,
+.e-pager .e-firstpagedisabled {
+  /*material*/
+  background-color: white;
+  color: rgba(0, 0, 0, 0.26);
+}
+.e-pager .e-prevpage,
+.e-pager .e-nextpage,
+.e-pager .e-lastpage,
+.e-pager .e-firstpage {
+  /*material*/
+  background-color: white;
+  color: rgba(0, 0, 0, 0.54);
+}
+.e-pager .e-lastpage,
+.e-pager .e-firstpage {
+  
+}
+.e-pager .e-nextpage.e-hover,
+.e-pager .e-lastpage.e-hover,
+.e-pager .e-firstpage.e-hover,
+.e-pager .e-prevpage.e-hover {
+  
+}
+.e-pager .e-nextpage.e-hover,
+.e-pager .e-lastpage.e-hover,
+.e-pager .e-firstpage.e-hover,
+.e-pager .e-prevpage.e-hover {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #eeeeee;
+  border-radius: 50%;
+}
+.e-pager.e-disable .e-nextpage.e-hover,
+.e-pager.e-disable .e-lastpage.e-hover,
+.e-pager.e-disable .e-firstpage.e-hover,
+.e-pager.e-disable .e-prevpage.e-hover {
+  
+}
+.e-pager.e-disable .e-nextpage.e-hover,
+.e-pager.e-disable .e-lastpage.e-hover,
+.e-pager.e-disable .e-firstpage.e-hover,
+.e-pager.e-disable .e-prevpage.e-hover {
+  background: white;
+  color: rgba(0, 0, 0, 0.54);
+}
+.e-pager .e-pagercontainer {
+  
+}
+.e-pager .e-pagercontainer {
+  /*material*/
+  background-color: white;
+  border-color: white;
+  margin: 2px 6px -4px 16px;
+  border-width: 0px;
+}
+.e-pager.e-rtl .e-pagercontainer {
+  /*material*/
+  margin: 4px 16px -4px 6px;
+}
+.e-pager.e-rtl .e-numericitem {
+  
+}
+.e-pager.e-rtl .e-numericitem {
+  /*material*/
+  border-left-color: white;
+}
+.e-pager .e-firstpage,
+.e-pager .e-prevpage,
+.e-pager .e-firstpagedisabled,
+.e-pager .e-prevpagedisabled,
+.e-pager .e-nextpage,
+.e-pager .e-lastpage,
+.e-pager .e-nextpagedisabled,
+.e-pager .e-lastpagedisabled {
+  
+}
+.e-pager .e-firstpage,
+.e-pager .e-prevpage,
+.e-pager .e-firstpagedisabled,
+.e-pager .e-prevpagedisabled,
+.e-pager .e-nextpage,
+.e-pager .e-lastpage,
+.e-pager .e-nextpagedisabled,
+.e-pager .e-lastpagedisabled {
+  /*material*/
+  border-right-color: white;
+  padding: 6px 5px 6px 6px;
+  margin: 5px 8px 0 8px;
+  height: 12px;
+  width: 13px;
+  display: inline-block;
+  border-radius: 50%;
+}
+.e-pager.e-rtl .e-firstpage,
+.e-pager.e-rtl .e-prevpage,
+.e-pager.e-rtl .e-firstpagedisabled,
+.e-pager.e-rtl .e-prevpagedisabled,
+.e-pager.e-rtl .e-nextpage,
+.e-pager.e-rtl .e-lastpage,
+.e-pager.e-rtl .e-nextpagedisabled,
+.e-pager.e-rtl .e-lastpagedisabled {
+  
+}
+.e-pager.e-rtl .e-firstpage,
+.e-pager.e-rtl .e-prevpage,
+.e-pager.e-rtl .e-firstpagedisabled,
+.e-pager.e-rtl .e-prevpagedisabled,
+.e-pager.e-rtl .e-nextpage,
+.e-pager.e-rtl .e-lastpage,
+.e-pager.e-rtl .e-nextpagedisabled,
+.e-pager.e-rtl .e-lastpagedisabled {
+  /*material*/
+  border-left-color: white;
+  padding: 6px 5px 6px 5px;
+}
+.e-pager.e-rtl div.e-parentmsgbar {
+  
+  float: left;
+}
+.e-pager.e-rtl div.e-parentmsgbar {
+  /*material*/
+  padding-left: 24px;
+}
+.e-pager .e-currentitem.e-active {
+  
+}
+.e-pager .e-currentitem.e-active {
+  /*material*/
+  background: #ff4081;
+  border-radius: 50%;
+  color: white;
+}
+.e-pager .e-currentitem.e-hover {
+  
+}
+.e-pager .e-currentitem.e-hover {
+  /*material*/
+  background: #eeeeee;
+  border-radius: 50%;
+  color: rgba(0, 0, 0, 0.87);
+}
+.e-pager.e-disable .e-currentitem.e-hover {
+  
+}
+.e-pager.e-disable .e-currentitem.e-hover {
+  /*material*/
+  background: #ff4081;
+  border-radius: 50%;
+  color: white;
+}
+.e-pager .e-NP.e-numericitem,
+.e-pager .e-PP.e-numericitem {
+  vertical-align: top;
+  line-height: 12px;
+}
+.e-pager .e-drpdwndiv:before {
+  color: #212121;
+  background: whitesmoke;
+}
+.e-pager .e-pager-itemsinterval .e-drpdwndiv:hover:before,
+.e-pager .e-pager-itemsinterval .e-drpdwndiv:hover,
+.e-pager .e-drpdwn li:hover {
+  
+}
+.e-pager .e-pager-itemsinterval .e-drpdwndiv:hover:before,
+.e-pager .e-pager-itemsinterval .e-drpdwndiv:hover,
+.e-pager .e-drpdwn li:hover {
+  /*material*/
+  background: #eeeeee;
+  color: rgba(0, 0, 0, 0.87);
+}
+.e-pager.e-disable .e-pager-itemsinterval .e-drpdwndiv:hover:before,
+.e-pager.e-disable .e-pager-itemsinterval .e-drpdwndiv:hover,
+.e-pager.e-disable .e-drpdwn li:hover {
+  color: #212121;
+  background: whitesmoke;
+}
+.e-pager .e-drpdwn li.e-active {
+  
+  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.e-pager .e-drpdwn li.e-active {
+  /*material*/
+  background-color: white;
+  color: #ff4081;
+}
+.e-pager div.e-numericcontainer {
+  
+}
+.e-pager div.e-parentmsgbar {
+  
+}
+.e-pager .e-textbox-paging.e-pagercontainer {
+  float: none;
+}
+.e-pager .e-template {
+  width: 100%;
+}
+.e-pager .e-textbox-paging .e-gototextbox {
+  
+}
+.e-pager .e-textbox-paging .e-nextpage,
+.e-pager .e-textbox-paging .e-nextpagedisabled {
+  
+}
+.e-pager.e-rtl .e-textbox-paging .e-nextpage,
+.e-pager.e-rtl .e-textbox-paging .e-nextpagedisabled {
+  
+}
+.e-pager .e-textbox-paging.e-pagercontainer .e-gototextbox {
+  float: none;
+  margin-right: 0px;
+  height: 26px;
+}
+.e-pager .e-textbox-paging.e-pagercontainer .e-gototextbox {
+  width: 75px;
+}
+.e-pager .e-textbox-paging.e-pagercontainer .e-newrecord,
+.e-pager .e-textbox-paging.e-pagercontainer .e-firstpage,
+.e-pager .e-textbox-paging.e-pagercontainer .e-lastpage,
+.e-pager .e-textbox-paging.e-pagercontainer .e-nextpage,
+.e-pager .e-textbox-paging.e-pagercontainer .e-prevpage,
+.e-pager .e-textbox-paging.e-pagercontainer .e-firstpagedisabled,
+.e-pager .e-textbox-paging.e-pagercontainer .e-lastpagedisabled,
+.e-pager .e-textbox-paging.e-pagercontainer .e-nextpagedisabled,
+.e-pager .e-textbox-paging.e-pagercontainer .e-prevpagedisabled {
+  
+}
+.e-pager .e-textbox-paging.e-pagercontainer .e-newrecord,
+.e-pager .e-textbox-paging.e-pagercontainer .e-firstpage,
+.e-pager .e-textbox-paging.e-pagercontainer .e-lastpage,
+.e-pager .e-textbox-paging.e-pagercontainer .e-nextpage,
+.e-pager .e-textbox-paging.e-pagercontainer .e-prevpage,
+.e-pager .e-textbox-paging.e-pagercontainer .e-firstpagedisabled,
+.e-pager .e-textbox-paging.e-pagercontainer .e-lastpagedisabled,
+.e-pager .e-textbox-paging.e-pagercontainer .e-nextpagedisabled,
+.e-pager .e-textbox-paging.e-pagercontainer .e-prevpagedisabled {
+  margin: 5px 8px 0 8px;
+  height: 12px;
+  width: 13px;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 6px 3px 5px 6px;
+  color: rgba(0, 0, 0, 0.54);
+}
+.e-pager .e-textbox-paging.e-pagercontainer .e-newrecord,
+.e-pager.e-rtl .e-textbox-paging.e-pagercontainer .e-newrecord {
+  
+}
+.e-pager.e-disable .e-textbox-paging.e-pagercontainer .e-newrecord.e-hover {
+  background: transparent;
+}
+.e-pager.e-rtl .e-textbox-paging.e-pagercontainer .e-newrecord,
+.e-pager.e-rtl .e-textbox-paging.e-pagercontainer .e-firstpage,
+.e-pager.e-rtl .e-textbox-paging.e-pagercontainer .e-lastpage,
+.e-pager.e-rtl .e-textbox-paging.e-pagercontainer .e-nextpage,
+.e-pager.e-rtl .e-textbox-paging.e-pagercontainer .e-prevpage,
+.e-pager.e-rtl .e-textbox-paging.e-pagercontainer .e-firstpagedisabled,
+.e-pager.e-rtl .e-textbox-paging.e-pagercontainer .e-lastpagedisabled,
+.e-pager.e-rtl .e-textbox-paging.e-pagercontainer .e-nextpagedisabled,
+.e-pager.e-rtl .e-textbox-paging.e-pagercontainer .e-prevpagedisabled {
+  
+}
+.e-pager.e-rtl .e-textbox-paging .e-gototextbox {
+  
+}
+.e-pager .e-textbox-paging.e-pagercontainer .e-newrecord.e-hover {
+  
+}
+.e-pager .e-textbox-paging.e-pagercontainer .e-newrecord.e-hover {
+  border-radius: 50%;
+}
+.e-pager.e-rtl .e-textbox-paging.e-pagercontainer .e-newrecord.e-hover {
+  
+}
+.e-pager .e-textbox-paging.e-pagercontainer .e-lastpage.e-hover {
+  
+}
+.e-pager .e-textbox-paging.e-pagercontainer .e-newrecord.e-hover {
+  
+}
+.e-pager .e-textbox-paging.e-pagercontainer .e-newrecord.e-hover {
+  background-color: #eeeeee;
+}
+.e-pager .e-template .e-textbox-paging .e-lastpage,
+.e-pager .e-template .e-textbox-paging .e-lastpagedisabled {
+  border-right: inherit;
+}
+.e-pager.e-rtl .e-template .e-lastpage,
+.e-pager.e-rtl .e-template .e-lastpagedisabled {
+  
+}
+.e-pager .e-template .e-previouspager.e-nextprevitemdisabled,
+.e-pager .e-template .e-nextpager.e-nextprevitemdisabled {
+  display: none;
+}

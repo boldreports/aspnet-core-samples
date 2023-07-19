@@ -18,6 +18,7 @@ using Samples.Core.Logger;
 namespace ReportsCoreSamples.Controllers
 {
     [Microsoft.AspNetCore.Cors.EnableCors("AllowAllOrigins")]
+    
     public class ReportViewerWebApiController : Controller, IReportController, IReportLogger
     {
         // Report viewer requires a memory cache to store the information of consecutive client request and

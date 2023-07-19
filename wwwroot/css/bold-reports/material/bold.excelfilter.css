@@ -1,0 +1,195 @@
+/*-----------------------Map------------------*/
+/*-----------------------PdfViewer------------------*/
+/*-----------------------End PdfViewer------------------*/
+/*-----------------------OLAP Definition-----------------*/
+/*-----------------------OLAP Definition End-----------------*/
+/*----------------------Reportviewer Definition start------------------*/
+/*----------------------Reportviewer Definition End------------------*/
+/*----------------------Reportdesigner Definition Start------------------*/
+/*----------------------Reportdesigner Definition End------------------*/
+/*-----------------------SymbolPalette Definition-----------------*/
+/*-----------------------Diagram Definition-----------------*/
+/*-----------------------Datepicker Definition-----------------*/
+/*-----------------------Bootstrap support-----------------*/
+/*----------------------Ribbon Definition-----------------------*/
+/*----------------------Ribbon End-----------------------*/
+/*----------------------File Explorer Start-----------------------*/
+/*----------------------File Explorer End-----------------------*/
+/*----------------------Kanban Definition-----------------------*/
+/*----------------------Kanban End-----------------------*/
+/*----------------------Spreadsheet Definition-----------------------*/
+/*----------------------Spreadsheet End-----------------------*/
+/*----------------------Office 365 theme-----------------------*/
+/*----------------------rangeScrollbar Start------------------*/
+/*----------------------rangeScrollbar End--------------------*/
+/*----------------------High-Contrast-01 & High-Contrast-02 theme-----------------------*/
+/*--------------- common ----------------- */
+/*---------------high-contrast ------*/
+/*---------------- Office-365 ----------------*/
+/*------------------ material theme ---------------------*/
+/*------------------ DatePicker ---------------------*/
+/*-----------------------HeatMap Definition-----------------*/
+/* Common style */
+
+.e-content-area {
+  background-color: white;
+  color: #111111;
+  border-color: #e0e0e0;
+  font-family: 'Roboto', Segoe UI, Helvetica Neue, Ubuntu, Arial;
+}
+.e-excelfilter.e-dlgcontainer {
+  font-family: 'Roboto', Segoe UI, Helvetica Neue, Ubuntu, Arial;
+  font-weight: normal;
+  font-size: 13px;
+  color: #212121;
+  z-index: 10001;
+  
+}
+.e-excelfilter .e-searchcontainer,
+.e-excelfilter.e-dlgcontainer {
+  background: none white;
+}
+.e-excelfilter .e-btncan {
+  color: black !important;
+}
+.e-excelfilter .e-menu,
+.e-excelfilter .e-menu.e-vertical,
+.e-excelfilter .e-menu.e-vertical .e-list > ul {
+  background: white;
+}
+.e-excelfilter .e-menu,
+.e-excelfilter .e-menu.e-vertical,
+.e-excelfilter .e-menu.e-vertical .e-list > ul {
+  box-shadow: none;
+}
+.e-excelfilter .e-checkboxlist {
+  background: #fafafa;
+  border: #fafafa;
+}
+.e-excelfilter.e-dlgcontainer,
+.e-excelfilter.e-dlgcustom .e-fieldset,
+.e-excelfilter .e-menu.e-vertical .e-list > ul {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #fafafa;
+}
+.e-excelfilter .e-checkboxlist label.e-ftrchk,
+.e-excelfilter.e-dlgcustom label.e-caption,
+.e-excelfilter .e-searchbox .e-searchitem {
+  font-weight: normal;
+}
+.e-excelfilter .e-optable .e-fields .e-value span.e-widget {
+  width: 160px !important;
+}
+.e-sortasc,
+.e-sortdesc {
+  font-size: 18px;
+}
+.e-excelfilter.e-dlgcustom .e-fieldset legend {
+  font-size: 14px;
+  color: #212121;
+  border: none;
+}
+.e-excelfilter .e-select:hover .e-icon {
+  color: #424242;
+}
+.e-excelfilter.e-dlgcustom .e-input {
+  line-height: 1.7em;
+}
+.e-excelfilter {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.e-excelfilter .e-menu .e-list.e-fghdrcolor,
+.e-excelfilter .e-menu .e-list.e-bghdrcolor,
+e-excelfilter .e-menu .e-list.e-fghdrcolor.e-mhover.e-mfocused,
+.e-excelfilter .e-menu .e-list.e-bghdrcolor.e-mhover.e-mfocused,
+.e-excelfilter .e-menu.e-vertical .e-list.e-fghdrcolor:hover,
+.e-excelfilter .e-menu.e-vertical .e-list.e-bghdrcolor:hover {
+  background: white;
+}
+.e-bghdrcolor > a,
+.e-fghdrcolor > a {
+  color: white;
+}
+.e-excelfilter .e-menu .e-list.e-valcolor {
+  border-color: #3f51b5;
+}
+.e-excelfilter .e-menu .e-list.e-valcolor.e-mhover.e-mfocused {
+  border-color: #e0e0e0;
+  background: transparent;
+}
+.e-excelfilter .e-menu .e-list.e-fghdrcolor.e-mhover > a,
+.e-excelfilter .e-menu .e-list.e-fghdrcolor.e-mfocused > a,
+.e-excelfilter .e-menu .e-list.e-bghdrcolor.e-mhover > a,
+.e-excelfilter .e-menu .e-list.e-bghdrcolor.e-mfocused > a {
+  background: transparent;
+  color: white;
+}
+.e-excelfilter .e-searchbox .e-ejinputtext {
+  border-width: 0 0 2px 0;
+  text-indent: 0.75em;
+}
+.e-excelfilter .e-searchbox .e-ejinputtext:focus {
+  box-shadow: none;
+  border-color: #ff4081;
+}
+.e-excelfilter .e-menu-wrap ul.e-menu {
+  padding-left: 0px;
+  padding-top: 12px;
+}
+.e-excelfilter .e-btncontainer input,
+.e-excelfilter .e-checkboxlist .e-ftrchk {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 14px;
+}
+.e-excelfilter .e-searchcontainer .e-fields {
+  margin: 12px 0;
+}
+.e-btn.e-btn-normal,
+.e-tbtn.e-btn-normal {
+  padding: 0 10px;
+}
+.e-excelfilter .e-btncontainer > div {
+  padding-left: 41px;
+}
+.e-excelfilter.e-dlgcustom {
+  padding-bottom: 8px !important;
+}
+.e-excelfilter .e-dialog {
+  
+}
+.e-excelfilter.e-dlgcustom.e-dialog:first-child {
+  
+}
+.e-excelfilter.e-dlgcustom .e-dlgfields:last-child {
+  
+}
+.e-excelfilter.e-dlgcustom .e-dlgfields {
+  
+}
+.e-excelfilter span.e-filternone.e-icon {
+  
+}
+.e-excelfilter .e-checkboxlist .e-ftrchk {
+  
+}
+.e-excelfilter ul.e-menu.e-vertical {
+  
+}
+.e-excelfilter .e-searchcontainer .e-btncontainer.e-fields .e-button:last-child {
+  
+}
+.e-excelfilter .e-searchcontainer .e-btncontainer.e-fields {
+  
+}
+.e-excelfilter .e-shadow .e-list > a {
+  
+}
+.e-excelfilter .e-shadow {
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.4) !important;
+}

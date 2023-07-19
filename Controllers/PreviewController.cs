@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ReportsCoreSamples.Controllers
 {
+    
     public class PreviewController : MetaData
     {
         public IActionResult Preview()

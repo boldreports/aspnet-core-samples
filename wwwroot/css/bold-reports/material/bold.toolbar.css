@@ -1,0 +1,330 @@
+/*-----------------------Map------------------*/
+/*-----------------------PdfViewer------------------*/
+/*-----------------------End PdfViewer------------------*/
+/*-----------------------OLAP Definition-----------------*/
+/*-----------------------OLAP Definition End-----------------*/
+/*----------------------Reportviewer Definition start------------------*/
+/*----------------------Reportviewer Definition End------------------*/
+/*----------------------Reportdesigner Definition Start------------------*/
+/*----------------------Reportdesigner Definition End------------------*/
+/*-----------------------SymbolPalette Definition-----------------*/
+/*-----------------------Diagram Definition-----------------*/
+/*-----------------------Datepicker Definition-----------------*/
+/*-----------------------Bootstrap support-----------------*/
+/*----------------------Ribbon Definition-----------------------*/
+/*----------------------Ribbon End-----------------------*/
+/*----------------------File Explorer Start-----------------------*/
+/*----------------------File Explorer End-----------------------*/
+/*----------------------Kanban Definition-----------------------*/
+/*----------------------Kanban End-----------------------*/
+/*----------------------Spreadsheet Definition-----------------------*/
+/*----------------------Spreadsheet End-----------------------*/
+/*----------------------Office 365 theme-----------------------*/
+/*----------------------rangeScrollbar Start------------------*/
+/*----------------------rangeScrollbar End--------------------*/
+/*----------------------High-Contrast-01 & High-Contrast-02 theme-----------------------*/
+/*--------------- common ----------------- */
+/*---------------high-contrast ------*/
+/*---------------- Office-365 ----------------*/
+/*------------------ material theme ---------------------*/
+/*------------------ DatePicker ---------------------*/
+/*-----------------------HeatMap Definition-----------------*/
+/* Common style */
+
+.e-content-area {
+  background-color: white;
+  color: #111111;
+  border-color: #e0e0e0;
+  font-family: 'Roboto', Segoe UI, Helvetica Neue, Ubuntu, Arial;
+}
+/*------------------------------------- ToolBar -------------------------------------------*/
+
+.e-toolbar {
+  font-family: 'Roboto', Segoe UI, Helvetica Neue, Ubuntu, Arial;
+  font-weight: normal;
+  font-size: 14px;
+  
+}
+.e-toolbar {
+  /*material*/
+  background: #fafafa;
+  color: rgba(0, 0, 0, 0.54);
+  background-repeat: no-repeat;
+  border-color: #e0e0e0;
+}
+.e-toolbar {
+  
+}
+.e-toolbar {
+  /*material*/
+  background: #fafafa;
+}
+.e-toolbar.e-focus {
+  
+}
+.e-toolbar.e-focus {
+  /*material*/
+  box-shadow: none;
+}
+.e-toolbar > .e-horizontal.e-separator {
+  
+}
+.e-toolbar > .e-horizontal.e-separator {
+  /*material*/
+  border-right: 1px solid #e0e0e0;
+  border-left: none;
+  border-radius: initial;
+  margin-right: 4px;
+  height: 36px;
+}
+/*-------------------tooltip class ----------------------*/
+
+.e-toolbarTooltip {
+  min-width: auto;
+}
+.e-toolbarTooltip .e-tipContainer .e-tipcontent {
+  
+}
+.e-toolbarTooltip .e-tipContainer .e-tipcontent {
+  /*material*/
+  padding: 2px 8px 2px 8px;
+}
+.e-toolbar > .e-horizontal .e-separator {
+  border-right: 1px solid #e0e0e0;
+  border-left: none;
+  border-radius: inherit;
+  height: inherit;
+}
+.e-toolbar > .e-vertical.e-separator {
+  border-bottom: 1px solid #e0e0e0;
+  border-top: none;
+  border-radius: initial;
+}
+.e-toolbar > .e-vertical .e-separator {
+  
+  border-top: none;
+  border-radius: inherit;
+}
+.e-toolbar > .e-vertical .e-separator {
+  /*office-365*/
+  border-bottom: 1px solid #e0e0e0;
+}
+.e-toolbar.e-rtl > .e-horizontal.e-separator {
+  
+  border-right: none;
+  border-radius: initial;
+}
+.e-toolbar.e-rtl > .e-horizontal.e-separator {
+  /*office-365*/
+  border-left: 1px solid #e0e0e0;
+}
+.e-toolbar.e-rtl > .e-horizontal .e-separator {
+  
+}
+.e-toolbar.e-rtl > .e-horizontal .e-separator {
+  /*material*/
+  border-left: 1px solid #e0e0e0;
+  border-right: none;
+  border-radius: inherit;
+  margin-right: 16px;
+}
+.e-toolbar.e-rtl > .e-vertical.e-separator {
+  border-top: 1px solid #e0e0e0;
+  border-bottom: none;
+  border-radius: initial;
+}
+.e-toolbar.e-rtl > .e-vertical .e-separator {
+  border-top: 1px solid #e0e0e0;
+  border-bottom: none;
+  border-radius: inherit;
+}
+.e-toolbar.e-rtl > .e-vertical .e-corner-all {
+  border-radius: inherit;
+}
+.e-toolbar > ul > li div.e-item-overlay {
+  background-color: whitesmoke;
+}
+.e-toolbar > .e-horizontal .e-hover,
+.e-toolbar > .e-vertical > .e-hover {
+  
+  border-color: #e0e0e0;
+}
+.e-toolbar > .e-horizontal .e-hover,
+.e-toolbar > .e-vertical > .e-hover {
+  /*material*/
+  color: rgba(0, 0, 0, 0.54);
+}
+.e-toolbar > .e-horizontal .e-hover,
+.e-toolbar > .e-vertical > .e-hover {
+  background: #e0e0e0;
+}
+.e-toolbar > .e-horizontal .e-hover > div:before,
+.e-toolbar > .e-vertical > .e-hover > div:before,
+.e-toolbar > .e-horizontal .e-hover > span:before,
+.e-toolbar > .e-vertical > .e-hover > span:before,
+.e-toolbar > .e-horizontal .e-hover > a:before,
+.e-toolbar > .e-vertical > .e-hover > a:before {
+  
+}
+.e-toolbar > .e-horizontal .e-hover > div:before,
+.e-toolbar > .e-vertical > .e-hover > div:before,
+.e-toolbar > .e-horizontal .e-hover > span:before,
+.e-toolbar > .e-vertical > .e-hover > span:before,
+.e-toolbar > .e-horizontal .e-hover > a:before,
+.e-toolbar > .e-vertical > .e-hover > a:before {
+  color: #424242;
+}
+.e-toolbar > .e-horizontal .e-active.e-hover > div:before,
+.e-toolbar > .e-vertical > .e-active.e-hover > div:before,
+.e-toolbar > .e-horizontal .e-active.e-hover > span:before,
+.e-toolbar > .e-vertical > .e-active.e-hover > span:before,
+.e-toolbar > .e-horizontal .e-active.e-hover > a:before,
+.e-toolbar > .e-vertical > .e-active.e-hover > a:before {
+  
+}
+.e-toolbar > .e-horizontal .e-active.e-hover > div:before,
+.e-toolbar > .e-vertical > .e-active.e-hover > div:before,
+.e-toolbar > .e-horizontal .e-active.e-hover > span:before,
+.e-toolbar > .e-vertical > .e-active.e-hover > span:before,
+.e-toolbar > .e-horizontal .e-active.e-hover > a:before,
+.e-toolbar > .e-vertical > .e-active.e-hover > a:before {
+  /*material*/
+  color: rgba(0, 0, 0, 0.54);
+}
+.e-toolbar > .e-horizontal .e-active,
+.e-toolbar > .e-vertical > .e-active {
+  
+}
+.e-toolbar > .e-horizontal .e-active,
+.e-toolbar > .e-vertical > .e-active {
+  /*material*/
+  background: #bdbdbd;
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.12);
+}
+.e-toolbar > .e-horizontal > .e-hover > a,
+.e-toolbar > .e-horizontal > .e-hover > span,
+.e-toolbar > .e-horizontal > .e-hover > div,
+.e-toolbar > .e-vertical > .e-hover > a,
+.e-toolbar > .e-vertical > .e-hover > span,
+.e-toolbar > .e-vertical > .e-hover > div {
+  
+}
+.e-toolbar > .e-horizontal > .e-hover > a,
+.e-toolbar > .e-horizontal > .e-hover > span,
+.e-toolbar > .e-horizontal > .e-hover > div,
+.e-toolbar > .e-vertical > .e-hover > a,
+.e-toolbar > .e-vertical > .e-hover > span,
+.e-toolbar > .e-vertical > .e-hover > div {
+  /*material*/
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.54);
+}
+.e-toolbar > .e-horizontal > .e-active > a,
+.e-toolbar > .e-horizontal > .e-active > span,
+.e-toolbar > .e-horizontal > .e-active > div,
+.e-toolbar > .e-vertical > .e-active > a,
+.e-toolbar > .e-vertical > .e-active > span,
+.e-toolbar > .e-vertical > .e-active > div {
+  
+}
+.e-toolbar > .e-horizontal > .e-active > a,
+.e-toolbar > .e-horizontal > .e-active > span,
+.e-toolbar > .e-horizontal > .e-active > div,
+.e-toolbar > .e-vertical > .e-active > a,
+.e-toolbar > .e-vertical > .e-active > span,
+.e-toolbar > .e-vertical > .e-active > div {
+  /*material*/
+  background-color: #bdbdbd;
+  color: rgba(0, 0, 0, 0.87);
+}
+.e-toolbar.e-js .e-vertical > li.e-tooltxt {
+  margin-right: 0px;
+  margin-bottom: 14px;
+}
+.e-toolbar > .e-vertical > .e-hover {
+  margin-right: 0px !important;
+  margin-left: 3px;
+}
+.e-toolbar > .e-vertical .e-align {
+  margin-left: 0px;
+}
+.e-toolbar .e-ul.e-vertical {
+  /*material*/
+  width: 48px !important;
+}
+.e-toolbar.e-js ul > li.e-tooltxt:before {
+  color: rgba(0, 0, 0, 0.54);
+}
+.e-toolbar.e-js ul > li.e-tooltxt.e-disable:before {
+  color: rgba(0, 0, 0, 0.26);
+}
+.e-toolbar .e-ul.e-horizontal.e-separator:first-child {
+  padding-left: 0px;
+}
+.e-toolbar > .e-horizontal.e-ul:first-child {
+  padding-left: 0px;
+}
+.e-toolbar .e-ul.e-horizontal.e-separator .e-tooltxt:last-child {
+  
+}
+.e-toolbar .e-ul.e-horizontal.e-separator .e-tooltxt:last-child {
+  margin-right: 4px;
+}
+.e-toolbar > ul > li.e-icon {
+  width: 14px;
+  height: 14px;
+}
+.e-responsive-toolbar.e-toolbar .e-ul.e-horizontal.e-separator:first-child {
+  padding-left: 0px;
+}
+.e-toolbar.e-rtl .e-ul.e-horizontal.e-separator .e-tooltxt:last-child {
+  
+}
+.e-toolbar.e-rtl .e-ul.e-horizontal.e-separator .e-tooltxt:last-child {
+  margin-right: 10px;
+  margin-left: 4px;
+}
+.e-toolbar.e-rtl .e-ul.e-horizontal.e-separator .e-tooltxt:first-child {
+  
+}
+.e-toolbar.e-rtl .e-ul.e-horizontal.e-separator .e-tooltxt:first-child {
+  margin-right: 0px;
+}
+.e-toolbar.e-js.e-rtl ul > li.e-tooltxt:last-child {
+  
+}
+.e-toolbar.e-js.e-rtl ul > li.e-tooltxt:last-child {
+  margin-right: 10px;
+}
+.e-toolbar.e-rtl .e-ul.e-horizontal.e-separator:first-child {
+  
+}
+.e-toolbar.e-rtl .e-ul.e-horizontal.e-separator:first-child {
+  padding-left: 0px;
+  margin-right: 0px;
+}
+.e-toolbar.e-js.e-rtl ul > li.e-tooltxt:first-child {
+  
+}
+.e-toolbar.e-js.e-rtl ul > li.e-tooltxt:first-child {
+  margin-right: 4px;
+}
+.e-toolbar.e-toolbarspan.e-rtl {
+  padding-right: 24px;
+  padding-left: 24px;
+}
+.e-responsive-toolbar.e-toolbar.e-rtl .e-ul.e-horizontal.e-separator .e-tooltxt:first-child {
+  margin-left: 4px;
+}
+.e-toolbar > .e-horizontal .e-disable,
+.e-toolbar > .e-vertical .e-disable {
+  
+}
+.e-toolbar > .e-horizontal .e-disable,
+.e-toolbar > .e-vertical .e-disable {
+  color: rgba(0, 0, 0, 0.26);
+}
+.e-responsive-toolbar.e-toolbar.e-js.e-rtl ul > li.e-tooltxt:first-child {
+  
+}

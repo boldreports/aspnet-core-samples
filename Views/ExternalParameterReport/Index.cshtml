@@ -43,13 +43,23 @@
                     <input id="enddate" />
                 </div>
             </div>
-            <input type="button" id="update"
-                class="r-w-genearte e-button e-js e-ntouch e-btn-normal e-btn e-select e-widget" value="View Report" />
+                @if (@Context.Request.Query["v2"].Count > 0)
+                {
+                    <input type="button" id="update"
+                   class="r-w-genearte e-control e-btn e-lib e-primary" value="View Report" />
+                }
+                else{
+                <input type="button" id="update"
+                   class="r-w-genearte e-button e-js e-ntouch e-btn-normal e-btn e-select e-widget" value="View Report" />
+                }
+                
         </div>
     </div>
 </form>
 
 <script>
+    var startDate, endDate, productCategoryList, productSubCategoryList, category, subCategory;
+    var isV2 = location.search.trim() == '?v2';
     var userAgent = window.navigator.userAgent;
     var isMobile = /mobile/i.test(userAgent);
     var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
@@ -63,54 +73,102 @@
             contentType: "application/json; charset=utf-8",
             url: location.origin + '@Globals.SERVICE_URL' + '/GetExternalParameterData',
             success: function (data) {
-                $("#startdate").ejDatePicker({ value: new Date("1/1/2003"), width: "180px" });
-                $("#enddate").ejDatePicker({ value: new Date("12/31/2003"), width: "180px" });
-                var productCategoryList = JSON.parse(data.productCategoryDetail);
-                var productSubCategoryList = JSON.parse(data.productSubCategoryDetail);
+                productCategoryList = JSON.parse(data.productCategoryDetail);
+                productSubCategoryList = JSON.parse(data.productSubCategoryDetail);
                 var subCategoryDropDownList = productSubCategoryList.filter(({ ProductCategoryID }) => ProductCategoryID == 1);
-                $('#category').ejDropDownList({
-                    dataSource: productCategoryList,
-                    fields: {
-                        text: "Name",
-                        value: "ProductCategoryID",
-                    },
-                    selectedIndex: 1,
-                    width: "180px",
-                    change: function (args) {
-                        $("#checkall").ejCheckBox({ checked: false });
-                        var categoryID = $('#category').ejDropDownList("getSelectedValue");
-                        var categoryDropDownList = productSubCategoryList.filter(({ ProductCategoryID }) => ProductCategoryID == categoryID);
-                        var subCategoryObj = $('#subcategory').data("ejDropDownList");
-                        subCategoryObj.option("dataSource", categoryDropDownList);
-                    }
-                });
-                $('#subcategory').ejDropDownList({
-                    dataSource: subCategoryDropDownList,
-                    fields: {
-                        text: "Name",
-                        value: "ProductSubcategoryID",
-                    },
-                    showCheckbox: true,
-                    change: "dropDownCheckAll",
-                    headerTemplate: "<div id='checkall_wrap' ><input id ='checkall' type='checkbox'/></div>",
-                    width: "180px",
-                    selectedIndex: 1,
-                    watermarkText: "Select Option",
-                });
-                $("#checkall").ejCheckBox({ text: "Select All", change: "selectAllSubCategory" });
-                $("#update").on("click", function () {
-                    var reportViewer = $("#reportviewer").boldReportViewer("instance");
-                    var productCategory = $('#category').ejDropDownList("getSelectedValue");
-                    var productSubcategory = ($('#subcategory').ejDropDownList("getSelectedValue")).split(",");
-                    var startDate = $("#startdate").data("ejDatePicker").getValue();
-                    var endDate = $("#enddate").data("ejDatePicker").getValue();
-                    var parameters = [{ name: 'ProductCategory', labels: [productCategory], values: [productCategory] }, { name: 'ProductSubcategory', labels: productSubcategory, values: productSubcategory }, { name: 'StartDate', labels: [startDate], values: [startDate] }, { name: 'EndDate', labels: [endDate], values: [endDate] }];
-                    reportViewer.model.parameters = parameters;
-                    reportViewer.reload();
-                });
+                    if (isV2) {
+                    startDate = new ejs.calendars.DatePicker({ value: new Date("1/1/2003"), width: "180px" });
+                    endDate = new ejs.calendars.DatePicker({ value: new Date("12/31/2003"), width: "180px" });
+                    category = new ejs.dropdowns.DropDownList({
+                            dataSource: productCategoryList,
+                            fields: {
+                                text: "Name",
+                                value: "ProductCategoryID",
+                            },
+                            index: 1,
+                            width: "180px",
+                            height: "10px",
+                            showClearButton: false,
+                            change: function(e){
+                                var categoryID = e.value;
+                                var categoryDropDownList = productSubCategoryList.filter(({ ProductCategoryID }) => ProductCategoryID == categoryID);
+                                if(subCategory.value != null)
+                                    subCategory.clear();
+                                subCategory.dataSource = categoryDropDownList;
+                                subCategory.dataBind();
+                            }
+                    });
+                    subCategory = new ejs.dropdowns.MultiSelect({
+                            dataSource: subCategoryDropDownList,
+                            fields: {
+                                text: "Name",
+                                value: "ProductSubcategoryID",
+                            },
+                            mode: 'CheckBox',
+                            showClearButton: true,
+                            showDropDownIcon: true,
+                            showSelectAll: true,
+                            width: "180px",
+                            height: "30px",
+                            value: [2],
+                            placeholder: "Select Option"
+                    });
+                    startDate.appendTo('#startdate');
+                    endDate.appendTo('#enddate');
+                    category.appendTo('#category');
+                    subCategory.appendTo('#subcategory');
+                }
+                else{
+                        $("#startdate").ejDatePicker({ value: new Date("1/1/2003"), width: "180px" });
+                        $("#enddate").ejDatePicker({ value: new Date("12/31/2003"), width: "180px" });
+                        $('#category').ejDropDownList({
+                            dataSource: productCategoryList,
+                            fields: {
+                                text: "Name",
+                                value: "ProductCategoryID",
+                            },
+                            selectedIndex: 1,
+                            width: "180px",
+                            change: function (args) {
+                                $("#checkall").ejCheckBox({ checked: false });
+                                var categoryID = $('#category').ejDropDownList("getSelectedValue");
+                                var categoryDropDownList = productSubCategoryList.filter(({ ProductCategoryID }) => ProductCategoryID == categoryID);
+                                var subCategoryObj = $('#subcategory').data("ejDropDownList");
+                                subCategoryObj.option("dataSource", categoryDropDownList);
+                            }
+                        });
+                        $('#subcategory').ejDropDownList({
+                            dataSource: subCategoryDropDownList,
+                            fields: {
+                                text: "Name",
+                                value: "ProductSubcategoryID",
+                            },
+                            showCheckbox: true,
+                            change: "dropDownCheckAll",
+                            headerTemplate: "<div id='checkall_wrap' ><input id ='checkall' type='checkbox'/></div>",
+                            width: "180px",
+                            selectedIndex: 1,
+                            watermarkText: "Select Option",
+                        });
+                        $("#checkall").ejCheckBox({ text: "Select All", change: "selectAllSubCategory" });
+                        
+                }
+                    $("#update").on("click", function () {
+                        updateViewer();
+                    });
             }
         });
     });
+    function updateViewer(){
+            var reportViewer = $("#reportviewer").boldReportViewer("instance");
+            var productCategory = isV2 ? category.value.toString() : $('#category').ejDropDownList("getSelectedValue");
+            var productSubcategory = isV2 ? (subCategory.value == null ? [''] : subCategory.value.map((i)=>{return i.toString();})) : ($('#subcategory').ejDropDownList("getSelectedValue")).split(",");
+            var sDate = isV2 ? startDate.inputElement.value : $("#startdate").data("ejDatePicker").getValue();
+            var eDate = isV2 ? endDate.inputElement.value : $("#enddate").data("ejDatePicker").getValue();
+            var parameters = [{ name: 'ProductCategory', labels: [productCategory], values: [productCategory] }, { name: 'ProductSubcategory', labels: productSubcategory, values: productSubcategory }, { name: 'StartDate', labels: [sDate], values: [sDate] }, { name: 'EndDate', labels: [eDate], values: [eDate] }];
+            reportViewer.model.parameters = parameters;
+            reportViewer.reload();
+    }
     function selectAllSubCategory(args) {
         if (!flag) {
             var subCategoryObj = $("#subcategory").ejDropDownList("instance");

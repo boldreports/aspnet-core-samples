@@ -9,8 +9,7 @@
     "JavaScript": "javascript/#/",
     "React": "react/#/",
     "Blazor":  "blazor/",
-    "ASP.NET MVC": "aspnet-mvc/",
-    "ASP.NET WebForms": "aspnet-web-forms/"
+    "ASP.NET MVC": "aspnet-mvc/"
   },
   "platform": "ASP.NET Core",
   "banner": {

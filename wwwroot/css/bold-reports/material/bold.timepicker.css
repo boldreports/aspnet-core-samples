@@ -1,0 +1,209 @@
+/*-----------------------Map------------------*/
+/*-----------------------PdfViewer------------------*/
+/*-----------------------End PdfViewer------------------*/
+/*-----------------------OLAP Definition-----------------*/
+/*-----------------------OLAP Definition End-----------------*/
+/*----------------------Reportviewer Definition start------------------*/
+/*----------------------Reportviewer Definition End------------------*/
+/*----------------------Reportdesigner Definition Start------------------*/
+/*----------------------Reportdesigner Definition End------------------*/
+/*-----------------------SymbolPalette Definition-----------------*/
+/*-----------------------Diagram Definition-----------------*/
+/*-----------------------Datepicker Definition-----------------*/
+/*-----------------------Bootstrap support-----------------*/
+/*----------------------Ribbon Definition-----------------------*/
+/*----------------------Ribbon End-----------------------*/
+/*----------------------File Explorer Start-----------------------*/
+/*----------------------File Explorer End-----------------------*/
+/*----------------------Kanban Definition-----------------------*/
+/*----------------------Kanban End-----------------------*/
+/*----------------------Spreadsheet Definition-----------------------*/
+/*----------------------Spreadsheet End-----------------------*/
+/*----------------------Office 365 theme-----------------------*/
+/*----------------------rangeScrollbar Start------------------*/
+/*----------------------rangeScrollbar End--------------------*/
+/*----------------------High-Contrast-01 & High-Contrast-02 theme-----------------------*/
+/*--------------- common ----------------- */
+/*---------------high-contrast ------*/
+/*---------------- Office-365 ----------------*/
+/*------------------ material theme ---------------------*/
+/*------------------ DatePicker ---------------------*/
+/*-----------------------HeatMap Definition-----------------*/
+/* Common style */
+
+.e-content-area {
+  background-color: white;
+  color: #111111;
+  border-color: #e0e0e0;
+  font-family: 'Roboto', Segoe UI, Helvetica Neue, Ubuntu, Arial;
+}
+/*------------------------------------- TimeEditor -------------------------------------------*/
+
+.e-timewidget .e-input,
+.e-time-popup {
+  background-color: white;
+  font-family: 'Roboto', Segoe UI, Helvetica Neue, Ubuntu, Arial;
+  
+}
+.e-timewidget .e-input,
+.e-time-popup {
+  /*material*/
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: normal;
+}
+.e-timewidget .e-input {
+  
+}
+.e-timewidget .e-input {
+  /*material*/
+  font-size: 13px;
+}
+.e-timewidget .e-in-wrap,
+.e-time-popup {
+  border-color: #e0e0e0;
+}
+.e-timewidget .e-in-wrap,
+.e-time-popup {
+  /*material*/
+  border-color: rgba(0, 0, 0, 0.12);
+}
+.e-timewidget .e-in-wrap:before,
+.e-timewidget .e-in-wrap:after {
+  background: #ff4081;
+}
+.e-timewidget.e-focus .e-in-wrap,
+.e-timewidget.e-focus .e-in-wrap:hover {
+  
+}
+.e-timewidget.e-focus .e-in-wrap,
+.e-timewidget.e-focus .e-in-wrap:hover {
+  /*material*/
+  box-shadow: none;
+}
+.e-timewidget:hover .e-in-wrap {
+  
+}
+.e-timewidget.e-disable:hover .e-in-wrap {
+  
+}
+.e-timewidget .e-select,
+.e-timewidget.e-rtl .e-select,
+.e-ntouch.e-timewidget .e-disable.e-select:hover {
+  
+}
+.e-timewidget .e-select,
+.e-timewidget.e-rtl .e-select,
+.e-ntouch.e-timewidget .e-disable.e-select:hover {
+  background: whitesmoke;
+}
+.e-timewidget .e-select,
+.e-timewidget.e-rtl .e-select,
+.e-ntouch.e-timewidget .e-disable.e-select:hover {
+  /*material*/
+  background: white;
+  box-shadow: none;
+  border-color: white;
+  color: rgba(0, 0, 0, 0.54);
+}
+.e-timewidget.e-widget .e-select:active:hover,
+.e-timewidget.e-rtl .e-select:active:hover {
+  
+}
+.e-timewidget.e-widget .e-select.e-disable:active:before:active:hover {
+  
+}
+.e-ntouch.e-timewidget .e-select:hover,
+.e-time-popup.e-popup .e-hover {
+  
+}
+.e-ntouch.e-timewidget .e-select:hover,
+.e-time-popup.e-popup .e-hover {
+  background: #e0e0e0;
+}
+.e-ntouch.e-timewidget .e-select:hover,
+.e-time-popup.e-popup .e-hover {
+  /*material*/
+  background-color: #eeeeee;
+  color: rgba(0, 0, 0, 0.87);
+}
+.e-ntouch.e-timewidget .e-select:hover,
+.e-timewidget .e-select:hover {
+  
+}
+.e-time-popup .e-active.e-hover {
+  
+}
+.e-time-popup .e-active.e-hover {
+  /*material*/
+  background-color: #eeeeee;
+  color: rgba(0, 0, 0, 0.87);
+}
+.e-ntouch.e-timewidget .e-select:hover {
+  /*material*/
+  background-color: white;
+  color: rgba(0, 0, 0, 0.54);
+}
+.e-time-popup .e-active {
+  /*.custom-gradient(@active-gradient-color, @active-bg-stcolor, @active-bg-endcolor, 0%, 0% );*/
+  background-color: #fafafa;
+  border-color: #3f51b5;
+  
+}
+.e-time-popup .e-active {
+  /*material*/
+  background: white;
+  color: #ff4081;
+}
+.e-time-popup.e-popup .e-hover.e-active {
+  color: rgba(0, 0, 0, 0.87);
+}
+.e-timewidget .e-icon.e-clock:before {
+  width: 20px;
+  height: 20px;
+}
+.e-timewidget.e-active .e-select {
+  /*material*/
+  color: #ff4081;
+}
+.e-timewidget.e-active .e-select:hover {
+  /*material*/
+  color: #ff4081;
+}
+.e-time-popup {
+  
+}
+.e-time-popup {
+  /*material*/
+  font-size: 13px;
+}
+.e-timewidget .e-input::selection {
+  
+}
+.e-timewidget .e-input::selection {
+  background: #ff4081;
+  color: white;
+}
+.e-timewidget .e-input::-moz-selection {
+  
+}
+.e-timewidget .e-input::-moz-selection {
+  background: #ff4081;
+  color: white;
+}
+.e-timewidget .e-select {
+  
+}
+.e-timewidget .e-select:active:before {
+  
+}
+.e-timewidget .e-select.e-disable:active:before {
+  
+}
+.e-timewidget.e-disable {
+  
+}
+.e-timewidget .e-select.e-disable,
+.e-timewidget.e-disable .e-select:hover,
+.e-ntouch.e-timewidget .e-disable.e-select:hover {
+  
+}
