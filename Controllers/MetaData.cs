@@ -61,12 +61,12 @@ namespace ReportsCoreSamples.Controllers
             switch ((string)sampleData.basePath)
             {
                 case "ReportViewer":
-                    metaContent = "The ASP.NET Core bold report viewer allows the end-users to visualize the " + title + " report in browsers.";
+                    metaContent = "The ASP.NET Core Bold Report Viewer allows the end-users to visualize the " + title + " report in browsers.";
                     title += " | Preview | ASP.NET Core Report Viewer";
                     break;
                 case "ReportWriter":
                     title += " | Preview | ASP.NET Core Report Writer";
-                    metaContent = "The ASP.NET Core bold report writer allows the end-users to download the report in browsers without visualizing the report.";
+                    metaContent = "The ASP.NET Core Bold Report Writer allows the end-users to download the report in browsers without visualizing the report.";
                     break;
                 default:
                     title = "";

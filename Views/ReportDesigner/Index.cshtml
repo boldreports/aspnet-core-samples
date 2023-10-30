@@ -9,7 +9,7 @@
         };
     }
 
-    <bold-report-designer id="reportdesigner" ajax-before-load="onAjaxBeforeLoad" service-url="@Globals.DESIGNER_SERVICE_URL" toolbar-settings="ViewBag.toolbarSettings" create="controlCreate" report-item-extensions="extensions" toolbar-rendering="toolbarRendering" toolbar-click="toolbarClick" />
+    <bold-report-designer id="reportdesigner" ajax-before-load="onAjaxBeforeLoad" service-url="@Globals.DESIGNER_SERVICE_URL" toolbar-settings="ViewBag.toolbarSettings" create="controlCreate" report-item-extensions="extensions" toolbar-rendering="toolbarRendering" toolbar-click="toolbarClick" permission-settings="ViewBag.permissionSettings"/>
     <script>
         let designerInst;
         function controlCreate() {
@@ -17,11 +17,24 @@
             let reportName = getReportName();
             designerInst.setModel({
                 previewOptions: {
-                    exportItemClick: "onExportItemClick"
+                    exportItemClick: "onExportItemClick",
+                      toolbarSettings: {
+                        items: ej.ReportViewer.ToolbarItems.All & ~ej.ReportViewer.ToolbarItems.Find
+                    }
                 }
             });
             if (reportName) {
                 designerInst.openReport(reportName.indexOf("external-parameter-report") !== -1 ? "product-line-sales.rdl" : reportName.indexOf("parameter-customization") !== -1 ? "product-line-sales.rdl" : reportName);
+            }
+            if (reportName == "load-large-data.rdl") {
+                designerInst.setModel({
+                    previewOptions: {
+                        toolbarSettings: {
+                            items: ej.ReportViewer.ToolbarItems.All & ~ej.ReportViewer.ToolbarItems.Export & ~ej.ReportViewer.ToolbarItems.Print,
+                            toolbars: ej.ReportViewer.Toolbars.All & ~ej.ReportViewer.Toolbars.Vertical
+                        }
+                    }
+                });
             }
         }
 

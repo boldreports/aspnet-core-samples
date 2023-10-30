@@ -282,6 +282,20 @@
                                               </Style>
                                             </TextRun>
                                             <TextRun>
+                                              <Value>,</Value>
+                                              <Style>
+                                                <FontSize>0.13889in</FontSize>
+                                                <Color>Black</Color>
+                                              </Style>
+                                            </TextRun>
+                                            <TextRun>
+                                              <Value> </Value>
+                                              <Style>
+                                                <FontSize>0.13889in</FontSize>
+                                                <Color>Black</Color>
+                                              </Style>
+                                            </TextRun>
+                                            <TextRun>
                                               <Value />
                                               <Style>
                                                 <FontSize>0.13889in</FontSize>
@@ -319,6 +333,13 @@
                                                 <FontStyle>Normal</FontStyle>
                                                 <TextDecoration>None</TextDecoration>
                                                 <Color>#333333</Color>
+                                              </Style>
+                                            </TextRun>
+                                            <TextRun>
+                                              <Value> </Value>
+                                              <Style>
+                                                <FontSize>0.13889in</FontSize>
+                                                <Color>Black</Color>
                                               </Style>
                                             </TextRun>
                                             <TextRun>
@@ -727,11 +748,8 @@
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="Northwind">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=Northwind;user id=demoreadonly@data-platform-demo;password=N@c)=Y8s*1&amp;dh</ConnectString>
-        <rd:IsDesignState>true</rd:IsDesignState>
-      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <DataSourceReference>Northwind</DataSourceReference>
       <rd:ImpersonateUser>false</rd:ImpersonateUser>
     </DataSource>
   </DataSources>

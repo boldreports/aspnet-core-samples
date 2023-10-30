@@ -715,10 +715,7 @@
   <DataSources>
     <DataSource Name="Northwind">
       <rd:SecurityType>None</rd:SecurityType>
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=Northwind;user id=demoreadonly@data-platform-demo;password=N@c)=Y8s*1&amp;dh</ConnectString>
-      </ConnectionProperties>
+      <DataSourceReference>Northwind</DataSourceReference>
     </DataSource>
   </DataSources>
   <DataSets>

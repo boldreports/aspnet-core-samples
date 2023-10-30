@@ -2,18 +2,19 @@
 
 @section control {
 
-    <bold-report-viewer id="reportviewer" report-service-url="@Globals.SERVICE_URL" report-path="load-large-data.rdlc" report-loaded="onReportLoaded" processing-mode="Local" toolbar-rendering="onToolbarSettings" tool-bar-item-click="onToolBarItemClick" export-item-click="onExportItemClick" />
+    <bold-report-viewer id="reportviewer" report-service-url="@Globals.SERVICE_URL" report-path="load-large-data.rdl" toolbar-rendering="onToolbarSettings" tool-bar-item-click="onToolBarItemClick" export-item-click="onExportItemClick" />
 
     <script>
-        function onReportLoaded(args) {
-        }
         function onToolbarSettings() {
-            this.model.toolbarSettings.items = ~ej.ReportViewer.ToolbarItems.Export & ~ej.ReportViewer.ToolbarItems.Print & ~ej.ReportViewer.ToolbarItems.ExportSetup & ~ej.ReportViewer.ToolbarItems.Find & ~ej.ReportViewer.ToolbarItems.Analytics;
-            if (location.search.trim() != '?v2') {
+            this.model.toolbarSettings.items = ~ej.ReportViewer.ToolbarItems.Export & ~ej.ReportViewer.ToolbarItems.Print;
+             this.model.toolbarSettings.toolbars = ej.ReportViewer.Toolbars.All & ~ej.ReportViewer.Toolbars.Vertical;
                 this.model.toolbarSettings.customGroups = [{
+                    groupIndex: 3,
+                    Index: 1,
                     items: [{
                         type: 'Default',
                         cssClass: "e-icon e-edit e-reportviewer-icon ej-webicon CustomGroup",
+                        prefixIcon: "e-viewer-icons edit",
                         id: "edit-report",
                         // Need to add the proper header and content once, the tool tip issue resolved.
                         tooltip: {
@@ -22,11 +23,10 @@
                         }
                     }],
                     // Need to remove the css (e-reportviewer-toolbarcontainer ul.e-ul:nth-child(4)) once the group index issue resolved
-                    groupIndex: 3,
                     cssClass: "e-show"
+
                 }]
             }
-        }
     </script>
 
 }
@@ -34,9 +34,7 @@
 @section description {
     <div id="description">
         <p>
-            This report shows 100,000 records of sales order details using the <a
-                href="https://help.boldreports.com/enterprise-reporting/designer-guide/report-designer/report-items/tablix/"
-                target="_blank">Tablix</a> report item in RDLC report.
+            This report shows 100k records of sales order details using the Tablix report item in RDL report.
         </p>
         <ul>
             <li>The table is displayed with a total row, and the sum of sales is calculated by aggregation of
@@ -46,8 +44,8 @@
             <li>The Item total data text box is formatted in Currency format to enhance the report design.</li>
         </ul>
         <p>
-            More information about RDLC report can be found in this <a
-                href="	https://help.boldreports.com/embedded-reporting/aspnet-core-reporting/report-viewer/rdlc-report/
+            More information about Tablix can be found in this <a
+                href="https://help.boldreports.com/enterprise-reporting/designer-guide/report-designer/report-items/tablix/
 " target="_blank">documentation</a>
             section.
         </p>

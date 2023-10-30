@@ -240,15 +240,16 @@
                                         <FontSize>9pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                         <Format>'$'#,0;('$'#,0)</Format>
-                                        <Color>#ffffff</Color>
+                                        <Color>black</Color>
                                         <Border>
                                           <Color>Transparent</Color>
                                           <Style>None</Style>
                                         </Border>
                                       </Style>
-                                      <UseValueAsLabel>false</UseValueAsLabel>
+                                      <UseValueAsLabel>true</UseValueAsLabel>
                                       <Label>#VALY</Label>
-                                      <Visible>true</Visible>
+                                      <Visible>True</Visible>
+                                      <Position>="Outside"</Position>
                                     </ChartDataLabel>
                                     <Style>
                                       <BackgroundGradientEndColor>White</BackgroundGradientEndColor>

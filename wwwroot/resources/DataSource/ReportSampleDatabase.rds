@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DataSourceDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=SampleDB;</ConnectString>
+  <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=SampleDB;Encrypt=false;TrustServerCertificate=true;</ConnectString>
   <CredentialRetrieval>Store</CredentialRetrieval>
   <Enabled>true</Enabled>
   <Extension>SQL</Extension>

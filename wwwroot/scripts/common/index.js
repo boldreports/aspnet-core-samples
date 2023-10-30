@@ -15,8 +15,6 @@
     loadTabContent();
     setReportsHeight();
     updateTab();
-    disableBarInfo();
-    showTransitionBarInfo();
     $('a[data-toggle="tab"][href="#demo"]').on('shown.bs.tab', resizeReportViewer);
 })();
 

@@ -1,10 +1,4 @@
 ﻿@inject SampleData ds;
-<nav class="ej-info-bar navbar navbar-expand-sm bg-light justify-content-center ej-info-invisible">
-    <p class="ej-info-bar-ctx"><span class="ej-info-bar-new">NEW</span><span class="px-1">Introducing our new version of Reporting tools now accessible.</span><a class="ej-info-bar-highlight" onclick="switchv2()">Try It Now</a> </p>
-    <button type="button" class="ej-info-close close" aria-label="Close" onclick="hideBarInfo(); resetMainTop()">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</nav>
 <div class="ej-sb-header">
     <div class="ej-sb-left-side">
         <div class="ej-sb-hamburger-icon ej-sb-icons" onclick="onHamBurgerClick()"></div>
@@ -32,7 +26,7 @@
     <div class="ej-sb-right-side">
         <!-- We hided this element as per management instruction -->
         @* <a class="ej-sb-button nav-link bold-schedule-demo" href="https://www.boldreports.com/schedule-free-demo" target="_blank">Schedule Free Demo</a> *@
-        <a class="ej-sb-button nav-link product-detail" href="https://www.boldreports.com/embedded-reporting/aspnet-core-report-viewer" target="_blank">Product Detail</a>
+        <a class="ej-sb-button nav-link product-detail" href='@(Context.Request.Path.Value.Contains("ReportViewer") ? "https://www.boldreports.com/embedded-reporting/aspnet-core-report-viewer" : "https://www.boldreports.com/embedded-reporting/aspnet-core-report-writer")' target="_blank">Product Detail</a>
         <a class="ej-sb-button nav-link try-it-free" href="https://app.boldid.net/reporting/embedded/register?plan=120&evaluation=v2&leadsource=demos.boldreports.com&gclid=&referrerroriginurl=https://demos.boldreports.com/pricing&secondaryreferraloriginurl=https://demos.boldreports.com/" target="_blank">Try it Free</a>
     </div>
 </div>

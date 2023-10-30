@@ -2578,10 +2578,7 @@
   <DataSources>
     <DataSource Name="ReportSampleDatabase">
       <rd:SecurityType>None</rd:SecurityType>
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=SampleDB;user id=demoreadonly@data-platform-demo;password=N@c)=Y8s*1&amp;dh</ConnectString>
-      </ConnectionProperties>
+      <DataSourceReference>ReportSampleDatabase</DataSourceReference>
     </DataSource>
   </DataSources>
   <DataSets>

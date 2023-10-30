@@ -16,7 +16,9 @@ namespace ReportsCoreSamples.Controllers
             ViewBag.isDesigner = true;
             ViewBag.toolbarSettings = new BoldReports.Models.ReportDesigner.ToolbarSettings();
             ViewBag.toolbarSettings.Items = BoldReports.ReportDesignerEnums.ToolbarItems.All
-                                               & ~BoldReports.ReportDesignerEnums.ToolbarItems.Save;
+                                               & ~BoldReports.ReportDesignerEnums.ToolbarItems.Save & ~BoldReports.ReportDesignerEnums.ToolbarItems.Open;
+            ViewBag.permissionSettings = new BoldReports.Models.ReportDesigner.PermissionSettings();
+            ViewBag.permissionSettings.DataSource = BoldReports.ReportDesignerEnums.Permission.All & ~BoldReports.ReportDesignerEnums.Permission.Create;
             this.updateMetaData("RDL");
             return View();
         }
@@ -26,7 +28,9 @@ namespace ReportsCoreSamples.Controllers
             ViewBag.isDesigner = true;
             ViewBag.toolbarSettings = new BoldReports.Models.ReportDesigner.ToolbarSettings();
             ViewBag.toolbarSettings.Items = BoldReports.ReportDesignerEnums.ToolbarItems.All
-                                               & ~BoldReports.ReportDesignerEnums.ToolbarItems.Save;
+                                               & ~BoldReports.ReportDesignerEnums.ToolbarItems.Save & ~BoldReports.ReportDesignerEnums.ToolbarItems.Open;
+            ViewBag.permissionSettings = new BoldReports.Models.ReportDesigner.PermissionSettings();
+            ViewBag.permissionSettings.DataSource = BoldReports.ReportDesignerEnums.Permission.All & ~BoldReports.ReportDesignerEnums.Permission.Create;
             this.updateMetaData("RDLC");
             return View("~/Views/RDLC/Index.cshtml");
         }
@@ -74,7 +78,7 @@ namespace ReportsCoreSamples.Controllers
         public void updateDesignerMetaData(dynamic sampleData)
         {
             string title = String.IsNullOrEmpty((string)sampleData.metaData.title) ? sampleData.sampleName : sampleData.metaData.title;
-            string metaContent = "The ASP.NET Core bold report designer allows the end-users to arrange/customize the reports appearance in browsers." +
+            string metaContent = "The ASP.NET Core Bold Report Designer allows the end-users to arrange/customize the reports appearance in browsers." +
                         "It helps to edit the " + title + " for customer\"s application needs.";
             title += " | ASP.NET Core Report Designer";
             ViewBag.Title = title.Length < 45 ? title += " | Bold Reports" : title;

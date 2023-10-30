@@ -3411,10 +3411,8 @@
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="ReportSampleDatabase">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=SampleDB;user id=demoreadonly@data-platform-demo;password=N@c)=Y8s*1&amp;dh</ConnectString>
-      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <DataSourceReference>ReportSampleDatabase</DataSourceReference>
       <rd:ImpersonateUser>false</rd:ImpersonateUser>
     </DataSource>
   </DataSources>
