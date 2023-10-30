@@ -4,11 +4,8 @@
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="AdventureWorks">
-      <ConnectionProperties>
-        <DataProvider>SQLCe</DataProvider>
-        <ConnectString />
-        <IntegratedSecurity>true</IntegratedSecurity>
-      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <DataSourceReference>AdventureWorks</DataSourceReference>
       <rd:ImpersonateUser>false</rd:ImpersonateUser>
     </DataSource>
   </DataSources>

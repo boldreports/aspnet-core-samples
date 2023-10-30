@@ -856,11 +856,7 @@
   <DataSources>
     <DataSource Name="AdventureWorks">
       <rd:SecurityType>None</rd:SecurityType>
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=AdventureWorks;User ID=demoreadonly@data-platform-demo;Password=N@c)=Y8s*1&amp;dh;
-</ConnectString>
-      </ConnectionProperties>
+      <DataSourceReference>AdventureWorks</DataSourceReference>
     </DataSource>
   </DataSources>
   <DataSets>

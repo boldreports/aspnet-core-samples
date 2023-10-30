@@ -28,12 +28,20 @@ namespace ReportsCoreSamples.Controllers
         // IHostingEnvironment used with sample to get the application data from wwwroot.
         private IWebHostEnvironment _hostingEnvironment;
 
+        internal ExternalServer Server { get; set; }
+
+        public string ServerURL { get; set; }
+
         // Post action to process the report from server based json parameters and send the result back to the client.
         public ReportViewerWebApiController(Microsoft.Extensions.Caching.Memory.IMemoryCache memoryCache,
             IWebHostEnvironment hostingEnvironment)
         {
             _cache = memoryCache;
             _hostingEnvironment = hostingEnvironment;
+            ExternalServer externalServer = new ExternalServer(_hostingEnvironment);
+            this.Server = externalServer;
+            this.ServerURL = "Sample";
+            externalServer.ReportServerUrl = this.ServerURL;
         }
 
         // Post action to process the report from server based json parameters and send the result back to the client.
@@ -46,16 +54,22 @@ namespace ReportsCoreSamples.Controllers
         // Method will be called to initialize the report information to load the report with ReportHelper for processing.
         public void OnInitReportOptions(ReportViewerOptions reportOption)
         {
+            reportOption.ReportModel.ReportingServer = this.Server;
+            reportOption.ReportModel.ReportServerUrl = this.ServerURL;
             reportOption.ReportModel.EmbedImageData = true;
             string reportName = reportOption.ReportModel.ReportPath;
             string basePath = _hostingEnvironment.WebRootPath;
-            FileStream reportStream = new FileStream(basePath + @"\resources\Report\" + reportOption.ReportModel.ReportPath, FileMode.Open, FileAccess.Read);
-            reportOption.ReportModel.Stream = reportStream;
-            if (reportName == "load-large-data.rdlc")
+            string reportPath = reportOption.ReportModel.ReportPath;
+            if ((dynamic)reportOption.ReportModel.ReportPath.Split('.').Length <= 1 && reportOption.ReportModel.ProcessingMode.ToString() == "Remote")
             {
-                Models.SqlQuery.getJson(this._cache);
-                reportOption.ReportModel.DataSources.Add(new BoldReports.Web.ReportDataSource("SalesOrderDetail", this._cache.Get("SalesOrderDetail") as DataTable));
+                reportPath += ".rdl";
+            } 
+            else if ((dynamic)reportOption.ReportModel.ReportPath.Split('.').Length <= 1 && reportOption.ReportModel.ProcessingMode.ToString() == "Local")
+            {
+                reportPath += ".rdlc";
             }
+            FileStream reportStream = new FileStream(basePath + @"\resources\Report\" + reportPath, FileMode.Open, FileAccess.Read);
+            reportOption.ReportModel.Stream = reportStream;
 
         }
 

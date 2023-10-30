@@ -1,16 +1,16 @@
 ﻿.customitem-barcode {
-    background-image: url('images/barcode.png');
+    background-image: url('images/barcode.svg');
 }
 
 .customitem-qrbarcode {
-    background-image: url('images/qrbarcode.png');
+    background-image: url('images/qrbarcode.svg');
 }
 
 .customitem-barcode,
 .customitem-qrbarcode {
-    background-position: 50% 50%;
     background-repeat: no-repeat;
-    height: 25px;
+    height: 42px;
+    background-position: center;
 }
 
 .e-rptdesigner-itempanel-dragelements .customitem-barcode,

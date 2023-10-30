@@ -1597,11 +1597,8 @@
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="AdventureWorks">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=dataplatformdemodata.syncfusion.com;Initial Catalog=AdventureWorks;user id=demoreadonly@data-platform-demo;password=N@c)=Y8s*1&amp;dh</ConnectString>
-        <rd:IsDesignState>true</rd:IsDesignState>
-      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <DataSourceReference>AdventureWorks</DataSourceReference>
       <rd:ImpersonateUser>false</rd:ImpersonateUser>
     </DataSource>
   </DataSources>

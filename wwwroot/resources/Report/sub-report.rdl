@@ -1,0 +1,629 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition">
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>155.25pt</Height>
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <Left>0pt</Left>
+            <Top>0pt</Top>
+            <Height>137.25pt</Height>
+            <Width>671.9625pt</Width>
+            <Style>
+              <TextAlign>Center</TextAlign>
+              <VerticalAlign>Middle</VerticalAlign>
+              <Color>#22205f</Color>
+              <PaddingTop>15pt</PaddingTop>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+            <NoRowsMessage>No records returned for the applied report filter or parameters. Try modifying it.</NoRowsMessage>
+            <DataSetName>SalesOrderDetail</DataSetName>
+            <PageBreak>
+              <BreakLocation>StartAndEnd</BreakLocation>
+            </PageBreak>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>671.9584pt</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>137.25pt</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle3">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>137.25pt</Height>
+                          <Width>671.958pt</Width>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                          <ReportItems>
+                            <Textbox Name="TextBox6">
+                              <Left>7.5pt</Left>
+                              <Top>12.72916pt</Top>
+                              <Height>45pt</Height>
+                              <Width>656.9625pt</Width>
+                              <Style>
+                                <BackgroundColor>#697688</BackgroundColor>
+                                <FontFamily>Arial</FontFamily>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <Color>black</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                            </Textbox>
+                            <Textbox Name="TextBox1">
+                              <Left>215.98958pt</Left>
+                              <Top>23.25pt</Top>
+                              <Height>22.5pt</Height>
+                              <Width>219pt</Width>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Shipment Method</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Normal</FontWeight>
+                                        <Color>#ffffff</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>: </Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>#ffffff</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>=Fields!ShipMethod.Value</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>SemiBold</FontWeight>
+                                        <Color>#ffffff</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                            </Textbox>
+                            <Textbox Name="TextBox3">
+                              <Left>490.46875pt</Left>
+                              <Top>23.25pt</Top>
+                              <Height>22.5pt</Height>
+                              <Width>164.25pt</Width>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Purchase Order</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Normal</FontWeight>
+                                        <Color>#ffffff</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>:  </Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>#ffffff</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>=IIF((Fields!PurchaseOrderNumber.Value = "") , "-" , Fields!PurchaseOrderNumber.Value)</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>SemiBold</FontWeight>
+                                        <Color>#ffffff</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>﻿</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>SemiBold</FontWeight>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                            </Textbox>
+                            <Rectangle Name="Rectangle2">
+                              <Left>7.5pt</Left>
+                              <Top>57pt</Top>
+                              <Height>58.5pt</Height>
+                              <Width>656.9625pt</Width>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                              <ReportItems>
+                                <Subreport Name="SubReport3">
+                                  <Left>0pt</Left>
+                                  <Top>0pt</Top>
+                                  <Height>51.75pt</Height>
+                                  <Width>656.9625pt</Width>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                  <ReportName>sub-report-child.rdl</ReportName>
+                                  <Parameters>
+                                    <Parameter Name="SalesOrderNumber">
+                                      <Value>=Fields!SalesOrderNumber.Value</Value>
+                                    </Parameter>
+                                  </Parameters>
+                                </Subreport>
+                              </ReportItems>
+                              <KeepTogether>true</KeepTogether>
+                            </Rectangle>
+                            <Textbox Name="TextBox7">
+                              <Left>23.94792pt</Left>
+                              <Top>24pt</Top>
+                              <Height>22.5pt</Height>
+                              <Width>172.5pt</Width>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>Sale</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Normal</FontWeight>
+                                        <Color>#ffffff</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>s Order Numbe</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Normal</FontWeight>
+                                        <Color>#ffffff</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>r</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Normal</FontWeight>
+                                        <Color>#ffffff</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>: </Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>#ffffff</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>=Fields!SalesOrderNumber.Value</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>SemiBold</FontWeight>
+                                        <Color>#ffffff</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                            </Textbox>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                        </Rectangle>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="SalesOrderNumber1">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!SalesOrderNumber.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!SalesOrderNumber.Value</Value>
+                      <Direction>Ascending</Direction>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Visibility>
+                        <Hidden>False</Hidden>
+                      </Visibility>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+          </Tablix>
+        </ReportItems>
+        <Style>
+          <FontFamily>Arial</FontFamily>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>671.9584pt</Width>
+      <Page>
+        <PageHeight>1188pt</PageHeight>
+        <PageWidth>842.4pt</PageWidth>
+        <PageHeader>
+          <Height>64.45834pt</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Rectangle Name="Rectangle1">
+              <Left>0pt</Left>
+              <Top>0pt</Top>
+              <Height>37.5pt</Height>
+              <Width>671.9625pt</Width>
+              <Style>
+                <BackgroundColor>#555b63</BackgroundColor>
+                <FontFamily>Arial</FontFamily>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+              <ReportItems>
+                <Textbox Name="TextBox4">
+                  <Left>9.72pt</Left>
+                  <Top>7.5pt</Top>
+                  <Height>20.0025pt</Height>
+                  <Width>246.75pt</Width>
+                  <Style>
+                    <FontFamily>Arial</FontFamily>
+                    <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>Sales Order Details by Order Number</Value>
+                          <Style>
+                            <FontSize>12pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
+                            <Color>#ffffff</Color>
+                          </Style>
+                        </TextRun>
+                        <TextRun>
+                          <Value>﻿</Value>
+                          <Style>
+                            <FontSize>12pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
+                            <Color>#ffffff</Color>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <TextAlign>Left</TextAlign>
+                      </Style>
+                    </Paragraph>
+                  </Paragraphs>
+                </Textbox>
+              </ReportItems>
+              <KeepTogether>true</KeepTogether>
+            </Rectangle>
+            <Textbox Name="TextBox2">
+              <Left>354pt</Left>
+              <Top>41.20834pt</Top>
+              <Height>23.25pt</Height>
+              <Width>309pt</Width>
+              <Style>
+                <FontFamily>Arial</FontFamily>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Orders with purchase date starts from </Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <Color>#555b63</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Format(Parameters!StartDate.Value, "dd-MM-yyyy")</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <Color>#555b63</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value> to </Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <Color>#555b63</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Format(Parameters!EndDate.Value, "dd-MM-yyyy")</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <Color>#555b63</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <FontFamily>Arial</FontFamily>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <FontFamily>Arial</FontFamily>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>20.25pt</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <FontFamily>Arial</FontFamily>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <LeftMargin>84pt</LeftMargin>
+        <RightMargin>36pt</RightMargin>
+        <TopMargin>54pt</TopMargin>
+        <BottomMargin>36pt</BottomMargin>
+        <Style>
+          <FontFamily>Arial</FontFamily>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <DataSources>
+    <DataSource Name="AdventureWorks">
+      <rd:SecurityType>None</rd:SecurityType>
+      <DataSourceReference>AdventureWorks</DataSourceReference>
+      <rd:ImpersonateUser>false</rd:ImpersonateUser>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="SalesOrderDetail">
+      <Query>
+        <DataSourceName>AdventureWorks</DataSourceName>
+        <CommandText>SELECT  Top(50)  SOD.SalesOrderDetailID, SOD.OrderQty, SOD.UnitPrice, 
+            CASE WHEN SOD.UnitPriceDiscount IS NULL THEN 0 ELSE SOD.UnitPriceDiscount END AS UnitPriceDiscount, 
+            SOD.LineTotal, SOD.CarrierTrackingNumber, SOD.SalesOrderID, P.Name, P.ProductNumber, SOH.SalesOrderNumber,
+			 SOH.PurchaseOrderNumber, SM.Name AS ShipMethod
+FROM        Sales.SalesOrderDetail SOD INNER JOIN
+            Production.Product P ON SOD.ProductID = P.ProductID INNER JOIN
+            Sales.SalesOrderHeader SOH ON SOD.SalesOrderID = SOH.SalesOrderID LEFT OUTER JOIN 
+			Purchasing.ShipMethod SM ON SOH.ShipMethodID = SM.ShipMethodID
+WHERE  (SOH.OrderDate &gt; @StartDate) AND (SOH.OrderDate &lt; @EndDate)
+ORDER BY    SOD.SalesOrderDetailID
+
+</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+      <Fields>
+        <Field Name="SalesOrderDetailID">
+          <DataField>SalesOrderDetailID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="OrderQty">
+          <DataField>OrderQty</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="UnitPrice">
+          <DataField>UnitPrice</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="UnitPriceDiscount">
+          <DataField>UnitPriceDiscount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="LineTotal">
+          <DataField>LineTotal</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CarrierTrackingNumber">
+          <DataField>CarrierTrackingNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SalesOrderID">
+          <DataField>SalesOrderID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProductNumber">
+          <DataField>ProductNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SalesOrderNumber">
+          <DataField>SalesOrderNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PurchaseOrderNumber">
+          <DataField>PurchaseOrderNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipMethod">
+          <DataField>ShipMethod</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="StartDate">
+      <DataType>DateTime</DataType>
+      <Prompt>Start Date:</Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>7/6/2003 12:00:00 AM</Value>
+        </Values>
+      </DefaultValue>
+    </ReportParameter>
+    <ReportParameter Name="EndDate">
+      <DataType>DateTime</DataType>
+      <Prompt>End Date:</Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>8/6/2003 12:00:00 AM</Value>
+        </Values>
+      </DefaultValue>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>StartDate</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>EndDate</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:PageUnit>Px</rd:PageUnit>
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+</Report>

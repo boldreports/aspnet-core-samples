@@ -10,15 +10,17 @@ using System.IO;
 
 namespace ReportsCoreSamples.Controllers
 {
-    
+
     public class ReportWriterController : PreviewController
     {
-     private IWebHostEnvironment _hostingEnvironment;
+        private IWebHostEnvironment _hostingEnvironment;
 
         public ReportWriterController(IWebHostEnvironment hostingEnvironment)
         {
             _hostingEnvironment = hostingEnvironment;
         }
+        internal ExternalServer Server { get; set; }
+        public string ServerURL { get; set; }
         public string getName(string name)
         {
             string[] splittedNames = name.Split('-');
@@ -46,6 +48,15 @@ namespace ReportsCoreSamples.Controllers
                 string fileName = reportName.Contains("-") ? getName(reportName) : (char.ToUpper(reportName[0]) + reportName.Substring(1));
                 WriterFormat format;
                 ReportWriter reportWriter = new ReportWriter();
+
+                ExternalServer externalServer = new ExternalServer(_hostingEnvironment);
+                this.Server = externalServer;
+                this.ServerURL = "Sample";
+                externalServer.ReportServerUrl = this.ServerURL;
+                reportWriter.ReportingServer = this.Server;
+                reportWriter.ReportServerUrl = this.ServerURL;
+                reportWriter.ReportServerCredential = System.Net.CredentialCache.DefaultCredentials;
+
                 reportWriter.ReportProcessingMode = ProcessingMode.Remote;
                 reportWriter.ExportResources.UsePhantomJS = true;
                 reportWriter.ExportResources.PhantomJSPath = basePath + @"\PhantomJS\";
@@ -55,19 +66,10 @@ namespace ReportsCoreSamples.Controllers
 
                 reportWriter.ExportResources.Scripts = new List<string>
                 {
-                    //Gauge component scripts
-                    "../../scripts/bold-reports/common/ej2-base.min.js",
-                    "../../scripts/bold-reports/common/ej2-pdf-export.min.js",
-                    "../../scripts/bold-reports/common/ej2-svg-base.min.js",
-                    "../../scripts/bold-reports/data-visualization/ej2-lineargauge.min.js",
-                    "../../scripts/bold-reports/data-visualization/ej2-circulargauge.min.js",
-
-                    "../../scripts/bold-reports/common/bold.reports.common.min.js",
-                    "../../scripts/bold-reports/common/bold.reports.widgets.min.js",
-                    //Chart component script
-                    "../../scripts/bold-reports/data-visualization/ej.chart.min.js",
+                    "../../scripts/bold-reports/v2.0/common/bold.reports.common.min.js",
+                    "../../scripts/bold-reports/v2.0/common/bold.reports.widgets.min.js",
                     //Report Viewer Script
-                    "../../scripts/bold-reports/bold.report-viewer.min.js"
+                    "../../scripts/bold-reports/v2.0/bold.report-viewer.min.js"
                 };
 
                 reportWriter.ExportResources.DependentScripts = new List<string>
@@ -90,18 +92,19 @@ namespace ReportsCoreSamples.Controllers
                     fileName += ".csv";
                     format = WriterFormat.CSV;
                 }
-                 else if (type == "html")
+                else if (type == "html")
                 {
                     fileName += ".html";
                     format = WriterFormat.HTML;
                 }
-                 else if (type == "ppt")
+                else if (type == "ppt")
                 {
                     fileName += ".ppt";
                     format = WriterFormat.PPT;
                 }
-                else if(type == "xml"){
-                    fileName +=".xml";
+                else if (type == "xml")
+                {
+                    fileName += ".xml";
                     format = WriterFormat.XML;
                 }
                 else

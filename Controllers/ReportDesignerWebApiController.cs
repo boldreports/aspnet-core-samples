@@ -119,12 +119,6 @@ namespace ReportsCoreSamples.Controllers
             reportOption.ReportModel.ReportingServer = this.Server;
             reportOption.ReportModel.ReportServerUrl = this.ServerURL;
             reportOption.ReportModel.ReportServerCredential = new NetworkCredential("Sample", "Passwprd");
-            if (reportName == "load-large-data.rdlc")
-            {
-                Models.SqlQuery.getJson(this._cache);
-                reportOption.ReportModel.ProcessingMode = ProcessingMode.Remote;
-                reportOption.ReportModel.DataSources.Add(new ReportDataSource("SalesOrderDetail", _cache.Get("SalesOrderDetail") as DataTable));
-            }
 
         }
 

@@ -43,7 +43,7 @@
         "index": 1
       },
       "metaData": {
-        "description": "Company Sales report shows product sales against year in matrix format using SSRS Tablix report item in ASP.NET Core bold report viewer."
+        "description": "The SSRS Tablix report elegantly presents the company's sales data in a matrix format, showcasing product sales across various years in ASP.NET Core Bold Report Viewer."
       }
     },
     {
@@ -55,7 +55,7 @@
         "index": 3
       },
       "metaData": {
-        "description": "Mail merge shows to envelope the employee details using SSRS List report item in ASP.NET Core bold report viewer."
+        "description": "Demonstrates how to create mail merge envelopes for employee details using the SSRS List report item with the ASP.NET Core Bold Report Viewer."
       }
     },
     {
@@ -67,7 +67,7 @@
         "index": 9
       },
       "metaData": {
-        "description": "This demo shows the sales order details using RDL basic table with currency formatting in price textbox fields in ASP.NET Core bold report viewer."
+        "description": "This demonstration showcases sales order details using a basic RDL table format, featuring currency formatting for the price fields textbox in ASP.NET Core Bold Report Viewer."
       }
     },
     {
@@ -79,7 +79,7 @@
         "index": 5
       },
       "metaData": {
-        "description": "This demo shows the sales territory and its total sales using drilldown with  SSRS matrix report in ASP.NET Core bold report viewer."
+        "description": "This demonstration highlights an SSRS matrix report with drilldown capabilities, focusing on the presentation of sales territories and their total sales in ASP.NET Core Bold Report Viewer."
       }
     },
     {
@@ -91,7 +91,7 @@
         "index": 0
       },
       "metaData": {
-        "description": "This demo shows the customer details in SSRS table report item and details are highlighted based on conditional row formatting in ASP.NET Core bold report viewer. "
+        "description": "This demonstration illustrates customer details in an SSRS table report item, with the details being highlighted based on conditional row formatting in ASP.NET Core Bold Report Viewer."
       }
     },
     {
@@ -103,7 +103,7 @@
         "index": 0
       },
       "metaData": {
-        "description": "The barcode demo shows the available 1D, 2D and QR barcode types rendered in ASP.NET Core bold report viewer through RDL Custom Report Item."
+        "description": "The barcode demo provides an extensive display of 1D, 2D, and QR barcode types, all seamlessly rendered through the ASP.NET Core Bold Report Viewer using RDL Custom Report Item."
       }
     },
     {
@@ -115,7 +115,7 @@
         "index": 1
       },
       "metaData": {
-        "description": "This demo shows customer support analysis with SSRS drill through to explore details in another report based on user click action in ASP.NET Core bold report viewer."
+        "description": "This demo features a customer support analysis with SSRS drill-through capabilities that allow users to explore details in another report through a click action in the ASP.NET Core Bold Report Viewer."
       }
     },
     {
@@ -175,7 +175,7 @@
         "index": 4
       },
       "metaData": {
-        "description": "This demo shows the product and suppliers details using SSRS pyramid, bar, column charts and table widget in ASP.NET Core bold report viewer.",
+        "description": "This demo effectively showcases product and supplier details by leveraging SSRS pyramid, bar, column charts, and a table widget within the ASP.NET Core Bold Report Viewer.",
         "title": "Northwind Products Report"
       }
     },
@@ -236,7 +236,7 @@
         "index": 2
       },
       "metaData": {
-        "description": "This demo shows product sales total based on  quarterly wise RDL tablix grouping in ASP.NET Core bold report viewer."
+        "description": "This demo offers a transparent portrayal of product sales totals, thoughtfully organized by quarters using RDL tablix grouping in the ASP.NET Core Bold Report Viewer."
       }
     },
     {
@@ -254,13 +254,14 @@
     {
       "routerPath": "LoadLargeData",
       "sampleName": "Load Large Data",
+      "status": "Updated",
       "basePath": "ReportViewer",
       "imageDetails": {
         "isLandscape": false,
         "index": 9
       },
       "metaData": {
-        "description": "This demo shows the sales order details using RDLC basic table with currency formatting in price textbox fields in ASP.NET Core bold report viewer."
+        "description": "This demo effectively presents sales order details through a straightforward RDL basic table containing 100K rows, complete with currency formatting, all within the ASP.NET Core Bold Report Viewer."
       }
     },
     {
@@ -272,7 +273,7 @@
         "index": 12
       },
       "metaData": {
-        "description": "This demos allows shows the consolidated balance sheet RDLC report represents the assets and liabilities of a company in ASP.NET Core bold report viewer."
+        "description": "This demo succinctly presents a consolidated balance sheet RDLC report, emphasizing a company's assets and liabilities in ASP.NET Core Bold Report Viewer."
       }
     },
     {
@@ -284,7 +285,7 @@
         "index": 7
       },
       "metaData": {
-        "description": "This demos shows the Paystub report represents the payslip of a company in ASP.NET Core bold report viewer."
+        "description": "The demo features a Paystub report that meticulously showcases the company's payslip, encompassing all crucial details and information in ASP.NET Core Bold Report Viewer."
       }
     },
     {
@@ -296,7 +297,7 @@
         "index": 8
       },
       "metaData": {
-        "description": "This demos allows you to choose the chart series dynamically in ASP.NET Core bold report viewer."
+        "description": "This demo offers dynamic control over chart series selection, enhancing the interactive reporting experience in ASP.NET Core Bold Report Viewer."
       }
     },
     {
@@ -308,7 +309,7 @@
         "index": 9
       },
       "metaData": {
-        "description": "This demo represents company sales against year in table format with data bar report item in ASP.NET Core Bold Report Viewer."
+        "description": "This demo portrays company sales against years in a tabular format, incorporating a data bar report item for visual clarity in the ASP.NET Core Bold Report Viewer."
       }
     },
     {
@@ -320,7 +321,7 @@
         "index": 10
       },
       "metaData": {
-        "description": "This demo shows the company sales data with sparkline report item to represents the sales trend in ASP.NET Core Bold Report Viewer."
+        "description": "This demo effectively displays company sales data using a sparkline report item, offering a clear and insightful representation of the sales trend in ASP.NET Core Bold Report Viewer."
       }
     },
     {
@@ -332,7 +333,7 @@
         "index": 13
       },
       "metaData": {
-        "description": "This demo allows you to choose the column of the table dynamically in ASP.NET Core Bold Report Viewer."
+        "description": "This demo empowers users with the ability to dynamically select table columns for enhanced flexibility and customization within the ASP.NET Core Bold Report Viewer."
       }
     },   
     {
@@ -356,19 +357,33 @@
         "index": 7
       },
       "metaData": {
-        "description": "The Product Line Sales report displays sales details organized by category and subcategory of products using cascading parameters and date time picker non cascading parameters in ASP.NET Core Bold Report Viewer."
+        "description": "This demo displays sales details organized by category and subcategory of products using cascading parameters and date time picker non cascading parameters in ASP.NET Core Bold Report Viewer."
       }
     },             
     {
-      "routerPath": "",
-      "sampleName": "Report Writer",
-      "basePath": "ReportWriter",
+      "routerPath": "SubReport",
+      "sampleName": "Sub Report",
+      "basePath": "ReportViewer",
+      "status": "New",
       "imageDetails": {
-        "isLandscape": true,
-        "index": 11
+        "isLandscape": false,
+        "index": 14
       },
       "metaData": {
-        "description": "This demos allows you to export the RDL or RDLC report with popular file formats like PDF, HTML, Microsoft Word, and Microsoft Excel without previewing the report in viewer using ASP.NET Core bold report writer."
+        "description": "This demo grants the capability to embed an additional report within the body of the main report, enriching the content and interactivity of the report in the ASP.NET Core Bold Report Viewer."
+      }
+    },              
+    {
+      "routerPath": "",
+      "sampleName": "Report Writer",
+      "status": "Updated",
+      "basePath": "ReportWriter",
+      "imageDetails": {
+        "isLandscape": false,
+        "index": 15
+      },
+      "metaData": {
+        "description": "This demos allows you to export the RDL or RDLC report with popular file formats like PDF, HTML, Word, and Excel without previewing the report in viewer using ASP.NET Core bold report writer."
       }
     }
   ]
