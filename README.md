@@ -15,8 +15,8 @@ This section guides you to use the Bold Reports ASP.NET Core samples in your app
 
 The samples requires the below requirements to run.
 
-* [Visual Studio 2015/2017](https://visualstudio.microsoft.com/downloads/)
-* [.NET Core 2.1 SDK](https://dotnet.microsoft.com/download/dotnet-core)
+* [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
+* [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## Using the Reporting Samples
 
