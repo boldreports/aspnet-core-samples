@@ -58,8 +58,9 @@ namespace ReportsCoreSamples.Controllers
                 reportWriter.ReportServerCredential = System.Net.CredentialCache.DefaultCredentials;
 
                 reportWriter.ReportProcessingMode = ProcessingMode.Remote;
-                reportWriter.ExportResources.UsePhantomJS = true;
-                reportWriter.ExportResources.PhantomJSPath = basePath + @"\PhantomJS\";
+                reportWriter.ExportSettings = new customBrowsertype(_hostingEnvironment);
+                reportWriter.ExportResources.BrowserType = ExportResources.BrowserTypes.External;
+                reportWriter.ExportResources.ResourcePath = basePath + @"/puppeteer/";
 
                 FileStream inputStream = new FileStream(basePath + @"\Resources\Report\" + reportName + ".rdl", FileMode.Open, FileAccess.Read);
                 reportWriter.LoadReport(inputStream);
@@ -127,6 +128,29 @@ namespace ReportsCoreSamples.Controllers
             }
 
         }
+
+        public class customBrowsertype : ExportSettings
+        {
+            private IWebHostEnvironment _hostingEnvironment;
+
+            public customBrowsertype(IWebHostEnvironment hostingEnvironment)
+            {
+                _hostingEnvironment = hostingEnvironment;
+            }
+            public override string GetImageFromHTML(string url)
+            {
+                return ConvertBase64(url).Result;
+            }
+            public async Task<string> ConvertBase64(string url)
+            {
+                string puppeteerChromeExe = _hostingEnvironment.WebRootPath  + @"\puppeteer\Win-901912\chrome-win\chrome.exe";
+                await using var browser = await PuppeteerSharp.Puppeteer.LaunchAsync(new PuppeteerSharp.LaunchOptions { Headless = true, ExecutablePath = puppeteerChromeExe });
+                await using var page = await browser.NewPageAsync();
+                await page.GoToAsync(url);
+                return await page.WaitForSelectorAsync("#imagejsonData").Result.GetPropertyAsync("innerText").Result.JsonValueAsync<string>();
+            }
+        }
     }
+
 
 }
