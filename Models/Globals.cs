@@ -13,12 +13,12 @@ namespace ReportsCoreSamples.Models
     {
         public static string SERVICE_URL;
         public static string DESIGNER_SERVICE_URL;
-        public static bool isPhatomJSExist;
+        public static bool isPuppeteerExist;
         public Globals(IHttpContextAccessor _context, IWebHostEnvironment hostingEnvironment)
         {
             SERVICE_URL = _context.HttpContext.Request.PathBase + "/ReportViewerWebApi";
             DESIGNER_SERVICE_URL = _context.HttpContext.Request.PathBase + "/ReportDesignerWebApi";
-            isPhatomJSExist = File.Exists(hostingEnvironment.WebRootPath + @"\PhantomJS\phantomjs.exe");
+            isPuppeteerExist = File.Exists(hostingEnvironment.WebRootPath + @"\puppeteer\Win-901912\chrome-win\chrome.exe");
         }
     }
     public class CSRFHandler

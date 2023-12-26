@@ -2,7 +2,7 @@
 
 @section control {
     <form action="~/ReportWriter/generate" class="r-w-form" id="reportform" method="post">
-        <div class="r-w-container">
+        <div class="r-w-container" id="writer-container">
             <div class="r-w-sample-container">
                 <div class="r-w-samples">
                     <div class="r-w-samples-landscape">
@@ -53,10 +53,10 @@
                 </div>
                 <input type="text" style="display:none" name="reportName" />
                 <input type="submit" class="r-w-genearte e-control e-btn e-lib e-primary" id="update" value="Generate" />
-                @if (!Globals.isPhatomJSExist)
+                @if (!Globals.isPuppeteerExist)
                 {
                     <div class="alert alert-warning alert-dismissible" role="alert">
-                        Data Visualization report items will not be exported properly since <a href="https://phantomjs.org/" target="_blank">PhanthomJS</a> was not found in this application.
+                        Data Visualization report items will not be exported properly since <a href="https://github.com/puppeteer/puppeteer" target="_blank" rel="noreferrer">Puppeteer</a> was not found in this application.
                     </div>
                 }
             </div>
@@ -91,10 +91,10 @@
             This demo allows you to <code>export</code> the Website Visitor Analysis, Northwind Products and Suppliers, Sales Report, Company Sales and Sales Order Detail Reports with popular file formats like PDF, HTML, Microsoft Word, and Microsoft Excel without previewing the report using our Report Viewer.
         </p>
         <p>
-            It uses <a href="https://phantomjs.org/" target="_blank">PhantomJS</a> for exporting the reports in various file formats.
+            It uses <a href="https://github.com/puppeteer/puppeteer" target="_blank" rel="noreferrer">Puppeteer</a> for exporting the reports in various file formats.
         </p>
         <p>
-            More information about report writer can be found in this <a href="https://help.boldreports.com/embedded-reporting/aspnet-core-reporting/report-writer/" target="_blank">documentation</a> section.
+            More information about report writer can be found in this <a href="https://help.boldreports.com/embedded-reporting/aspnet-core-reporting/report-writer/" target="_blank" rel="noreferrer">documentation</a> section.
         </p>
     </div>
 }

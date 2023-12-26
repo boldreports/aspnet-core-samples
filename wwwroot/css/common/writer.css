@@ -112,8 +112,9 @@
             margin-right: 50px;
         }
 
-        .r-w-container .r-w-property-container .r-w-property .r-w-property-value {
+        #writer-container .r-w-property-container .r-w-property .r-w-property-value {
             margin-top: -4px;
+            width: 145px;
         }
 
     .r-w-container .r-w-property-container .r-w-genearte {

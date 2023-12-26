@@ -28,10 +28,28 @@
             }
         }
     </script>
-    <link href="~/bundles/main/app.min.css" rel="stylesheet" />
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-K73VBT8');</script>
+    <!-- End Google Tag Manager -->
+        <link href="~/bundles/main/app.min.css" rel="stylesheet" />
+
 </head>
 <body>
     <div hidden id="reports-analytics" data-queue="Bold Reports - Demos - ASP.NET Core"></div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K73VBT8"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
     @RenderBody()
     <div class="splash">
         <div class="message">ASP.NET Core Reports</div>
@@ -133,23 +151,23 @@
                                     <div class="cnt-text cnt-text-3"></div>
                                 </div>
                             </div>
-                            <a class="free-trial-url" target="_blank">
+                            <a class="free-trial-url" target="_blank" rel="noreferrer">
                                 <div class="free-trial">TRY IT FOR FREE</div>
                             </a>
                         </div>
                         <!--Footer section-->
                         <div class="ej-lp-footer">
                             <div class="ej-lp-footer-links">
-                                <a href="https://help.boldreports.com/embedded-reporting/aspnet-core-reporting/" target="_blank">
+                                <a href="https://help.boldreports.com/embedded-reporting/aspnet-core-reporting/" target="_blank" rel="noreferrer">
                                     Documentation
                                 </a>
-                                 <a href="https://www.boldreports.com/blog" target="_blank">
+                                 <a href="https://www.boldreports.com/blog" target="_blank" rel="noreferrer">
                                     Blog
                                 </a>
-                                <a href="https://support.boldreports.com/" target="_blank">
+                                <a href="https://support.boldreports.com/" target="_blank" rel="noreferrer">
                                     Support
                                 </a>
-                                <a href="https://www.boldreports.com/feedback" target="_blank">
+                                <a href="https://www.boldreports.com/feedback" target="_blank" rel="noreferrer">
                                     Feedback
                                 </a>
                             </div>

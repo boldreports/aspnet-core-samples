@@ -1039,13 +1039,10 @@
                                   <Value>=Fields!Date.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <Format>MMM d, yyyy</Format>
-                                    <FormatType xmlns="http://tempuri.org/">
-                                      <Format>date</Format>
-                                      <Representation />
-                                      <NegativeValue />
-                                      <Culture />
-                                    </FormatType>
+                                    <Format>MM/dd/yyyy</Format>
+                                    <rd:FormatType>
+                                      <rd:Format>date</rd:Format>
+                                    </rd:FormatType>
                                     <TextAlign>Left</TextAlign>
                                     <VerticalAlign>Middle</VerticalAlign>
                                     <Color>black</Color>
