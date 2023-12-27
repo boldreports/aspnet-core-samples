@@ -18,6 +18,12 @@ The samples requires the below requirements to run.
 * [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
 * [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet-core)
 
+In order to download samples in the Report Writer Properly , run the below mwntioned command.
+
+```cmd
+npm install
+```
+
 ## Using the Reporting Samples
 
 * Open the solution file `ReportsCoreSamples.sln` in Visual Studio.

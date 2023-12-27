@@ -1,0 +1,15 @@
+{
+  "name": "aspnet-core-samples",
+  "version": "5.4.20",
+  "description": "NPM package of BoldReports build tasks",
+  "author": "Syncfusion",
+  "license": "Syncfusion",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "shelljs": "0.8.5",
+    "unzipper": "^0.10.11",
+    "gulp-download": "0.0.1"
+  }
+} 
