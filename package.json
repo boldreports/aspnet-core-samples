@@ -7,11 +7,11 @@
     "postinstall": "gulp puppeteer-download"
   },
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "4.0.2"
   },
   "dependencies": {
     "shelljs": "0.8.5",
-    "unzipper": "^0.10.11",
+    "unzipper": "0.10.11",
     "gulp-download": "0.0.1"
   }
 } 

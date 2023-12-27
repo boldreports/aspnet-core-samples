@@ -18,7 +18,7 @@ The samples requires the below requirements to run.
 * [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
 * [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet-core)
 
-In order to download samples in the Report Writer Properly , run the below mwntioned command.
+To export the data visualization report items in report writer, run the below mentioned command. Without this, the data visualization report items no longer available in the report exported documents only for the report writer.
 
 ```cmd
 npm install
