@@ -1,7 +1,6 @@
 {
   "name": "aspnet-core-samples",
   "version": "5.4.20",
-  "description": "NPM package of BoldReports build tasks",
   "author": "Syncfusion",
   "license": "Syncfusion",
   "devDependencies": {
