@@ -84,6 +84,8 @@ var EJBarcode = (function () {
                 this.updatePropertyVal(name, (newValue === true) ? 'true' : 'false');
         }
     };
+    EJBarcode.prototype.updatePropertyUIValue = function (name, value) {
+    };
     EJBarcode.prototype.onPositionChanged = function (top, left) {
     };
     EJBarcode.prototype.onSizeChanged = function (height, width) {
@@ -113,13 +115,13 @@ var EJBarcode = (function () {
             'IsEditHeader': true,
             'Items': [{
                     'CategoryId': 'basicsettings',
-                    'DisplayName': this.getLocale('categoryBasicSettings'),
+                    'DisplayName': 'categoryBasicSettings',
                     'IsExpand': true,
                     'Items': [
                         {
                             'ItemId': 'barcodetype',
                             'Name': 'BarcodeType',
-                            'DisplayName': this.getLocale('BarcodeType'),
+                            'DisplayName': 'BarcodeType',
                             'Value': barCodeType,
                             'ItemType': 'DropDown',
                             'EnableExpression': false,
@@ -130,7 +132,7 @@ var EJBarcode = (function () {
                         {
                             'ItemId': 'barcodevalue',
                             'Name': 'BarcodeValue',
-                            'DisplayName': this.getLocale('barcodeValue'),
+                            'DisplayName': 'barcodeValue',
                             'EnableExpression': true,
                             'Value': this.getPropertyVal('BarcodeValue'),
                             'ItemType': 'TextBox'
@@ -138,7 +140,7 @@ var EJBarcode = (function () {
                         {
                             'ItemId': 'displaybarcodetext',
                             'Name': 'DisplayBarcodeText',
-                            'DisplayName': this.getLocale('displayText'),
+                            'DisplayName': 'displayText',
                             'Value': this.isDisplayText() ? true : false,
                             'ItemType': 'Bool',
                             'EnableExpression': false

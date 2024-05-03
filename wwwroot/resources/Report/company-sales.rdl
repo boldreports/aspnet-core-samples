@@ -227,7 +227,7 @@
                                   <Value>=Sum(Fields!Sales.Value)</Value>
                                   <Style>
                                     <FontFamily>Arial</FontFamily>
-                                    <Format>C0</Format>
+                                    <Format>'$'#,0;('$'#,0)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>

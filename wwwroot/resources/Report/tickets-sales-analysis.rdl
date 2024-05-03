@@ -3,12 +3,12 @@
   <ReportSections>
     <ReportSection>
       <Body>
-        <Height>755.8906pt</Height>
+        <Height>876.75pt</Height>
         <ReportItems>
           <Rectangle Name="Rectangle1">
             <Left>7.5pt</Left>
-            <Top>7.5pt</Top>
-            <Height>263.2502pt</Height>
+            <Top>15pt</Top>
+            <Height>322.5pt</Height>
             <Width>320.25pt</Width>
             <Style>
               <BackgroundColor>#ffffff</BackgroundColor>
@@ -21,7 +21,7 @@
             <ReportItems>
               <Textbox Name="TextBox2">
                 <Left>7.5pt</Left>
-                <Top>0pt</Top>
+                <Top>7.5pt</Top>
                 <Height>19.5pt</Height>
                 <Width>231.75pt</Width>
                 <Style>
@@ -44,7 +44,7 @@
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
                           <FontSize>11.25pt</FontSize>
-                          <Color>#2F1110</Color>
+                          <Color>#2f1110</Color>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -54,8 +54,8 @@
               </Textbox>
               <Chart Name="Chart1">
                 <Left>0pt</Left>
-                <Top>28.5pt</Top>
-                <Height>233.25pt</Height>
+                <Top>48pt</Top>
+                <Height>262.5pt</Height>
                 <Width>318.75pt</Width>
                 <Style>
                   <FontFamily>Segoe UI</FontFamily>
@@ -69,6 +69,12 @@
                     <Style>None</Style>
                   </Border>
                 </Style>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>MaxDataCount</Name>
+                    <Value>50000</Value>
+                  </CustomProperty>
+                </CustomProperties>
                 <DataSetName>TopShows</DataSetName>
                 <ChartSeriesHierarchy>
                   <ChartMembers>
@@ -125,7 +131,7 @@
                               </Border>
                             </Style>
                             <Label>=IIf((Sum(Fields!TotalTicketsSold.Value)) &gt; 1000,  (Format((Sum(Fields!TotalTicketsSold.Value)/1000), "#,##0.##") + "K"), Sum(Fields!TotalTicketsSold.Value))</Label>
-                            <Visible>true</Visible>
+                            <Visible>True</Visible>
                           </ChartDataLabel>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
@@ -138,7 +144,6 @@
                             </Border>
                           </Style>
                           <ChartMarker>
-                            <Type>None</Type>
                             <Size>6pt</Size>
                             <Style>
                               <FontFamily>Segoe UI</FontFamily>
@@ -166,7 +171,6 @@
                         </Border>
                       </Style>
                       <ChartMarker>
-                        <Type>None</Type>
                         <Size>6pt</Size>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
@@ -634,7 +638,7 @@
                 </ChartAreas>
                 <ChartLegends>
                   <ChartLegend Name="Default">
-                    <Hidden>true</Hidden>
+                    <Hidden>True</Hidden>
                     <Position>BottomCenter</Position>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
@@ -672,7 +676,7 @@
                 <ChartTitles>
                   <ChartTitle Name="Default">
                     <Caption>Chart Title</Caption>
-                    <Hidden>true</Hidden>
+                    <Hidden>True</Hidden>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -722,9 +726,9 @@
             <KeepTogether>true</KeepTogether>
           </Rectangle>
           <Rectangle Name="Rectangle2">
-            <Left>341.2426pt</Left>
-            <Top>7.5pt</Top>
-            <Height>263.25pt</Height>
+            <Left>341.23956pt</Left>
+            <Top>15pt</Top>
+            <Height>322.5pt</Height>
             <Width>320.25pt</Width>
             <Style>
               <BackgroundColor>#ffffff</BackgroundColor>
@@ -737,7 +741,7 @@
             <ReportItems>
               <Textbox Name="TextBox3">
                 <Left>7.5pt</Left>
-                <Top>0pt</Top>
+                <Top>7.5pt</Top>
                 <Height>19.5pt</Height>
                 <Width>245.25pt</Width>
                 <Style>
@@ -760,7 +764,7 @@
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
                           <FontSize>11.25pt</FontSize>
-                          <Color>#2F1110</Color>
+                          <Color>#2f1110</Color>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -770,8 +774,8 @@
               </Textbox>
               <Chart Name="Chart2">
                 <Left>0pt</Left>
-                <Top>28.50023pt</Top>
-                <Height>233.2498pt</Height>
+                <Top>47.98959pt</Top>
+                <Height>262.5pt</Height>
                 <Width>318.75pt</Width>
                 <Style>
                   <FontFamily>Segoe UI</FontFamily>
@@ -785,6 +789,12 @@
                     <Style>None</Style>
                   </Border>
                 </Style>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>MaxDataCount</Name>
+                    <Value>50000</Value>
+                  </CustomProperty>
+                </CustomProperties>
                 <DataSetName>ShowDetails</DataSetName>
                 <ChartSeriesHierarchy>
                   <ChartMembers>
@@ -841,7 +851,7 @@
                               </Border>
                             </Style>
                             <Label>#PERCENT</Label>
-                            <Visible>true</Visible>
+                            <Visible>True</Visible>
                           </ChartDataLabel>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
@@ -853,7 +863,6 @@
                             </Border>
                           </Style>
                           <ChartMarker>
-                            <Type>None</Type>
                             <Size>6pt</Size>
                             <Style>
                               <FontFamily>Segoe UI</FontFamily>
@@ -882,7 +891,6 @@
                         </Border>
                       </Style>
                       <ChartMarker>
-                        <Type>None</Type>
                         <Size>6pt</Size>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
@@ -1385,7 +1393,7 @@
                 <ChartTitles>
                   <ChartTitle Name="Default">
                     <Caption>Chart Title</Caption>
-                    <Hidden>true</Hidden>
+                    <Hidden>True</Hidden>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -1443,8 +1451,8 @@
           </Rectangle>
           <Rectangle Name="Rectangle4">
             <Left>7.5pt</Left>
-            <Top>283.4691pt</Top>
-            <Height>381.5002pt</Height>
+            <Top>352.5pt</Top>
+            <Height>412.5pt</Height>
             <Width>654.75pt</Width>
             <Style>
               <BackgroundColor>#ffffff</BackgroundColor>
@@ -1457,7 +1465,7 @@
             <ReportItems>
               <Textbox Name="TextBox4">
                 <Left>7.5pt</Left>
-                <Top>0pt</Top>
+                <Top>8.25pt</Top>
                 <Height>19.49976pt</Height>
                 <Width>276.75pt</Width>
                 <Style>
@@ -1490,8 +1498,8 @@
               </Textbox>
               <Chart Name="Chart3">
                 <Left>0pt</Left>
-                <Top>28.5pt</Top>
-                <Height>351.5pt</Height>
+                <Top>42.75pt</Top>
+                <Height>368pt</Height>
                 <Width>653.25pt</Width>
                 <Style>
                   <FontFamily>Segoe UI</FontFamily>
@@ -1505,6 +1513,12 @@
                     <Style>None</Style>
                   </Border>
                 </Style>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>MaxDataCount</Name>
+                    <Value>50000</Value>
+                  </CustomProperty>
+                </CustomProperties>
                 <DataSetName>ShowDetails</DataSetName>
                 <ChartSeriesHierarchy>
                   <ChartMembers>
@@ -1562,7 +1576,7 @@
                                 <Style>None</Style>
                               </Border>
                             </Style>
-                            <Visible>false</Visible>
+                            <Visible>False</Visible>
                           </ChartDataLabel>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
@@ -1602,7 +1616,6 @@
                         </Border>
                       </Style>
                       <ChartMarker>
-                        <Type>None</Type>
                         <Size>6pt</Size>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
@@ -2102,7 +2115,7 @@
                 <ChartTitles>
                   <ChartTitle Name="Default">
                     <Caption>Chart Title</Caption>
-                    <Hidden>true</Hidden>
+                    <Hidden>True</Hidden>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -2176,7 +2189,7 @@
           </Rectangle>
           <Tablix Name="Tablix1">
             <Left>7.5pt</Left>
-            <Top>697.5pt</Top>
+            <Top>817.5pt</Top>
             <Height>45.25pt</Height>
             <Width>654.75pt</Width>
             <Style>
@@ -2186,7 +2199,20 @@
                 <Style>None</Style>
               </Border>
             </Style>
+            <CustomProperties>
+              <CustomProperty>
+                <Name>MaxRowCount</Name>
+                <Value>100000</Value>
+              </CustomProperty>
+              <CustomProperty>
+                <Name>MaxColumnCount</Name>
+                <Value>20</Value>
+              </CustomProperty>
+            </CustomProperties>
             <DataSetName>TopShowDetails</DataSetName>
+            <PageBreak>
+              <BreakLocation>Between</BreakLocation>
+            </PageBreak>
             <SortExpressions>
               <SortExpression>
                 <Value>=Fields!ShowDate.Value</Value>
@@ -3025,8 +3051,8 @@
           </Tablix>
           <Textbox Name="TextBox5">
             <Left>7.5pt</Left>
-            <Top>671.25pt</Top>
-            <Height>21.74976pt</Height>
+            <Top>780pt</Top>
+            <Height>22.5pt</Height>
             <Width>379.4998pt</Width>
             <Style>
               <PaddingLeft>2pt</PaddingLeft>
@@ -3055,7 +3081,7 @@
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
                       <FontSize>11.25pt</FontSize>
-                      <Color>#2F1110</Color>
+                      <Color>#2f1110</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -3074,10 +3100,10 @@
       </Body>
       <Width>669.75pt</Width>
       <Page>
-        <PageHeight>881.2498pt</PageHeight>
-        <PageWidth>742.5pt</PageWidth>
+        <PageHeight>1031.76pt</PageHeight>
+        <PageWidth>728.64pt</PageWidth>
         <PageHeader>
-          <Height>43.5pt</Height>
+          <Height>40.5pt</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -3150,10 +3176,10 @@
             </Border>
           </Style>
         </PageFooter>
-        <LeftMargin>36.00005pt</LeftMargin>
-        <RightMargin>36.00005pt</RightMargin>
-        <TopMargin>36.00005pt</TopMargin>
-        <BottomMargin>36.00005pt</BottomMargin>
+        <LeftMargin>29pt</LeftMargin>
+        <RightMargin>29pt</RightMargin>
+        <TopMargin>31pt</TopMargin>
+        <BottomMargin>28pt</BottomMargin>
         <Style>
           <Border>
             <Style>None</Style>

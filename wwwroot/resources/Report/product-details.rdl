@@ -1,13 +1,9 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
   <ReportSections>
     <ReportSection>
       <Body>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
+        <Height>111.75pt</Height>
         <ReportItems>
           <Tablix Name="Tablix1">
             <Left>9.75pt</Left>
@@ -19,36 +15,46 @@
                 <Style>None</Style>
               </Border>
             </Style>
+            <CustomProperties>
+              <CustomProperty>
+                <Name>MaxRowCount</Name>
+                <Value>100000</Value>
+              </CustomProperty>
+              <CustomProperty>
+                <Name>MaxColumnCount</Name>
+                <Value>20</Value>
+              </CustomProperty>
+            </CustomProperties>
             <DataSetName>OrderDetails</DataSetName>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>116.9705pt</Width>
+                  <Width>116.96484pt</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>155.2372pt</Width>
+                  <Width>155.22656pt</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>53.2118pt</Width>
+                  <Width>53.20312pt</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>65.23437pt</Width>
+                  <Width>65.22656pt</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>63.83101pt</Width>
+                  <Width>63.85547pt</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>17.9832pt</Height>
+                  <Height>18pt</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="TextBox4">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>17.9832pt</Height>
-                          <Width>116.9707pt</Width>
+                          <Height>18pt</Height>
+                          <Width>116.96475pt</Width>
                           <Style>
                             <BackgroundColor>#e3e6ea</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -78,8 +84,8 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -87,8 +93,8 @@
                         <Textbox Name="TextBox1">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>17.9832pt</Height>
-                          <Width>155.2372pt</Width>
+                          <Height>18pt</Height>
+                          <Width>155.22675pt</Width>
                           <Style>
                             <BackgroundColor>#e3e6ea</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -118,8 +124,8 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -127,8 +133,8 @@
                         <Textbox Name="TextBox3">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>17.9832pt</Height>
-                          <Width>53.21183pt</Width>
+                          <Height>18pt</Height>
+                          <Width>53.20312pt</Width>
                           <Style>
                             <BackgroundColor>#e3e6ea</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -158,8 +164,8 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -167,8 +173,8 @@
                         <Textbox Name="TextBox7">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>17.9832pt</Height>
-                          <Width>65.2344pt</Width>
+                          <Height>18pt</Height>
+                          <Width>65.2266pt</Width>
                           <Style>
                             <BackgroundColor>#e3e6ea</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -198,8 +204,8 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -207,8 +213,8 @@
                         <Textbox Name="TextBox9">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>17.9832pt</Height>
-                          <Width>63.831pt</Width>
+                          <Height>18pt</Height>
+                          <Width>63.85545pt</Width>
                           <Style>
                             <BackgroundColor>#e3e6ea</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -238,22 +244,22 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>81.00375pt</Height>
+                  <Height>81pt</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="TextBox11">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>81.00375pt</Height>
-                          <Width>116.9707pt</Width>
+                          <Height>81pt</Height>
+                          <Width>116.96475pt</Width>
                           <Style>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>3.75pt</PaddingLeft>
@@ -261,22 +267,22 @@
                               <Color>#d3d3d3</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>#d3d3d3</Color>
-                              <Width>=1.333</Width>
-                            </TopBorder>
                             <BottomBorder>
-                              <Color>#d3d3d3</Color>
                               <Width>=1.333</Width>
+                              <Color>#d3d3d3</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>#d3d3d3</Color>
                               <Width>=1.333</Width>
+                              <Color>#d3d3d3</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>#d3d3d3</Color>
                               <Width>=1.333</Width>
+                              <Color>#d3d3d3</Color>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>=1.333</Width>
+                              <Color>#d3d3d3</Color>
+                            </TopBorder>
                           </Style>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -293,8 +299,8 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -302,29 +308,29 @@
                         <Rectangle Name="Rectangle4">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>81.00375pt</Height>
-                          <Width>155.2372pt</Width>
+                          <Height>81pt</Height>
+                          <Width>155.22675pt</Width>
                           <Style>
                             <Border>
                               <Color>#d3d3d3</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <TopBorder>
-                              <Color>#d3d3d3</Color>
-                              <Width>=1.333</Width>
-                            </TopBorder>
                             <BottomBorder>
-                              <Color>#d3d3d3</Color>
                               <Width>=1.333</Width>
+                              <Color>#d3d3d3</Color>
                             </BottomBorder>
                             <LeftBorder>
-                              <Color>#d3d3d3</Color>
                               <Width>=1.333</Width>
+                              <Color>#d3d3d3</Color>
                             </LeftBorder>
                             <RightBorder>
-                              <Color>#d3d3d3</Color>
                               <Width>=1.333</Width>
+                              <Color>#d3d3d3</Color>
                             </RightBorder>
+                            <TopBorder>
+                              <Width>=1.333</Width>
+                              <Color>#d3d3d3</Color>
+                            </TopBorder>
                           </Style>
                           <ReportItems>
                             <CustomReportItem Name="CustomItem1">
@@ -332,6 +338,11 @@
                               <Top>12.75pt</Top>
                               <Height>54.75pt</Height>
                               <Width>130.5pt</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
                               <CustomProperties>
                                 <CustomProperty>
                                   <Name>BarcodeValue</Name>
@@ -346,18 +357,13 @@
                                   <Value>true</Value>
                                 </CustomProperty>
                               </CustomProperties>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                              </Style>
                               <Type>barcode</Type>
                             </CustomReportItem>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
                         </Rectangle>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -365,8 +371,8 @@
                         <Textbox Name="TextBox6">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>81.00375pt</Height>
-                          <Width>53.21183pt</Width>
+                          <Height>81pt</Height>
+                          <Width>53.20312pt</Width>
                           <Style>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -395,8 +401,8 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -404,8 +410,8 @@
                         <Textbox Name="TextBox8">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>81.00375pt</Height>
-                          <Width>65.2344pt</Width>
+                          <Height>81pt</Height>
+                          <Width>65.2266pt</Width>
                           <Style>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -422,8 +428,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(FormatNumber(Fields!UnitPrice.Value,2))</Value>
+                                  <Value>=Round(FormatNumber(Fields!UnitPrice.Value,2))</Value>
                                   <Style>
+								    <Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -434,8 +441,8 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -443,8 +450,8 @@
                         <Textbox Name="TextBox10">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>81.00375pt</Height>
-                          <Width>63.831pt</Width>
+                          <Height>81pt</Height>
+                          <Width>63.85545pt</Width>
                           <Style>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -461,8 +468,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(FormatNumber(Fields!Quantity.Value * Fields!UnitPrice.Value,2))</Value>
+                                  <Value>=Round(FormatNumber(Fields!Quantity.Value * Fields!UnitPrice.Value,2))</Value>
                                   <Style>
+								    <Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -473,8 +481,8 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -502,18 +510,17 @@
             </TablixRowHierarchy>
           </Tablix>
         </ReportItems>
-        <Height>111.75pt</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
       </Body>
       <Width>473.25pt</Width>
       <Page>
-        <PageHeight>1224pt</PageHeight>
-        <PageWidth>617.25pt</PageWidth>
+        <PageHeight>1008pt</PageHeight>
+        <PageWidth>612pt</PageWidth>
         <PageHeader>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
           <Height>37.5pt</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
@@ -570,21 +577,26 @@
               <KeepTogether>true</KeepTogether>
             </Rectangle>
           </ReportItems>
-        </PageHeader>
-        <PageFooter>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
           </Style>
-          <Height>0.72917in</Height>
+        </PageHeader>
+        <PageFooter>
+          <Height>7.5pt</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
         </PageFooter>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <LeftMargin>67.5pt</LeftMargin>
+        <RightMargin>0pt</RightMargin>
+        <TopMargin>60pt</TopMargin>
+        <BottomMargin>0pt</BottomMargin>
         <Style>
           <Border>
             <Style>None</Style>
@@ -593,16 +605,20 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="NorthWindIO">
       <rd:SecurityType>None</rd:SecurityType>
       <DataSourceReference>NorthWind</DataSourceReference>
-      <rd:ImpersonateUser>false</rd:ImpersonateUser>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="OrderDetails">
+      <Query>
+        <DataSourceName>NorthWindIO</DataSourceName>
+        <CommandText>SELECT TOP 100      [Order Details].ProductID, Products.ProductName, [Order Details].Quantity, [Order Details].UnitPrice, [Order Details].Discount
+FROM            [Order Details] INNER JOIN
+                         Products ON [Order Details].ProductID = Products.ProductID</CommandText>
+      </Query>
       <Fields>
         <Field Name="ProductID">
           <DataField>ProductID</DataField>
@@ -625,13 +641,6 @@
           <rd:TypeName>System.Single</rd:TypeName>
         </Field>
       </Fields>
-      <Query>
-        <DataSourceName>NorthWindIO</DataSourceName>
-        <CommandType>Text</CommandType>
-        <CommandText>SELECT TOP 100      [Order Details].ProductID, Products.ProductName, [Order Details].Quantity, [Order Details].UnitPrice, [Order Details].Discount
-FROM            [Order Details] INNER JOIN
-                         Products ON [Order Details].ProductID = Products.ProductID</CommandText>
-      </Query>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>

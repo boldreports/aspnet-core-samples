@@ -17,7 +17,7 @@ namespace ReportsCoreSamples.Controllers
             dynamic sampleData = null;
             foreach (dynamic sample in samples)
             {
-                if ((sample.routerPath == "" && sample.basePath == controllerName) || sample.routerPath == controllerName)
+                if ((sample.controllerName == "" && sample.basePath == controllerName) || sample.controllerName == controllerName)
                 {
                     sampleData = sample;
                     break;
@@ -48,6 +48,7 @@ namespace ReportsCoreSamples.Controllers
         {
             string title = String.IsNullOrEmpty((string)sampleData.metaData.title) ? sampleData.sampleName : sampleData.metaData.title;
             string basePath = new Regex(@"(?<!^)(?=[A-Z])").Replace((string)sampleData.basePath, " ", 1);
+            basePath = string.Join(" ", basePath.Split('-').Select(word => char.ToUpper(word[0]) + word.Substring(1)));
             title += " | ASP.NET Core " + basePath.Trim();
             title = title.Length < 45 ? title += " | Bold Reports" : title;
             return new MetaDataInfo(title, (string)sampleData.metaData.description);
@@ -60,11 +61,11 @@ namespace ReportsCoreSamples.Controllers
             string metaContent;
             switch ((string)sampleData.basePath)
             {
-                case "ReportViewer":
+                case "report-viewer":
                     metaContent = "The ASP.NET Core Bold Report Viewer allows the end-users to visualize the " + title + " report in browsers.";
                     title += " | Preview | ASP.NET Core Report Viewer";
                     break;
-                case "ReportWriter":
+                case "report-writer":
                     title += " | Preview | ASP.NET Core Report Writer";
                     metaContent = "The ASP.NET Core Bold Report Writer allows the end-users to download the report in browsers without visualizing the report.";
                     break;

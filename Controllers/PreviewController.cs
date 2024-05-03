@@ -6,9 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ReportsCoreSamples.Controllers
 {
-    
+
     public class PreviewController : MetaData
     {
+        [HttpGet("preview")]
         public IActionResult Preview()
         {
             string foderName = this.ControllerContext.RouteData.Values["controller"].ToString();

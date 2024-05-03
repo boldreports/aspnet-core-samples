@@ -7,28 +7,31 @@ using ReportsCoreSamples.Models;
 
 namespace ReportsCoreSamples.Controllers
 {
-    
+    [Route("report-designer")]
     public class ReportDesignerController : Controller
     {
+        [HttpGet("")]
         public IActionResult Index()
         {
             ViewBag.action = "Preview";
             ViewBag.isDesigner = true;
             ViewBag.toolbarSettings = new BoldReports.Models.ReportDesigner.ToolbarSettings();
             ViewBag.toolbarSettings.Items = BoldReports.ReportDesignerEnums.ToolbarItems.All
-                                               & ~BoldReports.ReportDesignerEnums.ToolbarItems.Save & ~BoldReports.ReportDesignerEnums.ToolbarItems.Open;
+                                               & ~BoldReports.ReportDesignerEnums.ToolbarItems.New & ~BoldReports.ReportDesignerEnums.ToolbarItems.Save & ~BoldReports.ReportDesignerEnums.ToolbarItems.Open;
+            string url = this.HttpContext.Request.Host.ToString();
             ViewBag.permissionSettings = new BoldReports.Models.ReportDesigner.PermissionSettings();
-            ViewBag.permissionSettings.DataSource = BoldReports.ReportDesignerEnums.Permission.All & ~BoldReports.ReportDesignerEnums.Permission.Create;
+            ViewBag.permissionSettings.DataSource = !string.IsNullOrEmpty(url) ? url.Contains("demos.boldreports.com") ? (BoldReports.ReportDesignerEnums.Permission.All & ~BoldReports.ReportDesignerEnums.Permission.Create) : BoldReports.ReportDesignerEnums.Permission.All : BoldReports.ReportDesignerEnums.Permission.All;
             this.updateMetaData("RDL");
             return View();
         }
+        [HttpGet("rdlc")]
         public IActionResult RDLC()
         {
             ViewBag.action = "Preview";
             ViewBag.isDesigner = true;
             ViewBag.toolbarSettings = new BoldReports.Models.ReportDesigner.ToolbarSettings();
             ViewBag.toolbarSettings.Items = BoldReports.ReportDesignerEnums.ToolbarItems.All
-                                               & ~BoldReports.ReportDesignerEnums.ToolbarItems.Save & ~BoldReports.ReportDesignerEnums.ToolbarItems.Open;
+                                               & ~BoldReports.ReportDesignerEnums.ToolbarItems.New & ~BoldReports.ReportDesignerEnums.ToolbarItems.Save & ~BoldReports.ReportDesignerEnums.ToolbarItems.Open;
             ViewBag.permissionSettings = new BoldReports.Models.ReportDesigner.PermissionSettings();
             ViewBag.permissionSettings.DataSource = BoldReports.ReportDesignerEnums.Permission.All & ~BoldReports.ReportDesignerEnums.Permission.Create;
             this.updateMetaData("RDLC");
@@ -42,7 +45,7 @@ namespace ReportsCoreSamples.Controllers
             dynamic sampleData = null;
             foreach (dynamic sample in samples)
             {
-                if (sample.routerPath == routerPath)
+                if (sample.controllerName == routerPath)
                 {
                     sampleData = sample;
                     break;

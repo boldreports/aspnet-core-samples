@@ -68,8 +68,14 @@ namespace ReportsCoreSamples.Controllers
             {
                 reportPath += ".rdlc";
             }
-            FileStream reportStream = new FileStream(basePath + @"\resources\Report\" + reportPath, FileMode.Open, FileAccess.Read);
+            FileStream reportStream = new FileStream(Path.Combine(basePath, "resources", "Report", reportPath), FileMode.Open, FileAccess.Read);
             reportOption.ReportModel.Stream = reportStream;
+
+            if (reportOption.ReportModel.FontSettings == null)
+            {
+                reportOption.ReportModel.FontSettings = new BoldReports.RDL.Data.FontSettings();
+            }
+            reportOption.ReportModel.FontSettings.BasePath = Path.Combine(_hostingEnvironment.WebRootPath, "fonts");
 
         }
 

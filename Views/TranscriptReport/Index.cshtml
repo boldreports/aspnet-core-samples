@@ -1,0 +1,28 @@
+@inject Globals globals;
+
+@section control {
+
+    <bold-report-viewer id="reportviewer" report-service-url="@Globals.SERVICE_URL" report-path="transcript-report.rdl"
+        toolbar-rendering="onToolbarRendering" tool-bar-item-click="onToolBarItemClick"
+        export-item-click="onExportItemClick" />
+
+}
+
+@section description {
+    <div id="description">
+        <p>
+            The Transcript Report for school encapsulates a detailed analysis of academic grades and performance for a specific period,
+            presented in a comprehensive RDL format.
+        </p>
+        <ul>
+            <li>The insightful examination of student transcripts is effectively communicated through a diverse range of
+                table or list report items, each contributing to a detailed and informative representation of academic
+                analytics.</li>
+        </ul>
+        <p>
+            Transcript report designing steps can be found in this <a
+                href="https://help.boldreports.com/enterprise-reporting/designer-guide/report-designer/report-items/list/design-ssrs-rdl-report-using-list/"
+                target="_blank" rel="noreferrer">documentation</a> section.
+        </p>
+    </div>
+}

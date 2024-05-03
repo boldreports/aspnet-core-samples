@@ -30,15 +30,15 @@ namespace ReportsCoreSamples.Controllers
             basePath = _hostingEnvironment.WebRootPath;
         }
 
-        public override List<CatalogItem> GetItems(string folderName, ItemTypeEnum type)
+        public override List<CatalogItem> GetItems(string folderName, ItemTypeEnum type, string permissionType)
         {
             List<CatalogItem> _items = new List<CatalogItem>();
 
-            string targetFolder = this.basePath + @"\Resources\";
+            string targetFolder = Path.Combine(this.basePath, "resources");
 
             if (type == ItemTypeEnum.Folder || type == ItemTypeEnum.Report)
             {
-                targetFolder = targetFolder + @"Report\";
+                targetFolder = Path.Combine(targetFolder, "Report");
                 if (!(string.IsNullOrEmpty(folderName) || folderName.Trim() == "/"))
                 {
                     targetFolder = targetFolder + folderName;
@@ -47,7 +47,7 @@ namespace ReportsCoreSamples.Controllers
 
             if (type == ItemTypeEnum.DataSet)
             {
-                foreach (var file in Directory.GetFiles(targetFolder + "DataSet"))
+                foreach (var file in Directory.GetFiles(Path.Combine(targetFolder, "DataSet")))
                 {
                     CatalogItem catalogItem = new CatalogItem();
                     catalogItem.Name = Path.GetFileNameWithoutExtension(file);
@@ -58,7 +58,7 @@ namespace ReportsCoreSamples.Controllers
             }
             else if (type == ItemTypeEnum.DataSource)
             {
-                foreach (var file in Directory.GetFiles(targetFolder + "DataSource"))
+                foreach (var file in Directory.GetFiles(Path.Combine(targetFolder, "DataSource")))
                 {
                     CatalogItem catalogItem = new CatalogItem();
                     catalogItem.Name = Path.GetFileNameWithoutExtension(file);
@@ -102,9 +102,8 @@ namespace ReportsCoreSamples.Controllers
 
         public override System.IO.Stream GetReport()
         {
-            string reportBasePath = @"\Resources\Report\";
-            string targetFolder = this.basePath + reportBasePath;
-            string reportPath = Path.HasExtension(this.ReportPath) ? targetFolder + this.ReportPath : targetFolder + this.ReportPath + "." + this.reportType.ToLower();
+            string targetFolder = Path.Combine(this.basePath, "resources", "Report");
+            string reportPath = Path.HasExtension(this.ReportPath) ? Path.Combine(targetFolder, this.ReportPath) : Path.Combine(targetFolder, $"{this.ReportPath}.{this.reportType.ToLower()}");
 
             if (File.Exists(reportPath))
             {
@@ -131,9 +130,8 @@ namespace ReportsCoreSamples.Controllers
             string reportPath = this.ReportPath.TrimStart('/').TrimEnd('/').Trim();
             string reportName = reportPath.Substring(reportPath.IndexOf('/') + 1).Trim();
             string catagoryName = reportPath.Substring(0, reportPath.IndexOf('/') > 0 ? reportPath.IndexOf('/') : 0).Trim();
-            string targetFolder = this.basePath + @"\Resources\Report\";
-
-            string reportPat = targetFolder + catagoryName + @"\" + reportName;
+            string targetFolder = Path.Combine(this.basePath, "resources", "Report");
+            string reportPat = Path.Combine(targetFolder, catagoryName, reportName);
             File.WriteAllBytes(reportPat, reportdata.ToArray());
 
             return true;
@@ -147,9 +145,8 @@ namespace ReportsCoreSamples.Controllers
                 dataSource = _dataSrcPathHierarchy.Last().TrimStart('/');
             }
 
-            string targetFolder = this.basePath + @"\Resources\DataSource\";
-
-            string dataSourcePath = targetFolder + dataSource + ".rds";
+            string targetFolder = Path.Combine(this.basePath, "resources", "DataSource");
+            string dataSourcePath = Path.Combine(targetFolder, $"{dataSource}.rds");
 
             if (File.Exists(dataSourcePath))
             {
@@ -176,8 +173,8 @@ namespace ReportsCoreSamples.Controllers
 
         public override SharedDatasetinfo GetSharedDataDefinition(string dataSet)
         {
-            string targetFolder = this.basePath + @"\Resources\DataSet\";
-            string dataSetPath = targetFolder + dataSet + ".rsd";
+            string targetFolder = Path.Combine(this.basePath, "resources", "DataSet");
+            string dataSetPath = Path.Combine(targetFolder, $"{dataSet}.rsd");
 
             if (File.Exists(dataSetPath))
             {

@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
+using System.IO.Compression;
 using ReportsCoreSamples.Models;
 using Microsoft.AspNetCore.ResponseCompression;
 using System.Text;
@@ -88,6 +89,15 @@ namespace ReportsCoreSamples
                 options.Cookie.SameSite = SameSiteMode.None;
                 options.Cookie.HttpOnly = true;
             });
+            services.AddResponseCompression(options =>
+            {
+                options.EnableForHttps = true; // Enable compression for HTTPS requests
+                options.Providers.Add<GzipCompressionProvider>();
+            });
+            services.Configure<GzipCompressionProviderOptions>(options =>
+            {
+                options.Level = CompressionLevel.Fastest; // Adjust compression level as needed
+            });
         }
 
         private BoldReports.Web.MapSetting GetMapSettings(IWebHostEnvironment _hostingEnvironment)
@@ -95,10 +105,12 @@ namespace ReportsCoreSamples
             try
             {
                 string basePath = _hostingEnvironment.WebRootPath;
+                string mapShapePath = Path.Combine(basePath, "ShapeData");
+                mapShapePath = Path.GetFullPath(mapShapePath);
                 return new MapSetting()
                 {
-                    ShapePath = basePath + "\\ShapeData\\",
-                    MapShapes = JsonConvert.DeserializeObject<List<MapShape>>(System.IO.File.ReadAllText(basePath + "\\ShapeData\\mapshapes.txt"))
+                    ShapePath = mapShapePath + '/',
+                    MapShapes = JsonConvert.DeserializeObject<List<MapShape>>(System.IO.File.ReadAllText(Path.Combine(mapShapePath, "mapshapes.txt")))
                 };
             }
             catch (Exception ex) { Console.WriteLine(ex); }
@@ -135,6 +147,16 @@ namespace ReportsCoreSamples
                 RequestPath = "/Views"
             });
 
+            // Enable browser caching for static files
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                OnPrepareResponse = ctx =>
+                {
+                    const int durationInSeconds = 60 * 60 * 24 * 1; // 1 day
+                    ctx.Context.Response.Headers["Cache-Control"] = $"public,max-age={durationInSeconds}";
+                }
+            });
+
             app.UseRouting();
             app.UseCors("AllowAllOrigins");
             app.UseAuthorization();
@@ -142,11 +164,17 @@ namespace ReportsCoreSamples
             {
                 endpoints.MapControllerRoute(
                           name: "ReportViewer",
-                          pattern: "ReportViewer/{controller}/{action=Index}/{id?}");
+                          pattern: "report-viewer/{controller}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Main}/{action=Index}/{id?}");
-            });            
+                endpoints.MapFallback(context =>
+                 {
+                     context.Response.Redirect("/report-viewer/product-line-sales");
+                     return Task.CompletedTask;
+                 });
+            });
+            app.UseResponseCompression();        
 
         }
     }

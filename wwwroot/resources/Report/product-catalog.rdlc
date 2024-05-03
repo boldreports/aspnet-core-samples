@@ -1,16 +1,34 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
   <Description>Adventure Works full product catalog with pictures. This report illustrates the use of embedded images, database images, page breaks, page footers, tables, conditional formatting, and a document map.</Description>
-  <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="AdventureWorks">
       <rd:SecurityType>None</rd:SecurityType>
       <DataSourceReference>AdventureWorks</DataSourceReference>
-      <rd:ImpersonateUser>false</rd:ImpersonateUser>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="ProductCatalog">
+      <Query>
+        <DataSourceName>AdventureWorks</DataSourceName>
+        <CommandText>SELECT      PS.Name AS ProdSubCat, PM.Name AS ProdModel, PC.Name AS ProdCat, PD.Description, PP.LargePhoto,P.Name AS ProdName,P.ProductNumber, P.Color, P.Size, P.Weight, P.StandardCost,P.Style,P.Class, P.ListPrice
+FROM        Production_Product P INNER JOIN
+			Production_ProductSubcategory PS INNER JOIN
+			Production_ProductCategory PC ON PS.ProductCategoryID = PC.ProductCategoryID ON P.ProductSubcategoryID = PS.ProductSubcategoryID INNER JOIN
+			Production_ProductProductPhoto PPP ON P.ProductID = PPP.ProductID INNER JOIN
+			Production_ProductPhoto PP ON PPP.ProductPhotoID = PP.ProductPhotoID LEFT OUTER JOIN
+			Production_ProductDescription PD INNER JOIN
+			Production_ProductModel PM INNER JOIN
+			Production_ProductModelProductDescriptionCulture PMPDCL ON PM.ProductModelID = PMPDCL.ProductModelID ON 
+			PD.ProductDescriptionID = PMPDCL.ProductDescriptionID ON P.ProductModelID = PM.ProductModelID
+WHERE       (PMPDCL.CultureID = 'en')</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@Language">
+            <Value>=Left(User!Language,2)</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <Timeout>30</Timeout>
+      </Query>
       <Fields>
         <Field Name="ProdSubCat">
           <DataField>ProdSubCat</DataField>
@@ -53,35 +71,14 @@
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
-      <Query>
-        <DataSourceName>AdventureWorks</DataSourceName>
-        <CommandType>Text</CommandType>
-        <CommandText>SELECT      PS.Name AS ProdSubCat, PM.Name AS ProdModel, PC.Name AS ProdCat, PD.Description, PP.LargePhoto,P.Name AS ProdName,P.ProductNumber, P.Color, P.Size, P.Weight, P.StandardCost,P.Style,P.Class, P.ListPrice
-FROM        Production_Product P INNER JOIN
-			Production_ProductSubcategory PS INNER JOIN
-			Production_ProductCategory PC ON PS.ProductCategoryID = PC.ProductCategoryID ON P.ProductSubcategoryID = PS.ProductSubcategoryID INNER JOIN
-			Production_ProductProductPhoto PPP ON P.ProductID = PPP.ProductID INNER JOIN
-			Production_ProductPhoto PP ON PPP.ProductPhotoID = PP.ProductPhotoID LEFT OUTER JOIN
-			Production_ProductDescription PD INNER JOIN
-			Production_ProductModel PM INNER JOIN
-			Production_ProductModelProductDescriptionCulture PMPDCL ON PM.ProductModelID = PMPDCL.ProductModelID ON 
-			PD.ProductDescriptionID = PMPDCL.ProductDescriptionID ON P.ProductModelID = PM.ProductModelID
-WHERE       (PMPDCL.CultureID = 'en')</CommandText>
-        <QueryParameters>
-          <QueryParameter Name="@Language">
-            <Value>=Left(User!Language,2)</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <Timeout>30</Timeout>
-      </Query>
     </DataSet>
   </DataSets>
   <Body>
-    <Style />
+    <Height>162.88576pt</Height>
     <ReportItems>
       <Tablix Name="Tablix1">
-        <Left>5.25pt</Left>
-        <Top>103.6758pt</Top>
+        <Left>6.75pt</Left>
+        <Top>103.66666pt</Top>
         <Height>59.25pt</Height>
         <Width>560.25pt</Width>
         <Style>
@@ -90,39 +87,49 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
             <Style>None</Style>
           </Border>
         </Style>
+        <CustomProperties>
+          <CustomProperty>
+            <Name>MaxRowCount</Name>
+            <Value>100000</Value>
+          </CustomProperty>
+          <CustomProperty>
+            <Name>MaxColumnCount</Name>
+            <Value>20</Value>
+          </CustomProperty>
+        </CustomProperties>
         <DataSetName>ProductCatalog</DataSetName>
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>94.47337pt</Width>
+              <Width>94.46484pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>77.24247pt</Width>
+              <Width>77.23828pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>112.4855pt</Width>
+              <Width>112.47656pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>77.24247pt</Width>
+              <Width>77.23828pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>79.48495pt</Width>
+              <Width>79.46484pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>117.3322pt</Width>
+              <Width>117.375pt</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>17.9832pt</Height>
+              <Height>18pt</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="TextBox1">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>17.9832pt</Height>
-                      <Width>94.473pt</Width>
+                      <Height>18pt</Height>
+                      <Width>94.46475pt</Width>
                       <Style>
                         <BackgroundColor>#e3e6ea</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
@@ -155,8 +162,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
-                    <ColSpan>1</ColSpan>
                     <RowSpan>1</RowSpan>
+                    <ColSpan>1</ColSpan>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -164,8 +171,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                     <Textbox Name="TextBox10">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>17.9832pt</Height>
-                      <Width>77.2425pt</Width>
+                      <Height>18pt</Height>
+                      <Width>77.238pt</Width>
                       <Style>
                         <BackgroundColor>#e3e6ea</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
@@ -197,8 +204,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
-                    <ColSpan>1</ColSpan>
                     <RowSpan>1</RowSpan>
+                    <ColSpan>1</ColSpan>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -206,8 +213,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                     <Textbox Name="TextBox11">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>17.9832pt</Height>
-                      <Width>112.4857pt</Width>
+                      <Height>18pt</Height>
+                      <Width>112.47675pt</Width>
                       <Style>
                         <BackgroundColor>#e3e6ea</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
@@ -239,8 +246,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
-                    <ColSpan>1</ColSpan>
                     <RowSpan>1</RowSpan>
+                    <ColSpan>1</ColSpan>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -248,8 +255,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                     <Textbox Name="TextBox16">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>17.9832pt</Height>
-                      <Width>77.2425pt</Width>
+                      <Height>18pt</Height>
+                      <Width>77.238pt</Width>
                       <Style>
                         <BackgroundColor>#e3e6ea</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
@@ -281,8 +288,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
-                    <ColSpan>1</ColSpan>
                     <RowSpan>1</RowSpan>
+                    <ColSpan>1</ColSpan>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -290,8 +297,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                     <Textbox Name="TextBox18">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>17.9832pt</Height>
-                      <Width>79.485pt</Width>
+                      <Height>18pt</Height>
+                      <Width>79.46475pt</Width>
                       <Style>
                         <BackgroundColor>#e3e6ea</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
@@ -323,8 +330,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
-                    <ColSpan>1</ColSpan>
                     <RowSpan>1</RowSpan>
+                    <ColSpan>1</ColSpan>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -332,8 +339,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                     <Textbox Name="TextBox12">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>17.9832pt</Height>
-                      <Width>117.3323pt</Width>
+                      <Height>18pt</Height>
+                      <Width>117.375pt</Width>
                       <Style>
                         <BackgroundColor>#e3e6ea</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
@@ -365,22 +372,22 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
-                    <ColSpan>1</ColSpan>
                     <RowSpan>1</RowSpan>
+                    <ColSpan>1</ColSpan>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>41.26155pt</Height>
+              <Height>41.25pt</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="TextBox2">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>41.26155pt</Height>
-                      <Width>94.473pt</Width>
+                      <Height>41.25pt</Height>
+                      <Width>94.46475pt</Width>
                       <Style>
                         <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#f2f0f0","Transparent")</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
@@ -407,8 +414,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
-                    <ColSpan>1</ColSpan>
                     <RowSpan>1</RowSpan>
+                    <ColSpan>1</ColSpan>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -416,8 +423,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                     <Rectangle Name="Rectangle5">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>41.26155pt</Height>
-                      <Width>77.2425pt</Width>
+                      <Height>41.25pt</Height>
+                      <Width>77.238pt</Width>
                       <Style>
                         <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#f2f0f0","Transparent")</BackgroundColor>
                         <Border>
@@ -441,7 +448,6 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                         <Image Name="Image3">
                           <Left>26.98828pt</Left>
                           <Top>8.98828pt</Top>
-                          <Value>=Fields!ProductImage.Value</Value>
                           <Height>24pt</Height>
                           <Width>24pt</Width>
                           <ZIndex>1</ZIndex>
@@ -451,14 +457,15 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                             </Border>
                           </Style>
                           <Source>Database</Source>
+                          <Value>=Fields!ProductImage.Value</Value>
                           <MIMEType>image/png</MIMEType>
                           <Sizing>FitProportional</Sizing>
                         </Image>
                       </ReportItems>
                       <KeepTogether>true</KeepTogether>
                     </Rectangle>
-                    <ColSpan>1</ColSpan>
                     <RowSpan>1</RowSpan>
+                    <ColSpan>1</ColSpan>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -466,8 +473,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                     <Textbox Name="TextBox14">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>41.26155pt</Height>
-                      <Width>112.4857pt</Width>
+                      <Height>41.25pt</Height>
+                      <Width>112.47675pt</Width>
                       <Style>
                         <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#f2f0f0","Transparent")</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
@@ -498,8 +505,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
-                    <ColSpan>1</ColSpan>
                     <RowSpan>1</RowSpan>
+                    <ColSpan>1</ColSpan>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -507,8 +514,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                     <Textbox Name="TextBox17">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>41.26155pt</Height>
-                      <Width>77.2425pt</Width>
+                      <Height>41.25pt</Height>
+                      <Width>77.238pt</Width>
                       <Style>
                         <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#f2f0f0","Transparent")</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
@@ -539,8 +546,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
-                    <ColSpan>1</ColSpan>
                     <RowSpan>1</RowSpan>
+                    <ColSpan>1</ColSpan>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -548,8 +555,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                     <Textbox Name="TextBox19">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>41.26155pt</Height>
-                      <Width>79.485pt</Width>
+                      <Height>41.25pt</Height>
+                      <Width>79.46475pt</Width>
                       <Style>
                         <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#f2f0f0","Transparent")</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
@@ -580,8 +587,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
-                    <ColSpan>1</ColSpan>
                     <RowSpan>1</RowSpan>
+                    <ColSpan>1</ColSpan>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -589,8 +596,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                     <Textbox Name="TextBox15">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>41.26155pt</Height>
-                      <Width>117.3323pt</Width>
+                      <Height>41.25pt</Height>
+                      <Width>117.375pt</Width>
                       <Style>
                         <BackgroundColor>=IIf(RowNumber("Tablix1") Mod 2=0,"#f2f0f0","Transparent")</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
@@ -612,12 +619,6 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                               <Style>
                                 <FontSize>10.0001pt</FontSize>
                                 <Format>0.00;(0.00)</Format>
-                                <FormatType xmlns="http://tempuri.org/">
-                                  <Format>Number</Format>
-                                  <Representation>None</Representation>
-                                  <NegativeValue>(12345)</NegativeValue>
-                                  <Culture />
-                                </FormatType>
                                 <Color>black</Color>
                               </Style>
                             </TextRun>
@@ -628,8 +629,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
-                    <ColSpan>1</ColSpan>
                     <RowSpan>1</RowSpan>
+                    <ColSpan>1</ColSpan>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -664,46 +665,56 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
         <Width>560.2501pt</Width>
         <ZIndex>1</ZIndex>
         <Style />
+        <CustomProperties>
+          <CustomProperty>
+            <Name>MaxRowCount</Name>
+            <Value>100000</Value>
+          </CustomProperty>
+          <CustomProperty>
+            <Name>MaxColumnCount</Name>
+            <Value>20</Value>
+          </CustomProperty>
+        </CustomProperties>
         <NoRowsMessage>="No products available for language " &amp; User!Language</NoRowsMessage>
         <DataSetName>ProductCatalog</DataSetName>
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>82.4942pt</Width>
+              <Width>82.48828pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>140.2488pt</Width>
+              <Width>140.25pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>23.98727pt</Width>
+              <Width>23.97656pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>46.48437pt</Width>
+              <Width>46.46484pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>59.98264pt</Width>
+              <Width>59.96484pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>59.24479pt</Width>
+              <Width>59.23828pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>71.23842pt</Width>
+              <Width>71.21484pt</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>74.37788pt</Width>
+              <Width>74.44922pt</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>31.49595pt</Height>
+              <Height>31.5pt</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="SubCategory">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>31.49595pt</Height>
-                      <Width>558.0585pt</Width>
+                      <Height>31.5pt</Height>
+                      <Width>558.0465pt</Width>
                       <ZIndex>26</ZIndex>
                       <Style>
                         <PaddingLeft>6.336pt</PaddingLeft>
@@ -729,8 +740,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
-                    <ColSpan>8</ColSpan>
                     <RowSpan>1</RowSpan>
+                    <ColSpan>8</ColSpan>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -743,15 +754,15 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>31.49595pt</Height>
+              <Height>31.5pt</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Model">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>31.49595pt</Height>
-                      <Width>558.0585pt</Width>
+                      <Height>31.5pt</Height>
+                      <Width>558.0465pt</Width>
                       <ZIndex>25</ZIndex>
                       <Style>
                         <PaddingLeft>5.616pt</PaddingLeft>
@@ -783,8 +794,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
-                    <ColSpan>8</ColSpan>
                     <RowSpan>1</RowSpan>
+                    <ColSpan>8</ColSpan>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -797,15 +808,15 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>25.4919pt</Height>
+              <Height>25.5pt</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="ModelDesc">
                       <Left>0in</Left>
                       <Top>0in</Top>
-                      <Height>25.4919pt</Height>
-                      <Width>558.0585pt</Width>
+                      <Height>25.5pt</Height>
+                      <Width>558.0465pt</Width>
                       <ZIndex>24</ZIndex>
                       <Style>
                         <PaddingLeft>5.616pt</PaddingLeft>
@@ -829,8 +840,8 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                         </Paragraph>
                       </Paragraphs>
                     </Textbox>
-                    <ColSpan>8</ColSpan>
                     <RowSpan>1</RowSpan>
+                    <ColSpan>8</ColSpan>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -867,6 +878,7 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
               <SortExpressions>
                 <SortExpression>
                   <Value>=Fields!ProdCat.Value</Value>
+                  <Direction>Ascending</Direction>
                 </SortExpression>
               </SortExpressions>
               <TablixMembers>
@@ -879,6 +891,7 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
                   <SortExpressions>
                     <SortExpression>
                       <Value>=Fields!ProdSubCat.Value</Value>
+                      <Direction>Ascending</Direction>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>
@@ -899,18 +912,13 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
         </TablixRowHierarchy>
       </Tablix>
     </ReportItems>
-    <Height>169.4955pt</Height>
+    <Style />
   </Body>
   <Width>571.5pt</Width>
   <Page>
-    <PageHeight>1016.25pt</PageHeight>
-    <PageWidth>572.25pt</PageWidth>
+    <PageHeight>841.68pt</PageHeight>
+    <PageWidth>595.44pt</PageWidth>
     <PageHeader>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
       <Height>39.00024pt</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
@@ -972,16 +980,25 @@ WHERE       (PMPDCL.CultureID = 'en')</CommandText>
           <KeepTogether>true</KeepTogether>
         </Rectangle>
       </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
     </PageHeader>
     <PageFooter>
-      <Style />
-      <Height>8.24572pt</Height>
+      <Height>9pt</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
     </PageFooter>
-    <LeftMargin>0pt</LeftMargin>
+    <LeftMargin>13.5pt</LeftMargin>
     <RightMargin>0pt</RightMargin>
-    <TopMargin>0pt</TopMargin>
+    <TopMargin>7.5pt</TopMargin>
     <BottomMargin>0pt</BottomMargin>
     <ColumnSpacing>36pt</ColumnSpacing>
     <Style />

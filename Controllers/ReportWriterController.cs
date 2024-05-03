@@ -10,7 +10,7 @@ using System.IO;
 
 namespace ReportsCoreSamples.Controllers
 {
-
+    [Route("[controller]"), Route("report-writer")]
     public class ReportWriterController : PreviewController
     {
         private IWebHostEnvironment _hostingEnvironment;
@@ -33,14 +33,15 @@ namespace ReportsCoreSamples.Controllers
         }
 
         // GET: ReportWriter
+        [HttpGet("")]
         public ActionResult Index()
         {
             this.updateMetaData();
             return View();
         }
 
-        [HttpPost]
-        public IActionResult generate(string reportName, string type)
+        [HttpPost("generate")]
+        public IActionResult Generate(string reportName, string type)
         {
             try
             {
@@ -56,27 +57,33 @@ namespace ReportsCoreSamples.Controllers
                 reportWriter.ReportingServer = this.Server;
                 reportWriter.ReportServerUrl = this.ServerURL;
                 reportWriter.ReportServerCredential = System.Net.CredentialCache.DefaultCredentials;
-
+                
                 reportWriter.ReportProcessingMode = ProcessingMode.Remote;
                 reportWriter.ExportSettings = new customBrowsertype(_hostingEnvironment);
                 reportWriter.ExportResources.BrowserType = ExportResources.BrowserTypes.External;
-                reportWriter.ExportResources.ResourcePath = basePath + @"/puppeteer/";
+                reportWriter.ExportResources.ResourcePath = Path.Combine(basePath, "puppeteer");
 
-                FileStream inputStream = new FileStream(basePath + @"\Resources\Report\" + reportName + ".rdl", FileMode.Open, FileAccess.Read);
+                FileStream inputStream = new FileStream(Path.Combine(basePath, "resources", "Report", reportName + ".rdl"), FileMode.Open, FileAccess.Read);
                 reportWriter.LoadReport(inputStream);
 
                 reportWriter.ExportResources.Scripts = new List<string>
                 {
-                    "../../scripts/bold-reports/v2.0/common/bold.reports.common.min.js",
-                    "../../scripts/bold-reports/v2.0/common/bold.reports.widgets.min.js",
+                    basePath + "/scripts/bold-reports/v2.0/common/bold.reports.common.min.js",
+                    basePath + "/scripts/bold-reports/v2.0/common/bold.reports.widgets.min.js",
                     //Report Viewer Script
-                    "../../scripts/bold-reports/v2.0/bold.report-viewer.min.js"
+                    basePath + "/scripts/bold-reports/v2.0/bold.report-viewer.min.js"
                 };
 
                 reportWriter.ExportResources.DependentScripts = new List<string>
                 {
-                    "../../scripts/dependent/jquery.min.js"
+                    basePath + "/scripts/dependent/jquery.min.js"
                 };
+
+                if (reportWriter.FontSettings == null)
+                {
+                    reportWriter.FontSettings = new BoldReports.RDL.Data.FontSettings();
+                }
+                reportWriter.FontSettings.BasePath = Path.Combine(_hostingEnvironment.WebRootPath, "fonts");
 
                 if (type == "pdf")
                 {
@@ -128,29 +135,44 @@ namespace ReportsCoreSamples.Controllers
             }
 
         }
-
-        public class customBrowsertype : ExportSettings
-        {
-            private IWebHostEnvironment _hostingEnvironment;
-
-            public customBrowsertype(IWebHostEnvironment hostingEnvironment)
-            {
-                _hostingEnvironment = hostingEnvironment;
-            }
-            public override string GetImageFromHTML(string url)
-            {
-                return ConvertBase64(url).Result;
-            }
-            public async Task<string> ConvertBase64(string url)
-            {
-                string puppeteerChromeExe = _hostingEnvironment.WebRootPath  + @"\puppeteer\Win-901912\chrome-win\chrome.exe";
-                await using var browser = await PuppeteerSharp.Puppeteer.LaunchAsync(new PuppeteerSharp.LaunchOptions { Headless = true, ExecutablePath = puppeteerChromeExe });
-                await using var page = await browser.NewPageAsync();
-                await page.GoToAsync(url);
-                return await page.WaitForSelectorAsync("#imagejsonData").Result.GetPropertyAsync("innerText").Result.JsonValueAsync<string>();
-            }
-        }
     }
 
+    public class customBrowsertype : ExportSettings
+    {
+        private IWebHostEnvironment _hostingEnvironment;
 
+        public customBrowsertype(IWebHostEnvironment hostingEnvironment)
+        {
+            _hostingEnvironment = hostingEnvironment;
+        }
+        public override string GetImageFromHTML(string url)
+        {
+            return ConvertBase64(url).Result;
+        }
+        public async Task<string> ConvertBase64(string url)
+        {
+            string puppeteerChromeExe = "";
+            puppeteerChromeExe = Path.Combine(_hostingEnvironment.WebRootPath, "puppeteer", "Win-901912", "chrome-win", "chrome.exe");
+            await using var browser = await PuppeteerSharp.Puppeteer.LaunchAsync(new PuppeteerSharp.LaunchOptions
+            {
+                Headless = true,
+                Args = new[]
+                    {
+                        "--no-sandbox",
+                        "--disable-gpu",
+                        "--disable-setuid-sandbox",
+                        "--disable-accelerated-2d-canvas",
+                        "--no-zygote",
+                        "--single-process",
+                        "--dump-blink-runtime-call-stats",
+                        "--profiling-flush",
+                    },
+                ExecutablePath = puppeteerChromeExe
+            });
+            await using var page = await browser.NewPageAsync();
+            await page.GoToAsync(url);
+            var result = await page.WaitForSelectorAsync("#imagejsonData").Result.GetPropertyAsync("innerText").Result.JsonValueAsync<string>();
+            return result;
+        }
+    }
 }

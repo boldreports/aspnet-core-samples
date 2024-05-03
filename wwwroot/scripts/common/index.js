@@ -37,8 +37,9 @@ function tocSelection() {
 function loadTabContent() {
     $('#parentTab li:first-child a').tab('show');
     $('#childtTab li:first-child a').tab('show');
-    let controllerName = reportRouterPath ? reportRouterPath : reportBasePath;
-    let controllerPath = reportRouterPath ? reportBasePath + '/' + controllerName : controllerName;
+    let basePath = reportBasePath.includes("report-viewer") ? "ReportViewer" : reportBasePath.includes("report-designer") ? "ReportDesigner" : "ReportWriter";
+    let controllerName = reportRouterPath ? reportSampleData.controllerName : basePath;
+    let controllerPath = reportRouterPath ? basePath + '/' + controllerName : controllerName;
     let childaTab = document.getElementById("childTabContainer");
     let cshtml = getResponse(getBasePath() + 'Views/' + controllerName + '/Index.cshtml');
     cshtml = cshtml.replace(/@section (description) {[^}]*}/, '');;
@@ -58,7 +59,7 @@ function updateSampleDetails() {
     setInnerText('.ej-main-body-content .ej-meta-description', reportSampleData.metaData.description);
 
     //Banner
-    setInnerText('.ej-main-body-content .ad-header', bannerData.text);
+    setInnerText('.ej-main-body-content .header', bannerData.text);
     setInnerText('.ej-main-body-content .cnt-text-1', bannerData.features[0]);
     setInnerText('.ej-main-body-content .cnt-text-2', bannerData.features[1]);
     setInnerText('.ej-main-body-content .cnt-text-3', bannerData.features[2]);
@@ -68,14 +69,13 @@ function updateSampleDetails() {
 
 function setReportsHeight() {
     let style = document.getElementById('reports-style');
-    let isExtParm = location.href.trim().lastIndexOf('ExternalParameterReport') != -1
     if (!style) {
         style = document.createElement('style');
         style.id = 'reports-style';
         document.body.appendChild(style);
     }
     style.textContent = `ej-sample{
-        display: ${isExtParm ? "block" : "flex"};
+        display: block;
         overflow: hidden;
         min-height: 600px
       }

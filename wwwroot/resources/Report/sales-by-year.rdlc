@@ -1,24 +1,32 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition">
   <ReportSections>
     <ReportSection>
       <Body>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
+        <Height>3.16762in</Height>
         <ReportItems>
           <Tablix Name="Tablix3">
-            <Left>13.5pt</Left>
-            <Top>3.75pt</Top>
-            <Height>224.3185pt</Height>
-            <Width>440.4545pt</Width>
+            <Left>0.18750in</Left>
+            <Top>0.05208in</Top>
+            <Height>3.11554in</Height>
+            <Width>6.11743in</Width>
             <Style>
+              <FontFamily>Arial</FontFamily>
+              <FontSize>0.13889in</FontSize>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
+            <CustomProperties>
+              <CustomProperty>
+                <Name>MaxRowCount</Name>
+                <Value>100000</Value>
+              </CustomProperty>
+              <CustomProperty>
+                <Name>MaxColumnCount</Name>
+                <Value>20</Value>
+              </CustomProperty>
+            </CustomProperties>
             <DataSetName>SalesByYear</DataSetName>
             <TablixCorner>
               <TablixCornerRows>
@@ -28,15 +36,17 @@
                       <Textbox Name="TextBox163">
                         <Left>0in</Left>
                         <Top>0in</Top>
-                        <Height>0.26510in</Height>
-                        <Width>0.97533in</Width>
+                        <Height>0.26505in</Height>
+                        <Width>0.97526in</Width>
                         <Style>
                           <BackgroundColor>#e3e6ea</BackgroundColor>
+                          <FontFamily>Arial</FontFamily>
+                          <FontSize>0.13889in</FontSize>
                           <VerticalAlign>Middle</VerticalAlign>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
+                          <PaddingLeft>0.02778in</PaddingLeft>
+                          <PaddingRight>0.02778in</PaddingRight>
+                          <PaddingTop>0.02778in</PaddingTop>
+                          <PaddingBottom>0.02778in</PaddingBottom>
                           <Border>
                             <Color>#d3d3d3</Color>
                             <Style>Solid</Style>
@@ -50,6 +60,7 @@
                               <TextRun>
                                 <Value>Sales Year</Value>
                                 <Style>
+                                  <FontFamily>Arial</FontFamily>
                                   <FontSize>0.13889in</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                   <Color>black</Color>
@@ -57,13 +68,15 @@
                               </TextRun>
                             </TextRuns>
                             <Style>
+                              <FontFamily>Arial</FontFamily>
+                              <FontSize>0.13889in</FontSize>
                               <TextAlign>Center</TextAlign>
                             </Style>
                           </Paragraph>
                         </Paragraphs>
                       </Textbox>
-                      <ColSpan>1</ColSpan>
                       <RowSpan>2</RowSpan>
+                      <ColSpan>1</ColSpan>
                     </CellContents>
                   </TablixCornerCell>
                 </TablixCornerRow>
@@ -75,32 +88,34 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.97533in</Width>
+                  <Width>0.97526in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.97533in</Width>
+                  <Width>0.97526in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.19136in</Width>
+                  <Width>3.19155in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>2.35783in</Height>
+                  <Height>2.35793in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="TextBox134">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>2.35783in</Height>
-                          <Width>0.97533in</Width>
+                          <Height>2.35793in</Height>
+                          <Width>0.97526in</Width>
                           <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>0.13889in</FontSize>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>0.02778in</PaddingLeft>
+                            <PaddingRight>0.02778in</PaddingRight>
+                            <PaddingTop>0.02778in</PaddingTop>
+                            <PaddingBottom>0.02778in</PaddingBottom>
                             <Border>
                               <Color>#d3d3d3</Color>
                               <Style>Solid</Style>
@@ -114,6 +129,7 @@
                                 <TextRun>
                                   <Value>=Sum(Fields!Revenue.Value)</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <FontSize>0.13889in</FontSize>
                                     <Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
@@ -121,13 +137,15 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <FontSize>0.13889in</FontSize>
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -135,15 +153,17 @@
                         <Textbox Name="TextBox177">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>2.35783in</Height>
-                          <Width>0.97533in</Width>
+                          <Height>2.35793in</Height>
+                          <Width>0.97526in</Width>
                           <Style>
                             <BackgroundColor>#f2f0f0</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>0.13889in</FontSize>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>0.02778in</PaddingLeft>
+                            <PaddingRight>0.02778in</PaddingRight>
+                            <PaddingTop>0.02778in</PaddingTop>
+                            <PaddingBottom>0.02778in</PaddingBottom>
                             <Border>
                               <Color>#d3d3d3</Color>
                               <Style>Solid</Style>
@@ -157,6 +177,7 @@
                                 <TextRun>
                                   <Value>=Sum(Fields!Revenue.Value)</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <FontSize>0.13889in</FontSize>
                                     <Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
@@ -164,13 +185,15 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <FontSize>0.13889in</FontSize>
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -178,11 +201,11 @@
                         <Chart Name="Chart1">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>2.35783in</Height>
-                          <Width>3.19136in</Width>
+                          <Height>2.35793in</Height>
+                          <Width>3.19155in</Width>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>8pt</FontSize>
+                            <FontSize>0.11111in</FontSize>
                             <TextAlign>Center</TextAlign>
                             <Color>Gray</Color>
                             <ShadowColor>#00ffffff</ShadowColor>
@@ -191,10 +214,17 @@
                               <Style>Solid</Style>
                             </Border>
                           </Style>
+                          <CustomProperties>
+                            <CustomProperty>
+                              <Name>MaxDataCount</Name>
+                              <Value>50000</Value>
+                            </CustomProperty>
+                          </CustomProperties>
                           <DataSetName>SalesByYear</DataSetName>
                           <ChartSeriesHierarchy>
                             <ChartMembers>
                               <ChartMember>
+                                <Label>=Fields!Year.Value</Label>
                                 <Group Name="Chart1_SeriesGroup2">
                                   <GroupExpressions>
                                     <GroupExpression>=Fields!Year.Value</GroupExpression>
@@ -203,15 +233,16 @@
                                 <SortExpressions>
                                   <SortExpression>
                                     <Value>=Fields!Year.Value</Value>
+                                    <Direction>Ascending</Direction>
                                   </SortExpression>
                                 </SortExpressions>
-                                <Label>=Fields!Year.Value</Label>
                               </ChartMember>
                             </ChartMembers>
                           </ChartSeriesHierarchy>
                           <ChartCategoryHierarchy>
                             <ChartMembers>
                               <ChartMember>
+                                <Label>=Fields!Country.Value</Label>
                                 <Group Name="Chart1_CategoryGroup2">
                                   <GroupExpressions>
                                     <GroupExpression>=Fields!Country.Value</GroupExpression>
@@ -220,9 +251,9 @@
                                 <SortExpressions>
                                   <SortExpression>
                                     <Value>=Fields!Country.Value</Value>
+                                    <Direction>Ascending</Direction>
                                   </SortExpression>
                                 </SortExpressions>
-                                <Label>=Fields!Country.Value</Label>
                               </ChartMember>
                             </ChartMembers>
                           </ChartCategoryHierarchy>
@@ -237,7 +268,7 @@
                                     <ChartDataLabel>
                                       <Style>
                                         <FontFamily>Segoe UI</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>0.12500in</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                         <Format>'$'#,0;('$'#,0)</Format>
                                         <Color>black</Color>
@@ -252,6 +283,8 @@
                                       <Position>="Outside"</Position>
                                     </ChartDataLabel>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
                                       <Border>
                                         <Color>Transparent</Color>
@@ -259,8 +292,10 @@
                                       </Border>
                                     </Style>
                                     <ChartMarker>
-                                      <Size>6pt</Size>
+                                      <Size>0.08333in</Size>
                                       <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontSize>0.13889in</FontSize>
                                         <Border>
                                           <Color>Transparent</Color>
                                           <Style>None</Style>
@@ -271,31 +306,37 @@
                                 </ChartDataPoints>
                                 <Type>Shape</Type>
                                 <ChartEmptyPoints>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>0.13889in</FontSize>
+                                  </Style>
                                   <ChartMarker>
-                                    <Style />
+                                    <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
+                                    </Style>
                                   </ChartMarker>
                                   <ChartDataLabel>
-                                    <Style />
-                                    <UseValueAsLabel>false</UseValueAsLabel>
-                                    <Visible>false</Visible>
+                                    <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
+                                    </Style>
+                                    <Visible>False</Visible>
                                   </ChartDataLabel>
                                 </ChartEmptyPoints>
                                 <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                  <FontSize>0.13889in</FontSize>
                                   <ShadowColor>#00ffffff</ShadowColor>
                                 </Style>
                                 <ValueAxisName>Primary</ValueAxisName>
                                 <CategoryAxisName>Primary</CategoryAxisName>
                                 <ChartSmartLabel>
-                                  <Disabled>false</Disabled>
                                   <AllowOutSidePlotArea>Partial</AllowOutSidePlotArea>
-                                  <CalloutLineAnchor>None</CalloutLineAnchor>
                                   <CalloutLineColor>Black</CalloutLineColor>
                                   <CalloutLineStyle>Solid</CalloutLineStyle>
                                   <CalloutStyle>Underline</CalloutStyle>
-                                  <ShowOverlapped>false</ShowOverlapped>
-                                  <MarkerOverlapping>false</MarkerOverlapping>
-                                  <MinMovingDistance>0pt</MinMovingDistance>
+                                  <MinMovingDistance>0in</MinMovingDistance>
                                 </ChartSmartLabel>
                               </ChartSeries>
                             </ChartSeriesCollection>
@@ -306,7 +347,7 @@
                                 <ChartAxis Name="Primary">
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>0.11111in</FontSize>
                                     <Border>
                                       <Color>#808080</Color>
                                       <Style>Solid</Style>
@@ -316,66 +357,62 @@
                                     <Caption />
                                     <Style>
                                       <FontFamily>Segoe UI</FontFamily>
-                                      <FontSize>8pt</FontSize>
+                                      <FontSize>0.11111in</FontSize>
                                     </Style>
                                   </ChartAxisTitle>
                                   <ChartMajorGridLines>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
                                         <Color>#dcdcdc</Color>
                                         <Style>Solid</Style>
                                       </Border>
                                     </Style>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMajorGridLines>
                                   <ChartMinorGridLines>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
                                         <Color>#dcdcdc</Color>
                                         <Style>Dotted</Style>
                                       </Border>
                                     </Style>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMinorGridLines>
                                   <ChartMajorTickMarks>
                                     <Enabled>False</Enabled>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
-                                        <Width>0.75000pt</Width>
+                                        <Width>0.01042in</Width>
                                         <Color>Gray</Color>
                                         <Style>Solid</Style>
                                       </Border>
                                     </Style>
                                     <Length>1.5</Length>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMajorTickMarks>
                                   <ChartMinorTickMarks>
                                     <Enabled>False</Enabled>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
-                                        <Width>0.75000pt</Width>
+                                        <Width>0.01042in</Width>
                                         <Color>Gray</Color>
                                         <Style>Solid</Style>
                                       </Border>
                                     </Style>
-                                    <Length>0</Length>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMinorTickMarks>
-                                  <Location>Default</Location>
                                   <InterlacedColor>#00ffffff</InterlacedColor>
-                                  <Minimum>null</Minimum>
-                                  <Maximum>null</Maximum>
                                   <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                                   <ChartAxisScaleBreak>
                                     <Enabled>false</Enabled>
                                     <BreakLineType>Ragged</BreakLineType>
-                                    <Spacing>0</Spacing>
-                                    <IncludeZero>Auto</IncludeZero>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
                                         <Color>#d3d3d3</Color>
                                         <Style>Solid</Style>
@@ -386,7 +423,7 @@
                                 <ChartAxis Name="Secondary">
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>0.11111in</FontSize>
                                     <Border>
                                       <Color>#808080</Color>
                                       <Style>Solid</Style>
@@ -396,66 +433,63 @@
                                     <Caption />
                                     <Style>
                                       <FontFamily>Segoe UI</FontFamily>
-                                      <FontSize>8pt</FontSize>
+                                      <FontSize>0.11111in</FontSize>
                                     </Style>
                                   </ChartAxisTitle>
                                   <ChartMajorGridLines>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
                                         <Color>#dcdcdc</Color>
                                         <Style>Solid</Style>
                                       </Border>
                                     </Style>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMajorGridLines>
                                   <ChartMinorGridLines>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
                                         <Color>#dcdcdc</Color>
                                         <Style>Dotted</Style>
                                       </Border>
                                     </Style>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMinorGridLines>
                                   <ChartMajorTickMarks>
                                     <Enabled>False</Enabled>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
-                                        <Width>0.75000pt</Width>
+                                        <Width>0.01042in</Width>
                                         <Color>Gray</Color>
                                         <Style>Solid</Style>
                                       </Border>
                                     </Style>
                                     <Length>1.5</Length>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMajorTickMarks>
                                   <ChartMinorTickMarks>
                                     <Enabled>False</Enabled>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
-                                        <Width>0.75000pt</Width>
+                                        <Width>0.01042in</Width>
                                         <Color>Gray</Color>
                                         <Style>Solid</Style>
                                       </Border>
                                     </Style>
-                                    <Length>0</Length>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMinorTickMarks>
                                   <Location>Opposite</Location>
                                   <InterlacedColor>#00ffffff</InterlacedColor>
-                                  <Minimum>null</Minimum>
-                                  <Maximum>null</Maximum>
                                   <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                                   <ChartAxisScaleBreak>
                                     <Enabled>false</Enabled>
                                     <BreakLineType>Ragged</BreakLineType>
-                                    <Spacing>0</Spacing>
-                                    <IncludeZero>Auto</IncludeZero>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
                                         <Color>#d3d3d3</Color>
                                         <Style>Solid</Style>
@@ -468,7 +502,7 @@
                                 <ChartAxis Name="Primary">
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>0.11111in</FontSize>
                                     <Border>
                                       <Color>#808080</Color>
                                       <Style>Solid</Style>
@@ -478,64 +512,62 @@
                                     <Caption />
                                     <Style>
                                       <FontFamily>Segoe UI</FontFamily>
-                                      <FontSize>8pt</FontSize>
+                                      <FontSize>0.11111in</FontSize>
                                     </Style>
                                   </ChartAxisTitle>
                                   <ChartMajorGridLines>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
                                         <Color>#dcdcdc</Color>
                                         <Style>Solid</Style>
                                       </Border>
                                     </Style>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMajorGridLines>
                                   <ChartMinorGridLines>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
                                         <Color>#dcdcdc</Color>
                                         <Style>Dotted</Style>
                                       </Border>
                                     </Style>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMinorGridLines>
                                   <ChartMajorTickMarks>
                                     <Enabled>False</Enabled>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
-                                        <Width>0.75000pt</Width>
+                                        <Width>0.01042in</Width>
                                         <Color>Gray</Color>
                                         <Style>Solid</Style>
                                       </Border>
                                     </Style>
                                     <Length>1.5</Length>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMajorTickMarks>
                                   <ChartMinorTickMarks>
                                     <Enabled>False</Enabled>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
-                                        <Width>0.75000pt</Width>
+                                        <Width>0.01042in</Width>
                                         <Color>Gray</Color>
                                         <Style>Solid</Style>
                                       </Border>
                                     </Style>
-                                    <Length>0</Length>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMinorTickMarks>
-                                  <Location>Default</Location>
                                   <InterlacedColor>#00ffffff</InterlacedColor>
                                   <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                                   <ChartAxisScaleBreak>
                                     <Enabled>false</Enabled>
                                     <BreakLineType>Ragged</BreakLineType>
-                                    <Spacing>0</Spacing>
-                                    <IncludeZero>Auto</IncludeZero>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
                                         <Color>#d3d3d3</Color>
                                         <Style>Solid</Style>
@@ -546,7 +578,7 @@
                                 <ChartAxis Name="Secondary">
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>0.11111in</FontSize>
                                     <Border>
                                       <Color>#808080</Color>
                                       <Style>Solid</Style>
@@ -556,54 +588,53 @@
                                     <Caption />
                                     <Style>
                                       <FontFamily>Segoe UI</FontFamily>
-                                      <FontSize>8pt</FontSize>
+                                      <FontSize>0.11111in</FontSize>
                                     </Style>
                                   </ChartAxisTitle>
                                   <ChartMajorGridLines>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
                                         <Color>#dcdcdc</Color>
                                         <Style>Solid</Style>
                                       </Border>
                                     </Style>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMajorGridLines>
                                   <ChartMinorGridLines>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
                                         <Color>#dcdcdc</Color>
                                         <Style>Dotted</Style>
                                       </Border>
                                     </Style>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMinorGridLines>
                                   <ChartMajorTickMarks>
                                     <Enabled>False</Enabled>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
-                                        <Width>0.75000pt</Width>
+                                        <Width>0.01042in</Width>
                                         <Color>Gray</Color>
                                         <Style>Solid</Style>
                                       </Border>
                                     </Style>
                                     <Length>1.5</Length>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMajorTickMarks>
                                   <ChartMinorTickMarks>
                                     <Enabled>False</Enabled>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
-                                        <Width>0.75000pt</Width>
+                                        <Width>0.01042in</Width>
                                         <Color>Gray</Color>
                                         <Style>Solid</Style>
                                       </Border>
                                     </Style>
-                                    <Length>0</Length>
-                                    <IntervalType>Default</IntervalType>
-                                    <IntervalOffsetType>Default</IntervalOffsetType>
                                   </ChartMinorTickMarks>
                                   <Location>Opposite</Location>
                                   <InterlacedColor>#00ffffff</InterlacedColor>
@@ -611,9 +642,9 @@
                                   <ChartAxisScaleBreak>
                                     <Enabled>false</Enabled>
                                     <BreakLineType>Ragged</BreakLineType>
-                                    <Spacing>0</Spacing>
-                                    <IncludeZero>Auto</IncludeZero>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <Border>
                                         <Color>#d3d3d3</Color>
                                         <Style>Solid</Style>
@@ -623,6 +654,8 @@
                                 </ChartAxis>
                               </ChartValueAxes>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <FontSize>0.13889in</FontSize>
                                 <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
                                 <ShadowColor>#00ffffff</ShadowColor>
                                 <Border>
@@ -634,23 +667,22 @@
                           </ChartAreas>
                           <ChartLegends>
                             <ChartLegend Name="Default">
-                              <Hidden>true</Hidden>
+                              <Hidden>True</Hidden>
+                              <Position>BottomCenter</Position>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>0.11111in</FontSize>
                                 <ShadowColor>#00ffffff</ShadowColor>
                                 <Border>
                                   <Color>#d3d3d3</Color>
                                   <Style>None</Style>
                                 </Border>
                               </Style>
-                              <Position>BottomCenter</Position>
                               <ChartLegendTitle>
                                 <Caption />
-                                <TitleSeparator>None</TitleSeparator>
                                 <Style>
                                   <FontFamily>Segoe UI</FontFamily>
-                                  <FontSize>8pt</FontSize>
+                                  <FontSize>0.11111in</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                   <TextAlign>Center</TextAlign>
                                   <Color>Gray</Color>
@@ -660,38 +692,27 @@
                                   </Border>
                                 </Style>
                               </ChartLegendTitle>
-                              <HeaderSeparator>None</HeaderSeparator>
                               <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-                              <ColumnSeparator>None</ColumnSeparator>
                               <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-                              <ColumnSpacing>0</ColumnSpacing>
-                              <InterlacedRows>false</InterlacedRows>
                               <InterlacedRowsColor>#00ffffff</InterlacedRowsColor>
-                              <EquallySpacedItems>false</EquallySpacedItems>
-                              <Reversed>Auto</Reversed>
-                              <TextWrapThreshold>0</TextWrapThreshold>
                             </ChartLegend>
                           </ChartLegends>
                           <ChartTitles>
                             <ChartTitle Name="Default">
                               <Caption />
-                              <Hidden>false</Hidden>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
-                                <FontSize>10.5pt</FontSize>
+                                <FontSize>0.14583in</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <TextAlign>General</TextAlign>
                                 <VerticalAlign>Top</VerticalAlign>
                                 <ShadowColor>#00ffffff</ShadowColor>
                                 <Border>
-                                  <Width>0.75000pt</Width>
+                                  <Width>0.01042in</Width>
                                   <Color>LightGrey</Color>
                                   <Style>None</Style>
                                 </Border>
                               </Style>
-                              <Position>TopCenter</Position>
-                              <DockOffset>0</DockOffset>
-                              <TextOrientation>Auto</TextOrientation>
                             </ChartTitle>
                           </ChartTitles>
                           <Palette>Custom</Palette>
@@ -712,6 +733,8 @@
                           </ChartCustomPaletteColors>
                           <ChartBorderSkin>
                             <Style>
+                              <FontFamily>Arial</FontFamily>
+                              <FontSize>0.13889in</FontSize>
                               <Color>White</Color>
                               <Border>
                                 <Color>#d3d3d3</Color>
@@ -721,10 +744,9 @@
                           </ChartBorderSkin>
                           <ChartNoDataMessage Name="NoDataMessage">
                             <Caption>No Data Available</Caption>
-                            <Hidden>false</Hidden>
                             <Style>
                               <FontFamily>Segoe UI</FontFamily>
-                              <FontSize>8pt</FontSize>
+                              <FontSize>0.11111in</FontSize>
                               <TextAlign>Center</TextAlign>
                               <Color>Gray</Color>
                               <ShadowColor>#00ffffff</ShadowColor>
@@ -733,34 +755,33 @@
                                 <Style>Solid</Style>
                               </Border>
                             </Style>
-                            <Position>TopCenter</Position>
-                            <DockOffset>0</DockOffset>
-                            <TextOrientation>Auto</TextOrientation>
                           </ChartNoDataMessage>
                         </Chart>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.24633in</Height>
+                  <Height>0.24638in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="TextBox174">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.24633in</Height>
-                          <Width>0.97533in</Width>
+                          <Height>0.24638in</Height>
+                          <Width>0.97526in</Width>
                           <Style>
                             <BackgroundColor>#f2f0f0</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>0.13889in</FontSize>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>0.02778in</PaddingLeft>
+                            <PaddingRight>0.02778in</PaddingRight>
+                            <PaddingTop>0.02778in</PaddingTop>
+                            <PaddingBottom>0.02778in</PaddingBottom>
                             <Border>
                               <Color>#d3d3d3</Color>
                               <Style>Solid</Style>
@@ -774,6 +795,7 @@
                                 <TextRun>
                                   <Value>=Sum(Fields!Revenue.Value)</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <FontSize>0.13889in</FontSize>
                                     <Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
@@ -781,13 +803,15 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <FontSize>0.13889in</FontSize>
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -795,15 +819,17 @@
                         <Textbox Name="TextBox178">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.24633in</Height>
-                          <Width>0.97533in</Width>
+                          <Height>0.24638in</Height>
+                          <Width>0.97526in</Width>
                           <Style>
                             <BackgroundColor>#f2f0f0</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>0.13889in</FontSize>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>0.02778in</PaddingLeft>
+                            <PaddingRight>0.02778in</PaddingRight>
+                            <PaddingTop>0.02778in</PaddingTop>
+                            <PaddingBottom>0.02778in</PaddingBottom>
                             <Border>
                               <Color>#d3d3d3</Color>
                               <Style>Solid</Style>
@@ -817,6 +843,7 @@
                                 <TextRun>
                                   <Value>=Sum(Fields!Revenue.Value)</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <FontSize>0.13889in</FontSize>
                                     <Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
@@ -824,13 +851,15 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <FontSize>0.13889in</FontSize>
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -838,15 +867,17 @@
                         <Textbox Name="TextBox4">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.24633in</Height>
-                          <Width>3.19136in</Width>
+                          <Height>0.24638in</Height>
+                          <Width>3.19155in</Width>
                           <Style>
                             <BackgroundColor>#f2f0f0</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>0.13889in</FontSize>
                             <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>0.02778in</PaddingLeft>
+                            <PaddingRight>0.02778in</PaddingRight>
+                            <PaddingTop>0.02778in</PaddingTop>
+                            <PaddingBottom>0.02778in</PaddingBottom>
                             <Border>
                               <Color>#d3d3d3</Color>
                               <Style>Solid</Style>
@@ -860,17 +891,21 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <FontSize>0.13889in</FontSize>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <FontSize>0.13889in</FontSize>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -888,23 +923,26 @@
                   <SortExpressions>
                     <SortExpression>
                       <Value>=Fields!Region.Value</Value>
+                      <Direction>Ascending</Direction>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>0.26510in</Size>
+                    <Size>0.26505in</Size>
                     <CellContents>
                       <Textbox Name="Region101">
                         <Left>0in</Left>
                         <Top>0in</Top>
-                        <Height>0.26510in</Height>
-                        <Width>5.14202in</Width>
+                        <Height>0.26505in</Height>
+                        <Width>5.14207in</Width>
                         <Style>
                           <BackgroundColor>#e3e6ea</BackgroundColor>
+                          <FontFamily>Arial</FontFamily>
+                          <FontSize>0.13889in</FontSize>
                           <VerticalAlign>Middle</VerticalAlign>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
+                          <PaddingLeft>0.02778in</PaddingLeft>
+                          <PaddingRight>0.02778in</PaddingRight>
+                          <PaddingTop>0.02778in</PaddingTop>
+                          <PaddingBottom>0.02778in</PaddingBottom>
                           <Border>
                             <Color>#d3d3d3</Color>
                             <Style>Solid</Style>
@@ -918,6 +956,7 @@
                               <TextRun>
                                 <Value>=Fields!Region.Value</Value>
                                 <Style>
+                                  <FontFamily>Arial</FontFamily>
                                   <FontSize>0.13889in</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                   <Color>black</Color>
@@ -925,6 +964,8 @@
                               </TextRun>
                             </TextRuns>
                             <Style>
+                              <FontFamily>Arial</FontFamily>
+                              <FontSize>0.13889in</FontSize>
                               <TextAlign>Center</TextAlign>
                             </Style>
                           </Paragraph>
@@ -942,25 +983,28 @@
                       <SortExpressions>
                         <SortExpression>
                           <Value>=Fields!Country.Value</Value>
+                          <Direction>Ascending</Direction>
                         </SortExpression>
                       </SortExpressions>
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>0.24620in</Size>
+                            <Size>0.24609in</Size>
                             <CellContents>
                               <Textbox Name="Country61">
                                 <Left>0in</Left>
                                 <Top>0in</Top>
-                                <Height>0.24620in</Height>
-                                <Width>0.97533in</Width>
+                                <Height>0.24609in</Height>
+                                <Width>0.97526in</Width>
                                 <Style>
                                   <BackgroundColor>#e3e6ea</BackgroundColor>
+                                  <FontFamily>Arial</FontFamily>
+                                  <FontSize>0.13889in</FontSize>
                                   <VerticalAlign>Middle</VerticalAlign>
-                                  <PaddingLeft>2pt</PaddingLeft>
-                                  <PaddingRight>2pt</PaddingRight>
-                                  <PaddingTop>2pt</PaddingTop>
-                                  <PaddingBottom>2pt</PaddingBottom>
+                                  <PaddingLeft>0.02778in</PaddingLeft>
+                                  <PaddingRight>0.02778in</PaddingRight>
+                                  <PaddingTop>0.02778in</PaddingTop>
+                                  <PaddingBottom>0.02778in</PaddingBottom>
                                   <Border>
                                     <Color>#d3d3d3</Color>
                                     <Style>Solid</Style>
@@ -974,6 +1018,7 @@
                                       <TextRun>
                                         <Value>=Fields!Country.Value</Value>
                                         <Style>
+                                          <FontFamily>Arial</FontFamily>
                                           <FontSize>0.13889in</FontSize>
                                           <FontWeight>Bold</FontWeight>
                                           <Color>black</Color>
@@ -981,6 +1026,8 @@
                                       </TextRun>
                                     </TextRuns>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                      <FontSize>0.13889in</FontSize>
                                       <TextAlign>Center</TextAlign>
                                     </Style>
                                   </Paragraph>
@@ -996,20 +1043,22 @@
                     </TablixMember>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>0.24620in</Size>
+                        <Size>0.24609in</Size>
                         <CellContents>
                           <Textbox Name="TextBox176">
                             <Left>0in</Left>
                             <Top>0in</Top>
-                            <Height>0.24620in</Height>
-                            <Width>0.97533in</Width>
+                            <Height>0.24609in</Height>
+                            <Width>0.97526in</Width>
                             <Style>
                               <BackgroundColor>#e3e6ea</BackgroundColor>
+                              <FontFamily>Arial</FontFamily>
+                              <FontSize>0.13889in</FontSize>
                               <VerticalAlign>Middle</VerticalAlign>
-                              <PaddingLeft>2pt</PaddingLeft>
-                              <PaddingRight>2pt</PaddingRight>
-                              <PaddingTop>2pt</PaddingTop>
-                              <PaddingBottom>2pt</PaddingBottom>
+                              <PaddingLeft>0.02778in</PaddingLeft>
+                              <PaddingRight>0.02778in</PaddingRight>
+                              <PaddingTop>0.02778in</PaddingTop>
+                              <PaddingBottom>0.02778in</PaddingBottom>
                               <Border>
                                 <Color>#d3d3d3</Color>
                                 <Style>Solid</Style>
@@ -1023,6 +1072,7 @@
                                   <TextRun>
                                     <Value>Total</Value>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
                                       <FontSize>0.13889in</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                       <Color>black</Color>
@@ -1030,6 +1080,8 @@
                                   </TextRun>
                                 </TextRuns>
                                 <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                  <FontSize>0.13889in</FontSize>
                                   <TextAlign>Center</TextAlign>
                                 </Style>
                               </Paragraph>
@@ -1040,20 +1092,22 @@
                     </TablixMember>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>0.24620in</Size>
+                        <Size>0.24609in</Size>
                         <CellContents>
                           <Textbox Name="TextBox2">
                             <Left>0in</Left>
                             <Top>0in</Top>
-                            <Height>0.24620in</Height>
-                            <Width>3.19136in</Width>
+                            <Height>0.24609in</Height>
+                            <Width>3.19155in</Width>
                             <Style>
                               <BackgroundColor>#e3e6ea</BackgroundColor>
+                              <FontFamily>Arial</FontFamily>
+                              <FontSize>0.13889in</FontSize>
                               <VerticalAlign>Middle</VerticalAlign>
-                              <PaddingLeft>2pt</PaddingLeft>
-                              <PaddingRight>2pt</PaddingRight>
-                              <PaddingTop>2pt</PaddingTop>
-                              <PaddingBottom>2pt</PaddingBottom>
+                              <PaddingLeft>0.02778in</PaddingLeft>
+                              <PaddingRight>0.02778in</PaddingRight>
+                              <PaddingTop>0.02778in</PaddingTop>
+                              <PaddingBottom>0.02778in</PaddingBottom>
                               <Border>
                                 <Color>#d3d3d3</Color>
                                 <Style>Solid</Style>
@@ -1067,6 +1121,7 @@
                                   <TextRun>
                                     <Value>Sales By Country Chart</Value>
                                     <Style>
+                                      <FontFamily>Arial</FontFamily>
                                       <FontSize>0.13889in</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                       <Color>black</Color>
@@ -1074,6 +1129,8 @@
                                   </TextRun>
                                 </TextRuns>
                                 <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                  <FontSize>0.13889in</FontSize>
                                   <TextAlign>Center</TextAlign>
                                 </Style>
                               </Paragraph>
@@ -1097,22 +1154,25 @@
                   <SortExpressions>
                     <SortExpression>
                       <Value>=Fields!Year.Value</Value>
+                      <Direction>Ascending</Direction>
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>0.97533in</Size>
+                    <Size>0.97526in</Size>
                     <CellContents>
                       <Textbox Name="Year171">
                         <Left>0in</Left>
                         <Top>0in</Top>
-                        <Height>2.35783in</Height>
-                        <Width>0.97533in</Width>
+                        <Height>2.35793in</Height>
+                        <Width>0.97526in</Width>
                         <Style>
+                          <FontFamily>Arial</FontFamily>
+                          <FontSize>0.13889in</FontSize>
                           <VerticalAlign>Middle</VerticalAlign>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
+                          <PaddingLeft>0.02778in</PaddingLeft>
+                          <PaddingRight>0.02778in</PaddingRight>
+                          <PaddingTop>0.02778in</PaddingTop>
+                          <PaddingBottom>0.02778in</PaddingBottom>
                           <Border>
                             <Color>#d3d3d3</Color>
                             <Style>Solid</Style>
@@ -1126,12 +1186,15 @@
                               <TextRun>
                                 <Value>=Fields!Year.Value</Value>
                                 <Style>
+                                  <FontFamily>Arial</FontFamily>
                                   <FontSize>0.13889in</FontSize>
                                   <Color>black</Color>
                                 </Style>
                               </TextRun>
                             </TextRuns>
                             <Style>
+                              <FontFamily>Arial</FontFamily>
+                              <FontSize>0.13889in</FontSize>
                               <TextAlign>Center</TextAlign>
                             </Style>
                           </Paragraph>
@@ -1145,20 +1208,22 @@
                 </TablixMember>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>0.97533in</Size>
+                    <Size>0.97526in</Size>
                     <CellContents>
                       <Textbox Name="TextBox173">
                         <Left>0in</Left>
                         <Top>0in</Top>
-                        <Height>0.24633in</Height>
-                        <Width>0.97533in</Width>
+                        <Height>0.24638in</Height>
+                        <Width>0.97526in</Width>
                         <Style>
                           <BackgroundColor>#f2f0f0</BackgroundColor>
+                          <FontFamily>Arial</FontFamily>
+                          <FontSize>0.13889in</FontSize>
                           <VerticalAlign>Middle</VerticalAlign>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
+                          <PaddingLeft>0.02778in</PaddingLeft>
+                          <PaddingRight>0.02778in</PaddingRight>
+                          <PaddingTop>0.02778in</PaddingTop>
+                          <PaddingBottom>0.02778in</PaddingBottom>
                           <Border>
                             <Color>#d3d3d3</Color>
                             <Style>Solid</Style>
@@ -1172,12 +1237,15 @@
                               <TextRun>
                                 <Value>Total</Value>
                                 <Style>
+                                  <FontFamily>Arial</FontFamily>
                                   <FontSize>0.13889in</FontSize>
                                   <Color>black</Color>
                                 </Style>
                               </TextRun>
                             </TextRuns>
                             <Style>
+                              <FontFamily>Arial</FontFamily>
+                              <FontSize>0.13889in</FontSize>
                               <TextAlign>Center</TextAlign>
                             </Style>
                           </Paragraph>
@@ -1191,44 +1259,49 @@
             </TablixRowHierarchy>
           </Tablix>
         </ReportItems>
-        <Height>228.0685pt</Height>
+        <Style>
+          <FontFamily>Arial</FontFamily>
+          <FontSize>0.13889in</FontSize>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
       </Body>
-      <Width>681pt</Width>
+      <Width>9.45834in</Width>
       <Page>
-        <PageHeight>975pt</PageHeight>
-        <PageWidth>681pt</PageWidth>
+        <PageHeight>14.33001in</PageHeight>
+        <PageWidth>10.12001in</PageWidth>
         <PageHeader>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-          <Height>39.7479pt</Height>
+          <Height>0.55205in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Rectangle Name="Rectangle1">
-              <Left>0pt</Left>
-              <Top>0pt</Top>
-              <Height>39pt</Height>
-              <Width>681pt</Width>
+              <Left>0in</Left>
+              <Top>0in</Top>
+              <Height>0.54167in</Height>
+              <Width>9.45834in</Width>
               <Style>
                 <BackgroundColor>#555b63</BackgroundColor>
+                <FontFamily>Arial</FontFamily>
+                <FontSize>0.13889in</FontSize>
                 <Border>
                   <Style>None</Style>
                 </Border>
               </Style>
               <ReportItems>
                 <Textbox Name="TextBox1">
-                  <Left>6pt</Left>
-                  <Top>8.23828pt</Top>
-                  <Height>23.7525pt</Height>
-                  <Width>238.485pt</Width>
+                  <Left>0.08333in</Left>
+                  <Top>0.11442in</Top>
+                  <Height>0.32990in</Height>
+                  <Width>3.31229in</Width>
                   <Style>
-                    <PaddingLeft>2pt</PaddingLeft>
-                    <PaddingRight>2pt</PaddingRight>
-                    <PaddingTop>2pt</PaddingTop>
-                    <PaddingBottom>2pt</PaddingBottom>
+                    <FontFamily>Arial</FontFamily>
+                    <FontSize>0.13889in</FontSize>
+                    <PaddingLeft>0.02778in</PaddingLeft>
+                    <PaddingRight>0.02778in</PaddingRight>
+                    <PaddingTop>0.02778in</PaddingTop>
+                    <PaddingBottom>0.02778in</PaddingBottom>
                     <Border>
                       <Style>None</Style>
                     </Border>
@@ -1241,7 +1314,8 @@
                         <TextRun>
                           <Value>Sales By Year</Value>
                           <Style>
-                            <FontSize>12.024pt</FontSize>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>0.16700in</FontSize>
                             <FontWeight>Bold</FontWeight>
                             <Color>#ffffff</Color>
                           </Style>
@@ -1249,13 +1323,17 @@
                         <TextRun>
                           <Value>﻿</Value>
                           <Style>
-                            <FontSize>12.024pt</FontSize>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>0.16700in</FontSize>
                             <FontWeight>Bold</FontWeight>
                             <Color>#ffffff</Color>
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontSize>0.13889in</FontSize>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                 </Textbox>
@@ -1263,19 +1341,30 @@
               <KeepTogether>true</KeepTogether>
             </Rectangle>
           </ReportItems>
+          <Style>
+            <FontFamily>Arial</FontFamily>
+            <FontSize>0.13889in</FontSize>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
         </PageHeader>
         <PageFooter>
-          <Style />
-          <Height>8.24572pt</Height>
+          <Height>0.11452in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <FontFamily>Arial</FontFamily>
+            <FontSize>0.13889in</FontSize>
+          </Style>
         </PageFooter>
-        <LeftMargin>0pt</LeftMargin>
-        <RightMargin>0pt</RightMargin>
-        <TopMargin>0pt</TopMargin>
-        <BottomMargin>0pt</BottomMargin>
-        <ColumnSpacing>36pt</ColumnSpacing>
+        <LeftMargin>0.32333in</LeftMargin>
+        <RightMargin>0.32333in</RightMargin>
+        <TopMargin>0.41667in</TopMargin>
+        <BottomMargin>0.41667in</BottomMargin>
         <Style>
+          <FontFamily>Arial</FontFamily>
+          <FontSize>0.13889in</FontSize>
           <Border>
             <Style>None</Style>
           </Border>
@@ -1283,18 +1372,21 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="masterDataSet">
+      <rd:SecurityType>None</rd:SecurityType>
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:ImpersonateUser>false</rd:ImpersonateUser>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="SalesByYear">
+      <Query>
+        <DataSourceName>masterDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
       <Fields>
         <Field Name="Region">
           <DataField>Region</DataField>
@@ -1313,19 +1405,6 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
-      <Query>
-        <DataSourceName>masterDataSet</DataSourceName>
-        <CommandType>Text</CommandType>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <rd:DataSetInfo>
-        <rd:DataSetName>masterDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\development\version-update\reports-aspnet-mvc-samples\masterDataSet.xsd</rd:SchemaPath>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>SalesByYearTableAdapter</rd:TableAdapterName>
-        <rd:TableName>SalesByYear</rd:TableName>
-      </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <ReportParametersLayout>
@@ -1336,4 +1415,5 @@
   </ReportParametersLayout>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:PageUnit />
 </Report>

@@ -1,0 +1,24 @@
+@inject Globals globals;
+
+@section control {
+
+    <bold-report-viewer id="reportviewer" report-service-url="@Globals.SERVICE_URL" report-path="powerpoint-report.rdl" toolbar-rendering="onToolbarRendering" tool-bar-item-click="onToolBarItemClick" export-item-click="onExportItemClick" />
+
+}
+
+@section description {
+<div id="description">
+    <p>
+        The PowerPoint RDL report represents the analytics of online food ordering for a specific region, presented in a PowerPoint format.
+    </p>
+    <ul>
+        <li>The comprehensive analysis of online food ordering was effectively conveyed through a variety of data visualization report items, each contributing to a rich and informative representation of the analytics.</li>
+        <li>The creation of each slide, akin to a page, is achieved through the utilization of the <code>PageBreak</code> property.</li>
+    </ul>
+    <p>
+        More information about Page break can be found in this <a
+            href="https://help.boldreports.com/enterprise-reporting/designer-guide/report-designer/compose-report/page-layout/#pagination"
+            target="_blank" rel="noreferrer">documentation</a> section.
+    </p>
+</div>
+}

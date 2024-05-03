@@ -9,7 +9,7 @@
         };
     }
 
-    <bold-report-designer id="reportdesigner" ajax-before-load="onAjaxBeforeLoad" service-url="@Globals.DESIGNER_SERVICE_URL" toolbar-settings="ViewBag.toolbarSettings" create="controlCreate" report-item-extensions="extensions" toolbar-rendering="toolbarRendering" toolbar-click="toolbarClick" permission-settings="ViewBag.permissionSettings"/>
+    <bold-report-designer id="@Globals.REPORT_CONTROL_ID" ajax-before-load="onAjaxBeforeLoad" service-url="@Globals.DESIGNER_SERVICE_URL" toolbar-settings="ViewBag.toolbarSettings" create="controlCreate" report-item-extensions="extensions" toolbar-rendering="toolbarRendering" toolbar-click="toolbarClick" permission-settings="ViewBag.permissionSettings"/>
     <script>
         let designerInst;
         function controlCreate() {
@@ -36,6 +36,15 @@
                     }
                 });
             }
+            if(reportName == "powerpoint-report.rdl"){
+                designerInst.setModel({
+                    previewOptions: {
+                        exportSettings: {
+                            exportOptions: ej.ReportViewer.ExportOptions.PPT
+                        }
+                    }
+                });
+            }
         }
 
         function onAjaxBeforeLoad(args) {
@@ -43,12 +52,37 @@
         }
 
         function toolbarRendering(args) {
-            if ($(args.target).hasClass('e-rptdesigner-toolbarcontainer')) {
-                var saveButton = ej.buildTag('li.e-rptdesigner-toolbarli e-designer-toolbar-align e-tooltxt', '', {}, {});
-                var saveIcon = ej.buildTag('span.e-rptdesigner-toolbar-icon e-toolbarfonticonbasic e-rptdesigner-toolbar-save e-li-item', '', {}, { title: 'Save' });
-                args.target.find('ul:first').append(saveButton.append(saveIcon));
+            let reportControlId = '@Globals.REPORT_CONTROL_ID';
+            if (args?.target && $(args.target)?.hasClass('e-rptdesigner-toolbarcontainer')) {
+                if (args.action === "beforeCreate") {
+                    args.items.splice(0, 0, {
+                        GroupName: "customfileactionitems",
+                        GroupId: reportControlId + "_custom_fileaction_group",
+                        Items: [
+                            {
+                                prefixIcon: "b-toolbar-item e-rptdesigner-toolbar-icon e-toolbarfonticonbasic e-rptdesigner-toolbar-new",
+                                tooltipText: "New",
+                                id: reportControlId + "_custom_toolbar_btn_new",
+                                htmlAttributes: {
+                                    id: reportControlId + "_custom_toolbar_new",
+                                    "aria-label": "New",
+                                },
+                            },
+                            {
+                                prefixIcon: "b-toolbar-item e-toolbarfonticonbasic e-rptdesigner-toolbar-save",
+                                tooltipText: "Save",
+                                id: reportControlId + "_custom_toolbar_btn_save",
+                                htmlAttributes: {
+                                    id: reportControlId + "_custom_toolbar_save",
+                                    "aria-label": "Save",
+                                },
+                            },
+                        ],
+                    });
+                }
             }
         }
+        
         function toolbarClick(args) {
             if (args.click === 'Save') {
                 args.cancel = true;

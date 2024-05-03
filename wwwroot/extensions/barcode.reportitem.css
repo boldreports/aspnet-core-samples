@@ -1,13 +1,28 @@
-﻿.customitem-barcode {
+﻿.e-rptdesigner-designarea.e-waitingpopup .customitem-barcode {
+    background-image: url('images/barcode.png');
+}
+
+.e-rptdesigner-designarea.e-waitingpopup .customitem-qrbarcode {
+    background-image: url('images/qrbarcode.png');
+}
+
+.e-rptdesigner-designarea:not(.e-waitingpopup) .customitem-barcode {
     background-image: url('images/barcode.svg');
 }
 
-.customitem-qrbarcode {
+.e-rptdesigner-designarea:not(.e-waitingpopup) .customitem-qrbarcode {
     background-image: url('images/qrbarcode.svg');
 }
 
-.customitem-barcode,
-.customitem-qrbarcode {
+.e-rptdesigner-designarea.e-waitingpopup .customitem-barcode,
+.e-rptdesigner-designarea.e-waitingpopup .customitem-qrbarcode {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height: 25px;
+}
+
+.e-rptdesigner-designarea:not(.e-waitingpopup) .customitem-barcode,
+.e-rptdesigner-designarea:not(.e-waitingpopup) .customitem-qrbarcode {
     background-repeat: no-repeat;
     height: 42px;
     background-position: center;
@@ -16,7 +31,7 @@
 .e-rptdesigner-itempanel-dragelements .customitem-barcode,
 .e-rptdesigner-itempanel-dragelements .customitem-qrbarcode {
     margin-top: 0px !important;
-    height: 100%;
+    height: 100% !important;
 }
 
 .e-rptdesigner-loaderDiv .e-rptdesigner-spinnerDiv {

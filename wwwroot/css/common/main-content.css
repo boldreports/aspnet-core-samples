@@ -69,7 +69,10 @@
     font-size: 14px;
     margin: 25px 3px 20px 20px;
 }
-
+ 
+.tab-pane form{
+  margin-bottom: -7px;
+}
 @keyframes slideleft {
     from {
         left: -500px;
@@ -186,7 +189,7 @@
     height: 121px;  
   }
   
-  .ad-header {
+  .header {
     font-weight: 800;
     font-size: 23px;
     color: #283A5E;
@@ -199,7 +202,7 @@
     margin-left: 15px;
   }
   
-  .ad-cnt-pt {
+  .cnt-pt {
     margin: 35px 0px 5px 25px;
   }
   
@@ -235,7 +238,7 @@
     #footer-banner {
       height: auto;
     }
-    .ad-header {
+    .header {
       padding: 58px 0px 14px 60px;
       font-size: 32px;
       line-height: 40px;
@@ -250,7 +253,7 @@
       font-size: 20px;
       padding: 10px 10px 0px 6px;
     }
-    .ad-cnt-pt {
+    .cnt-pt {
       margin: 10px 0px 0px 19px;
     }
     .free-trial-url{
@@ -269,7 +272,7 @@
     #footer-banner {
       height: auto;
     }
-    .ad-header {
+    .header {
       padding: 48px 0px 14px 60px;
       font-size: 22px;
       line-height: 32px;
@@ -285,7 +288,7 @@
       line-height: 15px;
       padding: 10px 10px 0px 6px;
     }
-    .ad-cnt-pt {
+    .cnt-pt {
       margin: 2px 12px 2px 25px
     }
     .free-trial-url {

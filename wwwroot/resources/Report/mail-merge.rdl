@@ -1,20 +1,17 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
   <ReportSections>
     <ReportSection>
       <Body>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
+        <Height>2.88542in</Height>
         <ReportItems>
           <Rectangle Name="Rectangle3">
-            <Left>0.18055in</Left>
-            <Top>0.10000in</Top>
-            <Height>2.81667in</Height>
-            <Width>10.61459in</Width>
+            <Left>0in</Left>
+            <Top>0.03733in</Top>
+            <Height>2.81655in</Height>
+            <Width>11.05991in</Width>
             <Style>
+              <FontSize>0.13889in</FontSize>
               <Border>
                 <Color>#e8e8e8</Color>
                 <Style>None</Style>
@@ -22,33 +19,45 @@
             </Style>
             <ReportItems>
               <Tablix Name="Tablix1">
-                <Left>0in</Left>
+                <Left>0.23323in</Left>
                 <Top>0in</Top>
                 <Height>2.79167in</Height>
-                <Width>10.59766in</Width>
+                <Width>10.59767in</Width>
                 <Style>
+                  <FontSize>0.13889in</FontSize>
                   <Border>
                     <Style>None</Style>
                   </Border>
                 </Style>
+                <CustomProperties>
+                  <CustomProperty>
+                    <Name>MaxRowCount</Name>
+                    <Value>100000</Value>
+                  </CustomProperty>
+                  <CustomProperty>
+                    <Name>MaxColumnCount</Name>
+                    <Value>20</Value>
+                  </CustomProperty>
+                </CustomProperties>
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>10.59369in</Width>
+                      <Width>10.59361in</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
                     <TablixRow>
-                      <Height>2.79165in</Height>
+                      <Height>2.79095in</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
                             <Rectangle Name="Rectangle1">
                               <Left>0in</Left>
                               <Top>0in</Top>
-                              <Height>2.79165in</Height>
+                              <Height>2.79095in</Height>
                               <Width>10.59365in</Width>
                               <Style>
+                                <FontSize>0.13889in</FontSize>
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
@@ -58,8 +67,9 @@
                                   <Left>2.61875in</Left>
                                   <Top>0.16146in</Top>
                                   <Height>2.479in</Height>
-                                  <Width>7.979in</Width>
+                                  <Width>7.97901in</Width>
                                   <Style>
+                                    <FontSize>0.13889in</FontSize>
                                     <Border>
                                       <Color>#3c4570</Color>
                                       <Style>None</Style>
@@ -70,12 +80,13 @@
                                       <Left>0.20817in</Left>
                                       <Top>0.12500in</Top>
                                       <Height>0.78125in</Height>
-                                      <Width>7.75in</Width>
+                                      <Width>7.75001in</Width>
                                       <Style>
-                                        <PaddingLeft>2pt</PaddingLeft>
-                                        <PaddingRight>2pt</PaddingRight>
-                                        <PaddingTop>2pt</PaddingTop>
-                                        <PaddingBottom>2pt</PaddingBottom>
+                                        <FontSize>0.13889in</FontSize>
+                                        <PaddingLeft>0.02778in</PaddingLeft>
+                                        <PaddingRight>0.02778in</PaddingRight>
+                                        <PaddingTop>0.02778in</PaddingTop>
+                                        <PaddingBottom>0.02778in</PaddingBottom>
                                         <Border>
                                           <Style>None</Style>
                                         </Border>
@@ -393,7 +404,9 @@
                                               </Style>
                                             </TextRun>
                                           </TextRuns>
-                                          <Style />
+                                          <Style>
+                                            <FontSize>0.13889in</FontSize>
+                                          </Style>
                                         </Paragraph>
                                       </Paragraphs>
                                     </Textbox>
@@ -401,13 +414,14 @@
                                       <Left>0.20817in</Left>
                                       <Top>0.96175in</Top>
                                       <Height>0.49305in</Height>
-                                      <Width>7.75in</Width>
+                                      <Width>7.75001in</Width>
                                       <ZIndex>1</ZIndex>
                                       <Style>
-                                        <PaddingLeft>2pt</PaddingLeft>
-                                        <PaddingRight>2pt</PaddingRight>
+                                        <FontSize>0.13889in</FontSize>
+                                        <PaddingLeft>0.02778in</PaddingLeft>
+                                        <PaddingRight>0.02778in</PaddingRight>
                                         <PaddingTop>0.02778in</PaddingTop>
-                                        <PaddingBottom>2pt</PaddingBottom>
+                                        <PaddingBottom>0.02778in</PaddingBottom>
                                         <Border>
                                           <Style>None</Style>
                                         </Border>
@@ -444,7 +458,9 @@
                                               </Style>
                                             </TextRun>
                                           </TextRuns>
-                                          <Style />
+                                          <Style>
+                                            <FontSize>0.13889in</FontSize>
+                                          </Style>
                                         </Paragraph>
                                       </Paragraphs>
                                     </Textbox>
@@ -455,10 +471,11 @@
                                       <Width>2.91667in</Width>
                                       <ZIndex>2</ZIndex>
                                       <Style>
-                                        <PaddingLeft>2pt</PaddingLeft>
-                                        <PaddingRight>2pt</PaddingRight>
-                                        <PaddingTop>2pt</PaddingTop>
-                                        <PaddingBottom>2pt</PaddingBottom>
+                                        <FontSize>0.13889in</FontSize>
+                                        <PaddingLeft>0.02778in</PaddingLeft>
+                                        <PaddingRight>0.02778in</PaddingRight>
+                                        <PaddingTop>0.02778in</PaddingTop>
+                                        <PaddingBottom>0.02778in</PaddingBottom>
                                         <Border>
                                           <Style>None</Style>
                                         </Border>
@@ -484,7 +501,9 @@
                                               </Style>
                                             </TextRun>
                                           </TextRuns>
-                                          <Style />
+                                          <Style>
+                                            <FontSize>0.13889in</FontSize>
+                                          </Style>
                                         </Paragraph>
                                       </Paragraphs>
                                     </Textbox>
@@ -498,6 +517,7 @@
                                   <Width>2.41528in</Width>
                                   <ZIndex>1</ZIndex>
                                   <Style>
+                                    <FontSize>0.13889in</FontSize>
                                     <Border>
                                       <Color>#3c4570</Color>
                                       <Style>None</Style>
@@ -510,10 +530,11 @@
                                       <Height>0.38021in</Height>
                                       <Width>2.34723in</Width>
                                       <Style>
-                                        <PaddingLeft>2pt</PaddingLeft>
-                                        <PaddingRight>2pt</PaddingRight>
-                                        <PaddingTop>2pt</PaddingTop>
-                                        <PaddingBottom>2pt</PaddingBottom>
+                                        <FontSize>0.13889in</FontSize>
+                                        <PaddingLeft>0.02778in</PaddingLeft>
+                                        <PaddingRight>0.02778in</PaddingRight>
+                                        <PaddingTop>0.02778in</PaddingTop>
+                                        <PaddingBottom>0.02778in</PaddingBottom>
                                         <Border>
                                           <Style>None</Style>
                                         </Border>
@@ -599,6 +620,7 @@
                                             </TextRun>
                                           </TextRuns>
                                           <Style>
+                                            <FontSize>0.13889in</FontSize>
                                             <TextAlign>Center</TextAlign>
                                           </Style>
                                         </Paragraph>
@@ -607,16 +629,17 @@
                                     <Image Name="Image2">
                                       <Left>0.50000in</Left>
                                       <Top>0.08333in</Top>
-                                      <Value>="https://demos.boldreports.com/Images/" +Fields!FirstName.Value+ " " +Fields!LastName.Value +".png"</Value>
                                       <Height>1.34375in</Height>
                                       <Width>1.375in</Width>
                                       <ZIndex>1</ZIndex>
                                       <Style>
+                                        <FontSize>0.13889in</FontSize>
                                         <Border>
                                           <Style>None</Style>
                                         </Border>
                                       </Style>
                                       <Source>External</Source>
+                                      <Value>="https://demos.boldreports.com/Images/" +Fields!FirstName.Value+ " " +Fields!LastName.Value +".png"</Value>
                                       <MIMEType>image/bmp</MIMEType>
                                       <Sizing>Fit</Sizing>
                                     </Image>
@@ -627,9 +650,10 @@
                                   <Left>0.20182in</Left>
                                   <Top>2.21924in</Top>
                                   <Height>0in</Height>
-                                  <Width>10.31313in</Width>
+                                  <Width>10.31314in</Width>
                                   <ZIndex>1</ZIndex>
                                   <Style>
+                                    <FontSize>0.13889in</FontSize>
                                     <Border>
                                       <Width>0.00900in</Width>
                                       <Color>LightGrey</Color>
@@ -640,8 +664,8 @@
                               </ReportItems>
                               <KeepTogether>true</KeepTogether>
                             </Rectangle>
-                            <ColSpan>1</ColSpan>
                             <RowSpan>1</RowSpan>
+                            <ColSpan>1</ColSpan>
                           </CellContents>
                         </TablixCell>
                       </TablixCells>
@@ -660,6 +684,7 @@
                       <SortExpressions>
                         <SortExpression>
                           <Value>=First(Fields!FirstName.Value,"EmployeeDetails")</Value>
+                          <Direction>Ascending</Direction>
                         </SortExpression>
                       </SortExpressions>
                     </TablixMember>
@@ -670,17 +695,18 @@
             <KeepTogether>true</KeepTogether>
           </Rectangle>
         </ReportItems>
-        <Height>2.91667in</Height>
+        <Style>
+          <FontSize>0.13889in</FontSize>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
       </Body>
-      <Width>11.06in</Width>
+      <Width>11.05991in</Width>
       <Page>
-        <PageWidth>13.07in</PageWidth>
+        <PageHeight>10.12001in</PageHeight>
+        <PageWidth>14.33001in</PageWidth>
         <PageHeader>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
           <Height>0.88542in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
@@ -689,9 +715,10 @@
               <Left>0in</Left>
               <Top>0in</Top>
               <Height>0.59553in</Height>
-              <Width>11.06in</Width>
+              <Width>11.06001in</Width>
               <Style>
                 <BackgroundColor>#555b63</BackgroundColor>
+                <FontSize>0.13889in</FontSize>
                 <Border>
                   <Color>Gray</Color>
                   <Style>None</Style>
@@ -705,10 +732,11 @@
                   <Width>1.85973in</Width>
                   <Style>
                     <BackgroundColor>#555b63</BackgroundColor>
-                    <PaddingLeft>2pt</PaddingLeft>
-                    <PaddingRight>2pt</PaddingRight>
+                    <FontSize>0.13889in</FontSize>
+                    <PaddingLeft>0.02778in</PaddingLeft>
+                    <PaddingRight>0.02778in</PaddingRight>
                     <PaddingTop>0.02778in</PaddingTop>
-                    <PaddingBottom>2pt</PaddingBottom>
+                    <PaddingBottom>0.02778in</PaddingBottom>
                     <Border>
                       <Style>None</Style>
                     </Border>
@@ -728,7 +756,9 @@
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <FontSize>0.13889in</FontSize>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                 </Textbox>
@@ -736,25 +766,39 @@
               <KeepTogether>true</KeepTogether>
             </Rectangle>
           </ReportItems>
+          <Style>
+            <FontSize>0.13889in</FontSize>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
         </PageHeader>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
-        <Style />
+        <LeftMargin>1.635in</LeftMargin>
+        <RightMargin>1.635in</RightMargin>
+        <TopMargin>0.37500in</TopMargin>
+        <BottomMargin>0.37500in</BottomMargin>
+        <Style>
+          <FontSize>0.13889in</FontSize>
+        </Style>
       </Page>
     </ReportSection>
   </ReportSections>
-  <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="Northwind">
+    <DataSource Name="NorthWind">
       <rd:SecurityType>None</rd:SecurityType>
-      <DataSourceReference>Northwind</DataSourceReference>
-      <rd:ImpersonateUser>false</rd:ImpersonateUser>
+      <DataSourceReference>NorthWind</DataSourceReference>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="EmployeeDetails">
+      <Query>
+        <DataSourceName>NorthWind</DataSourceName>
+        <CommandText>SELECT TOP 7 Emp.Photo as Photo, Emp.FirstName, Emp.LastName,
+(DATENAME(WEEKDAY,Emp.BirthDate)+', '+ DATENAME(DAY,Emp.BirthDate)+' '+DATENAME(MONTH,Emp.BirthDate)+' '+DATENAME(YEAR,Emp.BirthDate)) as BirthDate,
+Emp.Address, Emp.Title, Emp.Region, Emp.City, Emp.Country, Emp.TitleOfCourtesy, Rep.FirstName as ReportingFirstName, Rep.LastName as ReportingLastName,
+(DATENAME(WEEKDAY,Emp.HireDate)+', '+DATENAME(DAY,Emp.HireDate)+' '+DATENAME(MONTH,Emp.HireDate)+' '+DATENAME(YEAR,Emp.HireDate))as HireDate,
+Emp.Notes, Emp.HomePhone    FROM  Employees Emp INNER JOIN Employees Rep ON Rep.EmployeeID=emp.ReportsTo ORDER BY Emp.FirstName</CommandText>
+      </Query>
       <Fields>
         <Field Name="Photo">
           <DataField>Photo</DataField>
@@ -817,16 +861,8 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
-      <Query>
-        <DataSourceName>Northwind</DataSourceName>
-        <CommandType>Text</CommandType>
-        <CommandText>SELECT TOP 7 Emp.Photo as Photo, Emp.FirstName, Emp.LastName,
-(DATENAME(WEEKDAY,Emp.BirthDate)+', '+ DATENAME(DAY,Emp.BirthDate)+' '+DATENAME(MONTH,Emp.BirthDate)+' '+DATENAME(YEAR,Emp.BirthDate)) as BirthDate,
-Emp.Address, Emp.Title, Emp.Region, Emp.City, Emp.Country, Emp.TitleOfCourtesy, Rep.FirstName as ReportingFirstName, Rep.LastName as ReportingLastName,
-(DATENAME(WEEKDAY,Emp.HireDate)+', '+DATENAME(DAY,Emp.HireDate)+' '+DATENAME(MONTH,Emp.HireDate)+' '+DATENAME(YEAR,Emp.HireDate))as HireDate,
-Emp.Notes, Emp.HomePhone    FROM  Employees Emp INNER JOIN Employees Rep ON Rep.EmployeeID=emp.ReportsTo ORDER BY Emp.FirstName</CommandText>
-      </Query>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:PageUnit />
 </Report>

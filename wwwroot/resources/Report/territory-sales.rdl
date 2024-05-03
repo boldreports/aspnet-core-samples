@@ -3,23 +3,34 @@
   <ReportSections>
     <ReportSection>
       <Body>
-        <Height>98.00064pt</Height>
+        <Height>1.90413in</Height>
         <ReportItems>
           <Tablix Name="Tablix1">
             <Left>7.5pt</Left>
             <Top>7.5pt</Top>
-            <Height>87.99998pt</Height>
-            <Width>558.5pt</Width>
+            <Height>1.72in</Height>
+            <Width>7.75333in</Width>
             <Style>
+              <FontFamily>Arial</FontFamily>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
+            <CustomProperties>
+              <CustomProperty>
+                <Name>MaxRowCount</Name>
+                <Value>100000</Value>
+              </CustomProperty>
+              <CustomProperty>
+                <Name>MaxColumnCount</Name>
+                <Value>20</Value>
+              </CustomProperty>
+            </CustomProperties>
             <DataSetName>TerritorySales</DataSetName>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.91667in</Width>
+                  <Width>1.91976in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.9375in</Width>
@@ -33,17 +44,18 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.33320in</Height>
+                  <Height>0.42708in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox46">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.33320in</Height>
-                          <Width>1.91667in</Width>
+                          <Height>0.42708in</Height>
+                          <Width>1.91976in</Width>
                           <Style>
                             <BackgroundColor>#697688</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -61,6 +73,7 @@
                                 <TextRun>
                                   <Value>Territory</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <FontSize>0.15278in</FontSize>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>#ffffff</Color>
@@ -68,6 +81,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
@@ -82,10 +96,11 @@
                         <Textbox Name="Textbox47">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.33320in</Height>
+                          <Height>0.42708in</Height>
                           <Width>1.9375in</Width>
                           <Style>
                             <BackgroundColor>#697688</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -103,6 +118,7 @@
                                 <TextRun>
                                   <Value>Sales Person</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <FontSize>0.15278in</FontSize>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>#ffffff</Color>
@@ -110,6 +126,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
@@ -124,10 +141,11 @@
                         <Textbox Name="Textbox32">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.33320in</Height>
+                          <Height>0.42708in</Height>
                           <Width>1.9375in</Width>
                           <Style>
                             <BackgroundColor>#697688</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -145,6 +163,7 @@
                                 <TextRun>
                                   <Value>Order Number</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <FontSize>0.15278in</FontSize>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>#ffffff</Color>
@@ -152,6 +171,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
@@ -166,10 +186,11 @@
                         <Textbox Name="Textbox38">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.33320in</Height>
+                          <Height>0.42708in</Height>
                           <Width>1.95833in</Width>
                           <Style>
                             <BackgroundColor>#697688</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -187,6 +208,7 @@
                                 <TextRun>
                                   <Value>Total Sales</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <FontSize>0.15278in</FontSize>
                                     <FontWeight>Medium</FontWeight>
                                     <Color>#ffffff</Color>
@@ -194,6 +216,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
@@ -206,17 +229,18 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.29167in</Height>
+                  <Height>0.42708in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Name1">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.29167in</Height>
-                          <Width>1.91667in</Width>
+                          <Height>0.42708in</Height>
+                          <Width>1.91976in</Width>
                           <Style>
                             <BackgroundColor>#697688</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -234,12 +258,15 @@
                                 <TextRun>
                                   <Value>=Fields!Name.Value</Value>
                                   <Style>
+                                    <FontFamily>Arial</FontFamily>
                                     <FontSize>0.15278in</FontSize>
                                     <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -252,10 +279,11 @@
                         <Textbox Name="Textbox23">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.29167in</Height>
+                          <Height>0.42708in</Height>
                           <Width>1.9375in</Width>
                           <Style>
                             <BackgroundColor>#e2e2e2</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -273,11 +301,15 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>0.15278in</FontSize>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -290,10 +322,11 @@
                         <Textbox Name="Textbox33">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.29167in</Height>
+                          <Height>0.42708in</Height>
                           <Width>1.9375in</Width>
                           <Style>
                             <BackgroundColor>#e2e2e2</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -311,11 +344,15 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>0.15278in</FontSize>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -328,10 +365,11 @@
                         <Textbox Name="TotalDue3">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.29167in</Height>
+                          <Height>0.42708in</Height>
                           <Width>1.95833in</Width>
                           <Style>
                             <BackgroundColor>#e2e2e2</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -349,12 +387,15 @@
                                 <TextRun>
                                   <Value>=Sum(Fields!TotalDue.Value)</Value>
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>0.15278in</FontSize>
                                     <Format>'$'#,0;('$'#,0)</Format>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
@@ -367,17 +408,18 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.30195in</Height>
+                  <Height>0.42708in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox18">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.30195in</Height>
-                          <Width>1.91667in</Width>
+                          <Height>0.42708in</Height>
+                          <Width>1.91976in</Width>
                           <Style>
                             <BackgroundColor>#f2f0f0</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -395,11 +437,15 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>0.15278in</FontSize>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -412,10 +458,11 @@
                         <Textbox Name="Textbox19">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.30195in</Height>
+                          <Height>0.42708in</Height>
                           <Width>1.9375in</Width>
                           <Style>
                             <BackgroundColor>#f2f0f0</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -433,11 +480,14 @@
                                 <TextRun>
                                   <Value>=Fields!FirstName.Value + " " + Fields!LastName.Value</Value>
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>0.15278in</FontSize>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
@@ -452,10 +502,11 @@
                         <Textbox Name="Textbox34">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.30195in</Height>
+                          <Height>0.42708in</Height>
                           <Width>1.9375in</Width>
                           <Style>
                             <BackgroundColor>#f2f0f0</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -473,11 +524,15 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>0.15278in</FontSize>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -490,10 +545,11 @@
                         <Textbox Name="TotalDue4">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.30195in</Height>
+                          <Height>0.42708in</Height>
                           <Width>1.95833in</Width>
                           <Style>
                             <BackgroundColor>#f2f0f0</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -511,12 +567,15 @@
                                 <TextRun>
                                   <Value>=Sum(Fields!TotalDue.Value)</Value>
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>0.15278in</FontSize>
                                     <Format>'$'#,0;('$'#,0)</Format>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
@@ -529,17 +588,18 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.29193in</Height>
+                  <Height>0.42708in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox48">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.29193in</Height>
-                          <Width>1.91667in</Width>
+                          <Height>0.42708in</Height>
+                          <Width>1.91976in</Width>
                           <Style>
                             <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -557,11 +617,15 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>0.15278in</FontSize>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -574,10 +638,11 @@
                         <Textbox Name="Textbox49">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.29193in</Height>
+                          <Height>0.42708in</Height>
                           <Width>1.9375in</Width>
                           <Style>
                             <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -595,11 +660,15 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>0.15278in</FontSize>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
@@ -612,10 +681,11 @@
                         <Textbox Name="SalesOrderNumber1">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.29193in</Height>
+                          <Height>0.42708in</Height>
                           <Width>1.9375in</Width>
                           <Style>
                             <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -633,11 +703,14 @@
                                 <TextRun>
                                   <Value>=Fields!SalesOrderNumber.Value</Value>
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>0.15278in</FontSize>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
@@ -652,10 +725,11 @@
                         <Textbox Name="TotalDue5">
                           <Left>0in</Left>
                           <Top>0in</Top>
-                          <Height>0.29193in</Height>
+                          <Height>0.42708in</Height>
                           <Width>1.95833in</Width>
                           <Style>
                             <BackgroundColor>White</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
                             <PaddingRight>4pt</PaddingRight>
@@ -673,12 +747,15 @@
                                 <TextRun>
                                   <Value>=Fields!TotalDue.Value</Value>
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontFamily>Arial</FontFamily>
+                                    <FontSize>0.15278in</FontSize>
                                     <Format>'$'#,0;('$'#,0)</Format>
+                                    <Color>black</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily>Arial</FontFamily>
                                 <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
@@ -744,13 +821,13 @@
                             </SortExpression>
                           </SortExpressions>
                           <Visibility>
-                            <Hidden>true</Hidden>
+                            <Hidden>True</Hidden>
                             <ToggleItem>Textbox19</ToggleItem>
                           </Visibility>
                         </TablixMember>
                       </TablixMembers>
                       <Visibility>
-                        <Hidden>false</Hidden>
+                        <Hidden>False</Hidden>
                         <ToggleItem>Name1</ToggleItem>
                       </Visibility>
                     </TablixMember>
@@ -762,6 +839,7 @@
         </ReportItems>
         <Style>
           <BackgroundColor>#f5f6f7</BackgroundColor>
+          <FontFamily>Arial</FontFamily>
         </Style>
       </Body>
       <Width>573.75pt</Width>
@@ -780,6 +858,7 @@
               <Width>573.75pt</Width>
               <Style>
                 <BackgroundColor>#555b63</BackgroundColor>
+                <FontFamily>Arial</FontFamily>
                 <Border>
                   <Color>Gray</Color>
                   <Style>None</Style>
@@ -793,6 +872,7 @@
                   <Width>264pt</Width>
                   <Style>
                     <BackgroundColor>#555b63</BackgroundColor>
+                    <FontFamily>Arial</FontFamily>
                     <VerticalAlign>Middle</VerticalAlign>
                     <PaddingLeft>2pt</PaddingLeft>
                     <PaddingRight>2pt</PaddingRight>
@@ -811,6 +891,7 @@
                         <TextRun>
                           <Value>Territory Sales Report</Value>
                           <Style>
+                            <FontFamily>Arial</FontFamily>
                             <FontSize>12.375pt</FontSize>
                             <FontWeight>Bold</FontWeight>
                             <Color>#ffffff</Color>
@@ -818,6 +899,7 @@
                         </TextRun>
                       </TextRuns>
                       <Style>
+                        <FontFamily>Arial</FontFamily>
                         <TextAlign>Left</TextAlign>
                       </Style>
                     </Paragraph>
@@ -828,6 +910,7 @@
             </Rectangle>
           </ReportItems>
           <Style>
+            <FontFamily>Arial</FontFamily>
             <Border>
               <Style>None</Style>
             </Border>
@@ -839,6 +922,7 @@
           <PrintOnLastPage>true</PrintOnLastPage>
           <Style>
             <BackgroundColor>#f5f6f7</BackgroundColor>
+            <FontFamily>Arial</FontFamily>
             <Border>
               <Style>None</Style>
             </Border>
@@ -848,7 +932,9 @@
         <RightMargin>18pt</RightMargin>
         <TopMargin>18pt</TopMargin>
         <BottomMargin>18pt</BottomMargin>
-        <Style />
+        <Style>
+          <FontFamily>Arial</FontFamily>
+        </Style>
       </Page>
     </ReportSection>
   </ReportSections>
@@ -863,7 +949,7 @@
     <DataSet Name="TerritorySales">
       <Query>
         <DataSourceName>AdventureWorks</DataSourceName>
-        <CommandText>SELECT Top (2000)      ST.Name, SP.SalesPersonID, C.FirstName, C.LastName, SOH.SalesOrderNumber, SOH.TotalDue
+        <CommandText>SELECT   ST.Name, SP.SalesPersonID, C.FirstName, C.LastName, SOH.SalesOrderNumber, SOH.TotalDue
 FROM        Sales.SalesTerritory ST INNER JOIN
             Sales.SalesPerson SP ON ST.TerritoryID = SP.TerritoryID INNER JOIN
             HumanResources.Employee E ON SP.SalesPersonID = E.EmployeeID INNER JOIN
@@ -871,20 +957,19 @@ FROM        Sales.SalesTerritory ST INNER JOIN
             Sales.SalesOrderHeader SOH ON SP.SalesPersonID = SOH.SalesPersonID
 GROUP BY    ST.Name, SP.SalesPersonID, C.FirstName, C.LastName, SOH.SalesOrderNumber, SOH.TotalDue
 ORDER BY    ST.Name</CommandText>
-        <Timeout>30</Timeout>
       </Query>
       <Fields>
         <Field Name="Name">
           <DataField>Name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="FirstName">
-          <DataField>FirstName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="SalesPersonID">
           <DataField>SalesPersonID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FirstName">
+          <DataField>FirstName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="LastName">
           <DataField>LastName</DataField>

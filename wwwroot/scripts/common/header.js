@@ -12,7 +12,7 @@
     } else {
         let desktopSidebar = document.querySelector('.ej-main-parent-content');
         let classFn = desktopSidebar.classList.contains('ej-toc-slide-left') ? 'remove' : 'add';
-        desktopSidebar.classList[classFn]('ej-toc-slide-left'); 
+        desktopSidebar.classList[classFn]('ej-toc-slide-left');
     }
 }
 
@@ -24,25 +24,24 @@ function platformSwitcher(platform) {
     }
     platformSamplePath = getRouterPath(getReportSampleData().platform, platform, sampleName);
     let reportPath = reportRouterPath ? (platformBasePath + '/' + platformSamplePath) : platformSamplePath;
-    let url = location.origin.indexOf('demos.boldreports.com') !== -1 ? '/' : '/demos/';
-    window.open(location.origin + url + getReportSampleData().otherPlatforms[platform] + reportPath, '_self');
+    window.open(location.origin + "/" + getReportSampleData().otherPlatforms[platform] + reportPath, '_self');
 }
 
 function getRouterPath(curPlatform, targetplatform, sampleName) {
     curPlatform = curPlatform.toLowerCase();
     targetplatform = targetplatform.toLowerCase();
     let samePath = (curPlatform.indexOf('asp') === -1 && (targetplatform.indexOf('asp') === -1 || targetplatform.indexOf('blazor') === -1)) ||
-        (curPlatform.indexOf('asp') >= 0 && (targetplatform.indexOf('asp') >= 0 || targetplatform.indexOf('blazor') >= 0 ));
+        (curPlatform.indexOf('asp') >= 0 && (targetplatform.indexOf('asp') >= 0 || targetplatform.indexOf('blazor') >= 0));
     if (samePath) {
         return sampleName;
     } else {
         if (curPlatform.indexOf('asp') !== -1) {
-            return sampleName.split(/(?=[A-Z])/).map(function (name) {
+            return sampleName.split(/(?=[A-Z])/).map(function(name) {
                 return name.toLowerCase()
             }).join("-");
 
         } else {
-            return sampleName.split(/-/).map(function (name) {
+            return sampleName.split(/-/).map(function(name) {
                 return name.charAt(0).toUpperCase() + name.slice(1);
             }).join("");
 

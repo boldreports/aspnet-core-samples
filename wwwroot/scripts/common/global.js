@@ -1,6 +1,9 @@
 ﻿function onToolbarRendering() {
-    if (this.element[0].baseURI.lastIndexOf('ExternalParameterReport') != -1) {
+    if (this.element[0].baseURI.lastIndexOf('external-parameter-report') != -1) {
         this.model.toolbarSettings.toolbars = ej.ReportViewer.Toolbars.All & ~ej.ReportViewer.Toolbars.Vertical
+    }
+    if (this.element[0].baseURI.lastIndexOf('powerpoint-report') != -1) {
+        this.model.exportSettings.exportOptions = ej.ReportViewer.ExportOptions.PPT
     }
     this.model.toolbarSettings.items = ej.ReportViewer.ToolbarItems.All & ~ej.ReportViewer.ToolbarItems.Find;
     this.model.toolbarSettings.customGroups = [{
@@ -28,8 +31,8 @@ function onExportItemClick() {
 
 function onToolBarItemClick(args) {
     if (args.value === 'edit-report') {
-        let reportPath = this.element[0].baseURI.lastIndexOf('ExternalParameterReport') !== -1 ? 'external-parameter-report' : this.element[0].baseURI.lastIndexOf('ParameterCustomization') !== -1 ? 'parameter-customization' : args.model.reportPath;
-        let ReportDesignerPath = reportPath.indexOf('.rdlc') !== -1 ? 'ReportDesigner/RDLC' : 'ReportDesigner';
+        let reportPath = this.element[0].baseURI.lastIndexOf('external-parameter-report') !== -1 ? 'external-parameter-report' : this.element[0].baseURI.lastIndexOf('parameter-customization') !== -1 ? 'parameter-customization' : args.model.reportPath;
+        let ReportDesignerPath = reportPath.indexOf('.rdlc') !== -1 ? 'report-designer/rdlc' : 'report-designer';
         window.open(location.origin + getBasePath() + ReportDesignerPath + '?report-name=' + reportPath, location.pathname.indexOf('Preview') === -1 ? '_blank' : '_self')
     }
 }
