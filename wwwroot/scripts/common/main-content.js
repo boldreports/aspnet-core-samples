@@ -16,7 +16,7 @@ function onTabNext() {
 
 function onTabBtnClick() {
     let reportPath = reportRouterPath ? (reportBasePath + '/' + reportRouterPath) : reportBasePath;
-    window.open(location.origin + getBasePath() + reportPath + '/Preview' + location.search, '_blank', 'noreferrer');
+    window.open(location.origin + getBasePath() + reportPath + '/preview' + location.search, '_blank', 'noreferrer');
 }
 
 function getCurRouterData() {

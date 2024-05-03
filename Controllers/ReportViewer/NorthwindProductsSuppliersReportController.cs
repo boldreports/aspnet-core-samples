@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ReportsCoreSamples.Controllers
 {
+    [Route("report-viewer/northwind-products-suppliers-report")]
     public class NorthwindProductsSuppliersReportController : PreviewController
     {
+        [HttpGet("")]
         public IActionResult Index()
         {
             this.updateMetaData();

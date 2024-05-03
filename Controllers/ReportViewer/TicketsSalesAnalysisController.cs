@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ReportsCoreSamples.Controllers
 {
+    [Route("report-viewer/tickets-sales-analysis")]
     public class TicketsSalesAnalysisController : PreviewController
     {
+        [HttpGet("")]
         public IActionResult Index()
         {
             this.updateMetaData();

@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ReportsCoreSamples.Controllers.ReportViewer
 {
+    [Route("report-viewer/consolidated-balance-sheet")]
     public class ConsolidatedBalanceSheetController : PreviewController
     {
+        [HttpGet("")]
         public IActionResult Index()
         {
             this.updateMetaData();

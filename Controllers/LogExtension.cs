@@ -79,13 +79,13 @@
             {
                 XmlConfigurator.Configure(repository, new System.IO.FileInfo(configPath));
             }
-            else if (File.Exists(prjDir + "\\Log4Net.config"))
+            else if (File.Exists(Path.Combine(prjDir, "log4net.config")))
             {
-                XmlConfigurator.Configure(repository, new System.IO.FileInfo(prjDir + "\\Log4Net.config"));
+                XmlConfigurator.Configure(repository, new System.IO.FileInfo(Path.Combine(prjDir, "log4net.config")));
             }
-            else if (File.Exists(prjDir + "\\logs\\Log4Net.config"))
+            else if (File.Exists(Path.Combine(prjDir, "logs", "log4net.config")))
             {
-                XmlConfigurator.Configure(repository, new System.IO.FileInfo(prjDir + "\\logs\\Log4Net.config"));
+                XmlConfigurator.Configure(repository, new System.IO.FileInfo(Path.Combine(prjDir, "logs", "log4net.config")));
             }
             else
             {
@@ -107,7 +107,9 @@
 
         private static string GetExecutablePath()
         {
-            string path = (string)(log4net.GlobalContext.Properties["LogPath"] + "\\");
+            string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+            UriBuilder uri = new UriBuilder(codeBase);
+            string path = Uri.UnescapeDataString(uri.Path);
             return Path.GetDirectoryName(path);
         }
     }

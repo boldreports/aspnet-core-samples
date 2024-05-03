@@ -1,10 +1,16 @@
 ﻿@inject SampleData ds;
 <!DOCTYPE html>
-<html style="height: 100%; width: 100%;">
+<html style="height: 100%; width: 100%;" lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="@ViewBag.Description" />
+    <meta name="description" property="og:description" content="@ViewBag.Description" />
+    <meta property="og:image" content="https://demos.boldreports.com/Images/og_embedded_core_examples.png" alt="Reports sample for ASP.NET Core" />
+    <meta property="og:image:secure_url" content="https://demos.boldreports.com/Images/og_embedded_core_examples.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:title" content="@ViewBag.Title" />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>@ViewBag.Title</title>
     <script>
         function validateBrowser() {
@@ -76,7 +82,7 @@
         <div class="ej-preview-header">
             <div class="ej-preview-left-side">
                 <a id="home_page" href="/" target="_blank" rel="noreferrer">
-                    <div class="ej-preview-platform-name">Bold Reports for ASP.NET Core</div>
+                    <h1 class="ej-preview-platform-name">Bold Reports for ASP.NET Core</h1>
                 </a>
             </div>
             <div class="ej-preview-right-side">
@@ -84,7 +90,7 @@
                 @* <a class="ej-preview-button bold-schedule-demo" href="https://www.boldreports.com/schedule-free-demo"
                     title="Report Server" target="_blank" rel="noreferrer">Schedule Free Demo</a> *@
                 <a class="ej-preview-button product-detail" href=@(ViewBag.isDesigner ? "https://www.boldreports.com/embedded-reporting/aspnet-core-report-designer" : "https://www.boldreports.com/embedded-reporting/aspnet-core-report-viewer") target="_blank" rel="noreferrer">Product Detail</a>
-                <a class="ej-preview-button try-it-free" href="https://app.boldid.net/reporting/embedded/register?plan=128&evaluation=v2&leadsource=demos.boldreports.com&gclid=&referrerroriginurl=https://demos.boldreports.com/pricing&secondaryreferraloriginurl=https://demos.boldreports.com/"
+                <a class="ej-preview-button try-it-free" href="https://app.boldid.net/reporting/embedded/register?plan=174&evaluation=v2&leadsource=demos.boldreports.com&gclid=&referrerroriginurl=https://demos.boldreports.com/pricing&secondaryreferraloriginurl=https://demos.boldreports.com/&host=server&quantity=1"
                     title="Report Server" target="_blank" rel="noreferrer">Try it Free</a>
             </div>
         </div>

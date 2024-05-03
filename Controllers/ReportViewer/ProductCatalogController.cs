@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ReportsCoreSamples.Controllers.ReportViewer
 {
+    [Route("report-viewer/product-catalog")]
     public class ProductCatalogController : PreviewController
     {
+        [HttpGet("")]
         public IActionResult Index()
         {
             this.updateMetaData();

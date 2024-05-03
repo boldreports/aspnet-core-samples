@@ -713,15 +713,15 @@
     </ReportSection>
   </ReportSections>
   <DataSources>
-    <DataSource Name="Northwind">
+    <DataSource Name="NorthWind">
       <rd:SecurityType>None</rd:SecurityType>
-      <DataSourceReference>Northwind</DataSourceReference>
+      <DataSourceReference>NorthWind</DataSourceReference>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="CustomerDetail">
       <Query>
-        <DataSourceName>Northwind</DataSourceName>
+        <DataSourceName>NorthWind</DataSourceName>
         <CommandText>select CustomerID,CompanyName,Address,City,PostalCode,Country from Customers</CommandText>
       </Query>
       <Fields>

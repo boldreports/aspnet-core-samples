@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ReportsCoreSamples.Controllers.ReportViewer
 {
+    [Route("report-viewer/paystub")]
     public class PaystubController : PreviewController
     {
+        [HttpGet("")]
         public IActionResult Index()
         {
             this.updateMetaData();

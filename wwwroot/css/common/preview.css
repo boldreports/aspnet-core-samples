@@ -153,6 +153,7 @@ body {
     display: flex;
     position: fixed;
     z-index: 1;
+    font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif";
     justify-content: space-between;
 }
 

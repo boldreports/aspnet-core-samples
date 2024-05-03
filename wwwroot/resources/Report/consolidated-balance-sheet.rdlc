@@ -507,9 +507,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Fields!Qtr1.Value,0)</Value>
+                                  <Value>=Round(Fields!Qtr1.Value)</Value>
                                   <Style>
                                     <FontSize>11.4998pt</FontSize>
+									<Format>'$'#,0;('$'#,0)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -546,9 +547,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Fields!Qtr2.Value,0)</Value>
+                                  <Value>=Round(Fields!Qtr2.Value)</Value>
                                   <Style>
                                     <FontSize>11.4998pt</FontSize>
+									<Format>'$'#,0;('$'#,0)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -585,9 +587,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Fields!Qtr3.Value,0)</Value>
+                                  <Value>=Round(Fields!Qtr3.Value)</Value>
                                   <Style>
                                     <FontSize>11.4998pt</FontSize>
+									<Format>'$'#,0;('$'#,0)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -624,9 +627,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Fields!Qtr4.Value,0)</Value>
+                                  <Value>=Round(Fields!Qtr4.Value)</Value>
                                   <Style>
                                     <FontSize>11.4998pt</FontSize>
+									<Format>'$'#,0;('$'#,0)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -724,10 +728,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr1.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr1.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -780,10 +785,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr2.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr2.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -836,10 +842,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr3.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr3.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -892,10 +899,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr4.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr4.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -993,10 +1001,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr1.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr1.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -1048,10 +1057,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr2.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr2.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -1103,10 +1113,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr3.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr3.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -1158,10 +1169,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr4.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr4.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -1581,9 +1593,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Fields!Qtr1.Value,0)</Value>
+                                  <Value>=Round(Fields!Qtr1.Value)</Value>
                                   <Style>
                                     <FontSize>11.4998pt</FontSize>
+									<Format>'$'#,0;('$'#,0)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1620,7 +1633,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Fields!Qtr2.Value,0)</Value>
+                                  <Value>=Round(Fields!Qtr2.Value)</Value>
                                   <Style>
                                     <FontSize>11.4998pt</FontSize>
                                     <Format>'$'#,0;('$'#,0)</Format>
@@ -1660,7 +1673,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Fields!Qtr3.Value,0)</Value>
+                                  <Value>=Round(Fields!Qtr3.Value)</Value>
                                   <Style>
                                     <FontSize>11.4998pt</FontSize>
                                     <Format>'$'#,0;('$'#,0)</Format>
@@ -1700,9 +1713,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Fields!Qtr4.Value,0)</Value>
+                                  <Value>=Round(Fields!Qtr4.Value)</Value>
                                   <Style>
                                     <FontSize>11.4998pt</FontSize>
+									<Format>'$'#,0;('$'#,0)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1800,10 +1814,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr1.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr1.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -1856,10 +1871,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr2.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr2.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -1912,10 +1928,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr3.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr3.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -1968,10 +1985,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr4.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr4.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -2070,10 +2088,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr1.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr1.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -2126,10 +2145,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr2.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr2.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -2182,10 +2202,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr3.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr3.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>
@@ -2238,10 +2259,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=FormatCurrency(Sum(CInt(Fields!Qtr4.Value)),0)</Value>
+                                  <Value>=Round(Sum(CInt(Fields!Qtr4.Value)))</Value>
                                   <Style>
                                     <FontSize>0.15972in</FontSize>
                                     <FontWeight>Bold</FontWeight>
+									<Format>'$'#,0;('$'#,0)</Format>
                                     <Color>black</Color>
                                   </Style>
                                 </TextRun>

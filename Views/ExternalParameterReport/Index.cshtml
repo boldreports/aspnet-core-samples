@@ -12,14 +12,15 @@
             </ej-sample>
         </div>
         <div class="r-w-property-container">
-            <div class="r-w-property-title">Parameters</div>
-            <div class="r-w-property">
+            <div id='spinner-container'></div>
+            <div class="r-w-property-title" style="visibility: hidden">Parameters</div>
+            <div class="r-w-property" style="visibility: hidden">
                 <div class="r-w-property-name" id="r-w-property-name-category"> Category</div>
                 <div class="r-w-property-value">
                     <input type="text" id="category" />
                 </div>
             </div>
-            <div class="r-w-property" id="r-w-property-subcategory">
+            <div class="r-w-property" id="r-w-property-subcategory" style="visibility: hidden">
                 <div class="r-w-property-name" id="r-w-property-name-subcategory">
                     Sub Category
                 </div>
@@ -27,7 +28,7 @@
                     <input type="text" id="subcategory" />
                 </div>
             </div>
-            <div class="r-w-property" id="r-w-property-startdate">
+            <div class="r-w-property" id="r-w-property-startdate" style="visibility: hidden">
                 <div class="r-w-property-name" id="r-w-property-name-startdate">
                     Start Date
                 </div>
@@ -35,7 +36,7 @@
                     <input id="startdate" />
                 </div>
             </div>
-            <div class="r-w-property" id="r-w-property-enddate">
+            <div class="r-w-property" id="r-w-property-enddate" style="visibility: hidden">
                 <div class="r-w-property-name" id="r-w-property-name-enddate">
                     End Date
                 </div>
@@ -44,7 +45,7 @@
                 </div>
             </div>
                     <input type="button" id="update"
-                   class="r-w-genearte e-control e-btn e-lib e-primary" value="View Report" />
+                   class="r-w-genearte e-control e-btn e-lib e-primary" value="View Report" style="visibility: hidden" />
                 
         </div>
     </div>
@@ -58,6 +59,8 @@
     if (wheelEvent && !isMobile) {
         window.addEventListener(wheelEvent, function () { }, { passive: false });
     }
+    ejs.popups.createSpinner({ target: document.getElementById("spinner-container") });
+    ejs.popups.showSpinner(document.getElementById("spinner-container"));
     $(function () {
         $.ajax({
             type: "GET",
@@ -106,6 +109,10 @@
                     endDate.appendTo('#enddate');
                     category.appendTo('#category');
                     subCategory.appendTo('#subcategory');
+                    ejs.popups.hideSpinner(document.getElementById("spinner-container"));
+                    $(".r-w-property-title").css("visibility", "visible");
+                    $(".r-w-property").css("visibility", "visible");
+                    $(".r-w-genearte").css("visibility", "visible");
                     $("#update").on("click", function () {
                         updateViewer();
                     });

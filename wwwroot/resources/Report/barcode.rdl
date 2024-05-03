@@ -1,14 +1,9 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
   <ReportSections>
     <ReportSection>
       <Body>
-        <Style>
-          <FontSize>10.00001pt</FontSize>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
+        <Height>509.25pt</Height>
         <ReportItems>
           <Rectangle Name="Rectangle11">
             <Left>15.00001pt</Left>
@@ -29,6 +24,12 @@
                 <Top>37.50003pt</Top>
                 <Height>60.00005pt</Height>
                 <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
                 <CustomProperties>
                   <CustomProperty>
                     <Name>BarcodeValue</Name>
@@ -43,12 +44,6 @@
                     <Value>true</Value>
                   </CustomProperty>
                 </CustomProperties>
-                <Style>
-                  <FontSize>10.00001pt</FontSize>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
                 <Type>barcode</Type>
               </CustomReportItem>
               <Textbox Name="TextBox22">
@@ -123,6 +118,12 @@
                 <Top>37.50003pt</Top>
                 <Height>60.00005pt</Height>
                 <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
                 <CustomProperties>
                   <CustomProperty>
                     <Name>BarcodeValue</Name>
@@ -137,12 +138,6 @@
                     <Value>true</Value>
                   </CustomProperty>
                 </CustomProperties>
-                <Style>
-                  <FontSize>10.00001pt</FontSize>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
                 <Type>barcode</Type>
               </CustomReportItem>
               <Textbox Name="TextBox19">
@@ -253,6 +248,12 @@
                 <Top>37.50003pt</Top>
                 <Height>60.00005pt</Height>
                 <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
                 <CustomProperties>
                   <CustomProperty>
                     <Name>BarcodeValue</Name>
@@ -267,12 +268,6 @@
                     <Value>true</Value>
                   </CustomProperty>
                 </CustomProperties>
-                <Style>
-                  <FontSize>10.00001pt</FontSize>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
                 <Type>barcode</Type>
               </CustomReportItem>
               <Line Name="Line11">
@@ -311,6 +306,13 @@
                 <Top>37.50003pt</Top>
                 <Height>60.00005pt</Height>
                 <Width>199.5002pt</Width>
+                <Style>
+                  <BackgroundColor>#ffffff</BackgroundColor>
+                  <FontSize>10.00001pt</FontSize>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
                 <CustomProperties>
                   <CustomProperty>
                     <Name>BarcodeValue</Name>
@@ -325,13 +327,6 @@
                     <Value>true</Value>
                   </CustomProperty>
                 </CustomProperties>
-                <Style>
-                  <BackgroundColor>#ffffff</BackgroundColor>
-                  <FontSize>10.00001pt</FontSize>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
                 <Type>barcode</Type>
               </CustomReportItem>
               <Textbox Name="TextBox27">
@@ -406,6 +401,12 @@
                 <Top>26.25002pt</Top>
                 <Height>82.50007pt</Height>
                 <Width>82.50007pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
                 <CustomProperties>
                   <CustomProperty>
                     <Name>BarcodeValue</Name>
@@ -420,12 +421,6 @@
                     <Value>true</Value>
                   </CustomProperty>
                 </CustomProperties>
-                <Style>
-                  <FontSize>10.00001pt</FontSize>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
                 <Type>matrixbarcode</Type>
               </CustomReportItem>
               <Textbox Name="TextBox34">
@@ -500,6 +495,13 @@
                 <Top>37.50003pt</Top>
                 <Height>60.00005pt</Height>
                 <Width>199.5002pt</Width>
+                <Style>
+                  <BackgroundColor>#ffffff</BackgroundColor>
+                  <FontSize>10.00001pt</FontSize>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
                 <CustomProperties>
                   <CustomProperty>
                     <Name>BarcodeValue</Name>
@@ -514,13 +516,6 @@
                     <Value>true</Value>
                   </CustomProperty>
                 </CustomProperties>
-                <Style>
-                  <BackgroundColor>#ffffff</BackgroundColor>
-                  <FontSize>10.00001pt</FontSize>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
                 <Type>barcode</Type>
               </CustomReportItem>
               <Textbox Name="TextBox33">
@@ -595,6 +590,12 @@
                 <Top>37.50003pt</Top>
                 <Height>60.00005pt</Height>
                 <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
                 <CustomProperties>
                   <CustomProperty>
                     <Name>BarcodeValue</Name>
@@ -609,12 +610,6 @@
                     <Value>true</Value>
                   </CustomProperty>
                 </CustomProperties>
-                <Style>
-                  <FontSize>10.00001pt</FontSize>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
                 <Type>barcode</Type>
               </CustomReportItem>
               <Textbox Name="TextBox31">
@@ -689,6 +684,12 @@
                 <Top>37.50003pt</Top>
                 <Height>60.00005pt</Height>
                 <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
                 <CustomProperties>
                   <CustomProperty>
                     <Name>BarcodeValue</Name>
@@ -703,12 +704,6 @@
                     <Value>true</Value>
                   </CustomProperty>
                 </CustomProperties>
-                <Style>
-                  <FontSize>10.00001pt</FontSize>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
                 <Type>barcode</Type>
               </CustomReportItem>
               <Textbox Name="TextBox28">
@@ -819,6 +814,12 @@
                 <Top>30.00002pt</Top>
                 <Height>75.00006pt</Height>
                 <Width>75.00006pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
                 <CustomProperties>
                   <CustomProperty>
                     <Name>BarcodeValue</Name>
@@ -833,12 +834,6 @@
                     <Value>false</Value>
                   </CustomProperty>
                 </CustomProperties>
-                <Style>
-                  <FontSize>10.00001pt</FontSize>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
                 <Type>matrixbarcode</Type>
               </CustomReportItem>
               <Line Name="Line10">
@@ -913,6 +908,12 @@
                 <Top>37.50003pt</Top>
                 <Height>60.00005pt</Height>
                 <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
                 <CustomProperties>
                   <CustomProperty>
                     <Name>BarcodeValue</Name>
@@ -927,12 +928,6 @@
                     <Value>true</Value>
                   </CustomProperty>
                 </CustomProperties>
-                <Style>
-                  <FontSize>10.00001pt</FontSize>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
                 <Type>barcode</Type>
               </CustomReportItem>
               <Line Name="Line7">
@@ -1007,6 +1002,12 @@
                 <Top>37.50003pt</Top>
                 <Height>60.00005pt</Height>
                 <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
                 <CustomProperties>
                   <CustomProperty>
                     <Name>BarcodeValue</Name>
@@ -1021,12 +1022,6 @@
                     <Value>true</Value>
                   </CustomProperty>
                 </CustomProperties>
-                <Style>
-                  <FontSize>10.00001pt</FontSize>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
                 <Type>barcode</Type>
               </CustomReportItem>
               <Line Name="Line14">
@@ -1065,6 +1060,12 @@
                 <Top>37.50003pt</Top>
                 <Height>60.00005pt</Height>
                 <Width>199.5002pt</Width>
+                <Style>
+                  <FontSize>10.00001pt</FontSize>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
                 <CustomProperties>
                   <CustomProperty>
                     <Name>BarcodeValue</Name>
@@ -1079,12 +1080,6 @@
                     <Value>true</Value>
                   </CustomProperty>
                 </CustomProperties>
-                <Style>
-                  <FontSize>10.00001pt</FontSize>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
                 <Type>barcode</Type>
               </CustomReportItem>
               <Textbox Name="TextBox15">
@@ -1141,19 +1136,18 @@
             <KeepTogether>true</KeepTogether>
           </Rectangle>
         </ReportItems>
-        <Height>518.2504pt</Height>
+        <Style>
+          <FontSize>10.00001pt</FontSize>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
       </Body>
       <Width>669pt</Width>
       <Page>
-        <PageHeight>792pt</PageHeight>
-        <PageWidth>745.5pt</PageWidth>
+        <PageHeight>522pt</PageHeight>
+        <PageWidth>756pt</PageWidth>
         <PageHeader>
-          <Style>
-            <FontSize>10.00001pt</FontSize>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
           <Height>37.5pt</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
@@ -1209,11 +1203,17 @@
               <KeepTogether>true</KeepTogether>
             </Rectangle>
           </ReportItems>
+          <Style>
+            <FontSize>10.00001pt</FontSize>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
         </PageHeader>
-        <LeftMargin>37.5pt</LeftMargin>
-        <RightMargin>37.5pt</RightMargin>
-        <TopMargin>37.5pt</TopMargin>
-        <BottomMargin>37.5pt</BottomMargin>
+        <LeftMargin>41.25pt</LeftMargin>
+        <RightMargin>41.25pt</RightMargin>
+        <TopMargin>48.75pt</TopMargin>
+        <BottomMargin>48.75pt</BottomMargin>
         <Style>
           <FontSize>10.00001pt</FontSize>
           <Border>
@@ -1223,7 +1223,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <AutoRefresh>0</AutoRefresh>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:PageUnit>Px</rd:PageUnit>
 </Report>

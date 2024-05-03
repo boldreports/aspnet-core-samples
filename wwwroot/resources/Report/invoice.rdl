@@ -1828,7 +1828,7 @@
   <DataSources>
     <DataSource Name="NorthWindIO">
       <rd:SecurityType>None</rd:SecurityType>
-      <DataSourceReference>Northwind</DataSourceReference>
+      <DataSourceReference>NorthWind</DataSourceReference>
       <rd:ImpersonateUser>false</rd:ImpersonateUser>
     </DataSource>
   </DataSources>

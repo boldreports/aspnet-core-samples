@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ReportsCoreSamples.Controllers
 {
+    [Route("report-viewer/external-parameter-report")]
     public class ExternalParameterReportController : PreviewController
     {
         private Microsoft.Extensions.Caching.Memory.IMemoryCache _cache;
@@ -15,6 +16,7 @@ namespace ReportsCoreSamples.Controllers
         {
             _cache = memoryCache;
         }
+        [HttpGet("")]
         public IActionResult Index()
         {
             ViewBag.parameterSettings = new BoldReports.Models.ReportViewer.ParameterSettings();
