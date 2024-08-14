@@ -1,4 +1,5 @@
 ﻿@inject SampleData ds;
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
 <div class="ej-sb-header">
     <div class="ej-sb-left-side">
         <div class="ej-sb-hamburger-icon ej-sb-icons" onclick="onHamBurgerClick()"></div>
@@ -26,7 +27,7 @@
     <div class="ej-sb-right-side">
         <!-- We hided this element as per management instruction -->
         @* <a class="ej-sb-button nav-link bold-schedule-demo" href="https://www.boldreports.com/schedule-free-demo" target="_blank" rel="noreferrer">Schedule Free Demo</a> *@
-        <a class="ej-sb-button nav-link product-detail" href='@(Context.Request.Path.Value.Contains("ReportViewer") ? "https://www.boldreports.com/embedded-reporting/aspnet-core-report-viewer" : "https://www.boldreports.com/embedded-reporting/aspnet-core-report-writer")' target="_blank" rel="noreferrer">Product Detail</a>
-        <a class="ej-sb-button nav-link try-it-free" href="https://app.boldid.net/reporting/embedded/register?plan=174&evaluation=v2&leadsource=demos.boldreports.com&gclid=&referrerroriginurl=https://demos.boldreports.com/pricing&secondaryreferraloriginurl=https://demos.boldreports.com/&host=server&quantity=1" target="_blank" rel="noreferrer">Try it Free</a>
+        <a class="ej-sb-button nav-link product-detail" href='@(Context.Request.Path.Value.Contains("report-viewer") ? Configuration["externalURLs:productDetailViewer"] : (Context.Request.Path.Value.Contains("report-designer") ? Configuration["externalURLs:productDetailDesigner"] : Configuration["externalURLs:productDetailWriter"]))' target="_blank" rel="noreferrer">Product Detail</a>
+        <a class="ej-sb-button nav-link try-it-free" href="@Configuration["externalURLs:tryItFree"]" target="_blank" rel="noreferrer">Try it Free</a>
     </div>
 </div>

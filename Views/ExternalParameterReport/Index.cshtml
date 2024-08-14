@@ -2,6 +2,7 @@
 
 @section control {
 <form>
+    <input name="__RequestVerificationToken" type="hidden" id="csrf-token" />
     <div class="r-w-container" id="external-container">
         <div class="r-w-sample-container">
             <ej-sample>
@@ -88,6 +89,7 @@
                                 if(subCategory.value != null)
                                     subCategory.clear();
                                 subCategory.dataSource = categoryDropDownList;
+                                $('#update').prop('disabled', !subCategory.value);
                             }
                     });
                     subCategory = new ejs.dropdowns.MultiSelect({
@@ -103,7 +105,10 @@
                             width: "180px",
                             height: "30px",
                             value: [2],
-                            placeholder: "Select Option"
+                            placeholder: "Select Option",
+                            change: function(args) {
+                                $('#update').prop('disabled', !args.value.length);
+                            }
                     });
                     startDate.appendTo('#startdate');
                     endDate.appendTo('#enddate');
@@ -129,6 +134,9 @@
             reportViewer.model.parameters = parameters;
             reportViewer.reload();
     }
+
+        var token = "@Context.Request.Cookies["CSRF-TOKEN"]";
+        document.getElementById('csrf-token').value = token;
 </script>
 }
 @section description {
