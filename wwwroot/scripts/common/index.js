@@ -63,8 +63,6 @@ function updateSampleDetails() {
     setInnerText('.ej-main-body-content .cnt-text-1', bannerData.features[0]);
     setInnerText('.ej-main-body-content .cnt-text-2', bannerData.features[1]);
     setInnerText('.ej-main-body-content .cnt-text-3', bannerData.features[2]);
-    document.querySelector('.free-trial-url').setAttribute('href', bannerData.freeTrialUrl);
-
 }
 
 function setReportsHeight() {

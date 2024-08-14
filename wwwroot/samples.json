@@ -404,7 +404,7 @@
       "routerPath": "powerpoint-report",
       "controllerName": "PowerpointReport",
       "sampleName": "PowerPoint Report",
-      "status": "New",
+      "status": "Updated",
       "basePath": "report-viewer",
       "imageDetails": {
         "isLandscape": true,
@@ -419,7 +419,6 @@
       "controllerName": "TranscriptReport",
       "sampleName": "Transcript Report",
       "basePath": "report-viewer",
-      "status": "New",
       "imageDetails": {
         "isLandscape": false,
         "index": 16

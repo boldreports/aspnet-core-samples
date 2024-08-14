@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition">
   <ReportSections>
     <ReportSection>
@@ -164,6 +164,7 @@
                 </ChartData>
                 <ChartAreas>
                   <ChartArea Name="Default">
+                    <Hidden />
                     <ChartCategoryAxes>
                       <ChartAxis Name="Primary">
                         <Style>
@@ -639,10 +640,12 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
+                    <EquallySizedAxesFont />
                   </ChartArea>
                 </ChartAreas>
                 <ChartLegends>
                   <ChartLegend Name="Default">
+                    <Layout />
                     <Position>BottomCenter</Position>
                     <Style>
                       <BackgroundColor>White</BackgroundColor>
@@ -656,6 +659,7 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
+                    <DockOutsideChartArea />
                     <ChartLegendTitle>
                       <Caption />
                       <Style>
@@ -671,9 +675,12 @@
                         </Border>
                       </Style>
                     </ChartLegendTitle>
+                    <AutoFitTextDisabled />
                     <HeaderSeparatorColor>Black</HeaderSeparatorColor>
                     <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+                    <InterlacedRows />
                     <InterlacedRowsColor>Transparent</InterlacedRowsColor>
+                    <EquallySpacedItems />
                   </ChartLegend>
                 </ChartLegends>
                 <ChartTitles>
@@ -959,7 +966,7 @@
                           <Style>
                             <FontSize>8.00001pt</FontSize>
                             <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
-                            <Color>#9c27b0</Color>
+                            <Color>#072448</Color>
                             <ShadowColor>Transparent</ShadowColor>
                             <Border>
                               <Color>Transparent</Color>
@@ -972,7 +979,7 @@
                             <Style>
                               <FontSize>8.00001pt</FontSize>
                               <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
-                              <Color>#9c27b0</Color>
+                              <Color>#072448</Color>
                               <ShadowColor>Transparent</ShadowColor>
                               <Border>
                                 <Width>1.74975pt</Width>
@@ -1039,7 +1046,7 @@
                           <Style>
                             <FontSize>8.00001pt</FontSize>
                             <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
-                            <Color>#ee6002</Color>
+                            <Color>#ffcb00</Color>
                             <ShadowColor>Transparent</ShadowColor>
                             <Border>
                               <Color>Transparent</Color>
@@ -1052,7 +1059,7 @@
                             <Style>
                               <FontSize>8.00001pt</FontSize>
                               <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
-                              <Color>#ee6002</Color>
+                              <Color>#ffcb00</Color>
                               <ShadowColor>Transparent</ShadowColor>
                               <Border>
                                 <Width>1.74975pt</Width>
@@ -1098,6 +1105,7 @@
                 </ChartData>
                 <ChartAreas>
                   <ChartArea Name="Default">
+                    <Hidden />
                     <ChartCategoryAxes>
                       <ChartAxis Name="Primary">
                         <Style>
@@ -1572,10 +1580,12 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
+                    <EquallySizedAxesFont />
                   </ChartArea>
                 </ChartAreas>
                 <ChartLegends>
                   <ChartLegend Name="Default">
+                    <Layout />
                     <Position>BottomCenter</Position>
                     <Style>
                       <BackgroundColor>White</BackgroundColor>
@@ -1589,6 +1599,7 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
+                    <DockOutsideChartArea />
                     <ChartLegendTitle>
                       <Caption />
                       <Style>
@@ -1604,9 +1615,12 @@
                         </Border>
                       </Style>
                     </ChartLegendTitle>
+                    <AutoFitTextDisabled />
                     <HeaderSeparatorColor>Black</HeaderSeparatorColor>
                     <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+                    <InterlacedRows />
                     <InterlacedRowsColor>Transparent</InterlacedRowsColor>
+                    <EquallySpacedItems />
                   </ChartLegend>
                 </ChartLegends>
                 <ChartTitles>
@@ -1939,6 +1953,7 @@
                 </ChartData>
                 <ChartAreas>
                   <ChartArea Name="Default">
+                    <Hidden />
                     <ChartCategoryAxes>
                       <ChartAxis Name="Primary">
                         <Style>
@@ -2409,10 +2424,12 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
+                    <EquallySizedAxesFont />
                   </ChartArea>
                 </ChartAreas>
                 <ChartLegends>
                   <ChartLegend Name="Default">
+                    <Layout />
                     <Position>BottomCenter</Position>
                     <Style>
                       <BackgroundColor>White</BackgroundColor>
@@ -2426,6 +2443,7 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
+                    <DockOutsideChartArea />
                     <ChartLegendTitle>
                       <Caption />
                       <Style>
@@ -2441,9 +2459,12 @@
                         </Border>
                       </Style>
                     </ChartLegendTitle>
+                    <AutoFitTextDisabled />
                     <HeaderSeparatorColor>Black</HeaderSeparatorColor>
                     <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+                    <InterlacedRows />
                     <InterlacedRowsColor>Transparent</InterlacedRowsColor>
+                    <EquallySpacedItems />
                   </ChartLegend>
                 </ChartLegends>
                 <ChartTitles>
@@ -2696,6 +2717,7 @@
                 </ChartData>
                 <ChartAreas>
                   <ChartArea Name="Default">
+                    <Hidden />
                     <ChartCategoryAxes>
                       <ChartAxis Name="Primary">
                         <Style>
@@ -3166,10 +3188,12 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
+                    <EquallySizedAxesFont />
                   </ChartArea>
                 </ChartAreas>
                 <ChartLegends>
                   <ChartLegend Name="Default">
+                    <Layout />
                     <Position>BottomCenter</Position>
                     <Style>
                       <BackgroundColor>White</BackgroundColor>
@@ -3183,6 +3207,7 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
+                    <DockOutsideChartArea />
                     <ChartLegendTitle>
                       <Caption />
                       <Style>
@@ -3198,9 +3223,12 @@
                         </Border>
                       </Style>
                     </ChartLegendTitle>
+                    <AutoFitTextDisabled />
                     <HeaderSeparatorColor>Black</HeaderSeparatorColor>
                     <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+                    <InterlacedRows />
                     <InterlacedRowsColor>Transparent</InterlacedRowsColor>
+                    <EquallySpacedItems />
                   </ChartLegend>
                 </ChartLegends>
                 <ChartTitles>
@@ -3480,6 +3508,7 @@
                 </ChartData>
                 <ChartAreas>
                   <ChartArea Name="Default">
+                    <Hidden />
                     <ChartCategoryAxes>
                       <ChartAxis Name="Primary">
                         <Style>
@@ -3951,10 +3980,12 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
+                    <EquallySizedAxesFont />
                   </ChartArea>
                 </ChartAreas>
                 <ChartLegends>
                   <ChartLegend Name="Default">
+                    <Layout />
                     <Position>BottomCenter</Position>
                     <Style>
                       <BackgroundColor>White</BackgroundColor>
@@ -3968,6 +3999,7 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
+                    <DockOutsideChartArea />
                     <ChartLegendTitle>
                       <Caption />
                       <Style>
@@ -3983,9 +4015,12 @@
                         </Border>
                       </Style>
                     </ChartLegendTitle>
+                    <AutoFitTextDisabled />
                     <HeaderSeparatorColor>Black</HeaderSeparatorColor>
                     <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+                    <InterlacedRows />
                     <InterlacedRowsColor>Transparent</InterlacedRowsColor>
+                    <EquallySpacedItems />
                   </ChartLegend>
                 </ChartLegends>
                 <ChartTitles>
@@ -7462,6 +7497,7 @@
                 </ChartData>
                 <ChartAreas>
                   <ChartArea Name="Default">
+                    <Hidden />
                     <ChartCategoryAxes>
                       <ChartAxis Name="Primary">
                         <Style>
@@ -7932,10 +7968,12 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
+                    <EquallySizedAxesFont />
                   </ChartArea>
                 </ChartAreas>
                 <ChartLegends>
                   <ChartLegend Name="Default">
+                    <Layout />
                     <Position>BottomCenter</Position>
                     <Style>
                       <BackgroundColor>White</BackgroundColor>
@@ -7949,6 +7987,7 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
+                    <DockOutsideChartArea />
                     <ChartLegendTitle>
                       <Caption />
                       <Style>
@@ -7964,9 +8003,12 @@
                         </Border>
                       </Style>
                     </ChartLegendTitle>
+                    <AutoFitTextDisabled />
                     <HeaderSeparatorColor>Black</HeaderSeparatorColor>
                     <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+                    <InterlacedRows />
                     <InterlacedRowsColor>Transparent</InterlacedRowsColor>
+                    <EquallySpacedItems />
                   </ChartLegend>
                 </ChartLegends>
                 <ChartTitles>
@@ -8218,6 +8260,7 @@
                 </ChartData>
                 <ChartAreas>
                   <ChartArea Name="Default">
+                    <Hidden />
                     <ChartCategoryAxes>
                       <ChartAxis Name="Primary">
                         <Style>
@@ -8688,10 +8731,12 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
+                    <EquallySizedAxesFont />
                   </ChartArea>
                 </ChartAreas>
                 <ChartLegends>
                   <ChartLegend Name="Default">
+                    <Layout />
                     <Position>BottomCenter</Position>
                     <Style>
                       <BackgroundColor>White</BackgroundColor>
@@ -8705,6 +8750,7 @@
                         <Style>None</Style>
                       </Border>
                     </Style>
+                    <DockOutsideChartArea />
                     <ChartLegendTitle>
                       <Caption />
                       <Style>
@@ -8720,9 +8766,12 @@
                         </Border>
                       </Style>
                     </ChartLegendTitle>
+                    <AutoFitTextDisabled />
                     <HeaderSeparatorColor>Black</HeaderSeparatorColor>
                     <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+                    <InterlacedRows />
                     <InterlacedRowsColor>Transparent</InterlacedRowsColor>
+                    <EquallySpacedItems />
                   </ChartLegend>
                 </ChartLegends>
                 <ChartTitles>
@@ -10086,13 +10135,165 @@
           <DataField>Unit Price</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
+        <Field Name="Month">
+          <Value>=MonthName(Fields!CreatedMonth.Value, True)</Value>
+        </Field>
+        <Field Name="PaymentType">
+          <Value>=Trim(Fields!Payment_Type.Value)</Value>
+        </Field>
       </Fields>
+      <Filters>
+        <Filter>
+          <FilterExpression>=Fields!Food_Category.Value</FilterExpression>
+          <Operator>In</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!FoodCategory.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+        <Filter>
+          <FilterExpression>=Fields!PaymentType.Value</FilterExpression>
+          <Operator>In</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!PaymentType.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+        <Filter>
+          <FilterExpression>=MonthName(Fields!CreatedMonth.Value, True)</FilterExpression>
+          <Operator>In</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!OrderedMonth.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+      </Filters>
     </DataSet>
   </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="FoodCategory">
+      <DataType>String</DataType>
+      <Prompt>Food Category:</Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>Asian Cuisine</Value>
+          <Value>Mexican Cuisine</Value>
+          <Value>Italian Cuisine</Value>
+        </Values>
+      </DefaultValue>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>Italian Cuisine</Value>
+            <Label>Italian Cuisine</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Mexican Cuisine</Value>
+            <Label>Mexican Cuisine</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Asian Cuisine</Value>
+            <Label>Asian Cuisine</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="OrderedMonth">
+      <DataType>String</DataType>
+      <Prompt>Ordered Month:</Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>Jul</Value>
+          <Value>Aug</Value>
+          <Value>Sep</Value>
+          <Value>Oct</Value>
+          <Value>Nov</Value>
+          <Value>Dec</Value>
+        </Values>
+      </DefaultValue>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>Jul</Value>
+            <Label>July</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Aug</Value>
+            <Label>August</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Sep</Value>
+            <Label>September</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Oct</Value>
+            <Label>October</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Nov</Value>
+            <Label>November</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Dec</Value>
+            <Label>December</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="PaymentType">
+      <DataType>String</DataType>
+      <Prompt>Payment Type:</Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>Debit Card</Value>
+          <Value>Credit Card</Value>
+          <Value>Cash on Delivery</Value>
+          <Value>Mobile Payment</Value>
+        </Values>
+      </DefaultValue>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>Debit Card</Value>
+            <Label>Debit Card</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Credit Card</Value>
+            <Label>Credit Card</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Cash on Delivery</Value>
+            <Label>Cash on Delivery</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Mobile Payment</Value>
+            <Label>Mobile Payment</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>FoodCategory</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>OrderedMonth</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>PaymentType</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>

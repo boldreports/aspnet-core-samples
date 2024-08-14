@@ -10,7 +10,7 @@ using System.IO;
 
 namespace ReportsCoreSamples.Controllers
 {
-    [Route("[controller]"), Route("report-writer")]
+    [Route("report-writer")]
     public class ReportWriterController : PreviewController
     {
         private IWebHostEnvironment _hostingEnvironment;
@@ -152,7 +152,7 @@ namespace ReportsCoreSamples.Controllers
         public async Task<string> ConvertBase64(string url)
         {
             string puppeteerChromeExe = "";
-            puppeteerChromeExe = Path.Combine(_hostingEnvironment.WebRootPath, "puppeteer", "Win-901912", "chrome-win", "chrome.exe");
+            puppeteerChromeExe = Path.Combine(_hostingEnvironment.WebRootPath, "puppeteer", "Win-901912", "chrome-linux", "chrome");
             await using var browser = await PuppeteerSharp.Puppeteer.LaunchAsync(new PuppeteerSharp.LaunchOptions
             {
                 Headless = true,
