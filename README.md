@@ -53,4 +53,4 @@ Refer the [LICENSE](/LICENSE) file.
 
 * For any other queries, reach our [Bold Reports support team](mailto:support@boldreports.com) or [Feedback portal](https://www.boldreports.com/feedback/).
 
-* To renew the subscription, click [here](https://www.boldreports.com/pricing/on-premise) or contact our sales team at <https://www.boldreports.com/contact>.
+* To renew the subscription, click [here](https://www.boldreports.com/pricing/?utm_source=github&utm_medium=backlinks) or contact our sales team at <https://www.boldreports.com/contact>.
