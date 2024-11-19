@@ -404,7 +404,6 @@
       "routerPath": "powerpoint-report",
       "controllerName": "PowerpointReport",
       "sampleName": "PowerPoint Report",
-      "status": "Updated",
       "basePath": "report-viewer",
       "imageDetails": {
         "isLandscape": true,
