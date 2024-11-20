@@ -39,6 +39,7 @@
     <PackageReference Include="BoldReports.Data.Oracle" Version="6.3.16" />
     <PackageReference Include="BoldReports.Data.PostgreSQL" Version="6.3.16" />
     <PackageReference Include="BoldReports.Data.Snowflake" Version="6.3.16" />
+    <PackageReference Include="BoldReports.Data.GoogleBigQuery" Version="6.3.16" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Controllers\**" CopyToOutputDirectory="Always" />
