@@ -29,11 +29,28 @@
             }
         }
     </script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-K73VBT8');</script>
+    <!-- End Google Tag Manager -->
         <link href="~/bundles/main/app.min.css" rel="stylesheet" />
 
 </head>
 <body>
     <div hidden id="reports-analytics" data-queue="Bold Reports - Demos - ASP.NET Core"></div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K73VBT8"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
     @RenderBody()
     <div class="splash">
         <div class="message">ASP.NET Core Reports</div>
@@ -62,17 +79,17 @@
                             <div id="parentTabContainer">
                                 <ul class="nav ej-nav-header" id="parentTab" role="tablist">
                                     <li class="ej-nav-item">
-                                        <a href="#demo" data-toggle="tab" role="tab" aria-selected="true">
+                                        <a href="#demo" data-bs-toggle="tab" role="tab" aria-selected="true">
                                             <Span class="ej-sb-icons ej-demo-icon"></Span><Span>DEMO</Span>
                                         </a>
                                     </li>
                                     <li class="ej-nav-item source-tab">
-                                        <a href="#source" data-toggle="tab" role="tab" aria-selected="false">
+                                        <a href="#source" data-bs-toggle="tab" role="tab" aria-selected="false">
                                             <Span class="ej-sb-icons ej-source-icon"></Span><Span>SOURCE</Span>
                                         </a>
                                     </li>
                                     @*<li class="ej-nav-item desc-tab">
-                        <a href="#ej-description" data-toggle="tab" role="tab" aria-selected="false">
+                        <a href="#ej-description" data-bs-toggle="tab" role="tab" aria-selected="false">
                             <Span class="ej-sb-icons ej-description-icon"></Span><Span>Description</Span>
                         </a>
                     </li>*@
@@ -96,10 +113,10 @@
                                             </div>
                                             <ul class="nav ej-nav-header" id="childtTab" role="tablist">
                                                 <li class="ej-nav-item">
-                                                    <a href="#csharp" class="active csharp-header" data-toggle="tab" role="tab" aria-selected="true"></a>
+                                                    <a href="#csharp" class="active csharp-header" data-bs-toggle="tab" role="tab" aria-selected="true"></a>
                                                 </li>
                                                 <li class="ej-nav-item">
-                                                    <a class="cshtml-header" href="#cshtml" data-toggle="tab" role="tab" aria-selected="false"></a>
+                                                    <a class="cshtml-header" href="#cshtml" data-bs-toggle="tab" role="tab" aria-selected="false"></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -153,6 +170,12 @@
                                 </a>
                                 <a href="@Configuration["externalURLs:footerFeedback"]" target="_blank" rel="noreferrer">
                                     Feedback
+                                </a>
+                                <a href="@Configuration["externalURLs:footerKnowledgeBase"]" target="_blank" rel="noreferrer">
+                                    Knowledge Base
+                                </a>
+                                <a href="@Configuration["externalURLs:footerLearningCenter"]" target="_blank" rel="noreferrer">
+                                    Learning Center
                                 </a>
                             </div>
                             <div class="ej-lp-footer-copyright">@Configuration["copyrightInfo"]</div>

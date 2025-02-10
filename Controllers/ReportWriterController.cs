@@ -152,7 +152,7 @@ namespace ReportsCoreSamples.Controllers
         public async Task<string> ConvertBase64(string url)
         {
             string puppeteerChromeExe = "";
-            puppeteerChromeExe = Path.Combine(_hostingEnvironment.WebRootPath, "puppeteer", "Win-901912", "chrome-linux", "chrome");
+            puppeteerChromeExe = Path.Combine(_hostingEnvironment.WebRootPath, "puppeteer", "Win-901912", "chrome-win", "chrome.exe");
             await using var browser = await PuppeteerSharp.Puppeteer.LaunchAsync(new PuppeteerSharp.LaunchOptions
             {
                 Headless = true,

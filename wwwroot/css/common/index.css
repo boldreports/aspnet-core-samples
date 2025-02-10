@@ -104,7 +104,12 @@ body {
 }
 
 #description a {
-    color: #ff5f23 ;
+    color: #ff5f23;
+    text-decoration: none;
+}
+
+#description a:hover {
+    text-decoration: underline;
 }
 
 #reportviewer_param_block_table .switchstyle {

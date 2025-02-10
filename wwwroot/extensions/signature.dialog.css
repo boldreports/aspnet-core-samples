@@ -1,0 +1,71 @@
+    .e-signDialog-root-container {
+        display: flex;
+        flex-flow: column;
+        gap: 8px;
+        height: 100%;
+        overflow: hidden;
+        font-family: var(--designer-font-family);
+    }
+
+    .e-signDialog-strokeColorDiv, .e-signDialog-strokeWidthDiv {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .e-signDialog-size .e-icons.e-resize-handle.e-south-east {
+        font-family: "e-icons" !important;
+    }
+
+    .e-signDialog-btn-clear, .e-signDialog-cropIconDiv {
+        cursor: pointer
+    }
+
+    .e-signDialog-border {
+        background-color: white;
+        border: 0.5px solid rgb(229, 231, 235);
+        border-radius: 2px;
+    }
+
+    .e-signDialog-text-span {
+        height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .e-signDialog-size {
+        min-width: 430px !important;
+        min-height: 400px !important;
+    }
+
+    .e-signDialog-cropBox {
+        position: absolute;
+        border: 2px dashed #f00;
+    }
+
+    .e-signDialog-cropIconDiv {
+        background-image: url('images/cropicon.svg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        border: 1px solid dodgerblue;
+        border-radius: 3px;
+        height: 29px;
+        width: 42px;
+    }
+
+    .e-signDialog-canvas {
+        cursor: default;
+        background-color: transparent;
+        border: none;
+    }
+
+    .e-signDialog-cropIcon-enable {
+        cursor: pointer;
+        background-color: lightblue;
+    }
+
+    .e-signDialog-cropIcon-disable {
+        background-color: transparent;
+        cursor: default;
+    }

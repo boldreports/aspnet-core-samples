@@ -15,7 +15,7 @@
     loadTabContent();
     setReportsHeight();
     updateTab();
-    $('a[data-toggle="tab"][href="#demo"]').on('shown.bs.tab', resizeReportViewer);
+    $('a[data-bs-toggle="tab"][href="#demo"]').on('shown.bs.tab', resizeReportViewer);
 })();
 
 window.addEventListener('resize', function () {
@@ -35,8 +35,13 @@ function tocSelection() {
 }
 
 function loadTabContent() {
-    $('#parentTab li:first-child a').tab('show');
-    $('#childtTab li:first-child a').tab('show');
+    ['#parentTab li:first-child a', '#childtTab li:first-child a'].forEach(selector => {
+        const tabElement = document.querySelector(selector);
+        if (tabElement) {
+            const tabInstance = new bootstrap.Tab(tabElement);
+            tabInstance.show();
+        }
+    });
     let basePath = reportBasePath.includes("report-viewer") ? "ReportViewer" : reportBasePath.includes("report-designer") ? "ReportDesigner" : "ReportWriter";
     let controllerName = reportRouterPath ? reportSampleData.controllerName : basePath;
     let controllerPath = reportRouterPath ? basePath + '/' + controllerName : controllerName;
@@ -116,7 +121,10 @@ function updateTab() {
     let sourceTab = document.querySelector('.ej-nav-item.source-tab');
     // let descTab = document.querySelector('.ej-nav-item.desc-tab');
     if (window.matchMedia('(max-width:850px)').matches) {
-        $('#parentTab li:first-child a').tab('show');
+        var firstTabEl = document.querySelector('#parentTab li:first-child a');
+        var tab = new bootstrap.Tab(firstTabEl);
+        tab.show();
+        // $('#parentTab li:first-child a').tab('show');
         sourceTab.classList.add('e-hidden');
         // descTab.classList.add('e-hidden');
     } else {

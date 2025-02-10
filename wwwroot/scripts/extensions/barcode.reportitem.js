@@ -190,6 +190,8 @@ var EJBarcode = (function () {
     };
     EJBarcode.prototype.dispose = function () {
     };
+    EJBarcode.prototype.undoRedoAction = function (args) {
+    };
     EJBarcode.prototype.isDisplayText = function () {
         return (this.getPropertyVal('DisplayBarcodeText').toLowerCase()) === 'true';
     };

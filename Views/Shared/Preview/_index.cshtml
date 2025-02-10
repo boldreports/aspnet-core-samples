@@ -27,6 +27,17 @@
             }
         }
     </script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-K73VBT8');</script>
+    <!-- End Google Tag Manager -->
     <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
 
     <link href="~/bundles/preview/app.min.css" rel="stylesheet" />
@@ -34,6 +45,12 @@
 </head>
 <body>
     <div hidden id="reports-analytics" data-queue="Bold Reports - Demos - ASP.NET Core"></div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K73VBT8"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
     @RenderBody()
     <div class="splash">
         <div class="message">ASP.NET Core Reports</div>
@@ -90,7 +107,7 @@
                 @* <a class="ej-preview-button bold-schedule-demo" href="https://www.boldreports.com/schedule-free-demo"
                     title="Report Server" target="_blank" rel="noreferrer">Schedule Free Demo</a> *@
                 <a class="ej-preview-button product-detail" href=@(ViewBag.isDesigner ? "https://www.boldreports.com/embedded-reporting/aspnet-core-report-designer" : "https://www.boldreports.com/embedded-reporting/aspnet-core-report-viewer") target="_blank" rel="noreferrer">Product Detail</a>
-                <a class="ej-preview-button try-it-free" href="https://app.boldid.net/reporting/embedded/register?plan=174&evaluation=v2&leadsource=demos.boldreports.com&gclid=&referrerroriginurl=https://demos.boldreports.com/pricing&secondaryreferraloriginurl=https://demos.boldreports.com/&host=server&quantity=1"
+                <a class="ej-preview-button try-it-free" href="https://app.boldid.net/reporting/embedded/register?plan=194&evaluation=v2&leadsource=demos.boldreports.com&gclid=&referrerroriginurl=https://demos.boldreports.com/pricing&secondaryreferraloriginurl=https://demos.boldreports.com/&host=server&quantity=1"
                     title="Report Server" target="_blank" rel="noreferrer">Try it Free</a>
             </div>
         </div>
