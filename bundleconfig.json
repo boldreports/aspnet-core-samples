@@ -65,7 +65,9 @@
       "wwwroot/scripts/bold-reports/v2.0/bold.report-viewer.min.js",
       "wwwroot/scripts/bold-reports/v2.0/bold.report-designer.min.js",
       "wwwroot/scripts/extensions/barcode.reportitem.js",
-      "wwwroot/scripts/extensions/qrbarcode.reportitem.js"
+      "wwwroot/scripts/extensions/qrbarcode.reportitem.js",
+      "wwwroot/scripts/extensions/signature.reportitem.js",
+      "wwwroot/scripts/extensions/signature.dialog.js"
     ],
     "minify": {
       "enabled": false,
@@ -94,6 +96,8 @@
       "wwwroot/css/common/preview.css",
       "wwwroot/css/common/writer.css",
       "wwwroot/extensions/barcode.reportitem.css",
+      "wwwroot/extensions/signature.reportitem.css",
+      "wwwroot/extensions/signature.dialog.css",
       "wwwroot/css/bold-reports/v2.0/tailwind-light/bold.report-viewer.min.css",
       "wwwroot/css/bold-reports/v2.0/tailwind-light/bold.report-designer.min.css"
     ],

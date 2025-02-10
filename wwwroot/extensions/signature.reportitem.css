@@ -1,0 +1,27 @@
+﻿.e-rptdesigner-designarea:not(.e-waitingpopup) .customitem-signature {
+    background-repeat: no-repeat;
+    height: 42px;
+    background-position: center;
+    background-image: url('images/signature.svg');
+}
+
+.e-rptdesigner-customItem-sign {
+    border: 1px dotted gray;
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.e-rptdesigner-sign-editIcon {
+    float: right;
+    height: 17px;
+    width: 24px;
+    padding: 1px;
+    right: 0px;
+    position: absolute;
+    z-index: 1003;
+    top: 7px;
+    background-image: url('images/editicon.svg');
+    background-repeat: no-repeat;
+}

@@ -33,7 +33,7 @@ namespace ReportsCoreSamples
             LogExtension.RegisterLog4NetConfig();
 
             string License = File.ReadAllText(System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "BoldLicense.txt"), Encoding.UTF8);
-            BoldLicenseProvider.RegisterLicense(License, bool.Parse(configuration.GetSection("appSettings").GetSection("IsOfflineLicense").Value));
+            BoldLicenseProvider.RegisterLicense(License, bool.Parse(configuration.GetSection("appSettings").GetSection("IsOfflineLicense").Value), bool.Parse(configuration.GetSection("appSettings").GetSection("EnableLicenseLog").Value));
             ReportConfig.DefaultSettings = new ReportSettings()
             {
                 MapSetting = this.GetMapSettings(_hostingEnvironment)
@@ -170,7 +170,8 @@ namespace ReportsCoreSamples
                     pattern: "{controller=Main}/{action=Index}/{id?}");
                 endpoints.MapFallback(context =>
                  {
-                     context.Response.Redirect("/report-viewer/product-line-sales");
+                     var redirectPath = context.Request.PathBase.Value.Contains("aspnet-core") ? "/aspnet-core/report-viewer/product-line-sales/" : "/report-viewer/product-line-sales";
+                     context.Response.Redirect(redirectPath);
                      return Task.CompletedTask;
                  });
             });

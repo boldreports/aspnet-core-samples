@@ -19,7 +19,7 @@
       "Intuitive drag-and-drop widgets",
       "Hassle-free licensing"
     ],
-    "freeTrialUrl": "https://app.boldid.net/reporting/embedded/register?plan=174&evaluation=v2&leadsource=demos.boldreports.com&gclid=&referrerroriginurl=https://demos.boldreports.com/pricing&secondaryreferraloriginurl=https://demos.boldreports.com/&host=server&quantity=1"
+    "freeTrialUrl": "https://app.boldid.net/reporting/embedded/register?plan=194&evaluation=v2&leadsource=demos.boldreports.com&gclid=&referrerroriginurl=https://demos.boldreports.com/pricing&secondaryreferraloriginurl=https://demos.boldreports.com/&host=server&quantity=1"
   },
   "samples": [
     {
@@ -425,7 +425,35 @@
       "metaData": {
         "description": "This demo showcases a Transcript Report that effectively presents school student details, including their grades and performance, in the ASP.NET Core Bold Report Viewer."
       }
-    },           
+    },
+    {
+      "routerPath": "cmr-report",
+      "controllerName": "CmrReport",
+      "sampleName": "CMR Report",
+      "status": "New",
+      "basePath": "report-viewer",
+      "imageDetails": {
+        "isLandscape": false,
+        "index": 18
+      },
+      "metaData": {
+        "description": "This demo shows CMR International Consignment Note usage, standardizing international road freight under the CMR Convention, in ASP.NET Core Bold Report Viewer."
+      }
+    },
+    {
+      "routerPath": "infographics-report",
+      "sampleName": "Infographics Report",
+      "controllerName": "InfographicsReport",
+      "status": "New",
+      "basePath": "report-viewer",
+      "imageDetails": {
+        "isLandscape": false,
+        "index": 17
+      },
+      "metaData": {
+        "description": "This demo visualizes an Infographics Report that effectively presents student demographics, course interests, achievements, and study preferences in the ASP.NET Core Bold Report Viewer."
+      }
+    },   
     {
       "routerPath": "",
       "sampleName": "Report Writer",
@@ -433,7 +461,7 @@
       "controllerName": "ReportWriter",
       "imageDetails": {
         "isLandscape": false,
-        "index": 17
+        "index": 19
       },
       "metaData": {
         "description": "This demos allows you to export the RDL or RDLC report with popular file formats like PDF, HTML, Word, and Excel without previewing the report in viewer using ASP.NET Core Bold Report Writer."
