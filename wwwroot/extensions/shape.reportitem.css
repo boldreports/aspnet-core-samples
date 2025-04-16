@@ -1,0 +1,6 @@
+﻿.e-rptdesigner-designarea:not(.e-waitingpopup) .customitem-shape {
+    background-repeat: no-repeat;
+    height: 42px;
+    background-position: center;
+    background-image: url('images/shapes.svg');
+}

@@ -11,7 +11,8 @@ var itemExtensions = [{
             description: 'Display the barcode lines as report item.',
             title: 'Barcode'
         }
-    }, {
+    },
+    {
         name: 'matrixbarcode',
         className: 'EJQRBarcode',
         imageClass: 'customitem-qrbarcode',
@@ -33,5 +34,17 @@ var itemExtensions = [{
             requirements: 'Add a report item to the designer area.',
             description: 'This report item is used to add a graphic signature.',
             title: 'Signature'
-        },
+        }
+    },
+    {
+        name: 'Shape',
+        className: 'EJShape',
+        imageClass: 'customitem-shape',
+        displayName: 'Shape',
+        category: 'Shapes',
+        toolTip: {
+            requirements: 'Add a report item to the designer area',
+            description: 'Display the different types of shapes as report item',
+            title: 'Shapes'
+        }
     }];

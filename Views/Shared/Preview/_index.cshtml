@@ -82,7 +82,7 @@
         <div class="ej-preview-header">
             <div class="ej-preview-left-side">
                 <a id="home_page" href="/" target="_blank" rel="noreferrer">
-                    <h1 class="ej-preview-platform-name">Bold Reports for ASP.NET Core</h1>
+                    <h1 class="ej-preview-platform-name">Bold Reports<sup>®</sup> for ASP.NET Core</h1>
                 </a>
             </div>
             <div class="ej-preview-right-side">
@@ -90,7 +90,7 @@
                 @* <a class="ej-preview-button bold-schedule-demo" href="https://www.boldreports.com/schedule-free-demo"
                     title="Report Server" target="_blank" rel="noreferrer">Schedule Free Demo</a> *@
                 <a class="ej-preview-button product-detail" href=@(ViewBag.isDesigner ? "https://www.boldreports.com/embedded-reporting/aspnet-core-report-designer" : "https://www.boldreports.com/embedded-reporting/aspnet-core-report-viewer") target="_blank" rel="noreferrer">Product Detail</a>
-                <a class="ej-preview-button try-it-free" href="https://app.boldid.net/reporting/embedded/register?plan=194&evaluation=v2&leadsource=demos.boldreports.com&gclid=&referrerroriginurl=https://demos.boldreports.com/pricing&secondaryreferraloriginurl=https://demos.boldreports.com/&host=server&quantity=1"
+                <a class="ej-preview-button try-it-free" href="https://app.boldid.net/register/reports/enterprise?evaluation=v2&leadsource=demos.boldreports.com&gclid=&referrerroriginurl=https://demos.boldreports.com/pricing&secondaryreferraloriginurl=https://demos.boldreports.com/&host=server&quantity=1"
                     title="Report Server" target="_blank" rel="noreferrer">Try it Free</a>
             </div>
         </div>
@@ -113,7 +113,7 @@
             return "@Url.Content("~/")";
         }
     </script>
-    <script src="~/bundles/preview/app.min.js"></script>
+    <script src="~/bundles/preview/app.min.js" asp-append-version="true"></script>
     <bold-script-manager></bold-script-manager>
 </body>
 

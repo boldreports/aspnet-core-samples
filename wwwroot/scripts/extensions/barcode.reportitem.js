@@ -17,10 +17,12 @@ var EJBarcode = (function () {
         args.renderCallback = $.proxy(this.renderData, this);
         args.loadingCallback = $.proxy(this.showIndicator, this);
     };
-    EJBarcode.prototype.renderItem = function (customJson, target) {
-        this.customJSON = customJson;
-        this.rootElement = target;
-        this.renderBarcode();
+    EJBarcode.prototype.renderItem = function (customJson, target, eventData) {
+        if (eventData.eventName === 'begin') {
+            this.customJSON = customJson;
+            this.rootElement = target;
+            this.renderBarcode();
+        }
     };
     EJBarcode.prototype.renderBarcode = function () {
         this.customItemDiv = ej.buildTag('div.customitem', '', {
@@ -106,50 +108,49 @@ var EJBarcode = (function () {
             });
         }
     };
-    EJBarcode.prototype.getPropertyGridItems = function () {
+    EJBarcode.prototype.getPropertyGridItems = function (baseProperties) {
         var barCodeType = this.getPropertyVal('BarcodeType');
-        var propertyItems = {
-            'HeaderText': this.customJSON.Name,
-            'PropertyType': 'barcode',
-            'SubType': 'barcode',
-            'IsEditHeader': true,
-            'Items': [{
-                    'CategoryId': 'basicsettings',
-                    'DisplayName': 'categoryBasicSettings',
-                    'IsExpand': true,
-                    'Items': [
-                        {
-                            'ItemId': 'barcodetype',
-                            'Name': 'BarcodeType',
-                            'DisplayName': 'BarcodeType',
-                            'Value': barCodeType,
-                            'ItemType': 'DropDown',
-                            'EnableExpression': false,
-                            'ValueList': ['Code39', 'Code39Extended', 'Code11', 'Codabar', 'Code93', 'Code128A', 'Code128B',
-                                'Code128C', 'GS1-128', 'UpcBarcode', 'EAN-13', 'EAN-8', 'Code39 Mod 43', 'Interleaved 2 of 5',
-                                'Standard 2 of 5', 'Pharmacode']
-                        },
-                        {
-                            'ItemId': 'barcodevalue',
-                            'Name': 'BarcodeValue',
-                            'DisplayName': 'barcodeValue',
-                            'EnableExpression': true,
-                            'Value': this.getPropertyVal('BarcodeValue'),
-                            'ItemType': 'TextBox'
-                        },
-                        {
-                            'ItemId': 'displaybarcodetext',
-                            'Name': 'DisplayBarcodeText',
-                            'DisplayName': 'displayText',
-                            'Value': this.isDisplayText() ? true : false,
-                            'ItemType': 'Bool',
-                            'EnableExpression': false
-                        }
-                    ]
-                }
-            ]
-        };
-        return propertyItems;
+        var itemProperties = [{
+                'CategoryId': 'basicsettings',
+                'DisplayName': 'categoryBasicSettings',
+                'IsExpand': true,
+                'Items': [
+                    {
+                        'ItemId': 'barcodetype',
+                        'Name': 'BarcodeType',
+                        'DisplayName': 'BarcodeType',
+                        'Value': barCodeType,
+                        'ItemType': 'DropDown',
+                        'EnableExpression': false,
+                        'ValueList': ['Code39', 'Code39Extended', 'Code11', 'Codabar', 'Code93', 'Code128A', 'Code128B',
+                            'Code128C', 'GS1-128', 'UpcBarcode', 'EAN-13', 'EAN-8', 'Code39 Mod 43', 'Interleaved 2 of 5',
+                            'Standard 2 of 5', 'Pharmacode']
+                    },
+                    {
+                        'ItemId': 'barcodevalue',
+                        'Name': 'BarcodeValue',
+                        'DisplayName': 'barcodeValue',
+                        'EnableExpression': true,
+                        'Value': this.getPropertyVal('BarcodeValue'),
+                        'ItemType': 'TextBox'
+                    },
+                    {
+                        'ItemId': 'displaybarcodetext',
+                        'Name': 'DisplayBarcodeText',
+                        'DisplayName': 'displayText',
+                        'Value': this.isDisplayText() ? true : false,
+                        'ItemType': 'Bool',
+                        'EnableExpression': false
+                    }
+                ]
+            }
+        ];
+        baseProperties.HeaderText = this.customJSON.Name;
+        baseProperties.PropertyType = 'barcode';
+        baseProperties.SubType = 'barcode';
+        baseProperties.IsEditHeader = true;
+        baseProperties.Items = $.merge(itemProperties, baseProperties.Items);
+        return baseProperties;
     };
     EJBarcode.prototype.getPropertyVal = function (name) {
         if (this.customJSON.CustomProperties && this.customJSON.CustomProperties.length > 0) {

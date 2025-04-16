@@ -15,11 +15,13 @@ var EJPDFSignature = (function () {
         args.minimumHeight = 15;
         args.minimumWidth = 90;
     };
-    EJPDFSignature.prototype.renderItem = function (customJson, target) {
-        this.customJSON = customJson;
-        this.rootElement = target;
-        this.customItemInstance = target.data('CustomItem');
-        this.renderSignature();
+    EJPDFSignature.prototype.renderItem = function (customJson, target, eventData) {
+        if (eventData.eventName === 'begin') {
+            this.customJSON = customJson;
+            this.rootElement = target;
+            this.customItemInstance = target.data('CustomItem');
+            this.renderSignature();
+        }
     };
     EJPDFSignature.prototype.renderSignature = function () {
         var bgColor = (this.customJSON && this.customJSON.Style) ? (this.customJSON.Style.BackgroundColor === 'Transparent' ?
@@ -91,30 +93,29 @@ var EJPDFSignature = (function () {
             dlgInstance.openDialog(this.instance, dlgData);
         }
     };
-    EJPDFSignature.prototype.getPropertyGridItems = function () {
-        var propertyItems = {
-            'HeaderText': this.customJSON.Name,
-            'PropertyType': 'sign',
-            'SubType': 'signature',
-            'IsEditHeader': true,
-            'Items': [{
-                    'CategoryId': 'basicsettings',
-                    'DisplayName': 'categoryBasicSettings',
-                    'IsExpand': true,
-                    'IsIgnoreCommon': true,
-                    'Items': [{
-                            ItemId: 'signature',
-                            Name: 'signature',
-                            DisplayName: 'signature',
-                            ItemType: 'CustomBtn',
-                            IsVisible: true
-                        }]
-                }],
-            'getItemProperty': {
-                event: $.proxy(this.customAction, this), eventData: {}
-            }
+    EJPDFSignature.prototype.getPropertyGridItems = function (baseProperties) {
+        var itemProperties = [{
+                'CategoryId': 'basicsettings',
+                'DisplayName': 'categoryBasicSettings',
+                'IsExpand': true,
+                'IsIgnoreCommon': true,
+                'Items': [{
+                        ItemId: 'signature',
+                        Name: 'signature',
+                        DisplayName: 'signature',
+                        ItemType: 'CustomBtn',
+                        IsVisible: true
+                    }]
+            }];
+        baseProperties.HeaderText = this.customJSON.Name;
+        baseProperties.PropertyType = 'sign';
+        baseProperties.SubType = 'signature';
+        baseProperties.IsEditHeader = true;
+        baseProperties.Items = $.merge(itemProperties, baseProperties.Items);
+        baseProperties.getItemProperty = {
+            event: $.proxy(this.customAction, this), eventData: {}
         };
-        return propertyItems;
+        return baseProperties;
     };
     EJPDFSignature.prototype.setSign = function (imgData, canvas, bgColor) {
         if (canvas) {
