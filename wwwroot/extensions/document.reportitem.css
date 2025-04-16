@@ -1,0 +1,28 @@
+.e-rptdesigner-designarea:not(.e-waitingpopup) .customitem-pdfdocument {
+    background-image: url('images/pdf_widget_icon.svg');
+}
+
+.e-rptdesigner-designarea:not(.e-waitingpopup) .customitem-htmldocument {
+    background-image: url('images/html_widget_icon.svg');
+}
+
+.e-rptdesigner-designarea:not(.e-waitingpopup) .customitem-htmldocument,
+.e-rptdesigner-designarea:not(.e-waitingpopup) .customitem-pdfdocument {
+    background-repeat: no-repeat;
+    height: 42px;
+    background-position: center;
+}
+
+.e-rptdesigner-htmldocument {
+    background-image: url('images/html_design_panel_icon.svg');
+}
+
+.e-rptdesigner-pdfdocument {
+    background-image: url('images/pdf_design_panel_icon.svg');
+}
+
+.e-rptdesigner-pdfdocument,
+.e-rptdesigner-htmldocument {
+    height: 100%;
+    background-size: 100% 100%;
+}

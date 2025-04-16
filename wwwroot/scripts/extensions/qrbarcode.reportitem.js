@@ -19,10 +19,12 @@ var EJQRBarcode = (function () {
         args.renderCallback = $.proxy(this.renderData, this);
         args.loadingCallback = $.proxy(this.showIndicator, this);
     };
-    EJQRBarcode.prototype.renderItem = function (customJson, target) {
-        this.customJSON = customJson;
-        this.rootElement = target;
-        this.renderBarcode();
+    EJQRBarcode.prototype.renderItem = function (customJson, target, eventData) {
+        if (eventData.eventName === 'begin') {
+            this.customJSON = customJson;
+            this.rootElement = target;
+            this.renderBarcode();
+        }
     };
     EJQRBarcode.prototype.renderBarcode = function () {
         this.customItemDiv = ej.buildTag('div.customitem', '', {
@@ -146,85 +148,84 @@ var EJQRBarcode = (function () {
             });
         }
     };
-    EJQRBarcode.prototype.getPropertyGridItems = function () {
-        var propertyItems = {
-            'HeaderText': this.customJSON.Name,
-            'PropertyType': 'qrbarcode',
-            'SubType': 'qrbarcode',
-            'IsEditHeader': true,
-            'Items': [{
-                    'CategoryId': 'basicsettings',
-                    'DisplayName': 'categoryBasicSettings',
-                    'IsExpand': true,
-                    'Items': [
-                        {
-                            'ItemId': 'barcodetype',
-                            'Name': 'BarcodeType',
-                            'DisplayName': 'BarcodeType',
-                            'Value': this.getBarcodeType(this.getPropertyVal('BarcodeType')),
-                            'ItemType': 'DropDown',
-                            'EnableExpression': false,
-                            'DependentItems': [
-                                {
-                                    'EnableItems': ['basicsettings_qrerrcorrlevel'],
-                                    'DisableItems': ['basicsettings_pdferrcorrlevel'],
-                                    'Value': ['QR Barcode']
-                                },
-                                {
-                                    'EnableItems': ['basicsettings_pdferrcorrlevel'],
-                                    'DisableItems': ['basicsettings_qrerrcorrlevel'],
-                                    'Value': ['PDF417']
-                                },
-                                {
-                                    'EnableItems': [],
-                                    'DisableItems': ['basicsettings_qrerrcorrlevel', 'basicsettings_pdferrcorrlevel'],
-                                    'Value': ['Data Matrix']
-                                }
-                            ],
-                            'ValueList': ['QR Barcode', 'Data Matrix', 'PDF417']
-                        },
-                        {
-                            'ItemId': 'barcodevalue',
-                            'Name': 'BarcodeValue',
-                            'DisplayName': 'barcodeValue',
-                            'EnableExpression': true,
-                            'Value': this.getPropertyVal('BarcodeValue'),
-                            'ItemType': 'TextBox'
-                        },
-                        {
-                            'ItemId': 'displaybarcodetext',
-                            'Name': 'DisplayBarcodeText',
-                            'DisplayName': 'displayText',
-                            'Value': this.isDisplayText() ? true : false,
-                            'ItemType': 'Bool',
-                            'EnableExpression': false,
-                            'IsVisible': false
-                        },
-                        {
-                            'ItemId': 'qrerrcorrlevel',
-                            'Name': 'QrcodeCorrectionLevel',
-                            'DisplayName': 'correctionLabel',
-                            'Value': this.getQrErrCorrLevel(this.getPropertyVal('CorrectionLevel')),
-                            'ParentId': 'basicsettings_barcodetype',
-                            'ItemType': 'DropDown',
-                            'EnableExpression': false,
-                            'ValueList': this.getQrcodeCorrectionLevel()
-                        },
-                        {
-                            'ItemId': 'pdferrcorrlevel',
-                            'Name': 'Pdf417CorrectionLevel',
-                            'DisplayName': 'correctionLabel',
-                            'Value': this.getPdfErrCorrLevel(this.getPropertyVal('CorrectionLevel')),
-                            'ParentId': 'basicsettings_barcodetype',
-                            'ItemType': 'DropDown',
-                            'EnableExpression': false,
-                            'ValueList': this.getPDF417CorrectionLevel()
-                        }
-                    ]
-                }
-            ]
-        };
-        return propertyItems;
+    EJQRBarcode.prototype.getPropertyGridItems = function (baseProperties) {
+        var itemProperties = [{
+                'CategoryId': 'basicsettings',
+                'DisplayName': 'categoryBasicSettings',
+                'IsExpand': true,
+                'Items': [
+                    {
+                        'ItemId': 'barcodetype',
+                        'Name': 'BarcodeType',
+                        'DisplayName': 'BarcodeType',
+                        'Value': this.getBarcodeType(this.getPropertyVal('BarcodeType')),
+                        'ItemType': 'DropDown',
+                        'EnableExpression': false,
+                        'DependentItems': [
+                            {
+                                'EnableItems': ['basicsettings_qrerrcorrlevel'],
+                                'DisableItems': ['basicsettings_pdferrcorrlevel'],
+                                'Value': ['QR Barcode']
+                            },
+                            {
+                                'EnableItems': ['basicsettings_pdferrcorrlevel'],
+                                'DisableItems': ['basicsettings_qrerrcorrlevel'],
+                                'Value': ['PDF417']
+                            },
+                            {
+                                'EnableItems': [],
+                                'DisableItems': ['basicsettings_qrerrcorrlevel', 'basicsettings_pdferrcorrlevel'],
+                                'Value': ['Data Matrix']
+                            }
+                        ],
+                        'ValueList': ['QR Barcode', 'Data Matrix', 'PDF417']
+                    },
+                    {
+                        'ItemId': 'barcodevalue',
+                        'Name': 'BarcodeValue',
+                        'DisplayName': 'barcodeValue',
+                        'EnableExpression': true,
+                        'Value': this.getPropertyVal('BarcodeValue'),
+                        'ItemType': 'TextBox'
+                    },
+                    {
+                        'ItemId': 'displaybarcodetext',
+                        'Name': 'DisplayBarcodeText',
+                        'DisplayName': 'displayText',
+                        'Value': this.isDisplayText() ? true : false,
+                        'ItemType': 'Bool',
+                        'EnableExpression': false,
+                        'IsVisible': false
+                    },
+                    {
+                        'ItemId': 'qrerrcorrlevel',
+                        'Name': 'QrcodeCorrectionLevel',
+                        'DisplayName': 'correctionLabel',
+                        'Value': this.getQrErrCorrLevel(this.getPropertyVal('CorrectionLevel')),
+                        'ParentId': 'basicsettings_barcodetype',
+                        'ItemType': 'DropDown',
+                        'EnableExpression': false,
+                        'ValueList': this.getQrcodeCorrectionLevel()
+                    },
+                    {
+                        'ItemId': 'pdferrcorrlevel',
+                        'Name': 'Pdf417CorrectionLevel',
+                        'DisplayName': 'correctionLabel',
+                        'Value': this.getPdfErrCorrLevel(this.getPropertyVal('CorrectionLevel')),
+                        'ParentId': 'basicsettings_barcodetype',
+                        'ItemType': 'DropDown',
+                        'EnableExpression': false,
+                        'ValueList': this.getPDF417CorrectionLevel()
+                    }
+                ]
+            }
+        ];
+        baseProperties.HeaderText = this.customJSON.Name;
+        baseProperties.PropertyType = 'qrbarcode';
+        baseProperties.SubType = 'qrbarcode';
+        baseProperties.IsEditHeader = true;
+        baseProperties.Items = $.merge(itemProperties, baseProperties.Items);
+        return baseProperties;
     };
     EJQRBarcode.prototype.getPropertyVal = function (name) {
         if (this.customJSON.CustomProperties && this.customJSON.CustomProperties.length > 0) {
