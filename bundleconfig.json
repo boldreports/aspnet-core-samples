@@ -68,7 +68,9 @@
       "wwwroot/scripts/extensions/qrbarcode.reportitem.js",
       "wwwroot/scripts/extensions/signature.reportitem.js",
       "wwwroot/scripts/extensions/signature.dialog.js",
-      "wwwroot/scripts/extensions/shape.reportitem.js"
+      "wwwroot/scripts/extensions/shape.reportitem.js",
+      "wwwroot/scripts/extensions/pdfdocument.reportitem.js",
+      "wwwroot/scripts/extensions/htmldocument.reportitem.js"
     ],
     "minify": {
       "enabled": false,
@@ -100,6 +102,7 @@
       "wwwroot/extensions/signature.reportitem.css",
       "wwwroot/extensions/signature.dialog.css",
       "wwwroot/extensions/shape.reportitem.css",
+      "wwwroot/extensions/document.reportitem.css",
       "wwwroot/css/bold-reports/v2.0/tailwind-light/bold.report-viewer.min.css",
       "wwwroot/css/bold-reports/v2.0/tailwind-light/bold.report-designer.min.css"
     ],

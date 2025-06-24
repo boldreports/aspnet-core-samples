@@ -5,21 +5,57 @@
     background-image: url('images/pdfsignature.svg');
 }
 
-.e-rptdesigner-customItem-pdfsign {
-    border: 1px dotted gray;
-    overflow: hidden;
-    position: absolute;
-    height: 100%;
+.e-pdfsign-config, .e-pdfsign-default {
     width: 100%;
+    height: 100%;
 }
 
-.e-rptdesigner-sign-editIcon {
-    float: right;
+.e-pdfsign-default {
+    background-color: #D1D1D1;
+}
+
+.e-pdfsign-config, .e-pdfsign-default, .e-pdfsign-certTxt {
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.e-rptdesigner-pdfsign {
+    border: 1px dotted gray;
+    width: 100%;
+    height: 100%;
+}
+
+.e-pdfsign-dataConfig {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 5px;
+    width: 50%;
+}
+
+.e-pdfsign-signImg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.e-pdfsign-signImg-bgImg {
+    background-image: url('images/samplesignature.svg') !important;
+}
+
+.e-pdfsign-label {
+    display: flex;
+    gap: 7px;
+}
+
+.e-rptdesigner-pdfsign-editIcon {
+    position: absolute;
     height: 17px;
     width: 24px;
     padding: 1px;
     right: 0px;
-    position: absolute;
     z-index: 1003;
     top: 7px;
     background-image: url('images/editicon.svg');

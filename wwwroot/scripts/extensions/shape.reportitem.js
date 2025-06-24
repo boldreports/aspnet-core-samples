@@ -105,7 +105,7 @@ var EJShape = (function () {
             y: point.x * sinValue + point.y * cosValue
         }); });
         var pathData = " M " + rotatedEllipsePoints[0].x + " " + rotatedEllipsePoints[0].y + "\n                                A " + rx + " " + ry + " " + shapeInfo.angle + " 0 1 " + rotatedEllipsePoints[2].x + " " + rotatedEllipsePoints[2].y + "\n                                A " + rx + " " + ry + " " + shapeInfo.angle + " 0 1 " + rotatedEllipsePoints[0].x + " " + rotatedEllipsePoints[0].y + "\n                                Z";
-        var viewBox = -rotatedWidth / 2 + " " + -rotatedHeight / 2 + " " + (rotatedWidth + 2) + " " + (rotatedHeight + 2);
+        var viewBox = -rotatedWidth / 2 + " " + -rotatedHeight / 2 + " " + rotatedWidth + " " + rotatedHeight;
         this.renderSvg(target, pathData, viewBox, shapeInfo);
     };
     EJShape.prototype.renderRectangle = function (target, shapeInfo) {
@@ -114,8 +114,6 @@ var EJShape = (function () {
         var angleRad = (parseFloat(shapeInfo.angle) % 360 * Math.PI) / 180;
         var sinValue = Math.sin(angleRad);
         var cosValue = Math.cos(angleRad);
-        var rotatedWidth = Math.abs(shapeInfo.svgWidth * cosValue) + Math.abs(shapeInfo.svgHeight * sinValue);
-        var rotatedHeight = Math.abs(shapeInfo.svgWidth * sinValue) + Math.abs(shapeInfo.svgHeight * cosValue);
         var corners = [
             { x: -halfWidth, y: -halfHeight },
             { x: halfWidth, y: -halfHeight },
@@ -127,7 +125,7 @@ var EJShape = (function () {
             y: corner.x * sinValue + corner.y * cosValue
         }); });
         var pathData = this.getPathData(rotatedPoints);
-        var viewBox = -rotatedWidth / 2 + " " + -rotatedHeight / 2 + " " + (rotatedWidth + 2) + " " + (rotatedHeight + 2);
+        var viewBox = this.getViewBox(rotatedPoints);
         this.renderSvg(target, pathData, viewBox, shapeInfo);
     };
     EJShape.prototype.renderTriangle = function (target, shapeInfo) {
@@ -284,8 +282,8 @@ var EJShape = (function () {
             for (var index = 0; index < 8; index++) {
                 var theta = (Math.PI / 8) + (Math.PI * 2 / 8) * index;
                 points.push({
-                    x: Math.round(maxRadiusX + Math.cos(theta) * maxRadiusX),
-                    y: Math.round(maxRadiusY + Math.sin(theta) * maxRadiusY)
+                    x: maxRadiusX + Math.cos(theta) * maxRadiusX,
+                    y: maxRadiusY + Math.sin(theta) * maxRadiusY
                 });
             }
         }
@@ -293,8 +291,8 @@ var EJShape = (function () {
             for (var index = 0; index < 5; index++) {
                 var theta = (-Math.PI / 2) + (Math.PI * 2 / 5) * index;
                 points.push({
-                    x: Math.round(maxRadiusX + Math.cos(theta) * maxRadiusX),
-                    y: Math.round(maxRadiusY + Math.sin(theta) * maxRadiusY)
+                    x: maxRadiusX + Math.cos(theta) * maxRadiusX,
+                    y: maxRadiusY + Math.sin(theta) * maxRadiusY
                 });
             }
         }
@@ -302,14 +300,14 @@ var EJShape = (function () {
             for (var index = 0; index < 6; index++) {
                 var theta = (Math.PI / 3) * index;
                 points.push({
-                    x: Math.round(maxRadiusX + Math.cos(theta) * maxRadiusX),
-                    y: Math.round(maxRadiusY + Math.sin(theta) * maxRadiusY)
+                    x: maxRadiusX + Math.cos(theta) * maxRadiusX,
+                    y: maxRadiusY + Math.sin(theta) * maxRadiusY
                 });
             }
         }
         var rotatedPoints = points.map(function (point) { return ({
-            x: Math.round((point.x - maxRadiusX) * cosValue - (point.y - maxRadiusY) * sinValue + maxRadiusX),
-            y: Math.round((point.x - maxRadiusX) * sinValue + (point.y - maxRadiusY) * cosValue + maxRadiusY)
+            x: (point.x - maxRadiusX) * cosValue - (point.y - maxRadiusY) * sinValue + maxRadiusX,
+            y: (point.x - maxRadiusX) * sinValue + (point.y - maxRadiusY) * cosValue + maxRadiusY
         }); });
         var pathData = this.getPathData(rotatedPoints);
         var viewBox = this.getViewBox(rotatedPoints);
@@ -324,10 +322,10 @@ var EJShape = (function () {
         return pathData;
     };
     EJShape.prototype.getViewBox = function (points) {
-        var minX = Math.round(Math.min.apply(Math, points.map(function (p) { return p.x; })));
-        var maxX = Math.round(Math.max.apply(Math, points.map(function (p) { return p.x; })));
-        var minY = Math.round(Math.min.apply(Math, points.map(function (p) { return p.y; })));
-        var maxY = Math.round(Math.max.apply(Math, points.map(function (p) { return p.y; })));
+        var minX = Math.min.apply(Math, points.map(function (p) { return p.x; }));
+        var maxX = Math.max.apply(Math, points.map(function (p) { return p.x; }));
+        var minY = Math.min.apply(Math, points.map(function (p) { return p.y; }));
+        var maxY = Math.max.apply(Math, points.map(function (p) { return p.y; }));
         var viewBox = minX + " " + minY + " " + (maxX - minX) + " " + (maxY - minY);
         return viewBox;
     };
@@ -341,7 +339,7 @@ var EJShape = (function () {
         var targetId = target.attr('id');
         this.setAttributes(svg, {
             'width': shapeInfo.svgWidth + "px", 'height': shapeInfo.svgHeight + "px",
-            'viewBox': viewBox, 'id': targetId + "_svg", 'preserveAspectRatio': 'xMidYMid meet'
+            'viewBox': viewBox, 'id': targetId + "_svg", 'preserveAspectRatio': 'none'
         });
         this.setAttributes(clipPathElement, { 'd': pathData });
         this.setAttributes(clipPath, { 'id': targetId + "_clip_path", 'clipPathUnits': 'userSpaceOnUse' });
@@ -692,7 +690,7 @@ var EJShape = (function () {
             borderWidth = this.getBorderWidth(customJson.Border.Default, false);
         }
         var totalBorderWidth = (topBorderWidth || borderWidth) + (bottomBorderWidth || borderWidth);
-        return height - Math.round(totalBorderWidth);
+        return height - totalBorderWidth;
     };
     EJShape.prototype.getSvgWidth = function (customJson) {
         var width = 0;
@@ -712,7 +710,7 @@ var EJShape = (function () {
             borderWidth = this.getBorderWidth(customJson.Border.Default, false);
         }
         var totalBorderWidth = (leftBorderWidth || borderWidth) + (rightBorderWidth || borderWidth);
-        return width - Math.round(totalBorderWidth);
+        return width - totalBorderWidth;
     };
     EJShape.prototype.getBorderWidth = function (border, isDesigner) {
         var borderWidth = 0;

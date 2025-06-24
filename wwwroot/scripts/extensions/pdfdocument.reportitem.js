@@ -2,9 +2,11 @@ var EJPdfDocument = (function () {
     function EJPdfDocument(rptDesigner) {
         this.customJSON = null;
         this.rootElement = null;
+        this.propertyPanel = null;
         this.customItemDiv = null;
         this.reportDesigner = null;
         this.reportDesigner = rptDesigner;
+        this.propertyPanel = this.reportDesigner.getInstance('PropertyPanel');
     }
     EJPdfDocument.prototype.initializeItem = function (args) {
         args.isBuildInService = false;
@@ -37,15 +39,32 @@ var EJPdfDocument = (function () {
             args[_i - 3] = arguments[_i];
         }
         switch (name) {
+            case 'DocumentValue':
+                this.updatePropertyVal(name, newValue);
+                break;
             case 'Sizing':
                 this.updatePropertyVal(name, newValue);
                 break;
-            case 'DocumentValue':
+            case 'Source':
                 this.updatePropertyVal(name, newValue);
+                this.updatePropertyVal('DocumentValue', '');
+                this.updatePropertyUIValue('DocumentValue', '');
                 break;
         }
     };
     EJPdfDocument.prototype.updatePropertyUIValue = function (name, value) {
+        var customId = this.customJSON.UniqueId;
+        switch (name) {
+            case 'DocumentValue':
+                var source = this.getPropertyVal('Source');
+                if (source === 'URL') {
+                    this.propertyPanel.updatePropertyUIValue('pdfurl', value, customId);
+                }
+                else {
+                    this.propertyPanel.updatePropertyUIValue('pdfdatabase', value, customId);
+                }
+                break;
+        }
     };
     EJPdfDocument.prototype.onPositionChanged = function (top, left) {
     };
@@ -73,11 +92,39 @@ var EJPdfDocument = (function () {
                 'DisplayName': 'categoryBasicSettings',
                 'IsExpand': true,
                 'Items': [{
+                        'ItemId': 'pdfsource',
+                        'Name': 'Source',
+                        'DisplayName': 'source',
+                        'EnableExpression': false,
+                        'Value': this.getPropertyVal('Source'),
+                        'ItemType': 'DropDown',
+                        'ValueList': [
+                            { text: 'url', value: 'URL' },
+                            { text: 'database', value: 'Database' }
+                        ],
+                        'DependentItems': [
+                            { EnableItems: ['basicsettings_pdfurl'], DisableItems: ['basicsettings_pdfdatabase'], Value: ['URL'] },
+                            { EnableItems: ['basicsettings_pdfdatabase'], DisableItems: ['basicsettings_pdfurl'], Value: ['Database'] }
+                        ]
+                    },
+                    {
                         'ItemId': 'pdfurl',
                         'Name': 'DocumentValue',
+                        'ParentId': 'basicsettings_pdfsource',
                         'DisplayName': 'url',
                         'Value': this.getPropertyVal('DocumentValue'),
+                        'EnableExpression': false,
                         'ItemType': 'TextBox'
+                    },
+                    {
+                        'ItemId': 'pdfdatabase',
+                        'Name': 'DocumentValue',
+                        'ParentId': 'basicsettings_pdfsource',
+                        'DisplayName': 'database',
+                        'Value': this.getPropertyVal('DocumentValue'),
+                        'ItemType': 'ComboBox',
+                        'SourceType': 'Fields',
+                        'EnableExpression': true
                     },
                     {
                         'ItemId': 'pdfsizing',
@@ -136,6 +183,7 @@ var EJPdfDocument = (function () {
             this.customJSON = new ej.ReportModel.CustomReportItem().getModel();
             this.setPropertyVal('DocumentValue', '');
             this.setPropertyVal('Sizing', 'AutoSize');
+            this.setPropertyVal('Source', 'URL');
         }
         return this.customJSON;
     };
@@ -145,6 +193,7 @@ var EJPdfDocument = (function () {
     EJPdfDocument.prototype.dispose = function () {
         this.customJSON = null;
         this.rootElement = null;
+        this.propertyPanel = null;
         this.customItemDiv = null;
         this.reportDesigner = null;
     };
@@ -166,23 +215,33 @@ var EJPdfDocument = (function () {
                     return pdfLocale.categoryBasicSettings;
                 }
                 return defaultLocale.categoryBasicSettings;
+            case 'source':
+                if (pdfLocale && pdfLocale.source) {
+                    return pdfLocale.source;
+                }
+                return defaultLocale.source;
             case 'sizing':
                 if (pdfLocale && pdfLocale.sizing) {
                     return pdfLocale.sizing;
                 }
                 return defaultLocale.sizing;
             case 'url':
-                if (pdfLocale && pdfLocale.url) {
-                    return pdfLocale.url;
+                if (pdfLocale && pdfLocale.sourceTypes && pdfLocale.sourceTypes.url) {
+                    return pdfLocale.sourceTypes.url;
                 }
-                return defaultLocale.url;
+                return defaultLocale.sourceTypes.url;
+            case 'database':
+                if (pdfLocale && pdfLocale.sourceTypes && pdfLocale.sourceTypes.database) {
+                    return pdfLocale.sourceTypes.database;
+                }
+                return defaultLocale.sourceTypes.database;
             case 'auto':
-                if (pdfLocale && pdfLocale.sizeTypes.auto) {
+                if (pdfLocale && pdfLocale.sizeTypes && pdfLocale.sizeTypes.auto) {
                     return pdfLocale.sizeTypes.auto;
                 }
                 return defaultLocale.sizeTypes.auto;
             case 'fitpage':
-                if (pdfLocale && pdfLocale.sizeTypes.fitPage) {
+                if (pdfLocale && pdfLocale.sizeTypes && pdfLocale.sizeTypes.fitPage) {
                     return pdfLocale.sizeTypes.fitPage;
                 }
                 return defaultLocale.sizeTypes.fitPage;
@@ -193,7 +252,11 @@ var EJPdfDocument = (function () {
 }());
 EJPdfDocument.Locale = {};
 EJPdfDocument.Locale['en-US'] = {
-    url: 'URL',
+    source: 'Source',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Database',
+    },
     categoryBasicSettings: 'Basic Settings',
     sizing: 'Sizing',
     sizeTypes: {
@@ -207,7 +270,11 @@ EJPdfDocument.Locale['en-US'] = {
     }
 };
 EJPdfDocument.Locale['ar-AE'] = {
-    url: 'URL',
+    source: 'مصدر',
+    sourceTypes: {
+        url: 'URL',
+        database: 'قاعدة البيانات',
+    },
     categoryBasicSettings: 'الإعدادات الأساسية',
     sizing: 'تغيير الحجم',
     sizeTypes: {
@@ -221,7 +288,11 @@ EJPdfDocument.Locale['ar-AE'] = {
     }
 };
 EJPdfDocument.Locale['fr-FR'] = {
-    url: 'URL',
+    source: 'Source',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Base de données',
+    },
     categoryBasicSettings: 'Paramètres de base',
     sizing: 'Dimensionnement',
     sizeTypes: {
@@ -235,7 +306,11 @@ EJPdfDocument.Locale['fr-FR'] = {
     }
 };
 EJPdfDocument.Locale['de-DE'] = {
-    url: 'URL',
+    source: 'Quelle',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Datenbank',
+    },
     categoryBasicSettings: 'Grundeinstellungen',
     sizing: 'Größenanpassung',
     sizeTypes: {
@@ -249,7 +324,11 @@ EJPdfDocument.Locale['de-DE'] = {
     }
 };
 EJPdfDocument.Locale['en-AU'] = {
-    url: 'URL',
+    source: 'Source',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Database',
+    },
     categoryBasicSettings: 'Basic Settings',
     sizing: 'Sizing',
     sizeTypes: {
@@ -263,7 +342,11 @@ EJPdfDocument.Locale['en-AU'] = {
     }
 };
 EJPdfDocument.Locale['en-CA'] = {
-    url: 'URL',
+    source: 'Source',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Database',
+    },
     categoryBasicSettings: 'Basic Settings',
     sizing: 'Sizing',
     sizeTypes: {
@@ -277,7 +360,11 @@ EJPdfDocument.Locale['en-CA'] = {
     }
 };
 EJPdfDocument.Locale['es-ES'] = {
-    url: 'URL',
+    source: 'Fuente',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Base de datos',
+    },
     categoryBasicSettings: 'Configuración básica',
     sizing: 'Tamaño',
     sizeTypes: {
@@ -291,7 +378,11 @@ EJPdfDocument.Locale['es-ES'] = {
     }
 };
 EJPdfDocument.Locale['it-IT'] = {
-    url: 'URL',
+    source: 'Fonte',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Database',
+    },
     categoryBasicSettings: 'Impostazioni di base',
     sizing: 'Ridimensionamento',
     sizeTypes: {
@@ -305,7 +396,11 @@ EJPdfDocument.Locale['it-IT'] = {
     }
 };
 EJPdfDocument.Locale['fr-CA'] = {
-    url: 'URL',
+    source: 'Source',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Base de données',
+    },
     categoryBasicSettings: 'Paramètres de base',
     sizing: 'Dimensionnement',
     sizeTypes: {
@@ -319,7 +414,11 @@ EJPdfDocument.Locale['fr-CA'] = {
     }
 };
 EJPdfDocument.Locale['tr-TR'] = {
-    url: 'URL',
+    source: 'Kaynak',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Veritabanı',
+    },
     categoryBasicSettings: 'Temel Ayarlar',
     sizing: 'Boyutlandırma',
     sizeTypes: {
@@ -333,7 +432,11 @@ EJPdfDocument.Locale['tr-TR'] = {
     }
 };
 EJPdfDocument.Locale['zh-CN'] = {
-    url: 'URL',
+    source: '来源',
+    sourceTypes: {
+        url: 'URL',
+        database: '数据库',
+    },
     categoryBasicSettings: '基本设置',
     sizing: '调整大小',
     sizeTypes: {

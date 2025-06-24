@@ -56,11 +56,15 @@ var EJHtmlDocument = (function () {
         var customId = this.customJSON.UniqueId;
         switch (name) {
             case 'DocumentValue':
-                if (this.getPropertyVal('Source') === 'URL') {
+                var source = this.getPropertyVal('Source');
+                if (source === 'URL') {
                     this.propertyPanel.updatePropertyUIValue('htmlurl', value, customId);
                 }
-                else {
+                else if (source === 'Content') {
                     this.propertyPanel.updatePropertyUIValue('htmlcontent', value, customId);
+                }
+                else {
+                    this.propertyPanel.updatePropertyUIValue('htmldatabase', value, customId);
                 }
                 break;
         }
@@ -97,11 +101,24 @@ var EJHtmlDocument = (function () {
                         'EnableExpression': false,
                         'Value': this.getPropertyVal('Source'),
                         'ItemType': 'DropDown',
-                        'ValueList': [{ text: 'content', value: 'Content' }, { text: 'url', value: 'URL' }],
-                        'DependentItems': [
-                            { EnableItems: ['basicsettings_htmlcontent'], DisableItems: ['basicsettings_htmlurl'], Value: ['Content'] },
-                            { EnableItems: ['basicsettings_htmlurl'], DisableItems: ['basicsettings_htmlcontent'], Value: ['URL'] }
-                        ]
+                        'ValueList': [
+                            { text: 'content', value: 'Content' },
+                            { text: 'url', value: 'URL' },
+                            { text: 'database', value: 'Database' }
+                        ],
+                        'DependentItems': [{
+                                EnableItems: ['basicsettings_htmlcontent'],
+                                DisableItems: ['basicsettings_htmlurl', 'basicsettings_htmldatabase'],
+                                Value: ['Content']
+                            }, {
+                                EnableItems: ['basicsettings_htmlurl'],
+                                DisableItems: ['basicsettings_htmlcontent', 'basicsettings_htmldatabase'],
+                                Value: ['URL']
+                            }, {
+                                EnableItems: ['basicsettings_htmldatabase'],
+                                DisableItems: ['basicsettings_htmlcontent', 'basicsettings_htmlurl'],
+                                Value: ['Database']
+                            }]
                     },
                     {
                         'ItemId': 'htmlcontent',
@@ -109,6 +126,7 @@ var EJHtmlDocument = (function () {
                         'ParentId': 'basicsettings_htmlsource',
                         'DisplayName': 'content',
                         'Value': this.getPropertyVal('DocumentValue'),
+                        'EnableExpression': false,
                         'ItemType': 'TextArea'
                     },
                     {
@@ -117,7 +135,18 @@ var EJHtmlDocument = (function () {
                         'ParentId': 'basicsettings_htmlsource',
                         'DisplayName': 'url',
                         'Value': this.getPropertyVal('DocumentValue'),
+                        'EnableExpression': false,
                         'ItemType': 'TextBox'
+                    },
+                    {
+                        'ItemId': 'htmldatabase',
+                        'Name': 'DocumentValue',
+                        'ParentId': 'basicsettings_htmlsource',
+                        'DisplayName': 'database',
+                        'Value': this.getPropertyVal('DocumentValue'),
+                        'ItemType': 'ComboBox',
+                        'SourceType': 'Fields',
+                        'EnableExpression': true
                     },
                     {
                         'ItemId': 'htmlsizing',
@@ -224,32 +253,37 @@ var EJHtmlDocument = (function () {
                 }
                 return defaultLocale.source;
             case 'content':
-                if (htmlLocale && htmlLocale.sourceTypes.content) {
+                if (htmlLocale && htmlLocale.sourceTypes && htmlLocale.sourceTypes.content) {
                     return htmlLocale.sourceTypes.content;
                 }
                 return defaultLocale.sourceTypes.content;
             case 'url':
-                if (htmlLocale && htmlLocale.sourceTypes.url) {
+                if (htmlLocale && htmlLocale.sourceTypes && htmlLocale.sourceTypes.url) {
                     return htmlLocale.sourceTypes.url;
                 }
                 return defaultLocale.sourceTypes.url;
+            case 'database':
+                if (htmlLocale && htmlLocale.sourceTypes && htmlLocale.sourceTypes.database) {
+                    return htmlLocale.sourceTypes.database;
+                }
+                return defaultLocale.sourceTypes.database;
             case 'auto':
-                if (htmlLocale && htmlLocale.sizeTypes.auto) {
+                if (htmlLocale && htmlLocale.sizeTypes && htmlLocale.sizeTypes.auto) {
                     return htmlLocale.sizeTypes.auto;
                 }
                 return defaultLocale.sizeTypes.auto;
             case 'fit':
-                if (htmlLocale && htmlLocale.sizeTypes.fit) {
+                if (htmlLocale && htmlLocale.sizeTypes && htmlLocale.sizeTypes.fit) {
                     return htmlLocale.sizeTypes.fit;
                 }
                 return defaultLocale.sizeTypes.fit;
             case 'proportional':
-                if (htmlLocale && htmlLocale.sizeTypes.proportional) {
+                if (htmlLocale && htmlLocale.sizeTypes && htmlLocale.sizeTypes.proportional) {
                     return htmlLocale.sizeTypes.proportional;
                 }
                 return defaultLocale.sizeTypes.proportional;
             case 'clip':
-                if (htmlLocale && htmlLocale.sizeTypes.clip) {
+                if (htmlLocale && htmlLocale.sizeTypes && htmlLocale.sizeTypes.clip) {
                     return htmlLocale.sizeTypes.clip;
                 }
                 return defaultLocale.sizeTypes.clip;
@@ -264,6 +298,7 @@ EJHtmlDocument.Locale['en-US'] = {
     sourceTypes: {
         content: 'Content',
         url: 'URL',
+        database: 'Database',
     },
     categoryBasicSettings: 'Basic Settings',
     sizing: 'Sizing',
@@ -283,7 +318,8 @@ EJHtmlDocument.Locale['ar-AE'] = {
     source: 'مصدر',
     sourceTypes: {
         content: 'محتوى',
-        url: 'رابط'
+        url: 'رابط',
+        database: 'قاعدة البيانات',
     },
     categoryBasicSettings: 'الإعدادات الأساسية',
     sizing: 'تغيير الحجم',
@@ -303,7 +339,8 @@ EJHtmlDocument.Locale['fr-FR'] = {
     source: 'Source',
     sourceTypes: {
         content: 'Contenu',
-        url: 'URL'
+        url: 'URL',
+        database: 'Base de données',
     },
     categoryBasicSettings: 'Paramètres de base',
     sizing: 'Dimensionnement',
@@ -323,7 +360,8 @@ EJHtmlDocument.Locale['de-DE'] = {
     source: 'Quelle',
     sourceTypes: {
         content: 'Inhalt',
-        url: 'URL'
+        url: 'URL',
+        database: 'Datenbank',
     },
     categoryBasicSettings: 'Grundeinstellungen',
     sizing: 'Größenanpassung',
@@ -343,7 +381,8 @@ EJHtmlDocument.Locale['en-AU'] = {
     source: 'Source',
     sourceTypes: {
         content: 'Content',
-        url: 'URL'
+        url: 'URL',
+        database: 'Database',
     },
     categoryBasicSettings: 'Basic Settings',
     sizing: 'Sizing',
@@ -363,7 +402,8 @@ EJHtmlDocument.Locale['en-CA'] = {
     source: 'Source',
     sourceTypes: {
         content: 'Content',
-        url: 'URL'
+        url: 'URL',
+        database: 'Database',
     },
     categoryBasicSettings: 'Basic Settings',
     sizing: 'Sizing',
@@ -383,7 +423,8 @@ EJHtmlDocument.Locale['es-ES'] = {
     source: 'Fuente',
     sourceTypes: {
         content: 'Contenido',
-        url: 'URL'
+        url: 'URL',
+        database: 'Base de datos',
     },
     categoryBasicSettings: 'Configuración básica',
     sizing: 'Tamaño',
@@ -403,7 +444,8 @@ EJHtmlDocument.Locale['it-IT'] = {
     source: 'Fonte',
     sourceTypes: {
         content: 'Contenuto',
-        url: 'URL'
+        url: 'URL',
+        database: 'Database',
     },
     categoryBasicSettings: 'Impostazioni di base',
     sizing: 'Ridimensionamento',
@@ -423,7 +465,8 @@ EJHtmlDocument.Locale['fr-CA'] = {
     source: 'Source',
     sourceTypes: {
         content: 'Contenu',
-        url: 'URL'
+        url: 'URL',
+        database: 'Base de données',
     },
     categoryBasicSettings: 'Paramètres de base',
     sizing: 'Dimensionnement',
@@ -443,7 +486,8 @@ EJHtmlDocument.Locale['tr-TR'] = {
     source: 'Kaynak',
     sourceTypes: {
         content: 'İçerik',
-        url: 'URL'
+        url: 'URL',
+        database: 'Veritabanı',
     },
     categoryBasicSettings: 'Temel Ayarlar',
     sizing: 'Boyutlandırma',
@@ -463,7 +507,8 @@ EJHtmlDocument.Locale['zh-CN'] = {
     source: '来源',
     sourceTypes: {
         content: '内容',
-        url: 'URL'
+        url: 'URL',
+        database: '数据库',
     },
     categoryBasicSettings: '基本设置',
     sizing: '调整大小',
