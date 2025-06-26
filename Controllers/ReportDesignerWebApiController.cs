@@ -119,6 +119,7 @@ namespace ReportsCoreSamples.Controllers
             reportOption.ReportModel.ReportServerUrl = this.ServerURL;
             reportOption.ReportModel.EmbedImageData = true;
             reportOption.ReportModel.ReportServerCredential = new NetworkCredential("Sample", "Passwprd");
+            reportOption.ReportModel.ExportResources.BrowserExecutablePath = Path.Combine(_hostingEnvironment.WebRootPath, "puppeteer", "Win-901912", "chrome-win");
 
             if (reportOption.ReportModel.FontSettings == null)
             {

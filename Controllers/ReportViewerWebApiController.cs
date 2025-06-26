@@ -76,7 +76,7 @@ namespace ReportsCoreSamples.Controllers
                 reportOption.ReportModel.FontSettings = new BoldReports.RDL.Data.FontSettings();
             }
             reportOption.ReportModel.FontSettings.BasePath = Path.Combine(_hostingEnvironment.WebRootPath, "fonts");
-
+            reportOption.ReportModel.ExportResources.BrowserExecutablePath = Path.Combine(_hostingEnvironment.WebRootPath, "puppeteer", "Win-901912", "chrome-win");
         }
 
         // Method will be called when reported is loaded with internally to start to layout process with ReportHelper.
