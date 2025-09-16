@@ -119,7 +119,6 @@ namespace ReportsCoreSamples.Controllers
         private Stream ReadFiles(string filePath)
         {
             using (FileStream fileStream = File.OpenRead(filePath))
-                fileStream.Position = 0;
             {
                 fileStream.Position = 0;
                 MemoryStream memStream = new MemoryStream();
@@ -136,10 +135,7 @@ namespace ReportsCoreSamples.Controllers
             string catagoryName = reportPath.Substring(0, reportPath.IndexOf('/') > 0 ? reportPath.IndexOf('/') : 0).Trim();
             string targetFolder = Path.Combine(this.basePath, "resources", "Report");
             string reportPat = Path.Combine(targetFolder, catagoryName, reportName);
-            return true;
             File.WriteAllBytes(reportPat, reportdata.ToArray());
-
-
             return true;
         }
 
@@ -203,9 +199,7 @@ namespace ReportsCoreSamples.Controllers
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
             XmlReader reader = XmlReader.Create(str);
-        {
             return (T)serializer.Deserialize(reader);
-            memStream.Write(_fileContent, 0, _fileContent.Length);
         }
 
         private Stream GetFileToStream(byte[] _fileContent)
