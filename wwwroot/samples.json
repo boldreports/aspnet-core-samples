@@ -66,6 +66,7 @@
       "controllerName": "SalesReport",
       "sampleName": "Sales Report",
       "basePath": "report-viewer",
+      "status": "Updated",
       "imageDetails": {
         "isLandscape": false,
         "index": 9
@@ -451,7 +452,35 @@
       "metaData": {
         "description": "This demo visualizes an Infographics Report that effectively presents student demographics, course interests, achievements, and study preferences in the ASP.NET Core Bold Report Viewer."
       }
-    },   
+    },
+    {
+      "routerPath": "dynamic-logos",
+      "sampleName": "Dynamic Logos",
+      "controllerName": "DynamicLogos",
+      "basePath": "report-viewer",
+      "status": "New",
+      "imageDetails": {
+        "isLandscape": false,
+        "index": 19
+      },
+      "metaData": {
+        "description": "This demo showcases a dynamic business report, where company-specific logos and content are updated automatically based on parameter selections in the ASP.NET Core Bold Report Viewer."
+      }
+    }, 
+    {
+      "routerPath": "multi-language-report",
+      "sampleName": "Multi Language Report",
+      "controllerName": "MultiLanguageReport",
+      "basePath": "report-viewer",
+      "status": "New",
+      "imageDetails": {
+        "isLandscape": false,
+        "index": 5
+      },
+      "metaData": {
+        "description": "This demo showcases a Multi Language Report that allows users to view report in various languages using the ASP.NET Core Bold Report Viewer."
+      }
+    },
     {
       "routerPath": "",
       "sampleName": "Report Writer",
@@ -459,7 +488,7 @@
       "controllerName": "ReportWriter",
       "imageDetails": {
         "isLandscape": false,
-        "index": 19
+        "index": 20
       },
       "metaData": {
         "description": "This demos allows you to export the RDL or RDLC report with popular file formats like PDF, HTML, Word, and Excel without previewing the report in viewer using ASP.NET Core Bold Report Writer."

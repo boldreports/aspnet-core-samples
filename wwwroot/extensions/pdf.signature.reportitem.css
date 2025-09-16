@@ -5,20 +5,14 @@
     background-image: url('images/pdfsignature.svg');
 }
 
-.e-pdfsign-config, .e-pdfsign-default {
+.e-pdfsign-config {
     width: 100%;
     height: 100%;
-}
-
-.e-pdfsign-default {
-    background-color: #D1D1D1;
-}
-
-.e-pdfsign-config, .e-pdfsign-default, .e-pdfsign-certTxt {
     align-items: center;
     justify-content: center;
     font-size: 12px;
     overflow: hidden;
+    gap: 4px;
 }
 
 .e-rptdesigner-pdfsign {
@@ -28,11 +22,11 @@
 }
 
 .e-pdfsign-dataConfig {
-    display: flex;
     flex-direction: column;
-    gap: 7px;
-    padding: 5px;
+    gap: 4px;
     width: 50%;
+    height: 100%;
+    padding-top: 3px;
 }
 
 .e-pdfsign-signImg {

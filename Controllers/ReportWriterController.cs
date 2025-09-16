@@ -59,11 +59,14 @@ namespace ReportsCoreSamples.Controllers
                 reportWriter.ReportServerCredential = System.Net.CredentialCache.DefaultCredentials;
                 
                 reportWriter.ReportProcessingMode = ProcessingMode.Remote;
-                reportWriter.ExportSettings = new customBrowsertype(_hostingEnvironment);
                 reportWriter.ExportResources.BrowserType = ExportResources.BrowserTypes.External;
                 reportWriter.ExportResources.ResourcePath = Path.Combine(basePath, "puppeteer");
+                string puppeteerPath = reportWriter.ExportResources.ResourcePath + @"/Win-901912/chrome-win/chrome.exe";
+                reportWriter.ExportSettings = new customBrowsertype(puppeteerPath);
+                reportWriter.ExportResources.BrowserExecutablePath = Path.GetDirectoryName(puppeteerPath);
 
-                FileStream inputStream = new FileStream(Path.Combine(basePath, "resources", "Report", reportName + ".rdl"), FileMode.Open, FileAccess.Read);
+                var reportFileInfo = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(Path.Combine(basePath, "resources", "Report")).GetFileInfo(reportName + ".rdl");
+                var inputStream = reportFileInfo.Exists ? reportFileInfo.CreateReadStream() : throw new FileNotFoundException();
                 reportWriter.LoadReport(inputStream);
 
                 reportWriter.ExportResources.Scripts = new List<string>
@@ -139,11 +142,11 @@ namespace ReportsCoreSamples.Controllers
 
     public class customBrowsertype : ExportSettings
     {
-        private IWebHostEnvironment _hostingEnvironment;
+        private string _puppeteerPath;
 
-        public customBrowsertype(IWebHostEnvironment hostingEnvironment)
+        public customBrowsertype(string path)
         {
-            _hostingEnvironment = hostingEnvironment;
+            _puppeteerPath = path;
         }
         public override string GetImageFromHTML(string url)
         {
@@ -151,8 +154,6 @@ namespace ReportsCoreSamples.Controllers
         }
         public async Task<string> ConvertBase64(string url)
         {
-            string puppeteerChromeExe = "";
-            puppeteerChromeExe = Path.Combine(_hostingEnvironment.WebRootPath, "puppeteer", "Win-901912", "chrome-win", "chrome.exe");
             await using var browser = await PuppeteerSharp.Puppeteer.LaunchAsync(new PuppeteerSharp.LaunchOptions
             {
                 Headless = true,
@@ -167,7 +168,7 @@ namespace ReportsCoreSamples.Controllers
                         "--dump-blink-runtime-call-stats",
                         "--profiling-flush",
                     },
-                ExecutablePath = puppeteerChromeExe
+                ExecutablePath = _puppeteerPath
             });
             await using var page = await browser.NewPageAsync();
             await page.GoToAsync(url);

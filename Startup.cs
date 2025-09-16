@@ -31,7 +31,6 @@ namespace ReportsCoreSamples
         {
             log4net.GlobalContext.Properties["LogPath"] = _hostingEnvironment.ContentRootPath;
             LogExtension.RegisterLog4NetConfig();
-
             string License = File.ReadAllText(System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "BoldLicense.txt"), Encoding.UTF8);
             BoldLicenseProvider.RegisterLicense(License, bool.Parse(configuration.GetSection("appSettings").GetSection("IsOfflineLicense").Value), bool.Parse(configuration.GetSection("appSettings").GetSection("EnableLicenseLog").Value));
             ReportConfig.DefaultSettings = new ReportSettings()
@@ -106,11 +105,12 @@ namespace ReportsCoreSamples
             {
                 string basePath = _hostingEnvironment.WebRootPath;
                 string mapShapePath = Path.Combine(basePath, "ShapeData");
-                mapShapePath = Path.GetFullPath(mapShapePath);
+                var mapFileInfo = new PhysicalFileProvider(mapShapePath).GetFileInfo("mapshapes.txt");
+                using var mapReader = new System.IO.StreamReader(mapFileInfo.CreateReadStream());
                 return new MapSetting()
                 {
                     ShapePath = mapShapePath + '/',
-                    MapShapes = JsonConvert.DeserializeObject<List<MapShape>>(System.IO.File.ReadAllText(Path.Combine(mapShapePath, "mapshapes.txt")))
+                    MapShapes = JsonConvert.DeserializeObject<List<MapShape>>(mapReader.ReadToEnd())
                 };
             }
             catch (Exception ex) { Console.WriteLine(ex); }
@@ -170,9 +170,12 @@ namespace ReportsCoreSamples
                     pattern: "{controller=Main}/{action=Index}/{id?}");
                 endpoints.MapFallback(context =>
                  {
-                     var redirectPath = context.Request.PathBase.Value.Contains("aspnet-core") ? "/aspnet-core/report-viewer/product-line-sales/" : "/report-viewer/product-line-sales";
-                     context.Response.Redirect(redirectPath);
-                     return Task.CompletedTask;
+                    var path = context.Request.PathBase.Value ?? string.Empty;
+                    if (path.Contains("aspnet-core"))
+                        context.Response.Redirect("/aspnet-core/report-viewer/product-line-sales/");
+                    else
+                        context.Response.Redirect("/report-viewer/product-line-sales/");
+                    return Task.CompletedTask;
                  });
             });
             app.UseResponseCompression();        

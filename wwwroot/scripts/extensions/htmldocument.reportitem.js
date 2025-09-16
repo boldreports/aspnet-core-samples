@@ -40,7 +40,13 @@ var EJHtmlDocument = (function () {
         }
         switch (name) {
             case 'DocumentValue':
-                this.updatePropertyVal(name, newValue);
+                if (typeof newValue === 'string') {
+                    this.updatePropertyVal(name, newValue);
+                }
+                else if (newValue) {
+                    newValue.id ? this.updatePropertyVal(name, newValue.id) : this.updatePropertyVal(name, '');
+                    newValue.name ? this.updatePropertyVal('DocumentName', newValue.name) : this.updatePropertyVal('DocumentName', '');
+                }
                 break;
             case 'Sizing':
                 this.updatePropertyVal(name, newValue);
@@ -48,6 +54,7 @@ var EJHtmlDocument = (function () {
             case 'Source':
                 this.updatePropertyVal(name, newValue);
                 this.updatePropertyVal('DocumentValue', '');
+                this.updatePropertyVal('DocumentName', '');
                 this.updatePropertyUIValue('DocumentValue', '');
                 break;
         }
@@ -63,8 +70,11 @@ var EJHtmlDocument = (function () {
                 else if (source === 'Content') {
                     this.propertyPanel.updatePropertyUIValue('htmlcontent', value, customId);
                 }
-                else {
+                else if (source === 'Database') {
                     this.propertyPanel.updatePropertyUIValue('htmldatabase', value, customId);
+                }
+                else {
+                    this.propertyPanel.updatePropertyUIValue('htmlserver', value, customId);
                 }
                 break;
         }
@@ -104,20 +114,25 @@ var EJHtmlDocument = (function () {
                         'ValueList': [
                             { text: 'content', value: 'Content' },
                             { text: 'url', value: 'URL' },
-                            { text: 'database', value: 'Database' }
+                            { text: 'database', value: 'Database' },
+                            { text: 'server', value: 'Server' }
                         ],
                         'DependentItems': [{
                                 EnableItems: ['basicsettings_htmlcontent'],
-                                DisableItems: ['basicsettings_htmlurl', 'basicsettings_htmldatabase'],
+                                DisableItems: ['basicsettings_htmlurl', 'basicsettings_htmldatabase', 'basicsettings_htmlserver'],
                                 Value: ['Content']
                             }, {
                                 EnableItems: ['basicsettings_htmlurl'],
-                                DisableItems: ['basicsettings_htmlcontent', 'basicsettings_htmldatabase'],
+                                DisableItems: ['basicsettings_htmlcontent', 'basicsettings_htmldatabase', 'basicsettings_htmlserver'],
                                 Value: ['URL']
                             }, {
                                 EnableItems: ['basicsettings_htmldatabase'],
-                                DisableItems: ['basicsettings_htmlcontent', 'basicsettings_htmlurl'],
+                                DisableItems: ['basicsettings_htmlcontent', 'basicsettings_htmlurl', 'basicsettings_htmlserver'],
                                 Value: ['Database']
+                            }, {
+                                EnableItems: ['basicsettings_htmlserver'],
+                                DisableItems: ['basicsettings_htmlcontent', 'basicsettings_htmlurl', 'basicsettings_htmldatabase'],
+                                Value: ['Server']
                             }]
                     },
                     {
@@ -146,7 +161,17 @@ var EJHtmlDocument = (function () {
                         'Value': this.getPropertyVal('DocumentValue'),
                         'ItemType': 'ComboBox',
                         'SourceType': 'Fields',
-                        'EnableExpression': true
+                        'EnableExpression': true,
+                        'EnableSearch': true
+                    },
+                    {
+                        'ItemId': 'htmlserver',
+                        'Name': 'DocumentValue',
+                        'ParentId': 'basicsettings_htmlsource',
+                        'DisplayName': 'server',
+                        'Value': this.getPropertyVal('DocumentName'),
+                        'ItemType': 'FilePicker',
+                        'FileType': ['.html']
                     },
                     {
                         'ItemId': 'htmlsizing',
@@ -211,6 +236,7 @@ var EJHtmlDocument = (function () {
             this.setPropertyVal('Source', 'Content');
             this.setPropertyVal('Sizing', 'AutoSize');
             this.setPropertyVal('DocumentValue', '');
+            this.setPropertyVal('DocumentName', '');
         }
         return this.customJSON;
     };
@@ -267,6 +293,11 @@ var EJHtmlDocument = (function () {
                     return htmlLocale.sourceTypes.database;
                 }
                 return defaultLocale.sourceTypes.database;
+            case 'server':
+                if (htmlLocale && htmlLocale.sourceTypes && htmlLocale.sourceTypes.server) {
+                    return htmlLocale.sourceTypes.server;
+                }
+                return defaultLocale.sourceTypes.server;
             case 'auto':
                 if (htmlLocale && htmlLocale.sizeTypes && htmlLocale.sizeTypes.auto) {
                     return htmlLocale.sizeTypes.auto;
@@ -299,6 +330,7 @@ EJHtmlDocument.Locale['en-US'] = {
         content: 'Content',
         url: 'URL',
         database: 'Database',
+        server: 'Server'
     },
     categoryBasicSettings: 'Basic Settings',
     sizing: 'Sizing',
@@ -320,6 +352,7 @@ EJHtmlDocument.Locale['ar-AE'] = {
         content: 'محتوى',
         url: 'رابط',
         database: 'قاعدة البيانات',
+        server: 'الخادم'
     },
     categoryBasicSettings: 'الإعدادات الأساسية',
     sizing: 'تغيير الحجم',
@@ -341,6 +374,7 @@ EJHtmlDocument.Locale['fr-FR'] = {
         content: 'Contenu',
         url: 'URL',
         database: 'Base de données',
+        server: 'Serveur'
     },
     categoryBasicSettings: 'Paramètres de base',
     sizing: 'Dimensionnement',
@@ -362,6 +396,7 @@ EJHtmlDocument.Locale['de-DE'] = {
         content: 'Inhalt',
         url: 'URL',
         database: 'Datenbank',
+        server: 'Server'
     },
     categoryBasicSettings: 'Grundeinstellungen',
     sizing: 'Größenanpassung',
@@ -383,6 +418,7 @@ EJHtmlDocument.Locale['en-AU'] = {
         content: 'Content',
         url: 'URL',
         database: 'Database',
+        server: 'Server'
     },
     categoryBasicSettings: 'Basic Settings',
     sizing: 'Sizing',
@@ -404,6 +440,7 @@ EJHtmlDocument.Locale['en-CA'] = {
         content: 'Content',
         url: 'URL',
         database: 'Database',
+        server: 'Server'
     },
     categoryBasicSettings: 'Basic Settings',
     sizing: 'Sizing',
@@ -425,6 +462,7 @@ EJHtmlDocument.Locale['es-ES'] = {
         content: 'Contenido',
         url: 'URL',
         database: 'Base de datos',
+        server: 'Servidor'
     },
     categoryBasicSettings: 'Configuración básica',
     sizing: 'Tamaño',
@@ -446,6 +484,7 @@ EJHtmlDocument.Locale['it-IT'] = {
         content: 'Contenuto',
         url: 'URL',
         database: 'Database',
+        server: 'Server'
     },
     categoryBasicSettings: 'Impostazioni di base',
     sizing: 'Ridimensionamento',
@@ -467,6 +506,7 @@ EJHtmlDocument.Locale['fr-CA'] = {
         content: 'Contenu',
         url: 'URL',
         database: 'Base de données',
+        server: 'Serveur'
     },
     categoryBasicSettings: 'Paramètres de base',
     sizing: 'Dimensionnement',
@@ -488,6 +528,7 @@ EJHtmlDocument.Locale['tr-TR'] = {
         content: 'İçerik',
         url: 'URL',
         database: 'Veritabanı',
+        server: 'Sunucu'
     },
     categoryBasicSettings: 'Temel Ayarlar',
     sizing: 'Boyutlandırma',
@@ -503,12 +544,13 @@ EJHtmlDocument.Locale['tr-TR'] = {
         title: 'Html'
     }
 };
-EJHtmlDocument.Locale['zh-CN'] = {
+EJHtmlDocument.Locale['zh-Hans'] = {
     source: '来源',
     sourceTypes: {
         content: '内容',
         url: 'URL',
         database: '数据库',
+        server: '服务器'
     },
     categoryBasicSettings: '基本设置',
     sizing: '调整大小',
@@ -521,6 +563,116 @@ EJHtmlDocument.Locale['zh-CN'] = {
     toolTip: {
         requirements: '显示任何 HTML 标记（或）URL',
         description: '此报告项目用于处理 HTML 标记文本和 URL',
+        title: 'Html'
+    }
+};
+EJHtmlDocument.Locale['he-IL'] = {
+    source: 'מקור',
+    sourceTypes: {
+        content: 'תוכן',
+        url: 'כתובת URL',
+        database: 'מסד נתונים',
+        server: 'שרת'
+    },
+    categoryBasicSettings: 'הגדרות בסיסיות',
+    sizing: 'גודל',
+    sizeTypes: {
+        auto: 'גודל אוטומטי',
+        fit: 'התאם',
+        proportional: 'התאם פרופורציונלי',
+        clip: 'חתוך'
+    },
+    toolTip: {
+        requirements: 'הצג סימון HTML או כתובת URL כלשהי',
+        description: 'פריט דוח זה משמש לעיבוד תוכן HTML וכתובות URL',
+        title: 'HTML'
+    }
+};
+EJHtmlDocument.Locale['ja-JP'] = {
+    source: 'ソース',
+    sourceTypes: {
+        content: 'コンテンツ',
+        url: 'URL',
+        database: 'データベース',
+        server: 'サーバ'
+    },
+    categoryBasicSettings: '基本設定',
+    sizing: 'サイズ設定',
+    sizeTypes: {
+        auto: '自動サイズ',
+        fit: 'フィット',
+        proportional: '比例フィット',
+        clip: 'クリップ'
+    },
+    toolTip: {
+        requirements: '任意のHTMLマークアップまたはURLを表示',
+        description: 'このレポート項目はHTMLマークアップテキストとURLを処理します',
+        title: 'Html'
+    }
+};
+EJHtmlDocument.Locale['pt-PT'] = {
+    source: 'Fonte',
+    sourceTypes: {
+        content: 'Conteúdo',
+        url: 'URL',
+        database: 'Base de dados',
+        server: 'Servidor'
+    },
+    categoryBasicSettings: 'Configurações básicas',
+    sizing: 'Dimensionamento',
+    sizeTypes: {
+        auto: 'Tamanho automático',
+        fit: 'Ajustar',
+        proportional: 'Ajuste proporcional',
+        clip: 'Recortar'
+    },
+    toolTip: {
+        requirements: 'Exibir qualquer marcação HTML ou URL',
+        description: 'Este item de relatório é usado para processar texto de marcação HTML e URL',
+        title: 'Html'
+    }
+};
+EJHtmlDocument.Locale['ru-RU'] = {
+    source: 'Источник',
+    sourceTypes: {
+        content: 'Содержимое',
+        url: 'URL',
+        database: 'База данных',
+        server: 'Сервер'
+    },
+    categoryBasicSettings: 'Основные настройки',
+    sizing: 'Размер',
+    sizeTypes: {
+        auto: 'Автоматический размер',
+        fit: 'Подогнать',
+        proportional: 'Пропорционально подогнать',
+        clip: 'Обрезать'
+    },
+    toolTip: {
+        requirements: 'Показать любой HTML-код или URL',
+        description: 'Этот элемент отчета используется для обработки текста HTML-кода и URL',
+        title: 'Html'
+    }
+};
+EJHtmlDocument.Locale['zh-Hant'] = {
+    source: '來源',
+    sourceTypes: {
+        content: '內容',
+        url: 'URL',
+        database: '資料庫',
+        server: '伺服器'
+    },
+    categoryBasicSettings: '基本設定',
+    sizing: '調整大小',
+    sizeTypes: {
+        auto: '自動大小',
+        fit: '適合',
+        proportional: '比例適合',
+        clip: '裁剪'
+    },
+    toolTip: {
+        requirements: '顯示任何 HTML 標記或 URL',
+        description: '此報告項目用於處理 HTML 標記文字和 URL',
         title: 'Html'
     }
 };

@@ -29,11 +29,23 @@ var itemExtensions = [{
         className: 'EJSignature',
         imageClass: 'customitem-signature',
         displayName: 'Electronic',
-        category: 'Signature',
+        category: 'Signatures',
         toolTip: {
             requirements: 'Add a report item to the designer area.',
             description: 'This report item is used to add a graphic signature.',
-            title: 'Signature'
+            title: 'Electronic'
+        }
+    },
+    {
+        name: 'PDFSignature',
+        className: 'EJPDFSignature',
+        imageClass: 'customitem-pdfsignature',
+        displayName: 'PDF',
+        category: 'Signatures',
+        toolTip: {
+            requirements: 'Add a report item to the designer area.',
+            description: 'This report item is used to add a digital PDF signature.',
+            title: 'PDF'
         }
     },
     {

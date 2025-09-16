@@ -54,6 +54,10 @@
         width: 42px;
     }
 
+    .e-signDialog-cropIconDiv:focus, .e-signDialog-btn-clear:focus {
+        box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #4f46e5;
+    }
+
     .e-signDialog-canvas {
         cursor: default;
         background-color: transparent;

@@ -24,8 +24,9 @@ var EJSignature = (function () {
         }
     };
     EJSignature.prototype.renderSignature = function () {
-        var bgColor = (this.customJSON && this.customJSON.Style) ? (this.customJSON.Style.BackgroundColor === 'Transparent' ?
-            'white' : this.customJSON.Style.BackgroundColor) : 'white';
+        var bgColor = (this.customJSON && this.customJSON.Style && this.customJSON.Style.BackgroundColor
+            && this.customJSON.Style.BackgroundColor !== 'Transparent' && this.customJSON.Style.BackgroundColor !== '#00ffffff')
+            ? ej.ReportUtil.convertColorFormat(this.customJSON.Style.BackgroundColor, true) : 'white';
         this.customItemDiv = this.buildElement('div', 'customitem e-rptdesigner-customItem-sign', '', { 'id': this.customJSON.Name + '_customItem' }, { 'background-color': bgColor });
         this.canvasTag = this.buildElement('canvas', '', '', { 'id': this.customJSON.Name + '_customItem_canvas' }, { width: '100%', height: '100%' });
         this.customItemDiv.append(this.canvasTag);
@@ -41,7 +42,7 @@ var EJSignature = (function () {
         }
         switch (name.toLowerCase()) {
             case 'backgroundcolor':
-                var bgColor = newValue === 'Transparent' ? 'white' : newValue;
+                var bgColor = (newValue === 'Transparent' || newValue === '#ffffff00') ? 'white' : newValue;
                 this.customItemDiv.css('background-color', bgColor);
                 this.canvasTag.css('background-color', bgColor);
                 break;
@@ -77,7 +78,7 @@ var EJSignature = (function () {
                 width: width
             });
         }
-        this.setSign(imgData, document.getElementById(this.customJSON.Name + '_customItem_canvas'), this.customJSON.Style.BackgroundColor === 'Transparent' ? 'white' : this.customJSON.Style.BackgroundColor);
+        this.setSign(imgData, document.getElementById(this.customJSON.Name + '_customItem_canvas'), (this.customJSON.Style.BackgroundColor === 'Transparent' || this.customJSON.Style.BackgroundColor === '#00ffffff') ? 'white' : ej.ReportUtil.convertColorFormat(this.customJSON.Style.BackgroundColor, true));
     };
     EJSignature.prototype.customAction = function (paramInfo) {
         var imgData = this.getPropertyVal('SignatureValue');
@@ -182,7 +183,7 @@ var EJSignature = (function () {
         if (imgData) {
             var base64String = imgData.replace('data:image/png;base64,', '');
             this.updatePropertyVal('SignatureValue', base64String);
-            this.setSign(imgData, document.getElementById(this.customJSON.Name + '_customItem_canvas'), this.customJSON.Style.BackgroundColor === 'Transparent' ? 'white' : this.customJSON.Style.BackgroundColor);
+            this.setSign(imgData, document.getElementById(this.customJSON.Name + '_customItem_canvas'), (this.customJSON.Style.BackgroundColor === 'Transparent' || this.customJSON.Style.BackgroundColor === '#00ffffff') ? 'white' : ej.ReportUtil.convertColorFormat(this.customJSON.Style.BackgroundColor, true));
         }
         else {
             this.clearSign(document.getElementById(this.customJSON.Name + '_customItem_canvas'));
@@ -260,6 +261,10 @@ var EJSignature = (function () {
         this.customItemDiv = null;
         this.customJSON = null;
         this.rootElement = null;
+        var signDlgIns = window['SignatureDialog'] ? window['SignatureDialog'].Instance : null;
+        if (signDlgIns && signDlgIns.dlgInstance && signDlgIns.dlgInstance.visible) {
+            signDlgIns.closeDialog();
+        }
     };
     EJSignature.prototype.renderItemPreview = function (criModel, targetDiv, locale) {
         var canvas = this.buildElement('canvas', '', '', {}, { width: '100%', height: '100%' });
@@ -275,7 +280,7 @@ var EJSignature = (function () {
         $(targetDiv).bind('mouseenter', $.proxy(this.showEditIcon, this, editIcon));
         $(targetDiv).bind('mouseleave', $.proxy(this.hideEditIcon, this, editIcon));
         imgData = imgData && imgData.length > 0 ? 'data:image/png;base64,' + imgData : imgData;
-        bgColor = bgColor === 'Transparent' ? 'white' : bgColor;
+        bgColor = (bgColor === 'Transparent' || bgColor === '#00ffffff') ? 'white' : bgColor;
         this.setSign(imgData, canvas[0], bgColor);
         canvas.attr('imageString', imgData);
         var dataInfo = {
@@ -427,7 +432,7 @@ EJSignature.Locale['tr-TR'] = {
         title: 'İmza'
     }
 };
-EJSignature.Locale['zh-CN'] = {
+EJSignature.Locale['zh-Hans'] = {
     signatureLabel: '签名',
     categoryBasicSettings: '基本设置',
     btnText: '绘制签名',
@@ -435,5 +440,55 @@ EJSignature.Locale['zh-CN'] = {
         requirements: '显示所有电子签名以进行签名。',
         description: '此报表项用于添加图形签名。',
         title: '签名'
+    }
+};
+EJSignature.Locale['he-IL'] = {
+    btnText: 'צייר',
+    categoryBasicSettings: 'הגדרות בסיסיות',
+    signatureLabel: 'חתימה',
+    toolTip: {
+        requirements: 'הצגת חתימה אלקטרונית לצורך חתימה.',
+        description: 'פריט דוח זה משמש להוספת חתימה גרפית',
+        title: 'חתימה'
+    }
+};
+EJSignature.Locale['ja-JP'] = {
+    btnText: '描画',
+    categoryBasicSettings: '基本設定',
+    signatureLabel: '署名',
+    toolTip: {
+        requirements: '署名用の電子署名を表示します。',
+        description: 'このレポート項目はグラフィック署名を追加するために使用されます',
+        title: '署名'
+    }
+};
+EJSignature.Locale['pt-PT'] = {
+    btnText: 'Desenhar',
+    categoryBasicSettings: 'Configurações básicas',
+    signatureLabel: 'Assinatura',
+    toolTip: {
+        requirements: 'Exibir qualquer assinatura eletrónica para assinar.',
+        description: 'Este item de relatório é usado para adicionar uma assinatura gráfica',
+        title: 'Assinatura'
+    }
+};
+EJSignature.Locale['ru-RU'] = {
+    btnText: 'Рисовать',
+    categoryBasicSettings: 'Основные настройки',
+    signatureLabel: 'Подпись',
+    toolTip: {
+        requirements: 'Показать любую электронную подпись для подписания.',
+        description: 'Этот элемент отчета используется для добавления графической подписи',
+        title: 'Подпись'
+    }
+};
+EJSignature.Locale['zh-Hant'] = {
+    btnText: '繪製',
+    categoryBasicSettings: '基本設定',
+    signatureLabel: '簽名',
+    toolTip: {
+        requirements: '顯示任何電子簽名以供簽署。',
+        description: '此報告項目用於新增圖形簽名',
+        title: '簽名'
     }
 };

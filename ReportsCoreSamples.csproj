@@ -19,21 +19,21 @@
     <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.12.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Bold.Licensing" Version="10.1.11" />
-    <PackageReference Include="BoldReports.AspNet.Core" Version="10.1.11" />
-    <PackageReference Include="BoldReports.CRI.Barcode" Version="10.1.11" />
-    <PackageReference Include="BoldReports.CRI.Signature" Version="10.1.11" />
-    <PackageReference Include="BoldReports.CRI.Shape" Version="10.1.11" />
-    <PackageReference Include="BoldReports.CRI.Html" Version="10.1.11">
+    <PackageReference Include="Bold.Licensing" Version="11.1.10" />
+    <PackageReference Include="BoldReports.AspNet.Core" Version="11.1.10" />
+    <PackageReference Include="BoldReports.CRI.Barcode" Version="11.1.10" />
+    <PackageReference Include="BoldReports.CRI.Signature" Version="11.1.10" />
+    <PackageReference Include="BoldReports.CRI.Shape" Version="11.1.10" />
+    <PackageReference Include="BoldReports.CRI.Html" Version="11.1.10">
       <ExcludeAssets>native</ExcludeAssets>
     </PackageReference>
-    <PackageReference Include="BoldReports.CRI.Pdf" Version="10.1.11" />
-    <PackageReference Include="BoldReports.Net.Core" Version="10.1.11" />
-    <PackageReference Include="BoldReports.Data.WebData" Version="10.1.11" />
-    <PackageReference Include="BoldReports.Data.Csv" Version="10.1.11" />
-    <PackageReference Include="BoldReports.Data.Excel" Version="10.1.11" />
-    <PackageReference Include="BoldReports.Data.ElasticSearch" Version="10.1.11" />
-    <PackageReference Include="BoldReports.Data.SSAS" Version="10.1.11" />
+    <PackageReference Include="BoldReports.CRI.Pdf" Version="11.1.10" />
+    <PackageReference Include="BoldReports.Net.Core" Version="11.1.10" />
+    <PackageReference Include="BoldReports.Data.WebData" Version="11.1.10" />
+    <PackageReference Include="BoldReports.Data.Csv" Version="11.1.10" />
+    <PackageReference Include="BoldReports.Data.Excel" Version="11.1.10" />
+    <PackageReference Include="BoldReports.Data.ElasticSearch" Version="11.1.10" />
+    <PackageReference Include="BoldReports.Data.SSAS" Version="11.1.10" />
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
     <PackageReference Include="log4net" Version="2.0.15" />
     <PackageReference Include="PuppeteerSharp" Version="5.0.0" />
@@ -43,12 +43,12 @@
     </PackageReference>
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="8.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="BoldReports.Data.MySQL" Version="10.1.11" />
-    <PackageReference Include="BoldReports.Data.Oracle" Version="10.1.11" />
-    <PackageReference Include="BoldReports.Data.PostgreSQL" Version="10.1.11" />
-    <PackageReference Include="BoldReports.Data.Snowflake" Version="10.1.11" />
-    <PackageReference Include="BoldReports.Data.GoogleBigQuery" Version="10.1.11" />
-    <PackageReference Include="BoldReports.Data.MongoDB" Version="10.1.11" />
+    <PackageReference Include="BoldReports.Data.MySQL" Version="11.1.10" />
+    <PackageReference Include="BoldReports.Data.Oracle" Version="11.1.10" />
+    <PackageReference Include="BoldReports.Data.PostgreSQL" Version="11.1.10" />
+    <PackageReference Include="BoldReports.Data.Snowflake" Version="11.1.10" />
+    <PackageReference Include="BoldReports.Data.GoogleBigQuery" Version="11.1.10" />
+    <PackageReference Include="BoldReports.Data.MongoDB" Version="11.1.10" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Controllers\**" CopyToOutputDirectory="Always" />

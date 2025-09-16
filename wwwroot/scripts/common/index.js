@@ -47,7 +47,7 @@ function loadTabContent() {
     let controllerPath = reportRouterPath ? basePath + '/' + controllerName : controllerName;
     let childaTab = document.getElementById("childTabContainer");
     let cshtml = getResponse(getBasePath() + 'Views/' + controllerName + '/Index.cshtml');
-    cshtml = cshtml.replace(/@section (description) {[^}]*}/, '');;
+    cshtml = cshtml.replace(/@section (description) {[^}]*}/, '');
     let csharp = getResponse(getBasePath() + 'Controllers/' + controllerPath + 'Controller.cs');
     childaTab.getElementsByClassName('cshtml-header')[0].textContent = 'Index.cshtml';
     childaTab.getElementsByClassName('csharp-header')[0].textContent = controllerName + '.cs';

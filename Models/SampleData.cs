@@ -10,15 +10,15 @@ namespace ReportsCoreSamples.Models
     public class SampleData
     {
         private IWebHostEnvironment _hostingEnvironment;
-     public SampleData(IWebHostEnvironment environment)
+        public SampleData(IWebHostEnvironment environment)
         {
             _hostingEnvironment = environment;
         }
         public dynamic getSampleData()
         {
-            string json = System.IO.File.ReadAllText(_hostingEnvironment.WebRootPath + "/samples.json");
-            dynamic sampleJson = JsonConvert.DeserializeObject(json);
-            return sampleJson;
+            var fileInfo = _hostingEnvironment.WebRootFileProvider.GetFileInfo("samples.json");
+            using var reader = new System.IO.StreamReader(fileInfo.CreateReadStream());
+            return new JsonSerializer().Deserialize(reader, typeof(object));
         }
     }
 }

@@ -28,7 +28,7 @@ var SignatureDialog = (function () {
         var okBtn = this.buildElement('button', '', '', {}, { 'id': this.id + '_signDialog_okBtn', 'type': 'button' });
         var cancelBtn = this.buildElement('button', '', '', {}, { 'id': this.id + '_signDialog_cancelBtn' });
         this.container.append(bodyRootEle);
-        $(document.body).append(this.container);
+        (this.instance.element).append(this.container);
         ejs.popups.createSpinner({
             target: this.container.find('.e-signDialog-browsingDiv')[0],
             cssClass: 'e-spin-overlay'
@@ -43,7 +43,7 @@ var SignatureDialog = (function () {
             enableResize: true,
             header: this.getLocale('title'),
             footerTemplate: '<div id="' + this.id + '_signDialog_foot"></div>',
-            target: document.body,
+            target: '#' + this.instance._id,
             cssClass: 'e-signDialog-size',
             beforeOpen: $.proxy(this.onOpen, this),
             close: $.proxy(this.resetDialogValues, this),
@@ -100,7 +100,11 @@ var SignatureDialog = (function () {
     };
     SignatureDialog.prototype.renderOptions = function (target) {
         var holderDiv = this.buildElement('div', '', '', { 'display': 'flex', 'gap': '13px', 'justify-content': 'space-between', 'align-items': 'center' }, {});
-        var labelDiv = this.buildElement('div', 'e-signDialog-firstRow', '', { width: '100%', 'height': '37px', display: 'flex', 'justify-content': 'space-between', 'gap': '5px', 'align-items': 'center' }, {});
+        var labelDiv = this.buildElement('div', 'e-signDialog-firstRow', '', {
+            width: '100%', height: '37px',
+            display: 'flex', 'justify-content': 'space-between',
+            gap: '5px', 'align-items': 'center', padding: '5px'
+        }, {});
         this.appendStrokeWidth(holderDiv);
         this.appendStrokeColor(holderDiv);
         this.appendCropButton(holderDiv);
@@ -109,8 +113,13 @@ var SignatureDialog = (function () {
         target.append(labelDiv);
     };
     SignatureDialog.prototype.appendCropButton = function (target) {
+        var _this = this;
         var cropBtn = this.buildElement('div', 'e-signDialog-cropIconDiv e-signDialog-cropIcon-disable', '', {}, { 'title': this.getLocale('crop'), 'aria-label': this.getLocale('arialabelcrop'), 'tabindex': '0', 'role': 'button', 'aria-disabled': 'true' });
-        cropBtn.bind('click', $.proxy(this.updateCropState, this));
+        cropBtn.bind('click keydown', function (event) {
+            if (_this.isActionTriggered(event)) {
+                _this.updateCropState();
+            }
+        });
         target.append(cropBtn);
     };
     SignatureDialog.prototype.appendStrokeColor = function (target) {
@@ -125,7 +134,8 @@ var SignatureDialog = (function () {
             height: '37px',
             open: $.proxy(this.colorPickerOpen, this),
             onModeSwitch: $.proxy(this.colorPickerModeSwitch, this),
-            change: $.proxy(this.onStrokeColorChange, this)
+            change: $.proxy(this.onStrokeColorChange, this),
+            enableOpacity: false
         });
         strokeColorTag.append(strokeColor);
         strokeColorDiv.append(strokeColorLabel, strokeColorTag);
@@ -155,8 +165,18 @@ var SignatureDialog = (function () {
         target.append(strokeWidth);
     };
     SignatureDialog.prototype.appendClearBtn = function (target) {
-        var clearBtn = this.buildElement('div', 'e-rptdesigner-add-btn e-signDialog-btn-clear e-signDialog-text-span', this.getLocale('clear'), {}, { 'title': this.getLocale('clear'), 'aria-label': this.getLocale('arialabelclear'), 'tabindex': '0', 'role': 'button' });
-        clearBtn.bind('click', $.proxy(this.clearSignature, this));
+        var _this = this;
+        var clearBtn = this.buildElement('div', 'e-rptdesigner-add-btn e-signDialog-btn-clear e-signDialog-text-span', this.getLocale('clear'), {
+            'border-radius': '2px'
+        }, {
+            title: this.getLocale('clear'), 'aria-label': this.getLocale('arialabelclear'),
+            tabindex: '0', role: 'button'
+        });
+        clearBtn.bind('click keydown', function (event) {
+            if (_this.isActionTriggered(event)) {
+                _this.clearSignature();
+            }
+        });
         target.append(clearBtn);
     };
     SignatureDialog.prototype.renderContent = function (target) {
@@ -219,6 +239,9 @@ var SignatureDialog = (function () {
         if (cropBox) {
             cropBox.css('display', 'none');
         }
+    };
+    SignatureDialog.prototype.isActionTriggered = function (event) {
+        return event && ((event.type === 'click') || (event.originalEvent instanceof KeyboardEvent && event.key === 'Enter'));
     };
     SignatureDialog.prototype.updateCropState = function () {
         var cropBox = this.container.find('.e-signDialog-cropBox');
@@ -770,7 +793,7 @@ SignatureDialog.Locale['tr-TR'] = {
     ariaLabelCrop: 'İmzayı kırp',
     ariaLabelClear: 'İmzayı temizle'
 };
-SignatureDialog.Locale['zh-CN'] = {
+SignatureDialog.Locale['zh-Hans'] = {
     cancel: '取消',
     closeToolTip: '关闭',
     ok: '确定',
@@ -782,4 +805,69 @@ SignatureDialog.Locale['zh-CN'] = {
     ariaLabelCanvas: '签名绘制区域',
     ariaLabelCrop: '裁剪签名',
     ariaLabelClear: '清除签名'
+};
+SignatureDialog.Locale['he-IL'] = {
+    cancel: 'ביטול',
+    closeToolTip: 'סגור',
+    clear: 'נקה',
+    ok: 'אישור',
+    title: 'חתימה',
+    strokeColor: 'צבע קו',
+    strokeWidth: 'עובי קו',
+    crop: 'חיתוך',
+    ariaLabelCanvas: 'אזור הקנבס לציור חתימתך',
+    ariaLabelCrop: 'חתוך את החתימה',
+    ariaLabelClear: 'נקה את החתימה'
+};
+SignatureDialog.Locale['ja-JP'] = {
+    cancel: 'キャンセル',
+    closeToolTip: '閉じる',
+    clear: 'クリア',
+    ok: 'OK',
+    title: '署名',
+    strokeColor: '線の色',
+    strokeWidth: '線の太さ',
+    crop: '切り抜き',
+    ariaLabelCanvas: '署名を描くキャンバス領域',
+    ariaLabelCrop: '署名を切り抜く',
+    ariaLabelClear: '署名をクリア'
+};
+SignatureDialog.Locale['pt-PT'] = {
+    cancel: 'Cancelar',
+    closeToolTip: 'Fechar',
+    clear: 'Limpar',
+    ok: 'OK',
+    title: 'Assinatura',
+    strokeColor: 'Cor do traço',
+    strokeWidth: 'Largura do traço',
+    crop: 'Cortar',
+    ariaLabelCanvas: 'Área da tela para desenhar a sua assinatura',
+    ariaLabelCrop: 'Cortar a assinatura',
+    ariaLabelClear: 'Limpar a assinatura'
+};
+SignatureDialog.Locale['ru-RU'] = {
+    cancel: 'Отмена',
+    closeToolTip: 'Закрыть',
+    clear: 'Очистить',
+    ok: 'OK',
+    title: 'Подпись',
+    strokeColor: 'Цвет линии',
+    strokeWidth: 'Толщина линии',
+    crop: 'Обрезать',
+    ariaLabelCanvas: 'Область для рисования подписи',
+    ariaLabelCrop: 'Обрезать подпись',
+    ariaLabelClear: 'Очистить подпись'
+};
+SignatureDialog.Locale['zh-Hant'] = {
+    cancel: '取消',
+    closeToolTip: '關閉',
+    clear: '清除',
+    ok: '確定',
+    title: '簽名',
+    strokeColor: '筆劃顏色',
+    strokeWidth: '筆劃寬度',
+    crop: '裁剪',
+    ariaLabelCanvas: '簽名繪製區域',
+    ariaLabelCrop: '裁剪簽名',
+    ariaLabelClear: '清除簽名'
 };

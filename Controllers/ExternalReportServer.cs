@@ -47,10 +47,11 @@ namespace ReportsCoreSamples.Controllers
 
             if (type == ItemTypeEnum.DataSet)
             {
-                foreach (var file in Directory.GetFiles(Path.Combine(targetFolder, "DataSet")))
+                var dataSetProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(Path.Combine(targetFolder, "DataSet"));
+                foreach (var file in dataSetProvider.GetDirectoryContents("").Where(f => !f.IsDirectory))
                 {
                     CatalogItem catalogItem = new CatalogItem();
-                    catalogItem.Name = Path.GetFileNameWithoutExtension(file);
+                    catalogItem.Name = Path.GetFileNameWithoutExtension(file.Name);
                     catalogItem.Type = ItemTypeEnum.DataSet;
                     catalogItem.Id = Regex.Replace(catalogItem.Name, @"[^0-9a-zA-Z]+", "_");
                     _items.Add(catalogItem);
@@ -58,10 +59,11 @@ namespace ReportsCoreSamples.Controllers
             }
             else if (type == ItemTypeEnum.DataSource)
             {
-                foreach (var file in Directory.GetFiles(Path.Combine(targetFolder, "DataSource")))
+                var dataSourceProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(Path.Combine(targetFolder, "DataSource"));
+                foreach (var file in dataSourceProvider.GetDirectoryContents("").Where(f => !f.IsDirectory))
                 {
                     CatalogItem catalogItem = new CatalogItem();
-                    catalogItem.Name = Path.GetFileNameWithoutExtension(file);
+                    catalogItem.Name = Path.GetFileNameWithoutExtension(file.Name);
                     catalogItem.Type = ItemTypeEnum.DataSource;
                     catalogItem.Id = Regex.Replace(catalogItem.Name, @"[^0-9a-zA-Z]+", "_");
                     _items.Add(catalogItem);
@@ -82,10 +84,11 @@ namespace ReportsCoreSamples.Controllers
             {
                 string reportTypeExt = this.reportType == "RDLC" ? ".rdlc" : ".rdl";
 
-                foreach (var file in Directory.GetFiles(targetFolder, "*" + reportTypeExt))
+                var reportProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(targetFolder);
+                foreach (var file in reportProvider.GetDirectoryContents("").Where(f => !f.IsDirectory && f.Name.EndsWith(reportTypeExt)))
                 {
                     CatalogItem catalogItem = new CatalogItem();
-                    catalogItem.Name = Path.GetFileNameWithoutExtension(file);
+                    catalogItem.Name = Path.GetFileNameWithoutExtension(file.Name);
                     catalogItem.Type = ItemTypeEnum.Report;
                     catalogItem.Id = Regex.Replace(catalogItem.Name, @"[^0-9a-zA-Z]+", "_");
                     _items.Add(catalogItem);
@@ -116,6 +119,7 @@ namespace ReportsCoreSamples.Controllers
         private Stream ReadFiles(string filePath)
         {
             using (FileStream fileStream = File.OpenRead(filePath))
+                fileStream.Position = 0;
             {
                 fileStream.Position = 0;
                 MemoryStream memStream = new MemoryStream();
@@ -132,7 +136,9 @@ namespace ReportsCoreSamples.Controllers
             string catagoryName = reportPath.Substring(0, reportPath.IndexOf('/') > 0 ? reportPath.IndexOf('/') : 0).Trim();
             string targetFolder = Path.Combine(this.basePath, "resources", "Report");
             string reportPat = Path.Combine(targetFolder, catagoryName, reportName);
+            return true;
             File.WriteAllBytes(reportPat, reportdata.ToArray());
+
 
             return true;
         }
@@ -197,7 +203,9 @@ namespace ReportsCoreSamples.Controllers
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
             XmlReader reader = XmlReader.Create(str);
+        {
             return (T)serializer.Deserialize(reader);
+            memStream.Write(_fileContent, 0, _fileContent.Length);
         }
 
         private Stream GetFileToStream(byte[] _fileContent)

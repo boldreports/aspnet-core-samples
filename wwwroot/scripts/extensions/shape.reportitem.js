@@ -25,8 +25,8 @@ var EJShape = (function () {
     };
     EJShape.prototype.initializeShape = function (isTablixCell) {
         var bgColor = (this.customJSON && this.customJSON.Style && this.customJSON.Style.BackgroundColor)
-            ? this.customJSON.Style.BackgroundColor : 'Transparent';
-        this.customItemDiv = ej.buildTag('div.customitem', '', {
+            ? ej.ReportUtil.convertColorFormat(this.customJSON.Style.BackgroundColor, true) : 'Transparent';
+        this.customItemDiv = ej.buildTag('div.customitem e-rptdesigner-shape', '', {
             'width': '100%', 'height': '100%', 'box-sizing': 'border-box', '-moz-box-sizing': 'border-box', 'background-color': bgColor,
             'border': isTablixCell ? '1px dotted gray' : '1px none gray',
         }, {
@@ -337,6 +337,8 @@ var EJShape = (function () {
         var graphics = document.createElementNS('http://www.w3.org/2000/svg', 'g');
         var shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         var targetId = target.attr('id');
+        var fillColor = this.hasDesignerInstance(this.instance) ?
+            ej.ReportUtil.convertColorFormat(shapeInfo.fillColor, true) : shapeInfo.fillColor;
         this.setAttributes(svg, {
             'width': shapeInfo.svgWidth + "px", 'height': shapeInfo.svgHeight + "px",
             'viewBox': viewBox, 'id': targetId + "_svg", 'preserveAspectRatio': 'none'
@@ -345,7 +347,7 @@ var EJShape = (function () {
         this.setAttributes(clipPath, { 'id': targetId + "_clip_path", 'clipPathUnits': 'userSpaceOnUse' });
         this.setAttributes(shapePath, {
             'd': pathData, 'vector-effect': 'non-scaling-stroke',
-            'clip-path': "url(#" + targetId + "_clip_path)", 'id': targetId + "_shape_path", 'fill': shapeInfo.fillColor,
+            'clip-path': "url(#" + targetId + "_clip_path)", 'id': targetId + "_shape_path", 'fill': fillColor,
             'stroke-dasharray': this.getStrokeStyle(shapeInfo.strokeStyle), 'stroke-width': "" + (parseFloat(shapeInfo.strokeWidth) + 1),
             'stroke': shapeInfo.strokeColor
         });
@@ -403,7 +405,7 @@ var EJShape = (function () {
             case 'fillcolor':
                 if (!ej.ReportUtil.isEmptyString(newValue)) {
                     this.updatePropertyVal(name, newValue);
-                    this.setAttributes(shapeElement[0], { 'fill': newValue });
+                    this.setAttributes(shapeElement[0], { 'fill': ej.ReportUtil.convertColorFormat(newValue, true) });
                 }
                 break;
             case 'linewidth':
@@ -570,7 +572,7 @@ var EJShape = (function () {
                         'Name': 'FillColor',
                         'DisplayName': 'FillColor',
                         'Value': shapeInfo.fillColor,
-                        'EnableExpression': false,
+                        'EnableExpression': true,
                         'ItemType': 'Color'
                     },
                     {
@@ -594,7 +596,9 @@ var EJShape = (function () {
                                 'DisplayName': 'colortooltip',
                                 'HeaderText': 'linecolor',
                                 'Value': shapeInfo.strokeColor,
-                                'ItemType': 'Color'
+                                'ItemType': 'Color',
+                                'EnableOpacity': false,
+                                'EnableExpression': true,
                             },
                             {
                                 'ItemId': 'linewidth',
@@ -1315,7 +1319,7 @@ EJShape.Locale['tr-TR'] = {
         title: 'Şekil'
     }
 };
-EJShape.Locale['zh-CN'] = {
+EJShape.Locale['zh-Hans'] = {
     basicSettings: {
         categoryName: '基本设置',
         shapeType: '形状',
@@ -1352,5 +1356,200 @@ EJShape.Locale['zh-CN'] = {
         requirements: '显示形状中的项目',
         description: '使用可定制的形状来可视化数据。',
         title: '形状'
+    }
+};
+EJShape.Locale['he-IL'] = {
+    basicSettings: {
+        categoryName: 'הגדרות בסיסיות',
+        shapeType: 'צורות',
+        rotationAngle: 'זווית סיבוב',
+        starCount: 'מספר כוכבים',
+        concavity: 'קיעור',
+        arrowHeight: 'גובה חץ',
+        arrowWidth: 'רוחב חץ',
+        lineStyle: 'סגנון קו',
+        fillColor: 'צבע מילוי',
+        shapeTypes: {
+            ellipse: 'אליפסה',
+            triangle: 'משולש',
+            rightAngleTriangle: 'משולש ישר זווית',
+            rectangle: 'מלבן',
+            hexagon: 'משושה',
+            pentagon: 'מחומש',
+            octagon: 'מתומן',
+            star: 'כוכב',
+            leftArrow: 'חץ שמאלה',
+            rightArrow: 'חץ ימינה',
+            upArrow: 'חץ למעלה',
+            downArrow: 'חץ למטה'
+        },
+        lineStyles: {
+            dashed: 'מקווקו',
+            dotted: 'מנוקד',
+            dashdotdot: 'קו מקו-נקודה-נקודה',
+            dashdot: 'קו מקו-נקודה',
+            solid: 'רציף'
+        }
+    },
+    toolTip: {
+        requirements: 'הצגת פריטים בצורות',
+        description: 'הצגת נתונים באמצעות צורות מותאמות אישית.',
+        title: 'צורה'
+    }
+};
+EJShape.Locale['ja-JP'] = {
+    basicSettings: {
+        categoryName: '基本設定',
+        shapeType: '図形',
+        rotationAngle: '回転角度',
+        starCount: '星の数',
+        concavity: '凹み',
+        arrowHeight: '矢印の高さ',
+        arrowWidth: '矢印の幅',
+        lineStyle: '線のスタイル',
+        fillColor: '塗りつぶし色',
+        shapeTypes: {
+            ellipse: '楕円',
+            triangle: '三角形',
+            rightAngleTriangle: '直角三角形',
+            rectangle: '長方形',
+            hexagon: '六角形',
+            pentagon: '五角形',
+            octagon: '八角形',
+            star: '星形',
+            leftArrow: '左矢印',
+            rightArrow: '右矢印',
+            upArrow: '上矢印',
+            downArrow: '下矢印'
+        },
+        lineStyles: {
+            dashed: '破線',
+            dotted: '点線',
+            dashdotdot: 'ダッシュ・ドット・ドット',
+            dashdot: 'ダッシュ・ドット',
+            solid: '実線'
+        }
+    },
+    toolTip: {
+        requirements: '図形内の項目を表示',
+        description: 'カスタマイズ可能な図形でデータを可視化します。',
+        title: '図形'
+    }
+};
+EJShape.Locale['pt-PT'] = {
+    basicSettings: {
+        categoryName: 'Configurações básicas',
+        shapeType: 'Formas',
+        rotationAngle: 'Ângulo de rotação',
+        starCount: 'Contagem de estrelas',
+        concavity: 'Concavidade',
+        arrowHeight: 'Altura da seta',
+        arrowWidth: 'Largura da seta',
+        lineStyle: 'Estilo de linha',
+        fillColor: 'Cor de preenchimento',
+        shapeTypes: {
+            ellipse: 'Elipse',
+            triangle: 'Triângulo',
+            rightAngleTriangle: 'Triângulo Retângulo',
+            rectangle: 'Retângulo',
+            hexagon: 'Hexágono',
+            pentagon: 'Pentágono',
+            octagon: 'Octógono',
+            star: 'Estrela',
+            leftArrow: 'Seta Esquerda',
+            rightArrow: 'Seta Direita',
+            upArrow: 'Seta Para Cima',
+            downArrow: 'Seta Para Baixo'
+        },
+        lineStyles: {
+            dashed: 'Tracejado',
+            dotted: 'Pontilhado',
+            dashdotdot: 'Traço Ponto Ponto',
+            dashdot: 'Traço Ponto',
+            solid: 'Sólido'
+        }
+    },
+    toolTip: {
+        requirements: 'Exibir itens em Formas',
+        description: 'Visualize dados com formas personalizáveis.',
+        title: 'Forma'
+    }
+};
+EJShape.Locale['ru-RU'] = {
+    basicSettings: {
+        categoryName: 'Основные настройки',
+        shapeType: 'Фигуры',
+        rotationAngle: 'Угол вращения',
+        starCount: 'Количество звезд',
+        concavity: 'Вогнутость',
+        arrowHeight: 'Высота стрелки',
+        arrowWidth: 'Ширина стрелки',
+        lineStyle: 'Стиль линии',
+        fillColor: 'Цвет заливки',
+        shapeTypes: {
+            ellipse: 'Эллипс',
+            triangle: 'Треугольник',
+            rightAngleTriangle: 'Прямоугольный треугольник',
+            rectangle: 'Прямоугольник',
+            hexagon: 'Шестиугольник',
+            pentagon: 'Пятиугольник',
+            octagon: 'Восьмиугольник',
+            star: 'Звезда',
+            leftArrow: 'Левая стрелка',
+            rightArrow: 'Правая стрелка',
+            upArrow: 'Верхняя стрелка',
+            downArrow: 'Нижняя стрелка'
+        },
+        lineStyles: {
+            dashed: 'Пунктир',
+            dotted: 'Точечная',
+            dashdotdot: 'Тире точка точка',
+            dashdot: 'Тире точка',
+            solid: 'Сплошная'
+        }
+    },
+    toolTip: {
+        requirements: 'Показать элементы в фигурах',
+        description: 'Визуализируйте данные с помощью настраиваемых фигур.',
+        title: 'Фигура'
+    }
+};
+EJShape.Locale['zh-Hant'] = {
+    basicSettings: {
+        categoryName: '基本設定',
+        shapeType: '形狀',
+        rotationAngle: '旋轉角度',
+        starCount: '星數',
+        concavity: '凹度',
+        arrowHeight: '箭頭高度',
+        arrowWidth: '箭頭寬度',
+        lineStyle: '線條樣式',
+        fillColor: '填充顏色',
+        shapeTypes: {
+            ellipse: '橢圓',
+            triangle: '三角形',
+            rightAngleTriangle: '直角三角形',
+            rectangle: '長方形',
+            hexagon: '六邊形',
+            pentagon: '五邊形',
+            octagon: '八邊形',
+            star: '星形',
+            leftArrow: '左箭頭',
+            rightArrow: '右箭頭',
+            upArrow: '上箭頭',
+            downArrow: '下箭頭'
+        },
+        lineStyles: {
+            dashed: '虛線',
+            dotted: '點線',
+            dashdotdot: '虛線點點',
+            dashdot: '虛線點',
+            solid: '實線'
+        }
+    },
+    toolTip: {
+        requirements: '顯示形狀中的項目',
+        description: '使用可自訂的形狀來視覺化資料。',
+        title: '形狀'
     }
 };
