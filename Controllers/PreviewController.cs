@@ -15,7 +15,7 @@ namespace ReportsCoreSamples.Controllers
             string foderName = this.ControllerContext.RouteData.Values["controller"].ToString();
             ViewBag.action = "Preview";
             ViewBag.isDesigner = false;
-            if (foderName == "ExternalParameterReport")
+            if (foderName == "ExternalParameterReport" || foderName == "MultiLanguageReport")
             {
                 ViewBag.parameterSettings = new BoldReports.Models.ReportViewer.ParameterSettings();
                 ViewBag.parameterSettings.HideParameterBlock = true;

@@ -12,8 +12,8 @@ var EJPDFSignature = (function () {
     }
     EJPDFSignature.prototype.initializeItem = function (args) {
         args.isBuildInService = false;
-        args.defaultHeight = 160;
-        args.defaultWidth = 360;
+        args.defaultHeight = 96;
+        args.defaultWidth = 192;
         args.minimumHeight = 15;
         args.minimumWidth = 90;
     };
@@ -26,17 +26,14 @@ var EJPDFSignature = (function () {
         }
     };
     EJPDFSignature.prototype.renderPDFSignature = function () {
-        var canDataConfig = this.booleanValue(this.getPropertyValue(this.customJSON.CustomProperties, 'DataConfig'));
-        var bgColor = this.customJSON.Style.BackgroundColor === 'Transparent' ? 'White' : this.customJSON.Style.BackgroundColor;
-        this.customItemDiv = this.buildElement('div', 'customitem e-rptdesigner-pdfsign', '', {}, { 'background-color': canDataConfig ? bgColor : 'Transparent' });
+        this.customItemDiv = this.buildElement('div', 'customitem e-rptdesigner-pdfsign', '', {}, { 'background-color': this.getBackgroundColor() });
         var isSignedName = this.booleanValue(this.getPropertyValue(this.customJSON.CustomProperties, 'SignedName'));
         var isContactInfo = this.booleanValue(this.getPropertyValue(this.customJSON.CustomProperties, 'ContactInfo'));
         var isReason = this.booleanValue(this.getPropertyValue(this.customJSON.CustomProperties, 'Reason'));
         var isDate = this.booleanValue(this.getPropertyValue(this.customJSON.CustomProperties, 'Date'));
         var isLocation = this.booleanValue(this.getPropertyValue(this.customJSON.CustomProperties, 'Location'));
         var isDataPresent = isSignedName || isContactInfo || isReason || isDate || isLocation;
-        var defaultDiv = this.buildElement('div', 'e-pdfsign-default', this.getLocale('defaulttxt'), {}, { 'display': canDataConfig ? 'none' : 'flex' });
-        var configDiv = this.buildElement('div', 'e-pdfsign-config', '', {}, { 'display': canDataConfig ? 'flex' : 'none' });
+        var configDiv = this.buildElement('div', 'e-pdfsign-config', '', {}, { 'display': 'flex' });
         var imgDiv = this.buildElement('div', 'e-pdfsign-signImg', '', {}, { 'display': 'flex', 'width': '50%', 'height': '100%' });
         var dataDiv = this.buildElement('div', 'e-pdfsign-dataConfig', '', {}, { 'display': isDataPresent ? 'flex' : 'none' });
         this.appendElement(dataDiv, 'e-pdfsign-signedName', this.getLocale('signednamelabel') + ': ' + this.getLocale('signednamevalue'), isSignedName);
@@ -44,7 +41,7 @@ var EJPDFSignature = (function () {
         this.appendElement(dataDiv, 'e-pdfsign-reason', this.getLocale('reasonLabel') + ': ' + this.getLocale('reasonvalue'), isReason);
         this.appendElement(dataDiv, 'e-pdfsign-location', this.getLocale('locationLabel') + ': ' + this.getLocale('locationvalue'), isLocation);
         this.appendElement(dataDiv, 'e-pdfsign-date', this.getLocale('dateLabel') + ': ' + this.getFormattedDate(this.instance.model.locale), isDate);
-        this.customItemDiv.append(defaultDiv, configDiv);
+        this.customItemDiv.append(configDiv);
         configDiv.append(imgDiv, dataDiv);
         this.rootElement.append(this.customItemDiv);
         var base64Prefix = 'data:image/png;base64,';
@@ -57,8 +54,12 @@ var EJPDFSignature = (function () {
             this.clearSign(imgDiv);
         }
     };
+    EJPDFSignature.prototype.getBackgroundColor = function () {
+        return (this.customJSON && this.customJSON.Style && this.customJSON.Style.BackgroundColor
+            && this.customJSON.Style.BackgroundColor !== 'Transparent' && this.customJSON.Style.BackgroundColor !== '#00ffffff')
+            ? ej.ReportUtil.convertColorFormat(this.customJSON.Style.BackgroundColor, true) : 'white';
+    };
     EJPDFSignature.prototype.getPropertyGridItems = function (baseProperties) {
-        var isDataPresent = this.booleanValue(this.getPropertyValue(this.customJSON.CustomProperties, 'DataConfig'));
         var itemProperties = [{
                 'CategoryId': 'basicsettings',
                 'DisplayName': 'categoryBasicSettings',
@@ -66,23 +67,12 @@ var EJPDFSignature = (function () {
                 'IsIgnoreCommon': true,
                 'Items': [
                     {
-                        'ItemId': 'showdata',
-                        'Name': 'showdata',
-                        'DisplayName': 'showdata',
-                        'ItemType': 'Bool',
-                        'Value': isDataPresent,
-                        'EnableExpression': false,
-                        'DependentItems': [
-                            {
-                                'DisableItems': ['basicsettings_reason', 'basicsettings_location', 'basicsettings_date', 'basicsettings_signature', 'basicsettings_signedname', 'basicsettings_contactinfo'],
-                                'Value': [false]
-                            },
-                            {
-                                'EnableItems': ['basicsettings_reason', 'basicsettings_location', 'basicsettings_date', 'basicsettings_signature', 'basicsettings_signedname', 'basicsettings_contactinfo'],
-                                'Value': [true]
-                            }
-                        ],
-                        IsVisible: true
+                        ItemId: 'digitalidfile',
+                        Name: 'digitalidfile',
+                        DisplayName: 'digitalidfile',
+                        Value: this.getPropertyValue(this.customJSON.CustomProperties, 'CertificateFileName'),
+                        ItemType: 'FilePicker',
+                        FileType: ['.pfx']
                     },
                     {
                         'ItemId': 'signature',
@@ -90,7 +80,7 @@ var EJPDFSignature = (function () {
                         'DisplayName': 'signature',
                         'ItemType': 'CustomBtn',
                         'EnableExpression': false,
-                        'IsVisible': isDataPresent
+                        'IsVisible': true
                     },
                     {
                         'ItemId': 'signedname',
@@ -98,9 +88,8 @@ var EJPDFSignature = (function () {
                         'DisplayName': 'prptysignedname',
                         'ItemType': 'Bool',
                         'Value': this.booleanValue(this.getPropertyValue(this.customJSON.CustomProperties, 'SignedName')),
-                        'ParentId': 'basicsettings_default',
                         'EnableExpression': false,
-                        'IsVisible': isDataPresent
+                        'IsVisible': true
                     },
                     {
                         'ItemId': 'contactinfo',
@@ -108,37 +97,51 @@ var EJPDFSignature = (function () {
                         'DisplayName': 'prptycontactinfo',
                         'ItemType': 'Bool',
                         'Value': this.booleanValue(this.getPropertyValue(this.customJSON.CustomProperties, 'ContactInfo')),
-                        'ParentId': 'basicsettings_default',
                         'EnableExpression': false,
-                        'IsVisible': isDataPresent
-                    },
-                    {
-                        'ItemId': 'reason',
-                        'Name': 'reason',
-                        'DisplayName': 'prptyreason',
-                        'ItemType': 'Bool',
-                        'Value': this.booleanValue(this.getPropertyValue(this.customJSON.CustomProperties, 'Reason')),
-                        'ParentId': 'basicsettings_default',
-                        'EnableExpression': false,
-                        'IsVisible': isDataPresent
+                        'IsVisible': true
                     }, {
                         'ItemId': 'location',
                         'Name': 'location',
                         'DisplayName': 'prptylocation',
                         'ItemType': 'Bool',
                         'Value': this.booleanValue(this.getPropertyValue(this.customJSON.CustomProperties, 'Location')),
-                        'ParentId': 'basicsettings_default',
                         'EnableExpression': false,
-                        'IsVisible': isDataPresent
+                        'IsVisible': true
                     }, {
                         'ItemId': 'date',
                         'Name': 'date',
                         'DisplayName': 'prptydate',
                         'ItemType': 'Bool',
                         'Value': this.booleanValue(this.getPropertyValue(this.customJSON.CustomProperties, 'Date')),
-                        'ParentId': 'basicsettings_default',
                         'EnableExpression': false,
-                        'IsVisible': isDataPresent
+                        'IsVisible': true
+                    }, {
+                        'ItemId': 'reasonLabel',
+                        'Name': 'reasonLabel',
+                        'DisplayName': 'prptyreason',
+                        'ItemType': 'Bool',
+                        'Value': this.booleanValue(this.getPropertyValue(this.customJSON.CustomProperties, 'Reason')),
+                        'EnableExpression': false,
+                        'DependentItems': [
+                            {
+                                'DisableItems': ['basicsettings_reasonInput'],
+                                'Value': [false]
+                            },
+                            {
+                                'EnableItems': ['basicsettings_reasonInput'],
+                                'Value': [true]
+                            }
+                        ],
+                        'IsVisible': true
+                    }, {
+                        'ItemId': 'reasonInput',
+                        'Name': 'reasonInput',
+                        'DisplayName': 'prptyReasonInput',
+                        'ItemType': 'TextBox',
+                        'Value': this.getPropertyValue(this.customJSON.CustomProperties, 'ReasonText'),
+                        'ParentId': 'basicsettings_reason',
+                        'EnableExpression': false,
+                        'IsVisible': true
                     }
                 ]
             }];
@@ -156,48 +159,6 @@ var EJPDFSignature = (function () {
         var elementDiv = this.buildElement('div', 'e-pdfsign-label' + ' ' + className, text, {}, { 'display': display ? 'flex' : 'none' });
         target.append(elementDiv);
     };
-    EJPDFSignature.prototype.isDataConfigured = function () {
-        if (this.hasDesignerInstance(this.instance)) {
-            var target = this.designPanel.designArea.find('.e-customitem .e-rptdesigner-pdfsign');
-            return target.toArray().some(function (targetElement) {
-                var itemJSON = ej.ReportUtil.getReportItem($(targetElement.parentElement)).getReportItemJson();
-                var customProperties = itemJSON.CustomProperties || [];
-                return customProperties.some(function (_a) {
-                    var Name = _a.Name, Value = _a.Value;
-                    return Name === 'DataConfig' && Value === 'true';
-                });
-            });
-        }
-    };
-    EJPDFSignature.prototype.updateDataConfig = function (value) {
-        var _this = this;
-        var defaultDiv = this.customItemDiv.find('.e-pdfsign-default');
-        var configDiv = this.customItemDiv.find('.e-pdfsign-config');
-        defaultDiv.css('display', value ? 'none' : 'flex');
-        configDiv.css('display', value ? 'flex' : 'none');
-        this.updatePropertyVal('DataConfig', value.toString());
-        this.customItemDiv.css('background-color', value ? this.customJSON.Style.BackgroundColor === 'Transparent' ? 'white' : this.customJSON.Style.BackgroundColor : 'Transparent');
-        if (value && this.hasDesignerInstance(this.instance)) {
-            var targets = this.designPanel.designArea.find('.e-customitem .e-rptdesigner-pdfsign');
-            targets.toArray().forEach(function (targetElement) {
-                var target = $(targetElement.parentElement);
-                var itemJSON = ej.ReportUtil.getReportItem(target).getReportItemJson();
-                if (itemJSON.Name !== _this.customJSON.Name) {
-                    var customProperties = itemJSON.CustomProperties || [];
-                    customProperties.some(function (property) {
-                        if (property.Name === 'DataConfig' && property.Value === 'true') {
-                            property.Value = 'false';
-                            target.find('.e-pdfsign-config').css('display', 'none');
-                            target.find('.e-pdfsign-default').css('display', 'flex');
-                            target.find('.e-rptdesigner-pdfsign').css('background-color', 'Transparent');
-                            return true;
-                        }
-                        return false;
-                    });
-                }
-            });
-        }
-    };
     EJPDFSignature.prototype.undoRedoAction = function (imgInfo) {
         if (imgInfo) {
             if (imgInfo.propertyName && imgInfo.propertyName.toLowerCase() === 'pdfsignature') {
@@ -211,27 +172,30 @@ var EJPDFSignature = (function () {
             args[_i - 3] = arguments[_i];
         }
         switch (name.toLowerCase()) {
-            case 'showdata':
-                this.updateDataConfig(newValue);
-                break;
             case 'signedname':
                 this.updateDisplay('e-pdfsign-signedName', newValue, 'SignedName');
                 break;
             case 'contactinfo':
                 this.updateDisplay('e-pdfsign-contactInfo', newValue, 'ContactInfo');
                 break;
-            case 'reason':
+            case 'reasonlabel':
                 this.updateDisplay('e-pdfsign-reason', newValue, 'Reason');
                 break;
             case 'location':
                 this.updateDisplay('e-pdfsign-location', newValue, 'Location');
                 break;
+            case 'reasoninput':
+                this.updatePropertyVal('ReasonText', newValue);
+                break;
             case 'date':
                 this.updateDisplay('e-pdfsign-date', newValue, 'Date');
                 break;
+            case 'digitalidfile':
+                newValue && newValue.name ? this.updatePropertyVal('CertificateFileName', newValue.name) : this.updatePropertyVal('CertificateFileName', '');
+                newValue && newValue.id ? this.updatePropertyVal('CertificateFileID', newValue.id) : this.updatePropertyVal('CertificateFileID', '');
+                break;
             case 'backgroundcolor':
-                var showData = this.booleanValue(this.getPropertyValue(this.customJSON.CustomProperties, 'DataConfig'));
-                var color = showData ? newValue === 'Transparent' ? 'White' : newValue : 'Transparent';
+                var color = (newValue === 'Transparent' || newValue === '#ffffff00') ? 'White' : newValue;
                 this.customItemDiv.css('background-color', color);
                 break;
         }
@@ -239,12 +203,13 @@ var EJPDFSignature = (function () {
     EJPDFSignature.prototype.updatePropertyUIValue = function (name, value) {
         switch (name.toLowerCase()) {
             case 'backgroundcolor':
-            case 'reason':
+            case 'reasonlabel':
+            case 'reasoninput':
             case 'location':
             case 'date':
-            case 'showdata':
             case 'signedname':
             case 'contactinfo':
+            case 'digitalidfile':
                 this.instance.propertyPanel.updatePropertyUIValue(name, value.toString(), this.customJSON.UniqueId);
                 break;
         }
@@ -269,12 +234,20 @@ var EJPDFSignature = (function () {
             });
         }
     };
-    EJPDFSignature.prototype.updateDisplay = function (className, newValue, propertyName) {
+    EJPDFSignature.prototype.updateDisplay = function (className, propValue, propertyName) {
+        this.updatePropertyVal(propertyName, propValue.toString());
         var elementDiv = this.customItemDiv.find('.' + className);
         var dataConfig = this.customItemDiv.find('.e-pdfsign-dataConfig');
-        elementDiv.css('display', newValue ? 'flex' : 'none');
-        this.updatePropertyVal(propertyName, newValue.toString());
-        dataConfig.css('display', this.getDataConfigDisplay(this.customJSON.CustomProperties) ? 'flex' : 'none');
+        var imgDiv = this.customItemDiv.find('.e-pdfsign-signImg');
+        var isDataPresent = this.isDataConfigured(this.customJSON.CustomProperties);
+        elementDiv.css('display', this.booleanValue(propValue) ? 'flex' : 'none');
+        dataConfig.css('display', isDataPresent ? 'flex' : 'none');
+        imgDiv.css('width', isDataPresent ? '50%' : '100%');
+    };
+    EJPDFSignature.prototype.isDataConfigured = function (customProperties) {
+        var _this = this;
+        var properties = ['Reason', 'Location', 'Date', 'ContactInfo', 'SignedName'];
+        return properties.some(function (prop) { return _this.booleanValue(_this.getPropertyValue(customProperties, prop)); });
     };
     EJPDFSignature.prototype.customAction = function (paramInfo) {
         var imgData = this.getPropertyValue(this.customJSON.CustomProperties, 'SignatureValue');
@@ -316,11 +289,6 @@ var EJPDFSignature = (function () {
         imgDiv.css('background-image', 'none');
         imgDiv.addClass('e-pdfsign-signImg-bgImg');
     };
-    EJPDFSignature.prototype.getDataConfigDisplay = function (customProperties) {
-        var _this = this;
-        var properties = ['Reason', 'Location', 'Date', 'ContactInfo', 'SignedName'];
-        return properties.some(function (prop) { return _this.booleanValue(_this.getPropertyValue(customProperties, prop)); });
-    };
     EJPDFSignature.prototype.getFormattedDate = function (locale) {
         var currentDate = new Date();
         var dateOptions = { year: 'numeric', month: '2-digit', day: '2-digit' };
@@ -334,12 +302,14 @@ var EJPDFSignature = (function () {
             this.customJSON = new ej.ReportModel.CustomReportItem().getModel();
             this.setPropertyVal('ContentEditable', 'true');
             this.setPropertyVal('Reason', 'true');
+            this.setPropertyVal('ReasonText', this.getLocale('reasonTxt'));
             this.setPropertyVal('Location', 'true');
             this.setPropertyVal('Date', 'true');
             this.setPropertyVal('SignatureValue', '');
             this.setPropertyVal('SignedName', 'true');
             this.setPropertyVal('ContactInfo', 'true');
-            this.setPropertyVal('DataConfig', this.isDataConfigured() ? 'false' : 'true');
+            this.setPropertyVal('CertificateFileName', '');
+            this.setPropertyVal('CertificateFileID', '');
         }
         return this.customJSON;
     };
@@ -353,7 +323,7 @@ var EJPDFSignature = (function () {
         this.customJSON.CustomProperties.push(new ej.ReportModel.CustomProperty(name, val));
     };
     EJPDFSignature.prototype.updatePropertyVal = function (propertyName, value) {
-        if (this.customJSON.CustomProperties && this.customJSON.CustomProperties.length > 0) {
+        if (this.customJSON && this.customJSON.CustomProperties && this.customJSON.CustomProperties.length > 0) {
             for (var index = 0; index < this.customJSON.CustomProperties.length; index++) {
                 if (this.customJSON.CustomProperties[index].Name === propertyName) {
                     this.customJSON.CustomProperties[index].Value = value;
@@ -383,6 +353,10 @@ var EJPDFSignature = (function () {
         this.instance = null;
         this.customItemInstance = null;
         this.designPanel = null;
+        var signDlgIns = window['SignatureDialog'] ? window['SignatureDialog'].Instance : null;
+        if (signDlgIns && signDlgIns.dlgInstance && signDlgIns.dlgInstance.visible) {
+            signDlgIns.closeDialog();
+        }
     };
     EJPDFSignature.prototype.hasDesignerInstance = function (instance) {
         return instance && instance.pluginName && instance.pluginName.toLowerCase() === 'boldreportdesigner';
@@ -392,72 +366,62 @@ var EJPDFSignature = (function () {
     };
     EJPDFSignature.prototype.renderItemPreview = function (criModel, targetDiv, locale) {
         var customProperties = criModel.CustomProperties;
-        var canDataConfig = this.booleanValue(this.getPropertyValue(customProperties, 'DataConfig'));
-        if (canDataConfig) {
-            var isReason = this.booleanValue(this.getPropertyValue(customProperties, 'Reason'));
-            var isLocation = this.booleanValue(this.getPropertyValue(customProperties, 'Location'));
-            var isDate = this.booleanValue(this.getPropertyValue(customProperties, 'Date'));
-            var isContactInfo = this.booleanValue(this.getPropertyValue(customProperties, 'ContactInfo'));
-            var isSignedName = this.booleanValue(this.getPropertyValue(customProperties, 'SignedName'));
-            var isDataPresent = isSignedName || isContactInfo || isReason || isDate || isLocation;
-            var imgData = criModel.ImageUrl;
-            var configDiv = this.buildElement('div', 'e-pdfsign-config', '', {}, { 'display': 'flex' });
-            var imgDiv = this.buildElement('div', 'e-pdfsign-signImg', '', {}, { 'display': 'flex', 'width': '50%', 'height': '100%' });
-            var editIcon = this.buildElement('span', 'e-designer-click e-rptdesigner-sign-editIcon', '', {}, { 'display': 'none' });
-            var base64Prefix = 'data:image/png;base64,';
-            var signatureData = "" + base64Prefix + imgData;
-            var proxy_1 = this;
-            imgDiv.attr('imageString', signatureData);
-            var callBackFn = function (imageDetails) {
-                proxy_1.updateSignature(imageDetails, ej.isNullOrUndefined(criModel.ItemName) ? criModel.Name : criModel.ItemName);
-                proxy_1.saveViewerSignature(imageDetails);
-            };
-            var dlgData = {
-                callBackFn: $.proxy(callBackFn, this),
-                locale: locale,
-                imageData: imgDiv.attr('imageString'),
-                canvas: imgDiv,
-                isViewerDialog: true
-            };
-            if (imgData) {
-                this.setSign(signatureData, imgDiv);
-            }
-            else {
-                this.clearSign(imgDiv);
-            }
-            configDiv.bind('mouseenter', $.proxy(this.showEditIcon, this, editIcon, customProperties));
-            configDiv.bind('mouseleave', $.proxy(this.hideEditIcon, this, editIcon));
-            editIcon.bind('click', $.proxy(this.invokeDialog, this, dlgData));
-            configDiv.append(imgDiv, editIcon);
-            if (isDataPresent) {
-                var dataDiv = this.buildElement('div', 'e-pdfsign-dataConfig', '', {}, { 'display': 'flex' });
-                if (isSignedName) {
-                    this.appendElement(dataDiv, 'e-pdfsign-signedName', this.getLocale('signednamelabel') + ': ' + this.getLocale('signednamevalue'), isSignedName);
-                }
-                if (isContactInfo) {
-                    this.appendElement(dataDiv, 'e-pdfsign-contactInfo', this.getLocale('contactinfolabel') + ': ' + this.getLocale('contactinfovalue'), isContactInfo);
-                }
-                if (isReason) {
-                    this.appendElement(dataDiv, 'e-pdfsign-reason', this.getLocale('reasonlabel') + ': ' + this.getLocale('reasonvalue'), isReason);
-                }
-                if (isLocation) {
-                    this.appendElement(dataDiv, 'e-pdfsign-location', this.getLocale('locationlabel') + ': ' + this.getLocale('designlocation'), isLocation);
-                }
-                if (isDate) {
-                    this.appendElement(dataDiv, 'e-pdfsign-date', this.getLocale('datelabel') + ': ' + this.getFormattedDate(this.instance.model.locale), isDate);
-                }
-                configDiv.append(dataDiv);
-            }
-            $(targetDiv).append(configDiv);
+        var isReason = this.booleanValue(this.getPropertyValue(customProperties, 'Reason'));
+        var isLocation = this.booleanValue(this.getPropertyValue(customProperties, 'Location'));
+        var isDate = this.booleanValue(this.getPropertyValue(customProperties, 'Date'));
+        var isContactInfo = this.booleanValue(this.getPropertyValue(customProperties, 'ContactInfo'));
+        var isSignedName = this.booleanValue(this.getPropertyValue(customProperties, 'SignedName'));
+        var isDataPresent = isSignedName || isContactInfo || isReason || isDate || isLocation;
+        var imgData = criModel.ImageUrl;
+        var configDiv = this.buildElement('div', 'e-pdfsign-config', '', {}, { 'display': 'flex' });
+        var imgDiv = this.buildElement('div', 'e-pdfsign-signImg', '', {}, { 'display': 'flex', 'width': isDataPresent ? '50%' : '100%', 'height': '100%' });
+        var editIcon = this.buildElement('span', 'e-designer-click e-rptdesigner-sign-editIcon', '', {}, { 'display': 'none' });
+        var base64Prefix = 'data:image/png;base64,';
+        var signatureData = "" + base64Prefix + imgData;
+        var proxy = this;
+        imgDiv.attr('imageString', signatureData);
+        var callBackFn = function (imageDetails) {
+            proxy.updateSignature(imageDetails, ej.isNullOrUndefined(criModel.ItemName) ? criModel.Name : criModel.ItemName);
+            proxy.saveViewerSignature(imageDetails);
+        };
+        var dlgData = {
+            callBackFn: $.proxy(callBackFn, this),
+            locale: locale,
+            imageData: imgDiv.attr('imageString'),
+            canvas: imgDiv,
+            isViewerDialog: true
+        };
+        if (imgData) {
+            this.setSign(signatureData, imgDiv);
         }
         else {
-            var defaultDiv = this.buildElement('div', 'e-pdfsign-default', this.getLocale('defaulttxt'), {}, { 'display': 'flex' });
-            $(targetDiv).append(defaultDiv);
-            $(targetDiv).css({
-                'border': 'none',
-                'background-color': 'Transparent'
-            });
+            this.clearSign(imgDiv);
         }
+        configDiv.bind('mouseenter', $.proxy(this.showEditIcon, this, editIcon, customProperties));
+        configDiv.bind('mouseleave', $.proxy(this.hideEditIcon, this, editIcon));
+        editIcon.bind('click', $.proxy(this.invokeDialog, this, dlgData));
+        configDiv.append(imgDiv, editIcon);
+        var dataDiv;
+        if (isDataPresent) {
+            dataDiv = this.buildElement('div', 'e-pdfsign-dataConfig', '', {}, { 'display': 'flex' });
+            if (isSignedName) {
+                this.appendElement(dataDiv, 'e-pdfsign-signedName', this.getLocale('signednamelabel') + ': ' + this.getLocale('signednamevalue'), isSignedName);
+            }
+            if (isContactInfo) {
+                this.appendElement(dataDiv, 'e-pdfsign-contactInfo', this.getLocale('contactinfolabel') + ': ' + this.getLocale('contactinfovalue'), isContactInfo);
+            }
+            if (isReason) {
+                this.appendElement(dataDiv, 'e-pdfsign-reason', this.getLocale('reasonlabel') + ': ' + this.getLocale('reasonvalue'), isReason);
+            }
+            if (isLocation) {
+                this.appendElement(dataDiv, 'e-pdfsign-location', this.getLocale('locationlabel') + ': ' + this.getLocale('locationvalue'), isLocation);
+            }
+            if (isDate) {
+                this.appendElement(dataDiv, 'e-pdfsign-date', this.getLocale('datelabel') + ': ' + this.getFormattedDate(this.instance.model.locale), isDate);
+            }
+            configDiv.append(dataDiv);
+        }
+        $(targetDiv).append(configDiv);
     };
     EJPDFSignature.prototype.saveViewerSignature = function (imageDetails) {
         var imgData = imageDetails != null ? imageDetails.imageData : null;
@@ -498,11 +462,21 @@ var EJPDFSignature = (function () {
                     return pdfSignatureLocale.categoryBasicSettings;
                 }
                 return defaultLocale.categoryBasicSettings;
+            case 'digitalidfile':
+                if (pdfSignatureLocale && pdfSignatureLocale.basicSettingsLabels.digitalIDFile) {
+                    return pdfSignatureLocale.basicSettingsLabels.digitalIDFile;
+                }
+                return defaultLocale.basicSettingsLabels.digitalIDFile;
             case 'prptyreason':
                 if (pdfSignatureLocale && pdfSignatureLocale.basicSettingsLabels.reason) {
                     return pdfSignatureLocale.basicSettingsLabels.reason;
                 }
                 return defaultLocale.basicSettingsLabels.reason;
+            case 'prptyreasoninput':
+                if (pdfSignatureLocale && pdfSignatureLocale.basicSettingsLabels.reasonLabel) {
+                    return pdfSignatureLocale.basicSettingsLabels.reasonLabel;
+                }
+                return defaultLocale.basicSettingsLabels.reasonLabel;
             case 'prptylocation':
                 if (pdfSignatureLocale && pdfSignatureLocale.basicSettingsLabels.location) {
                     return pdfSignatureLocale.basicSettingsLabels.location;
@@ -523,11 +497,6 @@ var EJPDFSignature = (function () {
                     return pdfSignatureLocale.basicSettingsLabels.contactInfo;
                 }
                 return defaultLocale.basicSettingsLabels.contactInfo;
-            case 'showdata':
-                if (pdfSignatureLocale && pdfSignatureLocale.basicSettingsLabels.showdata) {
-                    return pdfSignatureLocale.basicSettingsLabels.showdata;
-                }
-                return defaultLocale.basicSettingsLabels.showdata;
             case 'reasonvalue':
                 if (pdfSignatureLocale && pdfSignatureLocale.designPanelLabels.reason) {
                     return pdfSignatureLocale.designPanelLabels.reason;
@@ -573,11 +542,6 @@ var EJPDFSignature = (function () {
                     return pdfSignatureLocale.designPanelLabels.dateLabel;
                 }
                 return defaultLocale.designPanelLabels.dateLabel;
-            case 'defaulttxt':
-                if (pdfSignatureLocale && pdfSignatureLocale.designPanelLabels.defaultText) {
-                    return pdfSignatureLocale.designPanelLabels.defaultText;
-                }
-                return defaultLocale.designPanelLabels.defaultText;
             case 'btndisplaytext':
                 if (pdfSignatureLocale && pdfSignatureLocale.basicSettingsLabels.btnText) {
                     return pdfSignatureLocale.basicSettingsLabels.btnText;
@@ -588,6 +552,11 @@ var EJPDFSignature = (function () {
                     return pdfSignatureLocale.basicSettingsLabels.signatureLabel;
                 }
                 return defaultLocale.basicSettingsLabels.signatureLabel;
+            case 'reasontxt':
+                if (pdfSignatureLocale && pdfSignatureLocale.basicSettingsLabels.reasonTxt) {
+                    return pdfSignatureLocale.basicSettingsLabels.reasonTxt;
+                }
+                return defaultLocale.basicSettingsLabels.reasonTxt;
         }
         return text;
     };
@@ -624,18 +593,19 @@ EJPDFSignature.Locale['en-US'] = {
     categoryBasicSettings: 'Basic Settings',
     basicSettingsLabels: {
         reason: 'Show Reason',
+        digitalIDFile: 'Digital ID File',
+        reasonLabel: 'Reason',
         location: 'Show Location',
         date: 'Show Current Date',
         signatureLabel: 'Signature',
         btnText: 'Draw',
-        showdata: 'Show Data',
         contactInfo: 'Show Contact Info',
         signedName: 'Show Signed Name',
+        reasonTxt: 'I agree'
     },
     designPanelLabels: {
         reason: 'Your signing reason',
         location: 'Your signing location',
-        defaultText: 'Digital PDF Signature',
         contactInfo: 'Your contact info',
         signedName: 'Digitally signed by your common name',
         reasonLabel: 'Reason',
@@ -654,18 +624,19 @@ EJPDFSignature.Locale['en-AU'] = {
     categoryBasicSettings: 'Basic Settings',
     basicSettingsLabels: {
         reason: 'Show Reason',
+        digitalIDFile: 'Digital ID File',
+        reasonLabel: 'Reason',
         location: 'Show Location',
         date: 'Show Current Date',
         signatureLabel: 'Signature',
         btnText: 'Draw',
-        showdata: 'Show Data',
         contactInfo: 'Show Contact Info',
         signedName: 'Show Signed Name',
+        reasonTxt: 'I agree'
     },
     designPanelLabels: {
         reason: 'Your signed reason',
         location: 'Your signed location',
-        defaultText: 'Digital PDF Signature',
         contactInfo: 'Your contact Info',
         signedName: 'Your signed Name',
         reasonLabel: 'Reason',
@@ -684,18 +655,19 @@ EJPDFSignature.Locale['en-CA'] = {
     categoryBasicSettings: 'Basic Settings',
     basicSettingsLabels: {
         reason: 'Show Reason',
+        digitalIDFile: 'Digital ID File',
+        reasonLabel: 'Reason',
         location: 'Show Location',
         date: 'Show Current Date',
         signatureLabel: 'Signature',
         btnText: 'Draw',
-        showdata: 'Show Data',
         contactInfo: 'Show Contact Info',
         signedName: 'Show Signed Name',
+        reasonTxt: 'I agree'
     },
     designPanelLabels: {
         reason: 'Your signed reason',
         location: 'Your signed location',
-        defaultText: 'Digital PDF Signature',
         contactInfo: 'Your contact Info',
         signedName: 'Your signed Name',
         reasonLabel: 'Reason',
@@ -714,18 +686,19 @@ EJPDFSignature.Locale['de-DE'] = {
     categoryBasicSettings: 'Grundeinstellungen',
     basicSettingsLabels: {
         reason: 'Grund anzeigen',
+        digitalIDFile: 'Digitale ID-Datei',
+        reasonLabel: 'Grund',
         location: 'Ort anzeigen',
         date: 'Aktuelles Datum anzeigen',
         signatureLabel: 'Signatur',
         btnText: 'Zeichnen',
-        showdata: 'Daten anzeigen',
         contactInfo: 'Kontaktinfo anzeigen',
         signedName: 'Unterschriebenen Namen anzeigen',
+        reasonTxt: 'Ich stimme zu'
     },
     designPanelLabels: {
         reason: 'Ihr Signiergrund',
         location: 'Ihr Signierort',
-        defaultText: 'Digitale PDF-Signatur',
         contactInfo: 'Ihre Kontaktinformationen',
         signedName: 'Digital signiert von Ihrem allgemeinen Namen',
         reasonLabel: 'Grund',
@@ -744,18 +717,19 @@ EJPDFSignature.Locale['ar-AE'] = {
     categoryBasicSettings: 'الإعدادات الأساسية',
     basicSettingsLabels: {
         reason: 'إظهار السبب',
+        digitalIDFile: 'ملف الهوية الرقمية',
+        reasonLabel: 'سبب',
         location: 'إظهار الموقع',
         date: 'إظهار التاريخ الحالي',
         signatureLabel: 'التوقيع',
         btnText: 'رسم',
-        showdata: 'إظهار البيانات',
         contactInfo: 'إظهار معلومات الاتصال',
         signedName: 'إظهار الاسم الموقع',
+        reasonTxt: 'أنا موافق'
     },
     designPanelLabels: {
         reason: 'سبب توقيعك',
         location: 'موقع توقيعك',
-        defaultText: 'توقيع PDF رقمي',
         contactInfo: 'معلومات الاتصال الخاصة بك',
         signedName: 'تم التوقيع رقميًا بواسطة اسمك الشائع',
         reasonLabel: 'السبب',
@@ -774,18 +748,19 @@ EJPDFSignature.Locale['fr-FR'] = {
     categoryBasicSettings: 'Paramètres de base',
     basicSettingsLabels: {
         reason: 'Afficher la raison',
+        digitalIDFile: 'Fichier d\'identification numérique',
+        reasonLabel: 'Raison',
         location: 'Afficher le lieu',
         date: 'Afficher la date actuelle',
         signatureLabel: 'Signature',
         btnText: 'Dessiner',
-        showdata: 'Afficher les données',
         contactInfo: 'Afficher les informations de contact',
         signedName: 'Afficher le nom signé',
+        reasonTxt: 'Je suis d\'accord'
     },
     designPanelLabels: {
         reason: 'Votre raison de signature',
         location: 'Votre emplacement de signature',
-        defaultText: 'Signature numérique PDF',
         contactInfo: 'Vos informations de contact',
         signedName: 'Signé numériquement par votre nom commun',
         reasonLabel: 'Raison',
@@ -804,18 +779,19 @@ EJPDFSignature.Locale['fr-CA'] = {
     categoryBasicSettings: 'Paramètres de base',
     basicSettingsLabels: {
         reason: 'Afficher la raison',
+        digitalIDFile: 'Fichier d\'identification numérique',
+        reasonLabel: 'Raison',
         location: 'Afficher l’emplacement',
         date: 'Afficher la date actuelle',
         signatureLabel: 'Signature',
         btnText: 'Dessiner',
-        showdata: 'Afficher les données',
         contactInfo: 'Afficher les informations de contact',
         signedName: 'Afficher le nom signé',
+        reasonTxt: 'Je suis d\'accord'
     },
     designPanelLabels: {
         reason: 'Votre raison de signature',
         location: 'Votre emplacement de signature',
-        defaultText: 'Signature numérique PDF',
         contactInfo: 'Vos informations de contact',
         signedName: 'Signé numériquement par votre nom commun',
         reasonLabel: 'Raison',
@@ -834,18 +810,19 @@ EJPDFSignature.Locale['it-IT'] = {
     categoryBasicSettings: 'Impostazioni di base',
     basicSettingsLabels: {
         reason: 'Mostra motivo',
+        digitalIDFile: 'File dell\'ID digitale',
+        reasonLabel: 'Motivo',
         location: 'Mostra posizione',
         date: 'Mostra data corrente',
         signatureLabel: 'Firma',
         btnText: 'Disegna',
-        showdata: 'Mostra dati',
         contactInfo: 'Mostra informazioni di contatto',
         signedName: 'Mostra nome firmato',
+        reasonTxt: 'Sono d\'accordo'
     },
     designPanelLabels: {
         reason: 'Il motivo della tua firma',
         location: 'La tua posizione di firma',
-        defaultText: 'Firma digitale PDF',
         contactInfo: 'Le tue informazioni di contatto',
         signedName: 'Firmato digitalmente dal tuo nome comune',
         reasonLabel: 'Motivo',
@@ -864,18 +841,19 @@ EJPDFSignature.Locale['es-ES'] = {
     categoryBasicSettings: 'Configuración básica',
     basicSettingsLabels: {
         reason: 'Mostrar motivo',
+        digitalIDFile: 'Archivo de identificación digital',
+        reasonLabel: 'Motivo',
         location: 'Mostrar ubicación',
         date: 'Mostrar fecha actual',
         signatureLabel: 'Firma',
         btnText: 'Dibujar',
-        showdata: 'Mostrar datos',
         contactInfo: 'Mostrar información de contacto',
         signedName: 'Mostrar nombre firmado',
+        reasonTxt: 'Estoy de acuerdo'
     },
     designPanelLabels: {
         reason: 'Su motivo de firma',
         location: 'Su ubicación de firma',
-        defaultText: 'Firma digital en PDF',
         contactInfo: 'Su información de contacto',
         signedName: 'Firmado digitalmente por su nombre común',
         reasonLabel: 'Motivo',
@@ -894,18 +872,19 @@ EJPDFSignature.Locale['tr-TR'] = {
     categoryBasicSettings: 'Temel Ayarlar',
     basicSettingsLabels: {
         reason: 'Nedeni Göster',
+        digitalIDFile: 'Dijital kimlik dosyası',
+        reasonLabel: 'Nedeni',
         location: 'Konumu Göster',
         date: 'Geçerli Tarihi Göster',
         signatureLabel: 'İmza',
         btnText: 'Çiz',
-        showdata: 'Veriyi Göster',
         contactInfo: 'İletişim Bilgilerini Göster',
         signedName: 'İmzalanmış İsmi Göster',
+        reasonTxt: 'Kabul ediyorum'
     },
     designPanelLabels: {
         reason: 'İmza nedeniniz',
         location: 'İmza konumunuz',
-        defaultText: 'Dijital PDF İmzası',
         contactInfo: 'İletişim bilgileriniz',
         signedName: 'Genel adınızla dijital olarak imzalandı',
         reasonLabel: 'Neden',
@@ -920,22 +899,23 @@ EJPDFSignature.Locale['tr-TR'] = {
         title: 'PDF İmzası'
     }
 };
-EJPDFSignature.Locale['zh-CN'] = {
+EJPDFSignature.Locale['zh-Hans'] = {
     categoryBasicSettings: '基本设置',
     basicSettingsLabels: {
         reason: '显示原因',
+        digitalIDFile: '数字身份证文件',
+        reasonLabel: '原因',
         location: '显示位置',
         date: '显示当前日期',
         signatureLabel: '签名',
         btnText: '绘制',
-        showdata: '显示数据',
         contactInfo: '显示联系信息',
         signedName: '显示签名名称',
+        reasonTxt: '我同意'
     },
     designPanelLabels: {
         reason: '您的签署原因',
         location: '您的签署位置',
-        defaultText: '数字 PDF 签名',
         contactInfo: '您的联系信息',
         signedName: '由您的常用名进行数字签名',
         reasonLabel: '原因',
@@ -948,5 +928,160 @@ EJPDFSignature.Locale['zh-CN'] = {
         requirements: '将报告项添加到设计区域。',
         description: '此报告项用于添加 PDF 签名。',
         title: 'PDF 签名'
+    }
+};
+EJPDFSignature.Locale['he-IL'] = {
+    categoryBasicSettings: 'הגדרות בסיסיות',
+    basicSettingsLabels: {
+        reason: 'הצג סיבה',
+        digitalIDFile: 'קובץ מזהה דיגיטלי',
+        reasonLabel: 'לְנַמֵק',
+        location: 'הצג מיקום',
+        date: 'הצג תאריך נוכחי',
+        signatureLabel: 'חתימה',
+        btnText: 'צייר',
+        contactInfo: 'הצג פרטי קשר',
+        signedName: 'הצג שם חתום',
+        reasonTxt: 'אני מסכים'
+    },
+    designPanelLabels: {
+        reason: 'סיבת החתימה שלך',
+        location: 'מיקום החתימה שלך',
+        contactInfo: 'פרטי הקשר שלך',
+        signedName: 'נחתם דיגיטלית על ידי שמך הנפוץ',
+        reasonLabel: 'סיבה',
+        locationLabel: 'מיקום',
+        contactInfoLabel: 'פרטי קשר',
+        signedNameLabel: 'שם',
+        dateLabel: 'תאריך'
+    },
+    toolTip: {
+        requirements: 'הוסף פריט דוח לאזור המעצב.',
+        description: 'פריט דוח זה משמש להוספת חתימה על PDF.',
+        title: 'חתימה על PDF'
+    }
+};
+EJPDFSignature.Locale['ja-JP'] = {
+    categoryBasicSettings: '基本設定',
+    basicSettingsLabels: {
+        reason: '理由を表示',
+        digitalIDFile: 'デジタルIDファイル',
+        reasonLabel: '理由',
+        location: '場所を表示',
+        date: '現在の日付を表示',
+        signatureLabel: '署名',
+        btnText: '描画',
+        contactInfo: '連絡先情報を表示',
+        signedName: '署名者名を表示',
+        reasonTxt: '同意します'
+    },
+    designPanelLabels: {
+        reason: '署名理由',
+        location: '署名場所',
+        contactInfo: 'あなたの連絡先情報',
+        signedName: 'あなたの一般名でデジタル署名',
+        reasonLabel: '理由',
+        locationLabel: '場所',
+        contactInfoLabel: '連絡先',
+        signedNameLabel: '名前',
+        dateLabel: '日付'
+    },
+    toolTip: {
+        requirements: 'デザイナー領域にレポート項目を追加します。',
+        description: 'このレポート項目はPDF署名を追加するために使用されます。',
+        title: 'PDF署名'
+    }
+};
+EJPDFSignature.Locale['pt-PT'] = {
+    categoryBasicSettings: 'Configurações básicas',
+    basicSettingsLabels: {
+        reason: 'Mostrar motivo',
+        digitalIDFile: 'Arquivo de identificação digital',
+        reasonLabel: 'Motivo',
+        location: 'Mostrar localização',
+        date: 'Mostrar data atual',
+        signatureLabel: 'Assinatura',
+        btnText: 'Desenhar',
+        contactInfo: 'Mostrar informações de contacto',
+        signedName: 'Mostrar nome assinado',
+        reasonTxt: 'Concordo'
+    },
+    designPanelLabels: {
+        reason: 'O seu motivo de assinatura',
+        location: 'A sua localização de assinatura',
+        contactInfo: 'As suas informações de contacto',
+        signedName: 'Assinado digitalmente pelo seu nome comum',
+        reasonLabel: 'Motivo',
+        locationLabel: 'Localização',
+        contactInfoLabel: 'Contacto',
+        signedNameLabel: 'Nome',
+        dateLabel: 'Data'
+    },
+    toolTip: {
+        requirements: 'Adicione um item de relatório à área do designer.',
+        description: 'Este item de relatório é usado para adicionar uma assinatura PDF.',
+        title: 'Assinatura PDF'
+    }
+};
+EJPDFSignature.Locale['ru-RU'] = {
+    categoryBasicSettings: 'Основные настройки',
+    basicSettingsLabels: {
+        reason: 'Показать причину',
+        digitalIDFile: 'Файл цифрового удостоверения личности',
+        reasonLabel: 'Причина',
+        location: 'Показать местоположение',
+        date: 'Показать текущую дату',
+        signatureLabel: 'Подпись',
+        btnText: 'Рисовать',
+        contactInfo: 'Показать контактную информацию',
+        signedName: 'Показать имя подписавшего',
+        reasonTxt: 'Я согласен'
+    },
+    designPanelLabels: {
+        reason: 'Ваша причина подписи',
+        location: 'Ваше место подписи',
+        contactInfo: 'Ваша контактная информация',
+        signedName: 'Цифровая подпись вашим общим именем',
+        reasonLabel: 'Причина',
+        locationLabel: 'Местоположение',
+        contactInfoLabel: 'Контакт',
+        signedNameLabel: 'Имя',
+        dateLabel: 'Дата'
+    },
+    toolTip: {
+        requirements: 'Добавьте элемент отчета в область конструктора.',
+        description: 'Этот элемент отчета используется для добавления подписи PDF.',
+        title: 'PDF-подпись'
+    }
+};
+EJPDFSignature.Locale['zh-Hant'] = {
+    categoryBasicSettings: '基本設定',
+    basicSettingsLabels: {
+        reason: '顯示原因',
+        digitalIDFile: '數位身分證文件',
+        reasonLabel: '原因',
+        location: '顯示位置',
+        date: '顯示目前日期',
+        signatureLabel: '簽名',
+        btnText: '繪製',
+        contactInfo: '顯示聯絡資訊',
+        signedName: '顯示簽名者姓名',
+        reasonTxt: '我同意'
+    },
+    designPanelLabels: {
+        reason: '您的簽署原因',
+        location: '您的簽署位置',
+        contactInfo: '您的聯絡資訊',
+        signedName: '以您的通用名稱進行數位簽名',
+        reasonLabel: '原因',
+        locationLabel: '位置',
+        contactInfoLabel: '聯絡方式',
+        signedNameLabel: '姓名',
+        dateLabel: '日期'
+    },
+    toolTip: {
+        requirements: '將報告項目新增至設計區域。',
+        description: '此報告項目用於新增 PDF 簽名。',
+        title: 'PDF 簽名'
     }
 };

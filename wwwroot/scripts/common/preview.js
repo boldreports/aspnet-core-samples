@@ -24,7 +24,7 @@
     }
     document.querySelector(".splash").classList.add('e-hidden');
     document.querySelector('.ej-body.e-hidden').classList.remove('e-hidden');
-    if (reportRouterPath == "external-parameter-report") {
+    if (isExternalParameter(reportRouterPath)) {
         setReportsHeight();
     }
 })();

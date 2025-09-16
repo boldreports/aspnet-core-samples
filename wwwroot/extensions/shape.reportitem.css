@@ -4,3 +4,7 @@
     background-position: center;
     background-image: url('images/shapes.svg');
 }
+
+.e-rptdesigner-shape svg {
+    vertical-align: baseline;
+}

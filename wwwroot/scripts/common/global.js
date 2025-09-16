@@ -1,5 +1,5 @@
 ﻿function onToolbarRendering() {
-    if (this.element[0].baseURI.lastIndexOf('external-parameter-report') != -1) {
+    if (isExternalParameter(this.element[0].baseURI)) {
         this.model.toolbarSettings.toolbars = ej.ReportViewer.Toolbars.All & ~ej.ReportViewer.Toolbars.Vertical
     }
     if (this.element[0].baseURI.lastIndexOf('powerpoint-report') != -1) {
@@ -21,6 +21,15 @@
         // Need to remove the css (e-reportviewer-toolbarcontainer ul.e-ul:nth-child(4)) once the group index issue resolved
         cssClass: "e-show"
     }]
+}
+
+function isExternalParameter(pathOrUrl) {
+    const specialReports = [
+        'external-parameter-report',
+        'multi-language-report'
+    ];
+    pathOrUrl = pathOrUrl.toString();
+    return specialReports.some(report => pathOrUrl.indexOf(report) !== -1);
 }
 
 let destroyReport = true;

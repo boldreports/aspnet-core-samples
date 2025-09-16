@@ -77,15 +77,23 @@
             var prjDir = Path.GetFullPath(Path.Combine(folderPath));
             if (!string.IsNullOrEmpty(configPath) && File.Exists(configPath))
             {
-                XmlConfigurator.Configure(repository, new System.IO.FileInfo(configPath));
+                var fileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(Path.GetDirectoryName(configPath)); 
+                var fileInfo = fileProvider.GetFileInfo(Path.GetFileName(configPath));
+                using var configStream = fileInfo.CreateReadStream();
+                XmlConfigurator.Configure(repository, configStream);
             }
             else if (File.Exists(Path.Combine(prjDir, "log4net.config")))
             {
-                XmlConfigurator.Configure(repository, new System.IO.FileInfo(Path.Combine(prjDir, "log4net.config")));
+                var configFile = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(prjDir).GetFileInfo("log4net.config");
+                using var configStream = configFile.CreateReadStream();
+                XmlConfigurator.Configure(repository, configStream);
             }
             else if (File.Exists(Path.Combine(prjDir, "logs", "log4net.config")))
             {
-                XmlConfigurator.Configure(repository, new System.IO.FileInfo(Path.Combine(prjDir, "logs", "log4net.config")));
+                var fileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(Path.Combine(prjDir, "logs"));
+                var configFile = fileProvider.GetFileInfo("log4net.config");
+                using var configStream = configFile.CreateReadStream();
+                XmlConfigurator.Configure(repository, configStream);
             }
             else
             {

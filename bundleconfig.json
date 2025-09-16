@@ -10,7 +10,16 @@
       "wwwroot/scripts/dependent/bootstrap.min.js",
       "wwwroot/scripts/bold-reports/v2.0/common/bold.reports.common.min.js",
       "wwwroot/scripts/bold-reports/v2.0/common/bold.reports.widgets.min.js",
-      "wwwroot/scripts/bold-reports/v2.0/bold.report-viewer.min.js"
+      "wwwroot/scripts/bold-reports/v2.0/bold.report-viewer.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.en-US.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.fr-CA.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.de-DE.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.hi-IN.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.es-ES.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.nl-NL.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.ko-KR.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.he-IL.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.ru-RU.min.js"
     ],
     "minify": {
       "enabled": false,
@@ -70,7 +79,16 @@
       "wwwroot/scripts/extensions/signature.dialog.js",
       "wwwroot/scripts/extensions/shape.reportitem.js",
       "wwwroot/scripts/extensions/pdfdocument.reportitem.js",
-      "wwwroot/scripts/extensions/htmldocument.reportitem.js"
+      "wwwroot/scripts/extensions/htmldocument.reportitem.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.en-US.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.fr-CA.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.de-DE.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.hi-IN.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.es-ES.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.nl-NL.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.ko-KR.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.he-IL.min.js",
+      "wwwroot/scripts/bold-reports/v2.0/localization/l10n/ej.localetexts.ru-RU.min.js"
     ],
     "minify": {
       "enabled": false,

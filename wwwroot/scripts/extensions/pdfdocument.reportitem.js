@@ -40,7 +40,13 @@ var EJPdfDocument = (function () {
         }
         switch (name) {
             case 'DocumentValue':
-                this.updatePropertyVal(name, newValue);
+                if (typeof newValue === 'string') {
+                    this.updatePropertyVal(name, newValue);
+                }
+                else if (newValue) {
+                    newValue.id ? this.updatePropertyVal(name, newValue.id) : this.updatePropertyVal(name, '');
+                    newValue.name ? this.updatePropertyVal('DocumentName', newValue.name) : this.updatePropertyVal('DocumentName', '');
+                }
                 break;
             case 'Sizing':
                 this.updatePropertyVal(name, newValue);
@@ -48,6 +54,7 @@ var EJPdfDocument = (function () {
             case 'Source':
                 this.updatePropertyVal(name, newValue);
                 this.updatePropertyVal('DocumentValue', '');
+                this.updatePropertyVal('DocumentName', '');
                 this.updatePropertyUIValue('DocumentValue', '');
                 break;
         }
@@ -60,8 +67,11 @@ var EJPdfDocument = (function () {
                 if (source === 'URL') {
                     this.propertyPanel.updatePropertyUIValue('pdfurl', value, customId);
                 }
-                else {
+                else if (source === 'Database') {
                     this.propertyPanel.updatePropertyUIValue('pdfdatabase', value, customId);
+                }
+                else {
+                    this.propertyPanel.updatePropertyUIValue('pdfserver', value, customId);
                 }
                 break;
         }
@@ -100,11 +110,13 @@ var EJPdfDocument = (function () {
                         'ItemType': 'DropDown',
                         'ValueList': [
                             { text: 'url', value: 'URL' },
-                            { text: 'database', value: 'Database' }
+                            { text: 'database', value: 'Database' },
+                            { text: 'server', value: 'Server' }
                         ],
                         'DependentItems': [
-                            { EnableItems: ['basicsettings_pdfurl'], DisableItems: ['basicsettings_pdfdatabase'], Value: ['URL'] },
-                            { EnableItems: ['basicsettings_pdfdatabase'], DisableItems: ['basicsettings_pdfurl'], Value: ['Database'] }
+                            { EnableItems: ['basicsettings_pdfurl'], DisableItems: ['basicsettings_pdfdatabase', 'basicsettings_pdfserver'], Value: ['URL'] },
+                            { EnableItems: ['basicsettings_pdfdatabase'], DisableItems: ['basicsettings_pdfurl', 'basicsettings_pdfserver'], Value: ['Database'] },
+                            { EnableItems: ['basicsettings_pdfserver'], DisableItems: ['basicsettings_pdfurl', 'basicsettings_pdfdatabase'], Value: ['Server'] }
                         ]
                     },
                     {
@@ -124,7 +136,17 @@ var EJPdfDocument = (function () {
                         'Value': this.getPropertyVal('DocumentValue'),
                         'ItemType': 'ComboBox',
                         'SourceType': 'Fields',
-                        'EnableExpression': true
+                        'EnableExpression': true,
+                        'EnableSearch': true
+                    },
+                    {
+                        'ItemId': 'pdfserver',
+                        'Name': 'DocumentValue',
+                        'ParentId': 'basicsettings_pdfsource',
+                        'DisplayName': 'server',
+                        'Value': this.getPropertyVal('DocumentName'),
+                        'ItemType': 'FilePicker',
+                        'FileType': ['.pdf']
                     },
                     {
                         'ItemId': 'pdfsizing',
@@ -182,6 +204,7 @@ var EJPdfDocument = (function () {
         if (this.customJSON === null) {
             this.customJSON = new ej.ReportModel.CustomReportItem().getModel();
             this.setPropertyVal('DocumentValue', '');
+            this.setPropertyVal('DocumentName', '');
             this.setPropertyVal('Sizing', 'AutoSize');
             this.setPropertyVal('Source', 'URL');
         }
@@ -235,6 +258,11 @@ var EJPdfDocument = (function () {
                     return pdfLocale.sourceTypes.database;
                 }
                 return defaultLocale.sourceTypes.database;
+            case 'server':
+                if (pdfLocale && pdfLocale.sourceTypes && pdfLocale.sourceTypes.server) {
+                    return pdfLocale.sourceTypes.server;
+                }
+                return defaultLocale.sourceTypes.server;
             case 'auto':
                 if (pdfLocale && pdfLocale.sizeTypes && pdfLocale.sizeTypes.auto) {
                     return pdfLocale.sizeTypes.auto;
@@ -256,6 +284,7 @@ EJPdfDocument.Locale['en-US'] = {
     sourceTypes: {
         url: 'URL',
         database: 'Database',
+        server: 'Server'
     },
     categoryBasicSettings: 'Basic Settings',
     sizing: 'Sizing',
@@ -274,6 +303,7 @@ EJPdfDocument.Locale['ar-AE'] = {
     sourceTypes: {
         url: 'URL',
         database: 'قاعدة البيانات',
+        server: 'الخادم'
     },
     categoryBasicSettings: 'الإعدادات الأساسية',
     sizing: 'تغيير الحجم',
@@ -292,6 +322,7 @@ EJPdfDocument.Locale['fr-FR'] = {
     sourceTypes: {
         url: 'URL',
         database: 'Base de données',
+        server: 'Serveur'
     },
     categoryBasicSettings: 'Paramètres de base',
     sizing: 'Dimensionnement',
@@ -310,6 +341,7 @@ EJPdfDocument.Locale['de-DE'] = {
     sourceTypes: {
         url: 'URL',
         database: 'Datenbank',
+        server: 'Server'
     },
     categoryBasicSettings: 'Grundeinstellungen',
     sizing: 'Größenanpassung',
@@ -328,6 +360,7 @@ EJPdfDocument.Locale['en-AU'] = {
     sourceTypes: {
         url: 'URL',
         database: 'Database',
+        server: 'Server'
     },
     categoryBasicSettings: 'Basic Settings',
     sizing: 'Sizing',
@@ -346,6 +379,7 @@ EJPdfDocument.Locale['en-CA'] = {
     sourceTypes: {
         url: 'URL',
         database: 'Database',
+        server: 'Server'
     },
     categoryBasicSettings: 'Basic Settings',
     sizing: 'Sizing',
@@ -364,6 +398,7 @@ EJPdfDocument.Locale['es-ES'] = {
     sourceTypes: {
         url: 'URL',
         database: 'Base de datos',
+        server: 'Servidor'
     },
     categoryBasicSettings: 'Configuración básica',
     sizing: 'Tamaño',
@@ -382,6 +417,7 @@ EJPdfDocument.Locale['it-IT'] = {
     sourceTypes: {
         url: 'URL',
         database: 'Database',
+        server: 'Server'
     },
     categoryBasicSettings: 'Impostazioni di base',
     sizing: 'Ridimensionamento',
@@ -400,6 +436,7 @@ EJPdfDocument.Locale['fr-CA'] = {
     sourceTypes: {
         url: 'URL',
         database: 'Base de données',
+        server: 'Serveur'
     },
     categoryBasicSettings: 'Paramètres de base',
     sizing: 'Dimensionnement',
@@ -418,6 +455,7 @@ EJPdfDocument.Locale['tr-TR'] = {
     sourceTypes: {
         url: 'URL',
         database: 'Veritabanı',
+        server: 'Sunucu'
     },
     categoryBasicSettings: 'Temel Ayarlar',
     sizing: 'Boyutlandırma',
@@ -431,11 +469,12 @@ EJPdfDocument.Locale['tr-TR'] = {
         title: 'PDF'
     }
 };
-EJPdfDocument.Locale['zh-CN'] = {
+EJPdfDocument.Locale['zh-Hans'] = {
     source: '来源',
     sourceTypes: {
         url: 'URL',
         database: '数据库',
+        server: '服务器'
     },
     categoryBasicSettings: '基本设置',
     sizing: '调整大小',
@@ -446,6 +485,101 @@ EJPdfDocument.Locale['zh-CN'] = {
     toolTip: {
         requirements: '显示任何 PDF 文件',
         description: '在报告中显示 PDF 文档的内容',
+        title: 'PDF'
+    }
+};
+EJPdfDocument.Locale['he-IL'] = {
+    source: 'מקור',
+    sourceTypes: {
+        url: 'כתובת URL',
+        database: 'מסד נתונים',
+        server: 'שרת'
+    },
+    categoryBasicSettings: 'הגדרות בסיסיות',
+    sizing: 'גודל',
+    sizeTypes: {
+        auto: 'גודל אוטומטי',
+        fitPage: 'התאם לגודל הדף'
+    },
+    toolTip: {
+        requirements: 'הצגת קובץ PDF כלשהו',
+        description: 'הצגת תוכן מסמך ה-PDF בדוח',
+        title: 'PDF'
+    }
+};
+EJPdfDocument.Locale['ja-JP'] = {
+    source: 'ソース',
+    sourceTypes: {
+        url: 'URL',
+        database: 'データベース',
+        server: 'サーバ'
+    },
+    categoryBasicSettings: '基本設定',
+    sizing: 'サイズ設定',
+    sizeTypes: {
+        auto: '自動サイズ',
+        fitPage: 'ページサイズに合わせる'
+    },
+    toolTip: {
+        requirements: '任意のPDFファイルを表示',
+        description: 'レポートでPDFドキュメントの内容を表示します',
+        title: 'PDF'
+    }
+};
+EJPdfDocument.Locale['pt-PT'] = {
+    source: 'Fonte',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Base de dados',
+        server: 'Servidor'
+    },
+    categoryBasicSettings: 'Configurações básicas',
+    sizing: 'Dimensionamento',
+    sizeTypes: {
+        auto: 'Tamanho automático',
+        fitPage: 'Ajustar ao tamanho da página'
+    },
+    toolTip: {
+        requirements: 'Exibir qualquer ficheiro PDF',
+        description: 'Exibir o conteúdo do documento PDF no relatório',
+        title: 'PDF'
+    }
+};
+EJPdfDocument.Locale['ru-RU'] = {
+    source: 'Источник',
+    sourceTypes: {
+        url: 'URL',
+        database: 'База данных',
+        server: 'Сервер'
+    },
+    categoryBasicSettings: 'Основные настройки',
+    sizing: 'Размер',
+    sizeTypes: {
+        auto: 'Автоматический размер',
+        fitPage: 'Подогнать под размер страницы'
+    },
+    toolTip: {
+        requirements: 'Показать любой PDF-файл',
+        description: 'Показать содержимое PDF-документа в отчете',
+        title: 'PDF'
+    }
+};
+EJPdfDocument.Locale['zh-Hant'] = {
+    source: '來源',
+    sourceTypes: {
+        url: 'URL',
+        database: '資料庫',
+        server: '伺服器'
+    },
+    categoryBasicSettings: '基本設定',
+    sizing: '調整大小',
+    sizeTypes: {
+        auto: '自動大小',
+        fitPage: '符合頁面大小'
+    },
+    toolTip: {
+        requirements: '顯示任何 PDF 檔案',
+        description: '在報告中顯示 PDF 文件內容',
         title: 'PDF'
     }
 };

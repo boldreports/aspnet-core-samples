@@ -1,0 +1,73 @@
+@inject Globals globals;
+
+@section control {
+<form>
+    <div class="r-w-container" id="multi-language-container">
+        <div class="r-w-sample-container">
+            <ej-sample>
+                <bold-report-viewer id="reportviewer" report-service-url="@Globals.SERVICE_URL"
+                    report-path="multi-language-report.rdl" toolbar-rendering="onToolbarRendering"
+                    tool-bar-item-click="onToolBarItemClick" export-item-click="onExportItemClick"
+                    parameter-settings="ViewBag.parameterSettings" />
+            </ej-sample>
+        </div>
+        <div class="r-w-property-container">
+            <div id='spinner-container'></div>
+            <div class="r-w-property-title" style="visibility: hidden">Parameters</div>
+            <div class="r-w-property" style="visibility: hidden">
+                <div class="r-w-property-name" id="r-w-property-languages">Languages</div>
+                <div class="r-w-property-value">
+                    <input type="text" id="languages" />
+                </div>
+            </div>
+            <input type="button" id="update" class="r-w-genearte e-control e-btn e-lib e-primary" value="View Report" style="visibility: hidden" />
+        </div>
+    </div>
+</form>
+
+<script>
+    const languagesList = [{ Name: "English", languageId: "en-US" }, { Name: "French", languageId: "fr-CA" }, { Name: "German", languageId: "de-DE" }, { Name: "Hindi", languageId: "hi-IN" }, { Name: "Spanish", languageId: "es-ES" }, { Name: "Dutch", languageId: "nl-NL" }, { Name: "Korean", languageId: "ko-KR" }, { Name: "Hebrew", languageId: "he-IL" }, { Name: "Russian", languageId: "ru-RU" }];
+    ejs.popups.createSpinner({ target: document.getElementById("spinner-container") });
+    ejs.popups.showSpinner(document.getElementById("spinner-container"));
+    const languages = new ejs.dropdowns.DropDownList({
+        dataSource: languagesList,
+        fields: {
+            text: "Name",
+            value: "languageId",
+        },
+        index: 0,
+        width: "180px",
+        height: "10px",
+        showClearButton: false
+    });
+    languages.appendTo('#languages');
+    ejs.popups.hideSpinner(document.getElementById("spinner-container"));
+    $(".r-w-property-title, .r-w-property, .r-w-genearte").css("visibility", "visible");
+    $("#update").on("click", function () {
+        updateViewer();
+    });
+    function updateViewer(){
+        const reportViewer = $("#reportviewer").boldReportViewer("instance");
+        const selectedLanguageId = languages.value.toString();
+        const selectedLanguage = languagesList.find(lang => lang.languageId === selectedLanguageId);
+        const parameters = [{ name: 'Language', labels: [selectedLanguage.Name], values: [selectedLanguage.Name] }];
+        reportViewer.model.parameters = parameters;
+        reportViewer.reload();
+        reportViewer.setModel({'locale': selectedLanguageId});
+    }
+</script>
+}
+@section description {
+    <div id="description">
+        <p>
+            This demo showcases a Multi Language Report that allows users to view report in various languages using the ASP.NET Core Bold Report Viewer. Select a language from the dropdown and click "View Report" to see the report content in the selected language.
+        </p>
+        <p>
+            Ensure that the report is designed to support multiple languages and that the necessary localization resources are available.
+        </p>
+        <p>
+            For detailed guidance on implementing localization, refer to the <a href="https://help.boldreports.com/embedded-reporting/aspnet-core-reporting/report-viewer/localization/"
+                                                                                                                            target="_blank" rel="noreferrer">documentation</a>.
+        </p>
+    </div>
+}

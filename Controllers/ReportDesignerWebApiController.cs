@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -24,6 +25,7 @@ namespace ReportsCoreSamples.Controllers
     {
         private Microsoft.Extensions.Caching.Memory.IMemoryCache _cache;
         private IWebHostEnvironment _hostingEnvironment;
+        private readonly IConfiguration _configuration; 
         internal ReportHelperSettings _helperSettings = null;
         internal ExternalServer Server
         {
@@ -41,10 +43,11 @@ namespace ReportsCoreSamples.Controllers
             set { this._helperSettings = value; }
         }
 
-        public ReportDesignerWebApiController(Microsoft.Extensions.Caching.Memory.IMemoryCache memoryCache, IWebHostEnvironment hostingEnvironment)
+        public ReportDesignerWebApiController(Microsoft.Extensions.Caching.Memory.IMemoryCache memoryCache, IWebHostEnvironment hostingEnvironment, IConfiguration configuration)
         {
             _cache = memoryCache;
             _hostingEnvironment = hostingEnvironment;
+            _configuration = configuration;
             ExternalServer externalServer = new ExternalServer(_hostingEnvironment);
             this.Server = externalServer;
             this.ServerURL = "Sample";
@@ -77,13 +80,15 @@ namespace ReportsCoreSamples.Controllers
 
                     for (var index = 0; index < dirs.Length; index++)
                     {
-                        string[] files = Directory.GetFiles(dirs[index]);
+                        var dirProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(dirs[index]);
+                        var files = dirProvider.GetDirectoryContents("").Where(f => !f.IsDirectory).Select(f => Path.Combine(dirs[index], f.Name)).ToArray();
 
                         var fileCount = 0;
                         for (var fileIndex = 0; fileIndex < files.Length; fileIndex++)
                         {
-                            FileInfo fi = new FileInfo(files[fileIndex]);
-                            if (fi.LastAccessTimeUtc < DateTime.UtcNow.AddDays(-2))
+                            var fileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(Path.GetDirectoryName(files[fileIndex]));
+                            var fileInfo = fileProvider.GetFileInfo(Path.GetFileName(files[fileIndex]));
+                            if (fileInfo.Exists && fileInfo.LastModified < DateTimeOffset.UtcNow.AddDays(-2))
                             {
                                 fileCount++;
                             }
@@ -118,7 +123,8 @@ namespace ReportsCoreSamples.Controllers
             reportOption.ReportModel.ReportingServer = this.Server;
             reportOption.ReportModel.ReportServerUrl = this.ServerURL;
             reportOption.ReportModel.EmbedImageData = true;
-            reportOption.ReportModel.ReportServerCredential = new NetworkCredential("Sample", "Passwprd");
+            reportOption.ReportModel.ReportServerCredential = new NetworkCredential(_configuration["reportServer:userName"], _configuration["reportServer:password"]);
+            reportOption.ReportModel.ExportResources.BrowserExecutablePath = Path.Combine(_hostingEnvironment.WebRootPath, "puppeteer", "Win-901912", "chrome-win");
 
             if (reportOption.ReportModel.FontSettings == null)
             {
@@ -145,7 +151,7 @@ namespace ReportsCoreSamples.Controllers
         {
             return ReportDesignerHelper.ProcessDesigner(null, this, null, this._cache);
         }
-
+        
         [HttpPost]
         public object PostFormReportAction()
         {
@@ -203,7 +209,6 @@ namespace ReportsCoreSamples.Controllers
                         {
                             System.IO.File.Delete(writePath);
                         }
-
                         System.IO.File.WriteAllBytes(writePath, bytes);
                         stream.Close();
                         stream.Dispose();

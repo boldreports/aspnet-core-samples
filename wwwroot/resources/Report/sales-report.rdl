@@ -1,24 +1,36 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition">
   <ReportSections>
     <ReportSection>
       <Body>
-        <Style>
-          <BackgroundColor>White</BackgroundColor>
-          <FontFamily>Arial</FontFamily>
-        </Style>
+        <Height>57pt</Height>
         <ReportItems>
           <Tablix Name="Tablix2">
-            <Left>9.72pt</Left>
-            <Top>9.72pt</Top>
-            <Height>54pt</Height>
+            <Left>9.71484pt</Left>
+            <Top>0pt</Top>
+            <Height>57pt</Height>
             <Width>540pt</Width>
             <Style>
               <FontFamily>Arial</FontFamily>
               <Border>
-                <Style>None</Style>
+                <Color>#181c2c</Color>
+                <Style>Solid</Style>
               </Border>
             </Style>
+            <CustomProperties>
+              <CustomProperty>
+                <Name>MaxRowCount</Name>
+                <Value>1000000</Value>
+              </CustomProperty>
+              <CustomProperty>
+                <Name>MaxColumnCount</Name>
+                <Value>20</Value>
+              </CustomProperty>
+              <CustomProperty>
+                <Name>Border-Radius</Name>
+                <Value>6</Value>
+              </CustomProperty>
+            </CustomProperties>
             <DataSetName>SalesOrderDetail</DataSetName>
             <TablixBody>
               <TablixColumns>
@@ -53,7 +65,7 @@
                           <Height>18pt</Height>
                           <Width>79.5pt</Width>
                           <Style>
-                            <BackgroundColor>#e3e6ea</BackgroundColor>
+                            <BackgroundColor>#160b34</BackgroundColor>
                             <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
@@ -62,9 +74,10 @@
                             <PaddingBottom>2pt</PaddingBottom>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                           </Style>
+                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -73,8 +86,9 @@
                                   <Value>Item Number</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>9.99998pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>black</Color>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -85,8 +99,8 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -97,7 +111,7 @@
                           <Height>18pt</Height>
                           <Width>146.25pt</Width>
                           <Style>
-                            <BackgroundColor>#e3e6ea</BackgroundColor>
+                            <BackgroundColor>#160b34</BackgroundColor>
                             <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
@@ -106,9 +120,10 @@
                             <PaddingBottom>2pt</PaddingBottom>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                           </Style>
+                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -117,271 +132,9 @@
                                   <Value>Description</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>9.99998pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>black</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                        </Textbox>
-                        <ColSpan>1</ColSpan>
-                        <RowSpan>1</RowSpan>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox135">
-                          <Left>0in</Left>
-                          <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>105.75pt</Width>
-                          <Style>
-                            <BackgroundColor>#e3e6ea</BackgroundColor>
-                            <FontFamily>Arial</FontFamily>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>4pt</PaddingLeft>
-                            <PaddingRight>4pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                          </Style>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Tracking No.</Value>
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>black</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                        </Textbox>
-                        <ColSpan>1</ColSpan>
-                        <RowSpan>1</RowSpan>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox1">
-                          <Left>0in</Left>
-                          <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>36pt</Width>
-                          <Style>
-                            <BackgroundColor>#e3e6ea</BackgroundColor>
-                            <FontFamily>Arial</FontFamily>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>4pt</PaddingLeft>
-                            <PaddingRight>4pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                          </Style>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Qty</Value>
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>black</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                        </Textbox>
-                        <ColSpan>1</ColSpan>
-                        <RowSpan>1</RowSpan>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox136">
-                          <Left>0in</Left>
-                          <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>67.5pt</Width>
-                          <Style>
-                            <BackgroundColor>#e3e6ea</BackgroundColor>
-                            <FontFamily>Arial</FontFamily>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>4pt</PaddingLeft>
-                            <PaddingRight>4pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                          </Style>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Unit Price</Value>
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>black</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                        </Textbox>
-                        <ColSpan>1</ColSpan>
-                        <RowSpan>1</RowSpan>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox142">
-                          <Left>0in</Left>
-                          <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>104.25pt</Width>
-                          <Style>
-                            <BackgroundColor>#e3e6ea</BackgroundColor>
-                            <FontFamily>Arial</FontFamily>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>4pt</PaddingLeft>
-                            <PaddingRight>4pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                          </Style>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Item Total</Value>
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>black</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                        </Textbox>
-                        <ColSpan>1</ColSpan>
-                        <RowSpan>1</RowSpan>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>18pt</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="ShipAddress">
-                          <Left>0in</Left>
-                          <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>79.5pt</Width>
-                          <Style>
-                            <FontFamily>Arial</FontFamily>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>4pt</PaddingLeft>
-                            <PaddingRight>4pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                          </Style>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!ProductNumber.Value</Value>
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily>Arial</FontFamily>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                        </Textbox>
-                        <ColSpan>1</ColSpan>
-                        <RowSpan>1</RowSpan>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Freight">
-                          <Left>0in</Left>
-                          <Top>0in</Top>
-                          <Height>18pt</Height>
-                          <Width>146.25pt</Width>
-                          <Style>
-                            <FontFamily>Arial</FontFamily>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>4pt</PaddingLeft>
-                            <PaddingRight>4pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                          </Style>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Name.Value</Value>
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <Format>C</Format>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -392,18 +145,19 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="ShippedDate">
+                        <Textbox Name="Textbox135">
                           <Left>0in</Left>
                           <Top>0in</Top>
                           <Height>18pt</Height>
                           <Width>105.75pt</Width>
                           <Style>
+                            <BackgroundColor>#160b34</BackgroundColor>
                             <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
@@ -412,18 +166,21 @@
                             <PaddingBottom>2pt</PaddingBottom>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                           </Style>
+                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!CarrierTrackingNumber.Value</Value>
+                                  <Value>Tracking No.</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <Format>d</Format>
+                                    <FontSize>9.99998pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -434,18 +191,19 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox2">
+                        <Textbox Name="Textbox1">
                           <Left>0in</Left>
                           <Top>0in</Top>
                           <Height>18pt</Height>
                           <Width>36pt</Width>
                           <Style>
+                            <BackgroundColor>#160b34</BackgroundColor>
                             <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
@@ -454,17 +212,21 @@
                             <PaddingBottom>2pt</PaddingBottom>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                           </Style>
+                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!OrderQty.Value</Value>
+                                  <Value>Qty</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>9.99998pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -475,18 +237,19 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="ShipCity">
+                        <Textbox Name="Textbox136">
                           <Left>0in</Left>
                           <Top>0in</Top>
                           <Height>18pt</Height>
                           <Width>67.5pt</Width>
                           <Style>
+                            <BackgroundColor>#160b34</BackgroundColor>
                             <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
@@ -495,39 +258,44 @@
                             <PaddingBottom>2pt</PaddingBottom>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                           </Style>
+                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!UnitPrice.Value</Value>
+                                  <Value>Unit Price</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <FontSize>9.99998pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="LineTotal">
+                        <Textbox Name="Textbox142">
                           <Left>0in</Left>
                           <Top>0in</Top>
                           <Height>18pt</Height>
                           <Width>104.25pt</Width>
                           <Style>
+                            <BackgroundColor>#160b34</BackgroundColor>
                             <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
@@ -536,18 +304,21 @@
                             <PaddingBottom>2pt</PaddingBottom>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                           </Style>
+                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!OrderQty.Value*Round(Fields!UnitPrice.Value,2)</Value>
+                                  <Value>Item Total</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <FontSize>9.99998pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -558,8 +329,286 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>21pt</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ShipAddress">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>21pt</Height>
+                          <Width>79.5pt</Width>
+                          <Style>
+                            <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2, "#FCFDFD", "#F5F5F9")</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>4pt</PaddingLeft>
+                            <PaddingRight>4pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ProductNumber.Value</Value>
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>9.99998pt</FontSize>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Freight">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>21pt</Height>
+                          <Width>146.25pt</Width>
+                          <Style>
+                            <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2, "#FCFDFD", "#F5F5F9")</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>4pt</PaddingLeft>
+                            <PaddingRight>4pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Name.Value</Value>
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>9.99998pt</FontSize>
+                                    <Format>C</Format>
+                                    <rd:FormatType />
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ShippedDate">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>21pt</Height>
+                          <Width>105.75pt</Width>
+                          <Style>
+                            <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2, "#FCFDFD", "#F5F5F9")</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>4pt</PaddingLeft>
+                            <PaddingRight>4pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CarrierTrackingNumber.Value</Value>
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>9.99998pt</FontSize>
+                                    <Format>d</Format>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox2">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>21pt</Height>
+                          <Width>36pt</Width>
+                          <Style>
+                            <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2, "#FCFDFD", "#F5F5F9")</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>4pt</PaddingLeft>
+                            <PaddingRight>4pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!OrderQty.Value</Value>
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>9.99998pt</FontSize>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ShipCity">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>21pt</Height>
+                          <Width>67.5pt</Width>
+                          <Style>
+                            <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2, "#FCFDFD", "#F5F5F9")</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>4pt</PaddingLeft>
+                            <PaddingRight>4pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!UnitPrice.Value</Value>
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>9.99998pt</FontSize>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LineTotal">
+                          <Left>0in</Left>
+                          <Top>0in</Top>
+                          <Height>21pt</Height>
+                          <Width>104.25pt</Width>
+                          <Style>
+                            <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2, "#FCFDFD", "#F5F5F9")</BackgroundColor>
+                            <FontFamily>Arial</FontFamily>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>4pt</PaddingLeft>
+                            <PaddingRight>4pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!OrderQty.Value*Round(Fields!UnitPrice.Value,2)</Value>
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>9.99998pt</FontSize>
+                                    <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily>Arial</FontFamily>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                        </Textbox>
+                        <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -575,7 +624,7 @@
                           <Height>18pt</Height>
                           <Width>435pt</Width>
                           <Style>
-                            <BackgroundColor>#f2f0f0</BackgroundColor>
+                            <BackgroundColor>#160b34</BackgroundColor>
                             <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
@@ -584,9 +633,10 @@
                             <PaddingBottom>2pt</PaddingBottom>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                           </Style>
+                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -595,7 +645,9 @@
                                   <Value>Total</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>9.99998pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -606,8 +658,8 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>5</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>5</ColSpan>
                       </CellContents>
                     </TablixCell>
                     <TablixCell />
@@ -622,7 +674,7 @@
                           <Height>18pt</Height>
                           <Width>104.25pt</Width>
                           <Style>
-                            <BackgroundColor>#f2f0f0</BackgroundColor>
+                            <BackgroundColor>#160b34</BackgroundColor>
                             <FontFamily>Arial</FontFamily>
                             <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>4pt</PaddingLeft>
@@ -631,9 +683,10 @@
                             <PaddingBottom>2pt</PaddingBottom>
                             <Border>
                               <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                           </Style>
+                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -642,8 +695,10 @@
                                   <Value>=Sum(Fields!OrderQty.Value*Round(Fields!UnitPrice.Value,2))</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>9.99998pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                    <Color>#ffffff</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -654,8 +709,8 @@
                             </Paragraph>
                           </Paragraphs>
                         </Textbox>
-                        <ColSpan>1</ColSpan>
                         <RowSpan>1</RowSpan>
+                        <ColSpan>1</ColSpan>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -688,20 +743,17 @@
             </TablixRowHierarchy>
           </Tablix>
         </ReportItems>
-        <Height>73.44pt</Height>
+        <Style>
+          <BackgroundColor>White</BackgroundColor>
+          <FontFamily>Arial</FontFamily>
+        </Style>
       </Body>
       <Width>559.44pt</Width>
       <Page>
         <PageHeight>841.68pt</PageHeight>
         <PageWidth>595.44pt</PageWidth>
         <PageHeader>
-          <Style>
-            <FontFamily>Arial</FontFamily>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-          <Height>37.5pt</Height>
+          <Height>48.75pt</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -741,7 +793,7 @@
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>12pt</FontSize>
                             <FontWeight>Bold</FontWeight>
-                            <Color>#FFFFFF</Color>
+                            <Color>#ffffff</Color>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -756,8 +808,17 @@
               <KeepTogether>true</KeepTogether>
             </Rectangle>
           </ReportItems>
+          <Style>
+            <FontFamily>Arial</FontFamily>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
         </PageHeader>
         <PageFooter>
+          <Height>9.72pt</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
           <Style>
             <BackgroundColor>White</BackgroundColor>
             <FontFamily>Arial</FontFamily>
@@ -765,9 +826,6 @@
               <Style>None</Style>
             </Border>
           </Style>
-          <Height>9.72pt</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
         </PageFooter>
         <LeftMargin>18pt</LeftMargin>
         <RightMargin>18pt</RightMargin>
@@ -780,7 +838,6 @@
     </ReportSection>
   </ReportSections>
   <Description>This report showcases the complete details of sales orders in Adventure Works.</Description>
-  <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="AdventureWorks">
       <rd:SecurityType>None</rd:SecurityType>
@@ -790,6 +847,16 @@
   </DataSources>
   <DataSets>
     <DataSet Name="SalesOrderDetail">
+      <Query>
+        <DataSourceName>AdventureWorks</DataSourceName>
+        <CommandText>SELECT Top 1000 SOD.SalesOrderDetailID, SOD.OrderQty, SOD.UnitPrice, 
+            CASE WHEN SOD.UnitPriceDiscount IS NULL THEN 0 ELSE SOD.UnitPriceDiscount END AS UnitPriceDiscount, 
+            SOD.LineTotal, SOD.CarrierTrackingNumber, SOD.SalesOrderID, P.Name, P.ProductNumber
+FROM        Sales.SalesOrderDetail SOD INNER JOIN
+            Production.Product P ON SOD.ProductID = P.ProductID INNER JOIN
+            Sales.SalesOrderHeader SOH ON SOD.SalesOrderID = SOH.SalesOrderID
+			WHERE SOD.CarrierTrackingNumber IS NOT NULL</CommandText>
+      </Query>
       <Fields>
         <Field Name="SalesOrderDetailID">
           <DataField>SalesOrderDetailID</DataField>
@@ -828,17 +895,6 @@
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
-      <Query>
-        <DataSourceName>AdventureWorks</DataSourceName>
-        <CommandType>Text</CommandType>
-        <CommandText>SELECT Top 100 SOD.SalesOrderDetailID, SOD.OrderQty, SOD.UnitPrice, 
-            CASE WHEN SOD.UnitPriceDiscount IS NULL THEN 0 ELSE SOD.UnitPriceDiscount END AS UnitPriceDiscount, 
-            SOD.LineTotal, SOD.CarrierTrackingNumber, SOD.SalesOrderID, P.Name, P.ProductNumber
-FROM        Sales.SalesOrderDetail SOD INNER JOIN
-            Production.Product P ON SOD.ProductID = P.ProductID INNER JOIN
-            Sales.SalesOrderHeader SOH ON SOD.SalesOrderID = SOH.SalesOrderID
-			WHERE SOD.CarrierTrackingNumber IS NOT NULL</CommandText>
-      </Query>
     </DataSet>
   </DataSets>
   <ReportParametersLayout>
