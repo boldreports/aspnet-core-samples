@@ -663,6 +663,19 @@ var SignatureDialog = (function () {
 }());
 SignatureDialog.Locale = {};
 SignatureDialog.Instance = new SignatureDialog();
+SignatureDialog.Locale['en-NZ'] = {
+    cancel: 'Cancel',
+    closeToolTip: 'Close',
+    clear: 'Clear',
+    ok: 'OK',
+    title: 'Signature',
+    strokeColor: 'Stroke Colour',
+    strokeWidth: 'Stroke Width',
+    crop: 'Crop',
+    ariaLabelCanvas: 'Canvas area to draw your signature',
+    ariaLabelCrop: 'Crop the signature',
+    ariaLabelClear: 'Clear the signature'
+};
 SignatureDialog.Locale['en-US'] = {
     cancel: 'Cancel',
     closeToolTip: 'Close',

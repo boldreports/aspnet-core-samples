@@ -969,6 +969,45 @@ EJShape.Locale['ar-AE'] = {
         title: 'Shape'
     }
 };
+EJShape.Locale['en-NZ'] = {
+    basicSettings: {
+        categoryName: 'Basic Settings',
+        shapeType: 'Shapes',
+        rotationAngle: 'Rotation Angle',
+        starCount: 'Star Count',
+        concavity: 'Concavity',
+        arrowHeight: 'Arrow Height',
+        arrowWidth: 'Arrow Width',
+        lineStyle: 'Line Style',
+        fillColor: 'Fill Colour',
+        shapeTypes: {
+            ellipse: 'Ellipse',
+            triangle: 'Triangle',
+            rightAngleTriangle: 'Right Angle Triangle',
+            rectangle: 'Rectangle',
+            hexagon: 'Hexagon',
+            pentagon: 'Pentagon',
+            octagon: 'Octagon',
+            star: 'Star',
+            leftArrow: 'Left Arrow',
+            rightArrow: 'Right Arrow',
+            upArrow: 'Up Arrow',
+            downArrow: 'Down Arrow'
+        },
+        lineStyles: {
+            dashed: 'Dashed',
+            dotted: 'Dotted',
+            dashdotdot: 'Dash Dot Dot',
+            dashdot: 'Dash Dot',
+            solid: 'Solid'
+        }
+    },
+    toolTip: {
+        requirements: 'Display items in Shapes',
+        description: 'Visualise data with customisable shapes.',
+        title: 'Shape'
+    }
+};
 EJShape.Locale['en-US'] = {
     basicSettings: {
         categoryName: 'Basic Settings',

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -125,6 +125,22 @@ namespace ReportsCoreSamples
             {
                 app.UseDeveloperExceptionPage();
             }
+            // Add trailing slash middleware - dynamically skip ALL API routes
+            app.Use(async (context, next) =>
+            {
+                var pathBase = context.Request.PathBase;
+                var path = context.Request.Path.Value;
+                string[] reportKeywords = ["report-viewer", "report-designer", "report-writer"];
+                bool isReportRoute = reportKeywords.Any(keyword => path.Contains(keyword, StringComparison.OrdinalIgnoreCase));
+                if (isReportRoute  && !string.IsNullOrEmpty(path) && path != "/" && !path.EndsWith('/') && !Path.HasExtension(path) && !path.Contains("report-writer/generate", StringComparison.OrdinalIgnoreCase))
+                {
+                    var query = context.Request.QueryString.Value;
+                    var destination = $"{pathBase}{path}/{query}";
+                    context.Response.Redirect(destination, permanent: true);
+                    return;
+                }
+                await next();
+            });
             app.UseMiddleware<CSRFHandler>();
             app.UseResponseCompression();
             app.UseFileServer();

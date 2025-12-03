@@ -46,14 +46,31 @@
     $("#update").on("click", function () {
         updateViewer();
     });
+    const tooltipLocales = {
+        "en-US": { header: "Edit Report", content: "Edit this report in designer" },
+        "fr-CA": { header: "Modifier le rapport", content: "Modifier ce rapport dans le concepteur" },
+        "de-DE": { header: "Bericht bearbeiten", content: "Bearbeiten Sie diesen Bericht im Designer" },
+        "hi-IN": { header: "रिपोर्ट संपादित करें", content: "इस रिपोर्ट को डिज़ाइनर में संपादित करें" },
+        "es-ES": { header: "Editar informe", content: "Editar este informe en el diseñador" },
+        "nl-NL": { header: "Rapport bewerken", content: "Bewerk dit rapport in de ontwerper" },
+        "ko-KR": { header: "보고서 편집", content: "디자이너에서 이 보고서를 편집합니다" },
+        "he-IL": { header: "ערוך דוח", content: "ערוך דוח זה במעצב" },
+        "ru-RU": { header: "Редактировать отчет", content: "Редактировать этот отчет в дизайнере" }
+    };
     function updateViewer(){
         const reportViewer = $("#reportviewer").boldReportViewer("instance");
         const selectedLanguageId = languages.value.toString();
+        const tooltipData = tooltipLocales[selectedLanguageId];
         const selectedLanguage = languagesList.find(lang => lang.languageId === selectedLanguageId);
         const parameters = [{ name: 'Language', labels: [selectedLanguage.Name], values: [selectedLanguage.Name] }];
         reportViewer.model.parameters = parameters;
         reportViewer.reload();
         reportViewer.setModel({'locale': selectedLanguageId});
+        const item = reportViewer.model.toolbarSettings.customGroups[0].items[0];
+        item.tooltip = {
+            header: tooltipData.header,
+            content: tooltipData.content
+        };
     }
 </script>
 }

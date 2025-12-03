@@ -1,0 +1,23 @@
+@inject Globals globals;
+@section control {
+    <bold-report-viewer id="reportviewer" report-service-url="@Globals.SERVICE_URL" report-path="hr-payroll.rdl" toolbar-rendering="onToolbarRendering" tool-bar-item-click="onToolBarItemClick" export-item-click="onExportItemClick" />
+}
+@section description {
+    <div id="description">
+        <p>
+            The HR Payroll report provides a comprehensive overview of employee compensation, departmental performance, and leave management. It helps HR teams analyze payroll trends and make informed decisions.
+        </p>
+        <ul>
+            <li>Displays <code>gross salary</code>, <code>net salary</code>, and <code>deductions</code> across departments.</li>
+            <li>Visualizes <code>Loss of Pay (LOP)</code>breakdown by leave type: sick, good, and compensation leave.</li>
+            <li>Includes <code>employee demographics</code> such as gender distribution and contract types.</li>
+            <li>Summarizes leave availability for sick and casual leave by department.</li>
+            <li>Highlights <code>average performance</code> and employee count per department.</li>
+        </ul>
+        <p>
+            For more information on how dynamic image report items enhance customization in multi-company HR reports, refer to this 
+            <a href="https://help.boldreports.com/enterprise-reporting/designer-guide/report-designer/image-manager/"
+                target="_blank" rel="noreferrer">documentation</a> section.
+        </p>
+    </div>
+}

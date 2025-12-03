@@ -43,9 +43,8 @@ var EJPdfDocument = (function () {
                 if (typeof newValue === 'string') {
                     this.updatePropertyVal(name, newValue);
                 }
-                else if (newValue) {
-                    newValue.id ? this.updatePropertyVal(name, newValue.id) : this.updatePropertyVal(name, '');
-                    newValue.name ? this.updatePropertyVal('DocumentName', newValue.name) : this.updatePropertyVal('DocumentName', '');
+                else {
+                    this.setFileName(newValue);
                 }
                 break;
             case 'Sizing':
@@ -54,7 +53,6 @@ var EJPdfDocument = (function () {
             case 'Source':
                 this.updatePropertyVal(name, newValue);
                 this.updatePropertyVal('DocumentValue', '');
-                this.updatePropertyVal('DocumentName', '');
                 this.updatePropertyUIValue('DocumentValue', '');
                 break;
         }
@@ -71,7 +69,7 @@ var EJPdfDocument = (function () {
                     this.propertyPanel.updatePropertyUIValue('pdfdatabase', value, customId);
                 }
                 else {
-                    this.propertyPanel.updatePropertyUIValue('pdfserver', value, customId);
+                    this.propertyPanel.updatePropertyUIValue('pdfserver', { FilePath: value }, customId);
                 }
                 break;
         }
@@ -144,9 +142,10 @@ var EJPdfDocument = (function () {
                         'Name': 'DocumentValue',
                         'ParentId': 'basicsettings_pdfsource',
                         'DisplayName': 'server',
-                        'Value': this.getPropertyVal('DocumentName'),
-                        'ItemType': 'FilePicker',
-                        'FileType': ['.pdf']
+                        'Value': this.getFileName(),
+                        'ItemType': 'LinkReport',
+                        'EnableExpression': false,
+                        'ExtType': 'pdf'
                     },
                     {
                         'ItemId': 'pdfsizing',
@@ -165,6 +164,14 @@ var EJPdfDocument = (function () {
         this.updateItemVisibility(baseProperties.Items, ['backgroundcolor'], false);
         baseProperties.Items = $.merge(itemProperties, baseProperties.Items);
         return baseProperties;
+    };
+    EJPdfDocument.prototype.getFileName = function () {
+        return {
+            FilePath: this.getPropertyVal('DocumentValue')
+        };
+    };
+    EJPdfDocument.prototype.setFileName = function (value) {
+        this.updatePropertyVal('DocumentValue', value && value.FilePath ? value.FilePath : '');
     };
     EJPdfDocument.prototype.updateItemVisibility = function (categories, itemId, newValue) {
         for (var index = 0; index < categories.length; index++) {
@@ -204,7 +211,6 @@ var EJPdfDocument = (function () {
         if (this.customJSON === null) {
             this.customJSON = new ej.ReportModel.CustomReportItem().getModel();
             this.setPropertyVal('DocumentValue', '');
-            this.setPropertyVal('DocumentName', '');
             this.setPropertyVal('Sizing', 'AutoSize');
             this.setPropertyVal('Source', 'URL');
         }
@@ -279,6 +285,25 @@ var EJPdfDocument = (function () {
     return EJPdfDocument;
 }());
 EJPdfDocument.Locale = {};
+EJPdfDocument.Locale['en-NZ'] = {
+    source: 'Source',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Database',
+        server: 'Server'
+    },
+    categoryBasicSettings: 'Basic Settings',
+    sizing: 'Sizing',
+    sizeTypes: {
+        auto: 'AutoSize',
+        fitPage: 'FitToPageSize'
+    },
+    toolTip: {
+        requirements: 'Display any PDF file',
+        description: 'Display the PDF document content in the report',
+        title: 'PDF'
+    }
+};
 EJPdfDocument.Locale['en-US'] = {
     source: 'Source',
     sourceTypes: {

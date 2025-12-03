@@ -112,11 +112,22 @@ var EJSignature = (function () {
         baseProperties.PropertyType = 'sign';
         baseProperties.SubType = 'signature';
         baseProperties.IsEditHeader = true;
+        this.updateCategoryVisibility(baseProperties.Items, ['reportaction'], false);
         baseProperties.Items = $.merge(itemProperties, baseProperties.Items);
         baseProperties.getItemProperty = {
             event: $.proxy(this.customAction, this), eventData: {}
         };
         return baseProperties;
+    };
+    EJSignature.prototype.updateCategoryVisibility = function (categories, categoryId, newValue) {
+        for (var index = 0; index < categories.length; index++) {
+            if (categoryId.indexOf(categories[index].CategoryId) !== -1) {
+                categories[index].IsVisible = newValue;
+                for (var itemIndex = 0; itemIndex < categories[index].Items.length; itemIndex++) {
+                    categories[index].Items[itemIndex].IsVisible = newValue;
+                }
+            }
+        }
     };
     EJSignature.prototype.setSign = function (imgData, canvas, bgColor) {
         if (canvas) {
@@ -340,6 +351,16 @@ EJSignature.Locale['ar-AE'] = {
         requirements: 'عرض أي توقيع إلكتروني للتوقيع.',
         description: 'يُستخدم عنصر التقرير هذا لإضافة توقيع رسومي',
         title: 'التوقيع'
+    }
+};
+EJSignature.Locale['en-NZ'] = {
+    btnText: 'Draw',
+    categoryBasicSettings: 'Basic Settings',
+    signatureLabel: 'Signature',
+    toolTip: {
+        requirements: 'Display any electronic signature for signing.',
+        description: 'This report item is used to add a graphic signature',
+        title: 'Signature'
     }
 };
 EJSignature.Locale['en-US'] = {
