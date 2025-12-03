@@ -327,6 +327,24 @@ var EJBarcode = (function () {
     return EJBarcode;
 }());
 EJBarcode.Locale = {};
+EJBarcode.Locale['en-NZ'] = {
+    barcodeValue: 'Text',
+    barcodeType: 'Symbology Type',
+    textVisibility: 'Text Visibility',
+    categoryBasicSettings: 'Basic Settings',
+    barcodeRotationLabel: 'Rotation',
+    barcodeRotation: {
+        rotationNone: 'None',
+        rotate90degrees: '90',
+        rotate180degrees: '180',
+        rotate270degrees: '270'
+    },
+    toolTip: {
+        requirements: 'Display any barcode type.',
+        description: 'Displays the barcodes.',
+        title: 'Barcode'
+    }
+};
 EJBarcode.Locale['en-US'] = {
     barcodeValue: 'Text',
     barcodeType: 'Symbology Type',

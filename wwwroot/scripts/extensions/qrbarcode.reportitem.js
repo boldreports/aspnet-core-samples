@@ -590,6 +590,43 @@ var EJQRBarcode = (function () {
     return EJQRBarcode;
 }());
 EJQRBarcode.Locale = {};
+EJQRBarcode.Locale['en-NZ'] = {
+    barcodeType: 'Symbology Type',
+    barcodeValue: 'Text',
+    textVisibility: 'Text Visibility',
+    categoryBasicSettings: 'Basic Settings',
+    toolTip: {
+        requirements: 'Display any barcode type.',
+        description: 'Displays the barcodes.',
+        title: 'QRBarcode'
+    },
+    correctionLabel: 'Correction Level',
+    qrcodeCorrectionLevel: {
+        low: 'Low',
+        medium: 'Medium',
+        quartile: 'Quartile',
+        high: 'High'
+    },
+    pdf417CorrectionLevel: {
+        auto: 'Auto',
+        level0: 'Level0',
+        level1: 'Level1',
+        level2: 'Level2',
+        level3: 'Level3',
+        level4: 'Level4',
+        level5: 'Level5',
+        level6: 'Level6',
+        level7: 'Level7',
+        level8: 'Level8',
+    },
+    barcodeRotationLabel: 'Rotation',
+    barcodeRotation: {
+        rotationNone: 'None',
+        rotate90degrees: '90',
+        rotate180degrees: '180',
+        rotate270degrees: '270'
+    }
+};
 EJQRBarcode.Locale['en-US'] = {
     barcodeType: 'Symbology Type',
     barcodeValue: 'Text',

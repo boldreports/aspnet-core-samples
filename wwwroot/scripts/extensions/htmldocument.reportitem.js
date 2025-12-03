@@ -43,9 +43,8 @@ var EJHtmlDocument = (function () {
                 if (typeof newValue === 'string') {
                     this.updatePropertyVal(name, newValue);
                 }
-                else if (newValue) {
-                    newValue.id ? this.updatePropertyVal(name, newValue.id) : this.updatePropertyVal(name, '');
-                    newValue.name ? this.updatePropertyVal('DocumentName', newValue.name) : this.updatePropertyVal('DocumentName', '');
+                else {
+                    this.setFileName(newValue);
                 }
                 break;
             case 'Sizing':
@@ -54,7 +53,6 @@ var EJHtmlDocument = (function () {
             case 'Source':
                 this.updatePropertyVal(name, newValue);
                 this.updatePropertyVal('DocumentValue', '');
-                this.updatePropertyVal('DocumentName', '');
                 this.updatePropertyUIValue('DocumentValue', '');
                 break;
         }
@@ -74,7 +72,7 @@ var EJHtmlDocument = (function () {
                     this.propertyPanel.updatePropertyUIValue('htmldatabase', value, customId);
                 }
                 else {
-                    this.propertyPanel.updatePropertyUIValue('htmlserver', value, customId);
+                    this.propertyPanel.updatePropertyUIValue('htmlserver', { FilePath: value }, customId);
                 }
                 break;
         }
@@ -169,9 +167,11 @@ var EJHtmlDocument = (function () {
                         'Name': 'DocumentValue',
                         'ParentId': 'basicsettings_htmlsource',
                         'DisplayName': 'server',
-                        'Value': this.getPropertyVal('DocumentName'),
-                        'ItemType': 'FilePicker',
-                        'FileType': ['.html']
+                        'Value': this.getFileName(),
+                        'ItemType': 'LinkReport',
+                        'EnableExpression': false,
+                        'BrowseType': 'File',
+                        'ExtType': 'html'
                     },
                     {
                         'ItemId': 'htmlsizing',
@@ -195,6 +195,14 @@ var EJHtmlDocument = (function () {
         this.updateItemVisibility(baseProperties.Items, ['backgroundcolor'], false);
         baseProperties.Items = $.merge(itemProperties, baseProperties.Items);
         return baseProperties;
+    };
+    EJHtmlDocument.prototype.getFileName = function () {
+        return {
+            FilePath: this.getPropertyVal('DocumentValue')
+        };
+    };
+    EJHtmlDocument.prototype.setFileName = function (value) {
+        this.updatePropertyVal('DocumentValue', value && value.FilePath ? value.FilePath : '');
     };
     EJHtmlDocument.prototype.updateItemVisibility = function (categories, itemId, newValue) {
         for (var index = 0; index < categories.length; index++) {
@@ -236,7 +244,6 @@ var EJHtmlDocument = (function () {
             this.setPropertyVal('Source', 'Content');
             this.setPropertyVal('Sizing', 'AutoSize');
             this.setPropertyVal('DocumentValue', '');
-            this.setPropertyVal('DocumentName', '');
         }
         return this.customJSON;
     };
@@ -324,6 +331,28 @@ var EJHtmlDocument = (function () {
     return EJHtmlDocument;
 }());
 EJHtmlDocument.Locale = {};
+EJHtmlDocument.Locale['en-NZ'] = {
+    source: 'Source',
+    sourceTypes: {
+        content: 'Content',
+        url: 'URL',
+        database: 'Database',
+        server: 'Server'
+    },
+    categoryBasicSettings: 'Basic Settings',
+    sizing: 'Sizing',
+    sizeTypes: {
+        auto: 'AutoSize',
+        fit: 'Fit',
+        proportional: 'FitProportional',
+        clip: 'Clip'
+    },
+    toolTip: {
+        requirements: 'Display any HTML markup (or) URL',
+        description: 'This report item is used to process the HTML markup text and URL',
+        title: 'Html'
+    }
+};
 EJHtmlDocument.Locale['en-US'] = {
     source: 'Source',
     sourceTypes: {
