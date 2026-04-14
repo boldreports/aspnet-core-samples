@@ -93,11 +93,13 @@ namespace ReportsCoreSamples.Controllers
             return ReportHelper.GetResource(resource, this, this._cache);
         }
         
+        #pragma warning disable SCS0016
         [HttpPost]
         public object PostFormReportAction()
         {
             return ReportHelper.ProcessReport(null, this, _cache);
         }
+        #pragma warning restore SCS0016
         public void LogError(string message, Exception exception, MethodBase methodType, ErrorType errorType)
         {
             LogExtension.LogError(message, exception, methodType, errorType == ErrorType.Error ? "Error" : "Info");

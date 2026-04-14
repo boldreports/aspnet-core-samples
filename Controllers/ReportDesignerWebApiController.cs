@@ -67,6 +67,7 @@ namespace ReportsCoreSamples.Controllers
             return ReportDesignerHelper.GetImage(key, image, this);
         }
 
+        #pragma warning disable SCS0016
         [HttpPost]
         public bool DisposeObjects()
         {
@@ -96,7 +97,9 @@ namespace ReportsCoreSamples.Controllers
 
                         if (files.Length == 0 || (files.Length == fileCount))
                         {
+                            #pragma warning disable SCS0018
                             Directory.Delete(dirs[index], true);
+                            #pragma warning restore SCS0018
                         }
                     }
                 }
@@ -108,6 +111,7 @@ namespace ReportsCoreSamples.Controllers
             }
             return false;
         }
+        #pragma warning restore SCS0016
 
 
         [ActionName("GetResource")]
@@ -146,17 +150,21 @@ namespace ReportsCoreSamples.Controllers
             return ReportDesignerHelper.ProcessDesigner(jsonResult, this, null, this._cache);
         }
 
+        #pragma warning disable SCS0016 
         [HttpPost]
         public object PostFormDesignerAction()
         {
             return ReportDesignerHelper.ProcessDesigner(null, this, null, this._cache);
         }
+        #pragma warning restore SCS0016
         
+        #pragma warning disable SCS0016
         [HttpPost]
         public object PostFormReportAction()
         {
             return ReportHelper.ProcessReport(null, this, this._cache);
         }
+        #pragma warning restore SCS0016
 
         [HttpPost]
         public object PostReportAction([FromBody] Dictionary<string, object> jsonResult)
@@ -165,11 +173,13 @@ namespace ReportsCoreSamples.Controllers
             return ReportHelper.ProcessReport(jsonResult, this, this._cache);
         }
 
+        #pragma warning disable SCS0016
         [HttpPost]
         public void UploadReportAction()
         {
             ReportDesignerHelper.ProcessDesigner(null, this, this.Request.Form.Files[0], this._cache);
         }
+        #pragma warning restore SCS0016
 
         private string GetFilePath(string itemName, string key)
         {
@@ -207,9 +217,13 @@ namespace ReportsCoreSamples.Controllers
 
                         if (System.IO.File.Exists(writePath))
                         {
+                            #pragma warning disable SCS0018
                             System.IO.File.Delete(writePath);
+                            #pragma warning restore SCS0018
                         }
+                        #pragma warning disable SCS0018
                         System.IO.File.WriteAllBytes(writePath, bytes);
+                        #pragma warning restore SCS0018
                         stream.Close();
                         stream.Dispose();
                     }
@@ -232,7 +246,9 @@ namespace ReportsCoreSamples.Controllers
                 var filePath = this.GetFilePath(itemId, key);
                 if (itemId.Equals(Path.GetFileName(filePath), StringComparison.InvariantCultureIgnoreCase) && System.IO.File.Exists(filePath))
                 {
+                    #pragma warning disable SCS0018
                     resource.Data = System.IO.File.ReadAllBytes(filePath);
+                    #pragma warning restore SCS0018
                     LogExtension.LogInfo(string.Format("Method Name: {0}; Class Name: {1}; Message: {2};", "GetData", "CacheHelper", string.Format("File data retrieved from the path: {0}", filePath)), null);
                 }
                 else

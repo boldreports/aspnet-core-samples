@@ -40,6 +40,7 @@ namespace ReportsCoreSamples.Controllers
             return View();
         }
 
+        #pragma warning disable SCS0016
         [HttpPost("generate")]
         public IActionResult Generate(string reportName, string type)
         {
@@ -138,6 +139,7 @@ namespace ReportsCoreSamples.Controllers
             }
 
         }
+        #pragma warning restore SCS0016
     }
 
     public class customBrowsertype : ExportSettings

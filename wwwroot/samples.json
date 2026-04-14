@@ -3,7 +3,8 @@
     "app",
     "barcode",
     "northwind",
-    "powerpoint"
+    "powerpoint",
+    "nda"
   ],
   "otherPlatforms": {
     "Angular": "angular/#/",
@@ -483,7 +484,6 @@
       "sampleName": "HR Payroll",
       "controllerName": "HrPayroll",
       "basePath": "report-viewer",
-      "status": "New",
       "imageDetails": {
         "isLandscape": false,
         "index": 20
@@ -491,7 +491,20 @@
       "metaData": {
         "description": "This demo showcases an HR Payroll report showing salaries, deductions, demographics, and performance insights in the ASP.NET Core Bold Report Viewer."
       }
-    },   
+    },
+    {
+      "routerPath": "nda-report",
+      "sampleName": "NDA Report",
+      "controllerName": "NdaReport",
+      "basePath": "report-viewer",
+      "imageDetails": {
+        "isLandscape": false,
+        "index": 21
+      },
+      "metaData": {
+        "description": "This demo showcases the PDF digital signature functionality in a Non-Disclosure Agreement (NDA) document in ASP.NET Bold Report Viewer."
+      }
+    },
     {
       "routerPath": "",
       "sampleName": "Report Writer",
@@ -499,7 +512,7 @@
       "controllerName": "ReportWriter",
       "imageDetails": {
         "isLandscape": false,
-        "index": 21
+        "index": 22
       },
       "metaData": {
         "description": "This demos allows you to export the RDL or RDLC report with popular file formats like PDF, HTML, Word, and Excel without previewing the report in viewer using ASP.NET Core Bold Report Writer."
