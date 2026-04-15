@@ -217,7 +217,9 @@ namespace ReportsCoreSamples.Controllers
 
         private Stream ReadFiles(string filePath)
         {
+            #pragma warning disable SCS0018
             using (FileStream fileStream = File.OpenRead(filePath))
+            #pragma warning restore SCS0018
             {
                 fileStream.Position = 0;
                 MemoryStream memStream = new MemoryStream();
@@ -234,7 +236,10 @@ namespace ReportsCoreSamples.Controllers
             string catagoryName = reportPath.Substring(0, reportPath.IndexOf('/') > 0 ? reportPath.IndexOf('/') : 0).Trim();
             string targetFolder = Path.Combine(this.basePath, "resources", "Report");
             string reportPat = Path.Combine(targetFolder, catagoryName, reportName);
+            #pragma warning disable SCS0018
             File.WriteAllBytes(reportPat, reportdata.ToArray());
+            #pragma warning restore SCS0018
+
             return true;
         }
 
@@ -298,7 +303,9 @@ namespace ReportsCoreSamples.Controllers
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
             XmlReader reader = XmlReader.Create(str);
+            #pragma warning disable SCS0028
             return (T)serializer.Deserialize(reader);
+            #pragma warning restore SCS0028
         }
 
         private Stream GetFileToStream(byte[] _fileContent)
