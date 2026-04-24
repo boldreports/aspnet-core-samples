@@ -391,7 +391,7 @@ var EJShape = (function () {
                 break;
             case 'borderstyle':
                 if (args.length > 0) {
-                    this.customItemDiv.css('border' + args[0] + '-style', newValue.toLowerCase());
+                    this.customItemDiv.css('border' + args[0] + '-style', newValue ? newValue.toLowerCase() : 'none');
                 }
                 this.renderShape(this.customItemDiv, this.customJSON);
                 break;
