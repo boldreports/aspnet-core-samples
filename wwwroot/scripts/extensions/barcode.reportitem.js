@@ -363,6 +363,96 @@ EJBarcode.Locale['en-US'] = {
         title: 'Barcode'
     }
 };
+EJBarcode.Locale['fi-FI'] = {
+    barcodeValue: 'Teksti',
+    barcodeType: 'Symbologiatyyppi',
+    textVisibility: 'Tekstin näkyvyys',
+    categoryBasicSettings: 'Perusasetukset',
+    barcodeRotationLabel: 'Kierto',
+    barcodeRotation: {
+        rotationNone: 'Ei',
+        rotate90degrees: '90',
+        rotate180degrees: '180',
+        rotate270degrees: '270'
+    },
+    toolTip: {
+        requirements: 'Näytä mikä tahansa viivakoodityyppi.',
+        description: 'Näyttää viivakoodin.',
+        title: 'Viivakoodi'
+    }
+};
+EJBarcode.Locale['da-DK'] = {
+    barcodeValue: 'Tekst',
+    barcodeType: 'Symbologitype',
+    textVisibility: 'Tekstsynlighed',
+    categoryBasicSettings: 'Grundindstillinger',
+    barcodeRotationLabel: 'Rotation',
+    barcodeRotation: {
+        rotationNone: 'Ingen',
+        rotate90degrees: '90',
+        rotate180degrees: '180',
+        rotate270degrees: '270'
+    },
+    toolTip: {
+        requirements: 'Vis alle stregkodetyper.',
+        description: 'Viser stregkoder.',
+        title: 'Stregkode'
+    }
+};
+EJBarcode.Locale['nl-NL'] = {
+    barcodeValue: 'Tekst',
+    barcodeType: 'Symbologietype',
+    textVisibility: 'Tekstzichtbaarheid',
+    categoryBasicSettings: 'Basisinstellingen',
+    barcodeRotationLabel: 'Rotatie',
+    barcodeRotation: {
+        rotationNone: 'Geen',
+        rotate90degrees: '90',
+        rotate180degrees: '180',
+        rotate270degrees: '270'
+    },
+    toolTip: {
+        requirements: 'Kan elk barcodetype weergeven.',
+        description: 'Toont de barcodes.',
+        title: 'Barcode'
+    }
+};
+EJBarcode.Locale['en-GB'] = {
+    barcodeValue: 'Text',
+    barcodeType: 'Symbology Type',
+    textVisibility: 'Text Visibility',
+    categoryBasicSettings: 'Basic Settings',
+    barcodeRotationLabel: 'Rotation',
+    barcodeRotation: {
+        rotationNone: 'None',
+        rotate90degrees: '90',
+        rotate180degrees: '180',
+        rotate270degrees: '270'
+    },
+    toolTip: {
+        requirements: 'Display any barcode type.',
+        description: 'Displays the barcodes.',
+        title: 'Barcode'
+    }
+};
+EJBarcode.Locale['el-GR'] = {
+    barcodeValue: 'Κείμενο',
+    barcodeType: 'Τύπος συμβολογίας',
+    textVisibility: 'Ορατότητα κειμένου',
+    categoryBasicSettings: 'Βασικές ρυθμίσεις',
+    barcodeRotationLabel: 'Περιστροφή',
+    barcodeRotation: {
+        rotationNone: 'Καμία',
+        rotate90degrees: '90',
+        rotate180degrees: '180',
+        rotate270degrees: '270'
+    },
+    toolTip: {
+        requirements: 'Προβάλλει οποιονδήποτε τύπο γραμμωτού κώδικα.',
+        description: 'Εμφανίζει γραμμωτούς κώδικες.',
+        title: 'Γραμμωτός κώδικας'
+    }
+};
 EJBarcode.Locale['fr-FR'] = {
     barcodeValue: 'Texte',
     barcodeType: 'Type de symbologie',
@@ -453,6 +543,24 @@ EJBarcode.Locale['ru-RU'] = {
         title: 'Штрихкод'
     }
 };
+EJBarcode.Locale['th-TH'] = {
+    barcodeValue: 'ข้อความ',
+    barcodeType: 'ประเภทสัญลักษณ์',
+    textVisibility: 'การแสดงข้อความ',
+    categoryBasicSettings: 'การตั้งค่าพื้นฐาน',
+    barcodeRotationLabel: 'การหมุน',
+    barcodeRotation: {
+        rotationNone: 'ไม่มี',
+        rotate90degrees: '90',
+        rotate180degrees: '180',
+        rotate270degrees: '270'
+    },
+    toolTip: {
+        requirements: 'แสดงบาร์โค้ดได้ทุกประเภท',
+        description: 'แสดงผลบาร์โค้ด',
+        title: 'บาร์โค้ด'
+    }
+};
 EJBarcode.Locale['zh-Hans'] = {
     barcodeValue: '文本',
     barcodeType: '符号类型',
@@ -487,5 +595,41 @@ EJBarcode.Locale['zh-Hant'] = {
         requirements: '顯示任何條碼類型。',
         description: '顯示條碼。',
         title: '條碼'
+    }
+};
+EJBarcode.Locale['cs-CZ'] = {
+    barcodeValue: 'Text',
+    barcodeType: 'Typ symbologie',
+    textVisibility: 'Viditelnost textu',
+    categoryBasicSettings: 'Základní nastavení',
+    barcodeRotationLabel: 'Rotace',
+    barcodeRotation: {
+        rotationNone: 'Žádná',
+        rotate90degrees: '90',
+        rotate180degrees: '180',
+        rotate270degrees: '270'
+    },
+    toolTip: {
+        requirements: 'Zobrazit libovolný typ čárového kódu.',
+        description: 'Zobrazí čárové kódy.',
+        title: 'Čárový kód'
+    }
+};
+EJBarcode.Locale['et-EE'] = {
+    barcodeValue: 'Tekst',
+    barcodeType: 'Sümboolika tüüp',
+    textVisibility: 'Teksti nähtavus',
+    categoryBasicSettings: 'Põhiseaded',
+    barcodeRotationLabel: 'Pööramine',
+    barcodeRotation: {
+        rotationNone: 'Puudub',
+        rotate90degrees: '90',
+        rotate180degrees: '180',
+        rotate270degrees: '270'
+    },
+    toolTip: {
+        requirements: 'Kuvab mis tahes vöötkoodi tüübi.',
+        description: 'Kuvab vöötkoodid.',
+        title: 'Vöötkood'
     }
 };

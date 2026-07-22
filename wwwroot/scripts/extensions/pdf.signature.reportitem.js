@@ -57,7 +57,7 @@ var EJPDFSignature = (function () {
     EJPDFSignature.prototype.getBackgroundColor = function () {
         return (this.customJSON && this.customJSON.Style && this.customJSON.Style.BackgroundColor
             && this.customJSON.Style.BackgroundColor !== 'Transparent' && this.customJSON.Style.BackgroundColor !== '#00ffffff')
-            ? ej.ReportUtil.convertColorFormat(this.customJSON.Style.BackgroundColor, true) : 'white';
+            ? ej.ImageUtil.convertColorFormat(this.customJSON.Style.BackgroundColor, true) : 'white';
     };
     EJPDFSignature.prototype.getPropertyGridItems = function (baseProperties) {
         var itemProperties = [{
@@ -182,7 +182,7 @@ var EJPDFSignature = (function () {
     EJPDFSignature.prototype.undoRedoAction = function (imgInfo) {
         if (imgInfo) {
             if (imgInfo.propertyName && imgInfo.propertyName.toLowerCase() === 'pdfsignature') {
-                ej.ReportUtil.invokeMethod(this, imgInfo.method, [imgInfo.undoRedo, { imageData: imgInfo.imageData }]);
+                ej.WidgetUtil.invokeMethod(this, imgInfo.method, [imgInfo.undoRedo, { imageData: imgInfo.imageData }]);
             }
         }
     };
@@ -676,6 +676,161 @@ EJPDFSignature.Locale['en-US'] = {
         title: 'PDF Signature'
     }
 };
+EJPDFSignature.Locale['fi-FI'] = {
+    categoryBasicSettings: 'Perusasetukset',
+    basicSettingsLabels: {
+        reason: 'Näytä syy',
+        digitalIDFile: 'Digitaalinen tunnistetiedosto',
+        reasonLabel: 'Syy',
+        location: 'Näytä sijainti',
+        date: 'Näytä nykyinen päivämäärä',
+        signatureLabel: 'Allekirjoitus',
+        btnText: 'Piirrä',
+        contactInfo: 'Näytä yhteystiedot',
+        signedName: 'Näytä allekirjoittajan nimi',
+        reasonTxt: 'Hyväksyn'
+    },
+    designPanelLabels: {
+        reason: 'Allekirjoituksen syy',
+        location: 'Allekirjoituksen sijainti',
+        contactInfo: 'Yhteystietosi',
+        signedName: 'Digitaalisesti allekirjoittanut yleisellä nimelläsi',
+        reasonLabel: 'Syy',
+        locationLabel: 'Sijainti',
+        contactInfoLabel: 'Yhteystiedot',
+        signedNameLabel: 'Nimi',
+        dateLabel: 'Päivämäärä'
+    },
+    toolTip: {
+        requirements: 'Lisää raporttielementti suunnittelualueelle.',
+        description: 'Tätä raporttielementtiä käytetään PDF-allekirjoituksen lisäämiseen.',
+        title: 'PDF Signature'
+    }
+};
+EJPDFSignature.Locale['da-DK'] = {
+    categoryBasicSettings: 'Grundindstillinger',
+    basicSettingsLabels: {
+        reason: 'Vis årsag',
+        digitalIDFile: 'Digital ID-fil',
+        reasonLabel: 'Årsag',
+        location: 'Vis placering',
+        date: 'Vis aktuel dato',
+        signatureLabel: 'Signatur',
+        btnText: 'Tegn',
+        contactInfo: 'Vis kontaktoplysninger',
+        signedName: 'Vis underskrivers navn',
+        reasonTxt: 'Jeg accepterer'
+    },
+    designPanelLabels: {
+        reason: 'Årsag til underskrift',
+        location: 'Placering for underskrift',
+        contactInfo: 'Dine kontaktoplysninger',
+        signedName: 'Digitalt underskrevet af dit almindelige navn',
+        reasonLabel: 'Årsag',
+        locationLabel: 'Placering',
+        contactInfoLabel: 'Kontakt',
+        signedNameLabel: 'Navn',
+        dateLabel: 'Dato'
+    },
+    toolTip: {
+        requirements: 'Tilføj et rapportelement til designerområdet.',
+        description: 'Dette rapportelement bruges til at tilføje en PDF-signatur.',
+        title: 'PDF-signatur'
+    }
+};
+EJPDFSignature.Locale['nl-NL'] = {
+    categoryBasicSettings: 'Basisinstellingen',
+    basicSettingsLabels: {
+        reason: 'Reden tonen',
+        digitalIDFile: 'Digitaal ID-bestand',
+        reasonLabel: 'Reden',
+        location: 'Locatie tonen',
+        date: 'Huidige datum tonen',
+        signatureLabel: 'Handtekening',
+        btnText: 'Tekenen',
+        contactInfo: 'Contactgegevens tonen',
+        signedName: 'Ondertekende naam tonen',
+        reasonTxt: 'Ik ga akkoord'
+    },
+    designPanelLabels: {
+        reason: 'Uw reden voor ondertekening',
+        location: 'Uw ondertekeningslocatie',
+        contactInfo: 'Uw contactgegevens',
+        signedName: 'Digitaal ondertekend door uw algemene naam',
+        reasonLabel: 'Reden',
+        locationLabel: 'Locatie',
+        contactInfoLabel: 'Contact',
+        signedNameLabel: 'Naam',
+        dateLabel: 'Datum'
+    },
+    toolTip: {
+        requirements: 'Voeg een rapportitem toe aan het ontwerpgebied.',
+        description: 'Dit rapportitem wordt gebruikt om een PDF-handtekening toe te voegen.',
+        title: 'PDF-handtekening'
+    }
+};
+EJPDFSignature.Locale['el-GR'] = {
+    categoryBasicSettings: 'Βασικές ρυθμίσεις',
+    basicSettingsLabels: {
+        reason: 'Εμφάνιση λόγου',
+        digitalIDFile: 'Αρχείο ψηφιακού αναγνωριστικού',
+        reasonLabel: 'Λόγος',
+        location: 'Εμφάνιση τοποθεσίας',
+        date: 'Εμφάνιση τρέχουσας ημερομηνίας',
+        signatureLabel: 'Υπογραφή',
+        btnText: 'Σχεδίαση',
+        contactInfo: 'Εμφάνιση στοιχείων επικοινωνίας',
+        signedName: 'Εμφάνιση ονόματος υπογράφοντος',
+        reasonTxt: 'Συμφωνώ'
+    },
+    designPanelLabels: {
+        reason: 'Ο λόγος υπογραφής σας',
+        location: 'Η τοποθεσία υπογραφής σας',
+        contactInfo: 'Τα στοιχεία επικοινωνίας σας',
+        signedName: 'Ψηφιακά υπογεγραμμένο από το κοινό σας όνομα',
+        reasonLabel: 'Λόγος',
+        locationLabel: 'Τοποθεσία',
+        contactInfoLabel: 'Επικοινωνία',
+        signedNameLabel: 'Όνομα',
+        dateLabel: 'Ημερομηνία'
+    },
+    toolTip: {
+        requirements: 'Προσθέτει ένα στοιχείο αναφοράς στην περιοχή σχεδίασης.',
+        description: 'Χρησιμοποιείται για την προσθήκη υπογραφής PDF.',
+        title: 'Υπογραφή PDF'
+    }
+};
+EJPDFSignature.Locale['en-GB'] = {
+    categoryBasicSettings: 'Basic Settings',
+    basicSettingsLabels: {
+        reason: 'Show Reason',
+        digitalIDFile: 'Digital ID File',
+        reasonLabel: 'Reason',
+        location: 'Show Location',
+        date: 'Show Current Date',
+        signatureLabel: 'Signature',
+        btnText: 'Draw',
+        contactInfo: 'Show Contact Info',
+        signedName: 'Show Signed Name',
+        reasonTxt: 'I agree'
+    },
+    designPanelLabels: {
+        reason: 'Your signing reason',
+        location: 'Your signing location',
+        contactInfo: 'Your contact info',
+        signedName: 'Digitally signed by your common name',
+        reasonLabel: 'Reason',
+        locationLabel: 'Location',
+        contactInfoLabel: 'Contact',
+        signedNameLabel: 'Name',
+        dateLabel: 'Date'
+    },
+    toolTip: {
+        requirements: 'Add a report item to the designer area.',
+        description: 'This report item is used to add a PDF signature.',
+        title: 'PDF Signature'
+    }
+};
 EJPDFSignature.Locale['en-AU'] = {
     categoryBasicSettings: 'Basic Settings',
     basicSettingsLabels: {
@@ -1110,6 +1265,37 @@ EJPDFSignature.Locale['ru-RU'] = {
         title: 'PDF-подпись'
     }
 };
+EJPDFSignature.Locale['th-TH'] = {
+    categoryBasicSettings: 'การตั้งค่าพื้นฐาน',
+    basicSettingsLabels: {
+        reason: 'แสดงเหตุผล',
+        digitalIDFile: 'ไฟล์ Digital ID',
+        reasonLabel: 'เหตุผล',
+        location: 'แสดงตำแหน่ง',
+        date: 'แสดงวันที่ปัจจุบัน',
+        signatureLabel: 'ลายเซ็น',
+        btnText: 'วาด',
+        contactInfo: 'แสดงข้อมูลติดต่อ',
+        signedName: 'แสดงชื่อผู้ลงนาม',
+        reasonTxt: 'ฉันยอมรับ'
+    },
+    designPanelLabels: {
+        reason: 'เหตุผลในการลงนามของคุณ',
+        location: 'ตำแหน่งที่คุณลงนาม',
+        contactInfo: 'ข้อมูลติดต่อของคุณ',
+        signedName: 'ลงนามดิจิทัลโดยชื่อที่คุณใช้',
+        reasonLabel: 'เหตุผล',
+        locationLabel: 'ตำแหน่ง',
+        contactInfoLabel: 'ข้อมูลติดต่อ',
+        signedNameLabel: 'ชื่อ',
+        dateLabel: 'วันที่'
+    },
+    toolTip: {
+        requirements: 'เพิ่มรายการรายงานลงในพื้นที่ตัวออกแบบ',
+        description: 'ใช้รายการรายงานนี้เพื่อเพิ่มลายเซ็น PDF',
+        title: 'ลายเซ็น PDF'
+    }
+};
 EJPDFSignature.Locale['zh-Hant'] = {
     categoryBasicSettings: '基本設定',
     basicSettingsLabels: {
@@ -1139,5 +1325,67 @@ EJPDFSignature.Locale['zh-Hant'] = {
         requirements: '將報告項目新增至設計區域。',
         description: '此報告項目用於新增 PDF 簽名。',
         title: 'PDF 簽名'
+    }
+};
+EJPDFSignature.Locale['cs-CZ'] = {
+    categoryBasicSettings: 'Základní nastavení',
+    basicSettingsLabels: {
+        reason: 'Zobrazit důvod',
+        digitalIDFile: 'Soubor digitálního ID',
+        reasonLabel: 'Důvod',
+        location: 'Zobrazit umístění',
+        date: 'Zobrazit aktuální datum',
+        signatureLabel: 'Podpis',
+        btnText: 'Nakreslit',
+        contactInfo: 'Zobrazit informace o kontaktu',
+        signedName: 'Zobrazit jméno podepisujícího',
+        reasonTxt: 'Souhlasím'
+    },
+    designPanelLabels: {
+        reason: 'Důvod vašeho podpisu',
+        location: 'Umístění vašeho podpisu',
+        contactInfo: 'Vaše kontaktní informace',
+        signedName: 'Digitálně podepsáno vaším běžným jménem',
+        reasonLabel: 'Důvod',
+        locationLabel: 'Umístění',
+        contactInfoLabel: 'Kontakt',
+        signedNameLabel: 'Jméno',
+        dateLabel: 'Datum'
+    },
+    toolTip: {
+        requirements: 'Přidejte položku zprávy do oblasti návrháře.',
+        description: 'Tato položka zprávy se používá k přidání podpisu PDF.',
+        title: 'Podpis PDF'
+    }
+};
+EJPDFSignature.Locale['et-EE'] = {
+    categoryBasicSettings: 'Põhiseaded',
+    basicSettingsLabels: {
+        reason: 'Kuva põhjus',
+        digitalIDFile: 'Digitaalne ID-fail',
+        reasonLabel: 'Põhjus',
+        location: 'Kuva asukoht',
+        date: 'Kuva praegune kuupäev',
+        signatureLabel: 'Allkiri',
+        btnText: 'Joonista',
+        contactInfo: 'Kuva kontaktandmed',
+        signedName: 'Kuva allkirjastatud nimi',
+        reasonTxt: 'Nõustun'
+    },
+    designPanelLabels: {
+        reason: 'Teie allkirjastamise põhjus',
+        location: 'Teie allkirjastamise asukoht',
+        contactInfo: 'Teie kontaktandmed',
+        signedName: 'Digitaalselt allkirjastatud teie üldnimega',
+        reasonLabel: 'Põhjus',
+        locationLabel: 'Asukoht',
+        contactInfoLabel: 'Kontakt',
+        signedNameLabel: 'Nimi',
+        dateLabel: 'Kuupäev'
+    },
+    toolTip: {
+        requirements: 'Lisage aruandeüksus kujundusalale.',
+        description: 'Seda aruandeüksust kasutatakse PDF-allkirja lisamiseks.',
+        title: 'PDF-allkiri'
     }
 };

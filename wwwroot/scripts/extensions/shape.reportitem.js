@@ -25,7 +25,7 @@ var EJShape = (function () {
     };
     EJShape.prototype.initializeShape = function (isTablixCell) {
         var bgColor = (this.customJSON && this.customJSON.Style && this.customJSON.Style.BackgroundColor)
-            ? ej.ReportUtil.convertColorFormat(this.customJSON.Style.BackgroundColor, true) : 'Transparent';
+            ? ej.ImageUtil.convertColorFormat(this.customJSON.Style.BackgroundColor, true) : 'Transparent';
         this.customItemDiv = ej.buildTag('div.customitem e-rptdesigner-shape', '', {
             'width': '100%', 'height': '100%', 'box-sizing': 'border-box', '-moz-box-sizing': 'border-box', 'background-color': bgColor,
             'border': isTablixCell ? '1px dotted gray' : '1px none gray',
@@ -61,6 +61,27 @@ var EJShape = (function () {
                 break;
             case 'ellipse':
                 this.renderEllipse(target, shapeInfo);
+                break;
+            case 'plus':
+                this.renderPlus(target, shapeInfo);
+                break;
+            case 'minus':
+                this.renderMinus(target, shapeInfo);
+                break;
+            case 'multiply':
+                this.renderMultiply(target, shapeInfo);
+                break;
+            case 'division':
+                this.renderDivision(target, shapeInfo);
+                break;
+            case 'parallelogram':
+                this.renderParallelogram(target, shapeInfo);
+                break;
+            case 'trapezoid':
+                this.renderTrapezoid(target, shapeInfo);
+                break;
+            case 'equation':
+                this.renderEquation(target, shapeInfo);
                 break;
         }
     };
@@ -180,8 +201,7 @@ var EJShape = (function () {
                 { x: halfWidth, y: 0 },
                 { x: halfWidth - arrowHeight, y: halfHeight },
                 { x: halfWidth - arrowHeight, y: arrowWidth / 2 },
-                { x: -halfWidth, y: arrowWidth / 2 },
-                { x: -halfWidth, y: -arrowWidth / 2 }
+                { x: -halfWidth, y: arrowWidth / 2 }
             ];
         }
         else if (shapeType === 'leftarrow') {
@@ -194,8 +214,7 @@ var EJShape = (function () {
                 { x: -halfWidth, y: 0 },
                 { x: -halfWidth + arrowHeight, y: halfHeight },
                 { x: -halfWidth + arrowHeight, y: arrowWidth / 2 },
-                { x: halfWidth, y: arrowWidth / 2 },
-                { x: halfWidth, y: -arrowWidth / 2 }
+                { x: halfWidth, y: arrowWidth / 2 }
             ];
         }
         else if (shapeType === 'uparrow') {
@@ -208,8 +227,7 @@ var EJShape = (function () {
                 { x: 0, y: -halfHeight },
                 { x: halfWidth, y: -halfHeight + arrowHeight },
                 { x: arrowWidth / 2, y: -halfHeight + arrowHeight },
-                { x: arrowWidth / 2, y: halfHeight },
-                { x: -arrowWidth / 2, y: halfHeight }
+                { x: arrowWidth / 2, y: halfHeight }
             ];
         }
         else if (shapeType === 'downarrow') {
@@ -222,8 +240,7 @@ var EJShape = (function () {
                 { x: 0, y: halfHeight },
                 { x: halfWidth, y: halfHeight - arrowHeight },
                 { x: arrowWidth / 2, y: halfHeight - arrowHeight },
-                { x: arrowWidth / 2, y: -halfHeight },
-                { x: -arrowWidth / 2, y: -halfHeight }
+                { x: arrowWidth / 2, y: -halfHeight }
             ];
         }
         var rotatedPoints = points.map(function (point) { return ({
@@ -313,6 +330,149 @@ var EJShape = (function () {
         var viewBox = this.getViewBox(rotatedPoints);
         this.renderSvg(target, pathData, viewBox, shapeInfo);
     };
+    EJShape.prototype.renderPlus = function (target, shapeInfo) {
+        var points = this.getPlusBarPoints(shapeInfo);
+        var pathData = this.getPathData(points);
+        var viewBox = this.getViewBox(points);
+        this.renderSvg(target, pathData, viewBox, shapeInfo);
+    };
+    EJShape.prototype.renderMinus = function (target, shapeInfo) {
+        var barPoints = this.getMinusBarPoints(shapeInfo);
+        var pathData = this.getPathData(barPoints);
+        var viewBox = "0 0 " + shapeInfo.svgWidth + " " + shapeInfo.svgHeight;
+        this.renderSvg(target, pathData, viewBox, shapeInfo);
+    };
+    EJShape.prototype.renderMultiply = function (target, shapeInfo) {
+        var points = this.getPlusBarPoints(shapeInfo);
+        var angleRad = (45 % 360) * Math.PI / 180;
+        var sinValue = Math.sin(angleRad);
+        var cosValue = Math.cos(angleRad);
+        var rotatedPoints = points.map(function (p) { return ({
+            x: p.x * cosValue - p.y * sinValue,
+            y: p.x * sinValue + p.y * cosValue
+        }); });
+        var pathData = this.getPathData(rotatedPoints);
+        var viewBox = this.getViewBox(rotatedPoints);
+        this.renderSvg(target, pathData, viewBox, shapeInfo);
+    };
+    EJShape.prototype.renderDivision = function (target, shapeInfo) {
+        var barPoints = this.getMinusBarPoints(shapeInfo);
+        var pathData = this.getPathData(barPoints);
+        pathData += this.getDivisionDots(shapeInfo);
+        var viewBox = "0 0 " + shapeInfo.svgWidth + " " + shapeInfo.svgHeight;
+        this.renderSvg(target, pathData, viewBox, shapeInfo);
+    };
+    EJShape.prototype.getPlusBarPoints = function (shapeInfo) {
+        var halfWidth = Math.min(shapeInfo.svgWidth, shapeInfo.svgHeight) / 2;
+        var halfHeight = halfWidth;
+        var halfBarWidth = halfWidth * 0.25;
+        return [
+            { x: -halfBarWidth, y: -halfHeight },
+            { x: halfBarWidth, y: -halfHeight },
+            { x: halfBarWidth, y: -halfBarWidth },
+            { x: halfWidth, y: -halfBarWidth },
+            { x: halfWidth, y: halfBarWidth },
+            { x: halfBarWidth, y: halfBarWidth },
+            { x: halfBarWidth, y: halfHeight },
+            { x: -halfBarWidth, y: halfHeight },
+            { x: -halfBarWidth, y: halfBarWidth },
+            { x: -halfWidth, y: halfBarWidth },
+            { x: -halfWidth, y: -halfBarWidth },
+            { x: -halfBarWidth, y: -halfBarWidth }
+        ];
+    };
+    EJShape.prototype.getMinusBarPoints = function (shapeInfo) {
+        var svgWidth = shapeInfo.svgWidth;
+        var svgHeight = shapeInfo.svgHeight;
+        var minDimension = Math.min(svgWidth, svgHeight);
+        var barHeight = Math.max(5, Math.round(minDimension * 0.15));
+        var halfWidth = svgWidth / 2;
+        var halfHeight = barHeight / 2;
+        var centerX = svgWidth / 2;
+        var centerY = svgHeight / 2;
+        return [
+            { x: centerX - halfWidth, y: centerY - halfHeight },
+            { x: centerX + halfWidth, y: centerY - halfHeight },
+            { x: centerX + halfWidth, y: centerY + halfHeight },
+            { x: centerX - halfWidth, y: centerY + halfHeight }
+        ];
+    };
+    EJShape.prototype.getDivisionDots = function (shapeInfo) {
+        var minDimension = Math.min(shapeInfo.svgWidth, shapeInfo.svgHeight);
+        var barHeight = Math.max(5, Math.round(minDimension * 0.15));
+        var halfHeight = barHeight / 2;
+        var centerX = shapeInfo.svgWidth / 2;
+        var centerY = shapeInfo.svgHeight / 2;
+        var dotRadius = minDimension * 0.14;
+        var smallGap = minDimension * 0.05;
+        var topCenter = { x: centerX, y: centerY - halfHeight - dotRadius - smallGap };
+        var bottomCenter = { x: centerX, y: centerY + halfHeight + dotRadius + smallGap };
+        return " " + this.getCirclePath(topCenter, dotRadius) + " " + this.getCirclePath(bottomCenter, dotRadius) + " ";
+    };
+    EJShape.prototype.getCirclePath = function (center, radius) {
+        return "M " + (center.x + radius) + " " + center.y + " A " + radius + " " + radius + " 0 1 0 " + (center.x - radius) + " " + center.y + " A " + radius + " " + radius + " 0 1 0 " + (center.x + radius) + " " + center.y;
+    };
+    EJShape.prototype.renderParallelogram = function (target, shapeInfo) {
+        var halfWidth = shapeInfo.svgWidth / 2;
+        var halfHeight = shapeInfo.svgHeight / 2;
+        var widthFactor = shapeInfo.svgWidth * 0.2;
+        var angleRad = (parseFloat(shapeInfo.angle) % 360 * Math.PI) / 180;
+        var sinValue = Math.sin(angleRad);
+        var cosValue = Math.cos(angleRad);
+        var points = [
+            { x: -halfWidth + widthFactor, y: -halfHeight },
+            { x: halfWidth + widthFactor, y: -halfHeight },
+            { x: halfWidth - widthFactor, y: halfHeight },
+            { x: -halfWidth - widthFactor, y: halfHeight }
+        ];
+        var rotatedPoints = points.map(function (corner) { return ({
+            x: corner.x * cosValue - corner.y * sinValue,
+            y: corner.x * sinValue + corner.y * cosValue
+        }); });
+        var pathData = this.getPathData(rotatedPoints);
+        var viewBox = this.getViewBox(rotatedPoints);
+        this.renderSvg(target, pathData, viewBox, shapeInfo);
+    };
+    EJShape.prototype.renderTrapezoid = function (target, shapeInfo) {
+        var topWidth = shapeInfo.svgWidth * 0.6;
+        var halfTop = topWidth / 2;
+        var halfWidth = shapeInfo.svgWidth / 2;
+        var halfHeight = shapeInfo.svgHeight / 2;
+        var angleRad = (parseFloat(shapeInfo.angle) % 360 * Math.PI) / 180;
+        var sinValue = Math.sin(angleRad);
+        var cosValue = Math.cos(angleRad);
+        var points = [
+            { x: -halfWidth, y: halfHeight },
+            { x: halfWidth, y: halfHeight },
+            { x: halfTop, y: -halfHeight },
+            { x: -halfTop, y: -halfHeight }
+        ];
+        var rotatedPoints = points.map(function (corner) { return ({
+            x: corner.x * cosValue - corner.y * sinValue,
+            y: corner.x * sinValue + corner.y * cosValue
+        }); });
+        var pathData = this.getPathData(rotatedPoints);
+        var viewBox = this.getViewBox(rotatedPoints);
+        this.renderSvg(target, pathData, viewBox, shapeInfo);
+    };
+    EJShape.prototype.renderEquation = function (target, shapeInfo) {
+        var halfW = shapeInfo.svgWidth / 2;
+        var halfh = shapeInfo.svgHeight / 2;
+        var gap = shapeInfo.svgHeight;
+        var points = [
+            { x: -halfW, y: -gap - halfh },
+            { x: halfW, y: -gap - halfh },
+            { x: halfW, y: -gap + halfh },
+            { x: -halfW, y: -gap + halfh },
+            { x: -halfW, y: gap - halfh },
+            { x: halfW, y: gap - halfh },
+            { x: halfW, y: gap + halfh },
+            { x: -halfW, y: gap + halfh }
+        ];
+        var pathData = this.getPathData(points);
+        var viewBox = this.getViewBox(points);
+        this.renderSvg(target, pathData, viewBox, shapeInfo);
+    };
     EJShape.prototype.getPathData = function (points) {
         var pathData = "M " + points[0].x + " " + points[0].y + " ";
         for (var index = 1; index < points.length; index++) {
@@ -338,7 +498,7 @@ var EJShape = (function () {
         var shapePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         var targetId = target.attr('id');
         var fillColor = this.hasDesignerInstance(this.instance) ?
-            ej.ReportUtil.convertColorFormat(shapeInfo.fillColor, true) : shapeInfo.fillColor;
+            ej.ImageUtil.convertColorFormat(shapeInfo.fillColor, true) : shapeInfo.fillColor;
         this.setAttributes(svg, {
             'width': shapeInfo.svgWidth + "px", 'height': shapeInfo.svgHeight + "px",
             'viewBox': viewBox, 'id': targetId + "_svg", 'preserveAspectRatio': 'none'
@@ -403,9 +563,9 @@ var EJShape = (function () {
                 this.renderShape(this.customItemDiv, this.customJSON);
                 break;
             case 'fillcolor':
-                if (!ej.ReportUtil.isEmptyString(newValue)) {
+                if (!ej.StringUtil.isEmptyString(newValue)) {
                     this.updatePropertyVal(name, newValue);
-                    this.setAttributes(shapeElement[0], { 'fill': ej.ReportUtil.convertColorFormat(newValue, true) });
+                    this.setAttributes(shapeElement[0], { 'fill': ej.ImageUtil.convertColorFormat(newValue, true) });
                 }
                 break;
             case 'linewidth':
@@ -485,16 +645,21 @@ var EJShape = (function () {
                         'ValueList': shapeTypes,
                         'DependentItems': [{
                                 'EnableItems': [],
-                                'DisableItems': ['basicsettings_starcount', 'basicsettings_concavity', 'basicsettings_arrowheight', 'basicsettings_arrowwidth'],
-                                'Value': ['Ellipse', 'Rectangle', 'Hexagon', 'RightAngleTriangle', 'Triangle', 'Pentagon', 'Octagon']
+                                'DisableItems': ['basicsettings_rotationangle', 'basicsettings_starcount', 'basicsettings_concavity', 'basicsettings_arrowheight', 'basicsettings_arrowwidth'],
+                                'Value': ['Plus', 'Minus', 'Multiply', 'Division', 'Equation']
                             },
                             {
-                                'EnableItems': ['basicsettings_starcount', 'basicsettings_concavity'],
+                                'EnableItems': ['basicsettings_rotationangle'],
+                                'DisableItems': ['basicsettings_starcount', 'basicsettings_concavity', 'basicsettings_arrowheight', 'basicsettings_arrowwidth'],
+                                'Value': ['Ellipse', 'Rectangle', 'Hexagon', 'RightAngleTriangle', 'Triangle', 'Pentagon', 'Octagon', 'Parallelogram', 'Trapezoid']
+                            },
+                            {
+                                'EnableItems': ['basicsettings_starcount', 'basicsettings_concavity', 'basicsettings_rotationangle'],
                                 'DisableItems': ['basicsettings_arrowheight', 'basicsettings_arrowwidth'],
                                 'Value': ['Star']
                             },
                             {
-                                'EnableItems': ['basicsettings_arrowheight', 'basicsettings_arrowwidth'],
+                                'EnableItems': ['basicsettings_arrowheight', 'basicsettings_arrowwidth', 'basicsettings_rotationangle'],
                                 'DisableItems': ['basicsettings_starcount', 'basicsettings_concavity'],
                                 'Value': ['LeftArrow', 'RightArrow', 'UpArrow', 'DownArrow']
                             }]
@@ -503,6 +668,7 @@ var EJShape = (function () {
                         'ItemId': 'rotationangle',
                         'Name': 'RotationAngle',
                         'DisplayName': 'RotationAngle',
+                        'ParentId': 'basicsettings_shapetype',
                         'Value': shapeInfo.angle,
                         'Minimum': 0,
                         'Maximum': 360,
@@ -606,10 +772,10 @@ var EJShape = (function () {
                                 'DisplayName': 'sizetooltip',
                                 'HeaderText': 'linesize',
                                 'Value': shapeInfo.strokeWidth,
-                                'Minimum': ej.ReportUtil.getPropertyValue(rdlParser.isPixelUnit(), rdlParser.getRDLUnit(), 0.33),
-                                'Maximum': ej.ReportUtil.getPropertyValue(rdlParser.isPixelUnit(), rdlParser.getRDLUnit(), 26.6),
-                                'Interval': ej.ReportUtil.getPropertyValue(rdlParser.isPixelUnit(), rdlParser.getRDLUnit(), 0.5),
-                                'decimalPlaces': ej.ReportUtil.getDecimalPlaces(rdlParser.getUnitVal()),
+                                'Minimum': ej.MeasurementUtil.getPropertyValue(rdlParser.isPixelUnit(), rdlParser.getRDLUnit(), 0.33),
+                                'Maximum': ej.MeasurementUtil.getPropertyValue(rdlParser.isPixelUnit(), rdlParser.getRDLUnit(), 26.6),
+                                'Interval': ej.MeasurementUtil.getPropertyValue(rdlParser.isPixelUnit(), rdlParser.getRDLUnit(), 0.5),
+                                'decimalPlaces': ej.MeasurementUtil.getDecimalPlaces(rdlParser.getUnitVal()),
                                 'UnitType': rdlParser.getUnitVal(),
                                 'ItemType': 'Numeric'
                             }]
@@ -682,7 +848,7 @@ var EJShape = (function () {
         var bottomBorderWidth = 0;
         var borderWidth = 0;
         if (this.hasDesignerInstance(this.instance)) {
-            height = ej.ReportUtil.getPixelVal(customJson.Height.size);
+            height = ej.MeasurementUtil.getPixelVal(customJson.Height.size);
             topBorderWidth = this.getBorderWidth(customJson.Style.TopBorder, true);
             bottomBorderWidth = this.getBorderWidth(customJson.Style.BottomBorder, true);
             borderWidth = this.getBorderWidth(customJson.Style.Border, true);
@@ -702,7 +868,7 @@ var EJShape = (function () {
         var rightBorderWidth = 0;
         var borderWidth = 0;
         if (this.hasDesignerInstance(this.instance)) {
-            width = ej.ReportUtil.getPixelVal(customJson.Width.size);
+            width = ej.MeasurementUtil.getPixelVal(customJson.Width.size);
             leftBorderWidth = this.getBorderWidth(customJson.Style.LeftBorder, true);
             rightBorderWidth = this.getBorderWidth(customJson.Style.RightBorder, true);
             borderWidth = this.getBorderWidth(customJson.Style.Border, true);
@@ -719,7 +885,7 @@ var EJShape = (function () {
     EJShape.prototype.getBorderWidth = function (border, isDesigner) {
         var borderWidth = 0;
         if (isDesigner && border && border.Style && border.Style !== 'None' && border.Style !== 'Default' && border.Width) {
-            borderWidth = ej.ReportUtil.getPixelVal(border.Width.size);
+            borderWidth = ej.MeasurementUtil.getPixelVal(border.Width.size);
         }
         else if (border && border.BorderStyle && border.BorderStyle !== 'None' && border.BorderStyle !== 'Default' && border.Thickness) {
             borderWidth = border.Thickness;
@@ -736,7 +902,10 @@ var EJShape = (function () {
             { 'text': 'pentagon', 'value': 'Pentagon' }, { 'text': 'octagon', 'value': 'Octagon' },
             { 'text': 'star', 'value': 'Star' }, { 'text': 'leftarrow', 'value': 'LeftArrow' },
             { 'text': 'rightarrow', 'value': 'RightArrow' }, { 'text': 'uparrow', 'value': 'UpArrow' },
-            { 'text': 'downarrow', 'value': 'DownArrow' }];
+            { 'text': 'downarrow', 'value': 'DownArrow' }, { 'text': 'plus', 'value': 'Plus' },
+            { 'text': 'minus', 'value': 'Minus' }, { 'text': 'multiply', 'value': 'Multiply' },
+            { 'text': 'division', 'value': 'Division' }, { 'text': 'parallelogram', 'value': 'Parallelogram' },
+            { 'text': 'trapezoid', 'value': 'Trapezoid' }, { 'text': 'equation', 'value': 'Equation' }];
     };
     EJShape.prototype.getLineStyles = function () {
         return [{ 'text': 'dashed', 'value': 'Dashed' },
@@ -892,6 +1061,24 @@ var EJShape = (function () {
                     return shapeLocale.basicSettings.shapeTypes.downArrow;
                 }
                 return defaultLocale.basicSettings.shapeTypes.downArrow;
+            case 'parallelogram':
+                if (shapeLocale && shapeLocale.basicSettings && shapeLocale.basicSettings.shapeTypes
+                    && shapeLocale.basicSettings.shapeTypes.parallelogram) {
+                    return shapeLocale.basicSettings.shapeTypes.parallelogram;
+                }
+                return defaultLocale.basicSettings.shapeTypes.parallelogram;
+            case 'trapezoid':
+                if (shapeLocale && shapeLocale.basicSettings && shapeLocale.basicSettings.shapeTypes
+                    && shapeLocale.basicSettings.shapeTypes.trapezoid) {
+                    return shapeLocale.basicSettings.shapeTypes.trapezoid;
+                }
+                return defaultLocale.basicSettings.shapeTypes.trapezoid;
+            case 'equation':
+                if (shapeLocale && shapeLocale.basicSettings && shapeLocale.basicSettings.shapeTypes
+                    && shapeLocale.basicSettings.shapeTypes.equation) {
+                    return shapeLocale.basicSettings.shapeTypes.equation;
+                }
+                return defaultLocale.basicSettings.shapeTypes.equation;
             case 'dashed':
                 if (shapeLocale && shapeLocale.basicSettings && shapeLocale.basicSettings.lineStyles
                     && shapeLocale.basicSettings.lineStyles.dashed) {
@@ -922,6 +1109,30 @@ var EJShape = (function () {
                     return shapeLocale.basicSettings.lineStyles.solid;
                 }
                 return defaultLocale.basicSettings.lineStyles.solid;
+            case 'plus':
+                if (shapeLocale && shapeLocale.basicSettings && shapeLocale.basicSettings.shapeTypes
+                    && shapeLocale.basicSettings.shapeTypes.plus) {
+                    return shapeLocale.basicSettings.shapeTypes.plus;
+                }
+                return defaultLocale.basicSettings.shapeTypes.plus;
+            case 'minus':
+                if (shapeLocale && shapeLocale.basicSettings && shapeLocale.basicSettings.shapeTypes
+                    && shapeLocale.basicSettings.shapeTypes.minus) {
+                    return shapeLocale.basicSettings.shapeTypes.minus;
+                }
+                return defaultLocale.basicSettings.shapeTypes.minus;
+            case 'multiply':
+                if (shapeLocale && shapeLocale.basicSettings && shapeLocale.basicSettings.shapeTypes
+                    && shapeLocale.basicSettings.shapeTypes.multiply) {
+                    return shapeLocale.basicSettings.shapeTypes.multiply;
+                }
+                return defaultLocale.basicSettings.shapeTypes.multiply;
+            case 'division':
+                if (shapeLocale && shapeLocale.basicSettings && shapeLocale.basicSettings.shapeTypes
+                    && shapeLocale.basicSettings.shapeTypes.division) {
+                    return shapeLocale.basicSettings.shapeTypes.division;
+                }
+                return defaultLocale.basicSettings.shapeTypes.division;
         }
     };
     EJShape.prototype.renderItemPreview = function (criModel, targetDiv, locale) {
@@ -953,7 +1164,14 @@ EJShape.Locale['ar-AE'] = {
             leftArrow: 'السهم الأيسر',
             rightArrow: 'السهم الأيمن',
             upArrow: 'سهم لأعلى',
-            downArrow: 'سهم لأسفل'
+            downArrow: 'سهم لأسفل',
+            plus: 'زائد',
+            minus: 'ناقص',
+            multiply: 'ضرب',
+            division: 'قسمة',
+            parallelogram: 'متوازي الأضلاع',
+            trapezoid: 'شبه منحرف',
+            equation: 'معادلة'
         },
         lineStyles: {
             dashed: 'متقطع',
@@ -992,7 +1210,14 @@ EJShape.Locale['en-NZ'] = {
             leftArrow: 'Left Arrow',
             rightArrow: 'Right Arrow',
             upArrow: 'Up Arrow',
-            downArrow: 'Down Arrow'
+            downArrow: 'Down Arrow',
+            plus: 'Plus',
+            minus: 'Minus',
+            multiply: 'Multiply',
+            division: 'Division',
+            parallelogram: 'Parallelogram',
+            trapezoid: 'Trapezoid',
+            equation: 'Equation'
         },
         lineStyles: {
             dashed: 'Dashed',
@@ -1031,7 +1256,14 @@ EJShape.Locale['en-US'] = {
             leftArrow: 'Left Arrow',
             rightArrow: 'Right Arrow',
             upArrow: 'Up Arrow',
-            downArrow: 'Down Arrow'
+            downArrow: 'Down Arrow',
+            plus: 'Plus',
+            minus: 'Minus',
+            multiply: 'Multiply',
+            division: 'Division',
+            parallelogram: 'Parallelogram',
+            trapezoid: 'Trapezoid',
+            equation: 'Equation'
         },
         lineStyles: {
             dashed: 'Dashed',
@@ -1044,6 +1276,236 @@ EJShape.Locale['en-US'] = {
     toolTip: {
         requirements: 'Display items in Shapes',
         description: 'Visualize data with customizable shapes.',
+        title: 'Shape'
+    }
+};
+EJShape.Locale['fi-FI'] = {
+    basicSettings: {
+        categoryName: 'Perusasetukset',
+        shapeType: 'Muodot',
+        rotationAngle: 'Kiertokulma',
+        starCount: 'Tähtien lukumäärä',
+        concavity: 'Koveruus',
+        arrowHeight: 'Nuolen korkeus',
+        arrowWidth: 'Nuolen leveys',
+        lineStyle: 'Viivatyyli',
+        fillColor: 'Täyttöväri',
+        shapeTypes: {
+            ellipse: 'Ellipsi',
+            triangle: 'Kolmio',
+            rightAngleTriangle: 'Suorakulmainen kolmio',
+            rectangle: 'Suorakulmio',
+            hexagon: 'Kuusikulmio',
+            pentagon: 'Viisikulmio',
+            octagon: 'Kahdeksankulmio',
+            star: 'Tähti',
+            leftArrow: 'Vasen nuoli',
+            rightArrow: 'Oikea nuoli',
+            upArrow: 'Ylös osoittava nuoli',
+            downArrow: 'Alas osoittava nuoli',
+            plus: 'Lisää',
+            minus: 'Vähennä',
+            multiply: 'Kertolasku',
+            division: 'Jakolasku',
+            parallelogram: 'Suunnikas',
+            trapezoid: 'Puolisuunnikas',
+            equation: 'Yhtälö'
+        },
+        lineStyles: {
+            dashed: 'Katkoviiva',
+            dotted: 'Pisteviiva',
+            dashdotdot: 'Katkoviiva piste piste',
+            dashdot: 'Katkoviiva piste',
+            solid: 'Yhtenäinen'
+        }
+    },
+    toolTip: {
+        requirements: 'Näytä kohteita muodoissa',
+        description: 'Visualisoi tiedot mukautettavilla muodoilla.',
+        title: 'Muoto'
+    }
+};
+EJShape.Locale['da-DK'] = {
+    basicSettings: {
+        categoryName: 'Grundindstillinger',
+        shapeType: 'Former',
+        rotationAngle: 'Rotationsvinkel',
+        starCount: 'Antal stjernespidser',
+        concavity: 'Konkavitet',
+        arrowHeight: 'Pilhøjde',
+        arrowWidth: 'Pilbredde',
+        lineStyle: 'Linjestil',
+        fillColor: 'Udfyldningsfarve',
+        shapeTypes: {
+            ellipse: 'Ellipse',
+            triangle: 'Trekant',
+            rightAngleTriangle: 'Retvinklet trekant',
+            rectangle: 'Rektangel',
+            hexagon: 'Sekskant',
+            pentagon: 'Femkant',
+            octagon: 'Oktagon',
+            star: 'Stjerne',
+            leftArrow: 'Venstre pil',
+            rightArrow: 'Højre pil',
+            upArrow: 'Opadgående pil',
+            downArrow: 'Nedadgående pil',
+            plus: 'Plus',
+            minus: 'Minus',
+            multiply: 'Multiplikation',
+            division: 'Division',
+            parallelogram: 'Parallelogram',
+            trapezoid: 'Trapez',
+            equation: 'Ligning'
+        },
+        lineStyles: {
+            dashed: 'Stiplet',
+            dotted: 'Punkteret',
+            dashdotdot: 'Streg-prik-prik',
+            dashdot: 'Streg-prik',
+            solid: 'Solid'
+        }
+    },
+    toolTip: {
+        requirements: 'Vis elementer som former',
+        description: 'Visualiser data med tilpasselige former.',
+        title: 'Form'
+    }
+};
+EJShape.Locale['nl-NL'] = {
+    basicSettings: {
+        categoryName: 'Basisinstellingen',
+        shapeType: 'Vormen',
+        rotationAngle: 'Rotatiehoek',
+        starCount: 'Aantal punten',
+        concavity: 'Concaafheid',
+        arrowHeight: 'Pijlhoogte',
+        arrowWidth: 'Pijlbreedte',
+        lineStyle: 'Lijnstijl',
+        fillColor: 'Vulkleur',
+        shapeTypes: {
+            ellipse: 'Ellips',
+            triangle: 'Driehoek',
+            rightAngleTriangle: 'Rechthoekige driehoek',
+            rectangle: 'Rechthoek',
+            hexagon: 'Zeshoek',
+            pentagon: 'Vijfhoek',
+            octagon: 'Achthoek',
+            star: 'Ster',
+            leftArrow: 'Linkerpijl',
+            rightArrow: 'Rechterpijl',
+            upArrow: 'Pijl omhoog',
+            downArrow: 'Pijl omlaag',
+            plus: 'Plus',
+            minus: 'Min',
+            multiply: 'Vermenigvuldigen',
+            division: 'Delen',
+            parallelogram: 'Parallellogram',
+            trapezoid: 'Trapezium',
+            equation: 'Vergelijking'
+        },
+        lineStyles: {
+            dashed: 'Gestreept',
+            dotted: 'Gestippeld',
+            dashdotdot: 'Streep-stip-stip',
+            dashdot: 'Streep-stip',
+            solid: 'Doorlopend'
+        }
+    },
+    toolTip: {
+        requirements: 'Items in vormen weergeven',
+        description: 'Visualiseer gegevens met aanpasbare vormen.',
+        title: 'Vorm'
+    }
+};
+EJShape.Locale['el-GR'] = {
+    basicSettings: {
+        categoryName: 'Βασικές ρυθμίσεις',
+        shapeType: 'Σχήματα',
+        rotationAngle: 'Γωνία περιστροφής',
+        starCount: 'Αριθμός ακτίνων αστέρα',
+        concavity: 'Κοιλότητα',
+        arrowHeight: 'Ύψος βέλους',
+        arrowWidth: 'Πλάτος βέλους',
+        lineStyle: 'Στυλ γραμμής',
+        fillColor: 'Χρώμα πλήρωσης',
+        shapeTypes: {
+            ellipse: 'Έλλειψη',
+            triangle: 'Τρίγωνο',
+            rightAngleTriangle: 'Ορθογώνιο τρίγωνο',
+            rectangle: 'Ορθογώνιο',
+            hexagon: 'Εξάγωνο',
+            pentagon: 'Πεντάγωνο',
+            octagon: 'Οκτάγωνο',
+            star: 'Αστέρι',
+            leftArrow: 'Αριστερό βέλος',
+            rightArrow: 'Δεξί βέλος',
+            upArrow: 'Επάνω βέλος',
+            downArrow: 'Κάτω βέλος',
+            plus: 'Πρόσθεση',
+            minus: 'Αφαίρεση',
+            multiply: 'Πολλαπλασιασμός',
+            division: 'Διαίρεση',
+            parallelogram: 'Παραλληλόγραμμο',
+            trapezoid: 'Τραπέζιο',
+            equation: 'Εξίσωση'
+        },
+        lineStyles: {
+            dashed: 'Διακεκομμένη',
+            dotted: 'Διάστικτη',
+            dashdotdot: 'Παύλα-Τελεία-Τελεία',
+            dashdot: 'Παύλα-Τελεία',
+            solid: 'Συνεχής'
+        }
+    },
+    toolTip: {
+        requirements: 'Προβάλλει στοιχεία ως σχήματα',
+        description: 'Οπτικοποιήστε δεδομένα με προσαρμόσιμα σχήματα.',
+        title: 'Σχήμα'
+    }
+};
+EJShape.Locale['en-GB'] = {
+    basicSettings: {
+        categoryName: 'Basic Settings',
+        shapeType: 'Shapes',
+        rotationAngle: 'Rotation Angle',
+        starCount: 'Star Count',
+        concavity: 'Concavity',
+        arrowHeight: 'Arrow Height',
+        arrowWidth: 'Arrow Width',
+        lineStyle: 'Line Style',
+        fillColor: 'Fill Colour',
+        shapeTypes: {
+            ellipse: 'Ellipse',
+            triangle: 'Triangle',
+            rightAngleTriangle: 'Right Angle Triangle',
+            rectangle: 'Rectangle',
+            hexagon: 'Hexagon',
+            pentagon: 'Pentagon',
+            octagon: 'Octagon',
+            star: 'Star',
+            leftArrow: 'Left Arrow',
+            rightArrow: 'Right Arrow',
+            upArrow: 'Up Arrow',
+            downArrow: 'Down Arrow',
+            plus: 'Plus',
+            minus: 'Minus',
+            multiply: 'Multiply',
+            division: 'Division',
+            parallelogram: 'Parallelogram',
+            trapezoid: 'Trapezoid',
+            equation: 'Equation'
+        },
+        lineStyles: {
+            dashed: 'Dashed',
+            dotted: 'Dotted',
+            dashdotdot: 'Dash Dot Dot',
+            dashdot: 'Dash Dot',
+            solid: 'Solid'
+        }
+    },
+    toolTip: {
+        requirements: 'Display items in shapes.',
+        description: 'Visualise data with customisable shapes.',
         title: 'Shape'
     }
 };
@@ -1070,7 +1532,14 @@ EJShape.Locale['de-DE'] = {
             leftArrow: 'Linker Pfeil',
             rightArrow: 'Rechter Pfeil',
             upArrow: 'Nach oben Pfeil',
-            downArrow: 'Nach unten Pfeil'
+            downArrow: 'Nach unten Pfeil',
+            plus: 'Plus',
+            minus: 'Minus',
+            multiply: 'Multiplikation',
+            division: 'Division',
+            parallelogram: 'Parallelogramm',
+            trapezoid: 'Trapez',
+            equation: 'Gleichung'
         },
         lineStyles: {
             dashed: 'Gestrichelt',
@@ -1109,7 +1578,14 @@ EJShape.Locale['en-AU'] = {
             leftArrow: 'Left Arrow',
             rightArrow: 'Right Arrow',
             upArrow: 'Up Arrow',
-            downArrow: 'Down Arrow'
+            downArrow: 'Down Arrow',
+            plus: 'Plus',
+            minus: 'Minus',
+            multiply: 'Multiply',
+            division: 'Division',
+            parallelogram: 'Parallelogram',
+            trapezoid: 'Trapezoid',
+            equation: 'Equation'
         },
         lineStyles: {
             dashed: 'Dashed',
@@ -1148,7 +1624,14 @@ EJShape.Locale['en-CA'] = {
             leftArrow: 'Left Arrow',
             rightArrow: 'Right Arrow',
             upArrow: 'Up Arrow',
-            downArrow: 'Down Arrow'
+            downArrow: 'Down Arrow',
+            plus: 'Plus',
+            minus: 'Minus',
+            multiply: 'Multiply',
+            division: 'Division',
+            parallelogram: 'Parallelogram',
+            trapezoid: 'Trapezoid',
+            equation: 'Equation'
         },
         lineStyles: {
             dashed: 'Dashed',
@@ -1188,6 +1671,13 @@ EJShape.Locale['en-ES'] = {
             rightArrow: 'Flecha Derecha',
             upArrow: 'Flecha Arriba',
             downArrow: 'Flecha Abajo',
+            plus: 'Suma',
+            minus: 'Resta',
+            multiply: 'Multiplicación',
+            division: 'División',
+            parallelogram: 'Paralelogramo',
+            trapezoid: 'Trapecio',
+            equation: 'Ecuación'
         },
         lineStyles: {
             dashed: 'Guiones',
@@ -1226,7 +1716,14 @@ EJShape.Locale['fr-CA'] = {
             leftArrow: 'Flèche Gauche',
             rightArrow: 'Flèche Droite',
             upArrow: 'Flèche Haut',
-            downArrow: 'Flèche Bas'
+            downArrow: 'Flèche Bas',
+            plus: 'Addition',
+            minus: 'Soustraction',
+            multiply: 'Multiplication',
+            division: 'Division',
+            parallelogram: 'Parallélogramme',
+            trapezoid: 'Trapèze',
+            equation: 'Équation'
         },
         lineStyles: {
             dashed: 'Tirets',
@@ -1266,6 +1763,13 @@ EJShape.Locale['fr-FR'] = {
             rightArrow: 'Flèche Droite',
             upArrow: 'Flèche Haut',
             downArrow: 'Flèche Bas',
+            plus: 'Addition',
+            minus: 'Soustraction',
+            multiply: 'Multiplication',
+            division: 'Division',
+            parallelogram: 'Parallélogramme',
+            trapezoid: 'Trapèze',
+            equation: 'Équation'
         },
         lineStyles: {
             dashed: 'Tirets',
@@ -1305,6 +1809,13 @@ EJShape.Locale['it-IT'] = {
             rightArrow: 'Freccia Destra',
             upArrow: 'Freccia Su',
             downArrow: 'Freccia Giù',
+            plus: 'Addizione',
+            minus: 'Sottrazione',
+            multiply: 'Moltiplicazione',
+            division: 'Divisione',
+            parallelogram: 'Parallelogramma',
+            trapezoid: 'Trapezio',
+            equation: 'Equazione'
         },
         lineStyles: {
             dashed: 'Tratteggiato',
@@ -1343,6 +1854,13 @@ EJShape.Locale['tr-TR'] = {
             pentagon: 'Beşgen',
             octagon: 'Sekizgen',
             rightAngleTriangle: 'Dik Açılı Üçgen',
+            plus: 'Toplama',
+            minus: 'Çıkarma',
+            multiply: 'Çarpma',
+            division: 'Bölme',
+            parallelogram: 'Paralelkenar',
+            trapezoid: 'Trapez',
+            equation: 'Denklem'
         },
         lineStyles: {
             dashdotdot: 'Kesik Çizgi Nokta Nokta',
@@ -1382,6 +1900,13 @@ EJShape.Locale['zh-Hans'] = {
             rightArrow: '右箭头',
             upArrow: '上箭头',
             downArrow: '下箭头',
+            plus: '加',
+            minus: '减',
+            multiply: '乘',
+            division: '除',
+            parallelogram: '平行四边形',
+            trapezoid: '梯形',
+            equation: '方程'
         },
         lineStyles: {
             dashed: '虚线',
@@ -1420,7 +1945,14 @@ EJShape.Locale['he-IL'] = {
             leftArrow: 'חץ שמאלה',
             rightArrow: 'חץ ימינה',
             upArrow: 'חץ למעלה',
-            downArrow: 'חץ למטה'
+            downArrow: 'חץ למטה',
+            plus: 'חיבור',
+            minus: 'חיסור',
+            multiply: 'כפל',
+            division: 'חילוק',
+            parallelogram: 'מקבילית',
+            trapezoid: 'טרפז',
+            equation: 'משוואה'
         },
         lineStyles: {
             dashed: 'מקווקו',
@@ -1459,7 +1991,14 @@ EJShape.Locale['ja-JP'] = {
             leftArrow: '左矢印',
             rightArrow: '右矢印',
             upArrow: '上矢印',
-            downArrow: '下矢印'
+            downArrow: '下矢印',
+            plus: '加算',
+            minus: '減算',
+            multiply: '乗算',
+            division: '除算',
+            parallelogram: '平行四辺形',
+            trapezoid: '台形',
+            equation: '方程式'
         },
         lineStyles: {
             dashed: '破線',
@@ -1498,7 +2037,14 @@ EJShape.Locale['pt-PT'] = {
             leftArrow: 'Seta Esquerda',
             rightArrow: 'Seta Direita',
             upArrow: 'Seta Para Cima',
-            downArrow: 'Seta Para Baixo'
+            downArrow: 'Seta Para Baixo',
+            plus: 'Adição',
+            minus: 'Subtração',
+            multiply: 'Multiplicação',
+            division: 'Divisão',
+            parallelogram: 'Paralelogramo',
+            trapezoid: 'Trapézio',
+            equation: 'Equação'
         },
         lineStyles: {
             dashed: 'Tracejado',
@@ -1537,7 +2083,14 @@ EJShape.Locale['ru-RU'] = {
             leftArrow: 'Левая стрелка',
             rightArrow: 'Правая стрелка',
             upArrow: 'Верхняя стрелка',
-            downArrow: 'Нижняя стрелка'
+            downArrow: 'Нижняя стрелка',
+            plus: 'Сложение',
+            minus: 'Вычитание',
+            multiply: 'Умножение',
+            division: 'Деление',
+            parallelogram: 'Параллелограмм',
+            trapezoid: 'Трапеция',
+            equation: 'Уравнение'
         },
         lineStyles: {
             dashed: 'Пунктир',
@@ -1551,6 +2104,52 @@ EJShape.Locale['ru-RU'] = {
         requirements: 'Показать элементы в фигурах',
         description: 'Визуализируйте данные с помощью настраиваемых фигур.',
         title: 'Фигура'
+    }
+};
+EJShape.Locale['th-TH'] = {
+    basicSettings: {
+        categoryName: 'การตั้งค่าพื้นฐาน',
+        shapeType: 'รูปร่าง',
+        rotationAngle: 'มุมการหมุน',
+        starCount: 'จำนวนแฉก',
+        concavity: 'ความเว้า',
+        arrowHeight: 'ความสูงลูกศร',
+        arrowWidth: 'ความกว้างลูกศร',
+        lineStyle: 'รูปแบบเส้น',
+        fillColor: 'สีเติม',
+        shapeTypes: {
+            ellipse: 'วงรี',
+            triangle: 'สามเหลี่ยม',
+            rightAngleTriangle: 'สามเหลี่ยมมุมฉาก',
+            rectangle: 'สี่เหลี่ยมผืนผ้า',
+            hexagon: 'หกเหลี่ยม',
+            pentagon: 'ห้าเหลี่ยม',
+            octagon: 'แปดเหลี่ยม',
+            star: 'ดาว',
+            leftArrow: 'ลูกศรซ้าย',
+            rightArrow: 'ลูกศรขวา',
+            upArrow: 'ลูกศรขึ้น',
+            downArrow: 'ลูกศรลง',
+            plus: 'บวก',
+            minus: 'ลบ',
+            multiply: 'คูณ',
+            division: 'หาร',
+            parallelogram: 'สี่เหลี่ยมด้านขนาน',
+            trapezoid: 'สี่เหลี่ยมคางหมู',
+            equation: 'สมการ'
+        },
+        lineStyles: {
+            dashed: 'เส้นประ',
+            dotted: 'เส้นจุด',
+            dashdotdot: 'เส้นประจุดจุด',
+            dashdot: 'เส้นประจุด',
+            solid: 'เส้นทึบ'
+        }
+    },
+    toolTip: {
+        requirements: 'แสดงรายการในรูปแบบรูปร่าง',
+        description: 'แสดงข้อมูลด้วยรูปร่างที่ปรับแต่งได้',
+        title: 'รูปร่าง'
     }
 };
 EJShape.Locale['zh-Hant'] = {
@@ -1576,7 +2175,14 @@ EJShape.Locale['zh-Hant'] = {
             leftArrow: '左箭頭',
             rightArrow: '右箭頭',
             upArrow: '上箭頭',
-            downArrow: '下箭頭'
+            downArrow: '下箭頭',
+            plus: '加',
+            minus: '減',
+            multiply: '乘',
+            division: '除',
+            parallelogram: '平行四邊形',
+            trapezoid: '梯形',
+            equation: '方程式'
         },
         lineStyles: {
             dashed: '虛線',
@@ -1590,5 +2196,97 @@ EJShape.Locale['zh-Hant'] = {
         requirements: '顯示形狀中的項目',
         description: '使用可自訂的形狀來視覺化資料。',
         title: '形狀'
+    }
+};
+EJShape.Locale['cs-CZ'] = {
+    basicSettings: {
+        categoryName: 'Základní nastavení',
+        shapeType: 'Tvary',
+        rotationAngle: 'Úhel otočení',
+        starCount: 'Počet hvězd',
+        concavity: 'Konkávnost',
+        arrowHeight: 'Výška šipky',
+        arrowWidth: 'Šířka šipky',
+        lineStyle: 'Styl čáry',
+        fillColor: 'Barva výplně',
+        shapeTypes: {
+            ellipse: 'Elipsa',
+            triangle: 'Trojúhelník',
+            rightAngleTriangle: 'Pravoúhlý trojúhelník',
+            rectangle: 'Obdélník',
+            hexagon: 'Šestiúhelník',
+            pentagon: 'Pětiúhelník',
+            octagon: 'Osmiúhelník',
+            star: 'Hvězda',
+            leftArrow: 'Levá šipka',
+            rightArrow: 'Pravá šipka',
+            upArrow: 'Šipka nahoru',
+            downArrow: 'Šipka dolů',
+            plus: 'Plus',
+            minus: 'Minus',
+            multiply: 'Násobení',
+            division: 'Dělení',
+            parallelogram: 'Rovnoběžník',
+            trapezoid: 'Lichoběžník',
+            equation: 'Rovnice'
+        },
+        lineStyles: {
+            dashed: 'Čárkované',
+            dotted: 'Tečkované',
+            dashdotdot: 'Čárka-Tečka-Tečka',
+            dashdot: 'Čárka-Tečka',
+            solid: 'Spojité'
+        }
+    },
+    toolTip: {
+        requirements: 'Zobrazit položky v tvarech',
+        description: 'Vizualizovat data pomocí přizpůsobitelných tvarů.',
+        title: 'Tvar'
+    }
+};
+EJShape.Locale['et-EE'] = {
+    basicSettings: {
+        categoryName: 'Põhiseaded',
+        shapeType: 'Kujundid',
+        rotationAngle: 'Pöördenurk',
+        starCount: 'Tähtede arv',
+        concavity: 'Kumerus',
+        arrowHeight: 'Nool kõrgus',
+        arrowWidth: 'Nool laius',
+        lineStyle: 'Joone stiil',
+        fillColor: 'Täitevärv',
+        shapeTypes: {
+            ellipse: 'Ellips',
+            triangle: 'Kolmnurk',
+            rightAngleTriangle: 'Täisnurkne kolmnurk',
+            rectangle: 'Ristkülik',
+            hexagon: 'Kuusnurk',
+            pentagon: 'Viisnurk',
+            octagon: 'Kaheksanurk',
+            star: 'Täht',
+            leftArrow: 'Vasak nool',
+            rightArrow: 'Parem nool',
+            upArrow: 'Üles nool',
+            downArrow: 'Alla nool',
+            plus: 'Pluss',
+            minus: 'Miinus',
+            multiply: 'Korrutamine',
+            division: 'Jagamine',
+            parallelogram: 'Rööpkülik',
+            trapezoid: 'Trapets',
+            equation: 'Võrrand'
+        },
+        lineStyles: {
+            dashed: 'Katki',
+            dotted: 'Punktiir',
+            dashdotdot: 'Kriips-punkt-punkt',
+            dashdot: 'Kriips-punkt',
+            solid: 'Tahke'
+        }
+    },
+    toolTip: {
+        requirements: 'Kuvab kujundites üksusi',
+        description: 'Andmete visualiseerimine kohandatavate kujunditega.',
+        title: 'Kujund'
     }
 };

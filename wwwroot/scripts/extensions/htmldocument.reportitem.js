@@ -375,6 +375,116 @@ EJHtmlDocument.Locale['en-US'] = {
         title: 'Html'
     }
 };
+EJHtmlDocument.Locale['fi-FI'] = {
+    source: 'Lähde',
+    sourceTypes: {
+        content: 'Sisältö',
+        url: 'URL',
+        database: 'Tietokanta',
+        server: 'Palvelin'
+    },
+    categoryBasicSettings: 'Perusasetukset',
+    sizing: 'Koko',
+    sizeTypes: {
+        auto: 'Automaattinen',
+        fit: 'Sovita',
+        proportional: 'Sovita suhteellisesti',
+        clip: 'Leikkaa'
+    },
+    toolTip: {
+        requirements: 'Näytä mikä tahansa HTML-merkintä tai URL',
+        description: 'Tätä raporttielementtiä käytetään HTML-merkintätekstin tai URL-osoitteen käsittelyyn',
+        title: 'Html'
+    }
+};
+EJHtmlDocument.Locale['da-DK'] = {
+    source: 'Kilde',
+    sourceTypes: {
+        content: 'Indhold',
+        url: 'URL',
+        database: 'Database',
+        server: 'Server'
+    },
+    categoryBasicSettings: 'Grundindstillinger',
+    sizing: 'Størrelse',
+    sizeTypes: {
+        auto: 'Automatisk størrelse',
+        fit: 'Tilpas',
+        proportional: 'Tilpas proportionalt',
+        clip: 'Beskær'
+    },
+    toolTip: {
+        requirements: 'Vis HTML-markup eller URL',
+        description: 'Dette rapportelement bruges til at behandle HTML-markuptekst og URL',
+        title: 'HTML'
+    }
+};
+EJHtmlDocument.Locale['nl-NL'] = {
+    source: 'Bron',
+    sourceTypes: {
+        content: 'Inhoud',
+        url: 'URL',
+        database: 'Database',
+        server: 'Server'
+    },
+    categoryBasicSettings: 'Basisinstellingen',
+    sizing: 'Formaat',
+    sizeTypes: {
+        auto: 'Automatisch formaat',
+        fit: 'Passend maken',
+        proportional: 'Proportioneel passen',
+        clip: 'Afsnijden'
+    },
+    toolTip: {
+        requirements: 'Kan elke HTML-opmaak (of) URL weergeven',
+        description: 'Dit rapportitem wordt gebruikt om HTML-opmaaktekst en URL te verwerken',
+        title: 'HTML'
+    }
+};
+EJHtmlDocument.Locale['el-GR'] = {
+    source: 'Πηγή',
+    sourceTypes: {
+        content: 'Περιεχόμενο',
+        url: 'URL',
+        database: 'Βάση δεδομένων',
+        server: 'Διακομιστής'
+    },
+    categoryBasicSettings: 'Βασικές ρυθμίσεις',
+    sizing: 'Διαστασιολόγηση',
+    sizeTypes: {
+        auto: 'Αυτόματο μέγεθος',
+        fit: 'Προσαρμογή',
+        proportional: 'Αναλογική προσαρμογή',
+        clip: 'Αποκοπή'
+    },
+    toolTip: {
+        requirements: 'Προβάλλει οποιαδήποτε σήμανση HTML ή διεύθυνση URL',
+        description: 'Χρησιμοποιείται για την επεξεργασία κειμένου HTML και URL',
+        title: 'HTML'
+    }
+};
+EJHtmlDocument.Locale['en-GB'] = {
+    source: 'Source',
+    sourceTypes: {
+        content: 'Content',
+        url: 'URL',
+        database: 'Database',
+        server: 'Server'
+    },
+    categoryBasicSettings: 'Basic Settings',
+    sizing: 'Sizing',
+    sizeTypes: {
+        auto: 'AutoSize',
+        fit: 'Fit',
+        proportional: 'FitProportional',
+        clip: 'Clip'
+    },
+    toolTip: {
+        requirements: 'Display any Html markup (or) URL',
+        description: 'This report item is used to process the HTML markup text and URL',
+        title: 'Html'
+    }
+};
 EJHtmlDocument.Locale['ar-AE'] = {
     source: 'مصدر',
     sourceTypes: {
@@ -573,6 +683,28 @@ EJHtmlDocument.Locale['tr-TR'] = {
         title: 'Html'
     }
 };
+EJHtmlDocument.Locale['th-TH'] = {
+    source: 'แหล่งที่มา',
+    sourceTypes: {
+        content: 'เนื้อหา',
+        url: 'URL',
+        database: 'ฐานข้อมูล',
+        server: 'เซิร์ฟเวอร์'
+    },
+    categoryBasicSettings: 'การตั้งค่าพื้นฐาน',
+    sizing: 'การปรับขนาด',
+    sizeTypes: {
+        auto: 'ขนาดอัตโนมัติ',
+        fit: 'พอดี',
+        proportional: 'พอดีแบบรักษาสัดส่วน',
+        clip: 'ตัดส่วนเกิน'
+    },
+    toolTip: {
+        requirements: 'แสดงเครื่องหมาย Html ใด ๆ (หรือ) url',
+        description: 'รายการรายงานนี้ใช้ในการประมวลผลข้อความมาร์กอัป HTML และ URL',
+        title: 'HTML'
+    }
+};
 EJHtmlDocument.Locale['zh-Hans'] = {
     source: '来源',
     sourceTypes: {
@@ -703,5 +835,49 @@ EJHtmlDocument.Locale['zh-Hant'] = {
         requirements: '顯示任何 HTML 標記或 URL',
         description: '此報告項目用於處理 HTML 標記文字和 URL',
         title: 'Html'
+    }
+};
+EJHtmlDocument.Locale['cs-CZ'] = {
+    source: 'Zdroj',
+    sourceTypes: {
+        content: 'Obsah',
+        url: 'URL',
+        database: 'Databáze',
+        server: 'Server'
+    },
+    categoryBasicSettings: 'Základní nastavení',
+    sizing: 'Změna velikosti',
+    sizeTypes: {
+        auto: 'Automatická velikost',
+        fit: 'Přizpůsobit',
+        proportional: 'Přizpůsobit proporcionálně',
+        clip: 'Oříznout'
+    },
+    toolTip: {
+        requirements: 'Zobrazit libovolný HTML kód (nebo) URL',
+        description: 'Tato položka zprávy se používá ke zpracování textu HTML kódu a URL',
+        title: 'Html'
+    }
+};
+EJHtmlDocument.Locale['et-EE'] = {
+    source: 'Allikas',
+    sourceTypes: {
+        content: 'Sisu',
+        url: 'URL',
+        database: 'Andmebaas',
+        server: 'Server'
+    },
+    categoryBasicSettings: 'Põhiseaded',
+    sizing: 'Suurus',
+    sizeTypes: {
+        auto: 'Automaatne suurus',
+        fit: 'Sobita',
+        proportional: 'Proportsionaalne sobitus',
+        clip: 'Lõika'
+    },
+    toolTip: {
+        requirements: 'Kuvab mis tahes HTML-i (või) URL-i',
+        description: 'Seda aruandeüksust kasutatakse HTML-i ja URL-i töötlemiseks',
+        title: 'HTML'
     }
 };

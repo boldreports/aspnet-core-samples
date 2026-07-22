@@ -468,7 +468,7 @@ var SignatureDialog = (function () {
             this.instance._destroyEJ2Objects(this.container.find('.e-dlg-content .e-signDialog-root-container'));
         }
         else {
-            ej.ReportUtil.destroyEj2Objects(this.container.find('.e-dlg-content .e-signDialog-root-container'));
+            ej.WidgetUtil.destroyEj2Objects(this.container.find('.e-dlg-content .e-signDialog-root-container'));
         }
         this.dlgInstance.destroy();
         $('#' + this.id + '_signDialog').remove();
@@ -633,7 +633,7 @@ var SignatureDialog = (function () {
                 this.instance._destroyEJ2Objects(this.container.find('.e-dlg-content .e-signDialog-root-container'));
             }
             else {
-                ej.ReportUtil.destroyEj2Objects(this.container.find('.e-dlg-content .e-signDialog-root-container'));
+                ej.WidgetUtil.destroyEj2Objects(this.container.find('.e-dlg-content .e-signDialog-root-container'));
             }
             this.dlgInstance.destroy();
             this.container = null;
@@ -683,6 +683,71 @@ SignatureDialog.Locale['en-US'] = {
     ok: 'OK',
     title: 'Signature',
     strokeColor: 'Stroke Color',
+    strokeWidth: 'Stroke Width',
+    crop: 'Crop',
+    ariaLabelCanvas: 'Canvas area to draw your signature',
+    ariaLabelCrop: 'Crop the signature',
+    ariaLabelClear: 'Clear the signature'
+};
+SignatureDialog.Locale['fi-FI'] = {
+    cancel: 'Peruuta',
+    closeToolTip: 'Sulje',
+    clear: 'Tyhjennä',
+    ok: 'OK',
+    title: 'Allekirjoitus',
+    strokeColor: 'Viivan väri',
+    strokeWidth: 'Viivan paksuus',
+    crop: 'Rajaa',
+    ariaLabelCanvas: 'Piirrä allekirjoitus tähän alueeseen',
+    ariaLabelCrop: 'Rajaa allekirjoitus',
+    ariaLabelClear: 'Tyhjennä allekirjoitus'
+};
+SignatureDialog.Locale['da-DK'] = {
+    cancel: 'Annuller',
+    closeToolTip: 'Luk',
+    clear: 'Ryd',
+    ok: 'OK',
+    title: 'Signatur',
+    strokeColor: 'Stregfarve',
+    strokeWidth: 'Stregbredde',
+    crop: 'Beskær',
+    ariaLabelCanvas: 'Lærredsområde til at tegne din signatur',
+    ariaLabelCrop: 'Beskær signaturen',
+    ariaLabelClear: 'Ryd signaturen'
+};
+SignatureDialog.Locale['nl-NL'] = {
+    cancel: 'Annuleren',
+    closeToolTip: 'Sluiten',
+    clear: 'Wissen',
+    ok: 'OK',
+    title: 'Handtekening',
+    strokeColor: 'Lijnkleur',
+    strokeWidth: 'Lijndikte',
+    crop: 'Bijsnijden',
+    ariaLabelCanvas: 'Canvasgebied om uw handtekening te tekenen',
+    ariaLabelCrop: 'De handtekening bijsnijden',
+    ariaLabelClear: 'De handtekening wissen'
+};
+SignatureDialog.Locale['el-GR'] = {
+    cancel: 'Ακύρωση',
+    closeToolTip: 'Κλείσιμο',
+    clear: 'Καθαρισμός',
+    ok: 'OK',
+    title: 'Υπογραφή',
+    strokeColor: 'Χρώμα γραμμής',
+    strokeWidth: 'Πλάτος γραμμής',
+    crop: 'Περικοπή',
+    ariaLabelCanvas: 'Περιοχή καμβά για να σχεδιάσετε την υπογραφή σας',
+    ariaLabelCrop: 'Περικοπή της υπογραφής σας',
+    ariaLabelClear: 'Καθαρισμός της υπογραφής σας'
+};
+SignatureDialog.Locale['en-GB'] = {
+    cancel: 'Cancel',
+    closeToolTip: 'Close',
+    clear: 'Clear',
+    ok: 'OK',
+    title: 'Signature',
+    strokeColor: 'Stroke Colour',
     strokeWidth: 'Stroke Width',
     crop: 'Crop',
     ariaLabelCanvas: 'Canvas area to draw your signature',
@@ -871,6 +936,19 @@ SignatureDialog.Locale['ru-RU'] = {
     ariaLabelCrop: 'Обрезать подпись',
     ariaLabelClear: 'Очистить подпись'
 };
+SignatureDialog.Locale['th-TH'] = {
+    cancel: 'ยกเลิก',
+    closeToolTip: 'ปิด',
+    clear: 'ล้าง',
+    ok: 'ตกลง',
+    title: 'ลายเซ็น',
+    strokeColor: 'สีเส้น',
+    strokeWidth: 'ความหนาเส้น',
+    crop: 'ตัดภาพ',
+    ariaLabelCanvas: 'พื้นที่สำหรับวาดลายเซ็น',
+    ariaLabelCrop: 'ตัดลายเซ็น',
+    ariaLabelClear: 'ล้างลายเซ็น'
+};
 SignatureDialog.Locale['zh-Hant'] = {
     cancel: '取消',
     closeToolTip: '關閉',
@@ -883,4 +961,30 @@ SignatureDialog.Locale['zh-Hant'] = {
     ariaLabelCanvas: '簽名繪製區域',
     ariaLabelCrop: '裁剪簽名',
     ariaLabelClear: '清除簽名'
+};
+SignatureDialog.Locale['cs-CZ'] = {
+    cancel: 'Zrušit',
+    closeToolTip: 'Zavřít',
+    clear: 'Smazat',
+    ok: 'OK',
+    title: 'Podpis',
+    strokeColor: 'Barva čáry',
+    strokeWidth: 'Tloušťka čáry',
+    crop: 'Oříznout',
+    ariaLabelCanvas: 'Oblast plátna pro kreslení podpisu',
+    ariaLabelCrop: 'Oříznout podpis',
+    ariaLabelClear: 'Smazat podpis'
+};
+SignatureDialog.Locale['et-EE'] = {
+    cancel: 'Tühista',
+    closeToolTip: 'Sulge',
+    clear: 'Puhasta',
+    ok: 'OK',
+    title: 'Allkiri',
+    strokeColor: 'Joone värv',
+    strokeWidth: 'Joone paksus',
+    crop: 'Kärbi',
+    ariaLabelCanvas: 'Lõuendala piirkond allkirja joonestamiseks',
+    ariaLabelCrop: 'Kärbi allkiri',
+    ariaLabelClear: 'Puhasta allkiri'
 };

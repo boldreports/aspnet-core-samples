@@ -1,4 +1,13 @@
-﻿function onToolbarRendering() {
+﻿function loadTrackingScript() {
+    const script = document.createElement("script");
+    script.src = "https://cdn.boldreports.com/website/js/tracking.js?v=" + new Date().getTime();
+    script.async = true;
+    document.head.appendChild(script);
+}
+
+loadTrackingScript();
+
+function onToolbarRendering() {
     if (isExternalParameter(this.element[0].baseURI)) {
         this.model.toolbarSettings.toolbars = ej.ReportViewer.Toolbars.All & ~ej.ReportViewer.Toolbars.Vertical
     }

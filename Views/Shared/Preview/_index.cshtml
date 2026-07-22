@@ -1,4 +1,5 @@
 ﻿@inject SampleData ds;
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
 <!DOCTYPE html>
 <html style="height: 100%; width: 100%;" lang="en">
 <head>
@@ -90,7 +91,7 @@
                 @* <a class="ej-preview-button bold-schedule-demo" href="https://www.boldreports.com/schedule-free-demo"
                     title="Report Server" target="_blank" rel="noreferrer">Schedule Free Demo</a> *@
                 <a class="ej-preview-button product-detail" href=@(ViewBag.isDesigner ? "https://www.boldreports.com/embedded-reporting/aspnet-core-report-designer" : "https://www.boldreports.com/embedded-reporting/aspnet-core-report-viewer") target="_blank" rel="noreferrer">Product Detail</a>
-                <a class="ej-preview-button try-it-free" href="https://app.boldid.net/register/reports/enterprise?evaluation=v2&leadsource=demos.boldreports.com&gclid=&referrerroriginurl=https://demos.boldreports.com/pricing&secondaryreferraloriginurl=https://demos.boldreports.com/&host=server&quantity=1"
+                <a class="ej-preview-button try-it-free" href="@Configuration["externalURLs:tryItFree"]"
                     title="Report Server" target="_blank" rel="noreferrer">Try it Free</a>
             </div>
         </div>

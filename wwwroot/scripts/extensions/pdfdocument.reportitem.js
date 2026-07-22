@@ -323,6 +323,101 @@ EJPdfDocument.Locale['en-US'] = {
         title: 'PDF'
     }
 };
+EJPdfDocument.Locale['fi-FI'] = {
+    source: 'Lähde',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Tietokanta',
+        server: 'Palvelin'
+    },
+    categoryBasicSettings: 'Perusasetukset',
+    sizing: 'Koko',
+    sizeTypes: {
+        auto: 'Automaattinen',
+        fitPage: 'Sovita sivun kokoon'
+    },
+    toolTip: {
+        requirements: 'Näytä mikä tahansa PDF-tiedosto',
+        description: 'Näyttää PDF-asiakirjan sisällön raportissa',
+        title: 'PDF'
+    }
+};
+EJPdfDocument.Locale['da-DK'] = {
+    source: 'Kilde',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Database',
+        server: 'Server'
+    },
+    categoryBasicSettings: 'Grundindstillinger',
+    sizing: 'Størrelse',
+    sizeTypes: {
+        auto: 'Automatisk',
+        fitPage: 'Tilpas til sidestørrelse'
+    },
+    toolTip: {
+        requirements: 'Vis en hvilken som helst PDF-fil',
+        description: 'Viser PDF-dokumentets indhold i rapporten',
+        title: 'PDF'
+    }
+};
+EJPdfDocument.Locale['nl-NL'] = {
+    source: 'Bron',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Database',
+        server: 'Server'
+    },
+    categoryBasicSettings: 'Basisinstellingen',
+    sizing: 'Formaat',
+    sizeTypes: {
+        auto: 'Automatisch formaat',
+        fitPage: 'Aan paginaformaat aanpassen'
+    },
+    toolTip: {
+        requirements: 'Kan elk PDF-bestand weergeven',
+        description: 'Geeft de inhoud van het PDF-document weer in het rapport',
+        title: 'PDF'
+    }
+};
+EJPdfDocument.Locale['el-GR'] = {
+    source: 'Πηγή',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Βάση δεδομένων',
+        server: 'Διακομιστής'
+    },
+    categoryBasicSettings: 'Βασικές ρυθμίσεις',
+    sizing: 'Διαστασιολόγηση',
+    sizeTypes: {
+        auto: 'Αυτόματο μέγεθος',
+        fitPage: 'Προσαρμογή στο μέγεθος σελίδας'
+    },
+    toolTip: {
+        requirements: 'Προβάλλει οποιοδήποτε αρχείο PDF',
+        description: 'Εμφανίζει το περιεχόμενο εγγράφου PDF στην αναφορά',
+        title: 'PDF'
+    }
+};
+EJPdfDocument.Locale['en-GB'] = {
+    source: 'Source',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Database',
+        server: 'Server'
+    },
+    categoryBasicSettings: 'Basic Settings',
+    sizing: 'Sizing',
+    sizeTypes: {
+        auto: 'AutoSize',
+        fitPage: 'FitToPageSize'
+    },
+    toolTip: {
+        requirements: 'Display any PDF file.',
+        description: 'Display the PDF document content in the report.',
+        title: 'PDF'
+    }
+};
 EJPdfDocument.Locale['ar-AE'] = {
     source: 'مصدر',
     sourceTypes: {
@@ -589,6 +684,25 @@ EJPdfDocument.Locale['ru-RU'] = {
         title: 'PDF'
     }
 };
+EJPdfDocument.Locale['th-TH'] = {
+    source: 'แหล่งที่มา',
+    sourceTypes: {
+        url: 'URL',
+        database: 'ฐานข้อมูล',
+        server: 'เซิร์ฟเวอร์'
+    },
+    categoryBasicSettings: 'การตั้งค่าพื้นฐาน',
+    sizing: 'การปรับขนาด',
+    sizeTypes: {
+        auto: 'ขนาดอัตโนมัติ',
+        fitPage: 'พอดีกับหน้ากระดาษ'
+    },
+    toolTip: {
+        requirements: 'แสดงไฟล์ PDF ได้',
+        description: 'แสดงเนื้อหาเอกสาร PDF ในรายงาน',
+        title: 'PDF'
+    }
+};
 EJPdfDocument.Locale['zh-Hant'] = {
     source: '來源',
     sourceTypes: {
@@ -605,6 +719,44 @@ EJPdfDocument.Locale['zh-Hant'] = {
     toolTip: {
         requirements: '顯示任何 PDF 檔案',
         description: '在報告中顯示 PDF 文件內容',
+        title: 'PDF'
+    }
+};
+EJPdfDocument.Locale['cs-CZ'] = {
+    source: 'Zdroj',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Databáze',
+        server: 'Server'
+    },
+    categoryBasicSettings: 'Základní nastavení',
+    sizing: 'Změna velikosti',
+    sizeTypes: {
+        auto: 'Automatická velikost',
+        fitPage: 'Přizpůsobit velikosti stránky'
+    },
+    toolTip: {
+        requirements: 'Zobrazit libovolný soubor PDF',
+        description: 'Zobrazit obsah dokumentu PDF v sestavě',
+        title: 'PDF'
+    }
+};
+EJPdfDocument.Locale['et-EE'] = {
+    source: 'Allikas',
+    sourceTypes: {
+        url: 'URL',
+        database: 'Andmebaas',
+        server: 'Server'
+    },
+    categoryBasicSettings: 'Põhiseaded',
+    sizing: 'Suurus',
+    sizeTypes: {
+        auto: 'Automaatne suurus',
+        fitPage: 'Sobita lehe suurusele'
+    },
+    toolTip: {
+        requirements: 'Kuvab mis tahes PDF-faili',
+        description: 'Kuvab PDF-dokumendi sisu aruandes',
         title: 'PDF'
     }
 };
