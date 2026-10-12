@@ -1,7 +1,7 @@
 ﻿.ej-main-parent-content {
     position: absolute;
     left: 0;
-    top: 48px;
+    top: 58px;
     bottom: 0;
     right: 0;
     transition: left 400ms ease;
@@ -22,12 +22,15 @@
     width: 100%;
     position: fixed;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(13, 19, 31, 0.45);
     z-index: 1000005;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
     .mobile-overlay.e-hidden {
         display: none;
+        opacity: 0;
     }
 
 ej-header {
@@ -36,7 +39,7 @@ ej-header {
 
 ej-sidebar {
     position: absolute;
-    background-color: #fff;
+    background-color: var(--neutral-0);
     width: 170px;
     display: block;
     left: 0;
@@ -44,11 +47,14 @@ ej-sidebar {
     right: 0;
     top: 0;
     overflow-y: auto;
-    transition: left 400ms ease;
+    transition: left 400ms ease, box-shadow 0.3s ease;
+    border-right: 1px solid var(--neutral-100);
+    z-index: 2;
 }
 
 .ej-toc-slide-left {
     left: -170px;
+    box-shadow: none;
 }
 
 @media only screen and (max-width: 550px) {
@@ -56,7 +62,7 @@ ej-sidebar {
         position: fixed;
         z-index: 1000005;
         left: -170px;
-        background-color: #f8f8f8;
+        box-shadow: 6px 0 20px -8px rgba(13, 19, 31, 0.3);
     }
 
         ej-sidebar.ej-toc-mobile-slide-left {
@@ -69,10 +75,10 @@ ej-sidebar {
 }
 
 body {
-    color: #2b3a5c;
+    color: var(--neutral-600);
     margin: 0;
-    background-color: #F2F2F2;
-    font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif";
+    background-color: var(--neutral-50);
+    font-family: "Inter", sans-serif;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -104,12 +110,13 @@ body {
 }
 
 #description a {
-    color: #ff5f23;
+    color: var(--blue-600);
     text-decoration: none;
 }
 
 #description a:hover {
     text-decoration: underline;
+    color: var(--blue-700);
 }
 
 #reportviewer_param_block_table .switchstyle {

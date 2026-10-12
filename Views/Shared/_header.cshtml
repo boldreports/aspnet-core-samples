@@ -1,33 +1,67 @@
 ﻿@inject SampleData ds;
 @inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
+@{
+    var headerData = ds.getSampleData();
+    var isLocal = !Context.Request.Host.Host.Contains("boldreports.com", StringComparison.OrdinalIgnoreCase);
+    var baseUrl = isLocal ? "/" : "/home/";
+    var frameworkLinks = new System.Collections.Generic.Dictionary<string, string>(System.StringComparer.OrdinalIgnoreCase)
+    {
+        { "ASP.NET Core", "" },
+        { "Angular", "angular.html" },
+        { "JavaScript", "javascript.html" },
+        { "React", "react.html" },
+        { "Blazor", "blazor.html" }
+    };
+    var orderedFrameworks = new System.Collections.Generic.List<string> { "ASP.NET Core" };
+    if (headerData.otherPlatforms != null)
+    {
+        foreach (var p in headerData.otherPlatforms)
+        {
+            var name = (string)p.Name;
+            if (!orderedFrameworks.Contains(name))
+            {
+                orderedFrameworks.Add(name);
+            }
+        }
+    }
+}
 <div class="ej-sb-header">
     <div class="ej-sb-left-side">
         <div class="ej-sb-hamburger-icon ej-sb-icons" onclick="onHamBurgerClick()"></div>
-        <div class="ej-sb-platform-name">Bold Reports<sup>®</sup> for ASP.NET Core</div>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false"></button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                @{
-
-                    var data = ds.getSampleData();
-
-                    <a class="dropdown-item active">@data.platform</a>
-                    foreach (var platform in data.otherPlatforms)
-                    {
-                        <a class="dropdown-item" onclick='platformSwitcher("@platform.Name")'>@platform.Name</a>
-                    }
-                    
-
-                }
-
-            </div>
-        </div>
+        <a class="ej-sb-brand" href="https://www.boldreports.com/" aria-label="Bold Reports home">
+            <img class="ej-sb-brand-icon" src="https://cdn.boldreports.com/website/images/logo/bold-reports-logo.svg" alt="Bold Reports logo" />
+        </a>
+        <span class="ej-sb-divider" aria-hidden="true"></span>
+        <span class="ej-sb-frameworks-label">Frameworks</span>
     </div>
+
+    <nav class="ej-sb-center" aria-label="Framework navigation">
+        <ul class="ej-sb-nav">
+            @{
+                var currentPlatform = (string)headerData.platform;
+                foreach (var fw in orderedFrameworks)
+                {
+                    var isActive = string.Equals(fw, currentPlatform, System.StringComparison.OrdinalIgnoreCase);
+                    var navClass = "ej-sb-nav-item" + (isActive ? " active" : string.Empty);
+                    var linkPath = frameworkLinks.ContainsKey(fw) ? frameworkLinks[fw] : "";
+                    var fwHref = baseUrl + linkPath;
+                    if (isActive)
+                    {
+                        <li class="@navClass" aria-current="page"><span>@fw</span></li>
+                    }
+                    else
+                    {
+                        <li class="@navClass">
+                            <a href="@fwHref">@fw</a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+    </nav>
+
     <div class="ej-sb-right-side">
-        <!-- We hided this element as per management instruction -->
-        @* <a class="ej-sb-button nav-link bold-schedule-demo" href="https://www.boldreports.com/schedule-free-demo" target="_blank" rel="noreferrer">Schedule Free Demo</a> *@
-        <a class="ej-sb-button nav-link product-detail" href='@(Context.Request.Path.Value.Contains("report-viewer") ? Configuration["externalURLs:productDetailViewer"] : (Context.Request.Path.Value.Contains("report-designer") ? Configuration["externalURLs:productDetailDesigner"] : Configuration["externalURLs:productDetailWriter"]))' target="_blank" rel="noreferrer">Product Detail</a>
-        <a class="ej-sb-button nav-link try-it-free" href="@Configuration["externalURLs:tryItFree"]" target="_blank" rel="noreferrer">Try it Free</a>
+        <a class="ej-sb-button ej-sb-product-detail" href='@(Context.Request.Path.Value.Contains("report-viewer") ? Configuration["externalURLs:productDetailViewer"] : (Context.Request.Path.Value.Contains("report-designer") ? Configuration["externalURLs:productDetailDesigner"] : Configuration["externalURLs:productDetailWriter"]))' target="_blank" rel="noopener">Product Details</a>
+        <a class="ej-sb-button ej-sb-try-it-free" href="@Configuration["externalURLs:tryItFree"]" target="_blank" rel="noopener">Try it Free</a>
     </div>
 </div>

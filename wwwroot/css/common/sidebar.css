@@ -1,113 +1,214 @@
-﻿.ej-sidebar-content .ej-sb-home {
-    height: 38px;
-    margin: 8px 10px 8px 28px;
-    cursor: pointer;
+﻿.ej-sb-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: var(--neutral-0);
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    color: var(--neutral-700);
 }
 
-    .ej-sidebar-content .ej-sb-home::before {
-        content: '\e915';
-        font-size: 25px;
-        opacity: 0.54;
-        margin-right: 8px;
-    }
-
-    .ej-sidebar-content .ej-sb-home .ej-sb-home-text {
-        font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif";
-        display: inline-block;
-        vertical-align: text-bottom;
-        font-size: 13px;
-        opacity: 0.87;
-        font-weight: 600;
-    }
-
-.ej-sidebar-content .ej-sb-toc {
-    cursor: pointer;
+.ej-sb-sidebar-header {
+    flex: 0 0 auto;
+    padding: 12px 16px 12px;
+    background-color: var(--neutral-0);
 }
 
-    .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card {
-        width: 150px;
-        margin: 8px auto;
-        text-align: center;
-        border: 2px solid transparent;
-        position: relative;
+.ej-sb-home {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 10px;
+    color: var(--neutral-700);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ej-sb-home:hover,
+.ej-sb-home:focus-visible {
+    background-color: var(--neutral-50);
+    border-color: var(--neutral-100);
+    outline: none;
+}
+
+.ej-sb-home:focus-visible {
+    border-color: var(--blue-600);
+    box-shadow: 0 0 0 3px var(--blue-50);
+}
+
+.ej-sb-home .ej-sb-home-icon::before {
+    content: '\e915';
+    color: var(--neutral-700);
+    font-size: 18px;
+    line-height: 1;
+}
+
+.ej-sb-home .ej-sb-home-text {
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Inter';
+    font-weight: 600;
+}
+
+.ej-sb-toc {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 14px 10px 0px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--neutral-300) transparent;
+}
+
+.ej-sb-toc::-webkit-scrollbar {
+    width: 6px;
+}
+
+.ej-sb-toc::-webkit-scrollbar-thumb {
+    background-color: var(--neutral-300);
+    border-radius: 999px;
+}
+
+.ej-sb-toc::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.ej-sb-toc-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px 5px;
+    background-color: var(--neutral-0);
+    border: 1px solid var(--neutral-100);
+    border-radius: 8px;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.ej-sb-toc-card:hover,
+.ej-sb-toc-card:focus-visible {
+    box-shadow: 0 6px 16px -10px rgba(16, 100, 199, 0.35);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+.ej-sb-toc-card.toc-selected {
+    background-color: var(--blue-50);
+    border: 1px solid var(--blue-200);
+}
+
+.ej-sb-toc-card.toc-selected::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 5px;
+    bottom: 5px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background-color: var(--blue-600);
+}
+
+.ej-sb-card-thumb-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 4px 0 0;
+    box-sizing: border-box;
+}
+
+.ej-sb-card-thumb {
+    background-repeat: no-repeat;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.ej-sb-thumb-landscape {
+    height: 70px;
+    width: 120px;
+    background-image: url('./../../assets/sidebar/landscape.png');
+    background-size: 100% 1100%;
+}
+
+.ej-sb-thumb-portrait {
+    height: 120px;
+    width: 120px;
+    background-image: url('./../../assets/sidebar/portrait.png');
+    background-size: 100% 2300%;
+}
+
+.ej-sb-card-body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    box-sizing: border-box;
+}
+
+.ej-sb-toc-title {
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--neutral-900);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    transition: color 0.2s ease;
+}
+
+.ej-sb-toc-card:hover .ej-sb-toc-title,
+.ej-sb-toc-card:focus-visible .ej-sb-toc-title {
+    color: var(--blue-600);
+}
+
+.ej-sb-toc-card.toc-selected .ej-sb-toc-title {
+    color: var(--blue-600);
+}
+
+.ej-sb-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    padding: 0 8px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--neutral-0);
+    border-radius: 999px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 6px -2px rgba(13, 19, 31, 0.4);
+}
+
+@media (min-width: 1100px) {
+    .ej-sb-toc {
+        gap: 12px;
     }
-
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card:hover,
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card.toc-selected {
-            border-color: #ff5f23;
-        }
-
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-landscape-img {
-            display: inline-flex;
-            height: 70px;
-            width: 120px;
-            margin: 8px;
-            background-image: url('./../../assets/sidebar/landscape.png');
-            background-size: 100% 1100%;
-        }
-
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-portrait-img {
-            display: inline-flex;
-            height: 120px;
-            width: 90px;
-            margin: 8px;
-            background-image: url('./../../assets/sidebar/portrait.png');
-            background-size: 100% 2300%;
-        }
-
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-sb-toc-title {
-            font-size: 12px;
-            font-weight: 600;
-            color: #2b3a5c;
-        }
-
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-status-label {
-            display: inline-block;
-            height: 20px;
-            font-size: 12px;
-            color: #FFFFFF;
-            position: absolute;
-            right: 0;
-            top: 0;
-            line-height: 1.8;
-        }
-
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-status-label::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            border-color: transparent;
-            border-style: solid;
-            border-top-width: 10px;
-            border-right-width: 5px;
-            border-bottom-width: 10px;
-            border-left-width: 5px;
-        }
-
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-status-label.ej-updated {
-            background-color: #ff663e;
-            width: 55px;
-            padding-right: 4px;
-        }
-
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-status-label.ej-new {
-            background-color: #0f8521;
-            width: 42px;
-            padding-right: 6px;
-        }
-
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-status-label.ej-new::before {
-            right: 42px;
-            border-right-color: #0f8521;
-            border-top-color: #0f8521;
-        }
-
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card .ej-status-label.ej-updated::before {
-            right: 55px;
-            border-right-color: #ff663e;
-            border-top-color: #ff663e;
-        }
-
-        .ej-sidebar-content .ej-sb-toc .ej-sb-toc-card.toc-selected .ej-sb-toc-title {
-            color: #ff5f23;
-        }
+}
