@@ -82,17 +82,63 @@
     <div class="ej-body e-hidden">
         <div class="ej-preview-header">
             <div class="ej-preview-left-side">
-                <a id="home_page" href="/" target="_blank" rel="noreferrer">
-                    <h1 class="ej-preview-platform-name">Bold Reports<sup>®</sup> for ASP.NET Core</h1>
+                <a class="ej-preview-brand" id="home_page" href="https://www.boldreports.com/" aria-label="Bold Reports home">
+                    <img class="ej-preview-brand-icon" src="https://cdn.boldreports.com/website/images/logo/bold-reports-logo.svg" alt="Bold Reports logo" />
                 </a>
+                <span class="ej-preview-divider" aria-hidden="true"></span>
+                <span class="ej-preview-frameworks-label">Frameworks</span>
+                <h1 hidden >Bold Reports® for ASP.NET Core</h1>
             </div>
+            <nav class="ej-preview-center" aria-label="Framework navigation">
+                <ul class="ej-preview-nav">
+                    @{
+                        var previewHeaderData = ds.getSampleData();
+                        var isLocal = !Context.Request.Host.Host.Contains("boldreports.com", StringComparison.OrdinalIgnoreCase);
+                        var baseUrl = isLocal ? "/" : "/home/";
+                        var previewFrameworkLinks = new System.Collections.Generic.Dictionary<string, string>(System.StringComparer.OrdinalIgnoreCase)
+                        {
+                            { "ASP.NET Core", "" },
+                            { "Angular", "angular.html" },
+                            { "JavaScript", "javascript.html" },
+                            { "React", "react.html" },
+                            { "Blazor", "blazor.html" }
+                        };
+                        var previewOrderedFrameworks = new System.Collections.Generic.List<string> { "ASP.NET Core" };
+                        if (previewHeaderData.otherPlatforms != null)
+                        {
+                            foreach (var pp in previewHeaderData.otherPlatforms)
+                            {
+                                var ppName = (string)pp.Name;
+                                if (!previewOrderedFrameworks.Contains(ppName))
+                                {
+                                    previewOrderedFrameworks.Add(ppName);
+                                }
+                            }
+                        }
+                        var previewCurrentPlatform = (string)previewHeaderData.platform;
+                        foreach (var pfw in previewOrderedFrameworks)
+                        {
+                            var previewIsActive = string.Equals(pfw, previewCurrentPlatform, System.StringComparison.OrdinalIgnoreCase);
+                            var previewNavClass = "ej-preview-nav-item" + (previewIsActive ? " active" : string.Empty);
+                            var linkPath = previewFrameworkLinks.ContainsKey(pfw) ? previewFrameworkLinks[pfw] : "";
+                            var previewHref = baseUrl + linkPath;
+                            if (previewIsActive)
+                            {
+                                <li class="@previewNavClass" aria-current="page"><span>@pfw</span></li>
+                            }
+                            else
+                            {
+                                <li class="@previewNavClass">
+                                    <a href="@previewHref">@pfw</a>
+                                </li>
+                            }
+                        }
+                    }
+                </ul>
+            </nav>
             <div class="ej-preview-right-side">
-                <!-- We hided this element as per management instruction -->
-                @* <a class="ej-preview-button bold-schedule-demo" href="https://www.boldreports.com/schedule-free-demo"
-                    title="Report Server" target="_blank" rel="noreferrer">Schedule Free Demo</a> *@
-                <a class="ej-preview-button product-detail" href=@(ViewBag.isDesigner ? "https://www.boldreports.com/embedded-reporting/aspnet-core-report-designer" : "https://www.boldreports.com/embedded-reporting/aspnet-core-report-viewer") target="_blank" rel="noreferrer">Product Detail</a>
-                <a class="ej-preview-button try-it-free" href="@Configuration["externalURLs:tryItFree"]"
-                    title="Report Server" target="_blank" rel="noreferrer">Try it Free</a>
+                <a class="ej-preview-button ej-preview-product-detail" href=@(ViewBag.isDesigner ? "https://www.boldreports.com/embedded-reporting/aspnet-core-report-designer" : "https://www.boldreports.com/embedded-reporting/aspnet-core-report-viewer") target="_blank" rel="noopener">Product Details</a>
+                <a class="ej-preview-button ej-preview-try-it-free" href="@Configuration["externalURLs:tryItFree"]" target="_blank" rel="noopener">Try it Free</a>
             </div>
         </div>
         <div class="ej-preview-content">

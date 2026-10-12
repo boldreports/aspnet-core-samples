@@ -63,12 +63,12 @@
                                 <ul class="nav ej-nav-header" id="parentTab" role="tablist">
                                     <li class="ej-nav-item">
                                         <a href="#demo" data-bs-toggle="tab" role="tab" aria-selected="true">
-                                            <Span class="ej-sb-icons ej-demo-icon"></Span><Span>DEMO</Span>
+                                            <Span class="ej-sb-icons ej-demo-icon"></Span><Span>Demo</Span>
                                         </a>
                                     </li>
                                     <li class="ej-nav-item source-tab">
                                         <a href="#source" data-bs-toggle="tab" role="tab" aria-selected="false">
-                                            <Span class="ej-sb-icons ej-source-icon"></Span><Span>SOURCE</Span>
+                                            <Span class="ej-sb-icons ej-source-icon"></Span><Span>Source Code</Span>
                                         </a>
                                     </li>
                                     @*<li class="ej-nav-item desc-tab">
@@ -77,11 +77,13 @@
                         </a>
                     </li>*@
                                     <li class="ej-nav ej-nav-item ej-sb-icons">
-                                        <div class="new-tab ej-nav-sub-item">
-                                            <div class="ej-nav-new" title="Open in New Window" onclick="onTabBtnClick()" tabindex="0"></div>
+                                        <div class="ej-nav-controls">
+                                            <button type="button" class="ej-nav-prev ej-nav-sub-item" title="Previous Sample" aria-label="Previous Sample" onclick="onTabPrev()"></button>
+                                            <span class="ej-nav-divider" aria-hidden="true"></span>
+                                            <button type="button" class="ej-nav-next ej-nav-sub-item" title="Next Sample" aria-label="Next Sample" onclick="onTabNext()"></button>
+                                            <span class="ej-nav-divider" aria-hidden="true"></span>
+                                            <button type="button" class="ej-nav-new ej-nav-sub-item" title="Open in New Window" aria-label="Open in New Window" onclick="onTabBtnClick()"></button>
                                         </div>
-                                        <div class="ej-nav-prev ej-nav-sub-item" title="Previous Sample" onclick="onTabPrev()" tabindex="0"></div>
-                                        <div class="ej-nav-next ej-nav-sub-item" title="Next Sample" onclick="onTabNext()" tabindex="0"></div>
                                     </li>
                                 </ul>
                                 <div class="tab-content ej-tab-content" id="parentTabContent">
@@ -117,48 +119,50 @@
                         </div>
                         <!--Banner section-->
                         <div id="footer-banner">
-                            <div id="banner-head" class="header"></div>
-                            <div class="content-area" style="display: flex; flex-wrap: wrap;">
-                                <div class="cnt-pt">
-                                    <!-- <div class="cnt-icon click-icon sb-icons sb-icon-icon-selection"></div> -->
-                                    <span class="tick-mark"></span>
-                                    <div class="cnt-text cnt-text-1"></div>
+                            <div class="banner-inner">
+                                <h2 id="banner-head" class="banner-title"></h2>
+                                <div class="banner-features">
+                                    <div class="banner-feature">
+                                        <span class="tick-mark" aria-hidden="true"></span>
+                                        <span class="banner-feature-text cnt-text-1"></span>
+                                    </div>
+                                    <div class="banner-feature">
+                                        <span class="tick-mark" aria-hidden="true"></span>
+                                        <span class="banner-feature-text cnt-text-2"></span>
+                                    </div>
+                                    <div class="banner-feature">
+                                        <span class="tick-mark" aria-hidden="true"></span>
+                                        <span class="banner-feature-text cnt-text-3"></span>
+                                    </div>
                                 </div>
-                                <div class="cnt-pt">
-                                    <!-- <div class="cnt-icon click-icon sb-icons sb-icon-icon-selection"></div> -->
-                                    <span class="tick-mark"></span>
-                                    <div class="cnt-text cnt-text-2"></div>
-                                </div>
-                                <div class="cnt-pt">
-                                    <!-- <div class="cnt-icon click-icon sb-icons sb-icon-icon-selection"></div> -->
-                                    <span class="tick-mark"></span>
-                                    <div class="cnt-text cnt-text-3"></div>
-                                </div>
+                                <a class="banner-cta-url" href="@Configuration["externalURLs:tryItFree"]" target="_blank">
+                                    <span class="banner-cta"></span>
+                                </a>
                             </div>
-                            <a class="free-trial-url" href="@Configuration["externalURLs:tryItFree"]" target="_blank" rel="noreferrer">
-                                <div class="free-trial">TRY IT FOR FREE</div>
-                            </a>
                         </div>
                         <!--Footer section-->
                         <div class="ej-lp-footer">
                             <div class="ej-lp-footer-links">
-                                <a href="@Configuration["externalURLs:footerDocumentation"]" target="_blank" rel="noreferrer">
+                                <a href="@Configuration["externalURLs:footerDocumentation"]" target="_blank">
                                     Documentation
                                 </a>
-                                <a href="@Configuration["externalURLs:footerBlog"]" target="_blank" rel="noreferrer">
+                                <a href="@Configuration["externalURLs:footerBlog"]" target="_blank">
                                     Blog
                                 </a>
-                                <a href="@Configuration["externalURLs:footerSupport"]" target="_blank" rel="noreferrer">
+                                <a href="@Configuration["externalURLs:footerSupport"]" target="_blank">
                                     Support
                                 </a>
-                                <a href="@Configuration["externalURLs:footerFeedback"]" target="_blank" rel="noreferrer">
+                                <a href="@Configuration["externalURLs:footerFeedback"]" target="_blank">
                                     Feedback
                                 </a>
-                                <a href="@Configuration["externalURLs:footerKnowledgeBase"]" target="_blank" rel="noreferrer">
+                                <a href="@Configuration["externalURLs:footerKnowledgeBase"]" target="_blank">
                                     Knowledge Base
                                 </a>
-                                <a href="@Configuration["externalURLs:footerLearningCenter"]" target="_blank" rel="noreferrer">
+                                <a href="@Configuration["externalURLs:footerLearningCenter"]" target="_blank">
                                     Learning Center
+                                </a>
+                                <a href="@Configuration["externalURLs:FreeTools"]" target="_blank">
+                                    Free Tools
                                 </a>
                             </div>
                             <div class="ej-lp-footer-copyright">@Configuration["copyrightInfo"]</div>
