@@ -42,15 +42,16 @@
             margin: 20px 20px 20px 20px;
             text-align: center;
             border: 2px solid transparent;
+            border-radius: 12px;
         }
 
             .r-w-container .r-w-sample-container .r-w-sample.r-w-sample-active {
-                border-color: #ff5f23;
-                color: #ff5f23;
+                border-color: var(--blue-600);
+                color: var(--blue-600);
             }
 
             .r-w-container .r-w-sample-container .r-w-sample:hover {
-                border-color: #ff5f23;
+                border-color: var(--blue-600);
             }
 
             .r-w-container .r-w-sample-container .r-w-sample.r-w-sample-landscape {

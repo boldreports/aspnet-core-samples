@@ -1,4 +1,29 @@
-﻿.e-reportviewer .e-reportviewer-toolbarcontainer .e-reportviewer-toolbarul.e-show {
+﻿:root {
+  --blue-50: #EFF5FE;
+  --blue-100: #DCEAFB;
+  --blue-200: #C4DEFD;
+  --blue-300: #93C0F5;
+  --blue-500: #2E81C8;
+  --blue-600: #1064C7;
+  --blue-700: #0C4E9E;
+  --blue-800: #0A3E7D;
+  --blue-900: #082C59;
+
+  --neutral-0: #FFFFFF;
+  --neutral-50: #F6F8FB;
+  --neutral-100: #EAEFF6;
+  --neutral-200: #D8E0EB;
+  --neutral-300: #C3CDDB;
+  --neutral-400: #9EAABC;
+  --neutral-500: #6E7A90;
+  --neutral-600: #5E6B80;
+  --neutral-700: #43506A;
+  --neutral-800: #2C3A4F;
+  --neutral-900: #172239;
+  --neutral-950: #0D131F;
+}
+
+.e-reportviewer .e-reportviewer-toolbarcontainer .e-reportviewer-toolbarul.e-show {
     border-style: none;
     float: right;
 }
