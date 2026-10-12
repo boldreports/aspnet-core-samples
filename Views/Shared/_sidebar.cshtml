@@ -1,27 +1,35 @@
 ﻿@inject SampleData ds;
 
-<div class="ej-sidebar-content">
-    <div class="ej-sb-home ej-sb-icons" onclick="onHomeBtnClick()">
-        <span class="ej-sb-home-text">Home</span>
+<div class="ej-sb-sidebar">
+    <div class="ej-sb-sidebar-header">
+        <button type="button" class="ej-sb-home ej-sb-icons" onclick="onHomeBtnClick()" aria-label="Go to home">
+            <span class="ej-sb-icons ej-sb-home-icon" aria-hidden="true"></span>
+            <span class="ej-sb-home-text">Home</span>
+        </button>
     </div>
-    <div class="ej-sb-toc">
+    <div class="ej-sb-toc" role="list">
         @{
             var data = ds.getSampleData();
             for (int i = 0; i < data.samples.Count; i++)
             {
                 var sample = data.samples[i];
                 var isLandscape = (bool)@sample.imageDetails.isLandscape;
-                string imageClassName =  isLandscape ? "ej-landscape-img" : "ej-portrait-img";
+                string imageClassName = isLandscape ? "ej-sb-card-thumb ej-sb-thumb-landscape" : "ej-sb-card-thumb ej-sb-thumb-portrait";
                 string bgPosition = "background-position-y:" + (-(isLandscape ? (Int32)@sample.imageDetails.index * 70 :
                 (Int32)@sample.imageDetails.index * 120)) + "px";
                 string status = (string)@sample.status;
-                <div class="ej-sb-toc-card" onclick="onTocClick({index:'@i', e:event})" tabindex="-1">
-                    <div class="@imageClassName" style="@bgPosition"></div>
-                    <div class="ej-sb-toc-title">@sample.sampleName</div>
+                string statusKey = !String.IsNullOrEmpty(status) ? status.ToLower() : string.Empty;
+                <div class="ej-sb-toc-card" role="listitem" onclick="onTocClick({index:'@i', e:event})" tabindex="-1">
+                    <div class="ej-sb-card-thumb-wrap">
+                        <div class="@imageClassName" style="@bgPosition"></div>
+                    </div>
+                    <div class="ej-sb-card-body">
+                        <div class="ej-sb-toc-title">@sample.sampleName</div>
+                    </div>
                     @{
                         if (!String.IsNullOrEmpty(status) && (status.ToUpper() == "UPDATED" || status.ToUpper() == "NEW"))
                         {
-                            <span class="@(isLandscape ? "ej-landscape" : "ej-portrait") ej-status-label ej-@status.ToLower()">@status</span>
+                            <span class="ej-sb-status ej-sb-status-@statusKey">@status</span>
                         }
                     }
                 </div>
